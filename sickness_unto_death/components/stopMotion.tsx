@@ -22,32 +22,34 @@ export default function StopMotion({
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setVisible((prev) => !prev);
-      if (!visible) {
-        setFrameIndex((prevIndex) => (prevIndex + 1) % images.length);
-      }
-    }, visible ? frameDuration : pauseDuration);
-
-    return () => clearTimeout(timeout);
-  }, [visible, frameIndex, frameDuration, pauseDuration, images.length]);
-
+    const interval = setInterval(() => {
+      setFrameIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, frameDuration + pauseDuration);
+  
+    return () => clearInterval(interval);
+  }, [frameDuration, pauseDuration, images.length]);
+  
   return (
     <div
-    className={cn(
+      className={cn(
+        "relative overflow-hidden", // Ensure the container is properly styled
         size === "sm" && "w-32 h-32",
         size === "md" && "w-64 h-64",
         size === "lg" && "w-96 h-96"
       )}
     >
-      {visible && (
+      {images.map((image, index) => (
         <Image
-          src={images[frameIndex]}
-          alt={`frame-${frameIndex}`}
+          key={index}
+          src={image}
+          alt={`frame-${index}`}
           fill
-          className="object-contain"
+          className={cn(
+            "absolute inset-0 object-contain transition-opacity duration-0",
+            frameIndex === index ? "opacity-100 z-10" : "opacity-0 z-0"
+          )}
         />
-      )}
+      ))}
     </div>
   );
 }
