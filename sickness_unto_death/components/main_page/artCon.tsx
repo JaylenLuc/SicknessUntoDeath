@@ -12,7 +12,7 @@ export default function ArtCon() {
       <StopMotion
         images={images}
         frameDuration={400}
-        size="md"
+        size="lg"
       />
   );
 }

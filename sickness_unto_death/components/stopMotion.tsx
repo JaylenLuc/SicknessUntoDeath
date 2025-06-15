@@ -44,7 +44,7 @@ export default function StopMotion({
           alt={`frame-${index}`}
           fill
           className={cn(
-            "absolute inset-0 object-contain transition-opacity duration-0",
+            "inset-0 object-contain transition-opacity duration-0",
             frameIndex === index ? "opacity-100 z-10" : "opacity-0 z-0"
           )}
         />
