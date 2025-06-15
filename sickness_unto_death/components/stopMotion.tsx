@@ -19,7 +19,6 @@ export default function StopMotion({
     size = 'md',
 }: StopMotionProps) {
   const [frameIndex, setFrameIndex] = useState(0);
-  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
