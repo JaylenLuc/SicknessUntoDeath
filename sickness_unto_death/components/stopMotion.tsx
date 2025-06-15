@@ -35,7 +35,6 @@ export default function StopMotion({
   return (
     <div
     className={cn(
-        "relative",
         size === "sm" && "w-32 h-32",
         size === "md" && "w-64 h-64",
         size === "lg" && "w-96 h-96"
