@@ -15,7 +15,7 @@ type StopMotionProps = {
 export default function StopMotion({
     images,
     frameDuration = 500,
-    pauseDuration = 500,
+    pauseDuration = 0,
     size = 'md',
 }: StopMotionProps) {
   const [frameIndex, setFrameIndex] = useState(0);

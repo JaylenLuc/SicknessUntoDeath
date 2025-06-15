@@ -1,4 +1,4 @@
-import StopMotion from "./stopMotion";
+import StopMotion from "../stopMotion";
 
 export default function ArtCon() {
   const images = [
@@ -11,8 +11,7 @@ export default function ArtCon() {
   return (
       <StopMotion
         images={images}
-        frameDuration={500}
-        pauseDuration={0}
+        frameDuration={400}
         size="lg"
       />
   );
