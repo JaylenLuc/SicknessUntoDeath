@@ -5,10 +5,10 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 type StopMotionProps = {
-    images: string[];          // Array of image paths
-    frameDuration?: number;    // How long each image stays visible (ms)
-    pauseDuration?: number;    // How long it's hidden between frames (ms)
-    size?: 'sm' | 'md' | 'lg'// Size of the component
+    images: string[];          
+    frameDuration?: number;    
+    pauseDuration?: number;    
+    size?: 'sm' | 'md' | 'lg'
 
 };
 
