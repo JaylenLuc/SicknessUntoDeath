@@ -19,7 +19,7 @@ export default function DreamBubble() {
   return (
       <StopMotion
         images={images}
-        frameDuration={400}
+        frameDuration={300}
         size="lg"
       />
   );
