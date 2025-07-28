@@ -4,10 +4,10 @@ import Image from 'next/image';
 import DreamBubble from '@/components/dreams_page/dreamBubble';
 import { Text } from "@/components/retroui/Text";
 import { Button } from "@/components/retroui/Button";
-import { bagOfWords } from '@/lib/dreams_util/LDA';
+import { ldaExecute } from '@/lib/dreams_util/LDA';
 export default function Dreams() {
   return (
-    <div className="flex flex-col justify-center min-h-screen sm:p-8 font-[family-name:var(--font-courier-prime)] bg-[#d2b48c] overflow-hidden">
+    <div className="flex flex-col p-8 justify-center min-h-screen sm:p-8 font-[family-name:var(--font-courier-prime)]">
       <Text as="h3" className='text-center'>As deep as the Ocean, As grounded as the Soil</Text>
       <div className="flex-1 flex flex-col">
         <div className="flex justify-center">
@@ -26,7 +26,7 @@ export default function Dreams() {
         </div>
         <Button
           className="mx-auto mb-8"  
-          onClick={() => console.log(bagOfWords())} 
+          onClick={() => ldaExecute()} 
         >
           <span>Integrate</span>
         </Button>

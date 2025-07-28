@@ -1,7 +1,8 @@
 import winkNLP from 'wink-nlp';
 import model from 'wink-eng-lite-web-model';
+import lda from '@stdlib/nlp-lda';
 const nlp = winkNLP(model);
-export const bagOfWords= (text : string = testText) => {
+export const ldaExecute = (text : string = testText) => {
     const doc = nlp.readDoc( text );
     const sentences = doc.sentences().out();
     const tokenizedSentences = tokenize(sentences);
@@ -24,18 +25,22 @@ export const bagOfWords= (text : string = testText) => {
         })
         return vector;
     });
-    return {sentences, vocab, matrix}
-
+    console.log(sentences, vocab, matrix);
+    const ldaModel = lda(sentences, 2);
+    ldaModel.fit( 1000, 100, 10 );
+    const words = ldaModel.getTerms( 0, 3 );
+    console.log("words: ",words);
 }
 
 const tokenize = (text: string[]) => {
     return text.map(sentence => {
         const doc = nlp.readDoc(sentence);
         return doc.tokens()
-            .filter(word => word.out(nlp.its.stopWordFlag) === false && word.out(nlp.its.type)=== "word")
+            .filter(word => word.out(nlp.its.stopWordFlag) === false && word.out(nlp.its.type) === "word")
             .out(nlp.its.normal)
 
     });
 }
+
 
 const testText = " I had a dream that I was flying over a vast ocean, the waves sparkling under the sun. Suddenly, I found myself on a beach, feeling the warm sand beneath my feet. The sky was clear, and I could see distant mountains in the horizon. I love this world world world!";

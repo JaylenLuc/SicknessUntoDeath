@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Courier_Prime } from "next/font/google";
+import DaMenu from "@/components/layout/daMenu";
 import "./globals.css";
 
 const courierPrime = Courier_Prime({
@@ -21,9 +22,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${courierPrime.variable} antialiased`}
+        className={`${courierPrime.variable} bg-[#d2b48c] overflow-hidden antialiased`}
       >
-        {children}
+        <div className="fixed top-0 left-0 z-50 w-64 h-64">
+          <DaMenu />
+        </div>
+        <div className="mt-32 md:mt-0 relative pt-0">
+          {children}
+        </div>
       </body>
     </html>
   );
