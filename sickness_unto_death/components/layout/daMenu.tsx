@@ -8,8 +8,8 @@ import Image from "next/image";
 export default function DaMenu() {
   return (
     <Menu>
-        <Menu.Trigger asChild>
-          <Button className="p-0 bg-transparent border-none shadow-none hover:bg-transparent focus:outline-none">
+        <Menu.Trigger asChild className="right-30">
+          <Button className="p-0 bg-transparent border-none shadow-none hover:bg-transparent focus:outline-none ">
             <Image
               src="/fingertree.png"
               alt="Menu"
