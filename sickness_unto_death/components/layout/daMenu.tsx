@@ -20,15 +20,15 @@ export default function DaMenu() {
             />
           </Button>
         </Menu.Trigger>
-        <Menu.Content className="min-w-36">
-            <Menu.Item>
-              <Link href="/" className="flex flex-1"><LucideLink className="mr-2"/> Home</Link>
+        <Menu.Content className="min-w-36 bg-primary text-primary-foreground">
+            <Menu.Item >
+              <Link href="/" className="flex flex-1 hover:bg-[#B39EB5] rounded-[10px]"><LucideLink className="mr-2"/> Home</Link>
             </Menu.Item>
             <Menu.Item>
-              <a href="/dreams" className="flex flex-1"><LucideLink className="mr-2"/> Dreams</a>
+              <a href="/dreams" className="flex flex-1 hover:bg-[#B39EB5] rounded-[10px]"><LucideLink className="mr-2"/> Dreams</a>
             </Menu.Item>
             <Menu.Item>
-              <a href="https://artifical-life.vercel.app" className="flex flex-1"><LucideLink className="mr-2"/> Artificial Life</a>
+              <a href="https://artifical-life.vercel.app" className="flex flex-1 hover:bg-[#B39EB5] rounded-[10px]"><LucideLink className="mr-2"/> Artificial Life</a>
             </Menu.Item>
         </Menu.Content>
     </Menu>
