@@ -25,7 +25,7 @@ export const ldaExecute = (text : string = testText) => {
         })
         return vector;
     });
-    //console.log(sentences, vocab, matrix);
+    console.log(sentences, vocab, matrix);
     const ldaModel = lda(sentences, 10, { 
         alpha: 0.1,
         beta: 0.01,
