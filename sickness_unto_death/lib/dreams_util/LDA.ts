@@ -10,7 +10,7 @@ export const ldaExecute = (text : string = testText) => {
     const vocab = tokenizedSentences.reduce((acc, sentence) => {
         sentence.forEach(word => {
             if (!acc.includes(word)) {
-                acc.push(word);
+                acc.push(word); 
             }
         });
         return acc;
@@ -25,11 +25,16 @@ export const ldaExecute = (text : string = testText) => {
         })
         return vector;
     });
-    console.log(sentences, vocab, matrix);
-    const ldaModel = lda(sentences, 2);
+    //console.log(sentences, vocab, matrix);
+    const ldaModel = lda(sentences, 10, { 
+        alpha: 0.1,
+        beta: 0.01,
+    });
     ldaModel.fit( 1000, 100, 10 );
-    const words = ldaModel.getTerms( 0, 3 );
-    console.log("words: ",words);
+    const words = ldaModel.getTerms( 0, 10 );
+    console.log("-> ",words);
+
+
 }
 
 const tokenize = (text: string[]) => {
