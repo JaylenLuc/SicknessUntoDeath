@@ -1,7 +1,17 @@
 import winkNLP from 'wink-nlp';
 import model from 'wink-eng-lite-web-model';
-import lda from '@stdlib/nlp-lda';
+let lda = require('lda');
 const nlp = winkNLP(model);
+const MAX_TOPICS = 40;
+const lengthOfInput = (matrix : number[][]) => {
+    return matrix.reduce((acc, sentence) => {
+        return acc + sentence.length;
+    }, 0);
+}
+const numberOfTopics = (inputLength : number) => {
+        const res = (Math.log(inputLength) / Math.log(1.5))
+        return res >= MAX_TOPICS ? MAX_TOPICS : res;
+}
 export const ldaExecute = (text : string = testText) => {
     const doc = nlp.readDoc( text );
     const sentences = doc.sentences().out();
@@ -26,14 +36,11 @@ export const ldaExecute = (text : string = testText) => {
         return vector;
     });
     console.log(sentences, vocab, matrix);
-    const ldaModel = lda(sentences, 10, { 
-        alpha: 0.1,
-        beta: 0.01,
-    });
-    ldaModel.fit( 1000, 100, 10 );
-    const words = ldaModel.getTerms( 0, 10 );
-    console.log("-> ",words);
-
+    const inputLength = lengthOfInput(matrix);
+    const numTopics = Math.floor(numberOfTopics(inputLength));
+    console.log("inputLength", inputLength, "numberOfTopics", numTopics);
+    const result = lda(sentences, numTopics, 5);
+    console.log("lda result", result);
 
 }
 
