@@ -1,6 +1,6 @@
 import winkNLP from 'wink-nlp';
 import model from 'wink-eng-lite-web-model';
-let lda = require('lda');
+import lda from 'lda';
 const nlp = winkNLP(model);
 const MAX_TOPICS = 40;
 const lengthOfInput = (matrix : number[][]) => {
