@@ -5,8 +5,71 @@ import * as use from '@tensorflow-models/universal-sentence-encoder';
 import * as tf from '@tensorflow/tfjs';
 import { emotionalThemes } from './arrayOfDreams';
 const nlp = winkNLP(model);
-const embeddingModel = await use.load();
-const labelEmbeddings = await embeddingModel.embed(emotionalThemes);
+let embeddingModel: use.UniversalSentenceEncoder | null = null;
+let labelEmbeddings: tf.Tensor2D | null = null;
+let isInitialized = false;
+
+// Force CPU backend and initialize properly
+const initializeTensorFlow = async (): Promise<void> => {
+  try {
+    // Try WebGL first, fallback to CPU
+    let backendInitialized = false;
+    
+    try {
+      await tf.setBackend('webgl');
+      await tf.ready();
+      backendInitialized = true;
+      console.log('TensorFlow.js initialized with WebGL backend');
+    } catch (webglError) {
+      console.warn('WebGL backend failed, trying CPU:', webglError);
+      
+      try {
+        await tf.setBackend('cpu');
+        await tf.ready();
+        backendInitialized = true;
+        console.log('TensorFlow.js initialized with CPU backend');
+      } catch (cpuError) {
+        console.error('CPU backend also failed:', cpuError);
+      }
+    }
+    
+    if (!backendInitialized) {
+      throw new Error('No backend could be initialized');
+    }
+    
+    // Verify backend is working
+    const testTensor = tf.tensor1d([1, 2, 3]);
+    testTensor.dispose();
+    
+    console.log('Backend verification successful:', tf.getBackend());
+  } catch (error) {
+    console.error('Failed to initialize TensorFlow.js:', error);
+    throw new Error('TensorFlow.js initialization failed');
+  }
+};
+
+const ensureModelLoaded = async (): Promise<void> => {
+  if (isInitialized && embeddingModel != null && labelEmbeddings != null) {
+    return;
+  }
+  
+  try {
+    await initializeTensorFlow();
+    
+    console.log('Loading Universal Sentence Encoder...');
+    embeddingModel = await use.load();
+    console.log('Model loaded successfully');
+    
+    console.log('Creating label embeddings...');
+    labelEmbeddings = await embeddingModel.embed(emotionalThemes) as unknown as tf.Tensor2D;
+    console.log('Label embeddings created');
+    
+    isInitialized = true;
+  } catch (error) {
+    console.error('Failed to load models:', error);
+    throw new Error('Model loading failed');
+  }
+};
 const MAX_TOPICS = 40;
 const lengthOfInput = (matrix : number[][]) => {
     return matrix.reduce((acc, sentence) => {
@@ -18,6 +81,7 @@ const numberOfTopics = (inputLength : number) => {
         return res >= MAX_TOPICS ? MAX_TOPICS : res;
 }
 export const ldaExecute = async (text : string = testText) => {
+    await ensureModelLoaded();
     const doc = nlp.readDoc( text );
     const sentences = doc.sentences().out();
     const tokenizedSentences = tokenize(sentences);
@@ -58,7 +122,7 @@ export const ldaExecute = async (text : string = testText) => {
     });
     console.log("topic to term matrix : ", topicTermMatrix)
     return {
-        "topicTermMatrixLDA" : topicTermMatrix
+        topicTermMatrixLDA : topicTermMatrix
     }
 
 }
@@ -71,24 +135,32 @@ const cosineSimilarity = (a: tf.Tensor1D, b: tf.Tensor1D): number => {
 };
 
 const topicCoherence = async (topicsTerms: string[]): Promise<string> => {
-  const embeddings: tf.Tensor2D = await embeddingModel.embed(topicsTerms) as unknown as tf.Tensor2D;;
-  const topicEmbedding = tf.mean(embeddings, 0) as tf.Tensor1D;
+if (embeddingModel === null || labelEmbeddings === null || isInitialized != true){
+    return "Something went wrong";
+}
+    const embeddings: tf.Tensor2D = await embeddingModel.embed(topicsTerms) as unknown as tf.Tensor2D;;
+    const topicEmbedding = tf.mean(embeddings, 0) as tf.Tensor1D;
 
-  let bestLabel = '';
-  let bestScore = -1;
+    let bestLabel = '';
+    let bestScore = -1;
 
-  for (let i = 0; i < emotionalThemes.length; i++) {
-    const labelEmbeddingSqueezed = tf.squeeze(
-        tf.slice(labelEmbeddings as unknown as tf.Tensor2D, [i, 0], [1, labelEmbeddings.shape[1]])
-    ) as tf.Tensor1D;
-    const sim = cosineSimilarity(topicEmbedding, labelEmbeddingSqueezed);
-    if (sim > bestScore) {
-      bestScore = sim;
-      bestLabel = emotionalThemes[i];
+    for (let i = 0; i < emotionalThemes.length; i++) {
+        const labelEmbeddingSqueezed = tf.squeeze(
+            tf.slice(labelEmbeddings as unknown as tf.Tensor2D, [i, 0], [1, labelEmbeddings.shape[1]])
+        ) as tf.Tensor1D;
+        const sim = cosineSimilarity(topicEmbedding, labelEmbeddingSqueezed);
+        if (sim > bestScore) {
+            bestScore = sim;
+            bestLabel = emotionalThemes[i];
+            // Clean up intermediate tensors
+            labelEmbeddingSqueezed.dispose();
+        }
     }
-  }
-  console.log("best label: ",bestLabel)
-  return bestLabel;
+        // Clean up tensors
+    embeddings.dispose();
+    topicEmbedding.dispose();
+    console.log("best label: ",bestLabel)
+    return bestLabel;
 };
 
 const tokenize = (text: string[]) => {
