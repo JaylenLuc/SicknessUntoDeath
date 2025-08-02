@@ -79,7 +79,7 @@ const numberOfTopics = (inputLength : number) => {
         const res = (Math.log(inputLength) / Math.log(1.5)) 
         return res >= MAX_TOPICS ? MAX_TOPICS : res;
 }
-export const ldaExecute = async (text : string = testText) => {
+export const ldaExecute = async (text : string) => {
     if (text.length < 10 || text,length > 3000){
         throw new Error('Text invalid');
     }

@@ -1,5 +1,4 @@
 export const emotionalThemes: string[] = [
-  // Emotions & Internal States
   "Joy",
   "Grief",
   "Anxiety",
@@ -16,8 +15,6 @@ export const emotionalThemes: string[] = [
   "Despair",
   "Melancholy",
   "Serenity",
-
-  // Jungian Themes & Archetypes
   "The Shadow",
   "The Self",
   "The Anima",
@@ -33,8 +30,6 @@ export const emotionalThemes: string[] = [
   "Inner Child",
   "Integration",
   "Death-Rebirth",
-
-  // Kierkegaardian & Existential Themes
   "Angst",
   "Authenticity",
   "Despair of the Self",
@@ -50,8 +45,6 @@ export const emotionalThemes: string[] = [
   "Faith",
   "Sickness Unto Death",
   "Becoming",
-
-  // Relational & Social Experience
   "Love",
   "Betrayal",
   "Isolation",
@@ -62,8 +55,6 @@ export const emotionalThemes: string[] = [
   "Intimacy",
   "Abandonment",
   "Trust",
-
-  // Symbolic & Dreamlike Themes
   "Mirror",
   "Labyrinth",
   "Threshold",
