@@ -26,7 +26,7 @@ export default function Dreams() {
         </div>
         <Button
           className="mx-auto mb-8"  
-          onClick={() => ldaExecute()} 
+          onClick={async () => await ldaExecute()} 
         >
           <span>Integrate</span>
         </Button>

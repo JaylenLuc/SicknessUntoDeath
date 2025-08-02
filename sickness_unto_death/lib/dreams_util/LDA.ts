@@ -1,7 +1,12 @@
 import winkNLP from 'wink-nlp';
 import model from 'wink-eng-lite-web-model';
-import lda from 'lda';
+import lda, { TopicTerm } from 'lda';
+import * as use from '@tensorflow-models/universal-sentence-encoder';
+import * as tf from '@tensorflow/tfjs';
+import { emotionalThemes } from './arrayOfDreams';
 const nlp = winkNLP(model);
+const embeddingModel = await use.load();
+const labelEmbeddings = await embeddingModel.embed(emotionalThemes);
 const MAX_TOPICS = 40;
 const lengthOfInput = (matrix : number[][]) => {
     return matrix.reduce((acc, sentence) => {
@@ -12,7 +17,7 @@ const numberOfTopics = (inputLength : number) => {
         const res = (Math.log(inputLength) / Math.log(1.5))
         return res >= MAX_TOPICS ? MAX_TOPICS : res;
 }
-export const ldaExecute = (text : string = testText) => {
+export const ldaExecute = async (text : string = testText) => {
     const doc = nlp.readDoc( text );
     const sentences = doc.sentences().out();
     const tokenizedSentences = tokenize(sentences);
@@ -41,8 +46,50 @@ export const ldaExecute = (text : string = testText) => {
     console.log("inputLength", inputLength, "numberOfTopics", numTopics);
     const result = lda(sentences, numTopics, 5);
     console.log("lda result", result);
+    const topicTermMatrix :  { [key: string]: TopicTerm[] } = {}
+    result.forEach(async wordGroup => {
+        const listOfTerms = wordGroup.map(tt => tt['term']);
+        const topic = await topicCoherence(listOfTerms);
+        if (!(topic in topicTermMatrix)){
+            topicTermMatrix[topic] = wordGroup
+        }else{
+            topicTermMatrix[topic] = [...topicTermMatrix[topic], ...wordGroup ]
+        }
+    });
+    console.log("topic to term matrix : ", topicTermMatrix)
+    return {
+        "topicTermMatrixLDA" : topicTermMatrix
+    }
 
 }
+
+const cosineSimilarity = (a: tf.Tensor1D, b: tf.Tensor1D): number => {
+  const dotProduct = tf.dot(a, b).dataSync()[0];
+  const normA = tf.norm(a).dataSync()[0];
+  const normB = tf.norm(b).dataSync()[0];
+  return dotProduct / (normA * normB);
+};
+
+const topicCoherence = async (topicsTerms: string[]): Promise<string> => {
+  const embeddings: tf.Tensor2D = await embeddingModel.embed(topicsTerms) as unknown as tf.Tensor2D;;
+  const topicEmbedding = tf.mean(embeddings, 0) as tf.Tensor1D;
+
+  let bestLabel = '';
+  let bestScore = -1;
+
+  for (let i = 0; i < emotionalThemes.length; i++) {
+    const labelEmbeddingSqueezed = tf.squeeze(
+        tf.slice(labelEmbeddings as unknown as tf.Tensor2D, [i, 0], [1, labelEmbeddings.shape[1]])
+    ) as tf.Tensor1D;
+    const sim = cosineSimilarity(topicEmbedding, labelEmbeddingSqueezed);
+    if (sim > bestScore) {
+      bestScore = sim;
+      bestLabel = emotionalThemes[i];
+    }
+  }
+  console.log("best label: ",bestLabel)
+  return bestLabel;
+};
 
 const tokenize = (text: string[]) => {
     return text.map(sentence => {

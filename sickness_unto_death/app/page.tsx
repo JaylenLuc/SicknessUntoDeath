@@ -18,7 +18,7 @@ export default function Home() {
             alt="MOOOOOOO" 
             unoptimized={true}
             fill
-            className="inset-0 object-contain transition-opacity duration-0"
+            className="inset-0 object-contain transition-opacity duration-0 touch-none"
           />
         </div>
       </div>
