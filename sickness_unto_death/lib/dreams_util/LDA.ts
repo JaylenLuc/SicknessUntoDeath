@@ -9,10 +9,9 @@ let embeddingModel: use.UniversalSentenceEncoder | null = null;
 let labelEmbeddings: tf.Tensor2D | null = null;
 let isInitialized = false;
 
-// Force CPU backend and initialize properly
 const initializeTensorFlow = async (): Promise<void> => {
   try {
-    // Try WebGL first, fallback to CPU
+
     let backendInitialized = false;
     
     try {
@@ -37,7 +36,6 @@ const initializeTensorFlow = async (): Promise<void> => {
       throw new Error('No backend could be initialized');
     }
     
-    // Verify backend is working
     const testTensor = tf.tensor1d([1, 2, 3]);
     testTensor.dispose();
     
@@ -50,6 +48,7 @@ const initializeTensorFlow = async (): Promise<void> => {
 
 const ensureModelLoaded = async (): Promise<void> => {
   if (isInitialized && embeddingModel != null && labelEmbeddings != null) {
+    console.log("model already loaded")
     return;
   }
   
@@ -77,10 +76,13 @@ const lengthOfInput = (matrix : number[][]) => {
     }, 0);
 }
 const numberOfTopics = (inputLength : number) => {
-        const res = (Math.log(inputLength) / Math.log(1.5))
+        const res = (Math.log(inputLength) / Math.log(1.5)) 
         return res >= MAX_TOPICS ? MAX_TOPICS : res;
 }
 export const ldaExecute = async (text : string = testText) => {
+    if (text.length < 10 || text,length > 3000){
+        throw new Error('Text invalid');
+    }
     await ensureModelLoaded();
     const doc = nlp.readDoc( text );
     const sentences = doc.sentences().out();
