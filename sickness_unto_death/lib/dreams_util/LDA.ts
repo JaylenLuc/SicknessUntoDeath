@@ -140,17 +140,22 @@ const topicCoherence = async (topicsTerms: string[]): Promise<string> => {
 if (embeddingModel === null || labelEmbeddings === null || isInitialized != true){
     return "Something went wrong";
 }
-    const embeddings: tf.Tensor2D = await embeddingModel.embed(topicsTerms) as unknown as tf.Tensor2D;;
+    const embeddings: tf.Tensor2D = await embeddingModel.embed(topicsTerms) as unknown as tf.Tensor2D;
     const topicEmbedding = tf.mean(embeddings, 0) as tf.Tensor1D;
+    const normTopicEmbedding = tf.div(topicEmbedding, tf.norm(topicEmbedding)) as tf.Tensor1D;
+
+    //normalize label embeddings 
+    const normLabelEmbeddings = tf.div(labelEmbeddings, tf.norm(labelEmbeddings, 'euclidean', 1).expandDims(1));
+
 
     let bestLabel = '';
     let bestScore = -1;
 
     for (let i = 0; i < emotionalThemes.length; i++) {
         const labelEmbeddingSqueezed = tf.squeeze(
-            tf.slice(labelEmbeddings as unknown as tf.Tensor2D, [i, 0], [1, labelEmbeddings.shape[1]])
+            tf.slice(normLabelEmbeddings as unknown as tf.Tensor2D, [i, 0], [1, normLabelEmbeddings.shape[1]!])
         ) as tf.Tensor1D;
-        const sim = cosineSimilarity(topicEmbedding, labelEmbeddingSqueezed);
+        const sim = cosineSimilarity(normTopicEmbedding, labelEmbeddingSqueezed);
         if (sim > bestScore) {
             bestScore = sim;
             bestLabel = emotionalThemes[i];
