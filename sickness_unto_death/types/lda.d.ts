@@ -16,4 +16,17 @@ declare module 'lda' {
     numberOfTopics: number,
     termsPerTopic: number
   ): TopicTerm[][];
+  export interface SingletonNode {
+    "id": string,
+    "name": string,
+    "val": string
+  }
+  export interface Link {
+    "source": string,
+    "target": string
+  }
+  export interface Node  {
+    "nodes": SingletonNode[];
+    "links": Link[],
+  }
 }

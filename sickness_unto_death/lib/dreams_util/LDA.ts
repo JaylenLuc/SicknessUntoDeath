@@ -1,14 +1,15 @@
 import winkNLP from 'wink-nlp';
 import model from 'wink-eng-lite-web-model';
-import lda, { TopicTerm } from 'lda';
+import lda, { TopicTerm, SingletonNode, Node } from 'lda';
 import * as use from '@tensorflow-models/universal-sentence-encoder';
 import * as tf from '@tensorflow/tfjs';
 import { emotionalThemes } from './arrayOfDreams';
+import { Munkres } from 'munkres-js';
+const theHungarian = new Munkres();
 const nlp = winkNLP(model);
 let embeddingModel: use.UniversalSentenceEncoder | null = null;
-let labelEmbeddings: tf.Tensor2D | null = null;
+const labelEmbeddings: tf.Tensor1D[] = [];
 let isInitialized = false;
-
 const initializeTensorFlow = async (): Promise<void> => {
   try {
 
@@ -60,8 +61,13 @@ const ensureModelLoaded = async (): Promise<void> => {
     console.log('Model loaded successfully');
     
     console.log('Creating label embeddings...');
-    labelEmbeddings = await embeddingModel.embed(emotionalThemes) as unknown as tf.Tensor2D;
-    console.log('Label embeddings created');
+    for (let i = 0 ; i < emotionalThemes.length; i++){
+      const embeddedEmotion = await embeddingModel.embed(emotionalThemes[i]) as unknown as tf.Tensor2D;
+      const meanEmbedding = tf.mean(embeddedEmotion, 0) as tf.Tensor1D;
+      embeddedEmotion.dispose();
+      labelEmbeddings.push(meanEmbedding);
+    }
+    console.log('Label embeddings created: ', labelEmbeddings);
     
     isInitialized = true;
   } catch (error) {
@@ -76,7 +82,7 @@ const lengthOfInput = (matrix : number[][]) => {
     }, 0);
 }
 const numberOfTopics = (inputLength : number) => {
-        const res = (Math.log(inputLength) / Math.log(1.5)) 
+        const res = (Math.log(inputLength) / Math.log(1.9)) 
         return res >= MAX_TOPICS ? MAX_TOPICS : res;
 }
 export const ldaExecute = async (text : string) => {
@@ -104,7 +110,7 @@ export const ldaExecute = async (text : string) => {
                 vector[index] += 1;
             }
         })
-        return vector;
+        return vector;  
     });
     console.log(sentences, vocab, matrix);
     const inputLength = lengthOfInput(matrix);
@@ -112,22 +118,83 @@ export const ldaExecute = async (text : string) => {
     console.log("inputLength", inputLength, "numberOfTopics", numTopics);
     const result = lda(sentences, numTopics, 5);
     console.log("lda result", result);
-    const topicTermMatrix :  { [key: string]: TopicTerm[] } = {}
-    result.forEach(async wordGroup => {
-        const listOfTerms = wordGroup.map(tt => tt['term']);
-        const topic = await topicCoherence(listOfTerms);
-        if (!(topic in topicTermMatrix)){
-            topicTermMatrix[topic] = wordGroup
-        }else{
-            topicTermMatrix[topic] = [...topicTermMatrix[topic], ...wordGroup ]
-        }
-    });
+    const topicTermMatrix:  { [key: string]: TopicTerm[] } = {}
+    const topicEmbeddings: tf.Tensor1D[] = await Promise.all(
+      result.map(async wordGroup => {
+        const terms = wordGroup.map(w => w.term);
+        // embed returns Tensor2D (terms x embeddingDim), so you might need to average them
+        const embeddings = await embeddingModel!.embed(terms) as unknown as tf.Tensor2D;
+        const meanEmbedding = tf.mean(embeddings, 0) as tf.Tensor1D;
+        embeddings.dispose();
+        return meanEmbedding;
+      })
+    );
+
+    const similarityMatrix: number[][] = topicEmbeddings.map(topicVec =>
+      labelEmbeddings.map(themeVec => cosineSimilarity(topicVec, themeVec))
+    );
+    const costMatrix = similarityMatrix.map(row =>
+      row.map(score => 1 - score)
+    );
+    const assignments = theHungarian.compute(costMatrix);
+    for (const [topicIdx, themeIdx] of assignments) {
+      const label = emotionalThemes[themeIdx];
+      topicTermMatrix[label] = result[topicIdx];
+    }
+    const nodeTree = buildNodes(topicTermMatrix);
     console.log("topic to term matrix : ", topicTermMatrix)
     return {
-        topicTermMatrixLDA : topicTermMatrix
+        topicTermMatrixLDA : topicTermMatrix,
+        nodeTreeLDA : nodeTree
     }
 
 }
+
+  const buildNodes = (topicTermMatrix: {[key: string]: TopicTerm[];}) => {
+    // const adjacencyMatrix = {}
+    const nodes : Node = {
+      "nodes": [],
+      "links": [],
+    }
+    const ldaEntries = Object.entries(topicTermMatrix);
+    ldaEntries.forEach((entry, i) => {
+      const [topic, topicTerm] = entry;
+        const singletonNode : SingletonNode = {
+          "id": `${i}-${topic}`,
+          "name": topic,
+          "val": topic
+        }
+      
+      nodes.nodes.push(singletonNode)
+      console.log(topicTerm);
+
+    })
+
+    //     {
+    //     "nodes": [ 
+    //         { 
+    //           "id": "id1",
+    //           "name": "name1",
+    //           "val": 1 
+    //         },
+    //         { 
+    //           "id": "id2",
+    //           "name": "name2",
+    //           "val": 10 
+    //         },
+    //         ...
+    //     ],
+    //     "links": [
+    //         {
+    //             "source": "id1",
+    //             "target": "id2"
+    //         },
+    //         ...
+    //     ]
+    // }
+    console.log(nodes)
+    return nodes;
+  }
 
 const cosineSimilarity = (a: tf.Tensor1D, b: tf.Tensor1D): number => {
   const dotProduct = tf.dot(a, b).dataSync()[0];
@@ -136,39 +203,6 @@ const cosineSimilarity = (a: tf.Tensor1D, b: tf.Tensor1D): number => {
   return dotProduct / (normA * normB);
 };
 
-const topicCoherence = async (topicsTerms: string[]): Promise<string> => {
-if (embeddingModel === null || labelEmbeddings === null || isInitialized != true){
-    return "Something went wrong";
-}
-    const embeddings: tf.Tensor2D = await embeddingModel.embed(topicsTerms) as unknown as tf.Tensor2D;
-    const topicEmbedding = tf.mean(embeddings, 0) as tf.Tensor1D;
-    const normTopicEmbedding = tf.div(topicEmbedding, tf.norm(topicEmbedding)) as tf.Tensor1D;
-
-    //normalize label embeddings 
-    const normLabelEmbeddings = tf.div(labelEmbeddings, tf.norm(labelEmbeddings, 'euclidean', 1).expandDims(1));
-
-
-    let bestLabel = '';
-    let bestScore = -1;
-
-    for (let i = 0; i < emotionalThemes.length; i++) {
-        const labelEmbeddingSqueezed = tf.squeeze(
-            tf.slice(normLabelEmbeddings as unknown as tf.Tensor2D, [i, 0], [1, normLabelEmbeddings.shape[1]!])
-        ) as tf.Tensor1D;
-        const sim = cosineSimilarity(normTopicEmbedding, labelEmbeddingSqueezed);
-        if (sim > bestScore) {
-            bestScore = sim;
-            bestLabel = emotionalThemes[i];
-            // Clean up intermediate tensors
-            labelEmbeddingSqueezed.dispose();
-        }
-    }
-        // Clean up tensors
-    embeddings.dispose();
-    topicEmbedding.dispose();
-    console.log("best label: ",bestLabel)
-    return bestLabel;
-};
 
 const tokenize = (text: string[]) => {
     return text.map(sentence => {
