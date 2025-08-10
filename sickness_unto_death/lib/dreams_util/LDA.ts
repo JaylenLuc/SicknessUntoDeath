@@ -1,6 +1,6 @@
 import winkNLP from 'wink-nlp';
 import model from 'wink-eng-lite-web-model';
-import lda, { TopicTerm, SingletonNode, Node } from 'lda';
+import lda, { TopicTerm, SingletonNode, NodeTree } from 'lda';
 import * as use from '@tensorflow-models/universal-sentence-encoder';
 import * as tf from '@tensorflow/tfjs';
 import { emotionalThemes } from './arrayOfDreams';
@@ -8,8 +8,12 @@ import { Munkres } from 'munkres-js';
 const theHungarian = new Munkres();
 const nlp = winkNLP(model);
 let embeddingModel: use.UniversalSentenceEncoder | null = null;
-const labelEmbeddings: tf.Tensor1D[] = [];
+const themeEmbeddings: tf.Tensor1D[] = [];
 let isInitialized = false;
+interface LinkTopicStrength {
+  topic : string;
+  probability: number;
+}
 const initializeTensorFlow = async (): Promise<void> => {
   try {
 
@@ -48,7 +52,7 @@ const initializeTensorFlow = async (): Promise<void> => {
 };
 
 const ensureModelLoaded = async (): Promise<void> => {
-  if (isInitialized && embeddingModel != null && labelEmbeddings != null) {
+  if (isInitialized && embeddingModel != null && themeEmbeddings != null) {
     console.log("model already loaded")
     return;
   }
@@ -65,9 +69,9 @@ const ensureModelLoaded = async (): Promise<void> => {
       const embeddedEmotion = await embeddingModel.embed(emotionalThemes[i]) as unknown as tf.Tensor2D;
       const meanEmbedding = tf.mean(embeddedEmotion, 0) as tf.Tensor1D;
       embeddedEmotion.dispose();
-      labelEmbeddings.push(meanEmbedding);
+      themeEmbeddings.push(meanEmbedding);
     }
-    console.log('Label embeddings created: ', labelEmbeddings);
+    console.log('Label embeddings created: ', themeEmbeddings);
     
     isInitialized = true;
   } catch (error) {
@@ -117,6 +121,9 @@ export const ldaExecute = async (text : string) => {
     const numTopics = Math.floor(numberOfTopics(inputLength));
     console.log("inputLength", inputLength, "numberOfTopics", numTopics);
     const result = lda(sentences, numTopics, 5);
+    if (result.length == 0){
+      return null;
+    }
     console.log("lda result", result);
     const topicTermMatrix:  { [key: string]: TopicTerm[] } = {}
     const topicEmbeddings: tf.Tensor1D[] = await Promise.all(
@@ -131,18 +138,18 @@ export const ldaExecute = async (text : string) => {
     );
 
     const similarityMatrix: number[][] = topicEmbeddings.map(topicVec =>
-      labelEmbeddings.map(themeVec => cosineSimilarity(topicVec, themeVec))
+      themeEmbeddings.map(themeVec => cosineSimilarity(topicVec, themeVec))
     );
     const costMatrix = similarityMatrix.map(row =>
       row.map(score => 1 - score)
     );
+    
     const assignments = theHungarian.compute(costMatrix);
     for (const [topicIdx, themeIdx] of assignments) {
       const label = emotionalThemes[themeIdx];
       topicTermMatrix[label] = result[topicIdx];
     }
     const nodeTree = buildNodes(topicTermMatrix);
-    console.log("topic to term matrix : ", topicTermMatrix)
     return {
         topicTermMatrixLDA : topicTermMatrix,
         nodeTreeLDA : nodeTree
@@ -151,14 +158,14 @@ export const ldaExecute = async (text : string) => {
 }
 
   const buildNodes = (topicTermMatrix: {[key: string]: TopicTerm[];}) => {
-    // const adjacencyMatrix = {}
-    const nodes : Node = {
+    const adjacencyLinkMatrix : {[key: string] : LinkTopicStrength[];} = {}
+    const nodes : NodeTree = {
       "nodes": [],
       "links": [],
     }
     const ldaEntries = Object.entries(topicTermMatrix);
     ldaEntries.forEach((entry, i) => {
-      const [topic, topicTerm] = entry;
+      const [topic, topicTermArray] = entry;
         const singletonNode : SingletonNode = {
           "id": `${i}-${topic}`,
           "name": topic,
@@ -166,9 +173,34 @@ export const ldaExecute = async (text : string) => {
         }
       
       nodes.nodes.push(singletonNode)
-      console.log(topicTerm);
+      topicTermArray.forEach(topicterm => {
+        const term = topicterm.term;
+        if (!(term in adjacencyLinkMatrix) ){
+          adjacencyLinkMatrix[term] = [];
+        }
+        const topicStrengthObj = {
+          topic : singletonNode.id,
+          probability : topicterm.probability
+        }
+        adjacencyLinkMatrix[term].push(topicStrengthObj);
+      })
 
     })
+    //build the links from teh adjacency matrix
+    const linkSet = new Set<string>();
+
+    Object.values(adjacencyLinkMatrix).forEach(topicList => {
+      for (let i = 0; i < topicList.length; i++) {
+        for (let j = i + 1; j < topicList.length; j++) {
+          const [a, b] = [topicList[i].topic, topicList[j].topic].sort();
+          const key = `${a}-${b}`;
+          if (!linkSet.has(key)) {
+            linkSet.add(key);
+            nodes.links.push({ source: a, target: b });
+          }
+        }
+      }
+    });
 
     //     {
     //     "nodes": [ 

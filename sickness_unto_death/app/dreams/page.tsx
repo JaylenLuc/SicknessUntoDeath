@@ -5,9 +5,14 @@ import DreamBubble from '@/components/dreams_page/dreamBubble';
 import { Text } from "@/components/retroui/Text";
 import { Button } from "@/components/retroui/Button";
 import { ldaExecute } from '@/lib/dreams_util/LDA';
+import { NodeTree } from 'lda';
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
+const ForceGraph2D = dynamic(() => import('../../components/dreams_page/forceGraph'), { ssr: false });
 export default function Dreams() {
   const [textBubble, setTextBubble] = useState('');
+  const [nodeTree, setNodeTree] = useState<NodeTree | null>(null);
+
   const textBubbleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setTextBubble(event.target.value); 
   }
@@ -48,9 +53,18 @@ export default function Dreams() {
           </div>
         </form>
 
+        {nodeTree && nodeTree.nodes?.length > 0 && nodeTree.links?.length > 0 && (
+          <div className="mb-4 mx-auto max-w-md w-full relative aspect-square border rounded overflow-hidden">
+            <ForceGraph2D graphData={nodeTree} />
+          </div>
+        )}
+
         <Button
           className="mx-auto mb-8"  
-          onClick={async () => await ldaExecute(textBubble)} 
+          onClick={async () => {
+            const nodeTreeRes = await ldaExecute(textBubble);
+            setNodeTree(nodeTreeRes?.nodeTreeLDA ?? null);
+          }} 
         >
           <span>Integrate</span>
         </Button>

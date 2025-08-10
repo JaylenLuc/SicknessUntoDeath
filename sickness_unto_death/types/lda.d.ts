@@ -25,7 +25,7 @@ declare module 'lda' {
     "source": string,
     "target": string
   }
-  export interface Node  {
+  export interface NodeTree  {
     "nodes": SingletonNode[];
     "links": Link[],
   }
