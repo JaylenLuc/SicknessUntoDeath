@@ -68,6 +68,7 @@ export default function Dreams() {
                   muted
                   playsInline
                   webkit-playsinline="true"
+                  preload="auto"
                 />
                 // <Image 
                 //   src="/mindBlown/cat.gif" 
