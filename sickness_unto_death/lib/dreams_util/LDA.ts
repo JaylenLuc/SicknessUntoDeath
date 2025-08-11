@@ -173,7 +173,11 @@ export const ldaExecute = async (text : string) => {
         }
       
       nodes.nodes.push(singletonNode)
+
       topicTermArray.forEach(topicterm => {
+        if (topicterm.probability < 0.038){
+          return;
+        }
         const term = topicterm.term;
         if (!(term in adjacencyLinkMatrix) ){
           adjacencyLinkMatrix[term] = [];

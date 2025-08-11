@@ -11,12 +11,14 @@ export default function ForceGraph({ graphData }: ForceGraphProps) {
     <ForceGraph2D
       graphData={graphData}
       minZoom={0.5}
-      maxZoom={5}      
+      maxZoom={5}
+      width={450}   
+      height={450}   
       nodeAutoColorBy="group"
       nodeCanvasObject={(node: { name: any; id: any; x: number; y: number; color: string; }, ctx: any, globalScale: number) => {
         const label = node.name || node.id || ""; // your node label key here
         const fontSize = 12 / globalScale;
-        ctx.font = `${fontSize}px Sans-Serif`;
+        ctx.font = `${fontSize}px Courier New`;
         const textWidth = ctx.measureText(label).width;
         const bckgDimensions : number[] = [textWidth as number, fontSize as number].map(
           (n) => n + fontSize * 0.2
