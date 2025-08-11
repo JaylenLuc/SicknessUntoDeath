@@ -89,8 +89,8 @@ export default function Dreams() {
             setTreeLoadSuspense(true);
             setNodeTree(null);
             const nodeTreeRes = await ldaExecute(textBubble);
-            setNodeTree(nodeTreeRes?.nodeTreeLDA ?? null);
             await sleep(4000);
+            setNodeTree(nodeTreeRes?.nodeTreeLDA ?? null);
             setTreeLoadSuspense(false);
           }} 
         >
