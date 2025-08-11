@@ -21,8 +21,6 @@ export default function Dreams() {
   
   return (
     <div className="flex flex-col p-8 justify-center min-h-screen sm:p-8 font-[family-name:var(--font-courier-prime)]">
-      {/* Hidden preloader for GIF */}
-      <img src="/mindBlown/cat.gif" alt="" className="hidden" />
       <Text as="h3" className='text-center'>As deep as the Ocean, As grounded as the Soil</Text>
       <div className="flex-1 flex flex-col">
         <div className="flex justify-center">
