@@ -65,9 +65,11 @@ export default function Dreams() {
                 <video 
                   src="/mindBlown/cat.mp4" 
                   className="inset-0 object-contain transition-opacity duration-0 touch-none" 
+                  autoPlay
                   loop
-                  autoPlay 
                   muted
+                  playsInline
+                  webkit-playsinline="true"
                 />
                 // <Image 
                 //   src="/mindBlown/cat.gif" 
