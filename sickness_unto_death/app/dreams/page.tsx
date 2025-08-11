@@ -16,6 +16,7 @@ export default function Dreams() {
   const textBubbleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setTextBubble(event.target.value); 
   }
+  
   return (
     <div className="flex flex-col p-8 justify-center min-h-screen sm:p-8 font-[family-name:var(--font-courier-prime)]">
       <Text as="h3" className='text-center'>As deep as the Ocean, As grounded as the Soil</Text>
