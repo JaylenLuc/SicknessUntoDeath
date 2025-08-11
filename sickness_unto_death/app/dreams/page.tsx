@@ -1,5 +1,5 @@
 "use client"
-import { cn } from '@/lib/utils';
+import { cn, sleep } from '@/lib/utils';
 import Image from 'next/image';
 import DreamBubble from '@/components/dreams_page/dreamBubble';
 import { Text } from "@/components/retroui/Text";
@@ -9,6 +9,7 @@ import { NodeTree } from 'lda';
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
 const ForceGraph2D = dynamic(() => import('../../components/dreams_page/forceGraph'), { ssr: false });
+
 export default function Dreams() {
   const [textBubble, setTextBubble] = useState('');
   const [nodeTree, setNodeTree] = useState<NodeTree | null>(null);
@@ -20,6 +21,8 @@ export default function Dreams() {
   
   return (
     <div className="flex flex-col p-8 justify-center min-h-screen sm:p-8 font-[family-name:var(--font-courier-prime)]">
+      {/* Hidden preloader for GIF */}
+      <img src="/mindBlown/cat.gif" alt="" className="hidden" />
       <Text as="h3" className='text-center'>As deep as the Ocean, As grounded as the Soil</Text>
       <div className="flex-1 flex flex-col">
         <div className="flex justify-center">
@@ -59,7 +62,19 @@ export default function Dreams() {
             { !treeLoadSuspense ? (
               <ForceGraph2D graphData={nodeTree} />
             ) : (
-              <Text>Loading Tree ...</Text>
+                <video 
+                  src="/mindBlown/cat.mp4" 
+                  className="inset-0 object-contain transition-opacity duration-0 touch-none" 
+                  loop
+                  autoPlay 
+                  muted
+                />
+                // <Image 
+                //   src="/mindBlown/cat.gif" 
+                //   alt="The Hungarian is Optimizing Your Latent Dirichlet Clusters, Please Wait I lOve you!" 
+                //   fill
+                //   className="inset-0 object-contain transition-opacity duration-0 touch-none"
+                // />
             )}
           </div>
         )}
@@ -67,10 +82,14 @@ export default function Dreams() {
         <Button
           className="mx-auto mb-8"  
           onClick={async () => {
+            if (textBubble.length < 10 || textBubble.length > 3000){
+              return;
+            }
             setTreeLoadSuspense(true);
             setNodeTree(null);
             const nodeTreeRes = await ldaExecute(textBubble);
             setNodeTree(nodeTreeRes?.nodeTreeLDA ?? null);
+            await sleep(4000);
             setTreeLoadSuspense(false);
           }} 
         >

@@ -86,7 +86,7 @@ const lengthOfInput = (matrix : number[][]) => {
     }, 0);
 }
 const numberOfTopics = (inputLength : number) => {
-        const res = (Math.log(inputLength) / Math.log(1.9)) 
+        const res = (Math.log(inputLength) / Math.log(1.7)) 
         return res >= MAX_TOPICS ? MAX_TOPICS : res;
 }
 export const ldaExecute = async (text : string) => {

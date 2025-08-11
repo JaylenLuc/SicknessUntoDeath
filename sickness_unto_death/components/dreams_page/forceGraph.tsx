@@ -11,7 +11,7 @@ export default function ForceGraph({ graphData }: ForceGraphProps) {
     <ForceGraph2D
       graphData={graphData}
       minZoom={0.5}
-      maxZoom={4}      
+      maxZoom={5}      
       nodeAutoColorBy="group"
       nodeCanvasObject={(node: { name: any; id: any; x: number; y: number; color: string; }, ctx: any, globalScale: number) => {
         const label = node.name || node.id || ""; // your node label key here
