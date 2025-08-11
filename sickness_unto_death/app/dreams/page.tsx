@@ -12,6 +12,7 @@ const ForceGraph2D = dynamic(() => import('../../components/dreams_page/forceGra
 export default function Dreams() {
   const [textBubble, setTextBubble] = useState('');
   const [nodeTree, setNodeTree] = useState<NodeTree | null>(null);
+  const [treeLoadSuspense, setTreeLoadSuspense] = useState(false);
 
   const textBubbleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setTextBubble(event.target.value); 
@@ -53,18 +54,24 @@ export default function Dreams() {
             />
           </div>
         </form>
-
-        {nodeTree && nodeTree.nodes?.length > 0 && nodeTree.links?.length > 0 && (
+        {(treeLoadSuspense === true || (nodeTree && nodeTree.nodes?.length > 0 && nodeTree.links?.length > 0)) && (
           <div className="mb-4 mx-auto max-w-md w-full relative aspect-square border rounded overflow-hidden">
-            <ForceGraph2D graphData={nodeTree} />
+            { !treeLoadSuspense ? (
+              <ForceGraph2D graphData={nodeTree} />
+            ) : (
+              <Text>Loading Tree ...</Text>
+            )}
           </div>
         )}
 
         <Button
           className="mx-auto mb-8"  
           onClick={async () => {
+            setTreeLoadSuspense(true);
+            setNodeTree(null);
             const nodeTreeRes = await ldaExecute(textBubble);
             setNodeTree(nodeTreeRes?.nodeTreeLDA ?? null);
+            setTreeLoadSuspense(false);
           }} 
         >
           <span>Integrate</span>
