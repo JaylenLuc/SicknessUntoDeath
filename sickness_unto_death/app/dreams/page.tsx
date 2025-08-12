@@ -83,7 +83,7 @@ export default function Dreams() {
         <Button
           className="mx-auto mb-8"  
           onClick={async () => {
-            if (textBubble.length < 10 || textBubble.length > 3000){
+            if (treeLoadSuspense === true || textBubble.length < 10 || textBubble.length > 3000){
               return;
             }
             setTreeLoadSuspense(true);
