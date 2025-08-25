@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={`${courierPrime.variable} bg-[#d2b48c] antialiased`}
       >
-        <div className="fixed top-0 left-0 z-50 w-32 h-32">
+        <div className="fixed top-0 left-0 z-50 w-32 h-32 z-9999">
           <DaMenu />
         </div>
         <div className="mt-32 md:mt-0">

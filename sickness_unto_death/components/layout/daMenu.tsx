@@ -20,7 +20,7 @@ export default function DaMenu() {
             />
           </Button>
         </Menu.Trigger>
-        <Menu.Content className="min-w-36 bg-primary text-primary-foreground">
+        <Menu.Content className="min-w-36 bg-primary text-primary-foreground z-999">
             <Menu.Item >
               <Link href="/" className="flex flex-1 hover:bg-[#B39EB5] rounded-[10px]"><LucideLink className="mr-2"/> Home</Link>
             </Menu.Item>

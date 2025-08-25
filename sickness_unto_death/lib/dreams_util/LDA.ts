@@ -71,7 +71,7 @@ const ensureModelLoaded = async (): Promise<void> => {
       embeddedEmotion.dispose();
       themeEmbeddings.push(meanEmbedding);
     }
-    console.log('Label embeddings created: ', themeEmbeddings);
+    //console.log('Label embeddings created: ', themeEmbeddings);
     
     isInitialized = true;
   } catch (error) {
@@ -97,7 +97,7 @@ export const ldaExecute = async (text : string) => {
     const doc = nlp.readDoc( text );
     const sentences = doc.sentences().out();
     const tokenizedSentences = tokenize(sentences);
-    console.log("tokenizedSentences", tokenizedSentences);
+    //console.log("tokenizedSentences", tokenizedSentences);
     const vocab = tokenizedSentences.reduce((acc, sentence) => {
         sentence.forEach(word => {
             if (!acc.includes(word)) {
@@ -116,15 +116,15 @@ export const ldaExecute = async (text : string) => {
         })
         return vector;  
     });
-    console.log(sentences, vocab, matrix);
+    //console.log(sentences, vocab, matrix);
     const inputLength = lengthOfInput(matrix);
     const numTopics = Math.floor(numberOfTopics(inputLength));
-    console.log("inputLength", inputLength, "numberOfTopics", numTopics);
+    //console.log("inputLength", inputLength, "numberOfTopics", numTopics);
     const result = lda(sentences, numTopics, 5);
     if (result.length == 0){
       return null;
     }
-    console.log("lda result", result);
+    //console.log("lda result", result);
     const topicTermMatrix:  { [key: string]: TopicTerm[] } = {}
     const topicEmbeddings: tf.Tensor1D[] = await Promise.all(
       result.map(async wordGroup => {
@@ -228,7 +228,7 @@ export const ldaExecute = async (text : string) => {
     //         ...
     //     ]
     // }
-    console.log(nodes)
+    //console.log(nodes)
     return nodes;
   }
 
