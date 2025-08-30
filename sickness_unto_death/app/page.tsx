@@ -1,6 +1,7 @@
 import { Text } from "@/components/retroui/Text";
 import ArtCon from "@/components/main_page/artCon";
 import MindBlown from "@/components/main_page/mindBlown";
+import ZineStack from "@/components/main_page/zineStack";
 import Link from "next/link";
 import Image from "next/image";
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
             className="inset-0 object-contain transition-opacity duration-0 touch-none"
           />
         </div>
+        <ZineStack/>
       </div>
     </div>
   );

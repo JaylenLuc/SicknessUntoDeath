@@ -14,6 +14,7 @@
     "@tensorflow/tfjs": "^4.22.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.23.12",
     "lda": "^0.2.0",
     "lucide-react": "^0.515.0",
     "munkres-js": "^1.2.2",
