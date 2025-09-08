@@ -23,6 +23,17 @@ export default function Home() {
           />
         </div>
         <ZineStack/>
+        <Link href="https://calamansi-dreamscape.printify.me/">
+          <div className = "relative overflow-hidden w-64 h-64">
+            <Image 
+              src="/art_con/calamansi.gif" 
+              alt="SHOP" 
+              unoptimized={true}
+              fill
+              className="inset-0 object-contain transition-opacity duration-0 touch-none"
+            />
+          </div>
+        </Link>
       </div>
     </div>
   );
