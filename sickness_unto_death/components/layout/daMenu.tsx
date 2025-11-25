@@ -28,6 +28,9 @@ export default function DaMenu() {
               <a href="/dreams" className="flex flex-1 hover:bg-[#B39EB5] rounded-[10px]"><LucideLink className="mr-2"/> Dreams</a>
             </Menu.Item>
             <Menu.Item>
+              <a href="/haplogrouper" className="flex flex-1 hover:bg-[#B39EB5] rounded-[10px]"><LucideLink className="mr-2"/>mtDNA</a>
+            </Menu.Item>
+            <Menu.Item>
               <a href="https://artifical-life.vercel.app" className="flex flex-1 hover:bg-[#B39EB5] rounded-[10px]"><LucideLink className="mr-2"/> Artificial Life</a>
             </Menu.Item>
         </Menu.Content>

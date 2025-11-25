@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phylotree>
+  <haplogroup name="H2a2a1">
+    <details accessionNr="NC_012920" reference="JQ703020"></details>
+    
+    <haplogroup name="H2a2a1a">
+      <details accessionNr="EU795361" reference="EU157923">
+        <poly>15314A</poly>
+      </details>
+    </haplogroup>
+    
+    <haplogroup name="H2a2a1b">
+      <details accessionNr="JQ702287" reference="JQ704346">
+        <poly>9299G</poly>
+      </details>
+    </haplogroup>
+    
+    <haplogroup name="H2a2a1c">
+      <details accessionNr="" reference="">
+        <poly>6632C</poly>
+        <poly>16051G</poly>
+      </details>
+    </haplogroup>
+    
+    <haplogroup name="H2a2a2">
+      <details accessionNr="JQ704269" reference="EU716647">
+        <poly>152C</poly>
+        <poly>6716G</poly>
+      </details>
+    </haplogroup>
+  </haplogroup>
+  
+  <haplogroup name="H2a2a">
+    <details accessionNr="NC_012920" reference="HQ670226">
+      <poly>263G</poly>
+    </details>
+    
+    <haplogroup name="H2a2">
+      <details accessionNr="GU122997" reference="JQ701904">
+        <poly>8860G</poly>
+        <poly>15326G</poly>
+      </details>
+      
+      <haplogroup name="H2a2b">
+        <details accessionNr="HQ914650" reference="EU719115">
+          <poly>16291T</poly>
+        </details>
+        
+        <haplogroup name="H2a2b1">
+          <details accessionNr="JQ705563" reference="JQ705365">
+            <poly>16293G</poly>
+          </details>
+          
+          <haplogroup name="H2a2b1a">
+            <details accessionNr="KC257390" reference="JQ702368">
+              <poly>3388A</poly>
+            </details>
+            
+            <haplogroup name="H2a2b1a1">
+              <details accessionNr="EF418606" reference="JQ704361">
+                <poly>16400T</poly>
+              </details>
+            </haplogroup>
+          </haplogroup>
+        </haplogroup>
+        
+        <haplogroup name="H2a2b2">
+          <details accessionNr="JQ704140" reference="EU444119">
+            <poly>8634C</poly>
+          </details>
+        </haplogroup>
+      </haplogroup>
+      
+      <haplogroup name="H2a">
+        <details accessionNr="JQ704533" reference="JQ703191">
+          <poly>750G</poly>
+        </details>
+        
+        <haplogroup name="H2a1">
+          <details accessionNr="FJ238053" reference="JQ324929">
+            <poly>951A</poly>
+            <poly>16354T</poly>
+          </details>
+          
+          <haplogroup name="H2a1a">
+            <details accessionNr="FJ668389" reference="HQ667351">
+              <poly>6173T</poly>
+              <poly>13095C</poly>
+            </details>
+          </haplogroup>
+          
+          <haplogroup name="H2a1b">
+            <details accessionNr="" reference="">
+              <poly>5978G</poly>
+              <poly>13395G</poly>
+            </details>
+          </haplogroup>
+        </haplogroup>
+        
+        <haplogroup name="H2a3">
+          <details accessionNr="AM263180" reference="">
+            <poly>10810C</poly>
+            <poly>16274A</poly>
+          </details>
+        </haplogroup>
+      </haplogroup>
+    </haplogroup>
+  </haplogroup>
+</phylotree>
