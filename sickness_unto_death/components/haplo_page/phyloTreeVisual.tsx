@@ -19,10 +19,10 @@ export const D3PhyloTree = ({ phyloTree }: { phyloTree: node | null }) => {
     svg.selectAll("*").remove();
 
     // use nodeSize to force spacing
-    const treeLayout = d3.tree<node>().size([nodeSeparationX, nodeSeparationY]);
+    const treeLayout = d3.tree<d3.HierarchyPointNode<node>>().nodeSize([nodeSeparationX, nodeSeparationY]);
 
     const root = d3.hierarchy<node>(phyloTree);
-    treeLayout(root); // compute x/y positions
+    treeLayout(root as any); 
 
     // compute extents to size the svg properly
     const xMin = d3.min(root.descendants(), d => d.x) ?? 0;
