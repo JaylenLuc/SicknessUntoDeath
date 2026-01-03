@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Traversal Tracker",
+  "version": "1.0",
+  "permissions": ["tabs", "webNavigation"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://effective-disco-xq46q7rqqp53pvpw-3000.app.github.dev/gnostikos_session"],
+      "js": ["content.js"]
+    }
+  ],
+    "action": {
+    "default_title": "Open Traversal Session",
+        "default_icon": {
+          "48": "gnost.jpg"
+    }
+  } 
+  
+}
