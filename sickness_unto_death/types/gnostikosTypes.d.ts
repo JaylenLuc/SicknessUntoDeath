@@ -1,4 +1,4 @@
-export declare interface session {
+export declare interface sessionGraph {
   nodes: {
     [nodeId: number]: {
       url: string
