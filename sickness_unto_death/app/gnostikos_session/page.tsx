@@ -11,30 +11,41 @@ export default function SessionPage() {
     const [graph, setGraph] = useState<sessionGraph | null>(null)
     const [mode, setMode] = useState<Mode>(Mode.DEMO)
     const [session, setSession] = useState(null)
-  useEffect(() => {
-    window.postMessage({ type: "GET_SESSION" }, "*")
-
-    const handler = (event: MessageEvent) => {
-        //is session data received from content.js the mediattor between nextJs and Background JS crawler LOGIC
-        if (event.data?.type === "SESSION_DATA") {
-            setSession(event.data.session)
-            setMode(Mode.EXT)
-            setGraph(event.data.graph)
-            console.log("EXT")
-        }else{
-            setMode(Mode.DEMO)
-            console.log("DEMO")
-        }
+    const requestSession = () => {
+        window.postMessage({ type: "GET_SESSION" }, "*")
     }
 
-    window.addEventListener("message", handler)
-    return () => window.removeEventListener("message", handler)
-  }, [])
+    useEffect(() => {
+        requestSession()
+
+        const interval = setInterval(requestSession, 1000) 
+
+        const handler = (event: MessageEvent) => {
+            if (event.data?.type === "SESSION_DATA") {
+                setSession(event.data.session)
+                setMode(Mode.EXT)
+                setGraph({
+                    nodes: event.data.session.nodes,
+                    urlToNodeId: event.data.session.urlToNodeId,
+                    edges: event.data.session.edges,
+                    cursor: event.data.session.cursor,
+                    step: event.data.session.step
+                })
+            }
+        }
+
+        window.addEventListener("message", handler)
+
+        return () => {
+            clearInterval(interval)
+            window.removeEventListener("message", handler)
+        }
+    }, [])
 
     let inner;
     if (mode === Mode.DEMO){
 
-        inner = <h1>Gnostic Caravan not loaded or active</h1>
+        inner = <h1>Gnostic Caravan not loaded or active UNDER BETA</h1>
     }
     else if (session ===  null) {
         inner = <h1>Session not loaded</h1>

@@ -2,7 +2,8 @@
   "manifest_version": 3,
   "name": "Traversal Tracker",
   "version": "1.0",
-  "permissions": ["tabs", "webNavigation"],
+  "permissions": ["tabs", "webNavigation", "storage"],
+  "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
   },
@@ -12,11 +13,18 @@
       "js": ["content.js"]
     }
   ],
-    "action": {
-    "default_title": "Open Traversal Session",
-        "default_icon": {
-          "48": "gnost.jpg"
-    }
-  } 
+  "action": {
+      "default_title": "Open Traversal Session",
+      "default_icon": {
+        "16": "gnost.jpg",
+        "48": "gnost.jpg",
+        "128": "gnost.jpg"
+      }
+    } ,
+    "icons": {
+    "16": "gnost.jpg",
+    "48": "gnost.jpg",
+    "128": "gnost.jpg"
+  }
   
 }
