@@ -32,12 +32,12 @@ export default function SessionPage() {
   }, [])
 
     let inner;
-     if (mode === Mode.DEMO){
+    if (mode === Mode.DEMO){
 
         inner = <h1>Gnostic Caravan not loaded or active</h1>
     }
     else if (session ===  null) {
-         inner = <h1>Session not loaded</h1>
+        inner = <h1>Session not loaded</h1>
     }
     else if (graph ===  null) {
         inner = <h1>TRAVERSAL DATUM STRUCTURE NOT LOADED</h1>
