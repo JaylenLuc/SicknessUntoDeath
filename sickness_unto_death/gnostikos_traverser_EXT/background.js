@@ -1,6 +1,6 @@
 let sessionId = crypto.randomUUID();
 
-const session = {
+let session = {
   nodes: {},
   urlToNodeId: {},
   edges: [],
@@ -41,11 +41,22 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (msg.type === "GET_SESSION") {
     sendResponse(session);
   }
+  if (msg.type === "CLEAR_SESSION") {
+    session = {
+      nodes: {},
+      urlToNodeId: {},
+      edges: [],
+      cursor: null,
+      step: 0
+    }
+    sendResponse({ ok: true })
+  }
 });
 
 chrome.action.onClicked.addListener(() => {
   chrome.tabs.create({
-    url: "https://effective-disco-xq46q7rqqp53pvpw-3000.app.github.dev/gnostikos_session"
+    url: " https://sickness-unto-death.vercel.app/gnostikos_session"
   });
 });
 // PROD : https://sickness-unto-death.vercel.app/gnostikos_session
+// DEV "https://effective-disco-xq46q7rqqp53pvpw-3000.app.github.dev/gnostikos_session"

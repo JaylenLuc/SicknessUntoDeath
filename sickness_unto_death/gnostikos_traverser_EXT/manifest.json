@@ -9,22 +9,22 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://effective-disco-xq46q7rqqp53pvpw-3000.app.github.dev/*"],
+      "matches": [" https://sickness-unto-death.vercel.app/*"],
       "js": ["content.js"]
     }
   ],
   "action": {
       "default_title": "Open Traversal Session",
       "default_icon": {
-        "16": "gnost.jpg",
-        "48": "gnost.jpg",
-        "128": "gnost.jpg"
+        "16": "gnost16.png",
+        "48": "gnost48.png",
+        "128": "gnost128.png"
       }
     } ,
     "icons": {
-    "16": "gnost.jpg",
-    "48": "gnost.jpg",
-    "128": "gnost.jpg"
+    "16": "gnost16.png",
+    "48": "gnost48.png",
+    "128": "gnost128.png"
   }
   
 }

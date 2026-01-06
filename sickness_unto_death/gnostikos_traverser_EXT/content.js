@@ -7,4 +7,9 @@ window.addEventListener("message", (event) => {
       )
     })
   }
+  if (event.data?.type === "CLEAR_SESSION") {
+    chrome.runtime.sendMessage({ type: "CLEAR_SESSION" }, () => {
+      window.postMessage({ type: "SESSION_CLEARED" }, "*")
+    })
+  }
 })
