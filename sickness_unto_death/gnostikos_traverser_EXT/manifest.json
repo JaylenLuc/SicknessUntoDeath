@@ -9,7 +9,7 @@
   },
   "content_scripts": [
     {
-      "matches": [" https://sickness-unto-death.vercel.app/*"],
+      "matches": ["https://sickness-unto-death.vercel.app/*"],
       "js": ["content.js"]
     }
   ],
