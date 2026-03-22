@@ -15,15 +15,17 @@ export default function Home() {
         <Link href="/haplogrouper">
           <MindBlown />
         </Link>
-        <div className = "relative overflow-hidden w-64 h-64">
-          <Image 
-            src="/mindBlown/MOONGif2.gif" 
-            alt="MOOOOOOO" 
-            unoptimized={true}
-            fill
-            className="inset-0 object-contain transition-opacity duration-0 touch-none"
-          />
-        </div>
+        <Link href="/gnostikos_session">
+          <div className = "relative overflow-hidden w-64 h-64">
+            <Image 
+              src="/mindBlown/MOONGif2.gif" 
+              alt="MOOOOOOO" 
+              unoptimized={true}
+              fill
+              className="inset-0 object-contain transition-opacity duration-0 touch-none"
+            />
+          </div>
+        </Link>
         <ZineStack/>
         <Link href="https://calamansi-dreamscape.printify.me/">
           <div className = "relative overflow-hidden w-64 h-64">
@@ -33,6 +35,20 @@ export default function Home() {
               unoptimized={true}
               fill
               className="inset-0 object-contain transition-opacity duration-0 touch-none"
+            />
+          </div>
+        </Link>
+        <Link href="https://canarydisambiguation.itch.io/">
+          <div className = "relative overflow-hidden w-64 h-64">
+            <video 
+              src="/plant.mp4" 
+              className="inset-0 object-contain transition-opacity duration-0 touch-none" 
+              autoPlay
+              loop
+              muted
+              playsInline
+              webkit-playsinline="true"
+              preload="auto"
             />
           </div>
         </Link>
