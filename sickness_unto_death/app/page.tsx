@@ -39,7 +39,7 @@ export default function Home() {
           </div>
         </Link>
         <Link href="https://canarydisambiguation.itch.io/">
-          <div className = "relative overflow-hidden w-64 h-64">
+          <div className = "relative overflow-hidden w-64 h-64 rounded">
             <video 
               src="/plant.mp4" 
               className="inset-0 object-contain transition-opacity duration-0 touch-none" 
