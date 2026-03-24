@@ -12,8 +12,36 @@ export default function Home() {
         <Link href="/dreams">
           <ArtCon />
         </Link>
+        <Link href="https://canarydisambiguation.itch.io/">
+          <div className = "relative overflow-hidden w-64 h-64 rounded">
+            <video 
+              src="/plant.mp4" 
+              className="inset-0 object-contain transition-opacity duration-0 touch-none" 
+              autoPlay
+              loop
+              muted
+              playsInline
+              webkit-playsinline="true"
+              preload="auto"
+            />
+          </div>
+        </Link>
         <Link href="/haplogrouper">
           <MindBlown />
+        </Link>
+        <Link href="https://www.youtube.com/watch?v=QOowQeKyNkQ">
+          <div className = "relative overflow-hidden w-64 h-64 rounded">
+            <video 
+              src="/memories.mp4" 
+              className="inset-0 object-contain transition-opacity duration-0 touch-none" 
+              autoPlay
+              loop
+              muted
+              playsInline
+              webkit-playsinline="true"
+              preload="auto"
+            />
+          </div>
         </Link>
         <Link href="/gnostikos_session">
           <div className = "relative overflow-hidden w-64 h-64">
@@ -35,20 +63,6 @@ export default function Home() {
               unoptimized={true}
               fill
               className="inset-0 object-contain transition-opacity duration-0 touch-none"
-            />
-          </div>
-        </Link>
-        <Link href="https://canarydisambiguation.itch.io/">
-          <div className = "relative overflow-hidden w-64 h-64 rounded">
-            <video 
-              src="/plant.mp4" 
-              className="inset-0 object-contain transition-opacity duration-0 touch-none" 
-              autoPlay
-              loop
-              muted
-              playsInline
-              webkit-playsinline="true"
-              preload="auto"
             />
           </div>
         </Link>
