@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface LazyVideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
   src: string;
@@ -7,10 +7,15 @@ interface LazyVideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
 
 export default function LazyVideo({ src, ...props }: LazyVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     const videoElement = videoRef.current;
     if (!videoElement) return;
+
+    const handleError = () => {
+      setHasError(true);
+    };
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -29,8 +34,21 @@ export default function LazyVideo({ src, ...props }: LazyVideoProps) {
     );
 
     observer.observe(videoElement);
-    return () => observer.disconnect();
+    videoElement.addEventListener('error', handleError);
+
+    return () => {
+      observer.disconnect();
+      videoElement.removeEventListener('error', handleError);
+    };
   }, []);
+
+  if (hasError) {
+    return (
+      <div className="w-full h-full flex items-center justify-center bg-black text-white text-center p-4">
+        <p className="text-sm">portal isn't showing, it may be because low power mode is on</p>
+      </div>
+    );
+  }
 
   return (
     <video ref={videoRef} src={src} {...props} />
