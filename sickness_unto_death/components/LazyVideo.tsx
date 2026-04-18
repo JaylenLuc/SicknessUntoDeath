@@ -30,8 +30,12 @@ export default function LazyVideo({ src, ...props }: LazyVideoProps) {
           // Start timeout when video becomes visible
           if (timeoutRef.current) clearTimeout(timeoutRef.current);
           timeoutRef.current = setTimeout(() => {
-            if (videoElement.readyState === 0) {
-              // readyState 0 = HAVE_NOTHING (no data loaded)
+            // Check if video has any real data loaded
+            const hasData = videoElement.readyState > 1 || 
+                           (videoElement.duration && videoElement.duration > 0);
+            
+            if (!hasData) {
+              console.warn('Video failed to load - showing fallback');
               setHasError(true);
             }
           }, 5000);
