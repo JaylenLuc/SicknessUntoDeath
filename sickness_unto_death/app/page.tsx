@@ -66,6 +66,20 @@ export default function Home() {
             />
           </div>
         </Link>
+        <Link href="https://en.wikipedia.org/wiki/Sun_Yat-sen">
+          <div className = "relative overflow-hidden w-64 h-64 rounded">
+            <video 
+              src="/sun.mp4" 
+              className="inset-0 object-contain transition-opacity duration-0 touch-none mix-blend-multiply" 
+              autoPlay
+              loop
+              muted
+              playsInline
+              webkit-playsinline="true"
+              preload="auto"
+            />
+          </div>
+        </Link>
       </div>
     </div>
   );
