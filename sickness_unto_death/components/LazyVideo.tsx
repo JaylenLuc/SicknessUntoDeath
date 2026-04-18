@@ -45,7 +45,7 @@ export default function LazyVideo({ src, ...props }: LazyVideoProps) {
   if (hasError) {
     return (
       <div className="w-full h-full flex items-center justify-center bg-black text-white text-center p-4">
-        <p className="text-sm">portal isn't showing, it may be because low power mode is on</p>
+        <p className="text-sm">portal is not showing, it may be because low power mode is on</p>
       </div>
     );
   }
