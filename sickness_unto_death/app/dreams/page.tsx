@@ -8,6 +8,7 @@ import { ldaExecute } from '@/lib/dreams_util/LDA';
 import { NodeTree } from 'lda';
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
+import LazyVideo from '@/components/LazyVideo';
 const ForceGraph2D = dynamic(() => import('../../components/dreams_page/forceGraph'), { ssr: false });
 
 export default function Dreams() {
@@ -60,15 +61,13 @@ export default function Dreams() {
             { !treeLoadSuspense ? (
               <ForceGraph2D graphData={nodeTree} />
             ) : (
-                <video 
+                <LazyVideo 
                   src="/mindBlown/cat.mp4" 
                   className="inset-0 object-contain transition-opacity duration-0 touch-none" 
-                  autoPlay
                   loop
                   muted
                   playsInline
-                  webkit-playsinline="true"
-                  preload="auto"
+                  preload="metadata"
                 />
                 // <Image 
                 //   src="/mindBlown/cat.gif" 

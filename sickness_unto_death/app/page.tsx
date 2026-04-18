@@ -4,6 +4,7 @@ import MindBlown from "@/components/main_page/mindBlown";
 import ZineStack from "@/components/main_page/zineStack";
 import Link from "next/link";
 import Image from "next/image";
+import LazyVideo from "@/components/LazyVideo";
 export default function Home() {
   return (
     <div className="justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-courier-prime)]">
@@ -14,15 +15,13 @@ export default function Home() {
         </Link>
         <Link href="https://canarydisambiguation.itch.io/">
           <div className = "relative overflow-hidden w-64 h-64 rounded">
-            <video 
+            <LazyVideo 
               src="/plant.mp4" 
               className="inset-0 object-contain transition-opacity duration-0 touch-none" 
-              autoPlay
               loop
               muted
               playsInline
-              webkit-playsinline="true"
-              preload="auto"
+              preload="metadata"
             />
           </div>
         </Link>
@@ -31,15 +30,13 @@ export default function Home() {
         </Link>
         <Link href="https://www.youtube.com/watch?v=QOowQeKyNkQ">
           <div className = "relative overflow-hidden w-64 h-64 rounded">
-            <video 
+            <LazyVideo 
               src="/memories.mp4" 
               className="inset-0 object-contain transition-opacity duration-0 touch-none" 
-              autoPlay
               loop
               muted
               playsInline
-              webkit-playsinline="true"
-              preload="auto"
+              preload="metadata"
             />
           </div>
         </Link>
@@ -68,15 +65,13 @@ export default function Home() {
         </Link>
         <Link href="https://en.wikipedia.org/wiki/Sun_Yat-sen">
           <div className = "relative overflow-hidden w-64 h-64 rounded">
-            <video 
+            <LazyVideo 
               src="/sun.mp4" 
               className="inset-0 object-contain transition-opacity duration-0 touch-none mix-blend-multiply" 
-              autoPlay
               loop
               muted
               playsInline
-              webkit-playsinline="true"
-              preload="auto"
+              preload="metadata"
             />
           </div>
         </Link>
