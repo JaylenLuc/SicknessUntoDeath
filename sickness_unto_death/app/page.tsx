@@ -1,3 +1,5 @@
+"use client";
+
 import { Text } from "@/components/retroui/Text";
 import ArtCon from "@/components/main_page/artCon";
 import MindBlown from "@/components/main_page/mindBlown";
@@ -5,7 +7,23 @@ import ZineStack from "@/components/main_page/zineStack";
 import Link from "next/link";
 import Image from "next/image";
 import LazyVideo from "@/components/LazyVideo";
+import { useEffect, useRef } from "react";
+
 export default function Home() {
+  const calamansiRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const img = calamansiRef.current;
+    if (!img) return;
+
+    // Restart the GIF every 10 seconds to keep it looping
+    const interval = setInterval(() => {
+      const currentSrc = img.src.split('?')[0];
+      img.src = currentSrc + '?' + new Date().getTime();
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-courier-prime)]">
       <Text as="h3" className="text-center -z-20">Let the wind carry</Text>
@@ -55,6 +73,7 @@ export default function Home() {
         <Link href="https://calamansi-dreamscape.printify.me/">
           <div className = "relative overflow-hidden w-64 h-64">
             <Image 
+              ref={calamansiRef}
               src="/art_con/calamansi.gif" 
               alt="SHOP" 
               unoptimized={true}
