@@ -20,7 +20,7 @@ export default function Home() {
     const interval = setInterval(() => {
       const currentSrc = img.src.split('?')[0];
       img.src = currentSrc + '?' + new Date().getTime();
-    }, 10000);
+    }, 50000);
 
     return () => clearInterval(interval);
   }, []);
