@@ -83,9 +83,9 @@ export default function HandTracker() {
             videoRef.current.play();
             // Match canvas pixel size to the video so coordinates line up
             if (canvasRef.current) {
-              canvasRef.current.width = videoRef.current.videoWidth;
-              canvasRef.current.height = videoRef.current.videoHeight;
-            }
+                canvasRef.current.width = videoRef.current.videoWidth;
+                canvasRef.current.height = videoRef.current.videoHeight;
+              }
             animationFrameId = requestAnimationFrame(processVideoFrame);
           };
         }
@@ -100,34 +100,23 @@ export default function HandTracker() {
   }, []);
 
   return (
-    <div style={{ position: 'relative', width: '640px', height: '480px', margin: '0 auto' }}>
-      <video
-        ref={videoRef}
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '640px',
-          height: '480px',
-          transform: 'scaleX(-1)',   // mirror so it feels like a mirror
-          backgroundColor: '#000',
-          objectFit: 'cover'
-        }}
-        playsInline
-        muted
-      />
-      <canvas
-        ref={canvasRef}
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '640px',
-          height: '480px',
-          transform: 'scaleX(-1)',   // mirror to match the video
-          pointerEvents: 'none'
-        }}
-      />
-    </div>
-  );
+      <div className="mb-4 mx-auto max-w-md w-full relative aspect-[4/3] border rounded overflow-hidden bg-[#25cb91]">
+        <video
+          ref={videoRef}
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{
+            transform: 'scaleX(-1)'
+          }}
+          playsInline
+          muted
+        />
+        <canvas
+          ref={canvasRef}
+          className="absolute inset-0 h-full w-full pointer-events-none"
+          style={{
+            transform: 'scaleX(-1)'
+          }}
+        />
+      </div>
+    );
 }
