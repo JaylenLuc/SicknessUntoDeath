@@ -69,8 +69,7 @@ export default function HandTracker() {
       minTrackingConfidence: 0.5
     });
 
-    // ---- Draw the results onto the overlay canvas ----
-    handsInstance.onResults((results) => {
+  handsInstance.onResults((results) => {
     const canvasEl = canvasRef.current;
     if (!canvasEl) return;
 
@@ -83,30 +82,35 @@ export default function HandTracker() {
 
     const connections = window.HAND_CONNECTIONS || [];
 
-    if (results.multiHandLandmarks) {
-      for (const landmarks of results.multiHandLandmarks) {
-        ctx.strokeStyle = '#00FF88';
-        ctx.lineWidth = 3;
+    if (!results.multiHandLandmarks || results.multiHandLandmarks.length === 0) {
+      setFormula((prevFormula) => (prevFormula === '' ? prevFormula : ''));
+      return;
+    }
 
-        for (const [startIdx, endIdx] of connections) {
-          const a = landmarks[startIdx];
-          const b = landmarks[endIdx];
+    for (const landmarks of results.multiHandLandmarks) {
+      ctx.strokeStyle = '#00FF88';
+      ctx.lineWidth = 3;
 
-          ctx.beginPath();
-          ctx.moveTo(a.x * w, a.y * h);
-          ctx.lineTo(b.x * w, b.y * h);
-          ctx.stroke();
-        }
+      for (const [startIdx, endIdx] of connections) {
+        const a = landmarks[startIdx];
+        const b = landmarks[endIdx];
 
-        ctx.fillStyle = '#FF0066';
-        const gesture = recognizeGesture(landmarks);
-        const character = GESTURE_TO_CHARACTER[gesture];
-        setFormula(character);  
-        for (const point of landmarks) {
-          ctx.beginPath();
-          ctx.arc(point.x * w, point.y * h, 4, 0, 2 * Math.PI);
-          ctx.fill();
-        }
+        ctx.beginPath();
+        ctx.moveTo(a.x * w, a.y * h);
+        ctx.lineTo(b.x * w, b.y * h);
+        ctx.stroke();
+      }
+
+      ctx.fillStyle = '#FF0066';
+
+      const gesture = recognizeGesture(landmarks);
+      const nextFormula = gesture ? GESTURE_TO_CHARACTER[gesture] : '';
+      setFormula((prevFormula) => (prevFormula === nextFormula ? prevFormula : nextFormula));
+
+      for (const point of landmarks) {
+        ctx.beginPath();
+        ctx.arc(point.x * w, point.y * h, 4, 0, 2 * Math.PI);
+        ctx.fill();
       }
     }
   });
@@ -147,24 +151,25 @@ export default function HandTracker() {
   }, []);
 
   return (
-    <div className="mb-4 mx-auto w-full max-w-md relative aspect-[4/3] border rounded overflow-hidden bg-[#25cb91]">
-      <video
-        ref={videoRef}
-        className="absolute inset-0 h-full w-full object-contain"
-        style={{ transform: 'scaleX(-1)' }}
-        playsInline
-        muted
-      />
+    <div>
+      <div className="mb-4 mx-auto w-full max-w-md relative aspect-[4/3] border rounded overflow-hidden bg-[#25cb91]">
+        <video
+          ref={videoRef}
+          className="absolute inset-0 h-full w-full object-contain"
+          style={{ transform: 'scaleX(-1)' }}
+          playsInline
+          muted
+        />
 
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 h-full w-full pointer-events-none"
-        style={{ transform: 'scaleX(-1)' }}
-      />
-
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded bg-black/70 px-5 py-2 text-5xl text-white">
-        {formula}
+        <canvas
+          ref={canvasRef}
+          className="absolute inset-0 h-full w-full pointer-events-none"
+          style={{ transform: 'scaleX(-1)' }}
+        />
       </div>
+        <div className="min-h-[4rem] flex flex-col justify-center items-center text-4xl">
+          {formula || '\u00A0'}
+        </div>
     </div>
   );
 }
