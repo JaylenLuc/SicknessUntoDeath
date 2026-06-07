@@ -24,7 +24,7 @@ export default function DaoistFormulas() {
       {isScriptReady ? (
         <HandTracker />
       ) : (
-        <div style={{ width: '640px', height: '480px', backgroundColor: '#111', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto' }}>
+        <div className="mb-4 mx-auto max-w-md w-full relative aspect-square border rounded overflow-hidden">
           Loading Hand Tracking Engine...
         </div>
       )}
