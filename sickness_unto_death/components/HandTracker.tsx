@@ -1,10 +1,54 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import { canvas } from 'framer-motion/m';
+import React, { useEffect, useRef, useState } from 'react';
 
 export default function HandTracker() {
-  const videoRef = useRef(null);
-  const canvasRef = useRef(null);
+    const GESTURE_TO_CHARACTER = {
+    fist: '石',
+    one: '一',
+    two: '二',
+    three: '三',
+    open: '手'
+  };
+    function isFingerExtended(landmarks, tipIdx, pipIdx) {
+    return landmarks[tipIdx].y < landmarks[pipIdx].y;
+  }
 
+  function recognizeGesture(landmarks) {
+    const index = isFingerExtended(landmarks, 8, 6);
+    const middle = isFingerExtended(landmarks, 12, 10);
+    const ring = isFingerExtended(landmarks, 16, 14);
+    const pinky = isFingerExtended(landmarks, 20, 18);
+
+    const extendedCount = [index, middle, ring, pinky].filter(Boolean).length;
+
+    if (extendedCount === 0) return 'fist';
+    if (index && !middle && !ring && !pinky) return 'one';
+    if (index && middle && !ring && !pinky) return 'two';
+    if (index && middle && ring && !pinky) return 'three';
+    if (extendedCount === 4) return 'open';
+
+    return null;
+  }
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const [formula, setFormula] = useState(''); // State to hold the recognized formula character
+  function resizeCanvasToDisplaySize(canvas) {
+    const rect = canvas.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+
+    canvas.width = Math.round(rect.width * dpr);
+    canvas.height = Math.round(rect.height * dpr);
+
+    const ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    return {
+      ctx,
+      width: rect.width,
+      height: rect.height
+    };
+  }
   useEffect(() => {
     if (typeof window === 'undefined' || !videoRef.current) return;
 
@@ -28,40 +72,45 @@ export default function HandTracker() {
 
     // ---- Draw the results onto the overlay canvas ----
     handsInstance.onResults((results) => {
-      const canvas = canvasRef.current;
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      const w = canvas.width;
-      const h = canvas.height;
+    const canvasEl = canvasRef.current;
+    if (!canvasEl) return;
 
-      ctx.clearRect(0, 0, w, h);
+    const resized = resizeCanvasToDisplaySize(canvasEl);
+    if (!resized) return;
 
-      const connections = window.HAND_CONNECTIONS || [];
+    const { ctx, width: w, height: h } = resized;
 
-      if (results.multiHandLandmarks) {
-        for (const landmarks of results.multiHandLandmarks) {
-          // Draw the bones (connections between landmarks)
-          ctx.strokeStyle = '#00FF88';
-          ctx.lineWidth = 3;
-          for (const [startIdx, endIdx] of connections) {
-            const a = landmarks[startIdx];
-            const b = landmarks[endIdx];
-            ctx.beginPath();
-            ctx.moveTo(a.x * w, a.y * h);
-            ctx.lineTo(b.x * w, b.y * h);
-            ctx.stroke();
-          }
+    ctx.clearRect(0, 0, w, h);
 
-          // Draw the joints (the 21 landmark points)
-          ctx.fillStyle = '#FF0066';
-          for (const point of landmarks) {
-            ctx.beginPath();
-            ctx.arc(point.x * w, point.y * h, 4, 0, 2 * Math.PI);
-            ctx.fill();
-          }
+    const connections = window.HAND_CONNECTIONS || [];
+
+    if (results.multiHandLandmarks) {
+      for (const landmarks of results.multiHandLandmarks) {
+        ctx.strokeStyle = '#00FF88';
+        ctx.lineWidth = 3;
+
+        for (const [startIdx, endIdx] of connections) {
+          const a = landmarks[startIdx];
+          const b = landmarks[endIdx];
+
+          ctx.beginPath();
+          ctx.moveTo(a.x * w, a.y * h);
+          ctx.lineTo(b.x * w, b.y * h);
+          ctx.stroke();
+        }
+
+        ctx.fillStyle = '#FF0066';
+        const gesture = recognizeGesture(landmarks);
+        const character = GESTURE_TO_CHARACTER[gesture];
+        setFormula(character);  
+        for (const point of landmarks) {
+          ctx.beginPath();
+          ctx.arc(point.x * w, point.y * h, 4, 0, 2 * Math.PI);
+          ctx.fill();
         }
       }
-    });
+    }
+  });
 
     const processVideoFrame = async () => {
       if (videoRef.current?.readyState === videoRef.current?.HAVE_ENOUGH_DATA && handsInstance) {
@@ -81,7 +130,6 @@ export default function HandTracker() {
           videoRef.current.srcObject = userStream;
           videoRef.current.onloadedmetadata = () => {
             videoRef.current.play();
-            // Match canvas pixel size to the video so coordinates line up
             if (canvasRef.current) {
                 canvasRef.current.width = videoRef.current.videoWidth;
                 canvasRef.current.height = videoRef.current.videoHeight;
@@ -100,23 +148,24 @@ export default function HandTracker() {
   }, []);
 
   return (
-      <div className="mb-4 mx-auto max-w-md w-full relative aspect-[4/3] border rounded overflow-hidden bg-[#25cb91]">
-        <video
-          ref={videoRef}
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{
-            transform: 'scaleX(-1)'
-          }}
-          playsInline
-          muted
-        />
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 h-full w-full pointer-events-none"
-          style={{
-            transform: 'scaleX(-1)'
-          }}
-        />
+    <div className="mb-4 mx-auto w-full max-w-md relative aspect-[4/3] border rounded overflow-hidden bg-[#25cb91]">
+      <video
+        ref={videoRef}
+        className="absolute inset-0 h-full w-full object-contain"
+        style={{ transform: 'scaleX(-1)' }}
+        playsInline
+        muted
+      />
+
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 h-full w-full pointer-events-none"
+        style={{ transform: 'scaleX(-1)' }}
+      />
+
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded bg-black/70 px-5 py-2 text-5xl text-white">
+        {formula}
       </div>
-    );
+    </div>
+  );
 }
