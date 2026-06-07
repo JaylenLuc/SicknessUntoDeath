@@ -8,7 +8,9 @@
       one: '一',
       two: '二',
       three: '三',
-      open: '手'
+      open: '手',
+      four: '四',
+      goldenDragonSeal: '黄金雙龍印'
     };
 
     const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -16,9 +18,200 @@
     const [formula, setFormula] = useState('');
     const [videoAspectRatio, setVideoAspectRatio] = useState('4 / 3');
 
+    function palmNormalZ(landmarks: any[]) {
+      const wrist = landmarks[0];
+      const indexMcp = landmarks[5];
+      const pinkyMcp = landmarks[17];
+
+      const a = {
+        x: indexMcp.x - wrist.x,
+        y: indexMcp.y - wrist.y,
+        z: (indexMcp.z || 0) - (wrist.z || 0)
+      };
+
+      const b = {
+        x: pinkyMcp.x - wrist.x,
+        y: pinkyMcp.y - wrist.y,
+        z: (pinkyMcp.z || 0) - (wrist.z || 0)
+      };
+
+      return a.x * b.y - a.y * b.x;
+    }
+
+  function isPalmFacingCamera(hand: any) {
+    const normalZ = palmNormalZ(hand.landmarks);
+
+    // For your mirrored display / MediaPipe setup, this sign is usually the usable one.
+    // If palm/back is reversed, swap > and < here.
+    return hand.label === 'Right' ? normalZ < 0 : normalZ > 0;
+  }
+
+  function isBackOfHandFacingCamera(hand: any) {
+    return !isPalmFacingCamera(hand);
+  }
+
+ function recognizeGoldenDragonSeal(results: any) {
+    const hands = results.multiHandLandmarks;
+    if (!hands || hands.length < 2) return false;
+
+    const fingerMap = {
+      index: [5, 6, 8],
+      middle: [9, 10, 12],
+      ring: [13, 14, 16],
+      pinky: [17, 18, 20]
+    } as const;
+
+    type FingerName = keyof typeof fingerMap;
+
+    function dist(a: any, b: any) {
+      return Math.hypot(a.x - b.x, a.y - b.y);
+    }
+
+    function fingerIsOut(landmarks: any[], finger: FingerName) {
+      const [mcp, pip, tip] = fingerMap[finger];
+
+      const extended =
+        dist(landmarks[0], landmarks[tip]) >
+        dist(landmarks[0], landmarks[pip]) * 1.18;
+
+      const horizontal =
+        Math.abs(landmarks[tip].x - landmarks[mcp].x) >
+        Math.abs(landmarks[tip].y - landmarks[mcp].y) * 1.15;
+
+      return extended && horizontal;
+    }
+
+    function getOutFingers(landmarks: any[]) {
+      return (Object.keys(fingerMap) as FingerName[]).filter((finger) =>
+        fingerIsOut(landmarks, finger)
+      );
+    }
+
+    function avgTip(landmarks: any[], fingers: FingerName[]) {
+      return fingers.reduce(
+        (sum, finger) => {
+          const tip = fingerMap[finger][2];
+
+          return {
+            x: sum.x + landmarks[tip].x / fingers.length,
+            y: sum.y + landmarks[tip].y / fingers.length,
+            z: sum.z + (landmarks[tip].z || 0) / fingers.length
+          };
+        },
+        { x: 0, y: 0, z: 0 }
+      );
+    }
+
+    function avgVector(landmarks: any[], fingers: FingerName[]) {
+      return fingers.reduce(
+        (sum, finger) => {
+          const [mcp, , tip] = fingerMap[finger];
+
+          return {
+            x: sum.x + (landmarks[tip].x - landmarks[mcp].x) / fingers.length,
+            y: sum.y + (landmarks[tip].y - landmarks[mcp].y) / fingers.length
+          };
+        },
+        { x: 0, y: 0 }
+      );
+    }
+
+  function palmSide(landmarks: any[]) {
+    const wrist = landmarks[0];
+    const indexMcp = landmarks[5];
+    const pinkyMcp = landmarks[17];
+
+    return Math.sign(
+      (indexMcp.x - wrist.x) * (pinkyMcp.y - wrist.y) -
+        (indexMcp.y - wrist.y) * (pinkyMcp.x - wrist.x)
+    );
+  }
+
+  function normalizedPalmSide(hand: any) {
+    // Left and right hands have opposite raw signs for the same palm/back direction.
+    // This makes "palm toward camera" comparable across both hands.
+    return hand.label === 'Left' ? hand.side * -1 : hand.side;
+  }
+
+  const analyzedHands = hands.map((landmarks: any[], index: number) => {
+    const outFingers = getOutFingers(landmarks);
+
+    return {
+      landmarks,
+      label: results.multiHandedness?.[index]?.label,
+      outFingers,
+      count: outFingers.length,
+      side: palmSide(landmarks)
+    };
+  });
+
+    const twoFingerHand = analyzedHands.find((hand: any) => hand.count === 2);
+    const threeFingerHand = analyzedHands.find((hand: any) => hand.count === 3);
+
+    if (!twoFingerHand || !threeFingerHand) return false;
+
+    const twoTips = avgTip(twoFingerHand.landmarks, twoFingerHand.outFingers);
+    const threeTips = avgTip(threeFingerHand.landmarks, threeFingerHand.outFingers);
+
+    const twoVector = avgVector(twoFingerHand.landmarks, twoFingerHand.outFingers);
+    const threeVector = avgVector(threeFingerHand.landmarks, threeFingerHand.outFingers);
+
+    const tipsAreClose =
+      Math.abs(twoTips.x - threeTips.x) < 0.35 &&
+      Math.abs(twoTips.y - threeTips.y) < 0.2;
+
+    const fingersFaceEachOther = twoVector.x * threeVector.x < 0;
+
+    const twoFingerHandIsInFront =
+      Math.abs(twoTips.z - threeTips.z) < 0.15 || twoTips.z < threeTips.z;
+
+  const twoSide = normalizedPalmSide(twoFingerHand);
+  const threeSide = normalizedPalmSide(threeFingerHand);
+
+  const handsFaceOppositeWays =
+    twoSide !== 0 &&
+    threeSide !== 0 &&
+    twoSide !== threeSide;
+
+    return (
+      tipsAreClose &&
+      fingersFaceEachOther &&
+      twoFingerHandIsInFront &&
+      handsFaceOppositeWays
+    );
+  }
+
+
+  // - Index finger:
+  //     - 5 = base knuckle / MCP
+  //     - 6 = middle knuckle / PIP
+  //     - 7 = upper knuckle / DIP
+  //     - 8 = fingertip
+
     function isFingerExtended(landmarks: any[], tipIdx: number, pipIdx: number) {
       return landmarks[tipIdx].y < landmarks[pipIdx].y;
     }
+    function isOkSign(landmarks: any[]) {
+      const thumbTip = landmarks[4];
+      const indexTip = landmarks[8];
+      const wrist = landmarks[0];
+      const middleMcp = landmarks[9];
+
+      const handScale = Math.hypot(
+        middleMcp.x - wrist.x,
+        middleMcp.y - wrist.y
+    );
+
+    const thumbIndexTouching =
+      Math.hypot(thumbTip.x - indexTip.x, thumbTip.y - indexTip.y) <
+      handScale * 0.45;
+
+    const middle = isFingerExtended(landmarks, 12, 10);
+    const ring = isFingerExtended(landmarks, 16, 14);
+    const pinky = isFingerExtended(landmarks, 20, 18);
+
+    return thumbIndexTouching && middle && ring && pinky;
+  }
 
     function recognizeGesture(landmarks: any[]) {
       const index = isFingerExtended(landmarks, 8, 6);
@@ -32,7 +225,8 @@
       if (index && !middle && !ring && !pinky) return 'one';
       if (index && middle && !ring && !pinky) return 'two';
       if (index && middle && ring && !pinky) return 'three';
-      if (extendedCount === 4) return 'open';
+      if (isOkSign(landmarks)) return 'three'; 
+      if (extendedCount === 4) return 'four';
 
       return null;
     }
@@ -63,6 +257,7 @@
 
       if (canvasRatio > videoRatio) {
         const width = canvasRect.height * videoRatio;
+
         return {
           x: (canvasRect.width - width) / 2,
           y: 0,
@@ -72,6 +267,7 @@
       }
 
       const height = canvasRect.width / videoRatio;
+
       return {
         x: 0,
         y: (canvasRect.height - height) / 2,
@@ -124,17 +320,34 @@
 
         ctx.clearRect(0, 0, w, h);
 
-        const connections = (window as any).HAND_CONNECTIONS || [];
-
         if (!results.multiHandLandmarks || results.multiHandLandmarks.length === 0) {
           setFormula((prevFormula) => (prevFormula === '' ? prevFormula : ''));
           return;
         }
 
+        const isGoldenDragonSeal = recognizeGoldenDragonSeal(results);
+
+        if (isGoldenDragonSeal) {
+          setFormula((prevFormula) =>
+            prevFormula === GESTURE_TO_CHARACTER.goldenDragonSeal
+              ? prevFormula
+              : GESTURE_TO_CHARACTER.goldenDragonSeal
+          );
+        } else {
+          const gesture = recognizeGesture(results.multiHandLandmarks[0]);
+          const nextFormula = gesture ? GESTURE_TO_CHARACTER[gesture] : '';
+
+          setFormula((prevFormula) =>
+            prevFormula === nextFormula ? prevFormula : nextFormula
+          );
+        }
+
+        const connections = (window as any).HAND_CONNECTIONS || [];
+
         for (const landmarks of results.multiHandLandmarks) {
-          ctx.strokeStyle = '#38f89e';
+          ctx.strokeStyle = '#f59e0b';
           ctx.lineWidth = 3;
-          ctx.fillStyle = '#3b3ef4';
+          ctx.fillStyle = '#3b82f6';
 
           for (const [startIdx, endIdx] of connections) {
             const a = toCanvasPoint(landmarks[startIdx], videoRect);
@@ -145,10 +358,6 @@
             ctx.lineTo(b.x, b.y);
             ctx.stroke();
           }
-
-          const gesture = recognizeGesture(landmarks);
-          const nextFormula = gesture ? GESTURE_TO_CHARACTER[gesture] : '';
-          setFormula((prevFormula) => (prevFormula === nextFormula ? prevFormula : nextFormula));
 
           for (const point of landmarks) {
             const p = toCanvasPoint(point, videoRect);
