@@ -36,6 +36,9 @@ export default function DaMenu() {
             <Menu.Item>
               <a href="https://artifical-life.vercel.app" className="flex flex-1 hover:bg-[#B39EB5] rounded-[10px]"><LucideLink className="mr-2"/> Artificial Life</a>
             </Menu.Item>
+            <Menu.Item>
+              <a href="https://artifical-life.vercel.app" className="flex flex-1 hover:bg-[#B39EB5] rounded-[10px]"><LucideLink className="mr-2"/> Doaist subduction</a>
+            </Menu.Item>
         </Menu.Content>
     </Menu>
   );
