@@ -165,13 +165,10 @@
     const twoFingerHandIsInFront =
       Math.abs(twoTips.z - threeTips.z) < 0.15 || twoTips.z < threeTips.z;
 
-  const twoSide = normalizedPalmSide(twoFingerHand);
-  const threeSide = normalizedPalmSide(threeFingerHand);
-
-  const handsFaceOppositeWays =
-    twoSide !== 0 &&
-    threeSide !== 0 &&
-    twoSide !== threeSide;
+    const handsFaceOppositeWays =
+      twoFingerHand.side !== 0 &&
+      threeFingerHand.side !== 0 &&
+      twoFingerHand.side !== threeFingerHand.side;
 
     return (
       tipsAreClose &&
