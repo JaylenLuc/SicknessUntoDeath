@@ -18,37 +18,40 @@
     const [formula, setFormula] = useState('');
     const [videoAspectRatio, setVideoAspectRatio] = useState('4 / 3');
 
-    function palmNormalZ(landmarks: any[]) {
-      const wrist = landmarks[0];
-      const indexMcp = landmarks[5];
-      const pinkyMcp = landmarks[17];
+ const SWAP_HANDEDNESS = true;
+  const FLIP_PALM_SIGN = false;
 
-      const a = {
-        x: indexMcp.x - wrist.x,
-        y: indexMcp.y - wrist.y,
-        z: (indexMcp.z || 0) - (wrist.z || 0)
-      };
+  function handLabel(hand: any) {
+    if (!SWAP_HANDEDNESS) return hand.label;
+    return hand.label === 'Left' ? 'Right' : hand.label === 'Right' ? 'Left' : hand.label;
+  }
 
-      const b = {
-        x: pinkyMcp.x - wrist.x,
-        y: pinkyMcp.y - wrist.y,
-        z: (pinkyMcp.z || 0) - (wrist.z || 0)
-      };
+  function palmSide(landmarks: any[]) {
+    const wrist = landmarks[0];
+    const indexMcp = landmarks[5];
+    const pinkyMcp = landmarks[17];
 
-      return a.x * b.y - a.y * b.x;
-    }
+    const side = Math.sign(
+      (indexMcp.x - wrist.x) * (pinkyMcp.y - wrist.y) -
+        (indexMcp.y - wrist.y) * (pinkyMcp.x - wrist.x)
+    );
+
+    return FLIP_PALM_SIGN ? side * -1 : side;
+  }
+
+  function normalizedPalmSide(hand: any) {
+    const label = handLabel(hand);
+    return label === 'Left' ? hand.side * -1 : hand.side;
+  }
 
   function isPalmFacingCamera(hand: any) {
-    const normalZ = palmNormalZ(hand.landmarks);
-
-    // For your mirrored display / MediaPipe setup, this sign is usually the usable one.
-    // If palm/back is reversed, swap > and < here.
-    return hand.label === 'Right' ? normalZ < 0 : normalZ > 0;
+    return normalizedPalmSide(hand) > 0;
   }
 
   function isBackOfHandFacingCamera(hand: any) {
-    return !isPalmFacingCamera(hand);
+    return normalizedPalmSide(hand) < 0;
   }
+
 
  function recognizeGoldenDragonSeal(results: any) {
     const hands = results.multiHandLandmarks;
@@ -116,23 +119,6 @@
       );
     }
 
-  function palmSide(landmarks: any[]) {
-    const wrist = landmarks[0];
-    const indexMcp = landmarks[5];
-    const pinkyMcp = landmarks[17];
-
-    return Math.sign(
-      (indexMcp.x - wrist.x) * (pinkyMcp.y - wrist.y) -
-        (indexMcp.y - wrist.y) * (pinkyMcp.x - wrist.x)
-    );
-  }
-
-  function normalizedPalmSide(hand: any) {
-    // Left and right hands have opposite raw signs for the same palm/back direction.
-    // This makes "palm toward camera" comparable across both hands.
-    return hand.label === 'Left' ? hand.side * -1 : hand.side;
-  }
-
   const analyzedHands = hands.map((landmarks: any[], index: number) => {
     const outFingers = getOutFingers(landmarks);
 
@@ -145,8 +131,22 @@
     };
   });
 
-    const twoFingerHand = analyzedHands.find((hand: any) => hand.count === 2);
-    const threeFingerHand = analyzedHands.find((hand: any) => hand.count === 3);
+
+  const twoFingerHand = analyzedHands.find(
+    (hand: any) =>
+      hand.count === 2 &&
+      handLabel(hand) === 'Right' &&
+      isPalmFacingCamera(hand)
+  );
+
+  const threeFingerHand = analyzedHands.find(
+    (hand: any) =>
+      hand.count === 3 &&
+      handLabel(hand) === 'Left' &&
+      isBackOfHandFacingCamera(hand)
+  );
+
+
 
     if (!twoFingerHand || !threeFingerHand) return false;
 
@@ -165,17 +165,10 @@
     const twoFingerHandIsInFront =
       Math.abs(twoTips.z - threeTips.z) < 0.15 || twoTips.z < threeTips.z;
 
-    const handsFaceOppositeWays =
-      twoFingerHand.side !== 0 &&
-      threeFingerHand.side !== 0 &&
-      twoFingerHand.side !== threeFingerHand.side;
 
-    return (
-      tipsAreClose &&
-      fingersFaceEachOther &&
-      twoFingerHandIsInFront &&
-      handsFaceOppositeWays
-    );
+    return tipsAreClose && fingersFaceEachOther && twoFingerHandIsInFront;
+
+
   }
 
 
