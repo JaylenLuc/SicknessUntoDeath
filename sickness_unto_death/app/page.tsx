@@ -82,7 +82,7 @@ export default function Home() {
             />
           </div>
         </Link>
-        <Link href="https://en.wikipedia.org/wiki/Sun_Yat-sen">
+        <Link href="/daoist_formulas">
           <div className = "relative overflow-hidden w-64 h-64 rounded">
             <LazyVideo 
               src="/sun.mp4" 

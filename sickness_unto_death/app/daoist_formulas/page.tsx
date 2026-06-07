@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import Script from 'next/script';
 import { Text } from "@/components/retroui/Text";
 
-const HandTracker = dynamic(() => import('./HandTracker'), { ssr: false });
+const HandTracker = dynamic(() => import('../../components/HandTracker'), { ssr: false });
 
 export default function DaoistFormulas() {
   const [isScriptReady, setIsScriptReady] = useState(false);
