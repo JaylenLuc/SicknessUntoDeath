@@ -119,32 +119,41 @@
       );
     }
 
-  const analyzedHands = hands.map((landmarks: any[], index: number) => {
-    const outFingers = getOutFingers(landmarks);
+    const analyzedHands = hands.map((landmarks: any[], index: number) => {
+      const outFingers = getOutFingers(landmarks);
 
-    return {
-      landmarks,
-      label: results.multiHandedness?.[index]?.label,
-      outFingers,
-      count: outFingers.length,
-      side: palmSide(landmarks)
-    };
-  });
+      return {
+        landmarks,
+        label: results.multiHandedness?.[index]?.label,
+        outFingers,
+        count: outFingers.length,
+        side: palmSide(landmarks)
+      };
+    });
 
+    function hasExactOutFingers(
+      outFingers: FingerName[],
+      expected: FingerName[]
+    ) {
+      return (
+        outFingers.length === expected.length &&
+        expected.every((finger) => outFingers.includes(finger))
+      );
+    }
 
-  const twoFingerHand = analyzedHands.find(
-    (hand: any) =>
-      hand.count === 2 &&
-      handLabel(hand) === 'Right' &&
-      isPalmFacingCamera(hand)
-  );
+    const twoFingerHand = analyzedHands.find(
+      (hand: any) =>
+        handLabel(hand) === 'Right' &&
+        isPalmFacingCamera(hand) &&
+        hasExactOutFingers(hand.outFingers, ['index', 'middle'])
+    );
 
-  const threeFingerHand = analyzedHands.find(
-    (hand: any) =>
-      hand.count === 3 &&
-      handLabel(hand) === 'Left' &&
-      isBackOfHandFacingCamera(hand)
-  );
+    const threeFingerHand = analyzedHands.find(
+      (hand: any) =>
+        handLabel(hand) === 'Left' &&
+        isBackOfHandFacingCamera(hand) &&
+        hasExactOutFingers(hand.outFingers, ['index', 'middle', 'ring'])
+    );
 
 
 
@@ -164,9 +173,16 @@
 
     const twoFingerHandIsInFront =
       Math.abs(twoTips.z - threeTips.z) < 0.15 || twoTips.z < threeTips.z;
+      const rightHandIsAboveLeftHand = twoTips.y < threeTips.y;
 
 
-    return tipsAreClose && fingersFaceEachOther && twoFingerHandIsInFront;
+    return (
+      tipsAreClose &&
+      fingersFaceEachOther &&
+      twoFingerHandIsInFront &&
+      rightHandIsAboveLeftHand
+    );
+
 
 
   }
