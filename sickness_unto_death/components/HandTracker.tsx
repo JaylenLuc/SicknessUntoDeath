@@ -52,72 +52,82 @@
     return normalizedPalmSide(hand) < 0;
   }
 
+  const fingerMap = {
+    index: [5, 6, 8],
+    middle: [9, 10, 12],
+    ring: [13, 14, 16],
+    pinky: [17, 18, 20]
+  } as const;
+
+  type FingerName = keyof typeof fingerMap;
+
+  function dist(a: any, b: any) {
+    return Math.hypot(a.x - b.x, a.y - b.y);
+  }
+
+  function fingerIsOut(landmarks: any[], finger: FingerName) {
+    const [mcp, pip, tip] = fingerMap[finger];
+
+    const extended =
+      dist(landmarks[0], landmarks[tip]) >
+      dist(landmarks[0], landmarks[pip]) * 1.18;
+
+    const horizontal =
+      Math.abs(landmarks[tip].x - landmarks[mcp].x) >
+      Math.abs(landmarks[tip].y - landmarks[mcp].y) * 1.15;
+
+    return extended && horizontal;
+  }
+
+  function getOutFingers(landmarks: any[]) {
+    return (Object.keys(fingerMap) as FingerName[]).filter((finger) =>
+      fingerIsOut(landmarks, finger)
+    );
+  }
+
+  function avgTip(landmarks: any[], fingers: FingerName[]) {
+    return fingers.reduce(
+      (sum, finger) => {
+        const tip = fingerMap[finger][2];
+
+        return {
+          x: sum.x + landmarks[tip].x / fingers.length,
+          y: sum.y + landmarks[tip].y / fingers.length,
+          z: sum.z + (landmarks[tip].z || 0) / fingers.length
+        };
+      },
+      { x: 0, y: 0, z: 0 }
+    );
+  }
+
+  function avgVector(landmarks: any[], fingers: FingerName[]) {
+    return fingers.reduce(
+      (sum, finger) => {
+        const [mcp, , tip] = fingerMap[finger];
+
+        return {
+          x: sum.x + (landmarks[tip].x - landmarks[mcp].x) / fingers.length,
+          y: sum.y + (landmarks[tip].y - landmarks[mcp].y) / fingers.length
+        };
+      },
+      { x: 0, y: 0 }
+    );
+  }
+
+  function hasExactOutFingers(
+    outFingers: FingerName[],
+    expected: FingerName[]
+  ) {
+    return (
+      outFingers.length === expected.length &&
+      expected.every((finger) => outFingers.includes(finger))
+    );
+  }
+
 
  function recognizeGoldenDragonSeal(results: any) {
     const hands = results.multiHandLandmarks;
     if (!hands || hands.length < 2) return false;
-
-    const fingerMap = {
-      index: [5, 6, 8],
-      middle: [9, 10, 12],
-      ring: [13, 14, 16],
-      pinky: [17, 18, 20]
-    } as const;
-
-    type FingerName = keyof typeof fingerMap;
-
-    function dist(a: any, b: any) {
-      return Math.hypot(a.x - b.x, a.y - b.y);
-    }
-
-    function fingerIsOut(landmarks: any[], finger: FingerName) {
-      const [mcp, pip, tip] = fingerMap[finger];
-
-      const extended =
-        dist(landmarks[0], landmarks[tip]) >
-        dist(landmarks[0], landmarks[pip]) * 1.18;
-
-      const horizontal =
-        Math.abs(landmarks[tip].x - landmarks[mcp].x) >
-        Math.abs(landmarks[tip].y - landmarks[mcp].y) * 1.15;
-
-      return extended && horizontal;
-    }
-
-    function getOutFingers(landmarks: any[]) {
-      return (Object.keys(fingerMap) as FingerName[]).filter((finger) =>
-        fingerIsOut(landmarks, finger)
-      );
-    }
-
-    function avgTip(landmarks: any[], fingers: FingerName[]) {
-      return fingers.reduce(
-        (sum, finger) => {
-          const tip = fingerMap[finger][2];
-
-          return {
-            x: sum.x + landmarks[tip].x / fingers.length,
-            y: sum.y + landmarks[tip].y / fingers.length,
-            z: sum.z + (landmarks[tip].z || 0) / fingers.length
-          };
-        },
-        { x: 0, y: 0, z: 0 }
-      );
-    }
-
-    function avgVector(landmarks: any[], fingers: FingerName[]) {
-      return fingers.reduce(
-        (sum, finger) => {
-          const [mcp, , tip] = fingerMap[finger];
-
-          return {
-            x: sum.x + (landmarks[tip].x - landmarks[mcp].x) / fingers.length,
-            y: sum.y + (landmarks[tip].y - landmarks[mcp].y) / fingers.length
-          };
-        },
-        { x: 0, y: 0 }
-      );
-    }
 
     const analyzedHands = hands.map((landmarks: any[], index: number) => {
       const outFingers = getOutFingers(landmarks);
@@ -130,16 +140,6 @@
         side: palmSide(landmarks)
       };
     });
-
-    function hasExactOutFingers(
-      outFingers: FingerName[],
-      expected: FingerName[]
-    ) {
-      return (
-        outFingers.length === expected.length &&
-        expected.every((finger) => outFingers.includes(finger))
-      );
-    }
 
     const twoFingerHand = analyzedHands.find(
       (hand: any) =>
@@ -182,8 +182,6 @@
       twoFingerHandIsInFront &&
       rightHandIsAboveLeftHand
     );
-
-
 
   }
 
