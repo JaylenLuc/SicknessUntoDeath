@@ -94,6 +94,17 @@ export default function Home() {
             />
           </div>
         </Link>
+        <Link href="">
+          <div className = "relative overflow-hidden w-64 h-64">
+            <Image 
+              src="/planet.gif" 
+              alt="yayyyyyyy" 
+              unoptimized={true}
+              fill
+              className="inset-0 object-contain transition-opacity duration-0 touch-none"
+            />
+          </div>
+        </Link>
       </div>
     </div>
   );
