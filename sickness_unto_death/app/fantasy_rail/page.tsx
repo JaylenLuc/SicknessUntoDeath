@@ -9,7 +9,7 @@ export default function FantasyRail() {
       <Text as="h3" className='text-center'>
         Revival of the Relict Los Angeles Rail System
       </Text>
-      <div className="mt-6 h-[70vh] min-h-[400px] w-[50vw] min-w-0 overflow-hidden justify-self-center self-center">
+      <div className="mt-6 aspect-[4/3] w-[min(90vw,1000px)] min-w-0 overflow-hidden self-center">
         <FantasyRailMap />
       </div>
     </div>
