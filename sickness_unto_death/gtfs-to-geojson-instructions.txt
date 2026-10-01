@@ -1,0 +1,57 @@
+## Step 3: Generate LA Metro GeoJSON
+
+  Install the converter:
+
+  npm install --save-dev gtfs-to-geojson
+
+  Create gtfs-config.json in the project root:
+
+  {
+    "agencies": [
+      {
+        "agencyKey": "la-metro-rail",
+        "url": "https://gitlab.com/LACMTA/gtfs_rail/raw/master/gtfs_rail.zip"
+      }
+    ],
+    "outputType": "agency",
+    "outputFormat": "lines-and-stops",
+    "coordinatePrecision": 5,
+    "verbose": true,
+    "zipOutput": false
+  }
+
+  Add this script to package.json:
+
+  {
+    "scripts": {
+      "metro:generate": "gtfs-to-geojson --configPath gtfs-config.json"
+    }
+  }
+
+  Keep your existing scripts alongside it:
+
+  {
+    "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "eslint",
+      "metro:generate": "gtfs-to-geojson --configPath gtfs-config.json"
+    }
+  }
+
+  Run the conversion:
+
+  npm run metro:generate
+
+  This should:
+
+  1. Download the latest official rail GTFS.
+  2. Import the routes, shapes, and stops.
+  3. Generate a geojson/ directory in your project.
+
+  Don’t rename or move the generated file yet. Once the command completes, reply ready and
+  paste the filenames created inside geojson/. We’ll inspect the output and add the correct
+  MapLibre layers next.
+
+

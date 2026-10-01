@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "metro:generate": "gtfs-to-geojson --configPath gtfs-config.json"
   },
   "dependencies": {
     "@mediapipe/hands": "^0.4.1675469240",
@@ -26,15 +27,19 @@
     "install": "^0.13.0",
     "lda": "^0.2.0",
     "lucide-react": "^0.515.0",
+    "maplibre-gl": "^6.11.2",
     "munkres-js": "^1.2.2",
     "next": "15.3.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-force-graph": "^1.48.0",
     "react-force-graph-2d": "^1.28.0",
+    "react-map-gl": "^8.1.3",
     "tailwind-merge": "^3.3.1",
     "wink-eng-lite-web-model": "^1.8.1",
-    "wink-nlp": "^2.4.0"
+    "wink-nlp": "^2.4.0",
+    "zod": "^4.6.5",
+    "zustand": "^5.0.15"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -45,6 +50,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
+    "gtfs-to-geojson": "^3.8.8",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.4",
     "typescript": "^5"

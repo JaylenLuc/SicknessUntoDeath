@@ -1,0 +1,8 @@
+Feed Version: Unknown
+GTFS-to-geoJSON Version: 3.8.8
+Date Generated: Thu Oct 01 2026 22:16:39 GMT+0000 (Coordinated Universal Time)
+Route Count: 0
+Shape Count: 0
+GeoJSON File Count: 1
+Output Type: agency
+Source: https://gitlab.com/LACMTA/gtfs_rail/raw/master/gtfs_rail.zip

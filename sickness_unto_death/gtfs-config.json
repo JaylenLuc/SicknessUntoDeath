@@ -1,0 +1,13 @@
+  {
+    "agencies": [
+      {
+        "agencyKey": "la-metro-rail",
+        "url": "https://gitlab.com/LACMTA/gtfs_rail/raw/master/gtfs_rail.zip"
+      }
+    ],
+    "outputType": "agency",
+    "outputFormat": "lines-and-stops",
+    "coordinatePrecision": 5,
+    "verbose": true,
+    "zipOutput": false
+  }
