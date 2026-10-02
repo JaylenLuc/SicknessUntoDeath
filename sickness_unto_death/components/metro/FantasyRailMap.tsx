@@ -57,7 +57,7 @@ function LayerToggleButton({
       aria-pressed={active}
       onClick={onClick}
       className={[
-        "w-full justify-start",
+        "w-full justify-start gap-1 px-1.5 py-0.5 text-[11px] sm:gap-1 sm:px-1 sm:py-0.25 sm:text-xs lg:gap-2 lg:px-4 lg:py-1.5 lg:text-base",
         colorClassName,
         !active ? "opacity-60" : "",
       ].join(" ")}
@@ -257,13 +257,13 @@ export default function FantasyRailMap() {
 
   return (
     <div className="relative h-full w-full">
-      <div className="absolute left-4 top-4 z-10 w-56 border-2 border-black bg-white p-3
-      shadow-[4px_4px_0_#000]">
-        <Text as="p" className="mb-3 font-bold">
+      <div className="absolute left-1.5 top-1.5 z-10 w-36 border-2 border-black bg-white p-1.5
+      shadow-[4px_4px_0_#000] sm:left-2 sm:top-2 sm:w-44 sm:p-2 lg:left-4 lg:top-4 lg:w-56 lg:p-3">
+        <Text as="p" className="mb-1.5 text-xs font-bold sm:mb-2 sm:text-sm lg:mb-3 lg:text-base">
           Map Layers
         </Text>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-1 sm:gap-1.5 lg:gap-2">
           <LayerToggleButton
             active={visibleLayers.existingMetro}
             label="LA Metro 2026"
