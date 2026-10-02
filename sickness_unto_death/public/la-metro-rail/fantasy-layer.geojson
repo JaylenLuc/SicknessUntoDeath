@@ -30,7 +30,7 @@
             [-118.384107, 34.084935],
             [-118.361554, 34.090779],
             [-118.344092, 34.090696],
-            [-118.3386, 34.0906],
+            [-118.338620, 34.090712],
             [-118.326638, 34.090742],
             [-118.309194, 34.090767],
             [-118.291743, 34.090863],
@@ -48,6 +48,239 @@
         },
         {
         "type": "Feature",
+        "id": "k-line-extension",
+        "properties": {
+            "id": "k-line-extension",
+            "routeId": "K",
+            "name": "K Line Extension",
+            "color": "#E56DB1",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-118.334850, 34.022160],
+                [-118.335005, 34.032577],
+                [-118.331056, 34.039869],
+                [-118.326716, 34.047821],
+                [-118.322983, 34.054644],
+                [-118.319157, 34.061731],
+                [-118.327627, 34.061915],
+                [-118.338421, 34.062118],
+                [-118.338625, 34.068906],
+                [-118.338511, 34.076180],
+                [-118.338516, 34.083454],
+                [-118.338620, 34.090712],
+                [-118.338700, 34.101542],
+                [-118.338901, 34.112780]
+            ]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "p-line",
+        "properties": {
+            "id": "p-line",
+            "routeId": "P",
+            "name": "P Line",
+            "color": "#8DD929",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-118.361554, 34.090779],
+                [-118.361513, 34.083797],
+                [-118.361426, 34.076101],
+                [-118.361510, 34.071499],
+                [-118.361428, 34.062921],
+                [-118.363823, 34.058184],
+                [-118.366633, 34.051511],
+                [-118.369765, 34.039929],
+                [-118.370761, 34.032445],
+                [-118.361302, 34.025256],
+                [-118.365372, 33.998316],
+                [-118.362668, 33.987576],
+                [-118.370443, 33.987705],
+                [-118.370063, 33.961541],
+                [-118.377065, 33.959907],
+                [-118.374380, 33.962030]
+            ]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "q-line",
+        "properties": {
+            "id": "q-line",
+            "routeId": "Q",
+            "name": "Q Line",
+            "color": "#78A4D8",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-118.234760, 34.056060],
+                [-118.244439, 34.052990],
+                [-118.248300, 34.048823],
+                [-118.252295, 34.044529],
+                [-118.254948, 34.041601],
+                [-118.258178, 34.039096],
+                [-118.262569, 34.033596],
+                [-118.284142, 34.043773],
+                [-118.291590, 34.044230],
+                [-118.309024, 34.043557],
+                [-118.328421, 34.044677],
+                [-118.345405, 34.045860],
+                [-118.369765, 34.039929],
+                [-118.377863, 34.035180],
+                [-118.390349, 34.028304],
+                [-118.417147, 34.012840],
+                [-118.428988, 34.006243],
+                [-118.452815, 33.994077],
+                [-118.470121, 33.985044]
+            ]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "l-line",
+        "properties": {
+            "id": "l-line",
+            "routeId": "L",
+            "name": "L Line",
+            "color": "#FF0095",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-118.234760, 34.056060],
+                [-118.235956, 34.057767],
+                [-118.240224, 34.058557],
+                [-118.245481, 34.053673],
+                [-118.249073, 34.049321],
+                [-118.253372, 34.045224],
+                [-118.257391, 34.040913],
+                [-118.263971, 34.044984],
+                [-118.280993, 34.052147],
+                [-118.309075, 34.052632],
+                [-118.322983, 34.054644],
+                [-118.334060, 34.056971],
+                [-118.345899, 34.057222],
+                [-118.363823, 34.058184],
+                [-118.375486, 34.059518],
+                [-118.409642, 34.059736],
+                [-118.413061, 34.057694],
+                [-118.416202, 34.053187],
+                [-118.437869, 34.040223],
+                [-118.441249, 34.038200],
+                [-118.449839, 34.033191],
+                [-118.453704, 34.032386],
+                [-118.450070, 34.029250],
+                [-118.445525, 34.023271],
+                [-118.444193, 34.017636],
+                [-118.438837, 34.010574],
+                [-118.433612, 34.003725],
+                [-118.452815, 33.994077]
+            ]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "n-line",
+        "properties": {
+            "id": "n-line",
+            "routeId": "N",
+            "name": "N Line",
+            "color": "#8B5A2B",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-118.290080, 34.062700],
+                [-118.291605, 34.052535],
+                [-118.291602, 34.047250],
+                [-118.291590, 34.044230],
+                [-118.291575, 34.039998],
+                [-118.291542, 34.032751],
+                [-118.291542, 34.025485],
+                [-118.291540, 34.018250],
+                [-118.291547, 34.010859],
+                [-118.291475, 33.989112],
+                [-118.291487, 33.982213],
+                [-118.291739, 33.974620],
+                [-118.278299, 33.974675],
+                [-118.256403, 33.974776],
+                [-118.225212, 33.974216]
+            ]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "beverly-line",
+        "properties": {
+            "id": "beverly-line",
+            "routeId": "BEV",
+            "name": "Beverly Line",
+            "color": "#14B8A6",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-118.234760, 34.056060],
+                [-118.237071, 34.058084],
+                [-118.240226, 34.058542],
+                [-118.243525, 34.055739],
+                [-118.268010, 34.070253],
+                [-118.270306, 34.066674],
+                [-118.291699, 34.076321],
+                [-118.300413, 34.076275],
+                [-118.309154, 34.076262],
+                [-118.313535, 34.076240],
+                [-118.344042, 34.076160],
+                [-118.361426, 34.076101],
+                [-118.395649, 34.077227]
+            ]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "g-line",
+        "properties": {
+            "id": "g-line",
+            "routeId": "G",
+            "name": "G Line",
+            "color": "#7C3AED",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-118.255050, 34.156460],
+                [-118.255050, 34.146480],
+                [-118.255065, 34.142391],
+                [-118.255050, 34.138615],
+                [-118.257849, 34.120699],
+                [-118.265436, 34.111965],
+                [-118.261402, 34.106288],
+                [-118.259223, 34.094028],
+                [-118.258836, 34.090413],
+                [-118.260273, 34.080042],
+                [-118.263471, 34.077606],
+                [-118.268010, 34.070253],
+                [-118.270306, 34.066674],
+                [-118.274880, 34.059533],
+                [-118.275891, 34.057950],
+                [-118.279152, 34.052816]
+            ]
+        }
+        },
+        {
+        "type": "Feature",
         "id": "station-ocean-santa-monica",
         "properties": {
             "id": "station-ocean-santa-monica",
@@ -60,6 +293,237 @@
         "geometry": {
             "type": "Point",
             "coordinates": [-118.498059, 34.014083]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-wilshire-vermont",
+        "properties": {
+            "id": "station-wilshire-vermont",
+            "name": "Wilshire / Vermont",
+            "street1": "Wilshire Boulevard",
+            "street2": "Vermont Avenue",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "Metro B and D Lines",
+            "terminal": true
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.290080, 34.062700]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-olympic-vermont",
+        "properties": {
+            "id": "station-olympic-vermont",
+            "name": "Olympic / Vermont",
+            "street1": "Olympic Boulevard",
+            "street2": "Vermont Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.291605, 34.052535]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-pico-vermont",
+        "properties": {
+            "id": "station-pico-vermont",
+            "name": "Pico / Vermont",
+            "street1": "Pico Boulevard",
+            "street2": "Vermont Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.291602, 34.047250]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-venice-vermont",
+        "properties": {
+            "id": "station-venice-vermont",
+            "name": "Venice / Vermont",
+            "street1": "Venice Boulevard",
+            "street2": "Vermont Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.291590, 34.044230]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-washington-vermont",
+        "properties": {
+            "id": "station-washington-vermont",
+            "name": "Washington / Vermont",
+            "street1": "Washington Boulevard",
+            "street2": "Vermont Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.291575, 34.039998]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-adams-vermont",
+        "properties": {
+            "id": "station-adams-vermont",
+            "name": "Adams / Vermont",
+            "street1": "Adams Boulevard",
+            "street2": "Vermont Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.291542, 34.032751]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-jefferson-vermont",
+        "properties": {
+            "id": "station-jefferson-vermont",
+            "name": "Jefferson / Vermont",
+            "street1": "Jefferson Boulevard",
+            "street2": "Vermont Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.291542, 34.025485]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-expo-vermont",
+        "properties": {
+            "id": "station-expo-vermont",
+            "name": "Expo / Vermont",
+            "street1": "Exposition Boulevard",
+            "street2": "Vermont Avenue",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "Metro E Line"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.291540, 34.018250]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-mlk-vermont",
+        "properties": {
+            "id": "station-mlk-vermont",
+            "name": "MLK / Vermont",
+            "street1": "Martin Luther King Jr. Boulevard",
+            "street2": "Vermont Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.291547, 34.010859]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-slauson-vermont",
+        "properties": {
+            "id": "station-slauson-vermont",
+            "name": "Slauson / Vermont",
+            "street1": "Slauson Avenue",
+            "street2": "Vermont Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.291475, 33.989112]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-gage-vermont",
+        "properties": {
+            "id": "station-gage-vermont",
+            "name": "Gage / Vermont",
+            "street1": "Gage Avenue",
+            "street2": "Vermont Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.291487, 33.982213]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-florence-vermont",
+        "properties": {
+            "id": "station-florence-vermont",
+            "name": "Florence / Vermont",
+            "street1": "Florence Avenue",
+            "street2": "Vermont Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.291739, 33.974620]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-florence-broadway",
+        "properties": {
+            "id": "station-florence-broadway",
+            "name": "Florence / Broadway",
+            "street1": "Florence Avenue",
+            "street2": "Broadway",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.278299, 33.974675]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-florence-central",
+        "properties": {
+            "id": "station-florence-central",
+            "name": "Florence / Central",
+            "street1": "Florence Avenue",
+            "street2": "Central Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.256403, 33.974776]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-florence-pacific",
+        "properties": {
+            "id": "station-florence-pacific",
+            "name": "Florence / Pacific",
+            "street1": "Florence Avenue",
+            "street2": "Pacific Boulevard",
+            "system": "fantasy",
+            "terminal": true
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.225212, 33.974216]
         }
         },
         {
@@ -166,12 +630,146 @@
             "name": "Beverly / Santa Monica",
             "street1": "Beverly Boulevard",
             "street2": "Santa Monica Boulevard",
-            "routes": "F",
             "system": "fantasy"
         },
         "geometry": {
             "type": "Point",
             "coordinates": [-118.395649, 34.077227]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-cesar-chavez-alameda",
+        "properties": {
+            "id": "station-cesar-chavez-alameda",
+            "name": "Cesar Chavez / Alameda",
+            "street1": "Cesar E. Chavez Avenue",
+            "street2": "Alameda Street",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.237071, 34.058084]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-cesar-chavez-broadway",
+        "properties": {
+            "id": "station-cesar-chavez-broadway",
+            "name": "Cesar Chavez / Broadway",
+            "street1": "Cesar E. Chavez Avenue",
+            "street2": "Broadway",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.240226, 34.058542]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-temple-broadway",
+        "properties": {
+            "id": "station-temple-broadway",
+            "name": "Temple / Broadway",
+            "street1": "Temple Street",
+            "street2": "Broadway",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.243525, 34.055739]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-temple-alvarado",
+        "properties": {
+            "id": "station-temple-alvarado",
+            "name": "Temple / Alvarado",
+            "street1": "Temple Street",
+            "street2": "Alvarado Street",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.268010, 34.070253]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-beverly-alvarado",
+        "properties": {
+            "id": "station-beverly-alvarado",
+            "name": "Beverly / Alvarado",
+            "street1": "Beverly Boulevard",
+            "street2": "Alvarado Street",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.270306, 34.066674]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-beverly-vermont",
+        "properties": {
+            "id": "station-beverly-vermont",
+            "name": "Beverly / Vermont",
+            "street1": "Beverly Boulevard",
+            "street2": "Vermont Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.291699, 34.076321]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-beverly-normandie",
+        "properties": {
+            "id": "station-beverly-normandie",
+            "name": "Beverly / Normandie",
+            "street1": "Beverly Boulevard",
+            "street2": "Normandie Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.300413, 34.076275]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-beverly-wilton",
+        "properties": {
+            "id": "station-beverly-wilton",
+            "name": "Beverly / Wilton",
+            "street1": "Beverly Boulevard",
+            "street2": "Wilton Place",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.313535, 34.076240]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-beverly-la-brea",
+        "properties": {
+            "id": "station-beverly-la-brea",
+            "name": "Beverly / La Brea",
+            "street1": "Beverly Boulevard",
+            "street2": "La Brea Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.344042, 34.076160]
         }
         },
         {
@@ -214,7 +812,6 @@
             "name": "Fairfax / Santa Monica",
             "street1": "Fairfax Avenue",
             "street2": "Santa Monica Boulevard",
-            "routes": "F",
             "system": "fantasy"
         },
         "geometry": {
@@ -328,7 +925,6 @@
             "name": "Alvarado / Sunset",
             "street1": "Alvarado Street",
             "street2": "Sunset Boulevard",
-            "routes": "F",
             "system": "fantasy"
         },
         "geometry": {
@@ -376,7 +972,6 @@
                 "name": "Union Station",
                 "street1": "Alameda Street",
                 "street2": "Cesar E. Chavez Avenue",
-                "routes": "F",
                 "system": "fantasy",
                 "interchange": true,
                 "transfer": "Metro A, B, D and J Lines; Metrolink; Amtrak"
@@ -385,6 +980,857 @@
                 "type": "Point",
                 "coordinates": [-118.234760, 34.056060]
             }
+        },
+        {
+        "type": "Feature",
+        "id": "station-spring-first",
+        "properties": {
+                "id": "station-spring-first",
+                "name": "Spring / 1st",
+                "street1": "Spring Street",
+                "street2": "1st Street",
+                "system": "fantasy"
+        },
+        "geometry": {
+                "type": "Point",
+                "coordinates": [-118.244439, 34.052990]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-spring-fourth",
+        "properties": {
+                "id": "station-spring-fourth",
+                "name": "Spring / 4th",
+                "street1": "Spring Street",
+                "street2": "4th Street",
+                "system": "fantasy"
+        },
+        "geometry": {
+                "type": "Point",
+                "coordinates": [-118.248300, 34.048823]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-spring-seventh",
+        "properties": {
+                "id": "station-spring-seventh",
+                "name": "Spring / 7th",
+                "street1": "Spring Street",
+                "street2": "7th Street",
+                "system": "fantasy"
+        },
+        "geometry": {
+                "type": "Point",
+                "coordinates": [-118.252295, 34.044529]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-spring-ninth",
+        "properties": {
+                "id": "station-spring-ninth",
+                "name": "Spring / 9th",
+                "street1": "Spring Street",
+                "street2": "9th Street",
+                "system": "fantasy"
+        },
+        "geometry": {
+                "type": "Point",
+                "coordinates": [-118.254948, 34.041601]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-main-eleventh",
+        "properties": {
+                "id": "station-main-eleventh",
+                "name": "Main / 11th",
+                "street1": "Main Street",
+                "street2": "11th Street",
+                "system": "fantasy"
+        },
+        "geometry": {
+                "type": "Point",
+                "coordinates": [-118.258178, 34.039096]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-main-venice",
+        "properties": {
+                "id": "station-main-venice",
+                "name": "Main / Venice",
+                "street1": "Main Street",
+                "street2": "Venice Boulevard",
+                "system": "fantasy"
+        },
+        "geometry": {
+                "type": "Point",
+                "coordinates": [-118.262569, 34.033596]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-hoover-venice",
+        "properties": {
+                "id": "station-hoover-venice",
+                "name": "Hoover / Venice",
+                "street1": "Hoover Street",
+                "street2": "Venice Boulevard",
+                "system": "fantasy"
+        },
+        "geometry": {
+                "type": "Point",
+                "coordinates": [-118.284142, 34.043773]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-vermont-venice",
+        "properties": {
+                "id": "station-vermont-venice",
+                "name": "Vermont / Venice",
+                "street1": "Vermont Avenue",
+                "street2": "Venice Boulevard",
+                "system": "fantasy"
+        },
+        "geometry": {
+                "type": "Point",
+                "coordinates": [-118.291590, 34.044230]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-western-venice",
+        "properties": {
+                "id": "station-western-venice",
+                "name": "Western / Venice",
+                "street1": "Western Avenue",
+                "street2": "Venice Boulevard",
+                "system": "fantasy"
+        },
+        "geometry": {
+                "type": "Point",
+                "coordinates": [-118.309024, 34.043557]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-crenshaw-venice",
+        "properties": {
+                "id": "station-crenshaw-venice",
+                "name": "Crenshaw / Venice",
+                "street1": "Crenshaw Boulevard",
+                "street2": "Venice Boulevard",
+                "system": "fantasy"
+        },
+        "geometry": {
+                "type": "Point",
+                "coordinates": [-118.328421, 34.044677]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-la-brea-venice",
+        "properties": {
+                "id": "station-la-brea-venice",
+                "name": "La Brea / Venice",
+                "street1": "La Brea Avenue",
+                "street2": "Venice Boulevard",
+                "system": "fantasy"
+        },
+        "geometry": {
+                "type": "Point",
+                "coordinates": [-118.345405, 34.045860]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-la-cienega-venice",
+        "properties": {
+                "id": "station-la-cienega-venice",
+                "name": "La Cienega / Venice",
+                "street1": "La Cienega Boulevard",
+                "street2": "Venice Boulevard",
+                "system": "fantasy"
+        },
+        "geometry": {
+                "type": "Point",
+                "coordinates": [-118.377863, 34.035180]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-robertson-venice",
+        "properties": {
+                "id": "station-robertson-venice",
+                "name": "Robertson / Venice",
+                "street1": "Robertson Boulevard",
+                "street2": "Venice Boulevard",
+                "system": "fantasy"
+        },
+        "geometry": {
+                "type": "Point",
+                "coordinates": [-118.390349, 34.028304]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-sepulveda-venice",
+        "properties": {
+                "id": "station-sepulveda-venice",
+                "name": "Sepulveda / Venice",
+                "street1": "Sepulveda Boulevard",
+                "street2": "Venice Boulevard",
+                "system": "fantasy"
+        },
+        "geometry": {
+                "type": "Point",
+                "coordinates": [-118.417147, 34.012840]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-inglewood-venice",
+        "properties": {
+                "id": "station-inglewood-venice",
+                "name": "Inglewood / Venice",
+                "street1": "Inglewood Boulevard",
+                "street2": "Venice Boulevard",
+                "system": "fantasy"
+        },
+        "geometry": {
+                "type": "Point",
+                "coordinates": [-118.428988, 34.006243]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-lincoln-venice",
+        "properties": {
+                "id": "station-lincoln-venice",
+                "name": "Lincoln / Venice",
+                "street1": "Lincoln Boulevard",
+                "street2": "Venice Boulevard",
+                "system": "fantasy"
+        },
+        "geometry": {
+                "type": "Point",
+                "coordinates": [-118.452815, 33.994077]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-pacific-venice",
+        "properties": {
+                "id": "station-pacific-venice",
+                "name": "Pacific / Venice",
+                "street1": "Pacific Avenue",
+                "street2": "Venice Boulevard",
+                "system": "fantasy",
+                "terminal": true
+        },
+        "geometry": {
+                "type": "Point",
+                "coordinates": [-118.470121, 33.985044]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-broadway-first",
+        "properties": {
+            "id": "station-broadway-first",
+            "name": "Broadway / 1st",
+            "street1": "Broadway",
+            "street2": "1st Street",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.245481, 34.053673]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-broadway-fourth",
+        "properties": {
+            "id": "station-broadway-fourth",
+            "name": "Broadway / 4th",
+            "street1": "Broadway",
+            "street2": "4th Street",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.249073, 34.049321]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-broadway-seventh",
+        "properties": {
+            "id": "station-broadway-seventh",
+            "name": "Broadway / 7th",
+            "street1": "Broadway",
+            "street2": "7th Street",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.253372, 34.045224]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-broadway-olympic",
+        "properties": {
+            "id": "station-broadway-olympic",
+            "name": "Broadway / Olympic",
+            "street1": "Broadway",
+            "street2": "Olympic Boulevard",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.257391, 34.040913]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-figueroa-olympic",
+        "properties": {
+            "id": "station-figueroa-olympic",
+            "name": "Figueroa / Olympic",
+            "street1": "Figueroa Street",
+            "street2": "Olympic Boulevard",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.263971, 34.044984]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-la-brea-olympic",
+        "properties": {
+            "id": "station-la-brea-olympic",
+            "name": "La Brea / Olympic",
+            "street1": "La Brea Avenue",
+            "street2": "Olympic Boulevard",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.345899, 34.057222]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-sepulveda-olympic",
+        "properties": {
+            "id": "station-sepulveda-olympic",
+            "name": "Sepulveda / Olympic",
+            "street1": "Sepulveda Boulevard",
+            "street2": "Olympic Boulevard",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.437869, 34.040223]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-sawtelle-olympic",
+        "properties": {
+            "id": "station-sawtelle-olympic",
+            "name": "Sawtelle / Olympic",
+            "street1": "Sawtelle Boulevard",
+            "street2": "Olympic Boulevard",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.441249, 34.038200]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-bundy-olympic",
+        "properties": {
+            "id": "station-bundy-olympic",
+            "name": "Bundy / Olympic",
+            "street1": "Bundy Drive",
+            "street2": "Olympic Boulevard",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.453704, 34.032386]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-centinela-palms",
+        "properties": {
+            "id": "station-centinela-palms",
+            "name": "Centinela / Palms",
+            "street1": "Centinela Avenue",
+            "street2": "Palms Boulevard",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.438837, 34.010574]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-centinela-venice",
+        "properties": {
+            "id": "station-centinela-venice",
+            "name": "Centinela / Venice",
+            "street1": "Centinela Avenue",
+            "street2": "Venice Boulevard",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.433612, 34.003725]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-expo-crenshaw",
+        "properties": {
+            "id": "station-expo-crenshaw",
+            "name": "Expo / Crenshaw",
+            "street1": "Crenshaw Boulevard",
+            "street2": "Exposition Boulevard",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "Metro E and K Lines"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.334850, 34.022160]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-adams-crenshaw",
+        "properties": {
+            "id": "station-adams-crenshaw",
+            "name": "Adams / Crenshaw",
+            "street1": "Adams Boulevard",
+            "street2": "Crenshaw Boulevard",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.335005, 34.032577]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-washington-crenshaw",
+        "properties": {
+            "id": "station-washington-crenshaw",
+            "name": "Washington / Crenshaw",
+            "street1": "Washington Boulevard",
+            "street2": "Crenshaw Boulevard",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.331056, 34.039869]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-pico-crenshaw",
+        "properties": {
+            "id": "station-pico-crenshaw",
+            "name": "Pico / Crenshaw",
+            "street1": "Pico Boulevard",
+            "street2": "Crenshaw Boulevard",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.326716, 34.047821]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-olympic-crenshaw",
+        "properties": {
+            "id": "station-olympic-crenshaw",
+            "name": "Olympic / Crenshaw",
+            "street1": "Olympic Boulevard",
+            "street2": "Crenshaw Boulevard",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.322983, 34.054644]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-wilshire-crenshaw",
+        "properties": {
+            "id": "station-wilshire-crenshaw",
+            "name": "Wilshire / Crenshaw",
+            "street1": "Wilshire Boulevard",
+            "street2": "Crenshaw Boulevard",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.319157, 34.061731]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-wilshire-rossmore",
+        "properties": {
+            "id": "station-wilshire-rossmore",
+            "name": "Wilshire / Rossmore",
+            "street1": "Wilshire Boulevard",
+            "street2": "Rossmore Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.327627, 34.061915]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-wilshire-highland",
+        "properties": {
+            "id": "station-wilshire-highland",
+            "name": "Wilshire / Highland",
+            "street1": "Wilshire Boulevard",
+            "street2": "Highland Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.338421, 34.062118]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-third-highland",
+        "properties": {
+            "id": "station-third-highland",
+            "name": "3rd / Highland",
+            "street1": "3rd Street",
+            "street2": "Highland Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.338625, 34.068906]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-beverly-highland",
+        "properties": {
+            "id": "station-beverly-highland",
+            "name": "Beverly / Highland",
+            "street1": "Beverly Boulevard",
+            "street2": "Highland Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.338511, 34.076180]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-melrose-highland",
+        "properties": {
+            "id": "station-melrose-highland",
+            "name": "Melrose / Highland",
+            "street1": "Melrose Avenue",
+            "street2": "Highland Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.338516, 34.083454]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-santa-monica-highland",
+        "properties": {
+            "id": "station-santa-monica-highland",
+            "name": "Santa Monica / Highland",
+            "street1": "Santa Monica Boulevard",
+            "street2": "Highland Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.338620, 34.090712]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-hollywood-highland",
+        "properties": {
+            "id": "station-hollywood-highland",
+            "name": "Hollywood / Highland",
+            "street1": "Hollywood Boulevard",
+            "street2": "Highland Avenue",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "Metro B Line"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.338700, 34.101542]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-hollywood-bowl",
+        "properties": {
+            "id": "station-hollywood-bowl",
+            "name": "Hollywood Bowl",
+            "street1": "Highland Avenue",
+            "street2": "Hollywood Bowl",
+            "system": "fantasy",
+            "terminal": true
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.338901, 34.112780]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-melrose-fairfax",
+        "properties": {
+            "id": "station-melrose-fairfax",
+            "name": "Melrose / Fairfax",
+            "street1": "Melrose Avenue",
+            "street2": "Fairfax Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.361513, 34.083797]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-beverly-fairfax",
+        "properties": {
+            "id": "station-beverly-fairfax",
+            "name": "Beverly / Fairfax",
+            "street1": "Beverly Boulevard",
+            "street2": "Fairfax Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.361426, 34.076101]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-third-fairfax",
+        "properties": {
+            "id": "station-third-fairfax",
+            "name": "3rd / Fairfax",
+            "street1": "3rd Street",
+            "street2": "Fairfax Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.361510, 34.071499]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-wilshire-fairfax",
+        "properties": {
+            "id": "station-wilshire-fairfax",
+            "name": "Wilshire / Fairfax",
+            "street1": "Wilshire Boulevard",
+            "street2": "Fairfax Avenue",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "Metro D Line"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.361428, 34.062921]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-olympic-fairfax",
+        "properties": {
+            "id": "station-olympic-fairfax",
+            "name": "Olympic / Fairfax",
+            "street1": "Olympic Boulevard",
+            "street2": "Fairfax Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.363823, 34.058184]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-pico-fairfax",
+        "properties": {
+            "id": "station-pico-fairfax",
+            "name": "Pico / Fairfax",
+            "street1": "Pico Boulevard",
+            "street2": "Fairfax Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.366633, 34.051511]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-venice-fairfax",
+        "properties": {
+            "id": "station-venice-fairfax",
+            "name": "Venice / Fairfax",
+            "street1": "Venice Boulevard",
+            "street2": "Fairfax Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.369765, 34.039929]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-adams-fairfax",
+        "properties": {
+            "id": "station-adams-fairfax",
+            "name": "Adams / Fairfax",
+            "street1": "Adams Boulevard",
+            "street2": "Fairfax Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.370761, 34.032445]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-exposition-fairfax",
+        "properties": {
+            "id": "station-exposition-fairfax",
+            "name": "Exposition / Fairfax",
+            "street1": "Exposition Boulevard",
+            "street2": "Fairfax Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.361302, 34.025256]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-stocker-fairfax",
+        "properties": {
+            "id": "station-stocker-fairfax",
+            "name": "Stocker / Fairfax",
+            "street1": "Stocker Street",
+            "street2": "Fairfax Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.365372, 33.998316]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-slauson-fairfax",
+        "properties": {
+            "id": "station-slauson-fairfax",
+            "name": "Slauson / Fairfax",
+            "street1": "Slauson Avenue",
+            "street2": "Fairfax Avenue",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.362668, 33.987576]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-slauson-la-cienega",
+        "properties": {
+            "id": "station-slauson-la-cienega",
+            "name": "Slauson / La Cienega",
+            "street1": "Slauson Avenue",
+            "street2": "La Cienega Boulevard",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.370443, 33.987705]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-manchester-la-cienega",
+        "properties": {
+            "id": "station-manchester-la-cienega",
+            "name": "Manchester / La Cienega",
+            "street1": "Manchester Boulevard",
+            "street2": "La Cienega Boulevard",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.370063, 33.961541]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-westchester-veterans",
+        "properties": {
+            "id": "station-westchester-veterans",
+            "name": "Westchester / Veterans",
+            "street1": "96th Street",
+            "street2": "Aviation Boulevard",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "Metro K Line",
+            "terminal": true
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.374380, 33.962030]
+        }
         },
           {
             "type": "Feature",
@@ -456,7 +1902,6 @@
             "name": "Beverly / Western",
             "street1": "Beverly Boulevard",
             "street2": "Western Avenue",
-            "routes": "M",
             "system": "fantasy"
             },
             "geometry": {
@@ -490,7 +1935,6 @@
             "name": "Olympic / Western",
             "street1": "Olympic Boulevard",
             "street2": "Western Avenue",
-            "routes": "M",
             "system": "fantasy"
             },
             "geometry": {
@@ -851,8 +2295,201 @@
             "type": "Point",
             "coordinates": [-118.320089, 33.718879]
             }
-        }
-
-
+            },
+            {
+            "type": "Feature",
+            "id": "station-brand-134",
+            "properties": {
+                "id": "station-brand-134",
+                "name": "Brand / Ventura Freeway (134)",
+                "street1": "Brand Boulevard",
+                "street2": "Ventura Freeway (134)",
+                "system": "fantasy",
+                "terminal": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.255050, 34.156460]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-brand-broadway",
+            "properties": {
+                "id": "station-brand-broadway",
+                "name": "Brand / Broadway",
+                "street1": "Brand Boulevard",
+                "street2": "Broadway",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.255050, 34.146480]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-brand-colorado",
+            "properties": {
+                "id": "station-brand-colorado",
+                "name": "Brand / Colorado",
+                "street1": "Brand Boulevard",
+                "street2": "Colorado Street",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.255065, 34.142391]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-brand-glendale-avenue",
+            "properties": {
+                "id": "station-brand-glendale-avenue",
+                "name": "Brand / Glendale Avenue",
+                "street1": "Brand Boulevard",
+                "street2": "Glendale Avenue",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.255050, 34.138615]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-glendale-avenue-fletcher",
+            "properties": {
+                "id": "station-glendale-avenue-fletcher",
+                "name": "Glendale Avenue / Glendale Boulevard",
+                "street1": "Glendale Avenue",
+                "street2": "Glendale Boulevard",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.257849, 34.120699]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-glendale-riverside",
+            "properties": {
+                "id": "station-glendale-riverside",
+                "name": "Glendale Boulevard / Riverside",
+                "street1": "Glendale Boulevard",
+                "street2": "Riverside Drive",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.265436, 34.111965]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-glendale-san-fernando",
+            "properties": {
+                "id": "station-glendale-san-fernando",
+                "name": "Glendale Boulevard",
+                "street1": "Glendale Boulevard",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.261402, 34.106288]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-glendale-silver-lake-heights",
+            "properties": {
+                "id": "station-glendale-silver-lake-heights",
+                "name": "Glendale Boulevard / Silver Lake Heights",
+                "street1": "Glendale Boulevard",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.259223, 34.094028]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-glendale-silver-lake",
+            "properties": {
+                "id": "station-glendale-silver-lake",
+                "name": "Glendale Boulevard / Silver Lake",
+                "street1": "Glendale Boulevard",
+                "street2": "Silver Lake Boulevard",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.258836, 34.090413]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-glendale-sunset",
+            "properties": {
+                "id": "station-glendale-sunset",
+                "name": "Glendale Boulevard / Sunset Boulevard",
+                "street1": "Glendale Boulevard",
+                "street2": "Sunset Boulevard",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.260273, 34.080042]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-alvarado-sixth",
+            "properties": {
+                "id": "station-alvarado-sixth",
+                "name": "Alvarado / 6th",
+                "street1": "Alvarado Street",
+                "street2": "6th Street",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.274880, 34.059533]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-alvarado-seventh",
+            "properties": {
+                "id": "station-alvarado-seventh",
+                "name": "Alvarado / 7th",
+                "street1": "Alvarado Street",
+                "street2": "7th Street",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.275891, 34.057950]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-alvarado-ninth",
+            "properties": {
+                "id": "station-alvarado-ninth",
+                "name": "Alvarado / 9th",
+                "street1": "Alvarado Street",
+                "street2": "9th Street",
+                "system": "fantasy",
+                "terminal": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.279152, 34.052816]
+            }
+            }
     ]
 }
