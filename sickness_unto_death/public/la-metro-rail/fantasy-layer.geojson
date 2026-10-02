@@ -1,0 +1,843 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+        "type": "Feature",
+        "id": "f-line",
+        "properties": {
+            "id": "f-line",
+            "routeId": "F",
+            "name": "F Line",
+            "color": "#C2A169",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+            [-118.49646, 34.01591],
+            [-118.4901, 34.0186],
+            [-118.4797, 34.0259],
+            [-118.4697, 34.0338],
+            [-118.4565, 34.0405],
+            [-118.4451, 34.0453],
+            [-118.4382, 34.0473],
+            [-118.4292, 34.0525],
+            [-118.4204, 34.0577],
+            [-118.4143, 34.0619],
+            [-118.4048, 34.0684],
+            [-118.4002, 34.0719],
+            [-118.3891, 34.0814],
+            [-118.3811, 34.0874],
+            [-118.377, 34.0901],
+            [-118.3615, 34.0904],
+            [-118.3443, 34.0905],
+            [-118.3386, 34.0906],
+            [-118.3265, 34.0907],
+            [-118.309, 34.0907],
+            [-118.2918, 34.091],
+            [-118.284, 34.093],
+            [-118.2767, 34.0876],
+            [-118.2691, 34.0805],
+            [-118.26, 34.0773],
+            [-118.2515, 34.0702],
+            [-118.2445, 34.066],
+            [-118.2374, 34.0621],
+            [-118.2349, 34.0588],
+            [-118.2365, 34.0562]
+            ]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-ocean-santa-monica",
+        "properties": {
+            "id": "station-ocean-santa-monica",
+            "name": "Ocean / Santa Monica",
+            "street1": "Ocean Avenue",
+            "street2": "Santa Monica Boulevard",
+            "routes": "F",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.49646, 34.01591]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-lincoln-santa-monica",
+        "properties": {
+            "id": "station-lincoln-santa-monica",
+            "name": "Lincoln / Santa Monica",
+            "street1": "Lincoln Boulevard",
+            "street2": "Santa Monica Boulevard",
+            "routes": "F",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.4901, 34.0186]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-bundy-santa-monica",
+        "properties": {
+            "id": "station-bundy-santa-monica",
+            "name": "Bundy / Santa Monica",
+            "street1": "Bundy Drive",
+            "street2": "Santa Monica Boulevard",
+            "routes": "F",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.4697, 34.0338]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-sepulveda-santa-monica",
+        "properties": {
+            "id": "station-sepulveda-santa-monica",
+            "name": "Sepulveda / Santa Monica",
+            "street1": "Sepulveda Boulevard",
+            "street2": "Santa Monica Boulevard",
+            "routes": "F",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.4382, 34.0473]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-westwood-santa-monica",
+        "properties": {
+            "id": "station-westwood-santa-monica",
+            "name": "Westwood / Santa Monica",
+            "street1": "Westwood Boulevard",
+            "street2": "Santa Monica Boulevard",
+            "routes": "F",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.4292, 34.0525]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-century-city",
+        "properties": {
+            "id": "station-century-city",
+            "name": "Century City",
+            "street1": "Century Park East",
+            "street2": "Santa Monica Boulevard",
+            "routes": "F",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.4143, 34.0619]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-beverly-drive",
+        "properties": {
+            "id": "station-beverly-drive",
+            "name": "Beverly Drive",
+            "street1": "Beverly Drive",
+            "street2": "Santa Monica Boulevard",
+            "routes": "F",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.4002, 34.0719]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-doheny-santa-monica",
+        "properties": {
+            "id": "station-doheny-santa-monica",
+            "name": "Doheny / Santa Monica",
+            "street1": "Doheny Drive",
+            "street2": "Santa Monica Boulevard",
+            "routes": "F",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.3891, 34.0814]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-san-vicente-santa-monica",
+        "properties": {
+            "id": "station-san-vicente-santa-monica",
+            "name": "San Vicente / Santa Monica",
+            "street1": "San Vicente Boulevard",
+            "street2": "Santa Monica Boulevard",
+            "routes": "F",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.377, 34.0901]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-fairfax-santa-monica",
+        "properties": {
+            "id": "station-fairfax-santa-monica",
+            "name": "Fairfax / Santa Monica",
+            "street1": "Fairfax Avenue",
+            "street2": "Santa Monica Boulevard",
+            "routes": "F",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.3615, 34.0904]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-la-brea-santa-monica",
+        "properties": {
+            "id": "station-la-brea-santa-monica",
+            "name": "La Brea / Santa Monica",
+            "street1": "La Brea Avenue",
+            "street2": "Santa Monica Boulevard",
+            "routes": "F",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.3443, 34.0905]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-vine-santa-monica",
+        "properties": {
+            "id": "station-vine-santa-monica",
+            "name": "Vine / Santa Monica",
+            "street1": "Vine Street",
+            "street2": "Santa Monica Boulevard",
+            "routes": "F",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.3265, 34.0907]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-western-santa-monica",
+        "properties": {
+            "id": "station-western-santa-monica",
+            "name": "Western / Santa Monica",
+            "street1": "Western Avenue",
+            "street2": "Santa Monica Boulevard",
+            "routes": "F",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.309, 34.0907]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-vermont-santa-monica",
+        "properties": {
+            "id": "station-vermont-santa-monica",
+            "name": "Vermont / Santa Monica",
+            "street1": "Vermont Avenue",
+            "street2": "Santa Monica Boulevard",
+            "routes": "F",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "Metro B Line"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.2918, 34.091]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-sunset-junction",
+        "properties": {
+            "id": "station-sunset-junction",
+            "name": "Sunset Junction",
+            "street1": "Sunset Boulevard",
+            "street2": "Santa Monica Boulevard",
+            "routes": "F",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.284, 34.093]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-silver-lake",
+        "properties": {
+            "id": "station-silver-lake",
+            "name": "Silver Lake",
+            "street1": "Silver Lake Boulevard",
+            "street2": "Sunset Boulevard",
+            "routes": "F",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.2767, 34.0876]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-alvarado-sunset",
+        "properties": {
+            "id": "station-alvarado-sunset",
+            "name": "Alvarado / Sunset",
+            "street1": "Alvarado Street",
+            "street2": "Sunset Boulevard",
+            "routes": "F",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.2691, 34.0805]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-echo-park",
+        "properties": {
+            "id": "station-echo-park",
+            "name": "Echo Park",
+            "street1": "Echo Park Avenue",
+            "street2": "Sunset Boulevard",
+            "routes": "F",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.26, 34.0773]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-chinatown",
+        "properties": {
+            "id": "station-chinatown",
+            "name": "Chinatown",
+            "street1": "Broadway",
+            "street2": "Cesar E. Chavez Avenue",
+            "routes": "F",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.2374, 34.0621]
+        }
+        },
+        {
+            "type": "Feature",
+            "id": "station-union-station",
+            "properties": {
+                "id": "station-union-station",
+                "name": "Union Station",
+                "street1": "Alameda Street",
+                "street2": "Cesar E. Chavez Avenue",
+                "routes": "F",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer": "Metro A, B, D and J Lines; Metrolink; Amtrak"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.2365, 34.0562]
+            }
+        },
+          {
+            "type": "Feature",
+            "id": "m-line",
+            "properties": {
+            "id": "m-line",
+            "routeId": "M",
+            "name": "M Line",
+            "color": "#8DD160",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-118.309294, 34.101739],
+                [-118.309, 34.0907],
+                [-118.309154, 34.076262],
+                [-118.309073, 34.061694],
+                [-118.309075, 34.052632],
+                [-118.309037, 34.047188],
+                [-118.308993, 34.039931],
+                [-118.308895, 34.018239],
+                [-118.308913, 34.010862],
+                [-118.308934, 33.989158],
+                [-118.308964, 33.974576],
+                [-118.308998, 33.959967],
+                [-118.309009, 33.94545],
+                [-118.30913, 33.930901],
+                [-118.309176, 33.916436],
+                [-118.309154, 33.901851],
+                [-118.309159, 33.888524],
+                [-118.309142, 33.872944],
+                [-118.309204, 33.846828],
+                [-118.309148, 33.838339],
+                [-118.308948, 33.816984],
+                [-118.307502, 33.797828],
+                [-118.307526, 33.789467],
+                [-118.309585, 33.779038],
+                [-118.309831, 33.743395],
+                [-118.316623, 33.736242],
+                [-118.312931, 33.722985],
+                [-118.320089, 33.718879]
+            ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-hollywood-western",
+            "properties": {
+            "id": "station-hollywood-western",
+            "name": "Hollywood / Western",
+            "street1": "Hollywood Boulevard",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "Metro B Line"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.309294, 34.101739]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-beverly-western",
+            "properties": {
+            "id": "station-beverly-western",
+            "name": "Beverly / Western",
+            "street1": "Beverly Boulevard",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.309154, 34.076262]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-wilshire-western",
+            "properties": {
+            "id": "station-wilshire-western",
+            "name": "Wilshire / Western",
+            "street1": "Wilshire Boulevard",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "Metro D Line"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.309073, 34.061694]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-olympic-western",
+            "properties": {
+            "id": "station-olympic-western",
+            "name": "Olympic / Western",
+            "street1": "Olympic Boulevard",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.309075, 34.052632]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-pico-western",
+            "properties": {
+            "id": "station-pico-western",
+            "name": "Pico / Western",
+            "street1": "Pico Boulevard",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.309037, 34.047188]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-washington-western",
+            "properties": {
+            "id": "station-washington-western",
+            "name": "Washington / Western",
+            "street1": "Washington Boulevard",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.308993, 34.039931]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-exposition-western",
+            "properties": {
+            "id": "station-exposition-western",
+            "name": "Expo / Western",
+            "street1": "Exposition Boulevard",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "Metro E Line"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.308895, 34.018239]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-mlk-western",
+            "properties": {
+            "id": "station-mlk-western",
+            "name": "MLK / Western",
+            "street1": "Martin Luther King Jr. Boulevard",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.308913, 34.010862]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-slauson-western",
+            "properties": {
+            "id": "station-slauson-western",
+            "name": "Slauson / Western",
+            "street1": "Slauson Avenue",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.308934, 33.989158]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-florence-western",
+            "properties": {
+            "id": "station-florence-western",
+            "name": "Florence / Western",
+            "street1": "Florence Avenue",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.308964, 33.974576]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-manchester-western",
+            "properties": {
+            "id": "station-manchester-western",
+            "name": "Manchester / Western",
+            "street1": "Manchester Avenue",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.308998, 33.959967]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-century-western",
+            "properties": {
+            "id": "station-century-western",
+            "name": "Century / Western",
+            "street1": "Century Boulevard",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.309009, 33.94545]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-imperial-western",
+            "properties": {
+            "id": "station-imperial-western",
+            "name": "Imperial / Western",
+            "street1": "Imperial Highway",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.30913, 33.930901]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-el-segundo-western",
+            "properties": {
+            "id": "station-el-segundo-western",
+            "name": "El Segundo / Western",
+            "street1": "El Segundo Boulevard",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.309176, 33.916436]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-rosecrans-western",
+            "properties": {
+            "id": "station-rosecrans-western",
+            "name": "Rosecrans / Western",
+            "street1": "Rosecrans Avenue",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.309154, 33.901851]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-redondo-beach-western",
+            "properties": {
+            "id": "station-redondo-beach-western",
+            "name": "Redondo Beach / Western",
+            "street1": "Redondo Beach Boulevard",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.309159, 33.888524]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-artesia-western",
+            "properties": {
+            "id": "station-artesia-western",
+            "name": "Artesia / Western",
+            "street1": "Artesia Boulevard",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.309142, 33.872944]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-del-amo-western",
+            "properties": {
+            "id": "station-del-amo-western",
+            "name": "Del Amo / Western",
+            "street1": "Del Amo Boulevard",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.309204, 33.846828]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-torrance-western",
+            "properties": {
+            "id": "station-torrance-western",
+            "name": "Torrance / Western",
+            "street1": "Torrance Boulevard",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.309148, 33.838339]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-sepulveda-western",
+            "properties": {
+            "id": "station-sepulveda-western",
+            "name": "Sepulveda / Western",
+            "street1": "Sepulveda Boulevard",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.308948, 33.816984]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-lomita-western",
+            "properties": {
+            "id": "station-lomita-western",
+            "name": "Lomita / Western",
+            "street1": "Lomita Boulevard",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.307502, 33.797828]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-pch-western",
+            "properties": {
+            "id": "station-pch-western",
+            "name": "Harbor College",
+            "street1": "Pacific Coast Highway",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.307526, 33.789467]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-palos-verdes-western",
+            "properties": {
+            "id": "station-palos-verdes-western",
+            "name": "Palos Verdes / Western",
+            "street1": "Palos Verdes Drive North",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.309585, 33.779038]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-9th-western",
+            "properties": {
+            "id": "station-9th-western",
+            "name": "9th / Western",
+            "street1": "9th Street",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.316623, 33.736242]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-25th-western",
+            "properties": {
+            "id": "station-25th-western",
+            "name": "25th / Western",
+            "street1": "25th Street",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.312931, 33.722985]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-paseo-del-mar-western",
+            "properties": {
+            "id": "station-paseo-del-mar-western",
+            "name": "Paseo del Mar",
+            "street1": "Paseo del Mar",
+            "street2": "Western Avenue",
+            "routes": "M",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.320089, 33.718879]
+            }
+        }
+
+
+    ]
+}
