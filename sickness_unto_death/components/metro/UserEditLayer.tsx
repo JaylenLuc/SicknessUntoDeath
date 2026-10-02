@@ -172,7 +172,7 @@ return (
         minzoom={10}
         layout={{
             "text-field": ["get", "name"],
-            "text-size": 13,
+            "text-size": 11,
             "text-offset": [0, 1.3],
             "text-anchor": "top",
             "text-allow-overlap": false,
