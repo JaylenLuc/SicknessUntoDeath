@@ -104,7 +104,13 @@
                 [-118.370443, 33.987705],
                 [-118.370063, 33.961541],
                 [-118.377065, 33.959907],
-                [-118.374380, 33.962030]
+                [-118.374380, 33.962030],
+                [-118.352800, 33.957200],
+                [-118.341300, 33.953100],
+                [-118.324800, 33.950800],
+                [-118.309600, 33.945800],
+                [-118.276000, 33.944000],
+                [-118.243000, 33.942000]
             ]
         }
         },
@@ -1816,16 +1822,49 @@
         },
         {
         "type": "Feature",
-        "id": "station-westchester-veterans",
+            "id": "station-hollywood-park",
+            "properties": {
+            "id": "station-hollywood-park",
+            "name": "Hollywood Park",
+            "street1": "Century Boulevard",
+            "street2": "Prairie Avenue",
+            "routes": "P",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.341300, 33.953100]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-103rd-watts",
+            "properties": {
+            "id": "station-103rd-watts",
+            "name": "103rd / Watts",
+            "street1": "103rd Street",
+            "street2": "Grandee Avenue",
+            "routes": "P",
+            "system": "fantasy",
+            "terminal": true
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.243000, 33.942000]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-westchester-veterans",
         "properties": {
             "id": "station-westchester-veterans",
             "name": "Westchester / Veterans",
             "street1": "96th Street",
             "street2": "Aviation Boulevard",
+            "routes": "P",
             "system": "fantasy",
             "interchange": true,
-            "transfer": "Metro K Line",
-            "terminal": true
+            "transfer": "Metro K Line"
         },
         "geometry": {
             "type": "Point",
@@ -1868,11 +1907,10 @@
                 [-118.308948, 33.816984],
                 [-118.307502, 33.797828],
                 [-118.307526, 33.789467],
-                [-118.309585, 33.779038],
-                [-118.309831, 33.743395],
-                [-118.316623, 33.736242],
-                [-118.312931, 33.722985],
-                [-118.320089, 33.718879]
+                [-118.302500, 33.774000],
+                [-118.293000, 33.756000],
+                [-118.282000, 33.741000],
+                [-118.278800, 33.737000]
             ]
             }
         },
@@ -2225,75 +2263,29 @@
             "street1": "Pacific Coast Highway",
             "street2": "Western Avenue",
             "routes": "M",
-            "system": "fantasy"
+            "system": "fantasy",
+            "terminal": true
             },
             "geometry": {
             "type": "Point",
             "coordinates": [-118.307526, 33.789467]
             }
-        },
-        {
+            },
+            {
             "type": "Feature",
-            "id": "station-palos-verdes-western",
+            "id": "station-downtown-san-pedro",
             "properties": {
-            "id": "station-palos-verdes-western",
-            "name": "Palos Verdes / Western",
-            "street1": "Palos Verdes Drive North",
-            "street2": "Western Avenue",
+            "id": "station-downtown-san-pedro",
+            "name": "Downtown San Pedro",
+            "street1": "6th Street",
+            "street2": "Pacific Avenue",
             "routes": "M",
-            "system": "fantasy"
+            "system": "fantasy",
+            "terminal": true
             },
             "geometry": {
             "type": "Point",
-            "coordinates": [-118.309585, 33.779038]
-            }
-        },
-        {
-            "type": "Feature",
-            "id": "station-9th-western",
-            "properties": {
-            "id": "station-9th-western",
-            "name": "9th / Western",
-            "street1": "9th Street",
-            "street2": "Western Avenue",
-            "routes": "M",
-            "system": "fantasy"
-            },
-            "geometry": {
-            "type": "Point",
-            "coordinates": [-118.316623, 33.736242]
-            }
-        },
-        {
-            "type": "Feature",
-            "id": "station-25th-western",
-            "properties": {
-            "id": "station-25th-western",
-            "name": "25th / Western",
-            "street1": "25th Street",
-            "street2": "Western Avenue",
-            "routes": "M",
-            "system": "fantasy"
-            },
-            "geometry": {
-            "type": "Point",
-            "coordinates": [-118.312931, 33.722985]
-            }
-        },
-        {
-            "type": "Feature",
-            "id": "station-paseo-del-mar-western",
-            "properties": {
-            "id": "station-paseo-del-mar-western",
-            "name": "Paseo del Mar",
-            "street1": "Paseo del Mar",
-            "street2": "Western Avenue",
-            "routes": "M",
-            "system": "fantasy"
-            },
-            "geometry": {
-            "type": "Point",
-            "coordinates": [-118.320089, 33.718879]
+            "coordinates": [-118.278800, 33.737000]
             }
             },
             {
