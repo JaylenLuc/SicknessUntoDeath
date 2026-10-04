@@ -298,22 +298,11 @@
         "geometry": {
             "type": "LineString",
             "coordinates": [
-                [-118.235000, 34.056095],
-                [-118.234861, 34.056793],
-                [-118.236129, 34.056983],
-                [-118.235956, 34.057767],
-                [-118.237076, 34.058092],
-                [-118.235977, 34.062701],
+                [-118.234760, 34.056060],
                 [-118.235840, 34.063860],
-                [-118.234954, 34.065042],
-                [-118.228793, 34.069043],
-                [-118.225970, 34.070035],
                 [-118.222125, 34.071780],
-                [-118.217836, 34.073597],
+                [-118.215641, 34.073662],
                 [-118.202894, 34.073825],
-                [-118.198695, 34.073899],
-                [-118.198655, 34.072988],
-                [-118.197192, 34.072984],
                 [-118.196751, 34.073596],
                 [-118.193544, 34.078190],
                 [-118.193334, 34.079065],
@@ -326,41 +315,40 @@
                 [-118.165696, 34.089983],
                 [-118.164688, 34.090409],
                 [-118.158514, 34.094661],
+                [-118.156804, 34.096331],
                 [-118.155509, 34.097111],
                 [-118.155225, 34.097881],
                 [-118.154992, 34.101803],
                 [-118.154443, 34.102762],
                 [-118.153456, 34.103558],
-                [-118.151444, 34.104064],
-                [-118.139595, 34.104166],
-                [-118.138317, 34.104541],
-                [-118.134711, 34.106703],
-                [-118.134758, 34.106236],
-                [-118.135050, 34.106142],
-                [-118.135344, 34.106520],
+                [-118.151575, 34.104057],
+                [-118.140068, 34.104128],
+                [-118.138624, 34.104413],
                 [-118.137644, 34.105129],
-                [-118.137819, 34.104820],
-                [-118.129438, 34.109943],
+                [-118.136529, 34.105690],
+                [-118.135541, 34.106186],
+                [-118.134426, 34.106747],
+                [-118.132302, 34.108142],
                 [-118.118540, 34.117127],
                 [-118.097672, 34.124832],
-                [-118.092061, 34.126518],
-                [-118.091038, 34.127134],
+                [-118.093007, 34.126259],
                 [-118.091446, 34.127024],
-                [-118.092998, 34.126604],
-                [-118.092873, 34.126296],
-                [-118.085259, 34.128597],
+                [-118.085540, 34.128516],
                 [-118.082915, 34.129080],
+                [-118.081628, 34.129243],
                 [-118.073397, 34.130276],
+                [-118.055217, 34.131504],
                 [-118.053923, 34.131626],
+                [-118.052623, 34.131685],
+                [-118.045949, 34.131542],
                 [-118.043071, 34.132270],
-                [-118.041645, 34.133210],
-                [-118.033717, 34.141614],
+                [-118.041465, 34.133377],
+                [-118.033843, 34.141511],
                 [-118.033004, 34.141974],
                 [-118.031403, 34.142244],
                 [-118.031433, 34.143351],
                 [-118.030512, 34.143336],
-                [-118.030138, 34.143026],
-                [-118.029719, 34.143023],
+                [-118.030296, 34.143125],
                 [-118.029200, 34.142860]
             ]
         }
@@ -2633,6 +2621,22 @@
             },
             {
             "type": "Feature",
+            "id": "station-huntington-atlantic",
+            "properties": {
+                "id": "station-huntington-atlantic",
+                "name": "Huntington / Atlantic",
+                "street1": "Huntington Drive",
+                "street2": "Atlantic Boulevard",
+                "routes": "H",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.134426, 34.106747]
+            }
+            },
+            {
+            "type": "Feature",
             "id": "station-huntington-san-marino-san-gabriel",
             "properties": {
                 "id": "station-huntington-san-marino-san-gabriel",
@@ -2667,7 +2671,7 @@
             "id": "station-huntington-arcadia-baldwin",
             "properties": {
                 "id": "station-huntington-arcadia-baldwin",
-                "name": "Arcadia / Baldwin Avenue",
+                "name": "Huntington / Baldwin Avenue",
                 "street1": "Huntington Drive",
                 "street2": "Baldwin Avenue",
                 "routes": "H",
@@ -2695,6 +2699,134 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [-118.029200, 34.142860]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-huntington-monterey-station",
+            "properties": {
+                "id": "station-huntington-monterey-station",
+                "name": "Huntington / Monterey Station",
+                "street1": "Monterey Road",
+                "street2": "Huntington Drive",
+                "routes": "H",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.187063, 34.085043]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-huntington-topaz-station",
+            "properties": {
+                "id": "station-huntington-topaz-station",
+                "name": "Huntington / Topaz Station",
+                "street1": "Topaz Street",
+                "street2": "Huntington Drive",
+                "routes": "H",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.189006, 34.083030]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-huntington-eastern-station",
+            "properties": {
+                "id": "station-huntington-eastern-station",
+                "name": "Huntington / Eastern Station",
+                "street1": "Eastern Avenue",
+                "street2": "Huntington Drive",
+                "routes": "H",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.178406, 34.085867]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-huntington-main",
+            "properties": {
+                "id": "station-huntington-main",
+                "name": "Huntington / Main",
+                "street1": "Huntington Drive",
+                "street2": "Main Street",
+                "routes": "H",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.156804, 34.096331]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-broadway-daly",
+            "properties": {
+                "id": "station-broadway-daly",
+                "name": "Broadway / Daly",
+                "street1": "Broadway",
+                "street2": "Daly Street",
+                "routes": "H",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.215641, 34.073662]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-huntington-poplar",
+            "properties": {
+                "id": "station-huntington-poplar",
+                "name": "Huntington / Poplar",
+                "street1": "Huntington Drive",
+                "street2": "Poplar Blvd",
+                "routes": "H",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.164891, 34.090331]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-huntington-fremont",
+            "properties": {
+                "id": "station-huntington-fremont",
+                "name": "Huntington / Fremont",
+                "street1": "Huntington Drive",
+                "street2": "Fremont Ave",
+                "routes": "H",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.151608, 34.104025]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-huntington-virginia",
+            "properties": {
+                "id": "station-huntington-virginia",
+                "name": "Huntington / Virginia",
+                "street1": "Huntington Drive",
+                "street2": "Virginia Road",
+                "routes": "H",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.117188, 34.117582]
             }
             }
     ]
