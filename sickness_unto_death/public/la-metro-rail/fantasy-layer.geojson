@@ -309,7 +309,6 @@
                 [-118.192539, 34.079269],
                 [-118.187046, 34.085020],
                 [-118.183180, 34.085632],
-                [-118.180956, 34.085211],
                 [-118.179743, 34.085342],
                 [-118.171188, 34.089028],
                 [-118.165696, 34.089983],
@@ -2653,17 +2652,18 @@
             },
             {
             "type": "Feature",
-            "id": "station-huntington-temple-city",
+            "id": "station-huntington-rosemead",
             "properties": {
-                "id": "station-huntington-temple-city",
-                "name": "Temple City / Huntington Drive",
+                "id": "station-huntington-rosemead",
+                "name": "Rosemead blvd / Huntington Drive",
                 "street1": "Huntington Drive",
+                "street2": "Rosemead Blvd",
                 "routes": "H",
                 "system": "fantasy"
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": [-118.082915, 34.129080]
+                "coordinates": [-118.073397, 34.130276]
             }
             },
             {
