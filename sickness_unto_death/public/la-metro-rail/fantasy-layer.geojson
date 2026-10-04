@@ -281,7 +281,7 @@
                 [-118.270306, 34.066674],
                 [-118.274880, 34.059533],
                 [-118.275891, 34.057950],
-                [-118.279152, 34.052816]
+                [-118.279859, 34.051813]
             ]
         }
         },
@@ -2454,12 +2454,12 @@
             },
             {
             "type": "Feature",
-            "id": "station-alvarado-seventh",
+            "id": "station-alvarado-wilshire",
             "properties": {
-                "id": "station-alvarado-seventh",
-                "name": "Alvarado / 7th",
+                "id": "station-alvarado-wilshire",
+                "name": "Alvarado / Wilshire",
                 "street1": "Alvarado Street",
-                "street2": "7th Street",
+                "street2": "Wilshire Boulevard",
                 "system": "fantasy"
             },
             "geometry": {
@@ -2469,18 +2469,19 @@
             },
             {
             "type": "Feature",
-            "id": "station-alvarado-ninth",
+            "id": "station-alvarado-olympic",
             "properties": {
-                "id": "station-alvarado-ninth",
-                "name": "Alvarado / 9th",
+                "id": "station-alvarado-olympic",
+                "name": "Alvarado / Olympic",
                 "street1": "Alvarado Street",
-                "street2": "9th Street",
+                "street2": "Olympic Boulevard",
+                "routes": "G",
                 "system": "fantasy",
                 "terminal": true
             },
             "geometry": {
                 "type": "Point",
-                "coordinates": [-118.279152, 34.052816]
+                "coordinates": [-118.279859, 34.051813]
             }
             }
     ]
