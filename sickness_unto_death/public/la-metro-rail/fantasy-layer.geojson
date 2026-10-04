@@ -287,6 +287,86 @@
         },
         {
         "type": "Feature",
+        "id": "huntington-blvd-line",
+        "properties": {
+            "id": "huntington-blvd-line",
+            "routeId": "H",
+            "name": "Huntington Blvd Line",
+            "color": "#F97316",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-118.235000, 34.056095],
+                [-118.234861, 34.056793],
+                [-118.236129, 34.056983],
+                [-118.235956, 34.057767],
+                [-118.237076, 34.058092],
+                [-118.235977, 34.062701],
+                [-118.235840, 34.063860],
+                [-118.234954, 34.065042],
+                [-118.228793, 34.069043],
+                [-118.225970, 34.070035],
+                [-118.222125, 34.071780],
+                [-118.217836, 34.073597],
+                [-118.202894, 34.073825],
+                [-118.198695, 34.073899],
+                [-118.198655, 34.072988],
+                [-118.197192, 34.072984],
+                [-118.196751, 34.073596],
+                [-118.193544, 34.078190],
+                [-118.193334, 34.079065],
+                [-118.192539, 34.079269],
+                [-118.187046, 34.085020],
+                [-118.183180, 34.085632],
+                [-118.180956, 34.085211],
+                [-118.179743, 34.085342],
+                [-118.171188, 34.089028],
+                [-118.165696, 34.089983],
+                [-118.164688, 34.090409],
+                [-118.158514, 34.094661],
+                [-118.155509, 34.097111],
+                [-118.155225, 34.097881],
+                [-118.154992, 34.101803],
+                [-118.154443, 34.102762],
+                [-118.153456, 34.103558],
+                [-118.151444, 34.104064],
+                [-118.139595, 34.104166],
+                [-118.138317, 34.104541],
+                [-118.134711, 34.106703],
+                [-118.134758, 34.106236],
+                [-118.135050, 34.106142],
+                [-118.135344, 34.106520],
+                [-118.137644, 34.105129],
+                [-118.137819, 34.104820],
+                [-118.129438, 34.109943],
+                [-118.118540, 34.117127],
+                [-118.097672, 34.124832],
+                [-118.092061, 34.126518],
+                [-118.091038, 34.127134],
+                [-118.091446, 34.127024],
+                [-118.092998, 34.126604],
+                [-118.092873, 34.126296],
+                [-118.085259, 34.128597],
+                [-118.082915, 34.129080],
+                [-118.073397, 34.130276],
+                [-118.053923, 34.131626],
+                [-118.043071, 34.132270],
+                [-118.041645, 34.133210],
+                [-118.033717, 34.141614],
+                [-118.033004, 34.141974],
+                [-118.031403, 34.142244],
+                [-118.031433, 34.143351],
+                [-118.030512, 34.143336],
+                [-118.030138, 34.143026],
+                [-118.029719, 34.143023],
+                [-118.029200, 34.142860]
+            ]
+        }
+        },
+        {
+        "type": "Feature",
         "id": "station-ocean-santa-monica",
         "properties": {
             "id": "station-ocean-santa-monica",
@@ -962,8 +1042,10 @@
             "name": "Chinatown",
             "street1": "Broadway",
             "street2": "Cesar E. Chavez Avenue",
-            "routes": "F",
-            "system": "fantasy"
+            "routes": "F, H",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "Metro A Line"
         },
         "geometry": {
             "type": "Point",
@@ -978,6 +1060,7 @@
                 "name": "Union Station",
                 "street1": "Alameda Street",
                 "street2": "Cesar E. Chavez Avenue",
+                "routes": "H",
                 "system": "fantasy",
                 "interchange": true,
                 "transfer": "Metro A, B, D and J Lines; Metrolink; Amtrak"
@@ -2482,6 +2565,136 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [-118.279859, 34.051813]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-huntington-broadway-avenue-18",
+            "properties": {
+                "id": "station-huntington-broadway-avenue-18",
+                "name": "North Broadway / Avenue 18",
+                "street1": "North Broadway",
+                "street2": "Avenue 18",
+                "routes": "H",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.222125, 34.071780]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-huntington-broadway-lincoln-park",
+            "properties": {
+                "id": "station-huntington-broadway-lincoln-park",
+                "name": "North Broadway / Lincoln Park Avenue",
+                "street1": "North Broadway",
+                "street2": "Lincoln Park Avenue",
+                "routes": "H",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.202894, 34.073825]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-huntington-mission-broadway",
+            "properties": {
+                "id": "station-huntington-mission-broadway",
+                "name": "Mission Road / North Broadway",
+                "street1": "Mission Road",
+                "street2": "North Broadway",
+                "routes": "H",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.196751, 34.073596]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-huntington-court",
+            "properties": {
+                "id": "station-huntington-court",
+                "name": "Huntington Drive / Court Street",
+                "street1": "Huntington Drive",
+                "street2": "Court Street",
+                "routes": "H",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.137644, 34.105129]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-huntington-san-marino-san-gabriel",
+            "properties": {
+                "id": "station-huntington-san-marino-san-gabriel",
+                "name": "San Marino / San Gabriel Boulevard",
+                "street1": "Huntington Drive",
+                "street2": "San Gabriel Boulevard",
+                "routes": "H",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.091446, 34.127024]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-huntington-temple-city",
+            "properties": {
+                "id": "station-huntington-temple-city",
+                "name": "Temple City / Huntington Drive",
+                "street1": "Huntington Drive",
+                "routes": "H",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.082915, 34.129080]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-huntington-arcadia-baldwin",
+            "properties": {
+                "id": "station-huntington-arcadia-baldwin",
+                "name": "Arcadia / Baldwin Avenue",
+                "street1": "Huntington Drive",
+                "street2": "Baldwin Avenue",
+                "routes": "H",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.053923, 34.131626]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-huntington-arcadia-station",
+            "properties": {
+                "id": "station-huntington-arcadia-station",
+                "name": "Arcadia Station",
+                "street1": "First Avenue",
+                "street2": "Santa Clara Street",
+                "routes": "H",
+                "system": "fantasy",
+                "terminal": true,
+                "interchange": true,
+                "transfer": "Metro A Line"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.029200, 34.142860]
             }
             }
     ]
