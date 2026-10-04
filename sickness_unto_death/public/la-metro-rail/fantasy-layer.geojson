@@ -329,6 +329,7 @@
                 [-118.134426, 34.106747],
                 [-118.132302, 34.108142],
                 [-118.118540, 34.117127],
+                [-118.106890, 34.121749],
                 [-118.097672, 34.124832],
                 [-118.093007, 34.126259],
                 [-118.091446, 34.127024],
@@ -2828,6 +2829,22 @@
                 "type": "Point",
                 "coordinates": [-118.117188, 34.117582]
             }
+            },
+            {
+                "type": "Feature",
+                "id": "station-huntington-san-marino",
+                "properties": {
+                "id": "station-huntington-san-marino",
+                "name": "Huntington / San Marino",
+                "street1": "Huntington Drive",
+                "street2": "San Marino Avenue",
+                "routes": "H",
+                "system": "fantasy"
+                },
+                "geometry": {
+                "type": "Point",
+                "coordinates": [-118.106890, 34.121749]
+                }
             }
     ]
 }
