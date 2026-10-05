@@ -20,6 +20,10 @@ import {
 
 import MetroLA2026 from "./2026LAMetro";
 import TrainMarker from "./TrainMarker";
+/* 
+CREDITS TO https://services2.arcgis.com/yL7v93RXrxlqkeDx/ArcGIS/rest/services/Pacific_Electric_Lines/FeatureServer/22
+*/
+import PacificElectricLayer from "./PEMap";
 // import UserEditLayer from "./UserEditLayer";
 
 setWorkerUrl("/maplibre-gl-worker.mjs");
@@ -34,6 +38,7 @@ const LA_BOUNDS: [number, number, number, number] = [
 type LayerVisibility = {
   existingMetro: boolean;
   permanentFantasy: boolean;
+  pacificElectric: boolean;
   userDraft: boolean;
 };
 
@@ -238,11 +243,8 @@ export default function FantasyRailMap() {
   const [visibleLayers, setVisibleLayers] =
     useState<LayerVisibility>({
       existingMetro: true,
-
-      // Change to true after exporting your
-      // permanent revival-network.geojson.
+      pacificElectric: false,
       permanentFantasy: true,
-
       userDraft: false,
     });
 
@@ -264,6 +266,14 @@ export default function FantasyRailMap() {
         </Text>
 
         <div className="flex flex-col gap-1 sm:gap-1.5 lg:gap-2">
+          <LayerToggleButton
+              active={visibleLayers.pacificElectric}
+              label="Pacific Electric"
+              colorClassName="bg-orange-100 hover:bg-orange-200"
+              onClick={() =>
+                toggleLayer("pacificElectric")
+              }
+          />
           <LayerToggleButton
             active={visibleLayers.existingMetro}
             label="LA Metro 2026"
@@ -317,7 +327,10 @@ export default function FantasyRailMap() {
         maxBounds={LA_BOUNDS}
       >
         <NavigationControl position="bottom-right" />
-
+        {visibleLayers.pacificElectric && (
+          <PacificElectricLayer />
+        )}
+        
         {visibleLayers.existingMetro && (
           <MetroLA2026 />
         )}
