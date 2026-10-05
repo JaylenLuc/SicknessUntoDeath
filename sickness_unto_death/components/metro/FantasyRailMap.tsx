@@ -325,7 +325,7 @@ export default function FantasyRailMap() {
           overflow: "hidden",
         }}
         maxBounds={LA_BOUNDS}
-        attributionControl={false}
+        // attributionControl={false}
       >
         <NavigationControl position="bottom-right" />
         {visibleLayers.pacificElectric && (
