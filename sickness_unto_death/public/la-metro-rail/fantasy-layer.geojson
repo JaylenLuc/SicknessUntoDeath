@@ -1987,6 +1987,49 @@
         },
         {
             "type": "Feature",
+            "id": "sgv-main-street-line",
+            "properties": {
+            "id": "sgv-main-street-line",
+            "routeId": "SGV",
+            "name": "SGV Main Street Line",
+            "color": "#800020",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-118.159671, 34.182872],
+                [-118.150727, 34.183139],
+                [-118.150689, 34.168851],
+                [-118.150590, 34.157788],
+                [-118.147510, 34.148360],
+                [-118.148210, 34.141910],
+                [-118.148130, 34.133520],
+                [-118.149120, 34.125000],
+                [-118.150347, 34.115846],
+                [-118.151608, 34.104025],
+                [-118.156804, 34.096331],
+                [-118.152087, 34.095329],
+                [-118.145532, 34.091498],
+                [-118.134625, 34.091573],
+                [-118.126842, 34.095162],
+                [-118.121030, 34.097948],
+                [-118.115918, 34.092647],
+                [-118.105724, 34.096715],
+                [-118.099593, 34.096936],
+                [-118.090918, 34.096137],
+                [-118.091009, 34.103428],
+                [-118.073632, 34.103511],
+                [-118.068898, 34.105542],
+                [-118.060901, 34.106699],
+                [-118.052873, 34.107792],
+                [-118.034851, 34.107772],
+                [-118.030856, 34.107266]
+            ]
+            }
+        },
+        {
+            "type": "Feature",
             "id": "station-hollywood-western",
             "properties": {
             "id": "station-hollywood-western",
@@ -2845,6 +2888,305 @@
                 "type": "Point",
                 "coordinates": [-118.106890, 34.121749]
                 }
-            }
+            },
+    {
+        "type": "Feature",
+        "id": "station-lincoln-woodbury",
+        "properties": {
+          "id": "station-lincoln-woodbury",
+          "name": "Lincoln / Woodbury",
+          "street1": "Lincoln Avenue",
+          "street2": "Woodbury Road",
+          "routes": "SGV",
+          "system": "fantasy",
+          "terminal": true
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.159671, 34.182872]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-fair-oaks-woodbury",
+        "properties": {
+          "id": "station-fair-oaks-woodbury",
+          "name": "Fair Oaks / Woodbury",
+          "street1": "Fair Oaks Avenue",
+          "street2": "Woodbury Road",
+          "routes": "SGV",
+          "system": "fantasy"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.150727, 34.183139]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-fair-oaks-washington",
+        "properties": {
+          "id": "station-fair-oaks-washington",
+          "name": "Fair Oaks / Washington",
+          "street1": "Fair Oaks Avenue",
+          "street2": "Washington Boulevard",
+          "routes": "SGV",
+          "system": "fantasy"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.150689, 34.168851]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-fair-oaks-orange-grove",
+        "properties": {
+          "id": "station-fair-oaks-orange-grove",
+          "name": "Fair Oaks / Orange Grove",
+          "street1": "Fair Oaks Avenue",
+          "street2": "Orange Grove Boulevard",
+          "routes": "SGV",
+          "system": "fantasy"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.150590, 34.157788]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-memorial-park-sgv",
+        "properties": {
+          "id": "station-memorial-park-sgv",
+          "name": "Memorial Park",
+          "street1": "North Arroyo Parkway",
+          "street2": "Holly Street",
+          "routes": "SGV",
+          "system": "fantasy",
+          "interchange": true,
+          "transfer": "Metro A Line"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.147510, 34.148360]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-del-mar-sgv",
+        "properties": {
+          "id": "station-del-mar-sgv",
+          "name": "Del Mar",
+          "street1": "Raymond Avenue",
+          "street2": "Del Mar Boulevard",
+          "routes": "SGV",
+          "system": "fantasy",
+          "interchange": true,
+          "transfer": "Metro A Line"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.148210, 34.141910]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-fillmore-sgv",
+        "properties": {
+          "id": "station-fillmore-sgv",
+          "name": "Fillmore",
+          "street1": "Raymond Avenue",
+          "street2": "Fillmore Street",
+          "routes": "SGV",
+          "system": "fantasy",
+          "interchange": true,
+          "transfer": "Metro A Line"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.148130, 34.133520]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-fair-oaks-mission",
+        "properties": {
+          "id": "station-fair-oaks-mission",
+          "name": "Fair Oaks / Mission",
+          "street1": "Fair Oaks Avenue",
+          "street2": "Mission Street",
+          "routes": "SGV",
+          "system": "fantasy"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.150347, 34.115846]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-huntington-main",
+        "properties": {
+          "id": "station-huntington-main",
+          "name": "Huntington / Main",
+          "street1": "Huntington Drive",
+          "street2": "Main Street",
+          "routes": "H, SGV",
+          "system": "fantasy",
+          "interchange": true,
+          "transfer": "H Line"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.156804, 34.096331]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-main-fremont",
+        "properties": {
+          "id": "station-main-fremont",
+          "name": "Main / Fremont",
+          "street1": "Main Street",
+          "street2": "Fremont Avenue",
+          "routes": "SGV",
+          "system": "fantasy"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.152087, 34.095329]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-main-atlantic",
+        "properties": {
+          "id": "station-main-atlantic",
+          "name": "Main / Atlantic",
+          "street1": "Main Street",
+          "street2": "Atlantic Boulevard",
+          "routes": "SGV",
+          "system": "fantasy"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.134625, 34.091573]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-main-garfield",
+        "properties": {
+          "id": "station-main-garfield",
+          "name": "Main / Garfield",
+          "street1": "Main Street",
+          "street2": "Garfield Avenue",
+          "routes": "SGV",
+          "system": "fantasy"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.126842, 34.095162]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-main-almansor",
+        "properties": {
+          "id": "station-main-almansor",
+          "name": "Main / Almansor",
+          "street1": "Main Street",
+          "street2": "Almansor Street",
+          "routes": "SGV",
+          "system": "fantasy"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.121030, 34.097948]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-main-del-mar",
+        "properties": {
+          "id": "station-main-del-mar",
+          "name": "Main / Del Mar",
+          "street1": "Main Street",
+          "street2": "Del Mar Avenue",
+          "routes": "SGV",
+          "system": "fantasy"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.099593, 34.096936]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-las-tunas-san-gabriel",
+        "properties": {
+          "id": "station-las-tunas-san-gabriel",
+          "name": "Las Tunas / San Gabriel",
+          "street1": "Las Tunas Drive",
+          "street2": "San Gabriel Boulevard",
+          "routes": "SGV",
+          "system": "fantasy"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.091009, 34.103428]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-las-tunas-rosemead",
+        "properties": {
+          "id": "station-las-tunas-rosemead",
+          "name": "Las Tunas / Rosemead",
+          "street1": "Las Tunas Drive",
+          "street2": "Rosemead Boulevard",
+          "routes": "SGV",
+          "system": "fantasy"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.073632, 34.103511]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-las-tunas-temple-city",
+        "properties": {
+          "id": "station-las-tunas-temple-city",
+          "name": "Las Tunas / Temple City",
+          "street1": "Las Tunas Drive",
+          "street2": "Temple City Boulevard",
+          "routes": "SGV",
+          "system": "fantasy"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.060901, 34.106699]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-las-tunas-santa-anita",
+        "properties": {
+          "id": "station-las-tunas-santa-anita",
+          "name": "Las Tunas / Santa Anita",
+          "street1": "Las Tunas Drive",
+          "street2": "Santa Anita Avenue",
+          "routes": "SGV",
+          "system": "fantasy",
+          "terminal": true
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.030856, 34.107266]
+        }
+      }
+
     ]
 }
