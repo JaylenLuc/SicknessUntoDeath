@@ -2014,10 +2014,14 @@
                 [-118.134625, 34.091573],
                 [-118.126842, 34.095162],
                 [-118.121030, 34.097948],
-                [-118.115918, 34.092647],
-                [-118.105724, 34.096715],
-                [-118.099593, 34.096936],
-                [-118.090918, 34.096137],
+                [-118.118426, 34.099154],
+                [-118.115326, 34.100648],
+                [-118.112154, 34.102039],
+                [-118.110942, 34.102399],
+                [-118.106183, 34.102449],
+                [-118.102032, 34.102546],
+                [-118.099666, 34.102826],
+                [-118.095292, 34.103306],
                 [-118.091009, 34.103428],
                 [-118.073632, 34.103511],
                 [-118.068898, 34.105542],
@@ -3106,22 +3110,39 @@
           "coordinates": [-118.121030, 34.097948]
         }
       },
-      {
-        "type": "Feature",
-        "id": "station-main-del-mar",
-        "properties": {
-          "id": "station-main-del-mar",
-          "name": "Main / Del Mar",
-          "street1": "Main Street",
-          "street2": "Del Mar Avenue",
-          "routes": "SGV",
-          "system": "fantasy"
+
+        {
+            "type": "Feature",
+            "id": "station-las-tunas-mission",
+            "properties": {
+            "id": "station-las-tunas-mission",
+            "name": "Las Tunas / Mission",
+            "street1": "Las Tunas Drive",
+            "street2": "Mission Drive",
+            "routes": "SGV",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.110942, 34.102399]
+            }
         },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [-118.099593, 34.096936]
-        }
-      },
+        {
+            "type": "Feature",
+            "id": "station-las-tunas-del-mar",
+            "properties": {
+            "id": "station-las-tunas-del-mar",
+            "name": "Las Tunas / Del Mar",
+            "street1": "Las Tunas Drive",
+            "street2": "Del Mar Avenue",
+            "routes": "SGV",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.099666, 34.102826]
+            }
+        },
       {
         "type": "Feature",
         "id": "station-las-tunas-san-gabriel",
