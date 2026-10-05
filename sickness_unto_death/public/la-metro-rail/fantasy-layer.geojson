@@ -83,7 +83,7 @@
             "id": "p-line",
             "routeId": "P",
             "name": "P Line",
-            "color": "#8DD929",
+            "color": "#b1c6ba",
             "system": "fantasy"
         },
         "geometry": {
@@ -170,6 +170,7 @@
                 [-118.253372, 34.045224],
                 [-118.257391, 34.040913],
                 [-118.263971, 34.044984],
+                [-118.279859, 34.051813],
                 [-118.280993, 34.052147],
                 [-118.309075, 34.052632],
                 [-118.322983, 34.054644],
@@ -249,6 +250,7 @@
                 [-118.313535, 34.076240],
                 [-118.344042, 34.076160],
                 [-118.361426, 34.076101],
+                [-118.376579, 34.076034],
                 [-118.395649, 34.077227]
             ]
         }
@@ -3207,7 +3209,87 @@
           "type": "Point",
           "coordinates": [-118.030856, 34.107266]
         }
-      }
+      },
+        {
+            "type": "Feature",
+            "id": "station-olympic-la-cienega",
+            "properties": {
+            "id": "station-olympic-la-cienega",
+            "name": "Olympic / La Cienega",
+            "street1": "Olympic Boulevard",
+            "street2": "La Cienega Boulevard",
+            "routes": "L",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.375486, 34.059518]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-olympic-spalding",
+            "properties": {
+            "id": "station-olympic-spalding",
+            "name": "Olympic / Spalding",
+            "street1": "Olympic Boulevard",
+            "street2": "Spalding Drive",
+            "routes": "L",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.409642, 34.059736]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-olympic-century-park-east",
+            "properties": {
+            "id": "station-olympic-century-park-east",
+            "name": "Olympic / Century Park East",
+            "street1": "Olympic Boulevard",
+            "street2": "Century Park East",
+            "routes": "L",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.413061, 34.057694]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-olympic-century-park-west",
+            "properties": {
+            "id": "station-olympic-century-park-west",
+            "name": "Olympic / Century Park West",
+            "street1": "Olympic Boulevard",
+            "street2": "Century Park West",
+            "routes": "L",
+            "system": "fantasy"
+            },
+            "geometry": {
+            "type": "Point",
+            "coordinates": [-118.416202, 34.053187]
+            }
+        },
+          {
+            "type": "Feature",
+            "id": "station-beverly-la-cienega",
+            "properties": {
+                "id": "station-beverly-la-cienega",
+                "name": "Beverly / La Cienega",
+                "street1": "Beverly Boulevard",
+                "street2": "La Cienega Boulevard",
+                "routes": "BEV",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.376579, 34.076034]
+            }
+        }
 
     ]
 }
