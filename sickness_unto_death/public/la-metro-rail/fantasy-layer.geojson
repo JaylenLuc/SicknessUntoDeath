@@ -2,6 +2,52 @@
     "type": "FeatureCollection",
     "features": [
         {
+            "type": "Feature",
+            "id": "atlantic-los-robles-line",
+            "properties": {
+                "id": "atlantic-los-robles-line",
+                "routeId": "ATL",
+                "name": "Atlantic–Los Robles Line",
+                "color": "#C8A2C8",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                [-118.141440, 34.145842],
+                [-118.141321, 34.136159],
+                [-118.141339, 34.127566],
+                [-118.141219, 34.122092],
+                [-118.140998, 34.121704],
+                [-118.139377, 34.120263],
+                [-118.139204, 34.119106],
+                [-118.137971, 34.116204],
+                [-118.135654, 34.110671],
+                [-118.134748, 34.109603],
+                [-118.134711, 34.106703],
+                [-118.134426, 34.106747],
+                [-118.134625, 34.091573],
+                [-118.134476, 34.077963],
+                [-118.134462, 34.069752],
+                [-118.134228, 34.062399],
+                [-118.134160, 34.061526],
+                [-118.133653, 34.060679],
+                [-118.133607, 34.059786],
+                [-118.134327, 34.057195],
+                [-118.139840, 34.047845],
+                [-118.141501, 34.042328],
+                [-118.142014, 34.040652],
+                [-118.142542, 34.040017],
+                [-118.146463, 34.037465],
+                [-118.150991, 34.034647],
+                [-118.152760, 34.033366],
+                [-118.153494, 34.032508],
+                [-118.153997, 34.031510],
+                [-118.157303, 34.020405]
+                ]
+            }
+        },
+        {
         "type": "Feature",
         "id": "f-line",
         "properties": {
@@ -242,6 +288,7 @@
                 [-118.237071, 34.058084],
                 [-118.240226, 34.058542],
                 [-118.243525, 34.055739],
+                [-118.260855, 34.068136],
                 [-118.268010, 34.070253],
                 [-118.270306, 34.066674],
                 [-118.291699, 34.076321],
@@ -773,6 +820,22 @@
             "coordinates": [-118.268010, 34.070253]
         }
         },
+        {
+            "type": "Feature",
+            "id": "station-temple-glendale",
+            "properties": {
+                "id": "station-temple-glendale",
+                "name": "Temple / Glendale",
+                "street1": "Temple Street",
+                "street2": "Glendale Boulevard",
+                "routes": "BEV",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.260855, 34.068136]
+            }
+            },
         {
         "type": "Feature",
         "id": "station-beverly-alvarado",
@@ -3289,7 +3352,202 @@
                 "type": "Point",
                 "coordinates": [-118.376579, 34.076034]
             }
-        }
+        },
+        {
+            "type": "Feature",
+            "id": "station-colorado-los-robles",
+            "properties": {
+                "id": "station-colorado-los-robles",
+                "name": "Colorado / Los Robles",
+                "street1": "Colorado Boulevard",
+                "street2": "Los Robles Avenue",
+                "routes": "ATL",
+                "system": "fantasy",
+                "terminal": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.141440, 34.145842]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-california-los-robles",
+            "properties": {
+                "id": "station-california-los-robles",
+                "name": "California / Los Robles",
+                "street1": "California Boulevard",
+                "street2": "Los Robles Avenue",
+                "routes": "ATL",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.141321, 34.136159]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-glenarm-los-robles",
+            "properties": {
+                "id": "station-glenarm-los-robles",
+                "name": "Glenarm / Los Robles",
+                "street1": "Glenarm Street",
+                "street2": "Los Robles Avenue",
+                "routes": "ATL",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.141339, 34.127566]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-mission-los-robles",
+            "properties": {
+                "id": "station-mission-los-robles",
+                "name": "Mission / Los Robles",
+                "street1": "Mission Street",
+                "street2": "Los Robles Avenue",
+                "routes": "ATL",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.137971, 34.116204]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-main-atlantic",
+            "properties": {
+                "id": "station-main-atlantic",
+                "name": "Main / Atlantic",
+                "street1": "Main Street",
+                "street2": "Atlantic Boulevard",
+                "routes": "ATL",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.134625, 34.091573]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-valley-atlantic",
+            "properties": {
+                "id": "station-valley-atlantic",
+                "name": "Valley / Atlantic",
+                "street1": "Valley Boulevard",
+                "street2": "Atlantic Boulevard",
+                "routes": "ATL",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.134476, 34.077963]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-hellman-atlantic",
+            "properties": {
+                "id": "station-hellman-atlantic",
+                "name": "Hellman / Atlantic",
+                "street1": "Hellman Avenue",
+                "street2": "Atlantic Boulevard",
+                "routes": "ATL",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.134462, 34.069752]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-garvey-atlantic",
+            "properties": {
+                "id": "station-garvey-atlantic",
+                "name": "Garvey / Atlantic",
+                "street1": "Garvey Avenue",
+                "street2": "Atlantic Boulevard",
+                "routes": "ATL",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.134228, 34.062399]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-cesar-chavez-atlantic",
+            "properties": {
+                "id": "station-cesar-chavez-atlantic",
+                "name": "Cesar Chavez / Atlantic",
+                "street1": "Cesar Chavez Avenue",
+                "street2": "Atlantic Boulevard",
+                "routes": "ATL",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.146463, 34.037465]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-atlantic-pomona",
+            "properties": {
+                "id": "station-atlantic-pomona",
+                "name": "Atlantic / Pomona",
+                "street1": "Pomona Boulevard",
+                "street2": "Atlantic Boulevard",
+                "routes": "ATL",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.152760, 34.033366]
+            }
+            },
+            {
+            "type": "Feature",
+            "id": "station-whittier-atlantic",
+            "properties": {
+                "id": "station-whittier-atlantic",
+                "name": "Whittier / Atlantic",
+                "street1": "Whittier Boulevard",
+                "street2": "Atlantic Boulevard",
+                "routes": "ATL",
+                "system": "fantasy",
+                "terminal": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.157303, 34.020405]
+            }
+            },
+
+            {
+            "type": "Feature",
+            "id": "station-brightwood-atlantic",
+            "properties": {
+                "id": "station-brightwood-atlantic",
+                "name": "Brightwood / Atlantic",
+                "street1": "Brightwood Street",
+                "street2": "Atlantic Boulevard",
+                "routes": "ATL",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.141501, 34.042328]
+            }
+            }
 
     ]
 }
