@@ -8,7 +8,7 @@
                 "id": "atlantic-los-robles-line",
                 "routeId": "ATL",
                 "name": "Atlantic–Los Robles Line",
-                "color": "#C8A2C8",
+                "color": "#e39ae3",
                 "system": "fantasy"
             },
             "geometry": {
@@ -267,6 +267,7 @@
                 [-118.291739, 33.974620],
                 [-118.278299, 33.974675],
                 [-118.256403, 33.974776],
+                [-118.24327, 33.97374],
                 [-118.225212, 33.974216]
             ]
         }
@@ -3547,7 +3548,24 @@
                 "type": "Point",
                 "coordinates": [-118.141501, 34.042328]
             }
-            }
+        },
+
+        {
+        "type": "Feature",
+        "id": "station-florence",
+        "properties": {
+            "id": "station-florence",
+            "name": "Florence",
+            "street1": "Florence Avenue",
+            "street2": "Graham Avenue",
+            "routes": "N",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.24327, 33.97374]
+        }
+        }
 
     ]
 }
