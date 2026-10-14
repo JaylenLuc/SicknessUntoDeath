@@ -56,8 +56,8 @@ const buildNode = (element: Element): node | null => {
     
     // Get all polymorphisms (mutations)
     const polys = details.querySelectorAll(':scope > poly');
-    polys.forEach((poly: { textContent: string; }) => {
-      const mutation = poly.textContent.trim();
+    polys.forEach((poly: Element) => {
+      const mutation = poly.textContent?.trim() ?? '';
       if (mutation !== '') {
         newNode.mutations.push(mutation);
       }
