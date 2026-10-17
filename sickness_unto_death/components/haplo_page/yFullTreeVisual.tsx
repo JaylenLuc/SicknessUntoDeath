@@ -64,6 +64,8 @@ export const YFullTreeVisual = ({
   const svgRef = useRef<SVGSVGElement>(null);
   const pinnedNodeRef = useRef<YFullNode | null>(null);
   const previewCloseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const focusRequestRef = useRef<YFullNode | null>(null);
+  const hasRenderedRef = useRef(false);
   const zoomBehaviorRef = useRef<d3.ZoomBehavior<SVGSVGElement, unknown> | null>(null);
   const treeOriginRef = useRef({ x: 0, y: 0 });
   const [treeState, setTreeState] = useState(() => getInitialTreeState(tree));
@@ -72,7 +74,6 @@ export const YFullTreeVisual = ({
   const [query, setQuery] = useState("");
   const [searchMessage, setSearchMessage] = useState("");
   const [limitMessage, setLimitMessage] = useState("");
-  const [focusNode, setFocusNode] = useState<YFullNode | null>(null);
   const { expandedNodes, visibleNodeIds } = treeState;
 
   const cancelPreviewClose = useCallback(() => {
@@ -126,8 +127,6 @@ export const YFullTreeVisual = ({
   }, []);
 
   const toggleBranch = useCallback((node: YFullNode) => {
-    setFocusNode(node);
-
     if (node.children.length === 0) return;
 
     const key = getNodeKey(node);
@@ -203,7 +202,7 @@ export const YFullTreeVisual = ({
     });
     const match = path[path.length - 1];
     setActiveNode(match);
-    setFocusNode(match);
+    focusRequestRef.current = match;
     setLimitMessage("");
     setSearchMessage(`Showing ${getYFullNodeLabel(match)} and its ancestral path.`);
   };
@@ -213,23 +212,23 @@ export const YFullTreeVisual = ({
 
     const svgElement = svgRef.current;
     const svg = d3.select(svgElement);
+    const previousTransform = d3.zoomTransform(svgElement);
+    const isFirstRender = !hasRenderedRef.current;
     svg.selectAll("*").remove();
 
     const layout = d3.tree<YFullNode>().nodeSize([82, 170]);
     layout(visibleRoot);
 
     const nodes = visibleRoot.descendants();
-    const xMin = d3.min(nodes, (node) => node.x) ?? 0;
-    const yMin = d3.min(nodes, (node) => node.y) ?? 0;
-    const margin = { top: 52, left: 54 };
+    const marginTop = 52;
 
     const zoomLayer = svg.append("g");
     const graphLayer = zoomLayer
       .append("g")
-      .attr("transform", `translate(${margin.left - xMin}, ${margin.top - yMin})`);
+      .attr("transform", `translate(0, ${marginTop})`);
 
-    const rootX = (visibleRoot.x ?? 0) + margin.left - xMin;
-    const rootY = (visibleRoot.y ?? 0) + margin.top - yMin;
+    const rootX = visibleRoot.x ?? 0;
+    const rootY = (visibleRoot.y ?? 0) + marginTop;
     treeOriginRef.current = { x: rootX, y: rootY };
 
     const zoomBehavior = d3
@@ -387,24 +386,30 @@ export const YFullTreeVisual = ({
       .attr("pointer-events", "none")
       .text((node) => (expandedNodes.has(getNodeKey(node.data)) ? "−" : "+"));
 
-    const target = focusNode
-      ? nodes.find((node) => node.data === focusNode) ?? visibleRoot
-      : visibleRoot;
-    const targetX = (target.x ?? 0) + margin.left - xMin;
-    const targetY = (target.y ?? 0) + margin.top - yMin;
-    const initialTransform = d3.zoomIdentity
-      .translate(
-        svgElement.clientWidth / 2 - targetX * DEFAULT_ZOOM,
-        svgElement.clientHeight / 2 - targetY * DEFAULT_ZOOM,
-      )
-      .scale(DEFAULT_ZOOM);
-    svg.call(zoomBehavior.transform, initialTransform);
+    const focusRequest = focusRequestRef.current;
+    if (focusRequest || isFirstRender) {
+      const target = focusRequest
+        ? nodes.find((node) => node.data === focusRequest) ?? visibleRoot
+        : visibleRoot;
+      const targetX = target.x ?? 0;
+      const targetY = (target.y ?? 0) + marginTop;
+      const centeredTransform = d3.zoomIdentity
+        .translate(
+          svgElement.clientWidth / 2 - targetX * DEFAULT_ZOOM,
+          svgElement.clientHeight / 2 - targetY * DEFAULT_ZOOM,
+        )
+        .scale(DEFAULT_ZOOM);
+      svg.call(zoomBehavior.transform, centeredTransform);
+      focusRequestRef.current = null;
+    } else {
+      svg.call(zoomBehavior.transform, previousTransform);
+    }
+    hasRenderedRef.current = true;
     svg.on("click", closeDetails);
   }, [
     cancelPreviewClose,
     closeDetails,
     expandedNodes,
-    focusNode,
     schedulePreviewClose,
     toggleBranch,
     visibleRoot,
@@ -473,7 +478,7 @@ export const YFullTreeVisual = ({
                 visibleNodeIds: getVisibleNodeIds(tree, expandedNodes),
               });
               setActiveNode(null);
-              setFocusNode(null);
+              focusRequestRef.current = null;
               setLimitMessage("");
             }}
           >
