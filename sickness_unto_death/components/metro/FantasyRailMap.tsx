@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import Map, {
   Layer,
   NavigationControl,
@@ -34,6 +35,33 @@ const LA_BOUNDS: [number, number, number, number] = [
   -117.4,
   34.8,
 ];
+
+const COLORFUL_MAP_STYLE =
+  "https://tiles.versatiles.org/assets/styles/colorful/style.json";
+
+const SATELLITE_MAP_STYLE = {
+  version: 8 as const,
+  sources: {
+    "esri-world-imagery": {
+      type: "raster" as const,
+      tiles: [
+        "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+      ],
+      tileSize: 256,
+      attribution:
+        "Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community",
+    },
+  },
+  layers: [
+    {
+      id: "esri-world-imagery",
+      type: "raster" as const,
+      source: "esri-world-imagery",
+    },
+  ],
+};
+
+type BaseMap = "colorful" | "satellite";
 
 type LayerVisibility = {
   existingMetro: boolean;
@@ -240,6 +268,8 @@ function PermanentFantasyNetwork() {
 }
 
 export default function FantasyRailMap() {
+  const [baseMap, setBaseMap] = useState<BaseMap>("colorful");
+  const [railLayersOpen, setRailLayersOpen] = useState(true);
   const [visibleLayers, setVisibleLayers] =
     useState<LayerVisibility>({
       existingMetro: true,
@@ -261,48 +291,93 @@ export default function FantasyRailMap() {
     <div className="relative h-full w-full">
       <div className="absolute left-1.5 top-1.5 z-10 w-36 border-2 border-black bg-white p-1.5
       shadow-[4px_4px_0_#000] sm:left-2 sm:top-2 sm:w-44 sm:p-2 lg:left-4 lg:top-4 lg:w-56 lg:p-3">
-        <Text as="p" className="mb-1.5 text-xs font-bold sm:mb-2 sm:text-sm lg:mb-3 lg:text-base">
-          Map Layers
+        <Text as="p" className="mb-1 text-xs font-bold sm:text-sm lg:text-base">
+          Base Map
         </Text>
 
-        <div className="flex flex-col gap-1 sm:gap-1.5 lg:gap-2">
-          <LayerToggleButton
+        <div className="mb-2 grid grid-cols-2 gap-1 lg:mb-3">
+          <Button
+            type="button"
+            aria-pressed={baseMap === "colorful"}
+            onClick={() => setBaseMap("colorful")}
+            className={[
+              "justify-center px-1 py-0.5 text-[10px] sm:text-xs lg:py-1 lg:text-sm",
+              baseMap === "colorful" ? "bg-violet-200" : "bg-white opacity-70",
+            ].join(" ")}
+          >
+            Abstract
+          </Button>
+          <Button
+            type="button"
+            aria-pressed={baseMap === "satellite"}
+            onClick={() => setBaseMap("satellite")}
+            className={[
+              "justify-center px-1 py-0.5 text-[10px] sm:text-xs lg:py-1 lg:text-sm",
+              baseMap === "satellite" ? "bg-emerald-200" : "bg-white opacity-70",
+            ].join(" ")}
+          >
+            Satellite
+          </Button>
+        </div>
+
+        <button
+          type="button"
+          aria-expanded={railLayersOpen}
+          aria-controls="fantasy-rail-layer-controls"
+          onClick={() => setRailLayersOpen((open) => !open)}
+          className="flex w-full items-center justify-between border-t-2 border-black pt-1.5 text-left text-xs font-bold sm:text-sm lg:text-base"
+        >
+          <span>Rail Layers</span>
+          {railLayersOpen ? (
+            <ChevronUp aria-hidden="true" className="size-4" />
+          ) : (
+            <ChevronDown aria-hidden="true" className="size-4" />
+          )}
+        </button>
+
+        {railLayersOpen && (
+          <div
+            id="fantasy-rail-layer-controls"
+            className="mt-1.5 flex flex-col gap-1 sm:gap-1.5 lg:mt-2 lg:gap-2"
+          >
+            <LayerToggleButton
               active={visibleLayers.pacificElectric}
               label="Pacific Electric"
               colorClassName="bg-orange-100 hover:bg-orange-200"
               onClick={() =>
                 toggleLayer("pacificElectric")
               }
-          />
-          <LayerToggleButton
-            active={visibleLayers.existingMetro}
-            label="LA Metro 2026"
-            colorClassName="bg-sky-100 hover:bg-sky-200"
-            onClick={() =>
-              toggleLayer("existingMetro")
-            }
-          />
+            />
+            <LayerToggleButton
+              active={visibleLayers.existingMetro}
+              label="LA Metro 2026"
+              colorClassName="bg-sky-100 hover:bg-sky-200"
+              onClick={() =>
+                toggleLayer("existingMetro")
+              }
+            />
 
-          <LayerToggleButton
-            active={
-              visibleLayers.permanentFantasy
-            }
-            label="Fantasy Network"
-            colorClassName="bg-rose-100 hover:bg-rose-200"
-            onClick={() =>
-              toggleLayer("permanentFantasy")
-            }
-          />
+            <LayerToggleButton
+              active={
+                visibleLayers.permanentFantasy
+              }
+              label="Fantasy Network"
+              colorClassName="bg-rose-100 hover:bg-rose-200"
+              onClick={() =>
+                toggleLayer("permanentFantasy")
+              }
+            />
 
-          {/* <LayerToggleButton
+            {/* <LayerToggleButton
             active={visibleLayers.userDraft}
             label="User Draft"
             draft
             onClick={() =>
               toggleLayer("userDraft")
             }
-          /> */}
-        </div>
+            /> */}
+          </div>
+        )}
       </div>
 
       <Map
@@ -311,7 +386,11 @@ export default function FantasyRailMap() {
           latitude: 34.0522,
           zoom: 9.5,
         }}
-        mapStyle="https://tiles.versatiles.org/assets/styles/colorful/style.json"
+        mapStyle={
+          baseMap === "satellite"
+            ? SATELLITE_MAP_STYLE
+            : COLORFUL_MAP_STYLE
+        }
         onError={(event) =>
           console.error(
             "MapLibre error:",

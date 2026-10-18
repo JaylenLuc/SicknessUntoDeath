@@ -48,6 +48,111 @@
             }
         },
         {
+            "type": "Feature",
+            "id": "colorado-line",
+            "properties": {
+                "id": "colorado-line",
+                "routeId": "C",
+                "name": "Colorado Line",
+                "color": "#cc6666",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-118.065556, 34.062766],
+                    [-118.066239, 34.063724],
+                    [-118.068405, 34.065808],
+                    [-118.070863, 34.068139],
+                    [-118.072447, 34.069728],
+                    [-118.072972, 34.070839],
+                    [-118.073089, 34.071997],
+                    [-118.073109, 34.074181],
+                    [-118.073155, 34.076534],
+                    [-118.073191, 34.078164],
+                    [-118.073234, 34.080054],
+                    [-118.073264, 34.080822],
+                    [-118.073344, 34.083228],
+                    [-118.073403, 34.086280],
+                    [-118.073435, 34.088597],
+                    [-118.073383, 34.091460],
+                    [-118.073506, 34.097336],
+                    [-118.073603, 34.101533],
+                    [-118.073632, 34.103511],
+                    [-118.073641, 34.106972],
+                    [-118.073691, 34.110430],
+                    [-118.073727, 34.113121],
+                    [-118.073622, 34.114379],
+                    [-118.073435, 34.115674],
+                    [-118.073139, 34.117743],
+                    [-118.072889, 34.120330],
+                    [-118.073065, 34.123123],
+                    [-118.073199, 34.125546],
+                    [-118.073252, 34.128615],
+                    [-118.073397, 34.130276],
+                    [-118.073327, 34.146228],
+                    [-118.101655, 34.146099],
+                    [-118.113149, 34.146014],
+                    [-118.121339, 34.145972],
+                    [-118.132350, 34.145890],
+                    [-118.141440, 34.145842],
+                    [-118.150463, 34.145775],
+                    [-118.160687, 34.145733],
+                    [-118.162139, 34.145909],
+                    [-118.163989, 34.144716],
+                    [-118.165027, 34.144508],
+                    [-118.167614, 34.144531],
+                    [-118.170030, 34.142889],
+                    [-118.172549, 34.142320],
+                    [-118.175816, 34.141124],
+                    [-118.177081, 34.140930],
+                    [-118.180212, 34.140880],
+                    [-118.181614, 34.140861],
+                    [-118.181753, 34.140899],
+                    [-118.182323, 34.140837],
+                    [-118.182958, 34.140707],
+                    [-118.183632, 34.140484],
+                    [-118.184356, 34.140147],
+                    [-118.184746, 34.139921],
+                    [-118.186089, 34.138961],
+                    [-118.186408, 34.138751],
+                    [-118.187432, 34.138145],
+                    [-118.189310, 34.137419],
+                    [-118.189934, 34.137378],
+                    [-118.191909, 34.138055],
+                    [-118.194448, 34.139481],
+                    [-118.195155, 34.139589],
+                    [-118.198023, 34.139256],
+                    [-118.199713, 34.139581],
+                    [-118.214134, 34.139131],
+                    [-118.218594, 34.139919],
+                    [-118.219535, 34.140151],
+                    [-118.220072, 34.140489],
+                    [-118.220894, 34.141233],
+                    [-118.224344, 34.142704],
+                    [-118.224928, 34.142767],
+                    [-118.228145, 34.142767],
+                    [-118.234071, 34.142759],
+                    [-118.239610, 34.142631],
+                    [-118.249256, 34.142664],
+                    [-118.250078, 34.142632],
+                    [-118.255065, 34.142391],
+                    [-118.266789, 34.142502],
+                    [-118.267187, 34.142573],
+                    [-118.267632, 34.142497],
+                    [-118.269592, 34.142486],
+                    [-118.269513, 34.142338],
+                    [-118.267053, 34.137558],
+                    [-118.266452, 34.137135],
+                    [-118.264939, 34.137018],
+                    [-118.264141, 34.136585],
+                    [-118.260734, 34.130147],
+                    [-118.256582, 34.125360],
+                    [-118.258699, 34.123784]
+                ]
+            }
+        },
+        {
         "type": "Feature",
         "id": "f-line",
         "properties": {
@@ -148,9 +253,8 @@
                 [-118.365372, 33.998316],
                 [-118.362668, 33.987576],
                 [-118.370443, 33.987705],
+                [-118.374204, 33.961787],
                 [-118.370063, 33.961541],
-                [-118.377065, 33.959907],
-                [-118.374380, 33.962030],
                 [-118.352800, 33.957200],
                 [-118.341300, 33.953100],
                 [-118.324800, 33.950800],
@@ -316,6 +420,23 @@
         "geometry": {
             "type": "LineString",
             "coordinates": [
+                [-118.325131, 34.196990],
+                [-118.309231, 34.185388],
+                [-118.301827, 34.179976],
+                [-118.297485, 34.176705],
+                [-118.291540, 34.172623],
+                [-118.281398, 34.164977],
+                [-118.276877, 34.161964],
+                [-118.275639, 34.161309],
+                [-118.274649, 34.160895],
+                [-118.273056, 34.160442],
+                [-118.271636, 34.160163],
+                [-118.264089, 34.159359],
+                [-118.262574, 34.159429],
+                [-118.259224, 34.159461],
+                [-118.258221, 34.159526],
+                [-118.256524, 34.159548],
+                [-118.255148, 34.159221],
                 [-118.255050, 34.156460],
                 [-118.255050, 34.146480],
                 [-118.255065, 34.142391],
@@ -1996,8 +2117,8 @@
         "properties": {
             "id": "station-westchester-veterans",
             "name": "Westchester / Veterans",
-            "street1": "96th Street",
-            "street2": "Aviation Boulevard",
+            "street1": "Florence Avenue",
+            "street2": "Hindry Avenue",
             "routes": "P",
             "system": "fantasy",
             "interchange": true,
@@ -2005,7 +2126,7 @@
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [-118.374380, 33.962030]
+            "coordinates": [-118.374204, 33.961787]
         }
         },
           {
@@ -2480,8 +2601,8 @@
                 "name": "Brand / Ventura Freeway (134)",
                 "street1": "Brand Boulevard",
                 "street2": "Ventura Freeway (134)",
-                "system": "fantasy",
-                "terminal": true
+                "routes": "G",
+                "system": "fantasy"
             },
             "geometry": {
                 "type": "Point",
@@ -2511,7 +2632,10 @@
                 "name": "Brand / Colorado",
                 "street1": "Brand Boulevard",
                 "street2": "Colorado Street",
-                "system": "fantasy"
+                "routes": "G, C",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer": "G Line"
             },
             "geometry": {
                 "type": "Point",
@@ -2772,8 +2896,10 @@
                 "name": "Rosemead blvd / Huntington Drive",
                 "street1": "Huntington Drive",
                 "street2": "Rosemead Blvd",
-                "routes": "H",
-                "system": "fantasy"
+                "routes": "H, C",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer": "Huntington Blvd Line"
             },
             "geometry": {
                 "type": "Point",
@@ -3233,12 +3359,47 @@
           "name": "Las Tunas / Rosemead",
           "street1": "Las Tunas Drive",
           "street2": "Rosemead Boulevard",
-          "routes": "SGV",
-          "system": "fantasy"
+          "routes": "C, SGV",
+          "system": "fantasy",
+          "interchange": true,
+          "transfer": "Colorado Line"
         },
         "geometry": {
           "type": "Point",
           "coordinates": [-118.073632, 34.103511]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-valley-rosemead",
+        "properties": {
+          "id": "station-valley-rosemead",
+          "name": "Valley / Rosemead",
+          "street1": "Valley Boulevard",
+          "street2": "Rosemead Boulevard",
+          "routes": "C",
+          "system": "fantasy"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.073264, 34.080822]
+        }
+      },
+      {
+        "type": "Feature",
+        "id": "station-garvey-rosemead",
+        "properties": {
+          "id": "station-garvey-rosemead",
+          "name": "Garvey / Rosemead",
+          "street1": "Garvey Avenue",
+          "street2": "Rosemead Boulevard",
+          "routes": "C",
+          "system": "fantasy",
+          "terminal": true
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-118.065556, 34.062766]
         }
       },
       {
@@ -3362,8 +3523,10 @@
                 "name": "Colorado / Los Robles",
                 "street1": "Colorado Boulevard",
                 "street2": "Los Robles Avenue",
-                "routes": "ATL",
+                "routes": "ATL, C",
                 "system": "fantasy",
+                "interchange": true,
+                "transfer": "Atlantic–Los Robles Line",
                 "terminal": true
             },
             "geometry": {
@@ -3565,6 +3728,332 @@
             "type": "Point",
             "coordinates": [-118.24327, 33.97374]
         }
+        },
+        {
+            "type": "Feature",
+            "id": "station-colorado-rosemead",
+            "properties": {
+                "id": "station-colorado-rosemead",
+                "name": "Colorado / Rosemead",
+                "street1": "Colorado Boulevard",
+                "street2": "Rosemead Boulevard",
+                "routes": "C",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.073465, 34.146228]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-colorado-sierra-madre",
+            "properties": {
+                "id": "station-colorado-sierra-madre",
+                "name": "Colorado / Sierra Madre",
+                "street1": "Colorado Boulevard",
+                "street2": "Sierra Madre Boulevard",
+                "routes": "C",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.101655, 34.146098]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-colorado-allen",
+            "properties": {
+                "id": "station-colorado-allen",
+                "name": "Colorado / Allen",
+                "street1": "Colorado Boulevard",
+                "street2": "Allen Avenue",
+                "routes": "C",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.113159, 34.146014]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-pcc-hill",
+            "properties": {
+                "id": "station-pcc-hill",
+                "name": "PCC / Hill",
+                "street1": "Colorado Boulevard",
+                "street2": "Hill Avenue",
+                "routes": "C",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.121339, 34.145965]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-colorado-lake",
+            "properties": {
+                "id": "station-colorado-lake",
+                "name": "Colorado / Lake",
+                "street1": "Colorado Boulevard",
+                "street2": "Lake Avenue",
+                "routes": "C",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.132350, 34.145890]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-old-pasadena-fair-oaks",
+            "properties": {
+                "id": "station-old-pasadena-fair-oaks",
+                "name": "Old Pasadena / Fair Oaks",
+                "street1": "Colorado Boulevard",
+                "street2": "Fair Oaks Avenue",
+                "routes": "C",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer": "SGV Main Street Line; nearby Metro A Line"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.150463, 34.145772]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-colorado-avenue-64",
+            "properties": {
+                "id": "station-colorado-avenue-64",
+                "name": "Colorado / Avenue 64",
+                "street1": "Colorado Boulevard",
+                "street2": "Avenue 64",
+                "routes": "C",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.180212, 34.140885]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-colorado-figueroa",
+            "properties": {
+                "id": "station-colorado-figueroa",
+                "name": "Colorado / Figueroa",
+                "street1": "Colorado Boulevard",
+                "street2": "Figueroa Street",
+                "routes": "C",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.187413, 34.138152]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-colorado-eagle-rock",
+            "properties": {
+                "id": "station-colorado-eagle-rock",
+                "name": "Colorado / Eagle Rock",
+                "street1": "Colorado Boulevard",
+                "street2": "Eagle Rock Boulevard",
+                "routes": "C",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.214136, 34.139121]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-eagle-rock-plaza",
+            "properties": {
+                "id": "station-eagle-rock-plaza",
+                "name": "Eagle Rock Plaza",
+                "street1": "Colorado Boulevard",
+                "street2": "Eagle Dale Avenue",
+                "routes": "C",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.228145, 34.142774]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-colorado-verdugo",
+            "properties": {
+                "id": "station-colorado-verdugo",
+                "name": "Colorado / Verdugo",
+                "street1": "Colorado Street",
+                "street2": "Verdugo Road",
+                "routes": "C",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.234071, 34.142759]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-colorado-glendale",
+            "properties": {
+                "id": "station-colorado-glendale",
+                "name": "Colorado / Glendale",
+                "street1": "Colorado Street",
+                "street2": "Glendale Avenue",
+                "routes": "C",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.249252, 34.142662]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-colorado-san-fernando",
+            "properties": {
+                "id": "station-colorado-san-fernando",
+                "name": "Colorado / San Fernando",
+                "street1": "Colorado Street",
+                "street2": "San Fernando Road",
+                "routes": "C",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.269520, 34.142335]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-glendale-metrolink",
+            "properties": {
+                "id": "station-glendale-metrolink",
+                "name": "Glendale Metrolink",
+                "street1": "Cerritos Avenue",
+                "street2": "San Fernando Road",
+                "routes": "C",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer": "Metrolink and Amtrak",
+                "terminal": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.258605, 34.123777]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-brand-glenoaks",
+            "properties": {
+                "id": "station-brand-glenoaks",
+                "name": "Brand / Glenoaks",
+                "street1": "Brand Boulevard",
+                "street2": "Glenoaks Boulevard",
+                "routes": "G",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.255148, 34.159221]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-pacific-glenoaks",
+            "properties": {
+                "id": "station-pacific-glenoaks",
+                "name": "Pacific / Glenoaks",
+                "street1": "Pacific Avenue",
+                "street2": "Glenoaks Boulevard",
+                "routes": "G",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.264089, 34.159359]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-grandview-glenoaks",
+            "properties": {
+                "id": "station-grandview-glenoaks",
+                "name": "Grandview / Glenoaks",
+                "street1": "Grandview Avenue",
+                "street2": "Glenoaks Boulevard",
+                "routes": "G",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.281398, 34.164977]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-alameda-glenoaks",
+            "properties": {
+                "id": "station-alameda-glenoaks",
+                "name": "Alameda / Glenoaks",
+                "street1": "Alameda Avenue",
+                "street2": "Glenoaks Boulevard",
+                "routes": "G",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.297485, 34.176705]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-magnolia-glenoaks",
+            "properties": {
+                "id": "station-magnolia-glenoaks",
+                "name": "Magnolia / Glenoaks",
+                "street1": "Magnolia Boulevard",
+                "street2": "Glenoaks Boulevard",
+                "routes": "G",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.309231, 34.185388]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-scott-glenoaks",
+            "properties": {
+                "id": "station-scott-glenoaks",
+                "name": "Scott / Glenoaks",
+                "street1": "Scott Road",
+                "street2": "Glenoaks Boulevard",
+                "routes": "G",
+                "system": "fantasy",
+                "terminal": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.325131, 34.196990]
+            }
         }
 
     ]
