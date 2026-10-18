@@ -171,6 +171,118 @@ return (
         }}
         />
     </Source>
+    <Source
+        id="d-line-extension"
+        type="geojson"
+        data="/la-metro-rail/d-line-extension.geojson"
+    >
+        <Layer
+        id="d-line-extension-casing"
+        type="line"
+        filter={["==", ["geometry-type"], "LineString"]}
+        layout={{
+            "line-cap": "round",
+            "line-join": "round",
+        }}
+        paint={{
+            "line-color": "#ffffff",
+            "line-width": [
+            "interpolate",
+            ["linear"],
+            ["zoom"],
+            8,
+            4,
+            13,
+            9,
+            ],
+            "line-opacity": 0.9,
+        }}
+        />
+
+        <Layer
+        id="d-line-extension-under-construction"
+        type="line"
+        filter={["==", ["geometry-type"], "LineString"]}
+        layout={{
+            "line-cap": "round",
+            "line-join": "round",
+        }}
+        paint={{
+            "line-color": ["get", "route_color"],
+            "line-width": [
+            "interpolate",
+            ["linear"],
+            ["zoom"],
+            8,
+            2,
+            13,
+            5,
+            ],
+            "line-opacity": 0.9,
+            "line-dasharray": [2, 1.5],
+        }}
+        />
+
+        <Layer
+        id="d-line-extension-route-label"
+        type="symbol"
+        minzoom={9}
+        filter={["==", ["geometry-type"], "LineString"]}
+        layout={{
+            "symbol-placement": "line",
+            "symbol-spacing": 400,
+            "text-field": "D Line — Under Construction",
+            "text-size": 12,
+            "text-rotation-alignment": "map",
+            "text-keep-upright": true,
+            "text-allow-overlap": false,
+        }}
+        paint={{
+            "text-color": "#111827",
+            "text-halo-color": "#ffffff",
+            "text-halo-width": 2,
+        }}
+        />
+
+        <Layer
+        id="d-line-extension-stations"
+        type="circle"
+        filter={["==", ["geometry-type"], "Point"]}
+        paint={{
+            "circle-radius": [
+            "interpolate",
+            ["linear"],
+            ["zoom"],
+            8,
+            2,
+            13,
+            6,
+            ],
+            "circle-color": "#f3e8ff",
+            "circle-stroke-color": "#111827",
+            "circle-stroke-width": 2,
+        }}
+        />
+
+        <Layer
+        id="d-line-extension-station-labels"
+        type="symbol"
+        minzoom={11}
+        filter={["==", ["geometry-type"], "Point"]}
+        layout={{
+            "text-field": ["get", "stop_name"],
+            "text-size": 12,
+            "text-offset": [0, 1.25],
+            "text-anchor": "top",
+            "text-allow-overlap": false,
+        }}
+        paint={{
+            "text-color": "#111827",
+            "text-halo-color": "#ffffff",
+            "text-halo-width": 2,
+        }}
+        />
+    </Source>
     {trains.features.map((train, index) => (
         <TrainMarker key={index} train={train} label="Metro train" />
     ))}
