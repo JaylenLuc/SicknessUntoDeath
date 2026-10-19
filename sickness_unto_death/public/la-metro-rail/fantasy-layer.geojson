@@ -539,6 +539,9 @@
         "geometry": {
             "type": "LineString",
             "coordinates": [
+                    [-118.349930, 34.206270],
+                    [-118.348677, 34.213220],
+                    [-118.337431, 34.204910],
                 [-118.325131, 34.196990],
                 [-118.309231, 34.185388],
                 [-118.301827, 34.179976],
@@ -4637,8 +4640,7 @@
                 "street1": "Scott Road",
                 "street2": "Glenoaks Boulevard",
                 "routes": "G",
-                "system": "fantasy",
-                "terminal": true
+                "system": "fantasy"
             },
             "geometry": {
                 "type": "Point",
@@ -5036,6 +5038,57 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [-118.375204, 34.165007]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-g-glenoaks-buena-vista",
+            "properties": {
+                "id": "station-g-glenoaks-buena-vista",
+                "name": "Glenoaks / Buena Vista",
+                "street1": "Glenoaks Boulevard",
+                "street2": "Buena Vista Street",
+                "routes": "G",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.337431, 34.204910]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-g-glenoaks-hollywood-way",
+            "properties": {
+                "id": "station-g-glenoaks-hollywood-way",
+                "name": "Glenoaks / Hollywood Way",
+                "street1": "Glenoaks Boulevard",
+                "street2": "Hollywood Way",
+                "routes": "G",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.348677, 34.213220]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-g-burbank-airport-north",
+            "properties": {
+                "id": "station-g-burbank-airport-north",
+                "name": "Burbank Airport–North / HSR",
+                "street1": "Hollywood Way",
+                "street2": "San Fernando Boulevard",
+                "routes": "G",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer": "Metrolink Antelope Valley Line and future California High-Speed Rail",
+                "terminal": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.349930, 34.206270]
             }
         }
 
