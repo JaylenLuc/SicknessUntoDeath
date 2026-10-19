@@ -40,6 +40,9 @@ const RAIL_PROJECTS = [
     file: "k-line-northern-extension.geojson",
     sourceLabel: "Metro K Line Northern Extension",
     sourceUrl: "https://www.metro.net/projects/kline-northern-extension/",
+    referenceLabel: "Modified Alternative 1 route and stations",
+    referenceUrl:
+      "https://en.wikipedia.org/wiki/K_Line_Northern_Extension#Route_selected:_Modified_Alternative_1",
   },
   {
     id: "sepulveda",

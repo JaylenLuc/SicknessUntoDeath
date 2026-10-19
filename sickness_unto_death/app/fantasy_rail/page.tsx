@@ -10,17 +10,12 @@ export default function FantasyRail() {
       <Text as="h3" className='text-center'>
         Revival of the Relict Los Angeles Rail System
       </Text>
-      <div className="mt-6 aspect-[4/3] w-full max-w-[1000px] min-w-0 self-center overflow-hidden">
+      <Text as="h4" className='text-center'>
+        (Last updated: 2026-10-18)
+      </Text>
+      <div className="mt-6 h-[80dvh] w-full max-w-[1000px] min-w-0 self-center overflow-hidden sm:h-auto sm:aspect-[4/3]">
         <FantasyRailMap />
       </div>
-      <Image
-        src="/la-metro-rail/legend_1.png"
-        alt="Fantasy rail network legend"
-        width={4500}
-        height={2775}
-        sizes="(max-width: 700px) calc(100vw - 2rem), 1000px"
-        className="mt-6 h-auto w-full max-w-[1000px] self-center"
-      />
     </div>
   );
 }
