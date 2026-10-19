@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Text } from "@/components/retroui/Text";
 import FantasyRailMap from "@/components/metro/FantasyRailMapLoader";
 
