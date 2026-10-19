@@ -1,16 +1,16 @@
 import StopMotion from "../stopMotion";
 
-export default function ArtCon() {
-  const images = [
-    "/art_con/art_con3.png",
-    "/art_con/art_con1.png",
-    "/art_con/art_con2.png",
-    "/art_con/art_con1.png",
-  ];
+const ART_CON_FRAMES = [
+  "/art_con/art_con3.webp",
+  "/art_con/art_con1.webp",
+  "/art_con/art_con2.webp",
+  "/art_con/art_con1.webp",
+];
 
+export default function ArtCon() {
   return (
       <StopMotion
-        images={images}
+        images={ART_CON_FRAMES}
         frameDuration={400}
         size="lg"
       />

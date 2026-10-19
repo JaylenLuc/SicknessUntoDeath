@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useMemo, useState, useRef } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
@@ -20,7 +20,10 @@ export default function StopMotion({
 }: StopMotionProps) {
   const [frameIndex, setFrameIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [decodedSources, setDecodedSources] = useState<Set<string>>(() => new Set());
   const containerRef = useRef<HTMLDivElement>(null);
+  const uniqueImages = useMemo(() => [...new Set(images)], [images]);
+  const allFramesDecoded = uniqueImages.every((src) => decodedSources.has(src));
 
   // IntersectionObserver for lazy loading
   useEffect(() => {
@@ -40,20 +43,14 @@ export default function StopMotion({
 
   // Animation loop - only runs when visible
   useEffect(() => {
-    if (!isVisible) return;
-
-    const uniqueImages = [...new Set(images)];
-    uniqueImages.forEach((src) => {
-      const image = new window.Image();
-      image.src = src;
-    });
+    if (!isVisible || !allFramesDecoded || images.length === 0) return;
 
     const interval = setInterval(() => {
       setFrameIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, frameDuration + pauseDuration);
   
     return () => clearInterval(interval);
-  }, [frameDuration, pauseDuration, images, isVisible]);
+  }, [allFramesDecoded, frameDuration, pauseDuration, images, isVisible]);
   
   return (
     <div
@@ -65,14 +62,34 @@ export default function StopMotion({
         size === "lg" && "w-96 h-96"
       )}
     >
-      <Image
-        src={images[frameIndex]}
-        alt="Animated dream cloud"
-        fill
-        sizes="(max-width: 640px) 100vw, 384px"
-        unoptimized
-        className="inset-0 object-contain"
-      />
+      {uniqueImages.map((src) => (
+        <Image
+          key={src}
+          src={src}
+          alt=""
+          aria-hidden="true"
+          fill
+          sizes="(max-width: 640px) 100vw, 384px"
+          loading="eager"
+          decoding="async"
+          unoptimized
+          onLoad={(event) => {
+            const image = event.currentTarget;
+            void image.decode().catch(() => undefined).then(() => {
+              setDecodedSources((current) => {
+                if (current.has(src)) return current;
+                const next = new Set(current);
+                next.add(src);
+                return next;
+              });
+            });
+          }}
+          className={cn(
+            "inset-0 object-contain [transform:translateZ(0)] [backface-visibility:hidden]",
+            images[frameIndex] === src ? "z-10 opacity-100" : "z-0 opacity-0",
+          )}
+        />
+      ))}
     </div>
   );
 }
