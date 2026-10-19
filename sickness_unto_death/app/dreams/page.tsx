@@ -10,20 +10,34 @@ import dynamic from 'next/dynamic';
 import LazyVideo from '@/components/LazyVideo';
 const ForceGraph2D = dynamic(() => import('../../components/dreams_page/forceGraph'), { ssr: false });
 
+type DreamAnalysis = {
+  semanticTree: NodeTree | null;
+  ldaTree: NodeTree | null;
+};
+
+type SemanticClusterNode = NodeTree['nodes'][number] & {
+  sentenceCount?: number;
+  keywords?: string[];
+  centroidDimensions?: number;
+  centroidPreview?: number[];
+  projectedX?: number;
+  projectedY?: number;
+};
+
 type PendingIntegration = {
-  resolve: (nodeTree: NodeTree | null) => void;
+  resolve: (analysis: DreamAnalysis) => void;
   reject: (error: Error) => void;
 };
 
 type DreamWorkerResponse =
   | { type: 'ready' }
   | { type: 'warmup-error'; error: string }
-  | { type: 'result'; id: string; nodeTree: NodeTree | null }
+  | { type: 'result'; id: string; analysis: DreamAnalysis }
   | { type: 'error'; id: string; error: string };
 
 export default function Dreams() {
   const [textBubble, setTextBubble] = useState('');
-  const [nodeTree, setNodeTree] = useState<NodeTree | null>(null);
+  const [analysis, setAnalysis] = useState<DreamAnalysis | null>(null);
   const [treeLoadSuspense, setTreeLoadSuspense] = useState(false);
   const [integrationError, setIntegrationError] = useState('');
   const workerRef = useRef<Worker | null>(null);
@@ -51,7 +65,7 @@ export default function Dreams() {
 
       pending.delete(response.id);
       if (response.type === 'result') {
-        integration.resolve(response.nodeTree);
+        integration.resolve(response.analysis);
       } else {
         integration.reject(new Error(response.error));
       }
@@ -69,7 +83,7 @@ export default function Dreams() {
     };
   }, []);
 
-  const integrateDream = (text: string): Promise<NodeTree | null> => {
+  const integrateDream = (text: string): Promise<DreamAnalysis> => {
     const worker = workerRef.current;
     if (!worker) {
       return Promise.reject(new Error('Dream integration is still preparing.'));
@@ -122,26 +136,85 @@ export default function Dreams() {
             />
           </div>
         </form>
-        {(treeLoadSuspense === true || (nodeTree && nodeTree.nodes?.length > 0 && nodeTree.links?.length > 0)) && (
+        {treeLoadSuspense && (
           <div className="mb-4 mx-auto max-w-md w-full relative aspect-square border rounded overflow-hidden">
-            { !treeLoadSuspense ? (
-              <ForceGraph2D graphData={nodeTree} />
-            ) : (
-                <LazyVideo 
-                  src="/mindBlown/cat.mp4"
-                  className="h-full w-full object-contain touch-none"
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                />
-                // <Image 
-                //   src="/mindBlown/cat.gif" 
-                //   alt="The Hungarian is Optimizing Your Latent Dirichlet Clusters, Please Wait I lOve you!" 
-                //   fill
-                //   className="inset-0 object-contain transition-opacity duration-0 touch-none"
-                // />
-            )}
+            <LazyVideo
+              src="/mindBlown/cat.mp4"
+              className="h-full w-full object-contain touch-none"
+              loop
+              muted
+              playsInline
+              preload="metadata"
+            />
+          </div>
+        )}
+
+        {!treeLoadSuspense && analysis && (
+          <div className="mx-auto mb-4 w-full max-w-md space-y-8">
+            <section>
+              <h4 className="text-center text-lg font-bold">
+                Spherical k-means sentence clusters
+              </h4>
+              <p className="mb-2 text-center text-sm">
+                Complete sentences are embedded into 512 dimensions and grouped
+                with spherical k-means using cosine similarity. PCA projects the
+                centroids onto fixed 2D coordinates; nodes do not move.
+              </p>
+              {analysis.semanticTree?.nodes?.length ? (
+                <div className="relative aspect-square overflow-hidden rounded border">
+                  <ForceGraph2D graphData={analysis.semanticTree} />
+                </div>
+              ) : (
+                <p className="text-center text-sm">No semantic clusters found.</p>
+              )}
+
+              {analysis.semanticTree?.nodes?.length ? (
+                <details className="mt-3 rounded border bg-white/70 p-3 text-sm">
+                  <summary className="cursor-pointer font-bold">
+                    View spherical k-means centroid data
+                  </summary>
+                  <p className="mt-2 text-xs">
+                    Each centroid is normalized. The first 8 dimensions are shown
+                    from its full 512-dimensional vector.
+                  </p>
+                  <div className="mt-3 space-y-3">
+                    {(analysis.semanticTree.nodes as SemanticClusterNode[]).map((node) => (
+                      <div key={node.id} className="rounded border bg-white p-2">
+                        <div className="font-bold">{node.name}</div>
+                        <div>{node.sentenceCount ?? 0} sentence(s)</div>
+                        <div>
+                          Keywords: {node.keywords?.join(', ') || 'none'}
+                        </div>
+                        <code className="mt-1 block break-all text-xs">
+                          centroid[{node.centroidDimensions ?? 512}]: [
+                          {node.centroidPreview?.join(', ') || ''}, …]
+                        </code>
+                        <code className="mt-1 block text-xs">
+                          PCA position: ({node.projectedX ?? 0}, {node.projectedY ?? 0})
+                        </code>
+                      </div>
+                    ))}
+                  </div>
+                </details>
+              ) : null}
+            </section>
+
+            <section>
+              <h4 className="text-center text-lg font-bold">
+                LDA bag-of-words topics
+              </h4>
+              <p className="mb-2 text-center text-sm">
+                Word-frequency topics matched to emotional themes using embeddings
+                of the LDA topic words. Sentence order and context are not preserved.
+              </p>
+              {analysis.ldaTree?.nodes?.length ? (
+                <div className="relative aspect-square overflow-hidden rounded border">
+                  <ForceGraph2D graphData={analysis.ldaTree} />
+                </div>
+              ) : (
+                <p className="text-center text-sm">No LDA topics found.</p>
+              )}
+            </section>
           </div>
         )}
 
@@ -159,14 +232,14 @@ export default function Dreams() {
               return;
             }
             setTreeLoadSuspense(true);
-            setNodeTree(null);
+            setAnalysis(null);
             setIntegrationError('');
 
             // Give React a frame to mount the loading video before work starts.
             await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
 
             try {
-              setNodeTree(await integrateDream(textBubble));
+              setAnalysis(await integrateDream(textBubble));
             } catch (error) {
               setIntegrationError(
                 error instanceof Error ? error.message : 'Dream integration failed.',
