@@ -3,6 +3,67 @@
     "features": [
         {
             "type": "Feature",
+            "id": "b-line-sherman-way-extension",
+            "properties": {
+                "id": "b-line-sherman-way-extension",
+                "routeId": "B",
+                "name": "B Line – Sherman Way Extension",
+                "color": "#E3131B",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-118.376810, 34.168500],
+                    [-118.383445, 34.179159],
+                    [-118.387772, 34.186686],
+                    [-118.387946, 34.193683],
+                    [-118.387937, 34.200885],
+                    [-118.396384, 34.200314],
+                    [-118.400372, 34.201247],
+                    [-118.413594, 34.201323],
+                    [-118.430772, 34.201082],
+                    [-118.448743, 34.201219],
+                    [-118.466063, 34.201556],
+                    [-118.484095, 34.201041],
+                    [-118.501273, 34.200761],
+                    [-118.518992, 34.201277],
+                    [-118.536000, 34.201100],
+                    [-118.554016, 34.201244],
+                    [-118.570501, 34.200944],
+                    [-118.588032, 34.200920],
+                    [-118.598060, 34.201158],
+                    [-118.605275, 34.200930],
+                    [-118.623809, 34.201121]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "g-line-north-hollywood-branch",
+            "properties": {
+                "id": "g-line-north-hollywood-branch",
+                "routeId": "G",
+                "name": "G Line – North Hollywood Branch",
+                "color": "#7C3AED",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [-118.309231, 34.185388],
+                    [-118.312026, 34.178047],
+                    [-118.317406, 34.177816],
+                    [-118.335104, 34.171960],
+                    [-118.347132, 34.167725],
+                    [-118.354755, 34.165397],
+                    [-118.375204, 34.165007],
+                    [-118.376810, 34.168500]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
             "id": "atlantic-los-robles-line",
             "properties": {
                 "id": "atlantic-los-robles-line",
@@ -14,6 +75,12 @@
             "geometry": {
                 "type": "LineString",
                 "coordinates": [
+                [-118.131317, 34.190218],
+                [-118.131895, 34.177081],
+                [-118.132256, 34.168983],
+                [-118.132513, 34.161855],
+                [-118.131390, 34.151810],
+                [-118.132350, 34.145890],
                 [-118.141440, 34.145842],
                 [-118.141321, 34.136159],
                 [-118.141339, 34.127566],
@@ -3768,8 +3835,7 @@
                 "routes": "ATL, C",
                 "system": "fantasy",
                 "interchange": true,
-                "transfer": "Atlantic–Los Robles Line",
-                "terminal": true
+                "transfer": "Colorado Line"
             },
             "geometry": {
                 "type": "Point",
@@ -4045,12 +4111,81 @@
                 "name": "Colorado / Lake",
                 "street1": "Colorado Boulevard",
                 "street2": "Lake Avenue",
-                "routes": "C",
-                "system": "fantasy"
+                "routes": "ATL, C",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer": "Colorado Line"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [-118.132350, 34.145890]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-lake-a-line",
+            "properties": {
+                "id": "station-lake-a-line",
+                "name": "Lake / A Line",
+                "street1": "Lake Avenue",
+                "street2": "I-210",
+                "routes": "ATL",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer": "Metro A Line"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.131390, 34.151810]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-lake-washington",
+            "properties": {
+                "id": "station-lake-washington",
+                "name": "Lake / Washington",
+                "street1": "Lake Avenue",
+                "street2": "Washington Boulevard",
+                "routes": "ATL",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.132256, 34.168983]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-lake-woodbury",
+            "properties": {
+                "id": "station-lake-woodbury",
+                "name": "Lake / Woodbury",
+                "street1": "Lake Avenue",
+                "street2": "Woodbury Road",
+                "routes": "ATL",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.131895, 34.177081]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-lake-altadena",
+            "properties": {
+                "id": "station-lake-altadena",
+                "name": "Lake / Altadena",
+                "street1": "Lake Avenue",
+                "street2": "Altadena Drive",
+                "routes": "ATL",
+                "system": "fantasy",
+                "terminal": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.131317, 34.190218]
             }
         },
         {
@@ -4508,6 +4643,399 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [-118.325131, 34.196990]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-north-hollywood",
+            "properties": {
+                "id": "station-b-sherman-north-hollywood",
+                "name": "North Hollywood",
+                "street1": "Lankershim Boulevard",
+                "street2": "Chandler Boulevard",
+                "routes": "B, G",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer": "Existing Metro B and G Lines"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.376810, 34.168500]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-vanowen-lankershim",
+            "properties": {
+                "id": "station-b-sherman-vanowen-lankershim",
+                "name": "Vanowen / Lankershim",
+                "street1": "Vanowen Street",
+                "street2": "Lankershim Boulevard",
+                "routes": "B",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.387946, 34.193683]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-lankershim",
+            "properties": {
+                "id": "station-b-sherman-lankershim",
+                "name": "Sherman Way / Lankershim",
+                "street1": "Sherman Way",
+                "street2": "Lankershim Boulevard",
+                "routes": "B",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.387937, 34.200885]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-laurel-canyon",
+            "properties": {
+                "id": "station-b-sherman-laurel-canyon",
+                "name": "Sherman Way / Laurel Canyon",
+                "street1": "Sherman Way",
+                "street2": "Laurel Canyon Boulevard",
+                "routes": "B",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.396384, 34.200314]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-woodman",
+            "properties": {
+                "id": "station-b-sherman-woodman",
+                "name": "Sherman Way / Woodman",
+                "street1": "Sherman Way",
+                "street2": "Woodman Avenue",
+                "routes": "B",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.430772, 34.201082]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-van-nuys",
+            "properties": {
+                "id": "station-b-sherman-van-nuys",
+                "name": "Sherman Way / Van Nuys",
+                "street1": "Sherman Way",
+                "street2": "Van Nuys Boulevard",
+                "routes": "B",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer": "East San Fernando Valley Light Rail"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.448743, 34.201219]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-sepulveda",
+            "properties": {
+                "id": "station-b-sherman-sepulveda",
+                "name": "Sherman Way / Sepulveda",
+                "street1": "Sherman Way",
+                "street2": "Sepulveda Boulevard",
+                "routes": "B",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.466063, 34.201556]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-balboa",
+            "properties": {
+                "id": "station-b-sherman-balboa",
+                "name": "Sherman Way / Balboa",
+                "street1": "Sherman Way",
+                "street2": "Balboa Boulevard",
+                "routes": "B",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.501273, 34.200761]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-reseda",
+            "properties": {
+                "id": "station-b-sherman-reseda",
+                "name": "Sherman Way / Reseda",
+                "street1": "Sherman Way",
+                "street2": "Reseda Boulevard",
+                "routes": "B",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.536000, 34.201100]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-tampa",
+            "properties": {
+                "id": "station-b-sherman-tampa",
+                "name": "Sherman Way / Tampa",
+                "street1": "Sherman Way",
+                "street2": "Tampa Avenue",
+                "routes": "B",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.554016, 34.201244]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-winnetka",
+            "properties": {
+                "id": "station-b-sherman-winnetka",
+                "name": "Sherman Way / Winnetka",
+                "street1": "Sherman Way",
+                "street2": "Winnetka Avenue",
+                "routes": "B",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.570501, 34.200944]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-canoga",
+            "properties": {
+                "id": "station-b-sherman-canoga",
+                "name": "Sherman Way / Canoga",
+                "street1": "Sherman Way",
+                "street2": "Canoga Avenue",
+                "routes": "B",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer": "Metro G Line"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.598060, 34.201158]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-topanga",
+            "properties": {
+                "id": "station-b-sherman-topanga",
+                "name": "Sherman Way / Topanga Canyon",
+                "street1": "Sherman Way",
+                "street2": "Topanga Canyon Boulevard",
+                "routes": "B",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.605275, 34.200930]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-west-hills",
+            "properties": {
+                "id": "station-b-sherman-west-hills",
+                "name": "West Hills / Fallbrook",
+                "street1": "Sherman Way",
+                "street2": "Fallbrook Avenue",
+                "routes": "B",
+                "system": "fantasy",
+                "terminal": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.623809, 34.201121]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-oxnard-lankershim",
+            "properties": {
+                "id": "station-b-sherman-oxnard-lankershim",
+                "name": "Oxnard / Lankershim",
+                "street1": "Oxnard Street",
+                "street2": "Lankershim Boulevard",
+                "routes": "B",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.383445, 34.179159]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-coldwater-canyon",
+            "properties": {
+                "id": "station-b-sherman-coldwater-canyon",
+                "name": "Sherman Way / Coldwater Canyon",
+                "street1": "Sherman Way",
+                "street2": "Coldwater Canyon Avenue",
+                "routes": "B",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.413594, 34.201323]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-woodley",
+            "properties": {
+                "id": "station-b-sherman-woodley",
+                "name": "Sherman Way / Woodley",
+                "street1": "Sherman Way",
+                "street2": "Woodley Avenue",
+                "routes": "B",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.484095, 34.201041]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-white-oak",
+            "properties": {
+                "id": "station-b-sherman-white-oak",
+                "name": "Sherman Way / White Oak",
+                "street1": "Sherman Way",
+                "street2": "White Oak Avenue",
+                "routes": "B",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.518992, 34.201277]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-b-sherman-de-soto",
+            "properties": {
+                "id": "station-b-sherman-de-soto",
+                "name": "Sherman Way / De Soto",
+                "street1": "Sherman Way",
+                "street2": "De Soto Avenue",
+                "routes": "B",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.588032, 34.200920]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-g-downtown-burbank",
+            "properties": {
+                "id": "station-g-downtown-burbank",
+                "name": "Downtown Burbank / Metrolink",
+                "street1": "Front Street",
+                "street2": "Olive Avenue",
+                "routes": "G",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer": "Metrolink and Amtrak"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.312026, 34.178047]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-g-magnolia-buena-vista",
+            "properties": {
+                "id": "station-g-magnolia-buena-vista",
+                "name": "Magnolia / Buena Vista",
+                "street1": "Magnolia Boulevard",
+                "street2": "Buena Vista Street",
+                "routes": "G",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.335104, 34.171960]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-g-magnolia-hollywood-way",
+            "properties": {
+                "id": "station-g-magnolia-hollywood-way",
+                "name": "Magnolia / Hollywood Way",
+                "street1": "Magnolia Boulevard",
+                "street2": "Hollywood Way",
+                "routes": "G",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.347132, 34.167725]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-g-magnolia-clybourn",
+            "properties": {
+                "id": "station-g-magnolia-clybourn",
+                "name": "Magnolia / Clybourn",
+                "street1": "Magnolia Boulevard",
+                "street2": "Clybourn Avenue",
+                "routes": "G",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.354755, 34.165397]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-g-magnolia-lankershim",
+            "properties": {
+                "id": "station-g-magnolia-lankershim",
+                "name": "Magnolia / Lankershim",
+                "street1": "Magnolia Boulevard",
+                "street2": "Lankershim Boulevard",
+                "routes": "G",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.375204, 34.165007]
             }
         }
 
