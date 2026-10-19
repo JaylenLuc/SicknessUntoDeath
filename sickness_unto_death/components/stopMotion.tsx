@@ -42,12 +42,18 @@ export default function StopMotion({
   useEffect(() => {
     if (!isVisible) return;
 
+    const uniqueImages = [...new Set(images)];
+    uniqueImages.forEach((src) => {
+      const image = new window.Image();
+      image.src = src;
+    });
+
     const interval = setInterval(() => {
       setFrameIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, frameDuration + pauseDuration);
   
     return () => clearInterval(interval);
-  }, [frameDuration, pauseDuration, images.length, isVisible]);
+  }, [frameDuration, pauseDuration, images, isVisible]);
   
   return (
     <div
@@ -59,18 +65,14 @@ export default function StopMotion({
         size === "lg" && "w-96 h-96"
       )}
     >
-      {images.map((image, index) => (
-        <Image
-          key={index}
-          src={image}
-          alt={`frame-${index}`}
-          fill
-          className={cn(
-            "inset-0 object-contain transition-opacity duration-0",
-            frameIndex === index ? "opacity-100 z-10" : "opacity-0 z-0"
-          )}
-        />
-      ))}
+      <Image
+        src={images[frameIndex]}
+        alt="Animated dream cloud"
+        fill
+        sizes="(max-width: 640px) 100vw, 384px"
+        unoptimized
+        className="inset-0 object-contain"
+      />
     </div>
   );
 }

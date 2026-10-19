@@ -1,20 +1,86 @@
 "use client"
-import { cn, sleep } from '@/lib/utils';
+import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import DreamBubble from '@/components/dreams_page/dreamBubble';
 import { Text } from "@/components/retroui/Text";
 import { Button } from "@/components/retroui/Button";
-import { ldaExecute } from '@/lib/dreams_util/LDA';
-import { NodeTree } from 'lda';
-import { useState } from 'react';
+import type { NodeTree } from 'lda';
+import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import LazyVideo from '@/components/LazyVideo';
 const ForceGraph2D = dynamic(() => import('../../components/dreams_page/forceGraph'), { ssr: false });
+
+type PendingIntegration = {
+  resolve: (nodeTree: NodeTree | null) => void;
+  reject: (error: Error) => void;
+};
+
+type DreamWorkerResponse =
+  | { type: 'ready' }
+  | { type: 'warmup-error'; error: string }
+  | { type: 'result'; id: string; nodeTree: NodeTree | null }
+  | { type: 'error'; id: string; error: string };
 
 export default function Dreams() {
   const [textBubble, setTextBubble] = useState('');
   const [nodeTree, setNodeTree] = useState<NodeTree | null>(null);
   const [treeLoadSuspense, setTreeLoadSuspense] = useState(false);
+  const [integrationError, setIntegrationError] = useState('');
+  const workerRef = useRef<Worker | null>(null);
+  const pendingIntegrations = useRef(new Map<string, PendingIntegration>());
+
+  useEffect(() => {
+    const pending = pendingIntegrations.current;
+    const worker = new Worker(
+      new URL('../../lib/dreams_util/lda.worker.ts', import.meta.url),
+      { type: 'module' },
+    );
+
+    workerRef.current = worker;
+    worker.onmessage = (event: MessageEvent<DreamWorkerResponse>) => {
+      const response = event.data;
+
+      if (response.type === 'warmup-error') {
+        console.warn('Dream model warmup failed:', response.error);
+        return;
+      }
+      if (response.type === 'ready') return;
+
+      const integration = pending.get(response.id);
+      if (!integration) return;
+
+      pending.delete(response.id);
+      if (response.type === 'result') {
+        integration.resolve(response.nodeTree);
+      } else {
+        integration.reject(new Error(response.error));
+      }
+    };
+
+    worker.postMessage({ type: 'warmup' });
+
+    return () => {
+      worker.terminate();
+      workerRef.current = null;
+      pending.forEach(({ reject }) => {
+        reject(new Error('Dream integration was cancelled.'));
+      });
+      pending.clear();
+    };
+  }, []);
+
+  const integrateDream = (text: string): Promise<NodeTree | null> => {
+    const worker = workerRef.current;
+    if (!worker) {
+      return Promise.reject(new Error('Dream integration is still preparing.'));
+    }
+
+    const id = `${Date.now()}-${Math.random()}`;
+    return new Promise((resolve, reject) => {
+      pendingIntegrations.current.set(id, { resolve, reject });
+      worker.postMessage({ type: 'analyze', id, text });
+    });
+  };
 
   const textBubbleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setTextBubble(event.target.value); 
@@ -62,8 +128,8 @@ export default function Dreams() {
               <ForceGraph2D graphData={nodeTree} />
             ) : (
                 <LazyVideo 
-                  src="/mindBlown/cat.mp4" 
-                  className="inset-0 object-contain transition-opacity duration-0 touch-none" 
+                  src="/mindBlown/cat.mp4"
+                  className="h-full w-full object-contain touch-none"
                   loop
                   muted
                   playsInline
@@ -79,18 +145,35 @@ export default function Dreams() {
           </div>
         )}
 
+        {integrationError && (
+          <p role="alert" className="mx-auto mb-4 max-w-md text-center text-sm text-red-700">
+            {integrationError}
+          </p>
+        )}
+
         <Button
           className="mx-auto mb-8"  
+          disabled={treeLoadSuspense || textBubble.length < 10 || textBubble.length > 3000}
           onClick={async () => {
             if (treeLoadSuspense === true || textBubble.length < 10 || textBubble.length > 3000){
               return;
             }
             setTreeLoadSuspense(true);
             setNodeTree(null);
-            const nodeTreeRes = await ldaExecute(textBubble);
-            await sleep(4000);
-            setNodeTree(nodeTreeRes?.nodeTreeLDA ?? null);
-            setTreeLoadSuspense(false);
+            setIntegrationError('');
+
+            // Give React a frame to mount the loading video before work starts.
+            await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+
+            try {
+              setNodeTree(await integrateDream(textBubble));
+            } catch (error) {
+              setIntegrationError(
+                error instanceof Error ? error.message : 'Dream integration failed.',
+              );
+            } finally {
+              setTreeLoadSuspense(false);
+            }
           }} 
         >
           <span>Integrate</span>

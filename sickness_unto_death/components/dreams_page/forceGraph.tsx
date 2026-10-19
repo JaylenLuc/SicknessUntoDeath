@@ -14,6 +14,8 @@ export default function ForceGraph({ graphData }: ForceGraphProps) {
       maxZoom={5}
       width={450}   
       height={450}   
+      cooldownTicks={100}
+      d3AlphaDecay={0.04}
       nodeAutoColorBy="group"
       nodeCanvasObject={(node: { name: any; id: any; x: number; y: number; color: string; }, ctx: any, globalScale: number) => {
         const label = node.name || node.id || ""; // your node label key here

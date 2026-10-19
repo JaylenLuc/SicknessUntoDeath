@@ -1,25 +1,25 @@
 import StopMotion from "../stopMotion";
 
-export default function DreamBubble() {
-  const images = [
-    "/mindBlown/cloud1.png",
-    "/mindBlown/cloud2.png",
-    "/mindBlown/cloud3.png",
-    "/mindBlown/cloud4.png",
-    "/mindBlown/cloud_last.png",
-    "/mindBlown/cloud_last_2.png",
-    "/mindBlown/cloud_last_3.png",
-    "/mindBlown/cloud_last_2.png",
-    "/mindBlown/cloud_last.png",
-    "/mindBlown/cloud4.png",
-    "/mindBlown/cloud3.png",
-    "/mindBlown/cloud2.png",
-  ];
+const DREAM_BUBBLE_FRAMES = [
+  "/mindBlown/cloud1.webp",
+  "/mindBlown/cloud2.webp",
+  "/mindBlown/cloud3.webp",
+  "/mindBlown/cloud4.webp",
+  "/mindBlown/cloud_last.webp",
+  "/mindBlown/cloud_last_2.webp",
+  "/mindBlown/cloud_last_3.webp",
+  "/mindBlown/cloud_last_2.webp",
+  "/mindBlown/cloud_last.webp",
+  "/mindBlown/cloud4.webp",
+  "/mindBlown/cloud3.webp",
+  "/mindBlown/cloud2.webp",
+];
 
+export default function DreamBubble() {
   return (
       <StopMotion
-        images={images}
-        frameDuration={300}
+        images={DREAM_BUBBLE_FRAMES}
+        frameDuration={200}
         size="lg"
       />
   );
