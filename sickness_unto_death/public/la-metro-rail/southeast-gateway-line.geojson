@@ -1,0 +1,174 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "southeast-gateway-line",
+      "properties": {
+        "route_long_name": "Southeast Gateway Line",
+        "route_color": "#BA80B3",
+        "color_basis": "Southeast Gateway / former WSAB project color",
+        "status": "design",
+        "phase_label": "Locally preferred alignment in design",
+        "geometry_accuracy": "official Metro project GIS, simplified",
+        "source_url": "https://www.metro.net/projects/southeastgateway/"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-118.243287, 33.989386],
+          [-118.243275, 33.988301],
+          [-118.243110, 33.987838],
+          [-118.242652, 33.987430],
+          [-118.241968, 33.987206],
+          [-118.211935, 33.984142],
+          [-118.205171, 33.983531],
+          [-118.204428, 33.983281],
+          [-118.204211, 33.983042],
+          [-118.204095, 33.982687],
+          [-118.203949, 33.976230],
+          [-118.203824, 33.975258],
+          [-118.203429, 33.973560],
+          [-118.203165, 33.972705],
+          [-118.202669, 33.971686],
+          [-118.201787, 33.970098],
+          [-118.200752, 33.968678],
+          [-118.199527, 33.967329],
+          [-118.198655, 33.966521],
+          [-118.180309, 33.951843],
+          [-118.178672, 33.950215],
+          [-118.177999, 33.949298],
+          [-118.177444, 33.948328],
+          [-118.172631, 33.937478],
+          [-118.171359, 33.934207],
+          [-118.165762, 33.921124],
+          [-118.165165, 33.919471],
+          [-118.164768, 33.917838],
+          [-118.164571, 33.916181],
+          [-118.164491, 33.905947],
+          [-118.164306, 33.905466],
+          [-118.160168, 33.903601],
+          [-118.146682, 33.896615],
+          [-118.142802, 33.894770],
+          [-118.116014, 33.881062],
+          [-118.110539, 33.877809],
+          [-118.079507, 33.858726]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "southeast-gateway-laus-study",
+      "properties": {
+        "route_long_name": "Southeast Gateway — Union Station Study",
+        "route_color": "#F97316",
+        "color_basis": "orange study-corridor color used in Metro project materials",
+        "status": "planning",
+        "phase_label": "Separate 4.8-mile Slauson/A Line–Union Station study segment",
+        "geometry_accuracy": "official Metro project GIS, simplified; study alignment subject to change",
+        "source_url": "https://boardagendas.metro.net/board-report/2025-0106/"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-118.243299, 33.989388],
+          [-118.243293, 33.992576],
+          [-118.242862, 34.022481],
+          [-118.241102, 34.027261],
+          [-118.238864, 34.031477],
+          [-118.238089, 34.043733],
+          [-118.238027, 34.051487],
+          [-118.237298, 34.053948],
+          [-118.236474, 34.057964],
+          [-118.234513, 34.060539]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sgl-slauson-a-line",
+      "properties": {
+        "stop_name": "Slauson / A Line",
+        "status": "design",
+        "study_connection": "Northern study segment begins here"
+      },
+      "geometry": { "type": "Point", "coordinates": [-118.243299, 33.989388] }
+    },
+    {
+      "type": "Feature",
+      "id": "sgl-arts-industrial-district",
+      "properties": {
+        "stop_name": "Arts / Industrial District",
+        "status": "planning"
+      },
+      "geometry": { "type": "Point", "coordinates": [-118.238500, 34.037300] }
+    },
+    {
+      "type": "Feature",
+      "id": "sgl-little-tokyo",
+      "properties": {
+        "stop_name": "Little Tokyo",
+        "status": "planning"
+      },
+      "geometry": { "type": "Point", "coordinates": [-118.238050, 34.048700] }
+    },
+    {
+      "type": "Feature",
+      "id": "sgl-union-station",
+      "properties": {
+        "stop_name": "LA Union Station",
+        "status": "planning",
+        "terminal": true
+      },
+      "geometry": { "type": "Point", "coordinates": [-118.236900, 34.056000] }
+    },
+    {
+      "type": "Feature",
+      "id": "sgl-pacific-randolph",
+      "properties": { "stop_name": "Pacific / Randolph", "status": "design" },
+      "geometry": { "type": "Point", "coordinates": [-118.224146, 33.985375] }
+    },
+    {
+      "type": "Feature",
+      "id": "sgl-florence-salt-lake",
+      "properties": { "stop_name": "Florence / Salt Lake", "status": "design" },
+      "geometry": { "type": "Point", "coordinates": [-118.202372, 33.971130] }
+    },
+    {
+      "type": "Feature",
+      "id": "sgl-firestone",
+      "properties": { "stop_name": "Firestone", "status": "design" },
+      "geometry": { "type": "Point", "coordinates": [-118.182050, 33.953250] }
+    },
+    {
+      "type": "Feature",
+      "id": "sgl-gardendale",
+      "properties": { "stop_name": "Gardendale", "status": "design" },
+      "geometry": { "type": "Point", "coordinates": [-118.166293, 33.922340] }
+    },
+    {
+      "type": "Feature",
+      "id": "sgl-i105-c-line",
+      "properties": { "stop_name": "I-105 / C Line", "status": "design" },
+      "geometry": { "type": "Point", "coordinates": [-118.164547, 33.913353] }
+    },
+    {
+      "type": "Feature",
+      "id": "sgl-paramount-rosecrans",
+      "properties": { "stop_name": "Paramount / Rosecrans", "status": "design" },
+      "geometry": { "type": "Point", "coordinates": [-118.161383, 33.904146] }
+    },
+    {
+      "type": "Feature",
+      "id": "sgl-bellflower",
+      "properties": { "stop_name": "Bellflower", "status": "design" },
+      "geometry": { "type": "Point", "coordinates": [-118.126065, 33.886212] }
+    },
+    {
+      "type": "Feature",
+      "id": "sgl-pioneer",
+      "properties": { "stop_name": "Pioneer", "status": "design", "terminal": true },
+      "geometry": { "type": "Point", "coordinates": [-118.082978, 33.860850] }
+    }
+  ]
+}

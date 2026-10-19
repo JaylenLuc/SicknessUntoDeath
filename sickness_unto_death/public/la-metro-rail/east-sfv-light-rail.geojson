@@ -1,0 +1,101 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "east-sfv-light-rail",
+      "properties": {
+        "route_long_name": "East San Fernando Valley Light Rail",
+        "route_color": "#059FA9",
+        "color_basis": "East SFV project route color",
+        "status": "under_construction",
+        "phase_label": "11-station initial operating segment under construction",
+        "geometry_accuracy": "published project GIS, simplified",
+        "source_url": "https://www.metro.net/projects/east-sfv/",
+        "route_reference_url": "https://en.wikipedia.org/wiki/East_San_Fernando_Valley_Light_Rail_Transit_Project#Route_selected:_Modified_Alternative_4"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-118.448738, 34.180661],
+          [-118.448801, 34.222722],
+          [-118.448870, 34.225205],
+          [-118.450154, 34.227575],
+          [-118.450265, 34.228818],
+          [-118.450265, 34.235387],
+          [-118.450204, 34.245242],
+          [-118.448196, 34.247084],
+          [-118.438714, 34.253994],
+          [-118.432123, 34.258811],
+          [-118.421912, 34.266247]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "esfv-g-line",
+      "properties": { "stop_name": "Van Nuys / G Line", "status": "under_construction" },
+      "geometry": { "type": "Point", "coordinates": [-118.448734, 34.180674] }
+    },
+    {
+      "type": "Feature",
+      "id": "esfv-victory",
+      "properties": { "stop_name": "Victory", "status": "under_construction" },
+      "geometry": { "type": "Point", "coordinates": [-118.448744, 34.186664] }
+    },
+    {
+      "type": "Feature",
+      "id": "esfv-vanowen",
+      "properties": { "stop_name": "Vanowen", "status": "under_construction" },
+      "geometry": { "type": "Point", "coordinates": [-118.448756, 34.193971] }
+    },
+    {
+      "type": "Feature",
+      "id": "esfv-sherman-way",
+      "properties": { "stop_name": "Sherman Way", "status": "under_construction" },
+      "geometry": { "type": "Point", "coordinates": [-118.448743, 34.201219] }
+    },
+    {
+      "type": "Feature",
+      "id": "esfv-metrolink",
+      "properties": { "stop_name": "Van Nuys Metrolink", "status": "under_construction" },
+      "geometry": { "type": "Point", "coordinates": [-118.448781, 34.211724] }
+    },
+    {
+      "type": "Feature",
+      "id": "esfv-roscoe",
+      "properties": { "stop_name": "Roscoe", "status": "under_construction" },
+      "geometry": { "type": "Point", "coordinates": [-118.448813, 34.221536] }
+    },
+    {
+      "type": "Feature",
+      "id": "esfv-nordhoff",
+      "properties": { "stop_name": "Nordhoff", "status": "under_construction" },
+      "geometry": { "type": "Point", "coordinates": [-118.450265, 34.235387] }
+    },
+    {
+      "type": "Feature",
+      "id": "esfv-woodman",
+      "properties": { "stop_name": "Woodman", "status": "under_construction" },
+      "geometry": { "type": "Point", "coordinates": [-118.448196, 34.247084] }
+    },
+    {
+      "type": "Feature",
+      "id": "esfv-arleta",
+      "properties": { "stop_name": "Arleta", "status": "under_construction" },
+      "geometry": { "type": "Point", "coordinates": [-118.438714, 34.253994] }
+    },
+    {
+      "type": "Feature",
+      "id": "esfv-laurel-canyon",
+      "properties": { "stop_name": "Laurel Canyon", "status": "under_construction" },
+      "geometry": { "type": "Point", "coordinates": [-118.432123, 34.258811] }
+    },
+    {
+      "type": "Feature",
+      "id": "esfv-van-nuys-san-fernando",
+      "properties": { "stop_name": "Van Nuys / San Fernando", "status": "under_construction", "terminal": true },
+      "geometry": { "type": "Point", "coordinates": [-118.421917, 34.266250] }
+    }
+  ]
+}

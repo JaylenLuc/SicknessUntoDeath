@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "k-line-torrance-extension",
+      "properties": {
+        "route_long_name": "K Line Extension to Torrance",
+        "route_color": "#E56DB1",
+        "status": "design",
+        "phase_label": "Board-approved Hawthorne Boulevard alignment",
+        "geometry_accuracy": "official Metro project GIS, simplified",
+        "source_url": "https://www.metro.net/projects/k-line-extension-to-torrance/"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-118.368329, 33.893978],
+          [-118.363868, 33.890685],
+          [-118.361185, 33.890334],
+          [-118.352638, 33.883935],
+          [-118.352530, 33.861018],
+          [-118.351974, 33.858268],
+          [-118.329018, 33.840855]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "klet-redondo-beach",
+      "properties": { "stop_name": "Redondo Beach (Marine)", "status": "design" },
+      "geometry": { "type": "Point", "coordinates": [-118.368329, 33.893978] }
+    },
+    {
+      "type": "Feature",
+      "id": "klet-south-bay-galleria",
+      "properties": { "stop_name": "South Bay Galleria", "status": "design" },
+      "geometry": { "type": "Point", "coordinates": [-118.352530, 33.861018] }
+    },
+    {
+      "type": "Feature",
+      "id": "klet-torrance-transit-center",
+      "properties": { "stop_name": "Torrance Transit Center", "status": "design", "terminal": true },
+      "geometry": { "type": "Point", "coordinates": [-118.329018, 33.840855] }
+    }
+  ]
+}

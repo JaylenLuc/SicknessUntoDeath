@@ -1,0 +1,91 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "eastside-phase-2-ios",
+      "properties": {
+        "route_long_name": "E Line Eastside Phase 2 — Initial Segment",
+        "route_color": "#FDB913",
+        "color_basis": "Metro E Line color",
+        "status": "planning",
+        "phase_label": "Board-approved initial operating segment to Greenwood",
+        "geometry_accuracy": "official Metro project GIS, simplified",
+        "source_url": "https://www.metro.net/projects/eastside_phase2/"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-118.153903, 34.031602],
+          [-118.154391, 34.029725],
+          [-118.157289, 34.020410],
+          [-118.157885, 34.017402],
+          [-118.155379, 34.012368],
+          [-118.148907, 34.006594],
+          [-118.144304, 34.002636],
+          [-118.139158, 34.000104],
+          [-118.131290, 34.000054],
+          [-118.118460, 33.994788]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "eastside-phase-2-full",
+      "properties": {
+        "route_long_name": "E Line Eastside Phase 2 — Whittier Segment",
+        "route_color": "#FDB913",
+        "color_basis": "Metro E Line color",
+        "status": "future",
+        "phase_label": "Future full build to Lambert",
+        "geometry_accuracy": "official Metro station corridor, schematic between stations",
+        "source_url": "https://www.metro.net/projects/eastside_phase2/"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-118.118460, 33.994788],
+          [-118.098130, 33.983782],
+          [-118.072809, 33.972252],
+          [-118.048152, 33.966269]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "esp2-atlantic-whittier",
+      "properties": { "stop_name": "Atlantic / Whittier", "status": "planning" },
+      "geometry": { "type": "Point", "coordinates": [-118.157289, 34.020410] }
+    },
+    {
+      "type": "Feature",
+      "id": "esp2-commerce-citadel",
+      "properties": { "stop_name": "Commerce / Citadel", "status": "planning" },
+      "geometry": { "type": "Point", "coordinates": [-118.148907, 34.006594] }
+    },
+    {
+      "type": "Feature",
+      "id": "esp2-greenwood",
+      "properties": { "stop_name": "Greenwood / Washington", "status": "planning" },
+      "geometry": { "type": "Point", "coordinates": [-118.118460, 33.994788] }
+    },
+    {
+      "type": "Feature",
+      "id": "esp2-rosemead",
+      "properties": { "stop_name": "Rosemead / Washington", "status": "future" },
+      "geometry": { "type": "Point", "coordinates": [-118.098130, 33.983782] }
+    },
+    {
+      "type": "Feature",
+      "id": "esp2-norwalk",
+      "properties": { "stop_name": "Norwalk / Washington", "status": "future" },
+      "geometry": { "type": "Point", "coordinates": [-118.072809, 33.972252] }
+    },
+    {
+      "type": "Feature",
+      "id": "esp2-lambert",
+      "properties": { "stop_name": "Lambert / Washington", "status": "future", "terminal": true },
+      "geometry": { "type": "Point", "coordinates": [-118.048152, 33.966269] }
+    }
+  ]
+}

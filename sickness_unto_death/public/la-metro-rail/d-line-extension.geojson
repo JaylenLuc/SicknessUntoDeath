@@ -11,7 +11,10 @@
         "route_text_color": "#FFFFFF",
         "status": "under_construction",
         "sections": "2 and 3",
-        "system": "metro"
+        "system": "metro",
+        "phase_label": "Sections 2 and 3 under construction",
+        "geometry_accuracy": "Metro construction alignment",
+        "source_url": "https://www.metro.net/projects/westside/"
       },
       "geometry": {
         "type": "LineString",

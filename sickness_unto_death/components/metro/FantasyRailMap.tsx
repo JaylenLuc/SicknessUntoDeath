@@ -25,6 +25,7 @@ import TrainMarker from "./TrainMarker";
 CREDITS TO https://services2.arcgis.com/yL7v93RXrxlqkeDx/ArcGIS/rest/services/Pacific_Electric_Lines/FeatureServer/22
 */
 import PacificElectricLayer from "./PEMap";
+import ProposedMetroRail from "./ProposedMetroRail";
 // import UserEditLayer from "./UserEditLayer";
 
 setWorkerUrl("/maplibre-gl-worker.mjs");
@@ -65,6 +66,7 @@ type BaseMap = "colorful" | "satellite";
 
 type LayerVisibility = {
   existingMetro: boolean;
+  metroProjects: boolean;
   permanentFantasy: boolean;
   pacificElectric: boolean;
   userDraft: boolean;
@@ -273,6 +275,7 @@ export default function FantasyRailMap() {
   const [visibleLayers, setVisibleLayers] =
     useState<LayerVisibility>({
       existingMetro: true,
+      metroProjects: true,
       pacificElectric: false,
       permanentFantasy: true,
       userDraft: false,
@@ -358,6 +361,13 @@ export default function FantasyRailMap() {
             />
 
             <LayerToggleButton
+              active={visibleLayers.metroProjects}
+              label="LA Metro Future Projects"
+              colorClassName="bg-amber-100 hover:bg-amber-200"
+              onClick={() => toggleLayer("metroProjects")}
+            />
+
+            <LayerToggleButton
               active={
                 visibleLayers.permanentFantasy
               }
@@ -413,6 +423,10 @@ export default function FantasyRailMap() {
         
         {visibleLayers.existingMetro && (
           <MetroLA2026 />
+        )}
+
+        {visibleLayers.metroProjects && (
+          <ProposedMetroRail />
         )}
 
         {visibleLayers.permanentFantasy && (

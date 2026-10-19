@@ -1,0 +1,56 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "a-line-pomona-claremont",
+      "properties": {
+        "route_long_name": "A Line Extension — Pomona to Claremont",
+        "route_color": "#0072BC",
+        "status": "pre_construction",
+        "phase_label": "Funded Pomona-to-Claremont segment",
+        "geometry_accuracy": "existing rail corridor, schematic centerline",
+        "source_url": "https://foothillgoldline.org/construction_phases/glendora-to-montclair/"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-117.75270, 34.09380],
+          [-117.73800, 34.09400],
+          [-117.71420, 34.09430]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "a-line-claremont-montclair",
+      "properties": {
+        "route_long_name": "A Line Extension — Claremont to Montclair",
+        "route_color": "#0072BC",
+        "status": "future",
+        "phase_label": "Unfunded future segment",
+        "geometry_accuracy": "existing rail corridor, schematic centerline",
+        "source_url": "https://foothillgoldline.org/construction_phases/glendora-to-montclair/"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-117.71420, 34.09430],
+          [-117.69410, 34.09520]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "alcm-claremont",
+      "properties": { "stop_name": "Claremont", "status": "pre_construction" },
+      "geometry": { "type": "Point", "coordinates": [-117.71420, 34.09430] }
+    },
+    {
+      "type": "Feature",
+      "id": "alcm-montclair",
+      "properties": { "stop_name": "Montclair", "status": "future", "terminal": true },
+      "geometry": { "type": "Point", "coordinates": [-117.69410, 34.09520] }
+    }
+  ]
+}

@@ -305,8 +305,8 @@
         "properties": {
             "id": "l-line",
             "routeId": "L",
-            "name": "L Line",
-            "color": "#FF0095",
+            "name": "Olympic–Lincoln Line",
+            "color": "#6F7FA8",
             "system": "fantasy"
         },
         "geometry": {
@@ -322,15 +322,20 @@
                 [-118.263971, 34.044984],
                 [-118.279859, 34.051813],
                 [-118.280993, 34.052147],
+                [-118.291605, 34.052535],
                 [-118.309075, 34.052632],
                 [-118.322983, 34.054644],
-                [-118.334060, 34.056971],
+                [-118.333732, 34.056916],
                 [-118.345899, 34.057222],
+                [-118.353541, 34.057392],
                 [-118.363823, 34.058184],
                 [-118.375486, 34.059518],
+                [-118.383613, 34.059361],
+                [-118.399142, 34.059748],
                 [-118.409642, 34.059736],
                 [-118.413061, 34.057694],
                 [-118.416202, 34.053187],
+                [-118.431738, 34.043882],
                 [-118.437869, 34.040223],
                 [-118.441249, 34.038200],
                 [-118.449839, 34.033191],
@@ -340,7 +345,22 @@
                 [-118.444193, 34.017636],
                 [-118.438837, 34.010574],
                 [-118.433612, 34.003725],
-                [-118.452815, 33.994077]
+                [-118.441277, 33.999866],
+                [-118.452815, 33.994077],
+                [-118.447832, 33.990467],
+                [-118.443431, 33.985615],
+                [-118.439014, 33.980614],
+                [-118.430383, 33.972092],
+                [-118.424877, 33.965393],
+                [-118.419415, 33.959868],
+                [-118.410451, 33.959773],
+                [-118.400485, 33.959795],
+                [-118.391487, 33.959806],
+                [-118.382801, 33.959826],
+                [-118.377054, 33.959897],
+                [-118.377043, 33.954998],
+                [-118.377171, 33.951047],
+                [-118.378660, 33.950080]
             ]
         }
         },
@@ -357,6 +377,9 @@
         "geometry": {
             "type": "LineString",
             "coordinates": [
+                [-118.291760, 34.097710],
+                [-118.291743, 34.090863],
+                [-118.291699, 34.076321],
                 [-118.290080, 34.062700],
                 [-118.291605, 34.052535],
                 [-118.291602, 34.047250],
@@ -366,13 +389,42 @@
                 [-118.291542, 34.025485],
                 [-118.291540, 34.018250],
                 [-118.291547, 34.010859],
+                [-118.291510, 34.003050],
                 [-118.291475, 33.989112],
                 [-118.291487, 33.982213],
+                [-118.291739, 33.974620],
+                [-118.291760, 33.959900],
+                [-118.291740, 33.945650],
+                [-118.291730, 33.928680],
+                [-118.291720, 33.923350]
+            ]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "florence-line",
+        "properties": {
+            "id": "florence-line",
+            "routeId": "FL",
+            "name": "Florence Line",
+            "color": "#0891B2",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [-118.336070, 33.975250],
+                [-118.318050, 33.974535],
+                [-118.308964, 33.974576],
+                [-118.300380, 33.974598],
                 [-118.291739, 33.974620],
                 [-118.278299, 33.974675],
                 [-118.256403, 33.974776],
                 [-118.24327, 33.97374],
-                [-118.225212, 33.974216]
+                [-118.225212, 33.974216],
+                [-118.212200, 33.974080],
+                [-118.203429, 33.973560],
+                [-118.202372, 33.971130]
             ]
         }
         },
@@ -542,16 +594,35 @@
         },
         {
         "type": "Feature",
+        "id": "station-sunset-vermont",
+        "properties": {
+            "id": "station-sunset-vermont",
+            "name": "Sunset / Vermont",
+            "street1": "Sunset Boulevard",
+            "street2": "Vermont Avenue",
+            "routes": "N",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "Metro B Line",
+            "terminal": true
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.291760, 34.097710]
+        }
+        },
+        {
+        "type": "Feature",
         "id": "station-wilshire-vermont",
         "properties": {
             "id": "station-wilshire-vermont",
             "name": "Wilshire / Vermont",
             "street1": "Wilshire Boulevard",
             "street2": "Vermont Avenue",
+            "routes": "N",
             "system": "fantasy",
             "interchange": true,
-            "transfer": "Metro B and D Lines",
-            "terminal": true
+            "transfer": "Metro B and D Lines"
         },
         "geometry": {
             "type": "Point",
@@ -566,7 +637,10 @@
             "name": "Olympic / Vermont",
             "street1": "Olympic Boulevard",
             "street2": "Vermont Avenue",
-            "system": "fantasy"
+            "routes": "L, N",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "N Line"
         },
         "geometry": {
             "type": "Point",
@@ -682,6 +756,22 @@
         },
         {
         "type": "Feature",
+        "id": "station-vernon-vermont",
+        "properties": {
+            "id": "station-vernon-vermont",
+            "name": "Vernon / Vermont",
+            "street1": "Vernon Avenue",
+            "street2": "Vermont Avenue",
+            "routes": "N",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.291510, 34.003050]
+        }
+        },
+        {
+        "type": "Feature",
         "id": "station-slauson-vermont",
         "properties": {
             "id": "station-slauson-vermont",
@@ -712,17 +802,138 @@
         },
         {
         "type": "Feature",
+        "id": "station-fairview-heights-florence",
+        "properties": {
+            "id": "station-fairview-heights-florence",
+            "name": "Fairview Heights",
+            "street1": "West Boulevard",
+            "street2": "Florence Avenue",
+            "routes": "FL",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "Metro K Line",
+            "terminal": true
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.336070, 33.975250]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-florence-van-ness",
+        "properties": {
+            "id": "station-florence-van-ness",
+            "name": "Florence / Van Ness",
+            "street1": "Florence Avenue",
+            "street2": "Van Ness Avenue",
+            "routes": "FL",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.318050, 33.974535]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-florence-normandie",
+        "properties": {
+            "id": "station-florence-normandie",
+            "name": "Florence / Normandie",
+            "street1": "Florence Avenue",
+            "street2": "Normandie Avenue",
+            "routes": "FL",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.300380, 33.974598]
+        }
+        },
+        {
+        "type": "Feature",
         "id": "station-florence-vermont",
         "properties": {
             "id": "station-florence-vermont",
             "name": "Florence / Vermont",
             "street1": "Florence Avenue",
             "street2": "Vermont Avenue",
-            "system": "fantasy"
+            "routes": "N, FL",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "N Line"
         },
         "geometry": {
             "type": "Point",
             "coordinates": [-118.291739, 33.974620]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-manchester-vermont",
+        "properties": {
+            "id": "station-manchester-vermont",
+            "name": "Manchester / Vermont",
+            "street1": "Manchester Avenue",
+            "street2": "Vermont Avenue",
+            "routes": "N",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.291760, 33.959900]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-century-vermont",
+        "properties": {
+            "id": "station-century-vermont",
+            "name": "Century / Vermont",
+            "street1": "Century Boulevard",
+            "street2": "Vermont Avenue",
+            "routes": "N",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.291740, 33.945650]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-vermont-athens",
+        "properties": {
+            "id": "station-vermont-athens",
+            "name": "Vermont / Athens",
+            "street1": "Vermont Avenue",
+            "street2": "Interstate 105",
+            "routes": "N",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "Metro C Line"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.291730, 33.928680]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-120th-vermont",
+        "properties": {
+            "id": "station-120th-vermont",
+            "name": "120th / Vermont",
+            "street1": "120th Street",
+            "street2": "Vermont Avenue",
+            "routes": "N",
+            "system": "fantasy",
+            "terminal": true
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.291720, 33.923350]
         }
         },
         {
@@ -733,6 +944,7 @@
             "name": "Florence / Broadway",
             "street1": "Florence Avenue",
             "street2": "Broadway",
+            "routes": "FL",
             "system": "fantasy"
         },
         "geometry": {
@@ -748,6 +960,7 @@
             "name": "Florence / Central",
             "street1": "Florence Avenue",
             "street2": "Central Avenue",
+            "routes": "FL",
             "system": "fantasy"
         },
         "geometry": {
@@ -763,12 +976,47 @@
             "name": "Florence / Pacific",
             "street1": "Florence Avenue",
             "street2": "Pacific Boulevard",
-            "system": "fantasy",
-            "terminal": true
+            "routes": "FL",
+            "system": "fantasy"
         },
         "geometry": {
             "type": "Point",
             "coordinates": [-118.225212, 33.974216]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-florence-state",
+        "properties": {
+            "id": "station-florence-state",
+            "name": "Florence / State",
+            "street1": "Florence Avenue",
+            "street2": "State Street",
+            "routes": "FL",
+            "system": "fantasy"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.212200, 33.974080]
+        }
+        },
+        {
+        "type": "Feature",
+        "id": "station-florence-salt-lake",
+        "properties": {
+            "id": "station-florence-salt-lake",
+            "name": "Florence / Salt Lake",
+            "street1": "Florence Avenue",
+            "street2": "Salt Lake Avenue",
+            "routes": "FL",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "Future Southeast Gateway Line",
+            "terminal": true
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-118.202372, 33.971130]
         }
         },
         {
@@ -981,7 +1229,10 @@
             "name": "Beverly / Vermont",
             "street1": "Beverly Boulevard",
             "street2": "Vermont Avenue",
-            "system": "fantasy"
+            "routes": "BEV, N",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "N Line"
         },
         "geometry": {
             "type": "Point",
@@ -1136,10 +1387,10 @@
             "name": "Vermont / Santa Monica",
             "street1": "Vermont Avenue",
             "street2": "Santa Monica Boulevard",
-            "routes": "F",
+            "routes": "F, N",
             "system": "fantasy",
             "interchange": true,
-            "transfer": "Metro B Line"
+            "transfer": "Metro B Line; F and N Lines"
         },
         "geometry": {
             "type": "Point",
@@ -1478,7 +1729,9 @@
                 "name": "Lincoln / Venice",
                 "street1": "Lincoln Boulevard",
                 "street2": "Venice Boulevard",
-                "system": "fantasy"
+                "routes": "L",
+                "system": "fantasy",
+                "shortTurn": true
         },
         "geometry": {
                 "type": "Point",
@@ -1629,7 +1882,10 @@
             "name": "Bundy / Olympic",
             "street1": "Bundy Drive",
             "street2": "Olympic Boulevard",
-            "system": "fantasy"
+            "routes": "L",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "Metro E Line at Expo / Bundy"
         },
         "geometry": {
             "type": "Point",
@@ -2375,8 +2631,10 @@
             "name": "Florence / Western",
             "street1": "Florence Avenue",
             "street2": "Western Avenue",
-            "routes": "M",
-            "system": "fantasy"
+            "routes": "M, FL",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "M Line"
             },
             "geometry": {
             "type": "Point",
@@ -3453,22 +3711,6 @@
         },
         {
             "type": "Feature",
-            "id": "station-olympic-spalding",
-            "properties": {
-            "id": "station-olympic-spalding",
-            "name": "Olympic / Spalding",
-            "street1": "Olympic Boulevard",
-            "street2": "Spalding Drive",
-            "routes": "L",
-            "system": "fantasy"
-            },
-            "geometry": {
-            "type": "Point",
-            "coordinates": [-118.409642, 34.059736]
-            }
-        },
-        {
-            "type": "Feature",
             "id": "station-olympic-century-park-east",
             "properties": {
             "id": "station-olympic-century-park-east",
@@ -3721,8 +3963,10 @@
             "name": "Florence",
             "street1": "Florence Avenue",
             "street2": "Graham Avenue",
-            "routes": "N",
-            "system": "fantasy"
+            "routes": "FL",
+            "system": "fantasy",
+            "interchange": true,
+            "transfer": "Metro A Line"
         },
         "geometry": {
             "type": "Point",
@@ -4036,6 +4280,217 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [-118.309231, 34.185388]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-olympic-rimpau",
+            "properties": {
+                "id": "station-olympic-rimpau",
+                "name": "Olympic / Rimpau",
+                "street1": "Olympic Boulevard",
+                "street2": "Rimpau Boulevard",
+                "routes": "L",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.333732, 34.056916]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-olympic-hauser",
+            "properties": {
+                "id": "station-olympic-hauser",
+                "name": "Olympic / Hauser",
+                "street1": "Olympic Boulevard",
+                "street2": "Hauser Boulevard",
+                "routes": "L",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.353541, 34.057392]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-olympic-robertson",
+            "properties": {
+                "id": "station-olympic-robertson",
+                "name": "Olympic / Robertson",
+                "street1": "Olympic Boulevard",
+                "street2": "Robertson Boulevard",
+                "routes": "L",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.383613, 34.059361]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-olympic-beverly",
+            "properties": {
+                "id": "station-olympic-beverly",
+                "name": "Olympic / Beverly Drive",
+                "street1": "Olympic Boulevard",
+                "street2": "Beverly Drive",
+                "routes": "L",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.399142, 34.059748]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-olympic-westwood",
+            "properties": {
+                "id": "station-olympic-westwood",
+                "name": "Olympic / Westwood",
+                "street1": "Olympic Boulevard",
+                "street2": "Westwood Boulevard",
+                "routes": "L",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.431738, 34.043882]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-venice-beethoven",
+            "properties": {
+                "id": "station-venice-beethoven",
+                "name": "Venice / Beethoven",
+                "street1": "Venice Boulevard",
+                "street2": "Beethoven Street",
+                "routes": "L",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.441277, 33.999866]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-lincoln-washington",
+            "properties": {
+                "id": "station-lincoln-washington",
+                "name": "Lincoln / Washington",
+                "street1": "Lincoln Boulevard",
+                "street2": "Washington Boulevard",
+                "routes": "L",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.447832, 33.990467]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-lincoln-maxella",
+            "properties": {
+                "id": "station-lincoln-maxella",
+                "name": "Lincoln / Maxella",
+                "street1": "Lincoln Boulevard",
+                "street2": "Maxella Avenue",
+                "routes": "L",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.443431, 33.985615]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-lincoln-mindanao",
+            "properties": {
+                "id": "station-lincoln-mindanao",
+                "name": "Lincoln / Mindanao",
+                "street1": "Lincoln Boulevard",
+                "street2": "Mindanao Way",
+                "routes": "L",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.439014, 33.980614]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-lincoln-jefferson",
+            "properties": {
+                "id": "station-lincoln-jefferson",
+                "name": "Lincoln / Jefferson–Playa Vista",
+                "street1": "Lincoln Boulevard",
+                "street2": "Jefferson Boulevard",
+                "routes": "L",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.430383, 33.972092]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-lincoln-lmu",
+            "properties": {
+                "id": "station-lincoln-lmu",
+                "name": "Lincoln / LMU Drive",
+                "street1": "Lincoln Boulevard",
+                "street2": "LMU Drive",
+                "routes": "L",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.424877, 33.965393]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-lincoln-manchester",
+            "properties": {
+                "id": "station-lincoln-manchester",
+                "name": "Lincoln / Manchester–Westchester",
+                "street1": "Lincoln Boulevard",
+                "street2": "Manchester Avenue",
+                "routes": "L",
+                "system": "fantasy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.419415, 33.959868]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-lax-metro-transit-center-l",
+            "properties": {
+                "id": "station-lax-metro-transit-center-l",
+                "name": "LAX / Metro Transit Center",
+                "street1": "Aviation Boulevard",
+                "street2": "96th Street",
+                "routes": "L",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer": "Metro C and K Lines; LAX airport connections",
+                "terminal": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.378660, 33.950080]
             }
         },
         {

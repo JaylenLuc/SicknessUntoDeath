@@ -1,0 +1,127 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "k-line-northern-extension-ios",
+      "properties": {
+        "route_long_name": "K Line Northern Extension - IOS",
+        "route_color": "#E56DB1",
+        "status": "planning",
+        "phase_label": "Initial Operating Segment to Wilshire/Fairfax; anticipated 2047",
+        "selected_alternative": "Modified Alternative 1 (San Vicente-Fairfax)",
+        "geometry_accuracy": "schematic alignment following Metro's selected LPA and Lafayette Square refinement",
+        "source_url": "https://www.metro.net/projects/kline-northern-extension/"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-118.33485, 34.02216],
+          [-118.33510, 34.03270],
+          [-118.33510, 34.03920],
+          [-118.32880, 34.04250],
+          [-118.33350, 34.04500],
+          [-118.34400, 34.04720],
+          [-118.35400, 34.05450],
+          [-118.36120, 34.06280]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "k-line-northern-extension-phase-2",
+      "properties": {
+        "route_long_name": "K Line Northern Extension - Phase 2",
+        "route_color": "#E56DB1",
+        "status": "future",
+        "phase_label": "Wilshire/Fairfax to Hollywood Bowl; opening date TBD",
+        "selected_alternative": "Modified Alternative 1 (San Vicente-Fairfax)",
+        "geometry_accuracy": "schematic alignment following Metro's selected LPA station corridor",
+        "source_url": "https://www.metro.net/projects/kline-northern-extension/"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-118.36120, 34.06280],
+          [-118.36130, 34.07220],
+          [-118.37620, 34.07620],
+          [-118.38420, 34.09010],
+          [-118.36130, 34.09030],
+          [-118.34370, 34.09040],
+          [-118.33890, 34.10160],
+          [-118.33880, 34.11240]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kne-expo-crenshaw",
+      "properties": {
+        "stop_name": "Expo / Crenshaw",
+        "status": "existing",
+        "phase_label": "Existing station; opened October 7, 2022"
+      },
+      "geometry": { "type": "Point", "coordinates": [-118.33485, 34.02216] }
+    },
+    {
+      "type": "Feature",
+      "id": "kne-crenshaw-adams",
+      "properties": { "stop_name": "Crenshaw / Adams", "status": "planning", "phase": "IOS" },
+      "geometry": { "type": "Point", "coordinates": [-118.33510, 34.03270] }
+    },
+    {
+      "type": "Feature",
+      "id": "kne-midtown-crossing",
+      "properties": { "stop_name": "Midtown Crossing", "status": "planning", "phase": "IOS" },
+      "geometry": { "type": "Point", "coordinates": [-118.34400, 34.04720] }
+    },
+    {
+      "type": "Feature",
+      "id": "kne-wilshire-fairfax",
+      "properties": { "stop_name": "Wilshire / Fairfax", "status": "planning", "phase": "IOS", "ios_terminal": true },
+      "geometry": { "type": "Point", "coordinates": [-118.36120, 34.06280] }
+    },
+    {
+      "type": "Feature",
+      "id": "kne-la-cienega-beverly",
+      "properties": { "stop_name": "La Cienega / Beverly", "status": "future", "phase": "Phase 2" },
+      "geometry": { "type": "Point", "coordinates": [-118.37620, 34.07620] }
+    },
+    {
+      "type": "Feature",
+      "id": "kne-fairfax-third",
+      "properties": { "stop_name": "Fairfax / 3rd", "status": "future", "phase": "Phase 2" },
+      "geometry": { "type": "Point", "coordinates": [-118.36130, 34.07220] }
+    },
+    {
+      "type": "Feature",
+      "id": "kne-san-vicente-santa-monica",
+      "properties": { "stop_name": "San Vicente / Santa Monica", "status": "future", "phase": "Phase 2" },
+      "geometry": { "type": "Point", "coordinates": [-118.38420, 34.09010] }
+    },
+    {
+      "type": "Feature",
+      "id": "kne-fairfax-santa-monica",
+      "properties": { "stop_name": "Fairfax / Santa Monica", "status": "future", "phase": "Phase 2" },
+      "geometry": { "type": "Point", "coordinates": [-118.36130, 34.09030] }
+    },
+    {
+      "type": "Feature",
+      "id": "kne-la-brea-santa-monica",
+      "properties": { "stop_name": "La Brea / Santa Monica", "status": "future", "phase": "Phase 2" },
+      "geometry": { "type": "Point", "coordinates": [-118.34370, 34.09040] }
+    },
+    {
+      "type": "Feature",
+      "id": "kne-hollywood-highland",
+      "properties": { "stop_name": "Hollywood / Highland", "status": "future", "phase": "Phase 2" },
+      "geometry": { "type": "Point", "coordinates": [-118.33890, 34.10160] }
+    },
+    {
+      "type": "Feature",
+      "id": "kne-hollywood-bowl",
+      "properties": { "stop_name": "Hollywood Bowl", "status": "future", "phase": "Phase 2", "terminal": true },
+      "geometry": { "type": "Point", "coordinates": [-118.33880, 34.11240] }
+    }
+  ]
+}

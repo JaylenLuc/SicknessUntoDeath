@@ -1,0 +1,73 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "sepulveda-transit-corridor",
+      "properties": {
+        "route_long_name": "Sepulveda Transit Corridor",
+        "route_color": "#2563EB",
+        "color_basis": "visualization color; Metro has not assigned a line color",
+        "status": "planning",
+        "phase_label": "January 2026 selected underground heavy-rail LPA",
+        "geometry_accuracy": "schematic alignment connecting Metro's published Modified Alternative 5 station locations",
+        "source_url": "https://www.metro.net/projects/sepulvedacorridor/"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-118.448781, 34.211724],
+          [-118.448734, 34.180674],
+          [-118.448900, 34.148200],
+          [-118.449500, 34.119000],
+          [-118.444830, 34.069213],
+          [-118.445591, 34.059081],
+          [-118.442909, 34.047477],
+          [-118.433356, 34.036060]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "stc-van-nuys-metrolink",
+      "properties": { "stop_name": "Van Nuys Metrolink", "status": "planning", "terminal": true },
+      "geometry": { "type": "Point", "coordinates": [-118.448781, 34.211724] }
+    },
+    {
+      "type": "Feature",
+      "id": "stc-g-line",
+      "properties": { "stop_name": "Van Nuys / G Line", "status": "planning" },
+      "geometry": { "type": "Point", "coordinates": [-118.448734, 34.180674] }
+    },
+    {
+      "type": "Feature",
+      "id": "stc-ventura",
+      "properties": { "stop_name": "Ventura Boulevard", "status": "planning" },
+      "geometry": { "type": "Point", "coordinates": [-118.448900, 34.148200] }
+    },
+    {
+      "type": "Feature",
+      "id": "stc-ucla",
+      "properties": { "stop_name": "UCLA Gateway Plaza", "status": "planning" },
+      "geometry": { "type": "Point", "coordinates": [-118.444830, 34.069213] }
+    },
+    {
+      "type": "Feature",
+      "id": "stc-westwood-ucla",
+      "properties": { "stop_name": "Wilshire / Westwood (D Line)", "status": "planning" },
+      "geometry": { "type": "Point", "coordinates": [-118.445591, 34.059081] }
+    },
+    {
+      "type": "Feature",
+      "id": "stc-santa-monica",
+      "properties": { "stop_name": "Santa Monica Boulevard", "status": "planning" },
+      "geometry": { "type": "Point", "coordinates": [-118.442909, 34.047477] }
+    },
+    {
+      "type": "Feature",
+      "id": "stc-expo-sepulveda",
+      "properties": { "stop_name": "Expo / Sepulveda (E Line)", "status": "planning", "terminal": true },
+      "geometry": { "type": "Point", "coordinates": [-118.433356, 34.036060] }
+    }
+  ]
+}
