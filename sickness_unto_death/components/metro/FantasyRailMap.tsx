@@ -220,6 +220,27 @@ function PermanentFantasyNetwork() {
       />
 
       <Layer
+        id="permanent-fantasy-route-labels"
+        type="symbol"
+        minzoom={8.5}
+        filter={["==", ["geometry-type"], "LineString"]}
+        layout={{
+          "symbol-placement": "line",
+          "symbol-spacing": 380,
+          "text-field": ["get", "name"],
+          "text-size": 11,
+          "text-rotation-alignment": "map",
+          "text-keep-upright": true,
+          "text-allow-overlap": false,
+        }}
+        paint={{
+          "text-color": "#111827",
+          "text-halo-color": "#ffffff",
+          "text-halo-width": 2,
+        }}
+      />
+
+      <Layer
         id="permanent-fantasy-stations"
         type="circle"
         filter={[

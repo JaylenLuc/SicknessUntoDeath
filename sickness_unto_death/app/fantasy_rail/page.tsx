@@ -2,6 +2,7 @@
 
 import { Text } from "@/components/retroui/Text";
 import FantasyRailMap from "@/components/metro/FantasyRailMapLoader";
+import FantasyRailLegend from "@/components/metro/FantasyRailLegend";
 
 export default function FantasyRail() {
   return (
@@ -12,8 +13,11 @@ export default function FantasyRail() {
       <Text as="h4" className='text-center'>
         (Last updated: 2026-10-18)
       </Text>
-      <div className="mt-6 h-[80dvh] w-full max-w-[1000px] min-w-0 self-center overflow-hidden sm:h-auto sm:aspect-[4/3]">
-        <FantasyRailMap />
+      <div className="mt-6 w-full max-w-[1000px] min-w-0 self-center">
+        <div className="h-[80dvh] w-full overflow-hidden sm:h-auto sm:aspect-[4/3]">
+          <FantasyRailMap />
+        </div>
+        <FantasyRailLegend />
       </div>
     </div>
   );
