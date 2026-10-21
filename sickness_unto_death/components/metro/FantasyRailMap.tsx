@@ -254,13 +254,15 @@ function PermanentFantasyNetwork() {
             ["linear"],
             ["zoom"],
             8,
-            2,
+            1.25,
             13,
-            6,
+            4,
+            16,
+            5,
           ],
           "circle-color": "#ffffff",
           "circle-stroke-color": "#111827",
-          "circle-stroke-width": 2,
+          "circle-stroke-width": 1.5,
         }}
       />
 

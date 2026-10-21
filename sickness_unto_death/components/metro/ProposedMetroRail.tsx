@@ -163,7 +163,17 @@ export default function ProposedMetroRail() {
             type="circle"
             filter={["==", ["geometry-type"], "Point"]}
             paint={{
-              "circle-radius": ["interpolate", ["linear"], ["zoom"], 8, 2, 13, 6],
+              "circle-radius": [
+                "interpolate",
+                ["linear"],
+                ["zoom"],
+                8,
+                1.25,
+                13,
+                4,
+                16,
+                5,
+              ],
               "circle-color": [
                 "match",
                 ["get", "status"],
@@ -180,7 +190,7 @@ export default function ProposedMetroRail() {
                 "#ffffff",
               ],
               "circle-stroke-color": "#111827",
-              "circle-stroke-width": 2,
+              "circle-stroke-width": 1.5,
               "circle-translate": [horizontalOffset, 0],
             }}
           />
