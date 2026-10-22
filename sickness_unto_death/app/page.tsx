@@ -120,11 +120,17 @@ function HomeVideo({ src, muted, ...props }: HomeVideoProps) {
         <button
           type="button"
           onClick={handleManualPlay}
-          className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/20 p-3 text-white"
-          aria-label="Play video"
+          className="absolute inset-0 flex cursor-pointer items-center justify-center"
+          aria-label={hasError ? "Retry video" : "Play video"}
         >
-          <span className="rounded-full bg-black/75 px-4 py-2 text-sm font-semibold shadow-lg backdrop-blur-sm">
-            {hasError ? "Tap to retry" : "Tap to play"}
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-black/75 text-white shadow-lg backdrop-blur-sm">
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              className="ml-0.5 h-4 w-4 fill-current"
+            >
+              <path d="M8 5v14l11-7z" />
+            </svg>
           </span>
         </button>
       )}
