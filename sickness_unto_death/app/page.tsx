@@ -6,11 +6,131 @@ import MindBlown from "@/components/main_page/mindBlown";
 import ZineStack from "@/components/main_page/zineStack";
 import Link from "next/link";
 import Image from "next/image";
-import LazyVideo from "@/components/LazyVideo";
-import { useEffect, useRef } from "react";
+import {
+  type MouseEvent,
+  type VideoHTMLAttributes,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 const HOME_TILE_CLASS = "relative aspect-square h-auto w-full min-w-0 overflow-hidden rounded";
 const HOME_LINK_CLASS = "block min-w-0 w-full";
+
+interface HomeVideoProps extends VideoHTMLAttributes<HTMLVideoElement> {
+  src: string;
+}
+
+function HomeVideo({ src, muted, ...props }: HomeVideoProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [needsTap, setNeedsTap] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
+  const clearLoadTimeout = useCallback(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  }, []);
+
+  const playVideo = useCallback(async () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = Boolean(muted);
+
+    try {
+      await video.play();
+      setNeedsTap(false);
+      setHasError(false);
+    } catch (error) {
+      if ((error as DOMException)?.name !== "AbortError") {
+        setNeedsTap(true);
+      }
+    }
+  }, [muted]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleError = () => {
+      clearLoadTimeout();
+      setHasError(true);
+      setNeedsTap(true);
+    };
+    const handleCanPlay = () => clearLoadTimeout();
+    const handlePlaying = () => {
+      clearLoadTimeout();
+      setHasError(false);
+      setNeedsTap(false);
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          clearLoadTimeout();
+          timeoutRef.current = setTimeout(() => {
+            if (video.readyState < HTMLMediaElement.HAVE_CURRENT_DATA) {
+              setNeedsTap(true);
+            }
+          }, 5000);
+          void playVideo();
+        } else {
+          clearLoadTimeout();
+          video.pause();
+        }
+      },
+      { threshold: 0.25 },
+    );
+
+    observer.observe(video);
+    video.addEventListener("error", handleError);
+    video.addEventListener("canplay", handleCanPlay);
+    video.addEventListener("playing", handlePlaying);
+
+    return () => {
+      observer.disconnect();
+      video.removeEventListener("error", handleError);
+      video.removeEventListener("canplay", handleCanPlay);
+      video.removeEventListener("playing", handlePlaying);
+      clearLoadTimeout();
+    };
+  }, [clearLoadTimeout, playVideo, src]);
+
+  const handleManualPlay = async (event: MouseEvent<HTMLButtonElement>) => {
+    // Consume only the first tap so the surrounding link remains usable once
+    // Safari allows playback.
+    event.preventDefault();
+    event.stopPropagation();
+
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (hasError) video.load();
+    await playVideo();
+  };
+
+  return (
+    <div className="relative h-full w-full">
+      <video ref={videoRef} src={src} muted={muted} {...props} />
+      {needsTap && (
+        <button
+          type="button"
+          onClick={handleManualPlay}
+          className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/20 p-3 text-white"
+          aria-label="Play video"
+        >
+          <span className="rounded-full bg-black/75 px-4 py-2 text-sm font-semibold shadow-lg backdrop-blur-sm">
+            {hasError ? "Tap to retry" : "Tap to play"}
+          </span>
+        </button>
+      )}
+    </div>
+  );
+}
 
 export default function Home() {
   const calamansiRef = useRef<HTMLImageElement>(null);
@@ -36,8 +156,9 @@ export default function Home() {
         </Link>
         <Link href="https://canarydisambiguation.itch.io/" className={HOME_LINK_CLASS}>
           <div className={HOME_TILE_CLASS}>
-            <LazyVideo 
+            <HomeVideo 
               src="/plant.mp4" 
+              poster="/plant-poster.jpg"
               className="h-full w-full object-contain touch-none" 
               loop
               muted
@@ -51,8 +172,9 @@ export default function Home() {
         </Link>
         <Link href="https://www.youtube.com/watch?v=QOowQeKyNkQ" className={HOME_LINK_CLASS}>
           <div className={HOME_TILE_CLASS}>
-            <LazyVideo 
+            <HomeVideo 
               src="/memories.mp4" 
+              poster="/memories-poster.jpg"
               className="h-full w-full object-contain touch-none" 
               loop
               muted
@@ -87,8 +209,9 @@ export default function Home() {
         </Link>
         <Link href="/daoist_formulas" className={HOME_LINK_CLASS}>
           <div className={HOME_TILE_CLASS}>
-            <LazyVideo 
+            <HomeVideo 
               src="/sun.mp4" 
+              poster="/sun-poster.jpg"
               className="h-full w-full object-contain touch-none mix-blend-multiply" 
               loop
               muted
