@@ -19,11 +19,11 @@ const HOME_TILE_CLASS = "relative aspect-square h-auto w-full min-w-0 overflow-h
 const HOME_LINK_CLASS = "block min-w-0 w-full";
 const STAR_VIDEO_SOURCES = [
   {
-    src: "/star-transparent.mov",
+    src: "/star-transparent.mov?v=2",
     type: 'video/quicktime; codecs="hvc1"',
   },
   {
-    src: "/star-transparent.webm",
+    src: "/star-transparent.webm?v=2",
     type: "video/webm",
   },
 ] as const;
