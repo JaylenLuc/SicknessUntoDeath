@@ -17,16 +17,29 @@ import {
 
 const HOME_TILE_CLASS = "relative aspect-square h-auto w-full min-w-0 overflow-hidden rounded";
 const HOME_LINK_CLASS = "block min-w-0 w-full";
+const STAR_VIDEO_SOURCES = [
+  {
+    src: "/star-transparent.mov",
+    type: 'video/quicktime; codecs="hvc1"',
+  },
+  {
+    src: "/star-transparent.webm",
+    type: "video/webm",
+  },
+] as const;
 
 interface HomeVideoProps extends VideoHTMLAttributes<HTMLVideoElement> {
-  src: string;
+  sources?: ReadonlyArray<{ src: string; type: string }>;
 }
 
-function HomeVideo({ src, muted, ...props }: HomeVideoProps) {
+function HomeVideo({ src, sources, muted, ...props }: HomeVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [needsTap, setNeedsTap] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const sourceKey = sources
+    ? sources.map((source) => `${source.src}:${source.type}`).join("|")
+    : src;
 
   const clearLoadTimeout = useCallback(() => {
     if (timeoutRef.current) {
@@ -98,7 +111,7 @@ function HomeVideo({ src, muted, ...props }: HomeVideoProps) {
       video.removeEventListener("playing", handlePlaying);
       clearLoadTimeout();
     };
-  }, [clearLoadTimeout, playVideo, src]);
+  }, [clearLoadTimeout, playVideo, sourceKey]);
 
   const handleManualPlay = async (event: MouseEvent<HTMLButtonElement>) => {
     // Consume only the first tap so the surrounding link remains usable once
@@ -115,7 +128,16 @@ function HomeVideo({ src, muted, ...props }: HomeVideoProps) {
 
   return (
     <div className="relative h-full w-full">
-      <video ref={videoRef} src={src} muted={muted} {...props} />
+      <video
+        ref={videoRef}
+        src={sources ? undefined : src}
+        muted={muted}
+        {...props}
+      >
+        {sources?.map((source) => (
+          <source key={source.src} src={source.src} type={source.type} />
+        ))}
+      </video>
       {needsTap && (
         <button
           type="button"
@@ -240,7 +262,7 @@ export default function Home() {
         <Link href="" className={HOME_LINK_CLASS}>
           <div className={HOME_TILE_CLASS}>
             <HomeVideo 
-              src="/star-transparent.webm" 
+              sources={STAR_VIDEO_SOURCES}
               poster="/star-poster.png"
               className="h-full w-full object-contain touch-none" 
               loop
