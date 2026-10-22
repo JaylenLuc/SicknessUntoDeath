@@ -237,6 +237,19 @@ export default function Home() {
             />
           </div>
         </Link>
+        <Link href="" className={HOME_LINK_CLASS}>
+          <div className={HOME_TILE_CLASS}>
+            <HomeVideo 
+              src="/star-transparent.webm" 
+              poster="/star-poster.png"
+              className="h-full w-full object-contain touch-none" 
+              loop
+              muted
+              playsInline
+              preload="metadata"
+            />
+          </div>
+        </Link>
       </div>
     </div>
   );
