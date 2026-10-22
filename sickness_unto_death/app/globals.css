@@ -119,3 +119,36 @@ html, body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes rail-legend-pastel-cycle {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.rail-legend-color-cycle:hover,
+.rail-legend-color-cycle-active {
+  background-image: linear-gradient(
+    135deg,
+    #fef9c3,
+    #fce7f3,
+    #ede9fe,
+    #dbeafe,
+    #d1fae5,
+    #fef9c3
+  );
+  background-size: 300% 300%;
+  animation: rail-legend-pastel-cycle 1.6s linear infinite alternate;
+}
+
+.rail-legend-color-cycle-paused,
+.rail-legend-color-cycle-paused:hover {
+  background-image: none;
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rail-legend-color-cycle:hover,
+  .rail-legend-color-cycle-active {
+    animation: none;
+  }
+}

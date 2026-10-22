@@ -26,6 +26,7 @@ CREDITS TO https://services2.arcgis.com/yL7v93RXrxlqkeDx/ArcGIS/rest/services/Pa
 */
 import PacificElectricLayer from "./PEMap";
 import ProposedMetroRail from "./ProposedMetroRail";
+import FantasyRailLegend from "./FantasyRailLegend";
 // import UserEditLayer from "./UserEditLayer";
 
 setWorkerUrl("/maplibre-gl-worker.mjs");
@@ -295,6 +296,7 @@ function PermanentFantasyNetwork() {
 export default function FantasyRailMap() {
   const [baseMap, setBaseMap] = useState<BaseMap>("colorful");
   const [railLayersOpen, setRailLayersOpen] = useState(true);
+  const [legendOpen, setLegendOpen] = useState(false);
   const [visibleLayers, setVisibleLayers] =
     useState<LayerVisibility>({
       existingMetro: true,
@@ -315,8 +317,8 @@ export default function FantasyRailMap() {
 
   return (
     <div className="relative h-full w-full">
-      <div className="absolute left-1.5 top-1.5 z-10 w-36 border-2 border-black bg-white p-1.5
-      shadow-[4px_4px_0_#000] sm:left-2 sm:top-2 sm:w-44 sm:p-2 lg:left-4 lg:top-4 lg:w-56 lg:p-3">
+      <div className="absolute left-1.5 top-1.5 z-10 max-h-[calc(100%-0.75rem)] w-36 overflow-y-auto overscroll-contain border-2 border-black bg-white p-1.5
+      shadow-[4px_4px_0_#000] sm:left-2 sm:top-2 sm:max-h-[calc(100%-1rem)] sm:w-44 sm:p-2 lg:left-4 lg:top-4 lg:max-h-[calc(100%-2rem)] lg:w-56 lg:p-3">
         <Text as="p" className="mb-1 text-xs font-bold sm:text-sm lg:text-base">
           Base Map
         </Text>
@@ -409,6 +411,27 @@ export default function FantasyRailMap() {
               toggleLayer("userDraft")
             }
             /> */}
+          </div>
+        )}
+
+        <button
+          type="button"
+          aria-expanded={legendOpen}
+          aria-controls="fantasy-rail-map-legend"
+          onClick={() => setLegendOpen((open) => !open)}
+          className="mt-2 flex w-full items-center justify-between border-t-2 border-black pt-1.5 text-left text-xs font-bold sm:text-sm lg:text-base"
+        >
+          <span>Legend</span>
+          {legendOpen ? (
+            <ChevronUp aria-hidden="true" className="size-4" />
+          ) : (
+            <ChevronDown aria-hidden="true" className="size-4" />
+          )}
+        </button>
+
+        {legendOpen && (
+          <div id="fantasy-rail-map-legend" className="mt-1.5">
+            <FantasyRailLegend compact />
           </div>
         )}
       </div>

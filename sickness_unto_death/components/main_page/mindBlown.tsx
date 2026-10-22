@@ -11,12 +11,13 @@ const MIND_BLOWN_FRAMES = [
   "/mindBlown/mind_explosion1-5.webp",
 ];
 
-export default function MindBlown() {
+export default function MindBlown({ className }: { className?: string }) {
   return (
       <StopMotion
         images={MIND_BLOWN_FRAMES}
         frameDuration={400}
         size="lg"
+        className={className}
       />
   );
 }

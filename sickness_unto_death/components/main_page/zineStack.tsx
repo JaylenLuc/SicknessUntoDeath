@@ -27,14 +27,14 @@ export default function ZineStack() {
   };
 
   return (
-    <div className="relative w-64 h-64 mx-auto">
+    <div className="relative mx-auto aspect-square w-full">
       {members.map((item, index) => {
         const isTop = index === 0;
 
         return (
           <motion.div
             key={item.k}
-            className="absolute w-64 h-64 overflow-hidden pointer-events-auto"
+            className="absolute size-full overflow-hidden pointer-events-auto"
             drag={isTop ? "x" : false}
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0.3}

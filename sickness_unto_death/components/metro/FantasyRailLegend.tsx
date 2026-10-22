@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import type { FeatureCollection, GeoJsonProperties, Geometry } from "geojson";
 
 type FantasyLegendLine = {
@@ -16,6 +16,11 @@ type LegendGroups = {
   fantasy: FantasyLegendLine[];
 };
 
+type FantasyRailLegendProps = {
+  compact?: boolean;
+  animateOnHover?: boolean;
+};
+
 function badgeTextColor(background: string) {
   const hex = background.replace("#", "");
   if (!/^[0-9a-f]{6}$/i.test(hex)) return "#ffffff";
@@ -27,7 +32,14 @@ function badgeTextColor(background: string) {
   return luminance > 155 ? "#111827" : "#ffffff";
 }
 
-export default function FantasyRailLegend() {
+export default function FantasyRailLegend({
+  compact = false,
+  animateOnHover = false,
+}: FantasyRailLegendProps) {
+  const headingId = useId();
+  const [colorAnimationMode, setColorAnimationMode] = useState<
+    "idle" | "active" | "paused"
+  >("idle");
   const [groups, setGroups] = useState<LegendGroups>({
     existing: [],
     fantasy: [],
@@ -120,12 +132,26 @@ export default function FantasyRailLegend() {
   if (groups.existing.length === 0 && groups.fantasy.length === 0) return null;
 
   const renderLines = (lines: FantasyLegendLine[]) => (
-    <div className="grid gap-x-6 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+    <div
+      className={
+        compact
+          ? "grid grid-cols-1 gap-1.5"
+          : "grid gap-x-6 gap-y-3 sm:grid-cols-2 lg:grid-cols-3"
+      }
+    >
       {lines.map((line) => (
-        <div key={line.id} className="flex min-w-0 items-center gap-3">
+        <div
+          key={line.id}
+          className={compact ? "flex min-w-0 items-center gap-1.5" : "flex min-w-0 items-center gap-3"}
+        >
           <span
             aria-hidden="true"
-            className="flex size-9 shrink-0 items-center justify-center rounded-full border-2 border-black text-[10px] font-bold leading-none shadow-[2px_2px_0_#000]"
+            className={[
+              "flex shrink-0 items-center justify-center rounded-full border-2 border-black font-bold leading-none",
+              compact
+                ? "size-6 text-[7px] shadow-[1px_1px_0_#000]"
+                : "size-9 text-[10px] shadow-[2px_2px_0_#000]",
+            ].join(" ")}
             style={{
               backgroundColor: line.color,
               color: line.textColor ?? badgeTextColor(line.color),
@@ -133,7 +159,9 @@ export default function FantasyRailLegend() {
           >
             {line.routeId}
           </span>
-          <span className="text-sm font-bold leading-tight">{line.name}</span>
+          <span className={compact ? "text-[10px] font-bold leading-tight" : "text-sm font-bold leading-tight"}>
+            {line.name}
+          </span>
         </div>
       ))}
     </div>
@@ -141,16 +169,62 @@ export default function FantasyRailLegend() {
 
   return (
     <section
-      aria-labelledby="fantasy-rail-legend-title"
-      className="mt-5 border-2 border-black bg-white p-4 shadow-[4px_4px_0_#000]"
+      aria-labelledby={headingId}
+      aria-pressed={animateOnHover ? colorAnimationMode === "active" : undefined}
+      role={animateOnHover ? "button" : undefined}
+      tabIndex={animateOnHover ? 0 : undefined}
+      onClick={
+        animateOnHover
+          ? () =>
+              setColorAnimationMode((mode) =>
+                mode === "active" ? "paused" : "active",
+              )
+          : undefined
+      }
+      onMouseLeave={
+        animateOnHover
+          ? () =>
+              setColorAnimationMode((mode) =>
+                mode === "paused" ? "idle" : mode,
+              )
+          : undefined
+      }
+      onBlur={
+        animateOnHover
+          ? () =>
+              setColorAnimationMode((mode) =>
+                mode === "paused" ? "idle" : mode,
+              )
+          : undefined
+      }
+      onKeyDown={
+        animateOnHover
+          ? (event) => {
+              if (event.key !== "Enter" && event.key !== " ") return;
+              event.preventDefault();
+              setColorAnimationMode((mode) =>
+                mode === "active" ? "paused" : "active",
+              );
+            }
+          : undefined
+      }
+      className={[
+        "border-2 border-black bg-yellow-100",
+        compact
+          ? "p-2"
+          : "mt-5 p-4 shadow-[4px_4px_0_#000]",
+        animateOnHover ? "rail-legend-color-cycle cursor-pointer" : "",
+        colorAnimationMode === "active" ? "rail-legend-color-cycle-active" : "",
+        colorAnimationMode === "paused" ? "rail-legend-color-cycle-paused" : "",
+      ].join(" ")}
     >
-      <h2 id="fantasy-rail-legend-title" className="text-lg font-bold">
+      <h2 id={headingId} className={compact ? "text-xs font-bold" : "text-lg font-bold"}>
         Rail Line Legend
       </h2>
 
       {groups.existing.length > 0 && (
-        <div className="mt-3">
-          <h3 className="mb-2 border-b-2 border-black pb-1 text-sm font-bold uppercase tracking-wide">
+        <div className={compact ? "mt-2" : "mt-3"}>
+          <h3 className={compact ? "mb-1 border-b border-black pb-0.5 text-[9px] font-bold uppercase" : "mb-2 border-b-2 border-black pb-1 text-sm font-bold uppercase tracking-wide"}>
             Existing LA Metro
           </h3>
           {renderLines(groups.existing)}
@@ -158,8 +232,8 @@ export default function FantasyRailLegend() {
       )}
 
       {groups.fantasy.length > 0 && (
-        <div className="mt-5">
-          <h3 className="mb-2 border-b-2 border-black pb-1 text-sm font-bold uppercase tracking-wide">
+        <div className={compact ? "mt-3" : "mt-5"}>
+          <h3 className={compact ? "mb-1 border-b border-black pb-0.5 text-[9px] font-bold uppercase" : "mb-2 border-b-2 border-black pb-1 text-sm font-bold uppercase tracking-wide"}>
             Fantasy Network
           </h3>
           {renderLines(groups.fantasy)}

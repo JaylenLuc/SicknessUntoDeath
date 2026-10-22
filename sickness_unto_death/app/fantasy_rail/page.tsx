@@ -17,7 +17,7 @@ export default function FantasyRail() {
         <div className="h-[80dvh] w-full overflow-hidden sm:h-auto sm:aspect-[4/3]">
           <FantasyRailMap />
         </div>
-        <FantasyRailLegend />
+        <FantasyRailLegend animateOnHover />
       </div>
     </div>
   );

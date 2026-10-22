@@ -8,7 +8,8 @@ type StopMotionProps = {
     images: string[];          
     frameDuration?: number;    
     pauseDuration?: number;    
-    size?: 'sm' | 'md' | 'lg'
+    size?: 'sm' | 'md' | 'lg';
+    className?: string;
 
 };
 
@@ -17,6 +18,7 @@ export default function StopMotion({
     frameDuration = 500,
     pauseDuration = 0,
     size = 'md',
+    className,
 }: StopMotionProps) {
   const [frameIndex, setFrameIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -59,7 +61,8 @@ export default function StopMotion({
         "relative overflow-hidden",
         size === "sm" && "w-32 h-32",
         size === "md" && "w-64 h-64",
-        size === "lg" && "w-96 h-96"
+        size === "lg" && "w-96 h-96",
+        className,
       )}
     >
       {uniqueImages.map((src) => (
