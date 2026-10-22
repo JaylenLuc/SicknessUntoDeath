@@ -1,0 +1,71 @@
+export const RAIL_PROJECTS = [
+  {
+    id: "d-line-extension",
+    file: "d-line-extension.geojson",
+    legendRouteId: "D",
+    sourceLabel: "Metro D Line Extension",
+    sourceUrl: "https://www.metro.net/projects/westside/",
+  },
+  {
+    id: "southeast-gateway",
+    file: "southeast-gateway-line.geojson",
+    legendRouteId: "SG",
+    sourceLabel: "Metro Southeast Gateway Line",
+    sourceUrl: "https://www.metro.net/projects/southeastgateway/",
+    referenceLabel: "Slauson/A Line–Union Station study",
+    referenceUrl: "https://boardagendas.metro.net/board-report/2025-0106/",
+  },
+  {
+    id: "east-sfv",
+    file: "east-sfv-light-rail.geojson",
+    legendRouteId: "F",
+    sourceLabel: "Metro East San Fernando Valley Light Rail",
+    sourceUrl: "https://www.metro.net/projects/east-sfv/",
+    referenceLabel: "Modified Alternative 4 route",
+    referenceUrl:
+      "https://en.wikipedia.org/wiki/East_San_Fernando_Valley_Light_Rail_Transit_Project#Route_selected:_Modified_Alternative_4",
+    lineOffset: 3,
+    horizontalOffset: 3,
+  },
+  {
+    id: "eastside-phase-2",
+    file: "eastside-transit-phase-2.geojson",
+    legendRouteId: "E",
+    sourceLabel: "Metro Eastside Transit Corridor Phase 2",
+    sourceUrl: "https://www.metro.net/projects/eastside_phase2/",
+  },
+  {
+    id: "k-northern",
+    file: "k-line-northern-extension.geojson",
+    legendRouteId: "K",
+    sourceLabel: "Metro K Line Northern Extension",
+    sourceUrl: "https://www.metro.net/projects/kline-northern-extension/",
+    referenceLabel: "Modified Alternative 1 route and stations",
+    referenceUrl:
+      "https://en.wikipedia.org/wiki/K_Line_Northern_Extension#Route_selected:_Modified_Alternative_1",
+  },
+  {
+    id: "sepulveda",
+    file: "sepulveda-transit-corridor.geojson",
+    legendRouteId: "S",
+    sourceLabel: "Metro Sepulveda Transit Corridor",
+    sourceUrl: "https://www.metro.net/projects/sepulvedacorridor/",
+    lineOffset: 3,
+    horizontalOffset: -3,
+  },
+  {
+    id: "k-torrance",
+    file: "k-line-torrance-extension.geojson",
+    legendRouteId: "K",
+    sourceLabel: "Metro K Line Extension to Torrance",
+    sourceUrl: "https://www.metro.net/projects/k-line-extension-to-torrance/",
+  },
+  {
+    id: "a-claremont",
+    file: "a-line-claremont-montclair.geojson",
+    legendRouteId: "A",
+    sourceLabel: "Foothill Gold Line Construction Authority",
+    sourceUrl:
+      "https://foothillgoldline.org/construction_phases/glendora-to-montclair/",
+  },
+] as const;

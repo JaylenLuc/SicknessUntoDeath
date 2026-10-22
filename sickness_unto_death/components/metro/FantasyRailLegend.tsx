@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useState } from "react";
 import type { FeatureCollection, GeoJsonProperties, Geometry } from "geojson";
+import { RAIL_PROJECTS } from "./proposedMetroProjects";
 
 type FantasyLegendLine = {
   id: string;
@@ -13,6 +14,7 @@ type FantasyLegendLine = {
 
 type LegendGroups = {
   existing: FantasyLegendLine[];
+  proposed: FantasyLegendLine[];
   fantasy: FantasyLegendLine[];
 };
 
@@ -32,6 +34,23 @@ function badgeTextColor(background: string) {
   return luminance > 155 ? "#111827" : "#ffffff";
 }
 
+function proposedStatusLabel(status: unknown) {
+  switch (status) {
+    case "under_construction":
+      return "Under construction";
+    case "pre_construction":
+      return "Pre-construction";
+    case "design":
+      return "Design";
+    case "planning":
+      return "Planned";
+    case "future":
+      return "Future / unfunded";
+    default:
+      return "Proposed";
+  }
+}
+
 export default function FantasyRailLegend({
   compact = false,
   animateOnHover = false,
@@ -42,6 +61,7 @@ export default function FantasyRailLegend({
   >("idle");
   const [groups, setGroups] = useState<LegendGroups>({
     existing: [],
+    proposed: [],
     fantasy: [],
   });
 
@@ -50,13 +70,19 @@ export default function FantasyRailLegend({
 
     async function loadLegend() {
       try {
-        const [fantasyResponse, existingResponse] = await Promise.all([
+        const [fantasyResponse, existingResponse, ...proposedResponses] = await Promise.all([
           fetch("/la-metro-rail/fantasy-layer.geojson"),
           fetch("/la-metro-rail/la-metro-rail.geojson"),
+          ...RAIL_PROJECTS.map((project) =>
+            fetch(`/la-metro-rail/${project.file}`),
+          ),
         ]);
-        if (!fantasyResponse.ok || !existingResponse.ok) {
+        const failedProposedResponse = proposedResponses.find(
+          (response) => !response.ok,
+        );
+        if (!fantasyResponse.ok || !existingResponse.ok || failedProposedResponse) {
           throw new Error(
-            `Rail legend request failed: fantasy ${fantasyResponse.status}, existing ${existingResponse.status}`,
+            `Rail legend request failed: fantasy ${fantasyResponse.status}, existing ${existingResponse.status}, proposed ${failedProposedResponse?.status ?? "ok"}`,
           );
         }
 
@@ -68,6 +94,15 @@ export default function FantasyRailLegend({
           Geometry,
           GeoJsonProperties
         >;
+        const proposedData = await Promise.all(
+          proposedResponses.map(
+            async (response) =>
+              (await response.json()) as FeatureCollection<
+                Geometry,
+                GeoJsonProperties
+              >,
+          ),
+        );
         const seenLineIds = new Set<string>();
         const fantasyLines = fantasyData.features.flatMap((feature) => {
           if (feature.geometry.type !== "LineString") return [];
@@ -115,8 +150,48 @@ export default function FantasyRailLegend({
           }];
         });
 
+        const proposedLines = proposedData.flatMap((data, projectIndex) => {
+          const project = RAIL_PROJECTS[projectIndex];
+          const seenProjectLines = new Set<string>();
+
+          return data.features.flatMap((feature) => {
+            if (feature.geometry.type !== "LineString") return [];
+
+            const properties = feature.properties;
+            const name =
+              typeof properties?.route_long_name === "string"
+                ? properties.route_long_name
+                : project.sourceLabel;
+            const status = proposedStatusLabel(properties?.status);
+            const color =
+              typeof properties?.route_color === "string"
+                ? properties.route_color
+                : "#64748b";
+            const textColor =
+              typeof properties?.route_text_color === "string"
+                ? properties.route_text_color
+                : badgeTextColor(color);
+            const lineKey = `${name}-${status}`;
+
+            if (seenProjectLines.has(lineKey)) return [];
+            seenProjectLines.add(lineKey);
+
+            return [{
+              id: `proposed-${project.id}-${lineKey}`,
+              name: `${name} (${status})`,
+              routeId: project.legendRouteId,
+              color,
+              textColor,
+            }];
+          });
+        });
+
         if (!cancelled) {
-          setGroups({ existing: existingLines, fantasy: fantasyLines });
+          setGroups({
+            existing: existingLines,
+            proposed: proposedLines,
+            fantasy: fantasyLines,
+          });
         }
       } catch (error) {
         console.error("Could not build fantasy rail legend:", error);
@@ -129,7 +204,11 @@ export default function FantasyRailLegend({
     };
   }, []);
 
-  if (groups.existing.length === 0 && groups.fantasy.length === 0) return null;
+  if (
+    groups.existing.length === 0 &&
+    groups.proposed.length === 0 &&
+    groups.fantasy.length === 0
+  ) return null;
 
   const renderLines = (lines: FantasyLegendLine[]) => (
     <div
@@ -228,6 +307,15 @@ export default function FantasyRailLegend({
             Existing LA Metro
           </h3>
           {renderLines(groups.existing)}
+        </div>
+      )}
+
+      {groups.proposed.length > 0 && (
+        <div className={compact ? "mt-3" : "mt-5"}>
+          <h3 className={compact ? "mb-1 border-b border-black pb-0.5 text-[9px] font-bold uppercase" : "mb-2 border-b-2 border-black pb-1 text-sm font-bold uppercase tracking-wide"}>
+            Proposed Metro Projects
+          </h3>
+          {renderLines(groups.proposed)}
         </div>
       )}
 

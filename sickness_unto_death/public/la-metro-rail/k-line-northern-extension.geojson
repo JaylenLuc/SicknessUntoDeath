@@ -3,13 +3,12 @@
   "features": [
     {
       "type": "Feature",
-      "id": "k-line-northern-extension-ios",
+      "id": "k-line-northern-extension-lpa",
       "properties": {
-        "route_long_name": "K Line Northern Extension - IOS",
+        "route_long_name": "K Line Northern Extension - Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
         "route_color": "#E56DB1",
         "status": "planning",
-        "phase_label": "Initial Operating Segment to Wilshire/Fairfax; anticipated 2047",
-        "selected_alternative": "Modified Alternative 1 (San Vicente-Fairfax)",
+        "phase_label": "Locally Preferred Alternative (LPA) via San Vicente-Fairfax",
         "geometry_accuracy": "schematic alignment following Metro's selected LPA and Lafayette Square refinement",
         "source_url": "https://www.metro.net/projects/kline-northern-extension/",
         "route_reference_url": "https://en.wikipedia.org/wiki/K_Line_Northern_Extension#Route_selected:_Modified_Alternative_1"
@@ -24,26 +23,6 @@
           [-118.33350, 34.04500],
           [-118.338133, 34.047668],
           [-118.35400, 34.05450],
-          [-118.361401, 34.064158]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "k-line-northern-extension-phase-2",
-      "properties": {
-        "route_long_name": "K Line Northern Extension - Phase 2",
-        "route_color": "#E56DB1",
-        "status": "future",
-        "phase_label": "Wilshire/Fairfax to Hollywood Bowl; opening date TBD",
-        "selected_alternative": "Modified Alternative 1 (San Vicente-Fairfax)",
-        "geometry_accuracy": "schematic alignment following Metro's selected LPA station corridor",
-        "source_url": "https://www.metro.net/projects/kline-northern-extension/",
-        "route_reference_url": "https://en.wikipedia.org/wiki/K_Line_Northern_Extension#Route_selected:_Modified_Alternative_1"
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
           [-118.361401, 34.064158],
           [-118.361429, 34.071508],
           [-118.375701, 34.076044],
@@ -71,7 +50,7 @@
       "properties": {
         "stop_name": "Crenshaw / Adams",
         "status": "planning",
-        "phase": "IOS",
+        "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
         "coordinate_source": "Metro KNE ArcGIS StoryMap"
       },
       "geometry": { "type": "Point", "coordinates": [-118.335117, 34.031783] }
@@ -82,7 +61,7 @@
       "properties": {
         "stop_name": "Midtown Crossing",
         "status": "planning",
-        "phase": "IOS",
+        "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
         "coordinate_source": "Metro KNE ArcGIS StoryMap"
       },
       "geometry": { "type": "Point", "coordinates": [-118.338133, 34.047668] }
@@ -93,8 +72,7 @@
       "properties": {
         "stop_name": "Wilshire / Fairfax",
         "status": "planning",
-        "phase": "IOS",
-        "ios_terminal": true,
+        "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
         "coordinate_source": "Metro KNE ArcGIS StoryMap"
       },
       "geometry": { "type": "Point", "coordinates": [-118.361401, 34.064158] }
@@ -104,8 +82,8 @@
       "id": "kne-la-cienega-beverly",
       "properties": {
         "stop_name": "La Cienega / Beverly",
-        "status": "future",
-        "phase": "Phase 2",
+        "status": "planning",
+        "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
         "coordinate_source": "Metro KNE ArcGIS StoryMap"
       },
       "geometry": { "type": "Point", "coordinates": [-118.375701, 34.076044] }
@@ -115,8 +93,8 @@
       "id": "kne-fairfax-third",
       "properties": {
         "stop_name": "Fairfax / 3rd Street",
-        "status": "future",
-        "phase": "Phase 2",
+        "status": "planning",
+        "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
         "coordinate_source": "Metro KNE ArcGIS StoryMap"
       },
       "geometry": { "type": "Point", "coordinates": [-118.361429, 34.071508] }
@@ -126,8 +104,8 @@
       "id": "kne-san-vicente-santa-monica",
       "properties": {
         "stop_name": "San Vicente / Santa Monica",
-        "status": "future",
-        "phase": "Phase 2",
+        "status": "planning",
+        "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
         "coordinate_source": "Metro KNE ArcGIS StoryMap"
       },
       "geometry": { "type": "Point", "coordinates": [-118.382546, 34.085974] }
@@ -137,8 +115,8 @@
       "id": "kne-fairfax-santa-monica",
       "properties": {
         "stop_name": "Fairfax / Santa Monica",
-        "status": "future",
-        "phase": "Phase 2",
+        "status": "planning",
+        "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
         "coordinate_source": "Metro KNE ArcGIS StoryMap"
       },
       "geometry": { "type": "Point", "coordinates": [-118.360579, 34.090831] }
@@ -148,8 +126,8 @@
       "id": "kne-la-brea-santa-monica",
       "properties": {
         "stop_name": "La Brea / Santa Monica",
-        "status": "future",
-        "phase": "Phase 2",
+        "status": "planning",
+        "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
         "coordinate_source": "Metro KNE ArcGIS StoryMap"
       },
       "geometry": { "type": "Point", "coordinates": [-118.344118, 34.091095] }
@@ -159,8 +137,8 @@
       "id": "kne-hollywood-highland",
       "properties": {
         "stop_name": "Hollywood / Highland",
-        "status": "future",
-        "phase": "Phase 2",
+        "status": "planning",
+        "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
         "coordinate_source": "Metro KNE ArcGIS StoryMap"
       },
       "geometry": { "type": "Point", "coordinates": [-118.338713, 34.100808] }
@@ -170,8 +148,8 @@
       "id": "kne-hollywood-bowl",
       "properties": {
         "stop_name": "Hollywood Bowl",
-        "status": "future",
-        "phase": "Phase 2",
+        "status": "planning",
+        "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
         "terminal": true,
         "coordinate_source": "center of Metro's two published entrance options"
       },
