@@ -25,6 +25,7 @@ import TrainMarker from "./TrainMarker";
 CREDITS TO https://services2.arcgis.com/yL7v93RXrxlqkeDx/ArcGIS/rest/services/Pacific_Electric_Lines/FeatureServer/22
 */
 import PacificElectricLayer from "./PEMap";
+import LosAngelesRailwayLayer from "./LARYMap";
 import ProposedMetroRail from "./ProposedMetroRail";
 import FantasyRailLegend from "./FantasyRailLegend";
 // import UserEditLayer from "./UserEditLayer";
@@ -70,6 +71,7 @@ type LayerVisibility = {
   metroProjects: boolean;
   permanentFantasy: boolean;
   pacificElectric: boolean;
+  losAngelesRailway: boolean;
   userDraft: boolean;
 };
 
@@ -302,6 +304,7 @@ export default function FantasyRailMap() {
       existingMetro: true,
       metroProjects: true,
       pacificElectric: false,
+      losAngelesRailway: false,
       permanentFantasy: true,
       userDraft: false,
     });
@@ -370,10 +373,18 @@ export default function FantasyRailMap() {
           >
             <LayerToggleButton
               active={visibleLayers.pacificElectric}
-              label="Pacific Electric"
+              label="Pacific Electric (Esri data, 2021)"
               colorClassName="bg-orange-100 hover:bg-orange-200"
               onClick={() =>
                 toggleLayer("pacificElectric")
+              }
+            />
+            <LayerToggleButton
+              active={visibleLayers.losAngelesRailway}
+              label="LARy Yellow Cars (c. 1935)"
+              colorClassName="bg-yellow-100 hover:bg-yellow-200"
+              onClick={() =>
+                toggleLayer("losAngelesRailway")
               }
             />
             <LayerToggleButton
@@ -465,6 +476,10 @@ export default function FantasyRailMap() {
         <NavigationControl position="bottom-right" />
         {visibleLayers.pacificElectric && (
           <PacificElectricLayer />
+        )}
+
+        {visibleLayers.losAngelesRailway && (
+          <LosAngelesRailwayLayer />
         )}
         
         {visibleLayers.existingMetro && (

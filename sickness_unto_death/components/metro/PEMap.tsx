@@ -8,6 +8,7 @@
         id="pacific-electric-source"
         type="geojson"
         data="/la-metro-rail/pacific-electric-lines.geojson"
+        attribution={'Geometry: <a href="https://services2.arcgis.com/yL7v93RXrxlqkeDx/ArcGIS/rest/services/Pacific_Electric_Lines/FeatureServer/22" target="_blank" rel="noopener noreferrer">Pacific Electric Lines, Esri dataset published 2021</a> · Historical reference: <a href="https://libraryarchives.metro.net/dpgtl/maps/1926_pacific_electric_lines_black_white.pdf" target="_blank" rel="noopener noreferrer">Metro Transportation Library, 1926 Pacific Electric system map</a> · Esri source does not specify a single historical snapshot year'}
       >
         <Layer
           id="pacific-electric-casing"

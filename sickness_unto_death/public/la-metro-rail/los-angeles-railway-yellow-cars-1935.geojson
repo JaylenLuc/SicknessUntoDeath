@@ -1,0 +1,2125 @@
+{
+  "type": "FeatureCollection",
+  "name": "Los Angeles Railway Yellow Cars, circa 1935",
+  "metadata": {
+    "historical_snapshot_year": 1935,
+    "historical_map_title": "Official route map of the Los Angeles Railway: the yellow cars and buses",
+    "historical_map_creator": "Los Angeles Railway; H. N. Noordwall, cartographer",
+    "historical_map_url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/16360/",
+    "historical_map_repository": "The Huntington Digital Library",
+    "geometry_source_title": "Los Angeles Railway (Yellow Cars streetcars)",
+    "geometry_source_url": "https://commons.wikimedia.org/wiki/File:Los_Angeles_Railway_(Yellow_Cars_streetcars).svg",
+    "geometry_source_created": "2012-04-12",
+    "geometry_source_license": "CC BY-SA 3.0",
+    "geometry_source_author": "jkan997 / ShareMap.org",
+    "geometry_notes": "Vector trace georeferenced from the source SVG OSM tile grid and used as a circa-1935 network approximation. The source notes that some short minor stretches were skipped and errors may remain."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "lary-1935-1",
+      "properties": {
+        "OID": 1,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.315276,
+            34.066592
+          ],
+          [
+            -118.314164,
+            34.063461
+          ],
+          [
+            -118.284156,
+            34.063645
+          ],
+          [
+            -118.279711,
+            34.06162
+          ],
+          [
+            -118.275043,
+            34.059594
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-2",
+      "properties": {
+        "OID": 2,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.276821,
+            34.056464
+          ],
+          [
+            -118.274598,
+            34.059594
+          ],
+          [
+            -118.272598,
+            34.062909
+          ],
+          [
+            -118.270153,
+            34.061988
+          ],
+          [
+            -118.267708,
+            34.065487
+          ],
+          [
+            -118.261039,
+            34.062541
+          ],
+          [
+            -118.254593,
+            34.05941
+          ],
+          [
+            -118.247925,
+            34.055174
+          ],
+          [
+            -118.249036,
+            34.053701
+          ],
+          [
+            -118.248814,
+            34.053333
+          ],
+          [
+            -118.240812,
+            34.04836
+          ],
+          [
+            -118.236811,
+            34.045966
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-3",
+      "properties": {
+        "OID": 3,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.188132,
+            34.040441
+          ],
+          [
+            -118.188132,
+            34.03602
+          ],
+          [
+            -118.192355,
+            34.03602
+          ],
+          [
+            -118.202358,
+            34.040441
+          ],
+          [
+            -118.211471,
+            34.044493
+          ],
+          [
+            -118.212582,
+            34.044493
+          ],
+          [
+            -118.219029,
+            34.047255
+          ],
+          [
+            -118.228809,
+            34.047808
+          ],
+          [
+            -118.23481,
+            34.048729
+          ],
+          [
+            -118.239478,
+            34.049281
+          ],
+          [
+            -118.243479,
+            34.052044
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-4",
+      "properties": {
+        "OID": 4,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.192355,
+            34.028836
+          ],
+          [
+            -118.192355,
+            34.03602
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-5",
+      "properties": {
+        "OID": 5,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.192355,
+            34.024046
+          ],
+          [
+            -118.205692,
+            34.029941
+          ],
+          [
+            -118.218806,
+            34.035651
+          ],
+          [
+            -118.218806,
+            34.036757
+          ],
+          [
+            -118.219251,
+            34.037493
+          ],
+          [
+            -118.219695,
+            34.038967
+          ],
+          [
+            -118.219695,
+            34.040256
+          ],
+          [
+            -118.219251,
+            34.040256
+          ],
+          [
+            -118.218362,
+            34.041362
+          ],
+          [
+            -118.21725,
+            34.042282
+          ],
+          [
+            -118.215917,
+            34.043756
+          ],
+          [
+            -118.215028,
+            34.045414
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-6",
+      "properties": {
+        "OID": 6,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.20747,
+            34.030678
+          ],
+          [
+            -118.203469,
+            34.036941
+          ],
+          [
+            -118.204358,
+            34.037309
+          ],
+          [
+            -118.202358,
+            34.040441
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-7",
+      "properties": {
+        "OID": 7,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.232588,
+            34.048545
+          ],
+          [
+            -118.232588,
+            34.042282
+          ],
+          [
+            -118.233032,
+            34.039704
+          ],
+          [
+            -118.232143,
+            34.025888
+          ],
+          [
+            -118.22992,
+            34.025704
+          ],
+          [
+            -118.230143,
+            34.022941
+          ],
+          [
+            -118.230143,
+            34.021651
+          ],
+          [
+            -118.22992,
+            34.020177
+          ],
+          [
+            -118.22992,
+            34.016861
+          ],
+          [
+            -118.230365,
+            34.015571
+          ],
+          [
+            -118.230365,
+            34.014834
+          ],
+          [
+            -118.230365,
+            34.003963
+          ],
+          [
+            -118.230365,
+            33.989405
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-8",
+      "properties": {
+        "OID": 8,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.230143,
+            34.003963
+          ],
+          [
+            -118.227475,
+            34.003963
+          ],
+          [
+            -118.225697,
+            34.003042
+          ],
+          [
+            -118.225252,
+            34.001383
+          ],
+          [
+            -118.225252,
+            33.992906
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-9",
+      "properties": {
+        "OID": 9,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.26504,
+            33.982585
+          ],
+          [
+            -118.265263,
+            33.98922
+          ],
+          [
+            -118.256594,
+            33.98922
+          ],
+          [
+            -118.256372,
+            34.014834
+          ],
+          [
+            -118.254816,
+            34.019809
+          ],
+          [
+            -118.245258,
+            34.030125
+          ],
+          [
+            -118.243257,
+            34.033994
+          ],
+          [
+            -118.240145,
+            34.038046
+          ],
+          [
+            -118.239701,
+            34.046334
+          ],
+          [
+            -118.239256,
+            34.049465
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-10",
+      "properties": {
+        "OID": 10,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.249925,
+            33.996592
+          ],
+          [
+            -118.250148,
+            34.002305
+          ],
+          [
+            -118.249481,
+            34.008754
+          ],
+          [
+            -118.248592,
+            34.010412
+          ],
+          [
+            -118.247703,
+            34.011702
+          ],
+          [
+            -118.247925,
+            34.012623
+          ],
+          [
+            -118.251481,
+            34.015018
+          ],
+          [
+            -118.246591,
+            34.020361
+          ],
+          [
+            -118.246147,
+            34.021835
+          ],
+          [
+            -118.242146,
+            34.02773
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-11",
+      "properties": {
+        "OID": 11,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.243035,
+            34.026441
+          ],
+          [
+            -118.236811,
+            34.024967
+          ],
+          [
+            -118.233921,
+            34.02423
+          ],
+          [
+            -118.230143,
+            34.022941
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-12",
+      "properties": {
+        "OID": 12,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.265707,
+            34.004332
+          ],
+          [
+            -118.262595,
+            34.004147
+          ],
+          [
+            -118.260373,
+            34.012808
+          ],
+          [
+            -118.261706,
+            34.01336
+          ],
+          [
+            -118.257705,
+            34.020361
+          ],
+          [
+            -118.250592,
+            34.029573
+          ],
+          [
+            -118.251259,
+            34.030309
+          ],
+          [
+            -118.249925,
+            34.032152
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-13",
+      "properties": {
+        "OID": 13,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.259261,
+            34.037678
+          ],
+          [
+            -118.25326,
+            34.033625
+          ],
+          [
+            -118.251037,
+            34.032704
+          ],
+          [
+            -118.249703,
+            34.031967
+          ],
+          [
+            -118.245258,
+            34.030309
+          ],
+          [
+            -118.242146,
+            34.02773
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-14",
+      "properties": {
+        "OID": 14,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.271931,
+            33.992353
+          ],
+          [
+            -118.26504,
+            33.992353
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-15",
+      "properties": {
+        "OID": 15,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.278377,
+            33.993275
+          ],
+          [
+            -118.265263,
+            33.993275
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-16",
+      "properties": {
+        "OID": 16,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.27282,
+            33.993275
+          ],
+          [
+            -118.27282,
+            34.011149
+          ],
+          [
+            -118.27282,
+            34.012255
+          ],
+          [
+            -118.267041,
+            34.020546
+          ],
+          [
+            -118.261706,
+            34.029204
+          ],
+          [
+            -118.261039,
+            34.029757
+          ],
+          [
+            -118.258817,
+            34.03252
+          ],
+          [
+            -118.256149,
+            34.035651
+          ],
+          [
+            -118.255482,
+            34.036757
+          ],
+          [
+            -118.254593,
+            34.037678
+          ],
+          [
+            -118.253037,
+            34.039151
+          ],
+          [
+            -118.249703,
+            34.042098
+          ],
+          [
+            -118.248814,
+            34.043019
+          ],
+          [
+            -118.247925,
+            34.043756
+          ],
+          [
+            -118.247703,
+            34.044308
+          ],
+          [
+            -118.246591,
+            34.045414
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-17",
+      "properties": {
+        "OID": 17,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.278377,
+            33.993275
+          ],
+          [
+            -118.278377,
+            34.009491
+          ],
+          [
+            -118.271487,
+            34.020361
+          ],
+          [
+            -118.268152,
+            34.025704
+          ],
+          [
+            -118.264596,
+            34.030862
+          ],
+          [
+            -118.257927,
+            34.039335
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-18",
+      "properties": {
+        "OID": 18,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.265263,
+            33.989036
+          ],
+          [
+            -118.26593,
+            34.015018
+          ],
+          [
+            -118.257705,
+            34.026994
+          ],
+          [
+            -118.25326,
+            34.033625
+          ],
+          [
+            -118.251481,
+            34.036388
+          ],
+          [
+            -118.245924,
+            34.04173
+          ],
+          [
+            -118.243924,
+            34.044124
+          ],
+          [
+            -118.243257,
+            34.045045
+          ],
+          [
+            -118.243035,
+            34.045966
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-19",
+      "properties": {
+        "OID": 19,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.317498,
+            34.047071
+          ],
+          [
+            -118.299938,
+            34.047255
+          ],
+          [
+            -118.282823,
+            34.047255
+          ],
+          [
+            -118.268152,
+            34.040809
+          ],
+          [
+            -118.262595,
+            34.037678
+          ],
+          [
+            -118.260373,
+            34.036388
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-20",
+      "properties": {
+        "OID": 20,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.291714,
+            34.052596
+          ],
+          [
+            -118.290603,
+            34.052228
+          ],
+          [
+            -118.284156,
+            34.052412
+          ],
+          [
+            -118.28349,
+            34.052412
+          ],
+          [
+            -118.281934,
+            34.054806
+          ],
+          [
+            -118.26304,
+            34.046334
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-21",
+      "properties": {
+        "OID": 21,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.272153,
+            34.034362
+          ],
+          [
+            -118.269931,
+            34.037493
+          ],
+          [
+            -118.267708,
+            34.040809
+          ],
+          [
+            -118.26304,
+            34.045966
+          ],
+          [
+            -118.258594,
+            34.050939
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-22",
+      "properties": {
+        "OID": 22,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.284156,
+            34.059778
+          ],
+          [
+            -118.277044,
+            34.056648
+          ],
+          [
+            -118.269931,
+            34.053333
+          ],
+          [
+            -118.263707,
+            34.050755
+          ],
+          [
+            -118.259928,
+            34.049281
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-23",
+      "properties": {
+        "OID": 23,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.291269,
+            34.015755
+          ],
+          [
+            -118.288602,
+            34.015571
+          ],
+          [
+            -118.287491,
+            34.016677
+          ],
+          [
+            -118.286379,
+            34.018151
+          ],
+          [
+            -118.283267,
+            34.023309
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-24",
+      "properties": {
+        "OID": 24,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.291492,
+            34.015755
+          ],
+          [
+            -118.291492,
+            34.018335
+          ],
+          [
+            -118.287268,
+            34.024783
+          ],
+          [
+            -118.286602,
+            34.025151
+          ],
+          [
+            -118.283934,
+            34.02552
+          ],
+          [
+            -118.283934,
+            34.033994
+          ],
+          [
+            -118.283267,
+            34.03473
+          ],
+          [
+            -118.276821,
+            34.031967
+          ],
+          [
+            -118.274376,
+            34.035467
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-25",
+      "properties": {
+        "OID": 25,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.309052,
+            34.036204
+          ],
+          [
+            -118.306384,
+            34.036204
+          ],
+          [
+            -118.303939,
+            34.037678
+          ],
+          [
+            -118.301494,
+            34.039888
+          ],
+          [
+            -118.284601,
+            34.040072
+          ],
+          [
+            -118.272598,
+            34.03473
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-26",
+      "properties": {
+        "OID": 26,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.286824,
+            34.024967
+          ],
+          [
+            -118.272598,
+            34.018519
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-27",
+      "properties": {
+        "OID": 27,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.224808,
+            34.119237
+          ],
+          [
+            -118.229698,
+            34.117397
+          ],
+          [
+            -118.235255,
+            34.113717
+          ],
+          [
+            -118.237478,
+            34.107643
+          ],
+          [
+            -118.238367,
+            34.107091
+          ],
+          [
+            -118.238367,
+            34.106171
+          ],
+          [
+            -118.238367,
+            34.105067
+          ],
+          [
+            -118.237478,
+            34.104146
+          ],
+          [
+            -118.232588,
+            34.098257
+          ],
+          [
+            -118.230143,
+            34.096784
+          ],
+          [
+            -118.22792,
+            34.095311
+          ],
+          [
+            -118.226586,
+            34.094391
+          ],
+          [
+            -118.225697,
+            34.093839
+          ],
+          [
+            -118.225475,
+            34.093287
+          ],
+          [
+            -118.223474,
+            34.090157
+          ],
+          [
+            -118.223919,
+            34.088316
+          ],
+          [
+            -118.223919,
+            34.08758
+          ],
+          [
+            -118.223696,
+            34.087028
+          ],
+          [
+            -118.221251,
+            34.084819
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-28",
+      "properties": {
+        "OID": 28,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.225697,
+            34.081321
+          ],
+          [
+            -118.221474,
+            34.084451
+          ],
+          [
+            -118.217695,
+            34.087396
+          ],
+          [
+            -118.21236,
+            34.090157
+          ],
+          [
+            -118.211693,
+            34.09071
+          ],
+          [
+            -118.211471,
+            34.091262
+          ],
+          [
+            -118.211693,
+            34.092366
+          ],
+          [
+            -118.211471,
+            34.093287
+          ],
+          [
+            -118.211027,
+            34.094023
+          ],
+          [
+            -118.210582,
+            34.094575
+          ],
+          [
+            -118.210137,
+            34.095864
+          ],
+          [
+            -118.209471,
+            34.096968
+          ],
+          [
+            -118.205025,
+            34.100649
+          ],
+          [
+            -118.205247,
+            34.104883
+          ],
+          [
+            -118.203691,
+            34.107275
+          ],
+          [
+            -118.189243,
+            34.114269
+          ],
+          [
+            -118.188354,
+            34.113533
+          ],
+          [
+            -118.186798,
+            34.113901
+          ],
+          [
+            -118.185464,
+            34.114269
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-29",
+      "properties": {
+        "OID": 29,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.206581,
+            34.088869
+          ],
+          [
+            -118.207248,
+            34.087764
+          ],
+          [
+            -118.208359,
+            34.087028
+          ],
+          [
+            -118.209693,
+            34.086292
+          ],
+          [
+            -118.211027,
+            34.085371
+          ],
+          [
+            -118.211916,
+            34.084267
+          ],
+          [
+            -118.211693,
+            34.076534
+          ],
+          [
+            -118.215694,
+            34.076534
+          ],
+          [
+            -118.22303,
+            34.073404
+          ],
+          [
+            -118.225252,
+            34.072668
+          ],
+          [
+            -118.227697,
+            34.071563
+          ],
+          [
+            -118.22992,
+            34.071195
+          ],
+          [
+            -118.236366,
+            34.066407
+          ],
+          [
+            -118.240145,
+            34.058489
+          ],
+          [
+            -118.239701,
+            34.058305
+          ],
+          [
+            -118.239034,
+            34.058121
+          ],
+          [
+            -118.238367,
+            34.058305
+          ],
+          [
+            -118.2377,
+            34.058121
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-30",
+      "properties": {
+        "OID": 30,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.238811,
+            34.058121
+          ],
+          [
+            -118.235255,
+            34.06475
+          ],
+          [
+            -118.22792,
+            34.069353
+          ],
+          [
+            -118.217473,
+            34.073772
+          ],
+          [
+            -118.202802,
+            34.074141
+          ],
+          [
+            -118.202358,
+            34.06788
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-31",
+      "properties": {
+        "OID": 31,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.197912,
+            34.071931
+          ],
+          [
+            -118.199023,
+            34.070458
+          ],
+          [
+            -118.200802,
+            34.068617
+          ],
+          [
+            -118.206136,
+            34.066039
+          ],
+          [
+            -118.206803,
+            34.066039
+          ],
+          [
+            -118.207692,
+            34.066039
+          ],
+          [
+            -118.209471,
+            34.066039
+          ],
+          [
+            -118.212805,
+            34.066039
+          ],
+          [
+            -118.219029,
+            34.066039
+          ],
+          [
+            -118.225475,
+            34.06788
+          ],
+          [
+            -118.233477,
+            34.063645
+          ],
+          [
+            -118.2357,
+            34.061251
+          ],
+          [
+            -118.2377,
+            34.058121
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-32",
+      "properties": {
+        "OID": 32,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.225697,
+            34.081505
+          ],
+          [
+            -118.217917,
+            34.069353
+          ],
+          [
+            -118.218139,
+            34.066039
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-33",
+      "properties": {
+        "OID": 33,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.284156,
+            34.052412
+          ],
+          [
+            -118.283934,
+            34.051675
+          ],
+          [
+            -118.279711,
+            34.049834
+          ],
+          [
+            -118.274598,
+            34.047439
+          ],
+          [
+            -118.269931,
+            34.045045
+          ],
+          [
+            -118.269041,
+            34.044677
+          ],
+          [
+            -118.267708,
+            34.044124
+          ],
+          [
+            -118.265707,
+            34.043203
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-34",
+      "properties": {
+        "OID": 34,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.290603,
+            34.070458
+          ],
+          [
+            -118.290603,
+            34.071747
+          ],
+          [
+            -118.284379,
+            34.071563
+          ],
+          [
+            -118.276599,
+            34.068065
+          ],
+          [
+            -118.280378,
+            34.061988
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-35",
+      "properties": {
+        "OID": 35,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.272376,
+            34.034178
+          ],
+          [
+            -118.271042,
+            34.033625
+          ],
+          [
+            -118.267263,
+            34.039888
+          ],
+          [
+            -118.262818,
+            34.044308
+          ],
+          [
+            -118.257705,
+            34.040809
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-36",
+      "properties": {
+        "OID": 36,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.257927,
+            34.039335
+          ],
+          [
+            -118.257261,
+            34.040993
+          ],
+          [
+            -118.24548,
+            34.053701
+          ],
+          [
+            -118.247703,
+            34.05499
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-37",
+      "properties": {
+        "OID": 37,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.26304,
+            34.046334
+          ],
+          [
+            -118.261706,
+            34.04615
+          ],
+          [
+            -118.255038,
+            34.041546
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-38",
+      "properties": {
+        "OID": 38,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.254816,
+            34.043756
+          ],
+          [
+            -118.253482,
+            34.043019
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-39",
+      "properties": {
+        "OID": 39,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.253482,
+            34.045229
+          ],
+          [
+            -118.251481,
+            34.04394
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-40",
+      "properties": {
+        "OID": 40,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.250815,
+            34.048176
+          ],
+          [
+            -118.248369,
+            34.046703
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-41",
+      "properties": {
+        "OID": 41,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.249259,
+            34.049465
+          ],
+          [
+            -118.247036,
+            34.048176
+          ],
+          [
+            -118.246147,
+            34.047255
+          ],
+          [
+            -118.24548,
+            34.046887
+          ],
+          [
+            -118.244146,
+            34.046334
+          ],
+          [
+            -118.243035,
+            34.045966
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-42",
+      "properties": {
+        "OID": 42,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.255038,
+            34.041546
+          ],
+          [
+            -118.244591,
+            34.05278
+          ],
+          [
+            -118.243479,
+            34.053885
+          ],
+          [
+            -118.241257,
+            34.054438
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-43",
+      "properties": {
+        "OID": 43,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.258594,
+            34.050939
+          ],
+          [
+            -118.254149,
+            34.047992
+          ],
+          [
+            -118.252815,
+            34.049465
+          ],
+          [
+            -118.250592,
+            34.048176
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-44",
+      "properties": {
+        "OID": 44,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.31372,
+            33.998988
+          ],
+          [
+            -118.300161,
+            33.999172
+          ],
+          [
+            -118.293714,
+            33.999725
+          ],
+          [
+            -118.287046,
+            33.999725
+          ],
+          [
+            -118.287268,
+            34.009675
+          ],
+          [
+            -118.285935,
+            34.010412
+          ],
+          [
+            -118.284823,
+            34.010781
+          ],
+          [
+            -118.282156,
+            34.010965
+          ],
+          [
+            -118.276154,
+            34.020361
+          ],
+          [
+            -118.266152,
+            34.035836
+          ],
+          [
+            -118.264151,
+            34.038967
+          ],
+          [
+            -118.260595,
+            34.043019
+          ],
+          [
+            -118.256594,
+            34.047255
+          ],
+          [
+            -118.259706,
+            34.049465
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-45",
+      "properties": {
+        "OID": 45,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.257927,
+            34.039335
+          ],
+          [
+            -118.255038,
+            34.041546
+          ],
+          [
+            -118.251259,
+            34.04394
+          ],
+          [
+            -118.247036,
+            34.048176
+          ],
+          [
+            -118.243035,
+            34.052596
+          ],
+          [
+            -118.239923,
+            34.055727
+          ],
+          [
+            -118.238811,
+            34.0572
+          ],
+          [
+            -118.2377,
+            34.058121
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lary-1935-46",
+      "properties": {
+        "OID": 46,
+        "Name": "Los Angeles Railway Yellow Cars (circa 1935)",
+        "operator": "Los Angeles Railway",
+        "network": "Yellow Cars",
+        "map_year": 1935,
+        "geometry_quality": "Georeferenced historical-map trace; some short minor stretches were omitted by the source tracer"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.282823,
+            34.011149
+          ],
+          [
+            -118.301939,
+            34.010965
+          ],
+          [
+            -118.304384,
+            34.010965
+          ],
+          [
+            -118.304606,
+            34.002305
+          ],
+          [
+            -118.304606,
+            33.999172
+          ]
+        ]
+      }
+    }
+  ]
+}
