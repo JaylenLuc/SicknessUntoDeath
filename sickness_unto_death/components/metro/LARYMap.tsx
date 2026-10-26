@@ -7,8 +7,8 @@ export default function LosAngelesRailwayLayer() {
     <Source
       id="los-angeles-railway-source"
       type="geojson"
-      data="/la-metro-rail/los-angeles-railway-yellow-cars-1935.geojson"
-      attribution={'Geometry: <a href="https://commons.wikimedia.org/wiki/File:Los_Angeles_Railway_(Yellow_Cars_streetcars).svg" target="_blank" rel="noopener noreferrer">jkan997 / ShareMap, CC BY-SA 3.0</a> · 1935 reference: <a href="https://hdl.huntington.org/digital/collection/p15150coll4/id/16360/" target="_blank" rel="noopener noreferrer">The Huntington</a>'}
+      data="/la-metro-rail/los-angeles-railway-yellow-cars-travegeo.geojson"
+      attribution={'Geometry: <a href="https://travegeo.com/travel?action=getRoutes&amp;travelId=23152" target="_blank" rel="noopener noreferrer">Travegeo Yellow Cars route-data endpoint</a>'}
     >
       <Layer
         id="los-angeles-railway-casing"
