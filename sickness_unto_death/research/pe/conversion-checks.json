@@ -1,0 +1,28 @@
+[
+  {
+    "source_id": "pe-1915-brooks-lutz",
+    "feature_count": 22,
+    "coordinate_count": 2262,
+    "bbox": [
+      -118.49783,
+      33.95321,
+      -117.881291,
+      34.14621
+    ],
+    "max_crs_roundtrip_error_feet": 0.022583366054633878,
+    "validation_scope": "Conversion integrity only; historical accuracy is not certified."
+  },
+  {
+    "source_id": "pe-1928-brooks-lutz",
+    "feature_count": 81,
+    "coordinate_count": 7462,
+    "bbox": [
+      -118.60582,
+      33.7051338,
+      -117.71489,
+      34.28147
+    ],
+    "max_crs_roundtrip_error_feet": 0.02351035595282561,
+    "validation_scope": "Conversion integrity only; historical accuracy is not certified."
+  }
+]

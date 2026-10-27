@@ -1,9 +1,11 @@
-"""Split LARy source observations into shared and period-only stretches.
+"""Split rail source observations into shared and period-only stretches.
 
 Requires shapely >= 2 and pyproj. Run this after convert_sources.py.
 Comparison uses UTM 11N metres, without moving the original source geometry.
 This is a geometric comparison, not proof of construction/abandonment dates.
+Use --network pe for the 1915/1928 Pacific Electric comparison.
 """
+import argparse
 import json
 import math
 from collections import Counter
@@ -80,15 +82,18 @@ def combine(parts):
     return geometry if geometry.geom_type == "LineString" else linemerge(geometry)
 
 
-def build():
-    inputs = [json.loads((ROOT / "geojson" / name).read_text()) for name in (
-        "lary-1915-brooks-lutz.geojson", "lary-1930s-brooks-lutz.geojson")]
+def build(network="lary"):
+    root = ROOT if network == "lary" else ROOT.parent / "pe"
+    later = "1930s" if network == "lary" else "1928"
+    label = "LARy" if network == "lary" else "PE"
+    inputs = [json.loads((root / "geojson" / f"{network}-{period}-brooks-lutz.geojson").read_text())
+              for period in ("1915", later)]
     geometries = [[transform(FORWARD, shape(f["geometry"])) for f in data["features"]]
                   for data in inputs]
     features = []
     for index, data in enumerate(inputs):
         comparison = Comparison(geometries[1-index])
-        period = "1915" if index == 0 else "1930s"
+        period = "1915" if index == 0 else later
         for feature, geometry in zip(data["features"], geometries[index]):
             shared, unique = comparison.split(geometry)
             for category, parts in (("shared", shared), (f"{period}_only", unique)):
@@ -113,14 +118,16 @@ def build():
             assert geometry.hausdorff_distance(recovered) < 1e-6
             assert abs(unary_union(lines(geometry)).length - recovered.length) < 1e-5
     observations = features[:]
-    for category in ("shared", "1915_only", "1930s_only"):
+    for category in ("shared", "1915_only", f"{later}_only"):
         matching = [f for f in observations if f["properties"]["comparison_class"] == category]
-        display = [f for f in matching if category != "shared" or f["properties"]["period"] == "1930s"]
+        display = [f for f in matching if category != "shared" or f["properties"]["period"] == later]
+        if not display:
+            continue
         # Dissolve identical display paths so different route starts do not fill dash gaps.
         geometry = combine([part for f in display for part in lines(shape(f["geometry"]))])
         features.append({
             "type": "Feature",
-            "id": f"lary-display-{category}",
+            "id": f"{network}-display-{category}",
             "properties": {
                 "comparison_class": category,
                 "render": True,
@@ -130,7 +137,7 @@ def build():
         })
     output = {
         "type": "FeatureCollection",
-        "name": "LARy 1915 + 1930s geometric comparison",
+        "name": f"{label} 1915 + {later} geometric comparison",
         "metadata": {
             "source_citation": inputs[0]["metadata"]["source_citation"],
             "source_archive_sha256": inputs[0]["metadata"]["source_archive_sha256"],
@@ -138,18 +145,22 @@ def build():
             "comparison_crs": "EPSG:26911",
             "tolerance_metres": TOLERANCE_METRES,
             "max_angle_degrees": MAX_ANGLE_DEGREES,
-            "method": "Split original geometry against flat-ended buffers around parallel segments in the other period. Classified source observations retained but hidden. Three display features dissolve exact duplicates within each class; shared display uses 1930s geometry. No snapping or historical date inference.",
-            "limitations": "Near-parallel tracks within five metres can match. Larger digitizing offsets may appear period-only. Exact 1930s snapshot remains uncertain.",
+            "method": f"Split original geometry against flat-ended buffers around parallel segments in the other period. Classified source observations retained but hidden. Three display features dissolve exact duplicates within each class; shared display uses {later} geometry. No snapping or historical date inference.",
+            "limitations": "Near-parallel tracks within five metres can match. Larger digitizing offsets may appear period-only. " + (
+                "Exact 1930s snapshot remains uncertain." if network == "lary" else
+                "The 1915 PE source covers a smaller area than 1928. Period-only means present only in that source, not evidence of opening or abandonment dates. Neither source establishes full regional or all-time coverage."),
         },
         "features": features,
     }
     serialized = json.dumps(output, separators=(",", ":")) + "\n"
-    filename = "lary-period-comparison.geojson"
-    (ROOT / "geojson" / filename).write_text(serialized)
+    filename = f"{network}-period-comparison.geojson"
+    (root / "geojson" / filename).write_text(serialized)
     (ROOT.parent.parent / "public" / "la-metro-rail" / filename).write_text(serialized)
     print(json.dumps({"classified_features": len(features), "visible_features_by_class": dict(Counter(
         f["properties"]["comparison_class"] for f in features if f["properties"]["render"]))}, indent=2))
 
 
 if __name__ == "__main__":
-    build()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--network", choices=("lary", "pe"), default="lary")
+    build(parser.parse_args().network)

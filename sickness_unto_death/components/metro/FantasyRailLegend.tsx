@@ -4,7 +4,7 @@ import { useEffect, useId, useState } from "react";
 import type { FeatureCollection, GeoJsonProperties, Geometry } from "geojson";
 import { RAIL_PROJECTS } from "./proposedMetroProjects";
 import { LARY_1915_DASHARRAY, LARY_PERIOD_STYLES } from "./laryPeriodStyles";
-import { PE_LINE_STYLE } from "./peLineStyle";
+import { PE_1915_DASHARRAY, PE_PERIOD_STYLES } from "./peLineStyle";
 
 type FantasyLegendLine = {
   id: string;
@@ -323,17 +323,26 @@ export default function FantasyRailLegend({
           Shared stretches are matched by approximate alignment. Full historical coverage remains under review.
         </p>
         <div className={compact ? "mt-3" : "mt-4"}>
-          <div className="flex items-center gap-2">
-            <svg aria-hidden="true" width="32" height="10" className="shrink-0">
-              <line x1="2" y1="5" x2="30" y2="5" stroke={PE_LINE_STYLE.casing} strokeWidth="5" strokeLinecap="round" />
-              <line x1="2" y1="5" x2="30" y2="5" stroke={PE_LINE_STYLE.color} strokeOpacity={PE_LINE_STYLE.opacity} strokeWidth="3" strokeLinecap="round" strokeDasharray={PE_LINE_STYLE.dasharray.map((length) => length * 3).join(" ")} />
-            </svg>
-            <span className={compact ? "text-[10px] font-bold leading-tight" : "text-sm font-bold leading-tight"}>
-              Pacific Electric (PE)
-            </span>
-          </div>
+          {renderLines([{
+            id: "historic-pe",
+            routeId: "PE",
+            name: "Pacific Electric (1915 + 1928)",
+            color: PE_PERIOD_STYLES[0].color,
+            textColor: "#ffffff",
+          }])}
+          <ul className={compact ? "mt-2 space-y-1 text-[9px]" : "mt-2 space-y-1 text-xs"}>
+            {PE_PERIOD_STYLES.map((period) => (
+              <li key={period.id} className="flex items-center gap-2">
+                <svg aria-hidden="true" width="32" height="10" className="shrink-0">
+                  {!period.dashed && <line x1="2" y1="5" x2="30" y2="5" stroke={period.casing} strokeWidth="6" strokeLinecap="round" />}
+                  <line x1="2" y1="5" x2="30" y2="5" stroke={period.color} strokeWidth="3" strokeDasharray={period.dashed ? PE_1915_DASHARRAY.map((length) => length * 3).join(" ") : undefined} />
+                </svg>
+                <span>{period.label}</span>
+              </li>
+            ))}
+          </ul>
           <p className={compact ? "mt-1 text-[9px] leading-tight" : "mt-2 text-xs"}>
-            Red dashed lines. Historical network from the Esri dataset published in 2021; its historical snapshot year is unspecified.
+            Geometric comparison of Brooks–Lutz maps. The 1915 source covers a smaller area; source-only stretches do not establish opening or closure dates.
           </p>
         </div>
       </div>

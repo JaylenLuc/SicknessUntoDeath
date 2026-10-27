@@ -1,18 +1,19 @@
-"""Convert the public Brooks/Lutz archive to separately attributable LARy layers.
+"""Convert the public Brooks/Lutz archive to separately attributable rail layers.
 
 Requires pyshp and pyproj. Usage:
   python convert_sources.py /path/to/2018-05-29_la_streetcar_maps.zip
+  python convert_sources.py /path/to/2018-05-29_la_streetcar_maps.zip --network pe
 
 Outputs are research candidates, not a certified all-time track inventory.
 The combined file preserves observations and overlap; it is not a geometric union.
 """
 
 import hashlib
+import argparse
 import io
 import json
 import math
 from pathlib import Path
-import sys
 import zipfile
 
 from pyproj import CRS, Transformer
@@ -24,6 +25,10 @@ CITATION = "Leah Brooks and Byron Lutz (2019), Vestiges of Transit: Urban Persis
 DEFINITIONS = [
     ("1915-LA-PE_2011_06_26", "lary-1915-brooks-lutz", 1915, 1915, 59),
     ("193x-LArail_2011-6-26a", "lary-1930s-brooks-lutz", None, 1935, 37),
+]
+PE_DEFINITIONS = [
+    ("1915-LA-PE_2011_06_26", "pe-1915-brooks-lutz", 1915, 1915, 22),
+    ("1928-PElines_2011-06-26", "pe-1928-brooks-lutz", 1928, 1928, 81),
 ]
 
 
@@ -41,15 +46,20 @@ def bounds(features):
             max(p[0] for p in points), max(p[1] for p in points)]
 
 
-def convert(archive_path):
+def convert(archive_path, network="lary"):
+    root = ROOT if network == "lary" else ROOT.parent / "pe"
+    operator = "LA" if network == "lary" else "PE"
+    operator_name = "Los Angeles Railway" if network == "lary" else "Pacific Electric"
+    label = "LARy" if network == "lary" else "PE"
+    definitions = DEFINITIONS if network == "lary" else PE_DEFINITIONS
     data = Path(archive_path).read_bytes()
     archive_hash = hashlib.sha256(data).hexdigest()
-    out = ROOT / "geojson"
+    out = root / "geojson"
     out.mkdir(parents=True, exist_ok=True)
     collections = []
     checks = []
     with zipfile.ZipFile(io.BytesIO(data)) as archive:
-        for base, source_id, snapshot_year, reference_year, expected in DEFINITIONS:
+        for base, source_id, snapshot_year, reference_year, expected in definitions:
             crs = CRS.from_wkt(archive.read(base + ".prj").decode())
             forward = Transformer.from_crs(crs, "EPSG:4326", always_xy=True)
             reverse = Transformer.from_crs("EPSG:4326", crs, always_xy=True)
@@ -74,7 +84,7 @@ def convert(archive_path):
             features = []
             for index, record in enumerate(reader.iterShapeRecords()):
                 original = record.record.as_dict()
-                if base.startswith("1915") and original.get("Operator") != "LA":
+                if original.get("Operator", operator) != operator:
                     continue
                 geometry = record.shape.__geo_interface__
                 assert geometry["type"] in ("LineString", "MultiLineString")
@@ -86,7 +96,7 @@ def convert(archive_path):
                     "properties": {
                         **original,
                         "Name": original.get("Name") or original.get("Line"),
-                        "operator": "Los Angeles Railway",
+                        "operator": operator_name,
                         "source_id": source_id,
                         "source_feature_index": index,
                         "source_snapshot_year": snapshot_year,
@@ -112,6 +122,8 @@ def convert(archive_path):
                     "historical_snapshot_year": snapshot_year,
                     "historical_reference_year": reference_year,
                     "date_note": (
+                        f"The source filename labels this snapshot {snapshot_year}; individual track operating dates are not encoded. The 1915 PE source covers a smaller area than 1928, so missing geometry does not prove a line did not exist."
+                        if network == "pe" else
                         "1915 is the source filename date; the appendix lists Gillespie's 1915 guide. Operating dates of individual tracks are not encoded."
                         if snapshot_year else
                         "The source filename is 193x. The appendix identifies its official LARy reference map as 1935, dated using Walker. Retain the uncertain snapshot date pending map-to-feature verification."
@@ -136,23 +148,25 @@ def convert(archive_path):
     assert len({f["id"] for f in combined}) == len(combined)
     overlay = {
         "type": "FeatureCollection",
-        "name": "LARy combined source observations - incomplete research overlay",
+        "name": f"{label} combined source observations - incomplete research overlay",
         "bbox": bounds(combined),
         "metadata": {
             "source_citation": CITATION,
             "source_archive_sha256": archive_hash,
             "coverage_status": "incomplete_not_a_cumulative_extent_claim",
-            "merge_method": "Concatenation of 1915 and 193x source observations with source IDs retained. Overlaps and source disagreements are intentionally preserved; no snapping or deduplication.",
+            "merge_method": f"Concatenation of 1915 and {'193x' if network == 'lary' else '1928'} source observations with source IDs retained. Overlaps and source disagreements are intentionally preserved; no snapping or deduplication.",
             "feature_count": len(combined),
         },
         "features": combined,
     }
-    (out / "lary-combined-source-observations.geojson").write_text(json.dumps(overlay, separators=(",", ":")) + "\n")
-    (ROOT / "conversion-checks.json").write_text(json.dumps(checks, indent=2) + "\n")
+    (out / f"{network}-combined-source-observations.geojson").write_text(json.dumps(overlay, separators=(",", ":")) + "\n")
+    (root / "conversion-checks.json").write_text(json.dumps(checks, indent=2) + "\n")
     print(json.dumps(checks, indent=2))
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        raise SystemExit(__doc__)
-    convert(sys.argv[1])
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("archive_path")
+    parser.add_argument("--network", choices=("lary", "pe"), default="lary")
+    args = parser.parse_args()
+    convert(args.archive_path, args.network)

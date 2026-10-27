@@ -1,0 +1,23 @@
+{
+  "scope": "Geometric comparison of Pacific Electric line observations in the Brooks–Lutz 1915 and 1928 GIS files.",
+  "source_url": "https://leahbrooks.org/leahweb/subpages/research.html",
+  "archive_url": "https://www.leahbrooks.org/leahweb/data_to_release/streetcars/2018-05-29_la_streetcar_maps.zip",
+  "inputs": [
+    {"shapefile": "1915-LA-PE_2011_06_26", "operator_filter": "PE", "features": 22, "excluded_LA_features": 59},
+    {"shapefile": "1928-PElines_2011-06-26", "operator_filter": "PE", "features": 81}
+  ],
+  "excluded": "1928-PEpoints_2011-06-26 was not imported; this comparison contains line geometry, not a stop inventory.",
+  "comparison": "Same classifier as LARy: five-metre flat-ended buffers around segments whose absolute direction difference is at most twenty degrees, computed in EPSG:26911. Exact display duplicates are dissolved; source records and provenance remain in hidden observations.",
+  "coverage_status": "NOT_COMPLETE",
+  "limitations": [
+    "The 1915 PE source covers a smaller area than the 1928 source. An absent line may be outside source coverage rather than absent historically.",
+    "Period-only classifications describe these source files, not verified construction or abandonment dates.",
+    "Near-parallel tracks within five metres can match; digitizing offsets larger than five metres may look period-only.",
+    "The source files do not establish full regional PE extent or every historical track."
+  ],
+  "rebuild_from_app_directory": [
+    "python research/lary/convert_sources.py /path/to/2018-05-29_la_streetcar_maps.zip --network pe",
+    "python research/lary/classify_periods.py --network pe"
+  ],
+  "python_dependencies": ["pyshp", "pyproj", "shapely>=2"]
+}
