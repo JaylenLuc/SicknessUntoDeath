@@ -132,7 +132,7 @@ function FantasyTrains() {
       try {
         const response = await fetch("/la-metro-rail/fantasy-layer.geojson");
         if (!response.ok) {
-          throw new Error(`Fantasy rail data request failed: ${response.status}`);
+          throw new Error(`Inter Urbes fantasy rail data request failed: ${response.status}`);
         }
 
         const railData = (await response.json()) as RailFeatureCollection;
@@ -148,7 +148,7 @@ function FantasyTrains() {
         setTrains(initialTrains);
         timer = window.setInterval(updateTrains, 100);
       } catch (error) {
-        console.error("Could not animate Fantasy trains:", error);
+        console.error("Could not animate Inter Urbes fantasy trains:", error);
       }
     }
 
@@ -162,7 +162,7 @@ function FantasyTrains() {
   return (
     <>
       {trains.features.map((train, index) => (
-        <TrainMarker key={index} train={train} label="Fantasy train" />
+        <TrainMarker key={index} train={train} label="Inter Urbes — Fantasy train" />
       ))}
     </>
   );
@@ -425,7 +425,7 @@ export default function FantasyRailMap() {
               active={
                 visibleLayers.permanentFantasy
               }
-              label="Fantasy Network"
+              label="Inter Urbes — Fantasy Network"
               colorClassName="bg-rose-100 hover:bg-rose-200"
               onClick={() =>
                 toggleLayer("permanentFantasy")

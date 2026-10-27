@@ -197,7 +197,7 @@ export default function FantasyRailLegend({
           });
         }
       } catch (error) {
-        console.error("Could not build fantasy rail legend:", error);
+        console.error("Could not build Inter Urbes fantasy rail legend:", error);
       }
     }
 
@@ -295,7 +295,7 @@ export default function FantasyRailLegend({
       ].join(" ")}
     >
       <h2 id={headingId} className={compact ? "text-xs font-bold" : "text-lg font-bold"}>
-        Rail Line Legend
+        Inter Urbes — Rail Line Legend
       </h2>
 
       <div className={compact ? "mt-2" : "mt-3"}>
@@ -383,7 +383,7 @@ export default function FantasyRailLegend({
       {groups.fantasy.length > 0 && (
         <div className={compact ? "mt-3" : "mt-5"}>
           <h3 className={compact ? "mb-1 border-b border-black pb-0.5 text-[9px] font-bold uppercase" : "mb-2 border-b-2 border-black pb-1 text-sm font-bold uppercase tracking-wide"}>
-            Fantasy Network
+            Inter Urbes — Fantasy Network
           </h3>
           {renderLines(groups.fantasy)}
         </div>
