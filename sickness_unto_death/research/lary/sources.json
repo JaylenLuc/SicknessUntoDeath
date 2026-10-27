@@ -1,0 +1,171 @@
+{
+  "researched_on": "2026-10-26",
+  "sources": [
+    {
+      "id": "brooks-lutz",
+      "label": "Brooks and Lutz streetcar GIS",
+      "url": "https://leahbrooks.org/leahweb/subpages/research.html",
+      "asset_url": "https://www.leahbrooks.org/leahweb/data_to_release/streetcars/2018-05-29_la_streetcar_maps.zip",
+      "period": "1915 and 193x",
+      "status": "Downloaded; attributes inspected; LARy subset converted",
+      "use": "Two independent vector starting layers. 59 LA records from the 1915 mixed file; 37 records from 193x-LArail.",
+      "limits": "Routes and branches are observations, not unique tracks. Not an all-time inventory; 193x exact snapshot is uncertain."
+    },
+    {
+      "id": "appendix",
+      "label": "Brooks and Lutz data appendix, printed pp. 69\u201370",
+      "url": "https://www.leahbrooks.org/leahweb/papers/2019-01-10_brooks_lutz_streetcars_online_only_publication_part.pdf",
+      "period": "Research documentation",
+      "status": "Downloaded, text inspected, relevant pages rendered and visually checked",
+      "use": "Identifies Gillespie\u2019s 1915 LARy guide and an official map dated 1935 using Walker among the research sources.",
+      "limits": "The stated greatest-extent research goal does not establish a complete 1895\u20131963 physical-track inventory."
+    },
+    {
+      "id": "1900",
+      "label": "Metro: Los Angeles Railway, 1900",
+      "url": "https://libraryarchives.metro.net/dpgtl/maps/1900-los-angeles-railway.JPG",
+      "period": "1900",
+      "status": "Downloaded and visually inspected",
+      "use": "Early network orientation and comparison.",
+      "limits": "Only 439\u00d7482 pixels; schematic reference, not precision tracing or complete early coverage."
+    },
+    {
+      "id": "1906",
+      "label": "Library of Congress: city railway systems, 1906",
+      "url": "https://www.loc.gov/item/2006627666/",
+      "asset_url": "https://libraryarchives.metro.net/dpgtl/maps/1906_PE_LARY_Large.jpg",
+      "period": "1906",
+      "status": "Catalog inspected; Metro smaller scan downloaded",
+      "use": "Early alignments and operator distinctions.",
+      "limits": "Multiple operators. Include only demonstrably relevant LARy or subsequently acquired segments; confirm actual operation."
+    },
+    {
+      "id": "1911",
+      "label": "Metro: Whitlock city streetcars and interurbans",
+      "url": "https://libraryarchives.metro.net/dpgtl/maps/1911-Whitlock-CityofLA-streetcars-interurbans.jpg",
+      "period": "1911",
+      "status": "Downloaded",
+      "use": "Cross-check changes surrounding corporate reorganization.",
+      "limits": "Mixed operators; source date alone is not a complete ownership history."
+    },
+    {
+      "id": "1920-33",
+      "label": "Huntington: LARy transportation / building-permit map series",
+      "url": "https://www.huntington.org/collections/lib-p15150coll4-1877",
+      "period": "1920\u20131933",
+      "status": "Catalog verified; sheets not individually audited",
+      "use": "Intermediate-year checks, including 1924, 1926, 1928 and 1931 sheets.",
+      "limits": "Permit year and base-network date can differ. The August 19, 1920 base is after the documented August 5 Echo Park abandonment."
+    },
+    {
+      "id": "1927",
+      "label": "Metro: 1927 PE/LARy engineering map",
+      "url": "https://libraryarchives.metro.net/dpgtl/maps/1927_pe_lary_engineer.jpg",
+      "period": "1927 (Metro catalog filename)",
+      "status": "Downloaded and visually inspected",
+      "use": "Detailed streets; legend distinguishes solid yellow LARy rail from dashed yellow motor coaches.",
+      "limits": "Needs georeferencing. Includes other operators and modes; cannot establish every temporary track or its exact dates."
+    },
+    {
+      "id": "1928",
+      "label": "Metro: 1928 Los Angeles transit map",
+      "url": "https://libraryarchives.metro.net/dpgtl/maps/1928_los_angeles_transit_map.jpg",
+      "period": "1928",
+      "status": "Downloaded; dimensions checked",
+      "use": "Independent geographic comparison for late-1920s network.",
+      "limits": "Postdates some losses; annual date does not establish whether January 1928 abandonments are reflected."
+    },
+    {
+      "id": "1935",
+      "label": "Huntington: official LARy route map, front and reverse",
+      "url": "https://www.huntington.org/collections/lib-p15150coll4-16360",
+      "asset_url": "https://hdl.huntington.org/digital/iiif/p15150coll4/3405/full/full/0/default.jpg",
+      "period": "1935",
+      "status": "Catalog and digital-image endpoint identified",
+      "use": "Audit the 193x GIS, route descriptions and downtown geometry.",
+      "limits": "Includes buses. No individual feature-to-map reconciliation performed yet."
+    },
+    {
+      "id": "1938",
+      "label": "Metro: LARy electric-car and bus routes",
+      "url": "https://libraryarchives.metro.net/dpgtl/maps/1938_lary.jpg",
+      "period": "1938",
+      "status": "Downloaded and visually inspected",
+      "use": "Check later-1930s extensions and terminal changes.",
+      "limits": "Separate car lines from coach lines; precedes 1939 terminal additions."
+    },
+    {
+      "id": "1944",
+      "label": "Metro: LARy rail and motorcoach map",
+      "url": "https://libraryarchives.metro.net/dpgtl/maps/1944-LARy-rail-motorcoach-map.jpg",
+      "period": "1944 (Metro catalog filename)",
+      "status": "Downloaded and visually inspected",
+      "use": "Wartime comparison, including post-1939 network.",
+      "limits": "Small scan; seek a higher-resolution copy for downtown and loop tracing."
+    },
+    {
+      "id": "1946",
+      "label": "Metro: Los Angeles Transit Lines route map",
+      "url": "https://libraryarchives.metro.net/dpgtl/maps/1946_latl_route_map.pdf",
+      "period": "1946",
+      "status": "Download link verified in Metro directory; sheet not inspected",
+      "use": "Successor-era baseline before major 1947 changes.",
+      "limits": "Do not classify motor coaches or trolleybuses as rail."
+    },
+    {
+      "id": "1952",
+      "label": "Raymond E. Younghans: LATL rail facilities",
+      "url": "https://libraryarchives.metro.net/dpgtl/maps/1952-latl-rail-facilities.jpg",
+      "period": "1952",
+      "status": "Downloaded and visually inspected",
+      "use": "Track connectivity, loops, carhouses and yard layouts.",
+      "limits": "Explicitly not to scale. Requires independent geographic control; misses later facilities."
+    },
+    {
+      "id": "erha",
+      "label": "ERHA LARy route histories and map roster",
+      "url": "https://www.erha.org/lary.htm",
+      "asset_url": "https://www.erha.org/larymaps.htm",
+      "period": "Early system through 1963",
+      "status": "Retrieved 51 line-history pages plus map roster and power-system page; targeted events examined",
+      "use": "Find changes between snapshots and distinguish rerouting over existing track from construction.",
+      "limits": "Secondary reconstruction with apparent typos and conflicting closure dates; dates and geometry need corroboration."
+    },
+    {
+      "id": "metro-records",
+      "label": "Metro LARy original company records",
+      "url": "https://oac.cdlib.org/findaid/ark:/13030/c82j697s/",
+      "period": "1890\u20131944, plus listed later reports",
+      "status": "Finding aid inspected",
+      "use": "Construction, divisions/yards/shops, maps/routes, and reports for unresolved early or operational track.",
+      "limits": "Finding aid is not the underlying documents; many records require archive consultation."
+    },
+    {
+      "id": "two-bells",
+      "label": "Metro: Two Bells employee-news archive",
+      "url": "https://libraryarchives.metro.net/DPGTL/employeenews/",
+      "period": "1920 onward",
+      "status": "Archive directory verified",
+      "use": "Contemporary evidence for construction, openings, abandonment and temporary routings.",
+      "limits": "Relevant issues must be inspected for each event; presence of an issue is not corroboration."
+    },
+    {
+      "id": "late-records",
+      "label": "Ed Vandeventer collection inventory",
+      "url": "https://cdn.calisphere.org/data/13030/tz/c8vm4htz/files/21EdVandeventerContainerList.pdf",
+      "period": "1958\u20131963 successor operations",
+      "status": "Indexed finding-aid entries reviewed",
+      "use": "Box 8 folders 1, 11 and 12 list route-change notices and operator schedules; potential verification of late track changes.",
+      "limits": "Underlying notices not retrieved; late geometry remains an explicit gap."
+    },
+    {
+      "id": "city-records",
+      "label": "Los Angeles DOT records inventory",
+      "url": "https://ens.lacity.org/clk/rmdroot/clkrmdroot569132936_07172019.pdf",
+      "period": "Includes 1915 LARy route map and 1926 fare-zone map",
+      "status": "Indexed inventory reviewed",
+      "use": "Box 53 / CRC 663530 / Special St 85-019 item 1 lists candidate additional maps.",
+      "limits": "Catalog lead only; not downloaded map geometry."
+    }
+  ]
+}

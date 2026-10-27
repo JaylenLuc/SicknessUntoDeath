@@ -1,6 +1,7 @@
   "use client";
 
   import { Layer, Source } from "react-map-gl/maplibre";
+  import { PE_LINE_STYLE } from "./peLineStyle";
 
   export default function PacificElectricLayer() {
     return (
@@ -18,7 +19,7 @@
             "line-join": "round",
           }}
           paint={{
-            "line-color": "#fff7ed",
+            "line-color": PE_LINE_STYLE.casing,
             "line-opacity": 0.8,
             "line-width": [
               "interpolate",
@@ -40,9 +41,9 @@
             "line-join": "round",
           }}
           paint={{
-            "line-color": "#991b1b",
-            "line-opacity": 0.72,
-            "line-dasharray": [2, 1.25],
+            "line-color": PE_LINE_STYLE.color,
+            "line-opacity": PE_LINE_STYLE.opacity,
+            "line-dasharray": PE_LINE_STYLE.dasharray,
             "line-width": [
               "interpolate",
               ["linear"],

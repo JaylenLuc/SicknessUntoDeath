@@ -1,0 +1,28 @@
+[
+  {
+    "source_id": "lary-1915-brooks-lutz",
+    "feature_count": 59,
+    "coordinate_count": 4693,
+    "bbox": [
+      -118.355421,
+      33.92352,
+      -118.1802,
+      34.13951
+    ],
+    "max_crs_roundtrip_error_feet": 0.022257104072156236,
+    "validation_scope": "Conversion integrity only; historical accuracy is not certified."
+  },
+  {
+    "source_id": "lary-1930s-brooks-lutz",
+    "feature_count": 37,
+    "coordinate_count": 4420,
+    "bbox": [
+      -118.355421,
+      33.91991,
+      -118.177851,
+      34.13946
+    ],
+    "max_crs_roundtrip_error_feet": 0.022121347185325817,
+    "validation_scope": "Conversion integrity only; historical accuracy is not certified."
+  }
+]

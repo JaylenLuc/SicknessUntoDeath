@@ -1,0 +1,201 @@
+{
+  "researched_on": "2026-10-26",
+  "scope_assumption": "Passenger corridors used by LARy and Yellow Car successors, 1895\u20131963, including documented temporary physical alignments. Yards, freight-only spurs and predecessor-only tracks remain separate optional categories.",
+  "completeness_status": "NOT_COMPLETE",
+  "peak_year_note": "1924 is cited as a peak in Metro\u2019s collection summary, but this is not a verified maximum of the union of physical corridors. Later additions and earlier removals are documented.",
+  "base_layers": [
+    "lary-1915-brooks-lutz",
+    "lary-1930s-brooks-lutz"
+  ],
+  "what_was_completed": "Source discovery, download and schema inspection; separate WGS84 conversions; combined observations overlay; targeted chronology review. No complete segment-by-segment historical or geographic reconciliation.",
+  "merge_plan": [
+    "Keep raw source layers immutable and individually selectable.",
+    "Audit early-only, intermediate temporary, late terminal and optional facility segments into separate correction layers.",
+    "Choose canonical geometry for each physical corridor; split at junctions and realignments. Keep source IDs and observation dates.",
+    "Reconcile positional differences manually before snapping; close parallel lines may represent real alternatives.",
+    "Combine accepted segments into a separate cumulative layer. Retain references to all contributing observations; dissolve only genuinely shared geometry.",
+    "Store observed_on separately from opened_on, closed_on and track_removed_on. Route transfers do not necessarily mean construction or abandonment.",
+    "Mark unresolved segments and unknown dates explicitly. Claim completeness only after every route-history change and selected facility scope is accounted for."
+  ],
+  "events_to_reconcile": [
+    {
+      "date": "1904-09-25",
+      "name": "Maple-area track abandoned",
+      "source_url": "https://www.erha.org/lary_w.htm",
+      "why_it_matters": "The short-lived San Pedro Place\u2013Vernon\u2013Main segment can fall between 1900 and 1906 snapshots.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1915-06-02",
+      "name": "California Street routing changed",
+      "source_url": "https://www.erha.org/lary_c.htm",
+      "why_it_matters": "The 1915 source needs an effective date and downtown check around the Broadway Tunnel work.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1920-08-05",
+      "name": "Echo Park Drive / Bellevue track abandoned",
+      "source_url": "https://www.erha.org/lary_c.htm",
+      "why_it_matters": "A 1924 or 1935 map cannot recover this earlier alignment; audit against 1915 geometry.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1921-04-11",
+      "name": "La Salle / West 22nd shuttle abandoned",
+      "source_url": "https://www.erha.org/lary_lasalle.htm",
+      "why_it_matters": "La Salle from Washington and 22nd west to Western must be checked in the early layer.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1925-07-19",
+      "name": "West 5th link, Olive to Flower",
+      "source_url": "https://www.erha.org/lary_c.htm",
+      "why_it_matters": "A new connection replaced a jog via 6th; retain both physical alternatives in cumulative data.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1926-08-22",
+      "name": "Boyle / East 9th viaduct detour",
+      "source_url": "https://www.erha.org/lary_r.htm",
+      "why_it_matters": "New detour track requires comparison with the usual 7th Street crossing, not just route names.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1927-04-03",
+      "name": "Pico extended to Rimpau",
+      "source_url": "https://www.erha.org/lary_p.htm",
+      "why_it_matters": "A post-1924 outer extension; check the 1930s geometry and endpoint.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1927-10-06 to summer 1928",
+      "name": "Temporary State Street track",
+      "source_url": "https://www.erha.org/lary_p.htm",
+      "why_it_matters": "New temporary track linked Brooklyn Avenue to East 1st during viaduct construction. An intermediate-years supplement is required.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1928-01-12",
+      "name": "Eagle Rock Park branch removed",
+      "source_url": "https://www.erha.org/lary_w.htm",
+      "why_it_matters": "Check the former park alignment north of Buena Vista Terrace. Keep the freight-only Edison continuation separately scoped.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1930\u20131931",
+      "name": "East 4th Place / viaduct reconstruction",
+      "source_url": "https://www.erha.org/lary_f.htm",
+      "why_it_matters": "Retain both old Merrick/Traction/3rd routing and the new 4th Place alignment where documented.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1931-01-11",
+      "name": "West 3rd connecting track",
+      "source_url": "https://www.erha.org/lary_r.htm",
+      "why_it_matters": "Check new Western-to-Gramercy connection against older 6th Street and private-right-of-way routing.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1931-08-09",
+      "name": "South Main extended to Florence",
+      "source_url": "https://www.erha.org/lary_o.htm",
+      "why_it_matters": "The source explicitly describes new track south of Slauson; verify the later vector layer includes it.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1936-12-25",
+      "name": "P line Dozier / Rowan loop",
+      "source_url": "https://www.erha.org/lary_p.htm",
+      "why_it_matters": "Post-1935 terminal extension and loop need a later source.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1937-12-11",
+      "name": "Whittier / Brannick loop",
+      "source_url": "https://www.erha.org/lary_r.htm",
+      "why_it_matters": "Check loop shape separately from the earlier eastern route endpoint.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1939-01-08 and 1939-02-09",
+      "name": "J line 10th Avenue and Palm Place loops",
+      "source_url": "https://www.erha.org/lary_j.htm",
+      "why_it_matters": "Both postdate 1935; inspect later maps and terminal plans.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1939 onward",
+      "name": "Union Station service / terminal track",
+      "source_url": "https://www.erha.org/lary_n.htm",
+      "why_it_matters": "Compare the terminal access alignment with earlier downtown routings; routing dates alone do not establish construction dates.",
+      "kind": "terminal_alignment_check",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1948-06-20",
+      "name": "East 1st / Chicago loop",
+      "source_url": "https://www.erha.org/lary_p.htm",
+      "why_it_matters": "A successor-era loop outside the two base snapshot dates.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1948-07-25",
+      "name": "West 1st / Vermont loop",
+      "source_url": "https://www.erha.org/lary_r.htm",
+      "why_it_matters": "Later loop needs facilities mapping and geographic placement.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1955-05-05 (ERHA date)",
+      "name": "Vernon Yard loop",
+      "source_url": "https://www.erha.org/lary_v.htm",
+      "why_it_matters": "Check newly described loop independently; ERHA and other summaries disagree on some service dates.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1958-09",
+      "name": "S line Central/Manchester and 8th/Western loops",
+      "source_url": "https://www.erha.org/lary_s.htm",
+      "why_it_matters": "ERHA calls these the system\u2019s last new trackage. Corroborate with LAMTA records and late photographs.",
+      "kind": "physical_track_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    },
+    {
+      "date": "1962-09",
+      "name": "J line detour over S and V tracks",
+      "source_url": "https://www.erha.org/lary_j.htm",
+      "why_it_matters": "Service history changes, but the source says existing trackage was used. Do not invent additional corridors.",
+      "kind": "existing_track_service_change",
+      "status": "documented_event_geometry_not_yet_reconciled"
+    }
+  ],
+  "remaining_gaps": [
+    "1895\u20131914 short-lived segments, including changes between early snapshots",
+    "Temporary diversions between 1915 and the 1930s",
+    "Detailed post-1935 terminal and loop geometry through 1958",
+    "Discrepancies in route-history dates and legacy street names",
+    "Individual track, carhouse, freight and maintenance inventory if that broader scope is desired"
+  ],
+  "rejected_candidate": {
+    "url": "https://services3.arcgis.com/F7NiRLGNbA2hh7gE/ArcGIS/rest/services/Historic_Streetcar_Tracks/FeatureServer",
+    "reason": "Item metadata identifies City_of_Eugene with Oregon coordinates; not Los Angeles."
+  }
+}

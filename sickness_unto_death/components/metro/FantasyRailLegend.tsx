@@ -3,6 +3,8 @@
 import { useEffect, useId, useState } from "react";
 import type { FeatureCollection, GeoJsonProperties, Geometry } from "geojson";
 import { RAIL_PROJECTS } from "./proposedMetroProjects";
+import { LARY_1915_DASHARRAY, LARY_PERIOD_STYLES } from "./laryPeriodStyles";
+import { PE_LINE_STYLE } from "./peLineStyle";
 
 type FantasyLegendLine = {
   id: string;
@@ -204,12 +206,6 @@ export default function FantasyRailLegend({
     };
   }, []);
 
-  if (
-    groups.existing.length === 0 &&
-    groups.proposed.length === 0 &&
-    groups.fantasy.length === 0
-  ) return null;
-
   const renderLines = (lines: FantasyLegendLine[]) => (
     <div
       className={
@@ -300,6 +296,47 @@ export default function FantasyRailLegend({
       <h2 id={headingId} className={compact ? "text-xs font-bold" : "text-lg font-bold"}>
         Rail Line Legend
       </h2>
+
+      <div className={compact ? "mt-2" : "mt-3"}>
+        <h3 className={compact ? "mb-1 border-b border-black pb-0.5 text-[9px] font-bold uppercase" : "mb-2 border-b-2 border-black pb-1 text-sm font-bold uppercase tracking-wide"}>
+          Historic Streetcars
+        </h3>
+        {renderLines([{
+          id: "historic-lary",
+          routeId: "LARy",
+          name: "LARy Yellow Cars (1915 + 1930s)",
+          color: LARY_PERIOD_STYLES[0].color,
+          textColor: LARY_PERIOD_STYLES[0].casing,
+        }])}
+        <ul className={compact ? "mt-2 space-y-1 text-[9px]" : "mt-2 space-y-1 text-xs"}>
+          {LARY_PERIOD_STYLES.map((period) => (
+            <li key={period.id} className="flex items-center gap-2">
+              <svg aria-hidden="true" width="32" height="10" className="shrink-0">
+                {!period.dashed && <line x1="2" y1="5" x2="30" y2="5" stroke={period.casing} strokeWidth="6" strokeLinecap="round" />}
+                <line x1="2" y1="5" x2="30" y2="5" stroke={period.color} strokeWidth="3" strokeDasharray={period.dashed ? LARY_1915_DASHARRAY.map((length) => length * 3).join(" ") : undefined} />
+              </svg>
+              <span>{period.label}</span>
+            </li>
+          ))}
+        </ul>
+        <p className={compact ? "mt-1 text-[9px] leading-tight" : "mt-2 text-xs"}>
+          Shared stretches are matched by approximate alignment. Full historical coverage remains under review.
+        </p>
+        <div className={compact ? "mt-3" : "mt-4"}>
+          <div className="flex items-center gap-2">
+            <svg aria-hidden="true" width="32" height="10" className="shrink-0">
+              <line x1="2" y1="5" x2="30" y2="5" stroke={PE_LINE_STYLE.casing} strokeWidth="5" strokeLinecap="round" />
+              <line x1="2" y1="5" x2="30" y2="5" stroke={PE_LINE_STYLE.color} strokeOpacity={PE_LINE_STYLE.opacity} strokeWidth="3" strokeLinecap="round" strokeDasharray={PE_LINE_STYLE.dasharray.map((length) => length * 3).join(" ")} />
+            </svg>
+            <span className={compact ? "text-[10px] font-bold leading-tight" : "text-sm font-bold leading-tight"}>
+              Pacific Electric (PE)
+            </span>
+          </div>
+          <p className={compact ? "mt-1 text-[9px] leading-tight" : "mt-2 text-xs"}>
+            Red dashed lines. Historical network from the Esri dataset published in 2021; its historical snapshot year is unspecified.
+          </p>
+        </div>
+      </div>
 
       {groups.existing.length > 0 && (
         <div className={compact ? "mt-2" : "mt-3"}>

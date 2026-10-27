@@ -381,7 +381,7 @@ export default function FantasyRailMap() {
             />
             <LayerToggleButton
               active={visibleLayers.losAngelesRailway}
-              label="LARy Yellow Cars (c. 1935)"
+              label="LARy Yellow Cars (1915 + 1930s)"
               colorClassName="bg-yellow-100 hover:bg-yellow-200"
               onClick={() =>
                 toggleLayer("losAngelesRailway")
