@@ -1,4 +1,4 @@
-export const PE_1915_DASHARRAY = [2, 1.5];
+export const PE_1915_DASHARRAY = [2, 1];
 
 export const PE_PERIOD_STYLES = [
   { id: "shared", label: "Shared by both maps", color: "#a6535c", casing: "#66343c", dashed: false },
