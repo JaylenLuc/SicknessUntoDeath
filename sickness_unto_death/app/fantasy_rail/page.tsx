@@ -15,7 +15,7 @@ export default function FantasyRail() {
         Inter Urbes — Revival of the Relict Los Angeles Rail System
       </Text>
       <Text as="p" className="mt-2 text-center">
-        Includes: An interurbes fantasy rail, Res Ipsa Loquitur
+        Includes: An interurbes fantasy rail, For the great people of Los Angeles, Res Ipsa Loquitur
       </Text>
       <Text as="h4" className='text-center'>
         (Last updated: 2026-10-18)
