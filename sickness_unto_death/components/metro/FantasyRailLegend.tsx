@@ -5,6 +5,7 @@ import type { FeatureCollection, GeoJsonProperties, Geometry } from "geojson";
 import { RAIL_PROJECTS } from "./proposedMetroProjects";
 import { LARY_1915_DASHARRAY, LARY_PERIOD_STYLES } from "./laryPeriodStyles";
 import { PE_1915_DASHARRAY, PE_PERIOD_STYLES } from "./peLineStyle";
+import { PE_ESRI_DESCRIPTION, PE_ESRI_LABEL, PE_ESRI_STYLE } from "./peEsriStyle";
 
 type FantasyLegendLine = {
   id: string;
@@ -235,7 +236,7 @@ export default function FantasyRailLegend({
             {line.routeId}
           </span>
           <span className={compact ? "text-[10px] font-bold leading-tight" : "text-sm font-bold leading-tight"}>
-            {line.name}
+            fdfadfas{line.name}
           </span>
         </div>
       ))}
@@ -343,6 +344,20 @@ export default function FantasyRailLegend({
           </ul>
           <p className={compact ? "mt-1 text-[9px] leading-tight" : "mt-2 text-xs"}>
             Geometric comparison of Brooks–Lutz maps. The 1915 source covers a smaller area; source-only stretches do not establish opening or closure dates.
+          </p>
+        </div>
+        <div className={compact ? "mt-3" : "mt-4"}>
+          <div className="flex items-center gap-2">
+            <svg aria-hidden="true" width="32" height="10" className="shrink-0">
+              <line x1="2" y1="5" x2="30" y2="5" stroke={PE_ESRI_STYLE.casing} strokeWidth="5" strokeLinecap="round" />
+              <line x1="2" y1="5" x2="30" y2="5" stroke={PE_ESRI_STYLE.color} strokeOpacity={PE_ESRI_STYLE.opacity} strokeWidth="3" strokeLinecap="round" strokeDasharray={PE_ESRI_STYLE.dasharray.map((length) => length * 3).join(" ")} />
+            </svg>
+            <span className={compact ? "text-[10px] font-bold leading-tight" : "text-sm font-bold leading-tight"}>
+              {PE_ESRI_LABEL}
+            </span>
+          </div>
+          <p className={compact ? "mt-1 text-[9px] leading-tight" : "mt-2 text-xs"}>
+            {PE_ESRI_DESCRIPTION}. Includes San Bernardino, Riverside, and Redlands. 2021 dates the dataset publication, not the rail network.
           </p>
         </div>
       </div>

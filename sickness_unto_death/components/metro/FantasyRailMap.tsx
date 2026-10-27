@@ -22,6 +22,8 @@ import {
 import MetroLA2026 from "./2026LAMetro";
 import TrainMarker from "./TrainMarker";
 import PacificElectricLayer from "./PEMap";
+import PacificElectricEsriLayer from "./PEEsriMap";
+import { PE_ESRI_DESCRIPTION, PE_ESRI_LABEL } from "./peEsriStyle";
 import LosAngelesRailwayLayer from "./LARYMap";
 import ProposedMetroRail from "./ProposedMetroRail";
 import FantasyRailLegend from "./FantasyRailLegend";
@@ -29,10 +31,10 @@ import FantasyRailLegend from "./FantasyRailLegend";
 
 setWorkerUrl("/maplibre-gl-worker.mjs");
 
-const LA_BOUNDS: [number, number, number, number] = [
+const REGIONAL_BOUNDS: [number, number, number, number] = [
   -119.0,
   33.4,
-  -117.4,
+  -117.0,
   34.8,
 ];
 
@@ -68,6 +70,7 @@ type LayerVisibility = {
   metroProjects: boolean;
   permanentFantasy: boolean;
   pacificElectric: boolean;
+  pacificElectricEsri: boolean;
   losAngelesRailway: boolean;
   userDraft: boolean;
 };
@@ -75,6 +78,7 @@ type LayerVisibility = {
 type LayerToggleButtonProps = {
   active: boolean;
   label: string;
+  description?: string;
   onClick: () => void;
   draft?: boolean;
   colorClassName?: string;
@@ -83,6 +87,7 @@ type LayerToggleButtonProps = {
 function LayerToggleButton({
   active,
   label,
+  description,
   onClick,
   colorClassName,
 }: LayerToggleButtonProps) {
@@ -101,7 +106,14 @@ function LayerToggleButton({
         {active ? "✓" : "○"}
       </span>
 
-      <span>{label}</span>
+      <span className="min-w-0 text-left">
+        <span>{label}</span>
+        {description && (
+          <span className="mt-0.5 block text-[9px] font-normal leading-tight sm:text-[10px] lg:text-xs">
+            {description}
+          </span>
+        )}
+      </span>
     </Button>
   );
 }
@@ -301,6 +313,7 @@ export default function FantasyRailMap() {
       existingMetro: true,
       metroProjects: true,
       pacificElectric: false,
+      pacificElectricEsri: false,
       losAngelesRailway: false,
       permanentFantasy: true,
       userDraft: false,
@@ -369,8 +382,16 @@ export default function FantasyRailMap() {
             className="mt-1.5 flex flex-col gap-1 sm:gap-1.5 lg:mt-2 lg:gap-2"
           >
             <LayerToggleButton
+              active={visibleLayers.pacificElectricEsri}
+              label={PE_ESRI_LABEL}
+              description={PE_ESRI_DESCRIPTION}
+              colorClassName="bg-red-100 hover:bg-red-200"
+              onClick={() => toggleLayer("pacificElectricEsri")}
+            />
+            <LayerToggleButton
               active={visibleLayers.pacificElectric}
               label="Pacific Electric (1915 + 1928)"
+              description="Brooks–Lutz · LA County coverage"
               colorClassName="bg-orange-100 hover:bg-orange-200"
               onClick={() =>
                 toggleLayer("pacificElectric")
@@ -467,10 +488,13 @@ export default function FantasyRailMap() {
           borderRadius: "10px",
           overflow: "hidden",
         }}
-        maxBounds={LA_BOUNDS}
+        maxBounds={REGIONAL_BOUNDS}
         // attributionControl={false}
       >
         <NavigationControl position="bottom-right" />
+        {visibleLayers.pacificElectricEsri && (
+          <PacificElectricEsriLayer />
+        )}
         {visibleLayers.pacificElectric && (
           <PacificElectricLayer />
         )}
