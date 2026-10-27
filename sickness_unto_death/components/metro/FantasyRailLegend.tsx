@@ -236,7 +236,7 @@ export default function FantasyRailLegend({
             {line.routeId}
           </span>
           <span className={compact ? "text-[10px] font-bold leading-tight" : "text-sm font-bold leading-tight"}>
-            fdfadfas{line.name}
+            {line.name}
           </span>
         </div>
       ))}
