@@ -12,10 +12,10 @@ export default function FantasyRail() {
   return (
     <div className="flex min-h-screen flex-col px-4 py-6 font-[family-name:var(--font-courier-prime)] sm:p-8">
       <Text as="h3" className='text-center'>
-        Inter Urbes — Revival of the Relict Los Angeles Rail System
+        Revival of the Relict Los Angeles Rail System
       </Text>
       <Text as="p" className="mt-2 text-center">
-        Includes: An interurbes fantasy rail, For the great people of Los Angeles, Res Ipsa Loquitur
+        Includes: An inter-urbes fantasy rail (intra urban planned), For the great people of Los Angeles, Res Ipsa Loquitur
       </Text>
       <Text as="h4" className='text-center'>
         (Last updated: 2026-10-18)
