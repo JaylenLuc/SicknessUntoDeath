@@ -22,8 +22,8 @@ export default function FantasyRail() {
           In this world, an evil is the best tool of appropriation, an ignorant is the best victim, and the Good have the most to lose.
           As time passes, there can be much grief for a lost life for which you will never get back. As time passes one such aforementioned
           evil is when our children grow up not knowing of the absolutely sublimity of human spirit and engineering they have lost through
-          time forgotten, so much so that it feels like time immemorial. It is not simply grief bu the deprivation of basic human right
-          to have our government serve us and build a community where out neighbors can live like creatures not like commodities.
+          time forgotten, so much so that it feels like time immemorial. It is not simply grief butt the deprivation of basic human right
+          to have our government serve us and build a community where our neighbors can live like creatures not like commodities.
         </Text>
         <Text as="h4" className="text-center">
           (Last updated: 2026-10-27)

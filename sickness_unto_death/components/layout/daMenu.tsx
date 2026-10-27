@@ -40,7 +40,7 @@ export default function DaMenu() {
               <a href="/doaist_formulas" className="flex flex-1 hover:bg-[#B39EB5] rounded-[10px]"><LucideLink className="mr-2"/> Doaist subduction</a>
             </Menu.Item>
             <Menu.Item>
-              <Link href="/fantasy_rail" className="flex flex-1 hover:bg-[#B39EB5] rounded-[10px]"><LucideLink className="mr-2 shrink-0"/> Inter Urbes — Fantasy Rail</Link>
+              <Link href="/fantasy_rail" className="flex flex-1 hover:bg-[#B39EB5] rounded-[10px]"><LucideLink className="mr-2 shrink-0"/> Multi Urbes — Fantasy Rail</Link>
             </Menu.Item>
         </Menu.Content>
     </Menu>
