@@ -4382,13 +4382,20 @@
             "type": "Feature",
             "id": "station-las-tunas-del-mar",
             "properties": {
-            "id": "station-las-tunas-del-mar",
-            "name": "Las Tunas / Del Mar",
-            "street1": "Las Tunas Drive",
-            "street2": "Del Mar Avenue",
-            "routes": "SGV",
-            "rail_mode": "heavy_rail",
-            "system": "fantasy"
+                "id": "station-las-tunas-del-mar",
+                "name": "Las Tunas / Del Mar",
+                "street1": "Las Tunas Drive",
+                "street2": "Del Mar Avenue",
+                "routes": "SGV",
+                "rail_mode": "heavy_rail",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer_station_ids": [
+                    "sc43-las-tunas"
+                ],
+                "intra_urbes_routes": [
+                    "SC43"
+                ]
             },
             "geometry": {
             "type": "Point",
@@ -5533,10 +5540,12 @@
                 "interchange": true,
                 "transfer": "Existing Metro B and G Lines",
                 "transfer_station_ids": [
-                    "intra-grid-stop-3e8fe211dbb0"
+                    "intra-grid-stop-3e8fe211dbb0",
+                    "intra-grid-stop-5b19f502f971"
                 ],
                 "intra_urbes_routes": [
-                    "SC29"
+                    "SC29",
+                    "SC42"
                 ]
             },
             "geometry": {
@@ -5638,14 +5647,7 @@
                 "rail_mode": "heavy_rail",
                 "system": "fantasy",
                 "interchange": true,
-                "transfer": "East San Fernando Valley Light Rail",
-                "transfer_station_ids": [
-                    "intra-grid-stop-a2cf66e5db71",
-                    "intra-grid-stop-e6ef86df5873"
-                ],
-                "intra_urbes_routes": [
-                    "SC25"
-                ]
+                "transfer": "East San Fernando Valley Light Rail"
             },
             "geometry": {
                 "type": "Point",
@@ -5903,7 +5905,13 @@
                 "rail_mode": "heavy_rail",
                 "system": "fantasy",
                 "interchange": true,
-                "transfer": "Metrolink and Amtrak"
+                "transfer": "Metrolink and Amtrak",
+                "transfer_station_ids": [
+                    "sc42-olive"
+                ],
+                "intra_urbes_routes": [
+                    "SC42"
+                ]
             },
             "geometry": {
                 "type": "Point",
@@ -6052,7 +6060,14 @@
                 "system": "fantasy",
                 "status": "concept",
                 "location_status": "approximate",
-                "expansion": "intra-urbes-grid"
+                "expansion": "intra-urbes-grid",
+                "interchange": true,
+                "transfer_station_ids": [
+                    "sc42-reseda"
+                ],
+                "intra_urbes_routes": [
+                    "SC42"
+                ]
             },
             "geometry": {
                 "type": "Point",
@@ -6146,19 +6161,13 @@
                 "name": "Reseda / Roscoe",
                 "street1": "Reseda Boulevard",
                 "street2": "Roscoe",
-                "routes": "R",
+                "routes": "R, RO",
                 "rail_mode": "heavy_rail",
                 "system": "fantasy",
                 "status": "concept",
                 "location_status": "approximate",
                 "expansion": "intra-urbes-grid",
-                "interchange": true,
-                "transfer_station_ids": [
-                    "intra-grid-stop-59e363766ed9"
-                ],
-                "intra_urbes_routes": [
-                    "SC28"
-                ]
+                "interchange": true
             },
             "geometry": {
                 "type": "Point",
@@ -8528,7 +8537,14 @@
                 "system": "fantasy",
                 "status": "concept",
                 "color": "#508978",
-                "location_status": "approximate"
+                "location_status": "approximate",
+                "interchange": true,
+                "transfer_station_ids": [
+                    "sc43-valley"
+                ],
+                "intra_urbes_routes": [
+                    "SC43"
+                ]
             },
             "geometry": {
                 "type": "Point",
@@ -8562,6 +8578,926 @@
                     34.07819
                 ]
             }
+        },
+        {
+            "type": "Feature",
+            "id": "ro-line",
+            "properties": {
+                "id": "ro-line",
+                "routeId": "RO",
+                "name": "RO Line — Roscoe",
+                "color": "#577E92",
+                "system": "fantasy",
+                "rail_mode": "heavy_rail",
+                "service_type": "metro",
+                "status": "concept",
+                "expansion": "intra-urbes-grid",
+                "area": "San Fernando Valley",
+                "description": "Roscoe heavy rail from Reseda to Tuxford/Lankershim, connecting R at Reseda and local Balboa and Lankershim streetcars.",
+                "corridors": [
+                    "Roscoe",
+                    "Tuxford"
+                ],
+                "stationIds": [
+                    "station-r-reseda-roscoe",
+                    "station-ro-white-oak",
+                    "station-ro-balboa",
+                    "station-ro-woodley",
+                    "station-ro-sepulveda",
+                    "station-ro-van-nuys",
+                    "station-ro-woodman",
+                    "station-ro-sheldon",
+                    "station-ro-arleta",
+                    "station-ro-lankershim"
+                ],
+                "termini": [
+                    "Reseda / Roscoe",
+                    "Tuxford / Lankershim"
+                ],
+                "alignment_status": "conceptual grade-separated metro corridor; road centerlines are a geographic reference",
+                "right_of_way_intent": "grade-separated heavy rail",
+                "concept_headway_minutes": 8,
+                "concept_headway_note": "Design target, not a timetable or a fleet/capacity calculation",
+                "connector_roads_metres": {},
+                "geometry_gap_joins": [],
+                "station_spacing_policy": "Heavy rail: fewer stations at major streets and transfers, with wider spacing than streetcar service.",
+                "length_km": 13.72,
+                "station_spacing_km": {
+                    "mean": 1.52,
+                    "minimum": 0.84,
+                    "maximum": 1.74
+                },
+                "operating_note": "Conceptual heavy rail with 10 stations; headway is a design target, not an operating simulation."
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -118.536091,
+                        34.220732
+                    ],
+                    [
+                        -118.535855,
+                        34.220736
+                    ],
+                    [
+                        -118.532835,
+                        34.220781
+                    ],
+                    [
+                        -118.531724,
+                        34.220797
+                    ],
+                    [
+                        -118.530869,
+                        34.22081
+                    ],
+                    [
+                        -118.530612,
+                        34.220814
+                    ],
+                    [
+                        -118.530036,
+                        34.220823
+                    ],
+                    [
+                        -118.529235,
+                        34.220835
+                    ],
+                    [
+                        -118.528421,
+                        34.220847
+                    ],
+                    [
+                        -118.527357,
+                        34.220863
+                    ],
+                    [
+                        -118.522988,
+                        34.220928
+                    ],
+                    [
+                        -118.519683,
+                        34.220975
+                    ],
+                    [
+                        -118.518624,
+                        34.22099
+                    ],
+                    [
+                        -118.517466,
+                        34.221006
+                    ],
+                    [
+                        -118.514804,
+                        34.221044
+                    ],
+                    [
+                        -118.514257,
+                        34.221051
+                    ],
+                    [
+                        -118.51086,
+                        34.221099
+                    ],
+                    [
+                        -118.50989,
+                        34.221113
+                    ],
+                    [
+                        -118.509078,
+                        34.221124
+                    ],
+                    [
+                        -118.509004,
+                        34.221125
+                    ],
+                    [
+                        -118.507958,
+                        34.22114
+                    ],
+                    [
+                        -118.505524,
+                        34.221174
+                    ],
+                    [
+                        -118.503762,
+                        34.221198
+                    ],
+                    [
+                        -118.503705,
+                        34.221199
+                    ],
+                    [
+                        -118.503671,
+                        34.221199
+                    ],
+                    [
+                        -118.502679,
+                        34.221213
+                    ],
+                    [
+                        -118.501605,
+                        34.221227
+                    ],
+                    [
+                        -118.501374,
+                        34.221218
+                    ],
+                    [
+                        -118.501159,
+                        34.221196
+                    ],
+                    [
+                        -118.500974,
+                        34.221169
+                    ],
+                    [
+                        -118.50075,
+                        34.221123
+                    ],
+                    [
+                        -118.499838,
+                        34.220895
+                    ],
+                    [
+                        -118.499571,
+                        34.220828
+                    ],
+                    [
+                        -118.499379,
+                        34.220785
+                    ],
+                    [
+                        -118.498895,
+                        34.22069
+                    ],
+                    [
+                        -118.49624,
+                        34.220166
+                    ],
+                    [
+                        -118.496104,
+                        34.220145
+                    ],
+                    [
+                        -118.495897,
+                        34.220129
+                    ],
+                    [
+                        -118.495689,
+                        34.220131
+                    ],
+                    [
+                        -118.495483,
+                        34.220151
+                    ],
+                    [
+                        -118.495347,
+                        34.220174
+                    ],
+                    [
+                        -118.495214,
+                        34.220205
+                    ],
+                    [
+                        -118.495019,
+                        34.220266
+                    ],
+                    [
+                        -118.494925,
+                        34.220303
+                    ],
+                    [
+                        -118.494804,
+                        34.220358
+                    ],
+                    [
+                        -118.494716,
+                        34.220404
+                    ],
+                    [
+                        -118.494279,
+                        34.220654
+                    ],
+                    [
+                        -118.494001,
+                        34.220813
+                    ],
+                    [
+                        -118.493741,
+                        34.220961
+                    ],
+                    [
+                        -118.493554,
+                        34.221051
+                    ],
+                    [
+                        -118.493437,
+                        34.221099
+                    ],
+                    [
+                        -118.493277,
+                        34.221154
+                    ],
+                    [
+                        -118.493154,
+                        34.221189
+                    ],
+                    [
+                        -118.492903,
+                        34.221243
+                    ],
+                    [
+                        -118.492646,
+                        34.221275
+                    ],
+                    [
+                        -118.492425,
+                        34.221284
+                    ],
+                    [
+                        -118.492149,
+                        34.221286
+                    ],
+                    [
+                        -118.489577,
+                        34.2213
+                    ],
+                    [
+                        -118.488106,
+                        34.221308
+                    ],
+                    [
+                        -118.48643,
+                        34.221318
+                    ],
+                    [
+                        -118.485209,
+                        34.221325
+                    ],
+                    [
+                        -118.483691,
+                        34.221333
+                    ],
+                    [
+                        -118.481952,
+                        34.221343
+                    ],
+                    [
+                        -118.480817,
+                        34.22135
+                    ],
+                    [
+                        -118.479674,
+                        34.221356
+                    ],
+                    [
+                        -118.478661,
+                        34.221362
+                    ],
+                    [
+                        -118.477726,
+                        34.221367
+                    ],
+                    [
+                        -118.476473,
+                        34.221374
+                    ],
+                    [
+                        -118.474954,
+                        34.221382
+                    ],
+                    [
+                        -118.474157,
+                        34.221387
+                    ],
+                    [
+                        -118.473733,
+                        34.221389
+                    ],
+                    [
+                        -118.473318,
+                        34.221391
+                    ],
+                    [
+                        -118.473198,
+                        34.221392
+                    ],
+                    [
+                        -118.473087,
+                        34.221393
+                    ],
+                    [
+                        -118.472702,
+                        34.221395
+                    ],
+                    [
+                        -118.472105,
+                        34.221398
+                    ],
+                    [
+                        -118.469921,
+                        34.22141
+                    ],
+                    [
+                        -118.468749,
+                        34.221416
+                    ],
+                    [
+                        -118.467738,
+                        34.221422
+                    ],
+                    [
+                        -118.466222,
+                        34.221431
+                    ],
+                    [
+                        -118.465504,
+                        34.221435
+                    ],
+                    [
+                        -118.465072,
+                        34.221437
+                    ],
+                    [
+                        -118.464036,
+                        34.221443
+                    ],
+                    [
+                        -118.463371,
+                        34.221447
+                    ],
+                    [
+                        -118.462215,
+                        34.221453
+                    ],
+                    [
+                        -118.461853,
+                        34.221455
+                    ],
+                    [
+                        -118.461153,
+                        34.221459
+                    ],
+                    [
+                        -118.459804,
+                        34.221467
+                    ],
+                    [
+                        -118.45961,
+                        34.221468
+                    ],
+                    [
+                        -118.459474,
+                        34.221469
+                    ],
+                    [
+                        -118.458823,
+                        34.221473
+                    ],
+                    [
+                        -118.458414,
+                        34.221475
+                    ],
+                    [
+                        -118.457485,
+                        34.22148
+                    ],
+                    [
+                        -118.455301,
+                        34.221492
+                    ],
+                    [
+                        -118.453564,
+                        34.221501
+                    ],
+                    [
+                        -118.451661,
+                        34.221512
+                    ],
+                    [
+                        -118.450226,
+                        34.22152
+                    ],
+                    [
+                        -118.448783,
+                        34.221528
+                    ],
+                    [
+                        -118.448405,
+                        34.22153
+                    ],
+                    [
+                        -118.447663,
+                        34.221588
+                    ],
+                    [
+                        -118.44596,
+                        34.221597
+                    ],
+                    [
+                        -118.443429,
+                        34.221611
+                    ],
+                    [
+                        -118.440446,
+                        34.221627
+                    ],
+                    [
+                        -118.43665,
+                        34.221647
+                    ],
+                    [
+                        -118.434117,
+                        34.221661
+                    ],
+                    [
+                        -118.432744,
+                        34.221668
+                    ],
+                    [
+                        -118.429991,
+                        34.221667
+                    ],
+                    [
+                        -118.428817,
+                        34.221667
+                    ],
+                    [
+                        -118.427807,
+                        34.221667
+                    ],
+                    [
+                        -118.425118,
+                        34.221667
+                    ],
+                    [
+                        -118.423606,
+                        34.221666
+                    ],
+                    [
+                        -118.422782,
+                        34.221666
+                    ],
+                    [
+                        -118.422631,
+                        34.221666
+                    ],
+                    [
+                        -118.422539,
+                        34.221666
+                    ],
+                    [
+                        -118.422477,
+                        34.221666
+                    ],
+                    [
+                        -118.422203,
+                        34.221666
+                    ],
+                    [
+                        -118.417315,
+                        34.221665
+                    ],
+                    [
+                        -118.414399,
+                        34.221664
+                    ],
+                    [
+                        -118.413565,
+                        34.221664
+                    ],
+                    [
+                        -118.41179,
+                        34.221663
+                    ],
+                    [
+                        -118.41092,
+                        34.221663
+                    ],
+                    [
+                        -118.41063,
+                        34.221663
+                    ],
+                    [
+                        -118.410323,
+                        34.221663
+                    ],
+                    [
+                        -118.410277,
+                        34.221663
+                    ],
+                    [
+                        -118.410039,
+                        34.221663
+                    ],
+                    [
+                        -118.409902,
+                        34.221663
+                    ],
+                    [
+                        -118.409616,
+                        34.221663
+                    ],
+                    [
+                        -118.40928,
+                        34.221663
+                    ],
+                    [
+                        -118.40836,
+                        34.221662
+                    ],
+                    [
+                        -118.407904,
+                        34.221662
+                    ],
+                    [
+                        -118.407173,
+                        34.221662
+                    ],
+                    [
+                        -118.406003,
+                        34.221661
+                    ],
+                    [
+                        -118.405265,
+                        34.221661
+                    ],
+                    [
+                        -118.403428,
+                        34.22166
+                    ],
+                    [
+                        -118.403082,
+                        34.221659
+                    ],
+                    [
+                        -118.400899,
+                        34.221657
+                    ],
+                    [
+                        -118.399824,
+                        34.221656
+                    ],
+                    [
+                        -118.398765,
+                        34.221655
+                    ],
+                    [
+                        -118.397707,
+                        34.221654
+                    ],
+                    [
+                        -118.396532,
+                        34.221653
+                    ],
+                    [
+                        -118.396209,
+                        34.22165
+                    ],
+                    [
+                        -118.395483,
+                        34.221645
+                    ],
+                    [
+                        -118.39303,
+                        34.221629
+                    ],
+                    [
+                        -118.390854,
+                        34.221614
+                    ],
+                    [
+                        -118.389997,
+                        34.221608
+                    ],
+                    [
+                        -118.389868,
+                        34.22161
+                    ],
+                    [
+                        -118.389652,
+                        34.221626
+                    ],
+                    [
+                        -118.389439,
+                        34.221657
+                    ],
+                    [
+                        -118.389272,
+                        34.221693
+                    ],
+                    [
+                        -118.389046,
+                        34.221759
+                    ],
+                    [
+                        -118.388908,
+                        34.221809
+                    ],
+                    [
+                        -118.388717,
+                        34.221894
+                    ],
+                    [
+                        -118.388571,
+                        34.221971
+                    ],
+                    [
+                        -118.388398,
+                        34.22208
+                    ],
+                    [
+                        -118.388024,
+                        34.222352
+                    ],
+                    [
+                        -118.38779,
+                        34.222523
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-ro-white-oak",
+            "properties": {
+                "id": "station-ro-white-oak",
+                "name": "Roscoe / White Oak",
+                "system": "fantasy",
+                "rail_mode": "heavy_rail",
+                "service_type": "metro",
+                "status": "concept",
+                "color": "#577E92",
+                "routes": "RO",
+                "location_status": "approximate"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.518624,
+                    34.22099
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-ro-balboa",
+            "properties": {
+                "id": "station-ro-balboa",
+                "name": "Roscoe / Balboa",
+                "system": "fantasy",
+                "rail_mode": "heavy_rail",
+                "service_type": "metro",
+                "status": "concept",
+                "color": "#577E92",
+                "routes": "RO",
+                "location_status": "approximate",
+                "interchange": true,
+                "transfer_station_ids": [
+                    "intra-grid-stop-0e01a5a4fd36"
+                ],
+                "intra_urbes_routes": [
+                    "SC27"
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.502679,
+                    34.221213
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-ro-woodley",
+            "properties": {
+                "id": "station-ro-woodley",
+                "name": "Roscoe / Woodley",
+                "system": "fantasy",
+                "rail_mode": "heavy_rail",
+                "service_type": "metro",
+                "status": "concept",
+                "color": "#577E92",
+                "routes": "RO",
+                "location_status": "approximate"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.485209,
+                    34.221325
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-ro-sepulveda",
+            "properties": {
+                "id": "station-ro-sepulveda",
+                "name": "Roscoe / Sepulveda",
+                "system": "fantasy",
+                "rail_mode": "heavy_rail",
+                "service_type": "metro",
+                "status": "concept",
+                "color": "#577E92",
+                "routes": "RO",
+                "location_status": "approximate"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.467738,
+                    34.221422
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-ro-van-nuys",
+            "properties": {
+                "id": "station-ro-van-nuys",
+                "name": "Roscoe / Van Nuys",
+                "system": "fantasy",
+                "rail_mode": "heavy_rail",
+                "service_type": "metro",
+                "status": "concept",
+                "color": "#577E92",
+                "routes": "RO",
+                "location_status": "approximate"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.448783,
+                    34.221528
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-ro-woodman",
+            "properties": {
+                "id": "station-ro-woodman",
+                "name": "Roscoe / Woodman",
+                "system": "fantasy",
+                "rail_mode": "heavy_rail",
+                "service_type": "metro",
+                "status": "concept",
+                "color": "#577E92",
+                "routes": "RO",
+                "location_status": "approximate"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.432744,
+                    34.221668
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-ro-sheldon",
+            "properties": {
+                "id": "station-ro-sheldon",
+                "name": "Roscoe / Sheldon",
+                "system": "fantasy",
+                "rail_mode": "heavy_rail",
+                "service_type": "metro",
+                "status": "concept",
+                "color": "#577E92",
+                "routes": "RO",
+                "location_status": "approximate"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.414399,
+                    34.221664
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-ro-arleta",
+            "properties": {
+                "id": "station-ro-arleta",
+                "name": "Roscoe / Arleta",
+                "system": "fantasy",
+                "rail_mode": "heavy_rail",
+                "service_type": "metro",
+                "status": "concept",
+                "color": "#577E92",
+                "routes": "RO",
+                "location_status": "approximate"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.405265,
+                    34.221661
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-ro-lankershim",
+            "properties": {
+                "id": "station-ro-lankershim",
+                "name": "Tuxford / Lankershim",
+                "system": "fantasy",
+                "rail_mode": "heavy_rail",
+                "service_type": "metro",
+                "status": "concept",
+                "color": "#577E92",
+                "routes": "RO",
+                "location_status": "approximate",
+                "interchange": true,
+                "transfer_station_ids": [
+                    "intra-grid-stop-5b5e2655bdf7"
+                ],
+                "intra_urbes_routes": [
+                    "SC29"
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.38779,
+                    34.222523
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-huntington-del-mar",
+            "properties": {
+                "id": "station-huntington-del-mar",
+                "name": "Huntington / Del Mar",
+                "routes": "H",
+                "rail_mode": "heavy_rail",
+                "system": "fantasy",
+                "status": "concept",
+                "street1": "Huntington Drive",
+                "street2": "Del Mar Avenue",
+                "interchange": true,
+                "transfer_station_ids": [
+                    "sc43-huntington"
+                ],
+                "intra_urbes_routes": [
+                    "SC43"
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.100476906,
+                    34.123893887
+                ]
+            }
         }
     ],
     "geometry_sources": [
@@ -8576,6 +9512,12 @@
             "source": "Los Angeles County CAMS road centerlines; existing authored Valley alignment",
             "url": "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/eGIS_Addressing_ROAD_LINES/FeatureServer/0",
             "note": "Heavy-rail concept with 23 stations from Union Station via César Chávez and Mission Road to Valley Boulevard and Pomona. The Union approach reuses the authored César Chávez corridor and former Mission branch as geometric references for grade-separated service. Road geometry does not establish an engineering alignment."
+        },
+        {
+            "section": "RO Line — Roscoe",
+            "source": "Los Angeles County CAMS road centerlines",
+            "url": "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/eGIS_Addressing_ROAD_LINES/FeatureServer/0",
+            "note": "Existing Roscoe/Tuxford streetcar geometry reclassified as conceptual grade-separated heavy rail with 10 major stations; road centerlines are not an engineering alignment."
         }
     ],
     "corridor_extensions": {
@@ -8585,6 +9527,15 @@
             "termini": [
                 "Union Station",
                 "Valley / Holt — Pomona"
+            ],
+            "rail_mode": "heavy_rail"
+        },
+        "RO": {
+            "stops": 10,
+            "length_km": 13.72,
+            "termini": [
+                "Reseda / Roscoe",
+                "Tuxford / Lankershim"
             ],
             "rail_mode": "heavy_rail"
         }

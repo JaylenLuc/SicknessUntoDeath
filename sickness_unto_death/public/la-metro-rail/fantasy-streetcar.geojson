@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "name": "Intra Urbes — Light Rail / Streetcar",
-  "description": "Intra Urbes fantasy streetcars: SC1 Solano–Elysian / stadium gates; SC1A Stadium Way connector; SC2 Frogtown–Cypress Park–Figueroa–Colorado; SC3 Cypress–Eagle Rock–York; SC3A Eagle Rock–Colorado branch; SC4 Los Feliz–Riverside / Fletcher. Not official projects; alignments and stops are conceptual. SC5 serves César Chávez from Union Station to Atlantic; SC6 follows Pico from Santa Monica to Downtown. SC7 follows Main Street from Florence, turns via MLK to San Pedro Street, and continues to Little Tokyo, connecting with SC6 at Pico. SC8–SC37 add an interconnected local grid across Central, South and East LA, the Westside, San Fernando Valley, San Gabriel Valley, Pasadena and South Bay, feeding the Inter Urbes network including the new Reseda R Line. Inter Urbes V connects Union Station to Holt Avenue in Pomona via Mission Road and Valley Boulevard. SC38 serves Garfield from Huntington to Imperial; SC23 reaches Colorado, and SC22 reaches the authored Garvey/Rosemead C terminal. The Valley and Mission corridor is Inter Urbes heavy rail. SC39 follows Griffin from Mission to Broadway/Daly on H, with a walking transfer to V at Valley/Mission. SC19 extends north on Soto to H at Huntington, retaining its V transfer at Valley. SC40 serves Virgil between Sunset and Wilshire; SC41 serves Temple between Virgil and Alameda, sharing a Virgil/Temple stop. SC10A branches east from Third/Alvarado along Third Street to Alameda, connecting SC34 Broadway and SC7 San Pedro.",
+  "description": "Intra Urbes fantasy streetcars: SC1 Solano–Elysian / stadium gates; SC1A Stadium Way connector; SC2 Frogtown–Cypress Park–Figueroa–Colorado; SC3 Cypress–Eagle Rock–York; SC3A Eagle Rock–Colorado branch; SC4 Los Feliz–Riverside / Fletcher. Not official projects; alignments and stops are conceptual. SC5 serves César Chávez from Union Station to Atlantic; SC6 follows Pico from Santa Monica to Downtown. SC7 follows Main Street from Florence, turns via MLK to San Pedro Street, and continues to Little Tokyo, connecting with SC6 at Pico. SC8–SC37 add an interconnected local grid across Central, South and East LA, the Westside, San Fernando Valley, San Gabriel Valley, Pasadena and South Bay, feeding the Inter Urbes network including the new Reseda R Line. Inter Urbes V connects Union Station to Holt Avenue in Pomona via Mission Road and Valley Boulevard. SC38 serves Garfield from Huntington to Imperial; SC23 reaches Colorado, and SC22 reaches the authored Garvey/Rosemead C terminal. The Valley and Mission corridor is Inter Urbes heavy rail. SC39 follows Griffin from Mission to Broadway/Daly on H, with a walking transfer to V at Valley/Mission. SC19 extends north on Soto to H at Huntington, retaining its V transfer at Valley. SC40 serves Virgil between Sunset and Wilshire; SC41 serves Temple between Virgil and Alameda, sharing a Virgil/Temple stop. SC10A branches east from Third/Alvarado along Third Street to Alameda, connecting SC34 Broadway and SC7 San Pedro. Van Nuys streetcar service is removed. Roscoe is now Inter Urbes RO heavy rail, connecting R at Reseda and the Balboa and Lankershim streetcars. SC42 follows Burbank Boulevard from Reseda to Downtown Burbank via Front Street. SC43 follows Del Mar Avenue from Garvey to Huntington.",
   "context_sources": [
     "https://www.elysianpark.org/find",
     "https://www.mlb.com/dodgers/ballpark/transportation/directions",
@@ -22,7 +22,10 @@
     "https://www.metro.net/projects/la-brea-av-bus-priority-lane-project/",
     "https://www.metro.net/projects/broadway-bl-bus-priority-lanes/",
     "https://cloud.sfmc.metro.net/North_SFV",
-    "https://www.csun.edu/csun-maps"
+    "https://www.csun.edu/csun-maps",
+    "https://www.lavc.edu/about/revitalizing-valley/message",
+    "https://services.laccd.edu/districtsite/Accreditation/lavc/Standard%20IIIB/DIIIB4-04_LAVC_FMP_Addendum.pdf",
+    "https://www.burbankca.gov/documents/173607/240347/20210208-Complete-Streets-Preliminary-Recommendations-001.pdf/c9c03386-faae-e0f5-6dbd-f3147574d801?t=1612824159883"
   ],
   "features": [
     {
@@ -24253,375 +24256,6 @@
     },
     {
       "type": "Feature",
-      "id": "sc25-line",
-      "properties": {
-        "id": "sc25-line",
-        "routeId": "SC25",
-        "name": "Van Nuys Streetcar",
-        "color": "#6F8B54",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "expansion": "intra-urbes-grid",
-        "area": "San Fernando Valley",
-        "description": "NextGen priority: Van Nuys civic center, employment and local bus corridor.",
-        "corridors": [
-          "Van Nuys"
-        ],
-        "stationIds": [
-          "intra-grid-stop-b473a530cd7a",
-          "intra-grid-stop-f07c25cbd0b0",
-          "intra-grid-stop-14eb3c109d85",
-          "intra-grid-stop-c5b64da20be1",
-          "intra-grid-stop-89143d106890",
-          "intra-grid-stop-5896ffad4c5b",
-          "intra-grid-stop-838a28562c57",
-          "intra-grid-stop-99505c43ef93",
-          "intra-grid-stop-d93be3d92173",
-          "intra-grid-stop-b3cad987bf0b",
-          "intra-grid-stop-c6c60aca6018",
-          "intra-grid-stop-ac55feea1ed2",
-          "intra-grid-stop-a2cf66e5db71",
-          "intra-grid-stop-e6ef86df5873",
-          "intra-grid-stop-ffacc7f851b7",
-          "intra-grid-stop-6ef2ae3149a7",
-          "intra-grid-stop-ac1d0441cba9",
-          "intra-grid-stop-97a38fcdb99c",
-          "intra-grid-stop-67c91d8bd2d3",
-          "intra-grid-stop-c0d52b8a3a11"
-        ],
-        "termini": [
-          "Van Nuys / Ventura",
-          "Van Nuys / Roscoe"
-        ],
-        "alignment_status": "conceptual; mapped county road centerlines, short documented joins and existing transfer markers",
-        "right_of_way_intent": "reserved track, signal priority and accessible platforms; not a mixed-traffic operating plan",
-        "concept_headway_minutes": 8,
-        "concept_headway_note": "Design target, not a timetable or a fleet/capacity calculation",
-        "connector_roads_metres": {},
-        "geometry_gap_joins": []
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -118.448704,
-            34.15092
-          ],
-          [
-            -118.448704,
-            34.151452
-          ],
-          [
-            -118.448705,
-            34.151924
-          ],
-          [
-            -118.448705,
-            34.15302
-          ],
-          [
-            -118.448706,
-            34.154775
-          ],
-          [
-            -118.448707,
-            34.15604
-          ],
-          [
-            -118.448708,
-            34.156574
-          ],
-          [
-            -118.448708,
-            34.156884
-          ],
-          [
-            -118.448708,
-            34.157093
-          ],
-          [
-            -118.448708,
-            34.158023
-          ],
-          [
-            -118.448709,
-            34.15942
-          ],
-          [
-            -118.44871,
-            34.161234
-          ],
-          [
-            -118.44871,
-            34.16214
-          ],
-          [
-            -118.44871,
-            34.162216
-          ],
-          [
-            -118.448711,
-            34.163047
-          ],
-          [
-            -118.448711,
-            34.163954
-          ],
-          [
-            -118.448712,
-            34.16486
-          ],
-          [
-            -118.448712,
-            34.165363
-          ],
-          [
-            -118.448713,
-            34.166675
-          ],
-          [
-            -118.448714,
-            34.167582
-          ],
-          [
-            -118.448714,
-            34.168489
-          ],
-          [
-            -118.448715,
-            34.169915
-          ],
-          [
-            -118.448715,
-            34.170302
-          ],
-          [
-            -118.448716,
-            34.170439
-          ],
-          [
-            -118.448716,
-            34.170577
-          ],
-          [
-            -118.448607,
-            34.171057
-          ],
-          [
-            -118.448601,
-            34.171082
-          ],
-          [
-            -118.44861,
-            34.172019
-          ],
-          [
-            -118.448717,
-            34.172121
-          ],
-          [
-            -118.448719,
-            34.17575
-          ],
-          [
-            -118.44872,
-            34.176657
-          ],
-          [
-            -118.44872,
-            34.177564
-          ],
-          [
-            -118.448721,
-            34.178471
-          ],
-          [
-            -118.448722,
-            34.179395
-          ],
-          [
-            -118.448722,
-            34.180142
-          ],
-          [
-            -118.448722,
-            34.180511
-          ],
-          [
-            -118.448723,
-            34.180939
-          ],
-          [
-            -118.448723,
-            34.181663
-          ],
-          [
-            -118.448724,
-            34.182653
-          ],
-          [
-            -118.448725,
-            34.183642
-          ],
-          [
-            -118.448725,
-            34.184659
-          ],
-          [
-            -118.448726,
-            34.185676
-          ],
-          [
-            -118.448727,
-            34.186666
-          ],
-          [
-            -118.448727,
-            34.187655
-          ],
-          [
-            -118.448728,
-            34.188672
-          ],
-          [
-            -118.448729,
-            34.189689
-          ],
-          [
-            -118.448729,
-            34.190678
-          ],
-          [
-            -118.448731,
-            34.192951
-          ],
-          [
-            -118.448732,
-            34.193932
-          ],
-          [
-            -118.448733,
-            34.195159
-          ],
-          [
-            -118.448734,
-            34.19756
-          ],
-          [
-            -118.448742,
-            34.198067
-          ],
-          [
-            -118.448768,
-            34.198468
-          ],
-          [
-            -118.448768,
-            34.198864
-          ],
-          [
-            -118.448769,
-            34.199374
-          ],
-          [
-            -118.44877,
-            34.201197
-          ],
-          [
-            -118.448772,
-            34.20302
-          ],
-          [
-            -118.448773,
-            34.204826
-          ],
-          [
-            -118.448774,
-            34.205996
-          ],
-          [
-            -118.448775,
-            34.207135
-          ],
-          [
-            -118.448776,
-            34.208463
-          ],
-          [
-            -118.448777,
-            34.210276
-          ],
-          [
-            -118.448724,
-            34.210408
-          ],
-          [
-            -118.448695,
-            34.21054
-          ],
-          [
-            -118.448695,
-            34.211705
-          ],
-          [
-            -118.448695,
-            34.211919
-          ],
-          [
-            -118.448696,
-            34.21342
-          ],
-          [
-            -118.448697,
-            34.214311
-          ],
-          [
-            -118.448697,
-            34.215233
-          ],
-          [
-            -118.448699,
-            34.216499
-          ],
-          [
-            -118.448703,
-            34.216576
-          ],
-          [
-            -118.448723,
-            34.216654
-          ],
-          [
-            -118.448746,
-            34.216708
-          ],
-          [
-            -118.448781,
-            34.216767
-          ],
-          [
-            -118.448781,
-            34.217019
-          ],
-          [
-            -118.448781,
-            34.217954
-          ],
-          [
-            -118.448782,
-            34.219768
-          ],
-          [
-            -118.448783,
-            34.221528
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
       "id": "sc26-line",
       "properties": {
         "id": "sc26-line",
@@ -25242,6 +24876,7 @@
         ],
         "stationIds": [
           "intra-grid-stop-60e6d270a4ea",
+          "sc42-balboa",
           "intra-grid-stop-4584163447c8",
           "intra-grid-stop-d639475f19d3",
           "intra-grid-stop-76adf4a019e1",
@@ -25542,701 +25177,6 @@
           [
             -118.502679,
             34.221213
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "sc28-line",
-      "properties": {
-        "id": "sc28-line",
-        "routeId": "SC28",
-        "name": "Roscoe Streetcar",
-        "color": "#577E92",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "expansion": "intra-urbes-grid",
-        "area": "San Fernando Valley",
-        "description": "Northern Valley cross-town gap; Metro bus-priority corridor.",
-        "corridors": [
-          "Roscoe",
-          "Tuxford"
-        ],
-        "stationIds": [
-          "intra-grid-stop-59e363766ed9",
-          "intra-grid-stop-5592d98d7263",
-          "intra-grid-stop-a103d0f069cd",
-          "intra-grid-stop-674db5f1cca7",
-          "intra-grid-stop-fa201c610b2d",
-          "intra-grid-stop-7713f1e57423",
-          "intra-grid-stop-1dec0216f3e4",
-          "intra-grid-stop-b801fc2c7c14",
-          "intra-grid-stop-0e01a5a4fd36",
-          "intra-grid-stop-8ce9c7cc2cf1",
-          "intra-grid-stop-330fbba12871",
-          "intra-grid-stop-538c561f04bc",
-          "intra-grid-stop-5df54bab0b72",
-          "intra-grid-stop-0b86bd0d10f7",
-          "intra-grid-stop-a04c992fd9bc",
-          "intra-grid-stop-f025404b1c98",
-          "intra-grid-stop-7de6fe0f1dc5",
-          "intra-grid-stop-0d9676bb4cc2",
-          "intra-grid-stop-e7fcbb364058",
-          "intra-grid-stop-c0d52b8a3a11",
-          "intra-grid-stop-627360373425",
-          "intra-grid-stop-20c5d7a0b35c",
-          "intra-grid-stop-c71f50fc1a88",
-          "intra-grid-stop-9929346716d1",
-          "intra-grid-stop-447f0747611c",
-          "intra-grid-stop-ff3b480034f9",
-          "intra-grid-stop-108f16906cb7",
-          "intra-grid-stop-00829475b58f",
-          "intra-grid-stop-8581e9258b12",
-          "intra-grid-stop-286fd860c2e0",
-          "intra-grid-stop-16e0f79419d3",
-          "intra-grid-stop-1a768657b14e",
-          "intra-grid-stop-5b5e2655bdf7"
-        ],
-        "termini": [
-          "Roscoe / Reseda",
-          "Tuxford / Lankershim"
-        ],
-        "alignment_status": "conceptual; mapped county road centerlines, short documented joins and existing transfer markers",
-        "right_of_way_intent": "reserved track, signal priority and accessible platforms; not a mixed-traffic operating plan",
-        "concept_headway_minutes": 8,
-        "concept_headway_note": "Design target, not a timetable or a fleet/capacity calculation",
-        "connector_roads_metres": {},
-        "geometry_gap_joins": []
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -118.536091,
-            34.220732
-          ],
-          [
-            -118.535855,
-            34.220736
-          ],
-          [
-            -118.532835,
-            34.220781
-          ],
-          [
-            -118.531724,
-            34.220797
-          ],
-          [
-            -118.530869,
-            34.22081
-          ],
-          [
-            -118.530612,
-            34.220814
-          ],
-          [
-            -118.530036,
-            34.220823
-          ],
-          [
-            -118.529235,
-            34.220835
-          ],
-          [
-            -118.528421,
-            34.220847
-          ],
-          [
-            -118.527357,
-            34.220863
-          ],
-          [
-            -118.522988,
-            34.220928
-          ],
-          [
-            -118.519683,
-            34.220975
-          ],
-          [
-            -118.518624,
-            34.22099
-          ],
-          [
-            -118.517466,
-            34.221006
-          ],
-          [
-            -118.514804,
-            34.221044
-          ],
-          [
-            -118.514257,
-            34.221051
-          ],
-          [
-            -118.51086,
-            34.221099
-          ],
-          [
-            -118.50989,
-            34.221113
-          ],
-          [
-            -118.509078,
-            34.221124
-          ],
-          [
-            -118.509004,
-            34.221125
-          ],
-          [
-            -118.507958,
-            34.22114
-          ],
-          [
-            -118.505524,
-            34.221174
-          ],
-          [
-            -118.503762,
-            34.221198
-          ],
-          [
-            -118.503705,
-            34.221199
-          ],
-          [
-            -118.503671,
-            34.221199
-          ],
-          [
-            -118.502679,
-            34.221213
-          ],
-          [
-            -118.501605,
-            34.221227
-          ],
-          [
-            -118.501374,
-            34.221218
-          ],
-          [
-            -118.501159,
-            34.221196
-          ],
-          [
-            -118.500974,
-            34.221169
-          ],
-          [
-            -118.50075,
-            34.221123
-          ],
-          [
-            -118.499838,
-            34.220895
-          ],
-          [
-            -118.499571,
-            34.220828
-          ],
-          [
-            -118.499379,
-            34.220785
-          ],
-          [
-            -118.498895,
-            34.22069
-          ],
-          [
-            -118.49624,
-            34.220166
-          ],
-          [
-            -118.496104,
-            34.220145
-          ],
-          [
-            -118.495897,
-            34.220129
-          ],
-          [
-            -118.495689,
-            34.220131
-          ],
-          [
-            -118.495483,
-            34.220151
-          ],
-          [
-            -118.495347,
-            34.220174
-          ],
-          [
-            -118.495214,
-            34.220205
-          ],
-          [
-            -118.495019,
-            34.220266
-          ],
-          [
-            -118.494925,
-            34.220303
-          ],
-          [
-            -118.494804,
-            34.220358
-          ],
-          [
-            -118.494716,
-            34.220404
-          ],
-          [
-            -118.494279,
-            34.220654
-          ],
-          [
-            -118.494001,
-            34.220813
-          ],
-          [
-            -118.493741,
-            34.220961
-          ],
-          [
-            -118.493554,
-            34.221051
-          ],
-          [
-            -118.493437,
-            34.221099
-          ],
-          [
-            -118.493277,
-            34.221154
-          ],
-          [
-            -118.493154,
-            34.221189
-          ],
-          [
-            -118.492903,
-            34.221243
-          ],
-          [
-            -118.492646,
-            34.221275
-          ],
-          [
-            -118.492425,
-            34.221284
-          ],
-          [
-            -118.492149,
-            34.221286
-          ],
-          [
-            -118.489577,
-            34.2213
-          ],
-          [
-            -118.488106,
-            34.221308
-          ],
-          [
-            -118.48643,
-            34.221318
-          ],
-          [
-            -118.485209,
-            34.221325
-          ],
-          [
-            -118.483691,
-            34.221333
-          ],
-          [
-            -118.481952,
-            34.221343
-          ],
-          [
-            -118.480817,
-            34.22135
-          ],
-          [
-            -118.479674,
-            34.221356
-          ],
-          [
-            -118.478661,
-            34.221362
-          ],
-          [
-            -118.477726,
-            34.221367
-          ],
-          [
-            -118.476473,
-            34.221374
-          ],
-          [
-            -118.474954,
-            34.221382
-          ],
-          [
-            -118.474157,
-            34.221387
-          ],
-          [
-            -118.473733,
-            34.221389
-          ],
-          [
-            -118.473318,
-            34.221391
-          ],
-          [
-            -118.473198,
-            34.221392
-          ],
-          [
-            -118.473087,
-            34.221393
-          ],
-          [
-            -118.472702,
-            34.221395
-          ],
-          [
-            -118.472105,
-            34.221398
-          ],
-          [
-            -118.469921,
-            34.22141
-          ],
-          [
-            -118.468749,
-            34.221416
-          ],
-          [
-            -118.467738,
-            34.221422
-          ],
-          [
-            -118.466222,
-            34.221431
-          ],
-          [
-            -118.465504,
-            34.221435
-          ],
-          [
-            -118.465072,
-            34.221437
-          ],
-          [
-            -118.464036,
-            34.221443
-          ],
-          [
-            -118.463371,
-            34.221447
-          ],
-          [
-            -118.462215,
-            34.221453
-          ],
-          [
-            -118.461853,
-            34.221455
-          ],
-          [
-            -118.461153,
-            34.221459
-          ],
-          [
-            -118.459804,
-            34.221467
-          ],
-          [
-            -118.45961,
-            34.221468
-          ],
-          [
-            -118.459474,
-            34.221469
-          ],
-          [
-            -118.458823,
-            34.221473
-          ],
-          [
-            -118.458414,
-            34.221475
-          ],
-          [
-            -118.457485,
-            34.22148
-          ],
-          [
-            -118.455301,
-            34.221492
-          ],
-          [
-            -118.453564,
-            34.221501
-          ],
-          [
-            -118.451661,
-            34.221512
-          ],
-          [
-            -118.450226,
-            34.22152
-          ],
-          [
-            -118.448783,
-            34.221528
-          ],
-          [
-            -118.448405,
-            34.22153
-          ],
-          [
-            -118.447663,
-            34.221588
-          ],
-          [
-            -118.44596,
-            34.221597
-          ],
-          [
-            -118.443429,
-            34.221611
-          ],
-          [
-            -118.440446,
-            34.221627
-          ],
-          [
-            -118.43665,
-            34.221647
-          ],
-          [
-            -118.434117,
-            34.221661
-          ],
-          [
-            -118.432744,
-            34.221668
-          ],
-          [
-            -118.429991,
-            34.221667
-          ],
-          [
-            -118.428817,
-            34.221667
-          ],
-          [
-            -118.427807,
-            34.221667
-          ],
-          [
-            -118.425118,
-            34.221667
-          ],
-          [
-            -118.423606,
-            34.221666
-          ],
-          [
-            -118.422782,
-            34.221666
-          ],
-          [
-            -118.422631,
-            34.221666
-          ],
-          [
-            -118.422539,
-            34.221666
-          ],
-          [
-            -118.422477,
-            34.221666
-          ],
-          [
-            -118.422203,
-            34.221666
-          ],
-          [
-            -118.417315,
-            34.221665
-          ],
-          [
-            -118.414399,
-            34.221664
-          ],
-          [
-            -118.413565,
-            34.221664
-          ],
-          [
-            -118.41179,
-            34.221663
-          ],
-          [
-            -118.41092,
-            34.221663
-          ],
-          [
-            -118.41063,
-            34.221663
-          ],
-          [
-            -118.410323,
-            34.221663
-          ],
-          [
-            -118.410277,
-            34.221663
-          ],
-          [
-            -118.410039,
-            34.221663
-          ],
-          [
-            -118.409902,
-            34.221663
-          ],
-          [
-            -118.409616,
-            34.221663
-          ],
-          [
-            -118.40928,
-            34.221663
-          ],
-          [
-            -118.40836,
-            34.221662
-          ],
-          [
-            -118.407904,
-            34.221662
-          ],
-          [
-            -118.407173,
-            34.221662
-          ],
-          [
-            -118.406003,
-            34.221661
-          ],
-          [
-            -118.405265,
-            34.221661
-          ],
-          [
-            -118.403428,
-            34.22166
-          ],
-          [
-            -118.403082,
-            34.221659
-          ],
-          [
-            -118.400899,
-            34.221657
-          ],
-          [
-            -118.399824,
-            34.221656
-          ],
-          [
-            -118.398765,
-            34.221655
-          ],
-          [
-            -118.397707,
-            34.221654
-          ],
-          [
-            -118.396532,
-            34.221653
-          ],
-          [
-            -118.396209,
-            34.22165
-          ],
-          [
-            -118.395483,
-            34.221645
-          ],
-          [
-            -118.39303,
-            34.221629
-          ],
-          [
-            -118.390854,
-            34.221614
-          ],
-          [
-            -118.389997,
-            34.221608
-          ],
-          [
-            -118.389868,
-            34.22161
-          ],
-          [
-            -118.389652,
-            34.221626
-          ],
-          [
-            -118.389439,
-            34.221657
-          ],
-          [
-            -118.389272,
-            34.221693
-          ],
-          [
-            -118.389046,
-            34.221759
-          ],
-          [
-            -118.388908,
-            34.221809
-          ],
-          [
-            -118.388717,
-            34.221894
-          ],
-          [
-            -118.388571,
-            34.221971
-          ],
-          [
-            -118.388398,
-            34.22208
-          ],
-          [
-            -118.388024,
-            34.222352
-          ],
-          [
-            -118.38779,
-            34.222523
           ]
         ]
       }
@@ -41282,10 +40222,15 @@
         "rail_mode": "light_rail",
         "service_type": "streetcar",
         "status": "concept",
-        "color": "#AF775C",
-        "routes": "SC22",
+        "color": "#334155",
+        "routes": "SC22, SC43",
         "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
+        "expansion": "intra-urbes-grid",
+        "local_transfers": [
+          "SC22",
+          "SC43"
+        ],
+        "interchange": true
       },
       "geometry": {
         "type": "Point",
@@ -41999,213 +40944,6 @@
     },
     {
       "type": "Feature",
-      "id": "intra-grid-stop-b473a530cd7a",
-      "properties": {
-        "id": "intra-grid-stop-b473a530cd7a",
-        "name": "Van Nuys / Ventura",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC25",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.448704,
-          34.15092
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-f07c25cbd0b0",
-      "properties": {
-        "id": "intra-grid-stop-f07c25cbd0b0",
-        "name": "Van Nuys / Hortense",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC25",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.448706,
-          34.154775
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-14eb3c109d85",
-      "properties": {
-        "id": "intra-grid-stop-14eb3c109d85",
-        "name": "Van Nuys / Huston",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC25",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.448709,
-          34.15942
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-c5b64da20be1",
-      "properties": {
-        "id": "intra-grid-stop-c5b64da20be1",
-        "name": "Van Nuys / Otsego",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC25",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.448711,
-          34.163047
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-89143d106890",
-      "properties": {
-        "id": "intra-grid-stop-89143d106890",
-        "name": "Van Nuys / Weddington",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC25",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.448713,
-          34.166675
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-5896ffad4c5b",
-      "properties": {
-        "id": "intra-grid-stop-5896ffad4c5b",
-        "name": "Van Nuys / Chandler",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC25",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.448607,
-          34.171057
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-838a28562c57",
-      "properties": {
-        "id": "intra-grid-stop-838a28562c57",
-        "name": "Van Nuys / Hatteras",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC25",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.448719,
-          34.17575
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-99505c43ef93",
-      "properties": {
-        "id": "intra-grid-stop-99505c43ef93",
-        "name": "Van Nuys / Aetna",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC25",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.448722,
-          34.180142
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-d93be3d92173",
-      "properties": {
-        "id": "intra-grid-stop-d93be3d92173",
-        "name": "Van Nuys / Sylvan",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC25",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.448725,
-          34.184659
-        ]
-      }
-    },
-    {
-      "type": "Feature",
       "id": "intra-grid-stop-b3cad987bf0b",
       "properties": {
         "id": "intra-grid-stop-b3cad987bf0b",
@@ -42214,282 +40952,16 @@
         "rail_mode": "light_rail",
         "service_type": "streetcar",
         "status": "concept",
-        "color": "#334155",
-        "routes": "SC25, SC26",
+        "color": "#B38A45",
+        "routes": "SC26",
         "location_status": "approximate",
-        "expansion": "intra-urbes-grid",
-        "interchange": true,
-        "local_transfers": [
-          "SC25",
-          "SC26"
-        ]
+        "expansion": "intra-urbes-grid"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -118.448727,
           34.186666
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-c6c60aca6018",
-      "properties": {
-        "id": "intra-grid-stop-c6c60aca6018",
-        "name": "Van Nuys / Kittridge",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC25",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.448729,
-          34.190678
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-ac55feea1ed2",
-      "properties": {
-        "id": "intra-grid-stop-ac55feea1ed2",
-        "name": "Van Nuys / Hartland",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC25",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.448733,
-          34.195159
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-a2cf66e5db71",
-      "properties": {
-        "id": "intra-grid-stop-a2cf66e5db71",
-        "name": "Van Nuys / Gault",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC25",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid",
-        "interchange": true,
-        "inter_urbes_transfers": [
-          {
-            "station_id": "station-b-sherman-van-nuys",
-            "station_name": "Sherman Way / Van Nuys",
-            "routes": [
-              "B"
-            ],
-            "distance_metres": 205,
-            "type": "walking",
-            "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
-          }
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.448769,
-          34.199374
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-e6ef86df5873",
-      "properties": {
-        "id": "intra-grid-stop-e6ef86df5873",
-        "name": "Van Nuys / Sherman",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC25",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid",
-        "interchange": true,
-        "inter_urbes_transfers": [
-          {
-            "station_id": "station-b-sherman-van-nuys",
-            "station_name": "Sherman Way / Van Nuys",
-            "routes": [
-              "B"
-            ],
-            "distance_metres": 3,
-            "type": "walking",
-            "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
-          }
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.44877,
-          34.201197
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-ffacc7f851b7",
-      "properties": {
-        "id": "intra-grid-stop-ffacc7f851b7",
-        "name": "Van Nuys / Valerio",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC25",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.448773,
-          34.204826
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-6ef2ae3149a7",
-      "properties": {
-        "id": "intra-grid-stop-6ef2ae3149a7",
-        "name": "Van Nuys / Saticoy",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC25",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.448776,
-          34.208463
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-ac1d0441cba9",
-      "properties": {
-        "id": "intra-grid-stop-ac1d0441cba9",
-        "name": "Van Nuys / Southern Pacific",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC25",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.448695,
-          34.211705
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-97a38fcdb99c",
-      "properties": {
-        "id": "intra-grid-stop-97a38fcdb99c",
-        "name": "Van Nuys / Blythe",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC25",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.448697,
-          34.215233
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-67c91d8bd2d3",
-      "properties": {
-        "id": "intra-grid-stop-67c91d8bd2d3",
-        "name": "Van Nuys / Titus",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC25",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.448782,
-          34.219768
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-c0d52b8a3a11",
-      "properties": {
-        "id": "intra-grid-stop-c0d52b8a3a11",
-        "name": "Van Nuys / Roscoe",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#334155",
-        "routes": "SC25, SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid",
-        "interchange": true,
-        "local_transfers": [
-          "SC25",
-          "SC28"
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.448783,
-          34.221528
         ]
       }
     },
@@ -43482,14 +41954,22 @@
         "rail_mode": "light_rail",
         "service_type": "streetcar",
         "status": "concept",
-        "color": "#334155",
-        "routes": "SC27, SC28",
+        "color": "#598E8F",
+        "routes": "SC27",
         "location_status": "approximate",
         "expansion": "intra-urbes-grid",
         "interchange": true,
-        "local_transfers": [
-          "SC27",
-          "SC28"
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-ro-balboa",
+            "station_name": "Roscoe / Balboa",
+            "routes": [
+              "RO"
+            ],
+            "distance_metres": 0,
+            "type": "between_modes",
+            "distance_basis": "co-located conceptual platforms; entrances not surveyed"
+          }
         ]
       },
       "geometry": {
@@ -43497,709 +41977,6 @@
         "coordinates": [
           -118.502679,
           34.221213
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-59e363766ed9",
-      "properties": {
-        "id": "intra-grid-stop-59e363766ed9",
-        "name": "Roscoe / Reseda",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid",
-        "interchange": true,
-        "inter_urbes_transfers": [
-          {
-            "station_id": "station-r-reseda-roscoe",
-            "station_name": "Reseda / Roscoe",
-            "routes": [
-              "R"
-            ],
-            "distance_metres": 0,
-            "type": "walking",
-            "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
-          }
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.536091,
-          34.220732
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-5592d98d7263",
-      "properties": {
-        "id": "intra-grid-stop-5592d98d7263",
-        "name": "Roscoe / Etiwanda",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.531724,
-          34.220797
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-a103d0f069cd",
-      "properties": {
-        "id": "intra-grid-stop-a103d0f069cd",
-        "name": "Roscoe / Lindley",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.527357,
-          34.220863
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-674db5f1cca7",
-      "properties": {
-        "id": "intra-grid-stop-674db5f1cca7",
-        "name": "Roscoe / Zelzah",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.522988,
-          34.220928
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-fa201c610b2d",
-      "properties": {
-        "id": "intra-grid-stop-fa201c610b2d",
-        "name": "Roscoe / White Oak",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.518624,
-          34.22099
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-7713f1e57423",
-      "properties": {
-        "id": "intra-grid-stop-7713f1e57423",
-        "name": "Roscoe / Encino",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.514257,
-          34.221051
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-1dec0216f3e4",
-      "properties": {
-        "id": "intra-grid-stop-1dec0216f3e4",
-        "name": "Roscoe / Louise",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.50989,
-          34.221113
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-b801fc2c7c14",
-      "properties": {
-        "id": "intra-grid-stop-b801fc2c7c14",
-        "name": "Roscoe / Amestoy",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.505524,
-          34.221174
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-8ce9c7cc2cf1",
-      "properties": {
-        "id": "intra-grid-stop-8ce9c7cc2cf1",
-        "name": "Roscoe / Southern Pacific",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.494279,
-          34.220654
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-330fbba12871",
-      "properties": {
-        "id": "intra-grid-stop-330fbba12871",
-        "name": "Roscoe / Gothic",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.489577,
-          34.2213
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-538c561f04bc",
-      "properties": {
-        "id": "intra-grid-stop-538c561f04bc",
-        "name": "Roscoe / Woodley",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.485209,
-          34.221325
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-5df54bab0b72",
-      "properties": {
-        "id": "intra-grid-stop-5df54bab0b72",
-        "name": "Roscoe / Gloria",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.480817,
-          34.22135
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-0b86bd0d10f7",
-      "properties": {
-        "id": "intra-grid-stop-0b86bd0d10f7",
-        "name": "Roscoe / Haskell",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.476473,
-          34.221374
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-a04c992fd9bc",
-      "properties": {
-        "id": "intra-grid-stop-a04c992fd9bc",
-        "name": "Roscoe / Orion",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.472105,
-          34.221398
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-f025404b1c98",
-      "properties": {
-        "id": "intra-grid-stop-f025404b1c98",
-        "name": "Roscoe / Sepulveda",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.467738,
-          34.221422
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-7de6fe0f1dc5",
-      "properties": {
-        "id": "intra-grid-stop-7de6fe0f1dc5",
-        "name": "Roscoe / Burnet",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.463371,
-          34.221447
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-0d9676bb4cc2",
-      "properties": {
-        "id": "intra-grid-stop-0d9676bb4cc2",
-        "name": "Roscoe / Brimfield",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.458823,
-          34.221473
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-e7fcbb364058",
-      "properties": {
-        "id": "intra-grid-stop-e7fcbb364058",
-        "name": "Roscoe / Cedros",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.453564,
-          34.221501
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-627360373425",
-      "properties": {
-        "id": "intra-grid-stop-627360373425",
-        "name": "Roscoe / Wakefield",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.443429,
-          34.221611
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-20c5d7a0b35c",
-      "properties": {
-        "id": "intra-grid-stop-20c5d7a0b35c",
-        "name": "Roscoe / Ranchito",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.43665,
-          34.221647
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-c71f50fc1a88",
-      "properties": {
-        "id": "intra-grid-stop-c71f50fc1a88",
-        "name": "Roscoe / Woodman",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.432744,
-          34.221668
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-9929346716d1",
-      "properties": {
-        "id": "intra-grid-stop-9929346716d1",
-        "name": "Roscoe / Allott",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.427807,
-          34.221667
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-447f0747611c",
-      "properties": {
-        "id": "intra-grid-stop-447f0747611c",
-        "name": "Roscoe / Varna",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.423606,
-          34.221666
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-ff3b480034f9",
-      "properties": {
-        "id": "intra-grid-stop-ff3b480034f9",
-        "name": "Roscoe / Canterbury",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.417315,
-          34.221665
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-108f16906cb7",
-      "properties": {
-        "id": "intra-grid-stop-108f16906cb7",
-        "name": "Roscoe / Sheldon",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.414399,
-          34.221664
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-00829475b58f",
-      "properties": {
-        "id": "intra-grid-stop-00829475b58f",
-        "name": "Roscoe / Hollywood",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.410039,
-          34.221663
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-8581e9258b12",
-      "properties": {
-        "id": "intra-grid-stop-8581e9258b12",
-        "name": "Roscoe / Arleta",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.405265,
-          34.221661
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-286fd860c2e0",
-      "properties": {
-        "id": "intra-grid-stop-286fd860c2e0",
-        "name": "Roscoe / Laurelgrove",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.400899,
-          34.221657
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-16e0f79419d3",
-      "properties": {
-        "id": "intra-grid-stop-16e0f79419d3",
-        "name": "Roscoe / Pendleton",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.396209,
-          34.22165
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-1a768657b14e",
-      "properties": {
-        "id": "intra-grid-stop-1a768657b14e",
-        "name": "Roscoe / Amboy",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "streetcar",
-        "status": "concept",
-        "color": "#577E92",
-        "routes": "SC28",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.390854,
-          34.221614
         ]
       }
     },
@@ -44213,14 +41990,22 @@
         "rail_mode": "light_rail",
         "service_type": "streetcar",
         "status": "concept",
-        "color": "#334155",
-        "routes": "SC28, SC29",
+        "color": "#94725D",
+        "routes": "SC29",
         "location_status": "approximate",
         "expansion": "intra-urbes-grid",
         "interchange": true,
-        "local_transfers": [
-          "SC28",
-          "SC29"
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-ro-lankershim",
+            "station_name": "Tuxford / Lankershim",
+            "routes": [
+              "RO"
+            ],
+            "distance_metres": 0,
+            "type": "between_modes",
+            "distance_basis": "co-located conceptual platforms; entrances not surveyed"
+          }
         ]
       },
       "geometry": {
@@ -44475,10 +42260,28 @@
         "rail_mode": "light_rail",
         "service_type": "streetcar",
         "status": "concept",
-        "color": "#94725D",
-        "routes": "SC29",
+        "color": "#334155",
+        "routes": "SC29, SC42",
         "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
+        "expansion": "intra-urbes-grid",
+        "local_transfers": [
+          "SC29",
+          "SC42"
+        ],
+        "interchange": true,
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-b-sherman-north-hollywood",
+            "station_name": "North Hollywood",
+            "routes": [
+              "B",
+              "G"
+            ],
+            "distance_metres": 456,
+            "type": "walking",
+            "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
+          }
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -54460,6 +52263,3354 @@
           34.045543
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-line",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "id": "sc42-line",
+        "routeId": "SC42",
+        "name": "Burbank Streetcar",
+        "color": "#A17D67",
+        "stationIds": [
+          "sc42-reseda",
+          "sc42-etiwanda",
+          "sc42-lindley",
+          "sc42-zelzah",
+          "sc42-white-oak",
+          "sc42-encino",
+          "sc42-louise",
+          "sc42-edward-everett-horton",
+          "sc42-balboa",
+          "sc42-hayvenhurst",
+          "sc42-woodley",
+          "sc42-sepulveda",
+          "sc42-noble",
+          "sc42-kester",
+          "sc42-cedros",
+          "sc42-van-nuys",
+          "sc42-tyrone",
+          "sc42-hazeltine",
+          "sc42-ranchito",
+          "sc42-woodman",
+          "sc42-sunnyslope",
+          "sc42-fulton",
+          "sc42-ethel",
+          "sc42-coldwater-canyon",
+          "sc42-bellaire",
+          "sc42-whitsett",
+          "sc42-corteen",
+          "sc42-laurel-canyon",
+          "sc42-radford",
+          "sc42-colfax",
+          "sc42-beck",
+          "intra-grid-stop-5b19f502f971",
+          "sc42-fair",
+          "sc42-vineland",
+          "sc42-riverton",
+          "sc42-cahuenga",
+          "sc42-clybourn",
+          "sc42-maple",
+          "sc42-hollywood",
+          "sc42-fairview",
+          "sc42-buena-vista",
+          "sc42-orchard",
+          "sc42-victory",
+          "sc42-front",
+          "sc42-magnolia",
+          "sc42-olive"
+        ],
+        "termini": [
+          "Burbank / Reseda",
+          "Front / Olive — Downtown Burbank"
+        ],
+        "corridors": [
+          "Burbank",
+          "Front"
+        ],
+        "description": "Burbank Boulevard local service from Reseda to Downtown Burbank via Front Street, serving the southern Valley and Valley College, with Balboa and Lankershim streetcar transfers. Selected to fill the gap south of Victory while the G branch already serves Magnolia.",
+        "alignment_status": "conceptual; mapped county road centerlines with documented transfer alignment adjustments",
+        "right_of_way_intent": "reserved track and transit priority where feasible",
+        "length_km": 21.69,
+        "geometry_gap_joins": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.536013,
+            34.172354
+          ],
+          [
+            -118.535332,
+            34.172349
+          ],
+          [
+            -118.535159,
+            34.172339
+          ],
+          [
+            -118.534988,
+            34.172315
+          ],
+          [
+            -118.534822,
+            34.172276
+          ],
+          [
+            -118.534661,
+            34.172222
+          ],
+          [
+            -118.534533,
+            34.172168
+          ],
+          [
+            -118.53414,
+            34.171962
+          ],
+          [
+            -118.534108,
+            34.171945
+          ],
+          [
+            -118.533953,
+            34.17188
+          ],
+          [
+            -118.533791,
+            34.171829
+          ],
+          [
+            -118.533652,
+            34.171798
+          ],
+          [
+            -118.533482,
+            34.171773
+          ],
+          [
+            -118.533309,
+            34.171764
+          ],
+          [
+            -118.533136,
+            34.17177
+          ],
+          [
+            -118.532965,
+            34.17179
+          ],
+          [
+            -118.532797,
+            34.171826
+          ],
+          [
+            -118.532719,
+            34.17185
+          ],
+          [
+            -118.532635,
+            34.171875
+          ],
+          [
+            -118.53248,
+            34.171939
+          ],
+          [
+            -118.53237,
+            34.171995
+          ],
+          [
+            -118.532266,
+            34.172048
+          ],
+          [
+            -118.532159,
+            34.172103
+          ],
+          [
+            -118.532089,
+            34.17214
+          ],
+          [
+            -118.531935,
+            34.172207
+          ],
+          [
+            -118.531802,
+            34.172253
+          ],
+          [
+            -118.531664,
+            34.172288
+          ],
+          [
+            -118.531495,
+            34.172318
+          ],
+          [
+            -118.531323,
+            34.172332
+          ],
+          [
+            -118.530826,
+            34.172332
+          ],
+          [
+            -118.530561,
+            34.172331
+          ],
+          [
+            -118.52784,
+            34.172322
+          ],
+          [
+            -118.527599,
+            34.172307
+          ],
+          [
+            -118.5274,
+            34.172266
+          ],
+          [
+            -118.527288,
+            34.172216
+          ],
+          [
+            -118.524375,
+            34.172219
+          ],
+          [
+            -118.522044,
+            34.172221
+          ],
+          [
+            -118.520298,
+            34.172222
+          ],
+          [
+            -118.518546,
+            34.172224
+          ],
+          [
+            -118.518434,
+            34.172252
+          ],
+          [
+            -118.518304,
+            34.172272
+          ],
+          [
+            -118.516347,
+            34.17228
+          ],
+          [
+            -118.514198,
+            34.172272
+          ],
+          [
+            -118.511098,
+            34.172261
+          ],
+          [
+            -118.509835,
+            34.172256
+          ],
+          [
+            -118.509245,
+            34.172254
+          ],
+          [
+            -118.508413,
+            34.17225
+          ],
+          [
+            -118.507581,
+            34.172247
+          ],
+          [
+            -118.506705,
+            34.172244
+          ],
+          [
+            -118.505952,
+            34.172241
+          ],
+          [
+            -118.505472,
+            34.172239
+          ],
+          [
+            -118.501163,
+            34.172223
+          ],
+          [
+            -118.501096,
+            34.172223
+          ],
+          [
+            -118.50103,
+            34.172222
+          ],
+          [
+            -118.50006,
+            34.172219
+          ],
+          [
+            -118.499709,
+            34.172217
+          ],
+          [
+            -118.499272,
+            34.172033
+          ],
+          [
+            -118.499207,
+            34.171998
+          ],
+          [
+            -118.499104,
+            34.171935
+          ],
+          [
+            -118.499026,
+            34.17188
+          ],
+          [
+            -118.498953,
+            34.171819
+          ],
+          [
+            -118.498886,
+            34.171755
+          ],
+          [
+            -118.498823,
+            34.171687
+          ],
+          [
+            -118.498781,
+            34.171634
+          ],
+          [
+            -118.498676,
+            34.17148
+          ],
+          [
+            -118.498384,
+            34.170782
+          ],
+          [
+            -118.498367,
+            34.170752
+          ],
+          [
+            -118.497948,
+            34.169989
+          ],
+          [
+            -118.497832,
+            34.169816
+          ],
+          [
+            -118.49771,
+            34.169647
+          ],
+          [
+            -118.497581,
+            34.169483
+          ],
+          [
+            -118.497445,
+            34.169322
+          ],
+          [
+            -118.497126,
+            34.168989
+          ],
+          [
+            -118.497031,
+            34.168895
+          ],
+          [
+            -118.49687,
+            34.168751
+          ],
+          [
+            -118.496619,
+            34.168543
+          ],
+          [
+            -118.496444,
+            34.16841
+          ],
+          [
+            -118.496263,
+            34.168283
+          ],
+          [
+            -118.496078,
+            34.168161
+          ],
+          [
+            -118.495887,
+            34.168045
+          ],
+          [
+            -118.495692,
+            34.167934
+          ],
+          [
+            -118.49539,
+            34.167778
+          ],
+          [
+            -118.495184,
+            34.167682
+          ],
+          [
+            -118.494974,
+            34.167592
+          ],
+          [
+            -118.49476,
+            34.167508
+          ],
+          [
+            -118.494433,
+            34.167393
+          ],
+          [
+            -118.494211,
+            34.167325
+          ],
+          [
+            -118.493987,
+            34.167263
+          ],
+          [
+            -118.49376,
+            34.167208
+          ],
+          [
+            -118.493531,
+            34.167159
+          ],
+          [
+            -118.493183,
+            34.167099
+          ],
+          [
+            -118.49295,
+            34.167067
+          ],
+          [
+            -118.492715,
+            34.167042
+          ],
+          [
+            -118.492371,
+            34.167017
+          ],
+          [
+            -118.492131,
+            34.167119
+          ],
+          [
+            -118.492015,
+            34.167118
+          ],
+          [
+            -118.491668,
+            34.167123
+          ],
+          [
+            -118.491321,
+            34.167144
+          ],
+          [
+            -118.490975,
+            34.167179
+          ],
+          [
+            -118.490633,
+            34.16723
+          ],
+          [
+            -118.490407,
+            34.167272
+          ],
+          [
+            -118.490071,
+            34.167347
+          ],
+          [
+            -118.48985,
+            34.167406
+          ],
+          [
+            -118.487216,
+            34.168176
+          ],
+          [
+            -118.486569,
+            34.168356
+          ],
+          [
+            -118.485857,
+            34.168532
+          ],
+          [
+            -118.485659,
+            34.168576
+          ],
+          [
+            -118.484992,
+            34.168716
+          ],
+          [
+            -118.483312,
+            34.169019
+          ],
+          [
+            -118.482773,
+            34.169124
+          ],
+          [
+            -118.482243,
+            34.169243
+          ],
+          [
+            -118.481718,
+            34.169378
+          ],
+          [
+            -118.481458,
+            34.169451
+          ],
+          [
+            -118.480942,
+            34.169608
+          ],
+          [
+            -118.480433,
+            34.16978
+          ],
+          [
+            -118.479933,
+            34.169967
+          ],
+          [
+            -118.478568,
+            34.170562
+          ],
+          [
+            -118.478268,
+            34.1707
+          ],
+          [
+            -118.478172,
+            34.170744
+          ],
+          [
+            -118.477812,
+            34.17091
+          ],
+          [
+            -118.477226,
+            34.171179
+          ],
+          [
+            -118.475667,
+            34.171738
+          ],
+          [
+            -118.475441,
+            34.171819
+          ],
+          [
+            -118.474978,
+            34.171933
+          ],
+          [
+            -118.474638,
+            34.172003
+          ],
+          [
+            -118.474295,
+            34.172064
+          ],
+          [
+            -118.47395,
+            34.172115
+          ],
+          [
+            -118.473602,
+            34.172156
+          ],
+          [
+            -118.473253,
+            34.172187
+          ],
+          [
+            -118.472903,
+            34.172207
+          ],
+          [
+            -118.472553,
+            34.172218
+          ],
+          [
+            -118.472175,
+            34.172219
+          ],
+          [
+            -118.471105,
+            34.17222
+          ],
+          [
+            -118.468801,
+            34.172212
+          ],
+          [
+            -118.468342,
+            34.172133
+          ],
+          [
+            -118.468207,
+            34.172111
+          ],
+          [
+            -118.467782,
+            34.172111
+          ],
+          [
+            -118.467549,
+            34.172111
+          ],
+          [
+            -118.467435,
+            34.172111
+          ],
+          [
+            -118.4672,
+            34.172112
+          ],
+          [
+            -118.466179,
+            34.172112
+          ],
+          [
+            -118.461814,
+            34.172115
+          ],
+          [
+            -118.457448,
+            34.172118
+          ],
+          [
+            -118.456465,
+            34.172118
+          ],
+          [
+            -118.455265,
+            34.172119
+          ],
+          [
+            -118.454174,
+            34.172119
+          ],
+          [
+            -118.453083,
+            34.172119
+          ],
+          [
+            -118.4509,
+            34.17212
+          ],
+          [
+            -118.448717,
+            34.172121
+          ],
+          [
+            -118.447361,
+            34.172122
+          ],
+          [
+            -118.446408,
+            34.172123
+          ],
+          [
+            -118.444351,
+            34.172124
+          ],
+          [
+            -118.44326,
+            34.172125
+          ],
+          [
+            -118.44217,
+            34.172125
+          ],
+          [
+            -118.441078,
+            34.172126
+          ],
+          [
+            -118.439985,
+            34.172127
+          ],
+          [
+            -118.438893,
+            34.172127
+          ],
+          [
+            -118.437801,
+            34.172128
+          ],
+          [
+            -118.43671,
+            34.172128
+          ],
+          [
+            -118.435619,
+            34.172129
+          ],
+          [
+            -118.434528,
+            34.172129
+          ],
+          [
+            -118.433437,
+            34.172129
+          ],
+          [
+            -118.432346,
+            34.17213
+          ],
+          [
+            -118.431253,
+            34.17213
+          ],
+          [
+            -118.430161,
+            34.172131
+          ],
+          [
+            -118.42907,
+            34.172131
+          ],
+          [
+            -118.427979,
+            34.172132
+          ],
+          [
+            -118.426887,
+            34.172132
+          ],
+          [
+            -118.425866,
+            34.172133
+          ],
+          [
+            -118.425796,
+            34.172133
+          ],
+          [
+            -118.424706,
+            34.172133
+          ],
+          [
+            -118.422523,
+            34.172134
+          ],
+          [
+            -118.422257,
+            34.172134
+          ],
+          [
+            -118.41816,
+            34.172136
+          ],
+          [
+            -118.41411,
+            34.172137
+          ],
+          [
+            -118.413796,
+            34.172137
+          ],
+          [
+            -118.413734,
+            34.172137
+          ],
+          [
+            -118.413691,
+            34.172137
+          ],
+          [
+            -118.413537,
+            34.172137
+          ],
+          [
+            -118.413332,
+            34.172137
+          ],
+          [
+            -118.409429,
+            34.172138
+          ],
+          [
+            -118.405258,
+            34.172139
+          ],
+          [
+            -118.403129,
+            34.172141
+          ],
+          [
+            -118.401977,
+            34.172141
+          ],
+          [
+            -118.399793,
+            34.172143
+          ],
+          [
+            -118.398703,
+            34.172144
+          ],
+          [
+            -118.398166,
+            34.172144
+          ],
+          [
+            -118.397532,
+            34.172144
+          ],
+          [
+            -118.396514,
+            34.172145
+          ],
+          [
+            -118.395422,
+            34.172146
+          ],
+          [
+            -118.393238,
+            34.172149
+          ],
+          [
+            -118.392146,
+            34.17215
+          ],
+          [
+            -118.391055,
+            34.172151
+          ],
+          [
+            -118.389964,
+            34.172152
+          ],
+          [
+            -118.389463,
+            34.172152
+          ],
+          [
+            -118.389123,
+            34.172153
+          ],
+          [
+            -118.388754,
+            34.172153
+          ],
+          [
+            -118.388344,
+            34.172154
+          ],
+          [
+            -118.387827,
+            34.172154
+          ],
+          [
+            -118.387779,
+            34.172154
+          ],
+          [
+            -118.387534,
+            34.172154
+          ],
+          [
+            -118.38664,
+            34.172155
+          ],
+          [
+            -118.3866,
+            34.172155
+          ],
+          [
+            -118.385549,
+            34.172156
+          ],
+          [
+            -118.384475,
+            34.172157
+          ],
+          [
+            -118.383402,
+            34.172158
+          ],
+          [
+            -118.382244,
+            34.172159
+          ],
+          [
+            -118.381054,
+            34.17216
+          ],
+          [
+            -118.379034,
+            34.172161
+          ],
+          [
+            -118.377891,
+            34.172161
+          ],
+          [
+            -118.376303,
+            34.172162
+          ],
+          [
+            -118.375212,
+            34.172162
+          ],
+          [
+            -118.374599,
+            34.172162
+          ],
+          [
+            -118.37412,
+            34.172162
+          ],
+          [
+            -118.373028,
+            34.172162
+          ],
+          [
+            -118.371938,
+            34.172162
+          ],
+          [
+            -118.371095,
+            34.172162
+          ],
+          [
+            -118.370298,
+            34.172162
+          ],
+          [
+            -118.369197,
+            34.172162
+          ],
+          [
+            -118.368637,
+            34.172163
+          ],
+          [
+            -118.368117,
+            34.172163
+          ],
+          [
+            -118.367546,
+            34.172163
+          ],
+          [
+            -118.367024,
+            34.172163
+          ],
+          [
+            -118.365935,
+            34.172163
+          ],
+          [
+            -118.364843,
+            34.172163
+          ],
+          [
+            -118.363792,
+            34.172163
+          ],
+          [
+            -118.362659,
+            34.172163
+          ],
+          [
+            -118.361567,
+            34.172163
+          ],
+          [
+            -118.360476,
+            34.172164
+          ],
+          [
+            -118.359385,
+            34.172165
+          ],
+          [
+            -118.35835,
+            34.172166
+          ],
+          [
+            -118.35777,
+            34.172167
+          ],
+          [
+            -118.357344,
+            34.17231
+          ],
+          [
+            -118.356674,
+            34.172536
+          ],
+          [
+            -118.356557,
+            34.172576
+          ],
+          [
+            -118.356332,
+            34.172651
+          ],
+          [
+            -118.356192,
+            34.172699
+          ],
+          [
+            -118.355554,
+            34.172913
+          ],
+          [
+            -118.355374,
+            34.172973
+          ],
+          [
+            -118.354569,
+            34.173242
+          ],
+          [
+            -118.354048,
+            34.173416
+          ],
+          [
+            -118.353729,
+            34.173522
+          ],
+          [
+            -118.353141,
+            34.173719
+          ],
+          [
+            -118.352779,
+            34.173839
+          ],
+          [
+            -118.352477,
+            34.173941
+          ],
+          [
+            -118.35221,
+            34.174031
+          ],
+          [
+            -118.351329,
+            34.174328
+          ],
+          [
+            -118.350346,
+            34.17466
+          ],
+          [
+            -118.350274,
+            34.174682
+          ],
+          [
+            -118.349969,
+            34.174787
+          ],
+          [
+            -118.349394,
+            34.174978
+          ],
+          [
+            -118.349333,
+            34.174999
+          ],
+          [
+            -118.349277,
+            34.175017
+          ],
+          [
+            -118.349217,
+            34.17504
+          ],
+          [
+            -118.348261,
+            34.175355
+          ],
+          [
+            -118.347999,
+            34.175443
+          ],
+          [
+            -118.347729,
+            34.175532
+          ],
+          [
+            -118.347252,
+            34.175691
+          ],
+          [
+            -118.346891,
+            34.175811
+          ],
+          [
+            -118.346215,
+            34.176036
+          ],
+          [
+            -118.345791,
+            34.176177
+          ],
+          [
+            -118.345369,
+            34.176318
+          ],
+          [
+            -118.345222,
+            34.176368
+          ],
+          [
+            -118.344679,
+            34.176551
+          ],
+          [
+            -118.344219,
+            34.176707
+          ],
+          [
+            -118.343637,
+            34.176905
+          ],
+          [
+            -118.343177,
+            34.17706
+          ],
+          [
+            -118.342615,
+            34.177244
+          ],
+          [
+            -118.342527,
+            34.177273
+          ],
+          [
+            -118.342177,
+            34.177392
+          ],
+          [
+            -118.341565,
+            34.177599
+          ],
+          [
+            -118.341161,
+            34.177736
+          ],
+          [
+            -118.340677,
+            34.1779
+          ],
+          [
+            -118.340153,
+            34.178074
+          ],
+          [
+            -118.339691,
+            34.178239
+          ],
+          [
+            -118.339124,
+            34.178416
+          ],
+          [
+            -118.338059,
+            34.178769
+          ],
+          [
+            -118.337199,
+            34.179054
+          ],
+          [
+            -118.336988,
+            34.179125
+          ],
+          [
+            -118.33596,
+            34.179466
+          ],
+          [
+            -118.334942,
+            34.179805
+          ],
+          [
+            -118.334737,
+            34.179874
+          ],
+          [
+            -118.333919,
+            34.180146
+          ],
+          [
+            -118.333681,
+            34.180222
+          ],
+          [
+            -118.333232,
+            34.180375
+          ],
+          [
+            -118.333015,
+            34.180448
+          ],
+          [
+            -118.332598,
+            34.180587
+          ],
+          [
+            -118.332134,
+            34.180742
+          ],
+          [
+            -118.331606,
+            34.180919
+          ],
+          [
+            -118.331223,
+            34.181046
+          ],
+          [
+            -118.330598,
+            34.181255
+          ],
+          [
+            -118.330321,
+            34.181348
+          ],
+          [
+            -118.329601,
+            34.181589
+          ],
+          [
+            -118.329433,
+            34.181645
+          ],
+          [
+            -118.328849,
+            34.18184
+          ],
+          [
+            -118.328553,
+            34.181938
+          ],
+          [
+            -118.328108,
+            34.182085
+          ],
+          [
+            -118.327629,
+            34.182245
+          ],
+          [
+            -118.327312,
+            34.182351
+          ],
+          [
+            -118.326712,
+            34.182551
+          ],
+          [
+            -118.326232,
+            34.182711
+          ],
+          [
+            -118.326107,
+            34.182753
+          ],
+          [
+            -118.325812,
+            34.18285
+          ],
+          [
+            -118.325044,
+            34.183102
+          ],
+          [
+            -118.324822,
+            34.183175
+          ],
+          [
+            -118.324232,
+            34.18338
+          ],
+          [
+            -118.323768,
+            34.183545
+          ],
+          [
+            -118.323523,
+            34.183626
+          ],
+          [
+            -118.32324,
+            34.183728
+          ],
+          [
+            -118.323005,
+            34.183782
+          ],
+          [
+            -118.322836,
+            34.183835
+          ],
+          [
+            -118.322417,
+            34.183988
+          ],
+          [
+            -118.321964,
+            34.184164
+          ],
+          [
+            -118.321704,
+            34.184241
+          ],
+          [
+            -118.321305,
+            34.184358
+          ],
+          [
+            -118.32087,
+            34.18452
+          ],
+          [
+            -118.320556,
+            34.184621
+          ],
+          [
+            -118.320063,
+            34.184779
+          ],
+          [
+            -118.319844,
+            34.184849
+          ],
+          [
+            -118.319633,
+            34.184917
+          ],
+          [
+            -118.319531,
+            34.184952
+          ],
+          [
+            -118.319164,
+            34.185078
+          ],
+          [
+            -118.318993,
+            34.185137
+          ],
+          [
+            -118.318917,
+            34.184944
+          ],
+          [
+            -118.318876,
+            34.18484
+          ],
+          [
+            -118.31876,
+            34.184622
+          ],
+          [
+            -118.318673,
+            34.184486
+          ],
+          [
+            -118.318633,
+            34.184424
+          ],
+          [
+            -118.318501,
+            34.18428
+          ],
+          [
+            -118.317777,
+            34.183607
+          ],
+          [
+            -118.315288,
+            34.181366
+          ],
+          [
+            -118.314534,
+            34.18073
+          ],
+          [
+            -118.314374,
+            34.180624
+          ],
+          [
+            -118.314191,
+            34.180503
+          ],
+          [
+            -118.313773,
+            34.180279
+          ],
+          [
+            -118.313292,
+            34.179968
+          ],
+          [
+            -118.313132,
+            34.179836
+          ],
+          [
+            -118.312885,
+            34.17966
+          ],
+          [
+            -118.312405,
+            34.179308
+          ],
+          [
+            -118.31187,
+            34.178912
+          ],
+          [
+            -118.311281,
+            34.178509
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc43-line",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "id": "sc43-line",
+        "routeId": "SC43",
+        "name": "Del Mar Streetcar",
+        "color": "#8E7DA0",
+        "stationIds": [
+          "intra-grid-stop-a76120cb0457",
+          "sc43-emerson",
+          "sc43-hellman",
+          "sc43-marshall",
+          "sc43-valley",
+          "sc43-lime",
+          "sc43-central",
+          "sc43-mission",
+          "sc43-broadway",
+          "sc43-las-tunas",
+          "sc43-hermosa",
+          "sc43-roses",
+          "sc43-longden",
+          "sc43-lorain",
+          "sc43-huntington"
+        ],
+        "termini": [
+          "Garvey / Del Mar",
+          "Del Mar / Huntington"
+        ],
+        "corridors": [
+          "Del Mar"
+        ],
+        "description": "North–south Del Mar Avenue service from Garvey to Huntington, connecting Garvey SC22, Valley V, Las Tunas SGV and Huntington H.",
+        "alignment_status": "conceptual; mapped county road centerlines with documented transfer alignment adjustments",
+        "right_of_way_intent": "reserved track and transit priority where feasible",
+        "length_km": 6.87,
+        "geometry_gap_joins": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.099505,
+            34.062629
+          ],
+          [
+            -118.099503,
+            34.062677
+          ],
+          [
+            -118.099477,
+            34.063119
+          ],
+          [
+            -118.099507,
+            34.064042
+          ],
+          [
+            -118.099518,
+            34.064981
+          ],
+          [
+            -118.099519,
+            34.066087
+          ],
+          [
+            -118.09952,
+            34.066228
+          ],
+          [
+            -118.099531,
+            34.06722
+          ],
+          [
+            -118.099548,
+            34.068017
+          ],
+          [
+            -118.099552,
+            34.068236
+          ],
+          [
+            -118.099557,
+            34.068945
+          ],
+          [
+            -118.099558,
+            34.069168
+          ],
+          [
+            -118.099554,
+            34.069877
+          ],
+          [
+            -118.099553,
+            34.070046
+          ],
+          [
+            -118.099552,
+            34.070204
+          ],
+          [
+            -118.099554,
+            34.070927
+          ],
+          [
+            -118.099555,
+            34.071172
+          ],
+          [
+            -118.099555,
+            34.071208
+          ],
+          [
+            -118.099557,
+            34.071592
+          ],
+          [
+            -118.099554,
+            34.071744
+          ],
+          [
+            -118.099555,
+            34.071939
+          ],
+          [
+            -118.099555,
+            34.07213
+          ],
+          [
+            -118.099549,
+            34.072247
+          ],
+          [
+            -118.09955,
+            34.072334
+          ],
+          [
+            -118.099555,
+            34.073183
+          ],
+          [
+            -118.099556,
+            34.073318
+          ],
+          [
+            -118.099556,
+            34.07342
+          ],
+          [
+            -118.099557,
+            34.073686
+          ],
+          [
+            -118.099557,
+            34.073731
+          ],
+          [
+            -118.099555,
+            34.074347
+          ],
+          [
+            -118.099555,
+            34.074363
+          ],
+          [
+            -118.099552,
+            34.075125
+          ],
+          [
+            -118.099553,
+            34.075245
+          ],
+          [
+            -118.099559,
+            34.075361
+          ],
+          [
+            -118.099575,
+            34.076474
+          ],
+          [
+            -118.099582,
+            34.077279
+          ],
+          [
+            -118.099584,
+            34.077572
+          ],
+          [
+            -118.099584,
+            34.077631
+          ],
+          [
+            -118.099587,
+            34.078474
+          ],
+          [
+            -118.099583,
+            34.078666
+          ],
+          [
+            -118.099561,
+            34.079746
+          ],
+          [
+            -118.099567,
+            34.080604
+          ],
+          [
+            -118.099567,
+            34.080692
+          ],
+          [
+            -118.09957,
+            34.08107
+          ],
+          [
+            -118.099575,
+            34.081657
+          ],
+          [
+            -118.099576,
+            34.081794
+          ],
+          [
+            -118.099576,
+            34.082081
+          ],
+          [
+            -118.099577,
+            34.082535
+          ],
+          [
+            -118.099577,
+            34.082678
+          ],
+          [
+            -118.099578,
+            34.083071
+          ],
+          [
+            -118.099578,
+            34.083102
+          ],
+          [
+            -118.099572,
+            34.083437
+          ],
+          [
+            -118.099563,
+            34.083963
+          ],
+          [
+            -118.099555,
+            34.084399
+          ],
+          [
+            -118.099552,
+            34.084566
+          ],
+          [
+            -118.099552,
+            34.084804
+          ],
+          [
+            -118.099551,
+            34.085634
+          ],
+          [
+            -118.099551,
+            34.085831
+          ],
+          [
+            -118.099553,
+            34.086172
+          ],
+          [
+            -118.099562,
+            34.087274
+          ],
+          [
+            -118.099571,
+            34.088002
+          ],
+          [
+            -118.099575,
+            34.088279
+          ],
+          [
+            -118.099583,
+            34.089795
+          ],
+          [
+            -118.099583,
+            34.089835
+          ],
+          [
+            -118.099584,
+            34.089887
+          ],
+          [
+            -118.099587,
+            34.090582
+          ],
+          [
+            -118.099571,
+            34.091637
+          ],
+          [
+            -118.099566,
+            34.092
+          ],
+          [
+            -118.099559,
+            34.093028
+          ],
+          [
+            -118.09956,
+            34.093052
+          ],
+          [
+            -118.099568,
+            34.093283
+          ],
+          [
+            -118.099595,
+            34.094125
+          ],
+          [
+            -118.099589,
+            34.094897
+          ],
+          [
+            -118.099591,
+            34.095137
+          ],
+          [
+            -118.099594,
+            34.095565
+          ],
+          [
+            -118.099599,
+            34.096063
+          ],
+          [
+            -118.0996,
+            34.096516
+          ],
+          [
+            -118.099601,
+            34.096923
+          ],
+          [
+            -118.099601,
+            34.097018
+          ],
+          [
+            -118.099603,
+            34.097424
+          ],
+          [
+            -118.099606,
+            34.097711
+          ],
+          [
+            -118.099606,
+            34.097802
+          ],
+          [
+            -118.099612,
+            34.098448
+          ],
+          [
+            -118.099624,
+            34.098913
+          ],
+          [
+            -118.099648,
+            34.099864
+          ],
+          [
+            -118.099662,
+            34.100932
+          ],
+          [
+            -118.099666,
+            34.101288
+          ],
+          [
+            -118.099669,
+            34.102236
+          ],
+          [
+            -118.09967,
+            34.102574
+          ],
+          [
+            -118.099666,
+            34.102826
+          ],
+          [
+            -118.099684,
+            34.103833
+          ],
+          [
+            -118.099706,
+            34.105303
+          ],
+          [
+            -118.099713,
+            34.10553
+          ],
+          [
+            -118.099726,
+            34.105935
+          ],
+          [
+            -118.099733,
+            34.106151
+          ],
+          [
+            -118.099735,
+            34.10621
+          ],
+          [
+            -118.099747,
+            34.106431
+          ],
+          [
+            -118.099763,
+            34.110397
+          ],
+          [
+            -118.099793,
+            34.111923
+          ],
+          [
+            -118.099824,
+            34.113472
+          ],
+          [
+            -118.099766,
+            34.113638
+          ],
+          [
+            -118.099792,
+            34.113816
+          ],
+          [
+            -118.099835,
+            34.114114
+          ],
+          [
+            -118.099899,
+            34.114595
+          ],
+          [
+            -118.099903,
+            34.116378
+          ],
+          [
+            -118.099914,
+            34.116653
+          ],
+          [
+            -118.099923,
+            34.116909
+          ],
+          [
+            -118.099924,
+            34.117844
+          ],
+          [
+            -118.099927,
+            34.118819
+          ],
+          [
+            -118.099968,
+            34.119782
+          ],
+          [
+            -118.099966,
+            34.120639
+          ],
+          [
+            -118.099965,
+            34.121066
+          ],
+          [
+            -118.09995,
+            34.12142
+          ],
+          [
+            -118.099913,
+            34.121696
+          ],
+          [
+            -118.099774,
+            34.122517
+          ],
+          [
+            -118.099827,
+            34.12269
+          ],
+          [
+            -118.099887,
+            34.122812
+          ],
+          [
+            -118.100027,
+            34.123046
+          ],
+          [
+            -118.100424,
+            34.123806
+          ],
+          [
+            -118.100517,
+            34.123985
+          ],
+          [
+            -118.100551,
+            34.124034
+          ],
+          [
+            -118.100476906,
+            34.123893887
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-reseda",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-reseda",
+        "name": "Burbank / Reseda",
+        "routes": "SC42",
+        "color": "#A17D67",
+        "interchange": true,
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-r-reseda-ventura",
+            "station_name": "Reseda / Ventura",
+            "routes": [
+              "R"
+            ],
+            "distance_metres": 90,
+            "type": "walking",
+            "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.536013,
+          34.172354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-etiwanda",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-etiwanda",
+        "name": "Burbank / Etiwanda",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.530826,
+          34.172332
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-lindley",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-lindley",
+        "name": "Burbank / Lindley",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.527288,
+          34.172216
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-zelzah",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-zelzah",
+        "name": "Burbank / Zelzah",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.522044,
+          34.172221
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-white-oak",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-white-oak",
+        "name": "Burbank / White Oak",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.518546,
+          34.172224
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-encino",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-encino",
+        "name": "Burbank / Encino",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.514198,
+          34.172272
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-louise",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-louise",
+        "name": "Burbank / Louise",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.509835,
+          34.172256
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-edward-everett-horton",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-edward-everett-horton",
+        "name": "Burbank / Edward Everett Horton",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.505472,
+          34.172239
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-balboa",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-balboa",
+        "name": "Burbank / Balboa",
+        "routes": "SC27, SC42",
+        "color": "#334155",
+        "local_transfers": [
+          "SC27",
+          "SC42"
+        ],
+        "interchange": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.501163,
+          34.172223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-hayvenhurst",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-hayvenhurst",
+        "name": "Burbank / Hayvenhurst",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.492371,
+          34.167017
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-woodley",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-woodley",
+        "name": "Burbank / Woodley",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.475667,
+          34.171738
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-sepulveda",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-sepulveda",
+        "name": "Burbank / Sepulveda",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.466179,
+          34.172112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-noble",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-noble",
+        "name": "Burbank / Noble",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.461814,
+          34.172115
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-kester",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-kester",
+        "name": "Burbank / Kester",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.457448,
+          34.172118
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-cedros",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-cedros",
+        "name": "Burbank / Cedros",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.453083,
+          34.172119
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-van-nuys",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-van-nuys",
+        "name": "Burbank / Van Nuys",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.448717,
+          34.172121
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-tyrone",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-tyrone",
+        "name": "Burbank / Tyrone",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.444351,
+          34.172124
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-hazeltine",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-hazeltine",
+        "name": "Burbank / Hazeltine",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.439985,
+          34.172127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-ranchito",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-ranchito",
+        "name": "Burbank / Ranchito",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.435619,
+          34.172129
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-woodman",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-woodman",
+        "name": "Burbank / Woodman",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.431253,
+          34.17213
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-sunnyslope",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-sunnyslope",
+        "name": "Burbank / Sunnyslope",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.426887,
+          34.172132
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-fulton",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-fulton",
+        "name": "Burbank / Fulton — Valley College",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.422523,
+          34.172134
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-ethel",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-ethel",
+        "name": "Burbank / Ethel",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.41816,
+          34.172136
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-coldwater-canyon",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-coldwater-canyon",
+        "name": "Burbank / Coldwater Canyon",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.41411,
+          34.172137
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-bellaire",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-bellaire",
+        "name": "Burbank / Bellaire",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.409429,
+          34.172138
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-whitsett",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-whitsett",
+        "name": "Burbank / Whitsett",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.405258,
+          34.172139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-corteen",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-corteen",
+        "name": "Burbank / Corteen",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.401977,
+          34.172141
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-laurel-canyon",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-laurel-canyon",
+        "name": "Burbank / Laurel Canyon",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.396514,
+          34.172145
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-radford",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-radford",
+        "name": "Burbank / Radford",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.392146,
+          34.17215
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-colfax",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-colfax",
+        "name": "Burbank / Colfax",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.387779,
+          34.172154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-beck",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-beck",
+        "name": "Burbank / Beck",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.383402,
+          34.172158
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-fair",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-fair",
+        "name": "Burbank / Fair",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.374599,
+          34.172162
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-vineland",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-vineland",
+        "name": "Burbank / Vineland",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.370298,
+          34.172162
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-riverton",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-riverton",
+        "name": "Burbank / Riverton",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.365935,
+          34.172163
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-cahuenga",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-cahuenga",
+        "name": "Burbank / Cahuenga",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.361567,
+          34.172163
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-clybourn",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-clybourn",
+        "name": "Burbank / Clybourn",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.35777,
+          34.172167
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-maple",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-maple",
+        "name": "Burbank / Maple",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.353729,
+          34.173522
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-hollywood",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-hollywood",
+        "name": "Burbank / Hollywood Way",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.349333,
+          34.174999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-fairview",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-fairview",
+        "name": "Burbank / Fairview",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.343637,
+          34.176905
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-buena-vista",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-buena-vista",
+        "name": "Burbank / Buena Vista",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.338059,
+          34.178769
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-orchard",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-orchard",
+        "name": "Burbank / Orchard",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.330598,
+          34.181255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-victory",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-victory",
+        "name": "Burbank / Victory",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.32324,
+          34.183728
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-front",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-front",
+        "name": "Burbank / Front",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.318993,
+          34.185137
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-magnolia",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-magnolia",
+        "name": "Front / Magnolia",
+        "routes": "SC42",
+        "color": "#A17D67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.314374,
+          34.180624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc42-olive",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc42-olive",
+        "name": "Front / Olive — Downtown Burbank",
+        "routes": "SC42",
+        "color": "#A17D67",
+        "interchange": true,
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-g-downtown-burbank",
+            "station_name": "Downtown Burbank / Metrolink",
+            "routes": [
+              "G"
+            ],
+            "distance_metres": 86,
+            "type": "walking",
+            "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.311281,
+          34.178509
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc43-emerson",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc43-emerson",
+        "name": "Del Mar / Emerson",
+        "routes": "SC43",
+        "color": "#8E7DA0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.09952,
+          34.066228
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc43-hellman",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc43-hellman",
+        "name": "Del Mar / Hellman",
+        "routes": "SC43",
+        "color": "#8E7DA0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.099554,
+          34.069877
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc43-marshall",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc43-marshall",
+        "name": "Del Mar / Marshall",
+        "routes": "SC43",
+        "color": "#8E7DA0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.099559,
+          34.075361
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc43-valley",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc43-valley",
+        "name": "Del Mar / Valley",
+        "routes": "SC43",
+        "color": "#8E7DA0",
+        "interchange": true,
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-v-del-mar",
+            "station_name": "Valley / Del Mar",
+            "routes": [
+              "V"
+            ],
+            "distance_metres": 0,
+            "type": "between_modes",
+            "distance_basis": "co-located conceptual platforms; entrances not surveyed"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.099561,
+          34.079746
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc43-lime",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc43-lime",
+        "name": "Del Mar / Lime",
+        "routes": "SC43",
+        "color": "#8E7DA0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.099572,
+          34.083437
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc43-central",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc43-central",
+        "name": "Del Mar / Central",
+        "routes": "SC43",
+        "color": "#8E7DA0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.099571,
+          34.088002
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc43-mission",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc43-mission",
+        "name": "Del Mar / Mission",
+        "routes": "SC43",
+        "color": "#8E7DA0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.099595,
+          34.094125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc43-broadway",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc43-broadway",
+        "name": "Del Mar / Broadway",
+        "routes": "SC43",
+        "color": "#8E7DA0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.099624,
+          34.098913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc43-las-tunas",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc43-las-tunas",
+        "name": "Del Mar / Las Tunas",
+        "routes": "SC43",
+        "color": "#8E7DA0",
+        "interchange": true,
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-las-tunas-del-mar",
+            "station_name": "Las Tunas / Del Mar",
+            "routes": [
+              "SGV"
+            ],
+            "distance_metres": 0,
+            "type": "between_modes",
+            "distance_basis": "co-located conceptual platforms; entrances not surveyed"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.099666,
+          34.102826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc43-hermosa",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc43-hermosa",
+        "name": "Del Mar / Hermosa",
+        "routes": "SC43",
+        "color": "#8E7DA0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.099735,
+          34.10621
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc43-roses",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc43-roses",
+        "name": "Del Mar / Roses",
+        "routes": "SC43",
+        "color": "#8E7DA0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.099763,
+          34.110397
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc43-longden",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc43-longden",
+        "name": "Del Mar / Longden",
+        "routes": "SC43",
+        "color": "#8E7DA0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.099824,
+          34.113472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc43-lorain",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc43-lorain",
+        "name": "Del Mar / Lorain",
+        "routes": "SC43",
+        "color": "#8E7DA0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.099924,
+          34.117844
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc43-huntington",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc43-huntington",
+        "name": "Del Mar / Huntington",
+        "routes": "SC43",
+        "color": "#8E7DA0",
+        "interchange": true,
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-huntington-del-mar",
+            "station_name": "Huntington / Del Mar",
+            "routes": [
+              "H"
+            ],
+            "distance_metres": 0,
+            "type": "between_modes",
+            "distance_basis": "co-located conceptual platforms; entrances not surveyed"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.100476906,
+          34.123893887
+        ]
+      }
     }
   ],
   "geometry_sources": [
@@ -54593,6 +55744,12 @@
       "source": "Los Angeles County CAMS road centerlines",
       "url": "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/eGIS_Addressing_ROAD_LINES/FeatureServer/0",
       "note": "Conceptual Third Street corridor from Alvarado to Alameda, including the tunnel beneath Bunker Hill. Tunnel suitability and station access are not engineering assessments. Shared platforms at Third/Alvarado, Broadway and San Pedro; downtown heavy-rail connections are walks to existing stations."
+    },
+    {
+      "section": "SC42 Burbank and SC43 Del Mar",
+      "source": "Los Angeles County CAMS road centerlines",
+      "url": "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/eGIS_Addressing_ROAD_LINES/FeatureServer/0",
+      "note": "Burbank route continues via Front to Olive for a walking connection to Downtown Burbank G. Longer stop gaps occur through Sepulveda Basin. Del Mar transfer points at Valley and Las Tunas align to existing markers; Huntington terminal aligns within 45 m to a new station on the existing H segment. Mapped streets and freeway crossings are conceptual references, not engineering designs."
     }
   ],
   "expansion_summary": {
@@ -54677,6 +55834,22 @@
       "termini": [
         "3rd / Alvarado",
         "3rd / Alameda"
+      ]
+    },
+    "SC42": {
+      "stops": 46,
+      "length_km": 21.69,
+      "termini": [
+        "Burbank / Reseda",
+        "Front / Olive — Downtown Burbank"
+      ]
+    },
+    "SC43": {
+      "stops": 15,
+      "length_km": 6.87,
+      "termini": [
+        "Garvey / Del Mar",
+        "Del Mar / Huntington"
       ]
     }
   }

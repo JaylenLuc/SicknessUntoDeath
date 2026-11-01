@@ -399,30 +399,6 @@
       "color": "#A46D83"
     },
     {
-      "id": "SC25",
-      "name": "Van Nuys Streetcar",
-      "roads": [
-        "Van Nuys"
-      ],
-      "from": {
-        "street": "Ventura",
-        "near": [
-          -118.449,
-          34.152
-        ]
-      },
-      "to": {
-        "street": "Roscoe",
-        "near": [
-          -118.449,
-          34.221
-        ]
-      },
-      "area": "San Fernando Valley",
-      "rationale": "NextGen priority: Van Nuys civic center, employment and local bus corridor.",
-      "color": "#6F8B54"
-    },
-    {
       "id": "SC26",
       "name": "Victory Streetcar",
       "roads": [
@@ -471,8 +447,8 @@
       "color": "#598E8F"
     },
     {
-      "id": "SC28",
-      "name": "Roscoe Streetcar",
+      "id": "RO",
+      "name": "RO Line — Roscoe",
       "roads": [
         "Roscoe",
         "Tuxford"
@@ -492,8 +468,37 @@
         ]
       },
       "area": "San Fernando Valley",
-      "rationale": "Northern Valley cross-town gap; Metro bus-priority corridor.",
-      "color": "#577E92"
+      "rationale": "Roscoe heavy rail from Reseda to Tuxford/Lankershim, connecting R at Reseda and local Balboa and Lankershim streetcars.",
+      "color": "#577E92",
+      "stationIds": [
+        "station-r-reseda-roscoe",
+        "station-ro-white-oak",
+        "station-ro-balboa",
+        "station-ro-woodley",
+        "station-ro-sepulveda",
+        "station-ro-van-nuys",
+        "station-ro-woodman",
+        "station-ro-sheldon",
+        "station-ro-arleta",
+        "station-ro-lankershim"
+      ],
+      "station_spacing_km": {
+        "mean": 1.52,
+        "minimum": 0.84,
+        "maximum": 1.74
+      },
+      "majorStops": [
+        "Reseda",
+        "White Oak",
+        "Balboa",
+        "Woodley",
+        "Sepulveda",
+        "Van Nuys",
+        "Woodman",
+        "Sheldon",
+        "Arleta",
+        "Lankershim"
+      ]
     },
     {
       "id": "SC29",
@@ -837,6 +842,55 @@
       "area": "Westlake / Downtown / Little Tokyo",
       "rationale": "Eastward branch of Third–Alvarado SC10, following Third Street from Alvarado through Downtown to Alameda, with shared stops for Broadway SC34 and San Pedro SC7.",
       "color": "#85739B"
+    },
+    {
+      "id": "SC42",
+      "name": "Burbank Streetcar",
+      "roads": [
+        "Burbank",
+        "Front"
+      ],
+      "from": {
+        "street": "Reseda",
+        "near": [
+          -118.536013,
+          34.172354
+        ]
+      },
+      "to": {
+        "street": "Olive",
+        "near": [
+          -118.311281,
+          34.178509
+        ]
+      },
+      "area": "San Fernando Valley / Burbank",
+      "rationale": "Burbank Boulevard local service from Reseda to Downtown Burbank via Front Street, serving the southern Valley and Valley College, with Balboa and Lankershim streetcar transfers. Selected to fill the gap south of Victory while the G branch already serves Magnolia.",
+      "color": "#A17D67"
+    },
+    {
+      "id": "SC43",
+      "name": "Del Mar Streetcar",
+      "roads": [
+        "Del Mar"
+      ],
+      "from": {
+        "street": "Garvey",
+        "near": [
+          -118.099505,
+          34.062629
+        ]
+      },
+      "to": {
+        "street": "Huntington",
+        "near": [
+          -118.10057,
+          34.124084
+        ]
+      },
+      "area": "Rosemead / San Gabriel / San Marino",
+      "rationale": "North–south Del Mar Avenue service from Garvey to Huntington, connecting Garvey SC22, Valley V, Las Tunas SGV and Huntington H.",
+      "color": "#8E7DA0"
     }
   ],
   "heavy": {
@@ -876,7 +930,7 @@
       "Chatsworth",
       "Rinaldi"
     ],
-    "rationale": "Reseda rapid-transit spine through Tarzana, Reseda and Northridge/CSUN; connects B at Sherman Way and local Victory/Roscoe streetcars."
+    "rationale": "Reseda rapid-transit spine through Tarzana, Reseda and Northridge/CSUN; connects B at Sherman Way and Victory streetcar and Roscoe RO heavy rail."
   },
   "heavy_extensions": [
     {
@@ -936,9 +990,73 @@
         "minimum": 0.81,
         "maximum": 3.52
       }
+    },
+    {
+      "id": "RO",
+      "name": "RO Line — Roscoe",
+      "roads": [
+        "Roscoe",
+        "Tuxford"
+      ],
+      "from": {
+        "street": "Reseda",
+        "near": [
+          -118.536,
+          34.221
+        ]
+      },
+      "to": {
+        "street": "Lankershim",
+        "near": [
+          -118.38779,
+          34.222523
+        ]
+      },
+      "area": "San Fernando Valley",
+      "rationale": "Roscoe heavy rail from Reseda to Tuxford/Lankershim, connecting R at Reseda and local Balboa and Lankershim streetcars.",
+      "color": "#577E92",
+      "stationIds": [
+        "station-r-reseda-roscoe",
+        "station-ro-white-oak",
+        "station-ro-balboa",
+        "station-ro-woodley",
+        "station-ro-sepulveda",
+        "station-ro-van-nuys",
+        "station-ro-woodman",
+        "station-ro-sheldon",
+        "station-ro-arleta",
+        "station-ro-lankershim"
+      ],
+      "station_spacing_km": {
+        "mean": 1.52,
+        "minimum": 0.84,
+        "maximum": 1.74
+      },
+      "majorStops": [
+        "Reseda",
+        "White Oak",
+        "Balboa",
+        "Woodley",
+        "Sepulveda",
+        "Van Nuys",
+        "Woodman",
+        "Sheldon",
+        "Arleta",
+        "Lankershim"
+      ]
     }
   ],
   "planning_principles": {
     "heavy_rail_station_spacing": "Heavy rail should have fewer stops than local streetcars, especially on long-distance corridors. Preserve key transfers and major destinations; avoid carrying over dense local stop patterns."
+  },
+  "corridor_comparison": {
+    "selected": "Burbank Boulevard",
+    "rationale": "Best fit for this authored network: fills the southern Valley gap, serves Valley College at Fulton, and reaches Downtown Burbank. Magnolia already has the G heavy-rail branch; Oxnard lies nearer Victory. This is a qualitative network assessment, not a forecast of ridership or construction feasibility.",
+    "sources": [
+      "https://www.metro.net/riding/schedules/",
+      "https://www.lavc.edu/about/revitalizing-valley/message",
+      "https://services.laccd.edu/districtsite/Accreditation/lavc/Standard%20IIIB/DIIIB4-04_LAVC_FMP_Addendum.pdf",
+      "https://www.burbankca.gov/documents/173607/240347/20210208-Complete-Streets-Preliminary-Recommendations-001.pdf/c9c03386-faae-e0f5-6dbd-f3147574d801?t=1612824159883"
+    ]
   }
 }
