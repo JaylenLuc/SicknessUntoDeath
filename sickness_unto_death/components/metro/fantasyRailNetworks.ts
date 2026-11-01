@@ -5,6 +5,14 @@ export const INTRA_URBES_SERVICE_LABELS = {
   streetcar: "Streetcar",
 } as const;
 
+// Two narrow, offset strokes distinguish trams from single-line streetcars.
+// Values correspond to zoom levels 8 and 13.
+export const TRAM_LINE_STYLE = {
+  lineWidth: [1.3, 2],
+  lineOffset: [1.5, 2.6],
+  casingWidth: [5.7, 9.2],
+} as const;
+
 export const FANTASY_RAIL_NETWORKS = {
   // Heavy rail uses fewer, more widely spaced stations than local streetcars,
   // especially on long-distance corridors; keep the key transfer stations.
@@ -20,7 +28,7 @@ export const FANTASY_RAIL_NETWORKS = {
     casingWidth: [5, 11],
     stationColor: "#111827",
   },
-  // Keep the light-rail legend to its heading and route entries; no description.
+  // Legend explanations are limited to the requested line-style distinction.
   lightRail: {
     id: "fantasy-streetcar",
     file: "fantasy-streetcar.geojson",

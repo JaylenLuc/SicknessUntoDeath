@@ -635,7 +635,8 @@
       "id": "SC31",
       "name": "Washington Light Rail / Tram",
       "roads": [
-        "Washington"
+        "Washington",
+        "23rd"
       ],
       "from": {
         "street": "Lincoln",
@@ -645,19 +646,19 @@
         ]
       },
       "to": {
-        "street": "Central",
+        "street": "Garfield",
         "near": [
-          -118.251,
-          34.024
+          -118.132773,
+          34.000412
         ]
       },
-      "area": "Westside",
-      "rationale": "Marina, Culver City and Mid-City local coverage south of Venice.",
+      "area": "Westside / Central LA / Commerce",
+      "rationale": "Washington light rail/tram from Lincoln to Garfield, extended through Downtown and Commerce to connect Atlantic heavy rail with the northern Garfield tram and southern Garfield streetcar.",
       "color": "#9B824F",
       "rail_mode": "light_rail",
       "service_type": "light_rail",
       "service_label": "Light Rail / Tram",
-      "length_miles": 13.02
+      "length_miles": 20.31
     },
     {
       "id": "SC32",
@@ -842,19 +843,19 @@
         ]
       },
       "to": {
-        "street": "Imperial",
+        "street": "Washington",
         "near": [
-          -118.168123,
-          33.929903
+          -118.132773,
+          34.000412
         ]
       },
       "area": "San Gabriel Valley / East LA",
-      "rationale": "Alhambra, Monterey Park, Montebello, Commerce and South Gate local service. Connects Valley Inter Urbes V, Garvey SC22 and the Inter Urbes SGV line at Main.",
+      "rationale": "Garfield light rail/tram from Huntington to Washington, connecting H, SGV, V and Garvey SC22. Washington connects onward to Atlantic heavy rail; SC38A retains local service south to Imperial.",
       "color": "#96748B",
       "rail_mode": "light_rail",
       "service_type": "light_rail",
       "service_label": "Light Rail / Tram",
-      "length_miles": 13.44
+      "length_miles": 7.93
     },
     {
       "id": "SC39",
@@ -1027,6 +1028,111 @@
       "service_type": "streetcar",
       "service_label": "Streetcar",
       "length_miles": 4.26
+    },
+    {
+      "id": "SC38A",
+      "name": "Garfield South Streetcar",
+      "roads": [
+        "Garfield"
+      ],
+      "from": {
+        "street": "Washington",
+        "near": [
+          -118.132773,
+          34.000412
+        ]
+      },
+      "to": {
+        "street": "Imperial",
+        "near": [
+          -118.168123,
+          33.929903
+        ]
+      },
+      "area": "Commerce / South Gate",
+      "rationale": "Local southern Garfield service from Washington to Imperial, connecting the northern Garfield light rail/tram and Washington light rail/tram at Washington.",
+      "color": "#96748B",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_miles": 5.51
+    },
+    {
+      "id": "SC44",
+      "name": "Fremont–Mission Streetcar",
+      "roads": [
+        "Fremont",
+        "Mission"
+      ],
+      "from": {
+        "point": [
+          -118.153102,
+          34.115774
+        ],
+        "near": [
+          -118.153102,
+          34.115774
+        ]
+      },
+      "via": [
+        {
+          "point": [
+            -118.151881,
+            34.079334
+          ],
+          "near": [
+            -118.151881,
+            34.079334
+          ]
+        }
+      ],
+      "to": {
+        "point": [
+          -118.123058,
+          34.089632
+        ],
+        "near": [
+          -118.123058,
+          34.089632
+        ]
+      },
+      "area": "South Pasadena / Alhambra",
+      "rationale": "Fremont Avenue from Mission Street in South Pasadena south to Mission Road in Alhambra, then east along Mission Road to a shared stop with Garfield SC38. Transfers to H at Huntington and SGV at Main, with a walking connection to SGV at Fair Oaks / Mission. Bidirectional bent corridor, not a closed loop.",
+      "color": "#5D8C8A",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_km": 6.97,
+      "length_miles": 4.33
+    },
+    {
+      "id": "SC45",
+      "name": "La Cienega Streetcar",
+      "roads": [
+        "La Cienega"
+      ],
+      "from": {
+        "street": "Santa Monica",
+        "near": [
+          -118.3765,
+          34.089
+        ]
+      },
+      "to": {
+        "street": "Venice",
+        "near": [
+          -118.377921,
+          34.035027
+        ]
+      },
+      "area": "West Hollywood / Beverly Grove / Mid-City",
+      "rationale": "La Cienega Boulevard from Santa Monica Boulevard south to the Venice stop. Shared tram stops at Melrose SC9, Third SC10, Pico SC6 and Venice SC11; transfers to Beverly BEV, Olympic L and Venice Q heavy rail.",
+      "color": "#788DA5",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_km": 6.07,
+      "length_miles": 3.77
     }
   ],
   "heavy": {
@@ -1180,6 +1286,48 @@
         "Arleta",
         "Lankershim"
       ]
+    },
+    {
+      "id": "ATL",
+      "name": "Atlantic–Los Robles Line",
+      "roads": [
+        "Atlantic"
+      ],
+      "from": {
+        "street": "Whittier",
+        "near": [
+          -118.157303,
+          34.020405
+        ],
+        "authored_station_id": "station-whittier-atlantic"
+      },
+      "to": {
+        "street": "Firestone",
+        "near": [
+          -118.183138,
+          33.95191
+        ],
+        "authored_station_id": "station-atlantic-firestone"
+      },
+      "majorStops": [
+        "Washington",
+        "Slauson",
+        "Florence",
+        "Firestone"
+      ],
+      "extension_station_ids": [
+        "station-atlantic-washington",
+        "station-atlantic-slauson",
+        "station-atlantic-florence",
+        "station-atlantic-firestone"
+      ],
+      "station_spacing_km": {
+        "mean": 2.23,
+        "minimum": 1.89,
+        "maximum": 2.56
+      },
+      "rationale": "Atlantic–Los Robles heavy rail from Lake/Altadena to Atlantic/Firestone, extended south from Whittier with major stations at Washington, Slauson, Florence and Firestone.",
+      "color": "#e39ae3"
     }
   ],
   "planning_principles": {

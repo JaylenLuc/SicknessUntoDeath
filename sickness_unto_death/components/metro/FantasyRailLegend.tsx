@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useState } from "react";
 import type { FeatureCollection, GeoJsonProperties, Geometry } from "geojson";
-import { FANTASY_RAIL_NETWORKS, INTRA_URBES_SERVICE_LABELS } from "./fantasyRailNetworks";
+import { FANTASY_RAIL_NETWORKS, INTRA_URBES_SERVICE_LABELS, TRAM_LINE_STYLE } from "./fantasyRailNetworks";
 import { RAIL_PROJECTS } from "./proposedMetroProjects";
 import { LARY_1915_DASHARRAY, LARY_PERIOD_STYLES } from "./laryPeriodStyles";
 import { PE_1915_DASHARRAY, PE_PERIOD_STYLES } from "./peLineStyle";
@@ -406,6 +406,18 @@ export default function FantasyRailLegend({
               <p className={compact ? "mb-2 text-[9px] leading-tight" : "mb-3 text-xs"}>
                 {FANTASY_RAIL_NETWORKS.heavyRail.legendDescription}
               </p>
+            )}
+            {network !== "heavyRail" && (
+              <div className={compact ? "mb-2 flex items-center gap-2 text-[9px]" : "mb-3 flex items-center gap-2 text-xs"}>
+                <svg aria-hidden="true" width="36" height="14" className="shrink-0">
+                  {network === "lightRail" ? ([-1, 1] as const).map((side) => (
+                    <line key={side} x1="2" x2="34" y1={7 + side * TRAM_LINE_STYLE.lineOffset[1]} y2={7 + side * TRAM_LINE_STYLE.lineOffset[1]} stroke="#334155" strokeWidth={TRAM_LINE_STYLE.lineWidth[1]} strokeLinecap="round" />
+                  )) : (
+                    <line x1="2" x2="34" y1="7" y2="7" stroke="#334155" strokeWidth={FANTASY_RAIL_NETWORKS.lightRail.lineWidth[1]} strokeLinecap="round" />
+                  )}
+                </svg>
+                <span>{network === "lightRail" ? "Two thin parallel lines" : "Single solid line"}</span>
+              </div>
             )}
             {renderLines(groups[network])}
           </div>

@@ -28,7 +28,7 @@ import { PE_ESRI_DESCRIPTION, PE_ESRI_LABEL } from "./peEsriStyle";
 import LosAngelesRailwayLayer from "./LARYMap";
 import ProposedMetroRail from "./ProposedMetroRail";
 import FantasyRailLegend from "./FantasyRailLegend";
-import { FANTASY_RAIL_NETWORKS, INTRA_URBES_SERVICE_LABELS, type FantasyRailNetwork } from "./fantasyRailNetworks";
+import { FANTASY_RAIL_NETWORKS, INTRA_URBES_SERVICE_LABELS, TRAM_LINE_STYLE, type FantasyRailNetwork } from "./fantasyRailNetworks";
 // import UserEditLayer from "./UserEditLayer";
 
 setWorkerUrl("/maplibre-gl-worker.mjs");
@@ -209,9 +209,13 @@ function FantasyNetwork({ network }: { network: FantasyRailNetwork }) {
               ["linear"],
               ["zoom"],
               8,
-              config.casingWidth[0],
+              network === "lightRail"
+                ? ["case", ["==", ["get", "service_type"], "light_rail"], TRAM_LINE_STYLE.casingWidth[0], config.casingWidth[0]]
+                : config.casingWidth[0],
               13,
-              config.casingWidth[1],
+              network === "lightRail"
+                ? ["case", ["==", ["get", "service_type"], "light_rail"], TRAM_LINE_STYLE.casingWidth[1], config.casingWidth[1]]
+                : config.casingWidth[1],
             ],
           }}
         />
@@ -219,7 +223,11 @@ function FantasyNetwork({ network }: { network: FantasyRailNetwork }) {
         <Layer
           id={`${config.id}-lines`}
           type="line"
-          filter={[
+          filter={network === "lightRail" ? [
+            "all",
+            ["==", ["geometry-type"], "LineString"],
+            ["!=", ["get", "service_type"], "light_rail"],
+          ] : [
             "==",
             ["geometry-type"],
             "LineString",
@@ -245,6 +253,25 @@ function FantasyNetwork({ network }: { network: FantasyRailNetwork }) {
             ],
           }}
         />
+
+        {network === "lightRail" && ([-1, 1] as const).map((side) => (
+          <Layer
+            key={side}
+            id={`${config.id}-tram-${side === -1 ? "left" : "right"}`}
+            type="line"
+            filter={[
+              "all",
+              ["==", ["geometry-type"], "LineString"],
+              ["==", ["get", "service_type"], "light_rail"],
+            ]}
+            layout={{ "line-cap": "round", "line-join": "round" }}
+            paint={{
+              "line-color": ["coalesce", ["get", "color"], "#e11d48"],
+              "line-width": ["interpolate", ["linear"], ["zoom"], 8, TRAM_LINE_STYLE.lineWidth[0], 13, TRAM_LINE_STYLE.lineWidth[1]],
+              "line-offset": ["interpolate", ["linear"], ["zoom"], 8, side * TRAM_LINE_STYLE.lineOffset[0], 13, side * TRAM_LINE_STYLE.lineOffset[1]],
+            }}
+          />
+        ))}
 
         <Layer
           id={`${config.id}-route-labels`}
