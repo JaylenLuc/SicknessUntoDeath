@@ -7,6 +7,7 @@ import { RAIL_PROJECTS } from "./proposedMetroProjects";
 import { LARY_1915_DASHARRAY, LARY_PERIOD_STYLES } from "./laryPeriodStyles";
 import { PE_1915_DASHARRAY, PE_PERIOD_STYLES } from "./peLineStyle";
 import { PE_ESRI_DESCRIPTION, PE_ESRI_LABEL, PE_ESRI_STYLE } from "./peEsriStyle";
+import RailEmblem from "./RailEmblem";
 
 type FantasyLegendLine = {
   id: string;
@@ -306,9 +307,15 @@ export default function FantasyRailLegend({
         colorAnimationMode === "paused" ? "rail-legend-color-cycle-paused" : "",
       ].join(" ")}
     >
-      <h2 id={headingId} className={compact ? "text-xs font-bold" : "text-lg font-bold"}>
-        Inter Urbes &amp; Intra Urbes — Rail Line Legend
-      </h2>
+      <div className={compact ? "flex items-start gap-2" : "flex items-start gap-3"}>
+        <RailEmblem
+          className={compact ? "w-10" : "w-16 sm:w-20"}
+          sizes={compact ? "40px" : "(min-width: 640px) 80px, 64px"}
+        />
+        <h2 id={headingId} className={compact ? "min-w-0 text-xs font-bold" : "min-w-0 text-lg font-bold"}>
+          Inter Urbes &amp; Intra Urbes — Rail Line Legend
+        </h2>
+      </div>
 
       <div className={compact ? "mt-2" : "mt-3"}>
         <h3 className={compact ? "mb-1 border-b border-black pb-0.5 text-[9px] font-bold uppercase" : "mb-2 border-b-2 border-black pb-1 text-sm font-bold uppercase tracking-wide"}>

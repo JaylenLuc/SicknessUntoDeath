@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Text } from "@/components/retroui/Text";
 import FantasyRailMap from "@/components/metro/FantasyRailMapLoader";
 import FantasyRailLegend from "@/components/metro/FantasyRailLegend";
+import RailEmblem from "@/components/metro/RailEmblem";
 
 export const metadata: Metadata = {
   title: "LA Fantasy Rail",
@@ -12,6 +13,11 @@ export default function FantasyRail() {
   return (
     <div className="flex min-h-screen flex-col px-4 py-6 font-[family-name:var(--font-courier-prime)] sm:p-8">
       <header className="mx-auto w-full max-w-[1000px] md:px-28">
+        <RailEmblem
+          className="mx-auto mb-4 w-40 sm:w-48"
+          sizes="(min-width: 640px) 192px, 160px"
+          priority
+        />
         <Text as="h3" className="text-center">
           Revival of the Relict Los Angeles Rail System
         </Text>

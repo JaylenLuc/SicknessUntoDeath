@@ -28,6 +28,7 @@ import { PE_ESRI_DESCRIPTION, PE_ESRI_LABEL } from "./peEsriStyle";
 import LosAngelesRailwayLayer from "./LARYMap";
 import ProposedMetroRail from "./ProposedMetroRail";
 import FantasyRailLegend from "./FantasyRailLegend";
+import RailEmblem from "./RailEmblem";
 import { FANTASY_RAIL_NETWORKS, INTRA_URBES_SERVICE_LABELS, TRAM_LINE_STYLE, type FantasyRailNetwork } from "./fantasyRailNetworks";
 // import UserEditLayer from "./UserEditLayer";
 
@@ -391,6 +392,10 @@ export default function FantasyRailMap() {
     <div className="relative h-full w-full">
       <div className="absolute left-1.5 top-1.5 z-10 max-h-[calc(100%-0.75rem)] w-36 overflow-y-auto overscroll-contain border-2 border-black bg-white p-1.5
       shadow-[4px_4px_0_#000] sm:left-2 sm:top-2 sm:max-h-[calc(100%-1rem)] sm:w-44 sm:p-2 lg:left-4 lg:top-4 lg:max-h-[calc(100%-2rem)] lg:w-56 lg:p-3">
+        <RailEmblem
+          className="mx-auto mb-2 w-16 sm:w-20 lg:w-24"
+          sizes="(min-width: 1024px) 96px, (min-width: 640px) 80px, 64px"
+        />
         <Text as="p" className="mb-1 text-xs font-bold sm:text-sm lg:text-base">
           Base Map
         </Text>
