@@ -1640,10 +1640,12 @@
                 "interchange": true,
                 "transfer": "Metro B and D Lines",
                 "transfer_station_ids": [
-                    "sc40-wilshire"
+                    "sc40-wilshire",
+                    "sc46-vermont"
                 ],
                 "intra_urbes_routes": [
-                    "SC40"
+                    "SC40",
+                    "SC46"
                 ]
             },
         "geometry": {
@@ -1700,14 +1702,7 @@
                 "street1": "Venice Boulevard",
                 "street2": "Vermont Avenue",
                 "rail_mode": "heavy_rail",
-                "system": "fantasy",
-                "interchange": true,
-                "transfer_station_ids": [
-                    "intra-grid-stop-a14fa39b1150"
-                ],
-                "intra_urbes_routes": [
-                    "SC11"
-                ]
+                "system": "fantasy"
             },
         "geometry": {
             "type": "Point",
@@ -2624,10 +2619,12 @@
                 "system": "fantasy",
                 "interchange": true,
                 "transfer_station_ids": [
-                    "intra-grid-stop-3f4e7703c355"
+                    "intra-grid-stop-3f4e7703c355",
+                    "sc47-santa-monica"
                 ],
                 "intra_urbes_routes": [
-                    "SC8"
+                    "SC8",
+                    "SC47"
                 ]
             },
         "geometry": {
@@ -2883,11 +2880,9 @@
                 "system": "fantasy",
                 "interchange": true,
                 "transfer_station_ids": [
-                    "intra-grid-stop-b6b4cc6c12b6",
-                    "intra-grid-stop-d1e9aaee200b"
+                    "intra-grid-stop-b6b4cc6c12b6"
                 ],
                 "intra_urbes_routes": [
-                    "SC11",
                     "SC34"
                 ]
             },
@@ -2908,11 +2903,10 @@
                 "system": "fantasy",
                 "interchange": true,
                 "transfer_station_ids": [
-                    "intra-grid-stop-8071a2c1b450",
-                    "intra-grid-stop-955c7e5a62c9"
+                    "sc47-venice"
                 ],
                 "intra_urbes_routes": [
-                    "SC11"
+                    "SC47"
                 ]
             },
         "geometry": {
@@ -2929,14 +2923,7 @@
                 "street1": "Vermont Avenue",
                 "street2": "Venice Boulevard",
                 "rail_mode": "heavy_rail",
-                "system": "fantasy",
-                "interchange": true,
-                "transfer_station_ids": [
-                    "intra-grid-stop-a14fa39b1150"
-                ],
-                "intra_urbes_routes": [
-                    "SC11"
-                ]
+                "system": "fantasy"
             },
         "geometry": {
                 "type": "Point",
@@ -2952,14 +2939,7 @@
                 "street1": "Western Avenue",
                 "street2": "Venice Boulevard",
                 "rail_mode": "heavy_rail",
-                "system": "fantasy",
-                "interchange": true,
-                "transfer_station_ids": [
-                    "intra-grid-stop-a89d8a5739bd"
-                ],
-                "intra_urbes_routes": [
-                    "SC11"
-                ]
+                "system": "fantasy"
             },
         "geometry": {
                 "type": "Point",
@@ -2975,14 +2955,7 @@
                 "street1": "Crenshaw Boulevard",
                 "street2": "Venice Boulevard",
                 "rail_mode": "heavy_rail",
-                "system": "fantasy",
-                "interchange": true,
-                "transfer_station_ids": [
-                    "intra-grid-stop-cc3cb713b58a"
-                ],
-                "intra_urbes_routes": [
-                    "SC11"
-                ]
+                "system": "fantasy"
             },
         "geometry": {
                 "type": "Point",
@@ -3002,13 +2975,11 @@
                 "interchange": true,
                 "transfer_station_ids": [
                     "sc6-stop-265",
-                    "intra-grid-stop-9d19661b62e1",
                     "intra-grid-stop-191ef9833f10"
                 ],
                 "intra_urbes_routes": [
-                    "SC6",
-                    "SC11",
-                    "SC13"
+                    "SC13",
+                    "SC6"
                 ]
             },
         "geometry": {
@@ -3031,7 +3002,6 @@
                     "intra-grid-stop-cd95a042d531"
                 ],
                 "intra_urbes_routes": [
-                    "SC11",
                     "SC45"
                 ]
             },
@@ -3049,14 +3019,7 @@
                 "street1": "Robertson Boulevard",
                 "street2": "Venice Boulevard",
                 "rail_mode": "heavy_rail",
-                "system": "fantasy",
-                "interchange": true,
-                "transfer_station_ids": [
-                    "intra-grid-stop-54db5bd28951"
-                ],
-                "intra_urbes_routes": [
-                    "SC11"
-                ]
+                "system": "fantasy"
             },
         "geometry": {
                 "type": "Point",
@@ -3072,14 +3035,7 @@
                 "street1": "Sepulveda Boulevard",
                 "street2": "Venice Boulevard",
                 "rail_mode": "heavy_rail",
-                "system": "fantasy",
-                "interchange": true,
-                "transfer_station_ids": [
-                    "intra-grid-stop-85bcbe7cf480"
-                ],
-                "intra_urbes_routes": [
-                    "SC11"
-                ]
+                "system": "fantasy"
             },
         "geometry": {
                 "type": "Point",
@@ -3095,14 +3051,7 @@
                 "street1": "Inglewood Boulevard",
                 "street2": "Venice Boulevard",
                 "rail_mode": "heavy_rail",
-                "system": "fantasy",
-                "interchange": true,
-                "transfer_station_ids": [
-                    "intra-grid-stop-9b8419b6185b"
-                ],
-                "intra_urbes_routes": [
-                    "SC11"
-                ]
+                "system": "fantasy"
             },
         "geometry": {
                 "type": "Point",
@@ -3120,14 +3069,7 @@
                 "routes": "L",
                 "rail_mode": "heavy_rail",
                 "system": "fantasy",
-                "shortTurn": true,
-                "interchange": true,
-                "transfer_station_ids": [
-                    "intra-grid-stop-681a3c67971d"
-                ],
-                "intra_urbes_routes": [
-                    "SC11"
-                ]
+                "shortTurn": true
             },
         "geometry": {
                 "type": "Point",
@@ -3362,14 +3304,7 @@
                 "street1": "Centinela Avenue",
                 "street2": "Venice Boulevard",
                 "rail_mode": "heavy_rail",
-                "system": "fantasy",
-                "interchange": true,
-                "transfer_station_ids": [
-                    "intra-grid-stop-f5030edecaa9"
-                ],
-                "intra_urbes_routes": [
-                    "SC11"
-                ]
+                "system": "fantasy"
             },
         "geometry": {
             "type": "Point",
@@ -3474,13 +3409,20 @@
         "type": "Feature",
         "id": "station-wilshire-crenshaw",
         "properties": {
-            "id": "station-wilshire-crenshaw",
-            "name": "Wilshire / Crenshaw",
-            "street1": "Wilshire Boulevard",
-            "street2": "Crenshaw Boulevard",
-            "rail_mode": "heavy_rail",
-            "system": "fantasy"
-        },
+                "id": "station-wilshire-crenshaw",
+                "name": "Wilshire / Crenshaw",
+                "street1": "Wilshire Boulevard",
+                "street2": "Crenshaw Boulevard",
+                "rail_mode": "heavy_rail",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer_station_ids": [
+                    "sc46-crenshaw"
+                ],
+                "intra_urbes_routes": [
+                    "SC46"
+                ]
+            },
         "geometry": {
             "type": "Point",
             "coordinates": [-118.319157, 34.061731]
@@ -3758,14 +3700,7 @@
                 "street1": "Venice Boulevard",
                 "street2": "Fairfax Avenue",
                 "rail_mode": "heavy_rail",
-                "system": "fantasy",
-                "interchange": true,
-                "transfer_station_ids": [
-                    "intra-grid-stop-e0b2f8dcc978"
-                ],
-                "intra_urbes_routes": [
-                    "SC11"
-                ]
+                "system": "fantasy"
             },
         "geometry": {
             "type": "Point",
@@ -4090,15 +4025,21 @@
             "type": "Feature",
             "id": "station-wilshire-western",
             "properties": {
-            "id": "station-wilshire-western",
-            "name": "Wilshire / Western",
-            "street1": "Wilshire Boulevard",
-            "street2": "Western Avenue",
-            "routes": "M",
-            "rail_mode": "heavy_rail",
-            "system": "fantasy",
-            "interchange": true,
-            "transfer": "Metro D Line"
+                "id": "station-wilshire-western",
+                "name": "Wilshire / Western",
+                "street1": "Wilshire Boulevard",
+                "street2": "Western Avenue",
+                "routes": "M",
+                "rail_mode": "heavy_rail",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer": "Metro D Line",
+                "transfer_station_ids": [
+                    "sc46-western"
+                ],
+                "intra_urbes_routes": [
+                    "SC46"
+                ]
             },
             "geometry": {
             "type": "Point",
@@ -4704,7 +4645,14 @@
                 "routes": "G",
                 "rail_mode": "heavy_rail",
                 "system": "fantasy",
-                "terminal": true
+                "terminal": true,
+                "interchange": true,
+                "transfer_station_ids": [
+                    "sc47-olympic"
+                ],
+                "intra_urbes_routes": [
+                    "SC47"
+                ]
             },
             "geometry": {
                 "type": "Point",
@@ -6328,14 +6276,7 @@
                 "street2": "Beethoven Street",
                 "routes": "L",
                 "rail_mode": "heavy_rail",
-                "system": "fantasy",
-                "interchange": true,
-                "transfer_station_ids": [
-                    "intra-grid-stop-a7ff9664a294"
-                ],
-                "intra_urbes_routes": [
-                    "SC11"
-                ]
+                "system": "fantasy"
             },
             "geometry": {
                 "type": "Point",
@@ -6410,7 +6351,14 @@
                 "street2": "Jefferson Boulevard",
                 "routes": "L",
                 "rail_mode": "heavy_rail",
-                "system": "fantasy"
+                "system": "fantasy",
+                "interchange": true,
+                "transfer_station_ids": [
+                    "sc11-culver-lincoln"
+                ],
+                "intra_urbes_routes": [
+                    "SC11"
+                ]
             },
             "geometry": {
                 "type": "Point",

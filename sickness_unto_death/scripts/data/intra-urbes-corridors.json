@@ -97,31 +97,33 @@
     },
     {
       "id": "SC11",
-      "name": "Venice Light Rail / Tram",
+      "name": "Culver Light Rail / Tram",
       "roads": [
-        "Venice"
+        "Culver"
       ],
       "from": {
-        "street": "Lincoln",
+        "street": "Pacific",
         "near": [
-          -118.453,
-          33.994
+          -118.449688,
+          33.957692
         ]
       },
       "to": {
-        "street": "Main",
+        "street": "Venice",
         "near": [
-          -118.265,
-          34.034
+          -118.392642,
+          34.02642
         ]
       },
-      "area": "Westside",
-      "rationale": "Local infill between widely spaced Q Line stations; bus-priority corridor.",
+      "area": "Culver City / Playa del Rey",
+      "rationale": "Culver Boulevard local rail from Pacific Avenue in Playa del Rey to Venice Boulevard in Culver City. Shares Culver / Main with Washington SC31, with walking transfers to Motor SC30 and Lincoln L. No SC11 service continues along Venice Boulevard. Longer gaps through wetlands follow mapped cross streets.",
       "color": "#508978",
       "rail_mode": "light_rail",
       "service_type": "light_rail",
       "service_label": "Light Rail / Tram",
-      "length_miles": 12.21
+      "length_miles": 5.86,
+      "length_km": 9.43,
+      "service_classification_override": "Existing light rail/tram classification retained when SC11 was shortened to the Culver corridor."
     },
     {
       "id": "SC12",
@@ -1126,13 +1128,71 @@
         ]
       },
       "area": "West Hollywood / Beverly Grove / Mid-City",
-      "rationale": "La Cienega Boulevard from Santa Monica Boulevard south to the Venice stop. Shared tram stops at Melrose SC9, Third SC10, Pico SC6 and Venice SC11; transfers to Beverly BEV, Olympic L and Venice Q heavy rail.",
+      "rationale": "La Cienega Boulevard from Santa Monica Boulevard south to the Venice stop. Shared tram stops at Melrose SC9, Third SC10 and Pico SC6; transfers to Beverly BEV, Olympic L and Venice Q heavy rail.",
       "color": "#788DA5",
       "rail_mode": "light_rail",
       "service_type": "streetcar",
       "service_label": "Streetcar",
       "length_km": 6.07,
       "length_miles": 3.77
+    },
+    {
+      "id": "SC46",
+      "name": "Eighth Street Streetcar",
+      "roads": [
+        "8th"
+      ],
+      "from": {
+        "street": "Crenshaw",
+        "near": [
+          -118.320533,
+          34.059113
+        ]
+      },
+      "to": {
+        "street": "Alameda",
+        "near": [
+          -118.238929,
+          34.030053
+        ]
+      },
+      "area": "Central Los Angeles",
+      "rationale": "Eighth Street from Crenshaw to Alameda, serving Koreatown, Westlake, Downtown and the Fashion District. Connects Normandie SC14, Hoover SC47, Broadway SC34 and San Pedro SC7. Short mapped centerline joins preserve a continuous conceptual corridor.",
+      "color": "#A17D60",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_km": 8.71,
+      "length_miles": 5.41
+    },
+    {
+      "id": "SC47",
+      "name": "Hoover Streetcar",
+      "roads": [
+        "Hoover"
+      ],
+      "from": {
+        "street": "Jefferson",
+        "near": [
+          -118.284007,
+          34.023762
+        ]
+      },
+      "to": {
+        "street": "Sunset",
+        "near": [
+          -118.284139,
+          34.095817
+        ]
+      },
+      "area": "Central Los Angeles",
+      "rationale": "Hoover Street from Jefferson at USC north to the existing Sunset / Hoover stop. Connects Adams SC12, Washington SC31, Pico SC6, Eighth SC46, Third SC10, Temple SC41 and Sunset SC8. Uses Wilshire–Commonwealth–6th around Lafayette Park, Council–Robinson–Temple at US-101, and a short Fountain connection to Sunset; no track through the park or USC campus.",
+      "color": "#9A6C79",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_km": 8.62,
+      "length_miles": 5.35
     }
   ],
   "heavy": {
@@ -1342,6 +1402,10 @@
         "SC44": {
           "service_type": "streetcar",
           "reason": "User explicitly requested retaining SC44 as a streetcar after extending it beyond the six-mile guideline to Del Mar / Las Tunas."
+        },
+        "SC11": {
+          "service_type": "light_rail",
+          "reason": "Existing light rail/tram classification retained when SC11 was shortened to the Culver corridor."
         }
       }
     }
@@ -1355,5 +1419,68 @@
       "https://services.laccd.edu/districtsite/Accreditation/lavc/Standard%20IIIB/DIIIB4-04_LAVC_FMP_Addendum.pdf",
       "https://www.burbankca.gov/documents/173607/240347/20210208-Complete-Streets-Preliminary-Recommendations-001.pdf/c9c03386-faae-e0f5-6dbd-f3147574d801?t=1612824159883"
     ]
+  },
+  "corridor_priority_review": {
+    "review_date": "2026-11-01",
+    "basis": "Qualitative assessment of gaps in this fantasy network, historical road traffic, existing bus ridership and transfer opportunities; not an official corridor ranking or rail ridership forecast.",
+    "traffic_source": {
+      "file": "LADOT_Traffic_Counts_Summary.pdf",
+      "provided_by": "user",
+      "count_years": "2010–2016; excludes invalid dates",
+      "note": "The 2026 PDF export date is not the count date. Four-page table blocks separate locations, dates, directional values and totals. Use matched observations; do not sum locations along a road or compare manual intersection totals as if they were single-road volumes. Observation duration is not established here, so totals are not labeled AADT.",
+      "example": {
+        "location": "Hoover / Santa Monica",
+        "count_date": "2011-05-26",
+        "count_type": "AUTO",
+        "reported_total": 27215,
+        "location_page": 269,
+        "date_page": 270,
+        "total_page": 272,
+        "row": 2
+      }
+    },
+    "bus_source": {
+      "url": "https://metro.legistar.com/View.ashx?GUID=660340A8-0B40-467D-A98B-113C95A73127&ID=15384299&M=F",
+      "period": "Q4 2025",
+      "metric": "Average weekday boardings for the whole existing bus route, not just the proposed rail segment",
+      "note": "Route labels are transcribed from this reporting table; they are not assertions of current bus numbering."
+    },
+    "implemented_routes": [
+      {
+        "route_id": "SC46",
+        "corridor": "Eighth Street",
+        "bus_line_as_reported": "66 — E Olympic Bl/W 8th St",
+        "average_weekday_boardings": 12130,
+        "assessment": "Local coverage and east–west transfers through Koreatown, Westlake and Downtown; the LADOT counts alone do not establish Eighth as a highest-traffic corridor."
+      },
+      {
+        "route_id": "SC47",
+        "corridor": "Hoover",
+        "bus_line_as_reported": "603 — Hoover St",
+        "average_weekday_boardings": 7179,
+        "assessment": "North–south connection from USC to Sunset across multiple local lines; historical Hoover traffic provides supporting context."
+      }
+    ],
+    "next_corridors_to_study": [
+      {
+        "corridor": "Century Boulevard",
+        "bus_line_as_reported": "117",
+        "average_weekday_boardings": 8642,
+        "assessment": "East–west local coverage gap south of Manchester, with opportunities to connect the north–south rail corridors."
+      },
+      {
+        "corridor": "Gage Avenue",
+        "bus_line_as_reported": "110",
+        "average_weekday_boardings": 7647,
+        "assessment": "Local coverage between Slauson and Florence, linking north–south services."
+      },
+      {
+        "corridor": "Compton Avenue",
+        "bus_line_as_reported": "55",
+        "average_weekday_boardings": 7547,
+        "assessment": "North–south local coverage east of Central, potentially connecting South LA east–west services."
+      }
+    ],
+    "existing_high_demand_coverage": "Vermont, Western and Santa Monica already have Inter Urbes lines in this map. Assess local access gaps there before adding parallel services."
   }
 }
