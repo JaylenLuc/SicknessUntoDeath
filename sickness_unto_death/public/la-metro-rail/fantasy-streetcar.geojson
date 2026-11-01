@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "name": "Intra Urbes — Light Rail / Tram & Streetcar",
-  "description": "Intra Urbes fantasy light rail/trams and streetcars: SC1 Solano–Elysian / stadium gates; SC1A Stadium Way connector; SC2 Frogtown–Cypress Park–Figueroa–Colorado; SC3 Cypress–Eagle Rock–York; SC3A Eagle Rock–Colorado branch; SC4 Los Feliz–Riverside / Fletcher. Not official projects; alignments and stops are conceptual. SC5 serves César Chávez from Union Station to Atlantic; SC6 follows Pico from Santa Monica to Downtown. SC7 follows Main Street from Florence, turns via MLK to San Pedro Street, and continues to Little Tokyo, connecting with SC6 at Pico. SC8–SC37 add an interconnected local grid across Central, South and East LA, the Westside, San Fernando Valley, San Gabriel Valley, Pasadena and South Bay, feeding the Inter Urbes network including the new Reseda R Line. Inter Urbes V connects Union Station to Holt Avenue in Pomona via Mission Road and Valley Boulevard. SC38 serves Garfield from Huntington to Washington; SC38A continues locally from Washington to Imperial; SC23 reaches Colorado, and SC22 reaches the authored Garvey/Rosemead C terminal. The Valley and Mission corridor is Inter Urbes heavy rail. SC39 follows Griffin from Mission to Broadway/Daly on H, with a walking transfer to V at Valley/Mission. SC19 extends north on Soto to H at Huntington, retaining its V transfer at Valley. SC40 serves Virgil between Sunset and Wilshire; SC41 serves Temple between Virgil and Alameda, sharing a Virgil/Temple stop. SC10A branches east from Third/Alvarado along Third Street to Alameda, connecting SC34 Broadway and SC7 San Pedro. Van Nuys streetcar service is removed. Roscoe is now Inter Urbes RO heavy rail, connecting R at Reseda and the Balboa and Lankershim streetcars. SC42 follows Burbank Boulevard from Reseda to Downtown Burbank via Front Street. SC43 follows Del Mar Avenue from Garvey to Huntington. Washington SC31 extends east to Garfield, linking the two Garfield services with Atlantic heavy rail at Washington. Atlantic continues south to Firestone. SC44 follows Fremont Avenue from Mission Street south to Mission Road, then east to the Garfield SC38 tram. SC45 follows La Cienega Boulevard from Santa Monica Boulevard to Venice, linking the Melrose, Third, Pico and Venice trams.",
+  "description": "Intra Urbes fantasy light rail/trams and streetcars: SC1 Solano–Elysian / stadium gates; SC1A Stadium Way connector; SC2 Frogtown–Cypress Park–Figueroa–Colorado; SC3 Cypress–Eagle Rock–York; SC3A Eagle Rock–Colorado branch; SC4 Los Feliz–Riverside / Fletcher. Not official projects; alignments and stops are conceptual. SC5 serves César Chávez from Union Station to Atlantic; SC6 follows Pico from Santa Monica to Downtown. SC7 follows Main Street from Florence, turns via MLK to San Pedro Street, and continues to Little Tokyo, connecting with SC6 at Pico. SC8–SC37 add an interconnected local grid across Central, South and East LA, the Westside, San Fernando Valley, San Gabriel Valley, Pasadena and South Bay, feeding the Inter Urbes network including the new Reseda R Line. Inter Urbes V connects Union Station to Holt Avenue in Pomona via Mission Road and Valley Boulevard. SC38 serves Garfield from Huntington to Washington; SC38A continues locally from Washington to Imperial; SC23 reaches Colorado, and SC22 reaches the authored Garvey/Rosemead C terminal. The Valley and Mission corridor is Inter Urbes heavy rail. SC39 follows Griffin from Mission to Broadway/Daly on H, with a walking transfer to V at Valley/Mission. SC19 extends north on Soto to H at Huntington, retaining its V transfer at Valley. SC40 serves Virgil between Sunset and Wilshire; SC41 serves Temple between Virgil and Alameda, sharing a Virgil/Temple stop. SC10A branches east from Third/Alvarado along Third Street to Alameda, connecting SC34 Broadway and SC7 San Pedro. Van Nuys streetcar service is removed. Roscoe is now Inter Urbes RO heavy rail, connecting R at Reseda and the Balboa and Lankershim streetcars. SC42 follows Burbank Boulevard from Reseda to Downtown Burbank via Front Street. SC43 follows Del Mar Avenue from Garvey to Huntington. Washington SC31 extends east to Garfield, linking the two Garfield services with Atlantic heavy rail at Washington. Atlantic continues south to Firestone. SC44 follows Fremont Avenue from Mission Street south to Mission Road, then through Garfield and Almansor to Las Tunas and Del Mar, connecting SC38, SC43 and SGV. SC44 remains a streetcar by explicit user request despite exceeding six miles. SC45 follows La Cienega Boulevard from Santa Monica Boulevard to Venice, linking the Melrose, Third, Pico and Venice trams.",
   "context_sources": [
     "https://www.elysianpark.org/find",
     "https://www.mlb.com/dodgers/ballpark/transportation/directions",
@@ -56793,8 +56793,8 @@
         "location_status": "approximate",
         "id": "sc43-las-tunas",
         "name": "Del Mar / Las Tunas",
-        "routes": "SC43",
-        "color": "#8E7DA0",
+        "routes": "SC43, SC44",
+        "color": "#334155",
         "interchange": true,
         "inter_urbes_transfers": [
           {
@@ -56808,7 +56808,11 @@
             "distance_basis": "co-located conceptual platforms; entrances not surveyed"
           }
         ],
-        "service_label": "Streetcar"
+        "service_label": "Streetcar",
+        "local_transfers": [
+          "SC43",
+          "SC44"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -58189,22 +58193,34 @@
           "sc44-marengo",
           "sc44-atlantic",
           "sc44-5th",
-          "sc44-garfield"
+          "sc44-garfield",
+          "sc44-chapel",
+          "sc44-almansor",
+          "sc44-mission-santa-anita",
+          "sc44-mission-ramona",
+          "sc44-mission-broadway",
+          "sc44-las-tunas-mission",
+          "sc44-las-tunas-santa-anita",
+          "sc44-las-tunas-san-marino",
+          "sc43-las-tunas"
         ],
         "termini": [
           "Fremont / Mission Street",
-          "Mission Road / Garfield"
+          "Del Mar / Las Tunas"
         ],
         "corridors": [
           "Fremont",
-          "Mission"
+          "Mission",
+          "Ramona",
+          "Las Tunas"
         ],
-        "description": "Fremont Avenue from Mission Street in South Pasadena south to Mission Road in Alhambra, then east along Mission Road to a shared stop with Garfield SC38. Transfers to H at Huntington and SGV at Main, with a walking connection to SGV at Fair Oaks / Mission. Bidirectional bent corridor, not a closed loop.",
+        "description": "Fremont Avenue from Mission Street in South Pasadena south to Mission Road in Alhambra, then east through Garfield and Almansor, following Mission via the short Ramona connection and continuing east on Las Tunas to Del Mar. Connects Garfield SC38, Del Mar SC43, H at Huntington, and SGV at Main and Las Tunas. Retained as a streetcar by user request.",
         "alignment_status": "conceptual; mapped Los Angeles County road centerlines",
         "right_of_way_intent": "reserved track and transit priority where feasible",
-        "length_km": 6.97,
-        "length_miles": 4.33,
-        "geometry_gap_joins": []
+        "length_km": 10.38,
+        "length_miles": 6.45,
+        "geometry_gap_joins": [],
+        "service_classification_override": "User explicitly requested retaining SC44 as a streetcar after extending it beyond the six-mile guideline to Del Mar / Las Tunas."
       },
       "geometry": {
         "type": "LineString",
@@ -58512,6 +58528,306 @@
           [
             -118.123058,
             34.089632
+          ],
+          [
+            -118.121945,
+            34.090114
+          ],
+          [
+            -118.121347,
+            34.090365
+          ],
+          [
+            -118.120833,
+            34.090592
+          ],
+          [
+            -118.1198,
+            34.091026
+          ],
+          [
+            -118.119022,
+            34.091376
+          ],
+          [
+            -118.118581,
+            34.09157
+          ],
+          [
+            -118.117577,
+            34.092013
+          ],
+          [
+            -118.117056,
+            34.092243
+          ],
+          [
+            -118.115965,
+            34.092706
+          ],
+          [
+            -118.115674,
+            34.092829
+          ],
+          [
+            -118.115384,
+            34.092953
+          ],
+          [
+            -118.114838,
+            34.093185
+          ],
+          [
+            -118.114285,
+            34.093421
+          ],
+          [
+            -118.113759,
+            34.093644
+          ],
+          [
+            -118.112846,
+            34.09407
+          ],
+          [
+            -118.112745,
+            34.094115
+          ],
+          [
+            -118.112524,
+            34.094215
+          ],
+          [
+            -118.112203,
+            34.094359
+          ],
+          [
+            -118.112148,
+            34.094384
+          ],
+          [
+            -118.109696,
+            34.095349
+          ],
+          [
+            -118.108713,
+            34.095713
+          ],
+          [
+            -118.108029,
+            34.095961
+          ],
+          [
+            -118.107782,
+            34.096044
+          ],
+          [
+            -118.107709,
+            34.096601
+          ],
+          [
+            -118.107708,
+            34.096611
+          ],
+          [
+            -118.107704,
+            34.096744
+          ],
+          [
+            -118.107706,
+            34.096773
+          ],
+          [
+            -118.107723,
+            34.096791
+          ],
+          [
+            -118.107769,
+            34.096819
+          ],
+          [
+            -118.108018,
+            34.096933
+          ],
+          [
+            -118.10824,
+            34.097065
+          ],
+          [
+            -118.108368,
+            34.097166
+          ],
+          [
+            -118.10848,
+            34.097284
+          ],
+          [
+            -118.10923,
+            34.098519
+          ],
+          [
+            -118.109259,
+            34.098569
+          ],
+          [
+            -118.109266,
+            34.098582
+          ],
+          [
+            -118.109366,
+            34.098755
+          ],
+          [
+            -118.10947,
+            34.098935
+          ],
+          [
+            -118.10955,
+            34.099066
+          ],
+          [
+            -118.109632,
+            34.099202
+          ],
+          [
+            -118.109817,
+            34.099506
+          ],
+          [
+            -118.109853,
+            34.099563
+          ],
+          [
+            -118.110031,
+            34.099843
+          ],
+          [
+            -118.11014,
+            34.100036
+          ],
+          [
+            -118.110281,
+            34.10032
+          ],
+          [
+            -118.110377,
+            34.100493
+          ],
+          [
+            -118.110431,
+            34.100674
+          ],
+          [
+            -118.110506,
+            34.100865
+          ],
+          [
+            -118.11055,
+            34.101007
+          ],
+          [
+            -118.110941,
+            34.102279
+          ],
+          [
+            -118.110959,
+            34.102381
+          ],
+          [
+            -118.110886,
+            34.102406
+          ],
+          [
+            -118.110835,
+            34.102407
+          ],
+          [
+            -118.110762,
+            34.102404
+          ],
+          [
+            -118.110173,
+            34.102418
+          ],
+          [
+            -118.109984,
+            34.102422
+          ],
+          [
+            -118.109674,
+            34.102414
+          ],
+          [
+            -118.109483,
+            34.102414
+          ],
+          [
+            -118.109428,
+            34.102413
+          ],
+          [
+            -118.108976,
+            34.102422
+          ],
+          [
+            -118.107769,
+            34.102445
+          ],
+          [
+            -118.106829,
+            34.102463
+          ],
+          [
+            -118.106592,
+            34.102463
+          ],
+          [
+            -118.106045,
+            34.102463
+          ],
+          [
+            -118.104903,
+            34.102464
+          ],
+          [
+            -118.104602,
+            34.102464
+          ],
+          [
+            -118.104487,
+            34.102464
+          ],
+          [
+            -118.103946,
+            34.102469
+          ],
+          [
+            -118.102536,
+            34.102483
+          ],
+          [
+            -118.10232,
+            34.102493
+          ],
+          [
+            -118.102098,
+            34.102527
+          ],
+          [
+            -118.101753,
+            34.102572
+          ],
+          [
+            -118.100795,
+            34.102696
+          ],
+          [
+            -118.100736,
+            34.102702
+          ],
+          [
+            -118.099666,
+            34.102826
           ]
         ]
       }
@@ -59724,6 +60040,203 @@
           34.038247
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "sc44-chapel",
+      "properties": {
+        "id": "sc44-chapel",
+        "name": "Mission Road / Chapel",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "service_label": "Streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "routes": "SC44",
+        "color": "#5D8C8A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.1198,
+          34.091026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc44-almansor",
+      "properties": {
+        "id": "sc44-almansor",
+        "name": "Mission Road / Almansor",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "service_label": "Streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "routes": "SC44",
+        "color": "#5D8C8A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.117056,
+          34.092243
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc44-mission-santa-anita",
+      "properties": {
+        "id": "sc44-mission-santa-anita",
+        "name": "Mission / Santa Anita",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "service_label": "Streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "routes": "SC44",
+        "color": "#5D8C8A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.112203,
+          34.094359
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc44-mission-ramona",
+      "properties": {
+        "id": "sc44-mission-ramona",
+        "name": "Mission / Ramona",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "service_label": "Streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "routes": "SC44",
+        "color": "#5D8C8A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.107704,
+          34.096744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc44-mission-broadway",
+      "properties": {
+        "id": "sc44-mission-broadway",
+        "name": "Mission / Broadway",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "service_label": "Streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "routes": "SC44",
+        "color": "#5D8C8A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.109632,
+          34.099202
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc44-las-tunas-mission",
+      "properties": {
+        "id": "sc44-las-tunas-mission",
+        "name": "Las Tunas / Mission",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "service_label": "Streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "routes": "SC44",
+        "color": "#5D8C8A",
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-las-tunas-mission",
+            "station_name": "Las Tunas / Mission",
+            "routes": [
+              "SGV"
+            ],
+            "distance_metres": 3,
+            "type": "walking",
+            "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
+          }
+        ],
+        "interchange": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.110959,
+          34.102381
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc44-las-tunas-santa-anita",
+      "properties": {
+        "id": "sc44-las-tunas-santa-anita",
+        "name": "Las Tunas / Santa Anita",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "service_label": "Streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "routes": "SC44",
+        "color": "#5D8C8A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.106045,
+          34.102463
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc44-las-tunas-san-marino",
+      "properties": {
+        "id": "sc44-las-tunas-san-marino",
+        "name": "Las Tunas / San Marino",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "service_label": "Streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "routes": "SC44",
+        "color": "#5D8C8A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.102536,
+          34.102483
+        ]
+      }
     }
   ],
   "geometry_sources": [
@@ -59874,7 +60387,7 @@
       "section": "SC44 Fremont–Mission",
       "source": "Los Angeles County CAMS road centerlines",
       "url": "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/eGIS_Addressing_ROAD_LINES/FeatureServer/0",
-      "note": "Fremont Avenue south from Mission Street to Mission Road, then Mission Road east to Garfield. Shared SC38 stop uses an existing Garfield route vertex; H and SGV links retain existing heavy station locations. Conceptual bidirectional service corridor, not an engineered track alignment."
+      "note": "Fremont Avenue south from Mission Street to Mission Road, then Mission through Garfield and Almansor to Las Tunas, continuing east to Del Mar. Mission uses approximately 78 m of mapped Ramona roadway. The terminal aligns within 2 m to the existing shared SC43/SGV stop. Existing routes and heavy stations retain their geometry. Conceptual bidirectional service, not an engineered track alignment."
     },
     {
       "section": "SC45 La Cienega",
@@ -60012,12 +60525,12 @@
       "service_type": "streetcar"
     },
     "SC44": {
-      "stops": 16,
-      "length_km": 6.97,
-      "length_miles": 4.33,
+      "stops": 25,
+      "length_km": 10.38,
+      "length_miles": 6.45,
       "termini": [
         "Fremont / Mission Street",
-        "Mission Road / Garfield"
+        "Del Mar / Las Tunas"
       ]
     },
     "SC45": {
@@ -60035,6 +60548,12 @@
     "longer_routes": "light_rail",
     "shorter_routes": "streetcar",
     "length_basis": "Sum of geodesic segment lengths along each authored one-way route or branch; exactly six miles remains streetcar.",
-    "note": "User-selected service classification for this fantasy network, not a universal mode definition. Route paths, stop spacing and route IDs are retained."
+    "note": "User-selected service classification for this fantasy network, not a universal mode definition. Route paths, stop spacing and route IDs are retained.",
+    "route_overrides": {
+      "SC44": {
+        "service_type": "streetcar",
+        "reason": "User explicitly requested retaining SC44 as a streetcar after extending it beyond the six-mile guideline to Del Mar / Las Tunas."
+      }
+    }
   }
 }

@@ -1062,7 +1062,9 @@
       "name": "Fremont–Mission Streetcar",
       "roads": [
         "Fremont",
-        "Mission"
+        "Mission",
+        "Ramona",
+        "Las Tunas"
       ],
       "from": {
         "point": [
@@ -1087,23 +1089,21 @@
         }
       ],
       "to": {
-        "point": [
-          -118.123058,
-          34.089632
-        ],
+        "street": "Del Mar",
         "near": [
-          -118.123058,
-          34.089632
+          -118.099666,
+          34.102826
         ]
       },
-      "area": "South Pasadena / Alhambra",
-      "rationale": "Fremont Avenue from Mission Street in South Pasadena south to Mission Road in Alhambra, then east along Mission Road to a shared stop with Garfield SC38. Transfers to H at Huntington and SGV at Main, with a walking connection to SGV at Fair Oaks / Mission. Bidirectional bent corridor, not a closed loop.",
+      "area": "South Pasadena / Alhambra / San Gabriel",
+      "rationale": "Fremont Avenue from Mission Street in South Pasadena south to Mission Road in Alhambra, then east through Garfield and Almansor, following Mission via the short Ramona connection and continuing east on Las Tunas to Del Mar. Connects Garfield SC38, Del Mar SC43, H at Huntington, and SGV at Main and Las Tunas. Retained as a streetcar by user request.",
       "color": "#5D8C8A",
       "rail_mode": "light_rail",
       "service_type": "streetcar",
       "service_label": "Streetcar",
-      "length_km": 6.97,
-      "length_miles": 4.33
+      "length_km": 10.38,
+      "length_miles": 6.45,
+      "service_classification_override": "User explicitly requested retaining SC44 as a streetcar after extending it beyond the six-mile guideline to Del Mar / Las Tunas."
     },
     {
       "id": "SC45",
@@ -1337,7 +1337,13 @@
       "longer_routes": "light_rail",
       "shorter_routes": "streetcar",
       "length_basis": "Sum of geodesic segment lengths along each authored one-way route or branch; exactly six miles remains streetcar.",
-      "note": "User-selected service classification for this fantasy network, not a universal mode definition. Route paths, stop spacing and route IDs are retained."
+      "note": "User-selected service classification for this fantasy network, not a universal mode definition. Route paths, stop spacing and route IDs are retained.",
+      "route_overrides": {
+        "SC44": {
+          "service_type": "streetcar",
+          "reason": "User explicitly requested retaining SC44 as a streetcar after extending it beyond the six-mile guideline to Del Mar / Las Tunas."
+        }
+      }
     }
   },
   "corridor_comparison": {

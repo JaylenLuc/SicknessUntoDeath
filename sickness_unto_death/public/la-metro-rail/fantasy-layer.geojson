@@ -5306,13 +5306,20 @@
             "type": "Feature",
             "id": "station-las-tunas-mission",
             "properties": {
-            "id": "station-las-tunas-mission",
-            "name": "Las Tunas / Mission",
-            "street1": "Las Tunas Drive",
-            "street2": "Mission Drive",
-            "routes": "SGV",
-            "rail_mode": "heavy_rail",
-            "system": "fantasy"
+                "id": "station-las-tunas-mission",
+                "name": "Las Tunas / Mission",
+                "street1": "Las Tunas Drive",
+                "street2": "Mission Drive",
+                "routes": "SGV",
+                "rail_mode": "heavy_rail",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer_station_ids": [
+                    "sc44-las-tunas-mission"
+                ],
+                "intra_urbes_routes": [
+                    "SC44"
+                ]
             },
             "geometry": {
             "type": "Point",
@@ -5335,7 +5342,8 @@
                     "sc43-las-tunas"
                 ],
                 "intra_urbes_routes": [
-                    "SC43"
+                    "SC43",
+                    "SC44"
                 ]
             },
             "geometry": {
