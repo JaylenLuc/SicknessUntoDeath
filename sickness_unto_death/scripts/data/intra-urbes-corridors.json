@@ -80,7 +80,7 @@
         ]
       },
       "area": "Central LA",
-      "rationale": "Beverly Grove, Fairfax, Koreatown and Westlake local access. Continues on Alvarado to Beverly and Sunset transfers.",
+      "rationale": "Beverly Grove, Fairfax, Koreatown and Westlake local access. Continues on Alvarado to Beverly and Sunset transfers. The SC10A branch continues east on Third Street from Alvarado to Alameda through Downtown.",
       "color": "#85739B"
     },
     {
@@ -764,6 +764,79 @@
       "area": "Lincoln Heights",
       "rationale": "Griffin Avenue streetcar from Mission Road to Broadway/Daly on H, with a walking transfer to V at Valley/Mission. Crosses Main Street without turning onto it.",
       "color": "#7A8F64"
+    },
+    {
+      "id": "SC40",
+      "name": "Virgil Streetcar",
+      "roads": [
+        "Virgil"
+      ],
+      "from": {
+        "street": "Sunset",
+        "near": [
+          -118.287403,
+          34.098168
+        ]
+      },
+      "to": {
+        "street": "Wilshire",
+        "near": [
+          -118.287035,
+          34.061824
+        ]
+      },
+      "area": "East Hollywood / Virgil Village / Koreatown",
+      "rationale": "Local Virgil Avenue service from Sunset to Wilshire, connecting Sunset SC8, Third–Alvarado SC10 and Temple SC41, with walking transfers to nearby Inter Urbes stations.",
+      "color": "#9A8761"
+    },
+    {
+      "id": "SC41",
+      "name": "Temple Streetcar",
+      "roads": [
+        "Temple"
+      ],
+      "from": {
+        "street": "Virgil",
+        "near": [
+          -118.286819,
+          34.076479
+        ]
+      },
+      "to": {
+        "street": "Alameda",
+        "near": [
+          -118.23805,
+          34.051075
+        ]
+      },
+      "area": "Historic Filipinotown / Westlake / Civic Center / Little Tokyo",
+      "rationale": "Temple Street local service from Virgil to Alameda, connecting Virgil SC40, Third–Alvarado SC10, Broadway SC34 and existing Inter Urbes stations along Temple.",
+      "color": "#668D91"
+    },
+    {
+      "id": "SC10A",
+      "name": "Third Street Downtown Branch",
+      "parent_route": "SC10",
+      "roads": [
+        "3rd"
+      ],
+      "from": {
+        "street": "Alvarado",
+        "near": [
+          -118.27268,
+          34.06297
+        ]
+      },
+      "to": {
+        "street": "Alameda",
+        "near": [
+          -118.238073,
+          34.045543
+        ]
+      },
+      "area": "Westlake / Downtown / Little Tokyo",
+      "rationale": "Eastward branch of Third–Alvarado SC10, following Third Street from Alvarado through Downtown to Alameda, with shared stops for Broadway SC34 and San Pedro SC7.",
+      "color": "#85739B"
     }
   ],
   "heavy": {

@@ -692,12 +692,14 @@
                 "transfer": "Metro B Line; Intra Urbes SC4 (separate platforms)",
                 "transfer_station_ids": [
                     "sc4-vermont-sunset",
-                    "intra-grid-stop-63d593be4ec0"
+                    "intra-grid-stop-63d593be4ec0",
+                    "intra-grid-stop-a403972d1b2b"
                 ],
                 "terminal": true,
                 "intra_urbes_routes": [
                     "SC8",
-                    "SC9"
+                    "SC9",
+                    "SC40"
                 ]
             },
         "geometry": {
@@ -709,16 +711,22 @@
         "type": "Feature",
         "id": "station-wilshire-vermont",
         "properties": {
-            "id": "station-wilshire-vermont",
-            "name": "Wilshire / Vermont",
-            "street1": "Wilshire Boulevard",
-            "street2": "Vermont Avenue",
-            "routes": "N",
-            "rail_mode": "heavy_rail",
-            "system": "fantasy",
-            "interchange": true,
-            "transfer": "Metro B and D Lines"
-        },
+                "id": "station-wilshire-vermont",
+                "name": "Wilshire / Vermont",
+                "street1": "Wilshire Boulevard",
+                "street2": "Vermont Avenue",
+                "routes": "N",
+                "rail_mode": "heavy_rail",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer": "Metro B and D Lines",
+                "transfer_station_ids": [
+                    "sc40-wilshire"
+                ],
+                "intra_urbes_routes": [
+                    "SC40"
+                ]
+            },
         "geometry": {
             "type": "Point",
             "coordinates": [-118.290080, 34.062700]
@@ -1387,7 +1395,8 @@
                     "intra-grid-stop-a47750284dab"
                 ],
                 "intra_urbes_routes": [
-                    "SC34"
+                    "SC34",
+                    "SC41"
                 ]
             },
         "geometry": {
@@ -1410,7 +1419,8 @@
                     "intra-grid-stop-94870538a312"
                 ],
                 "intra_urbes_routes": [
-                    "SC10"
+                    "SC10",
+                    "SC41"
                 ]
             },
         "geometry": {
@@ -1428,7 +1438,14 @@
                 "street2": "Glendale Boulevard",
                 "routes": "BEV",
                 "rail_mode": "heavy_rail",
-                "system": "fantasy"
+                "system": "fantasy",
+                "interchange": true,
+                "transfer_station_ids": [
+                    "sc41-glendale"
+                ],
+                "intra_urbes_routes": [
+                    "SC41"
+                ]
             },
             "geometry": {
                 "type": "Point",
@@ -1662,10 +1679,12 @@
                 "transfer": "Metro B Line; F and N Lines",
                 "transfer_station_ids": [
                     "intra-grid-stop-de167f446d80",
-                    "intra-grid-stop-4133387a9311"
+                    "intra-grid-stop-4133387a9311",
+                    "sc40-santa-monica"
                 ],
                 "intra_urbes_routes": [
-                    "SC9"
+                    "SC9",
+                    "SC40"
                 ]
             },
         "geometry": {
@@ -1849,10 +1868,12 @@
                 "system": "fantasy",
                 "interchange": true,
                 "transfer_station_ids": [
-                    "intra-grid-stop-9f30bf2a238d"
+                    "intra-grid-stop-9f30bf2a238d",
+                    "sc10a-broadway"
                 ],
                 "intra_urbes_routes": [
-                    "SC34"
+                    "SC34",
+                    "SC10A"
                 ]
             },
         "geometry": {
@@ -2245,10 +2266,12 @@
                 "system": "fantasy",
                 "interchange": true,
                 "transfer_station_ids": [
-                    "intra-grid-stop-9f30bf2a238d"
+                    "intra-grid-stop-9f30bf2a238d",
+                    "sc10a-broadway"
                 ],
                 "intra_urbes_routes": [
-                    "SC34"
+                    "SC34",
+                    "SC10A"
                 ]
             },
         "geometry": {

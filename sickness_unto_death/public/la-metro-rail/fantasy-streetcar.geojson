@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "name": "Intra Urbes — Light Rail / Streetcar",
-  "description": "Intra Urbes fantasy streetcars: SC1 Solano–Elysian / stadium gates; SC1A Stadium Way connector; SC2 Frogtown–Cypress Park–Figueroa–Colorado; SC3 Cypress–Eagle Rock–York; SC3A Eagle Rock–Colorado branch; SC4 Los Feliz–Riverside / Fletcher. Not official projects; alignments and stops are conceptual. SC5 serves César Chávez from Union Station to Atlantic; SC6 follows Pico from Santa Monica to Downtown. SC7 follows Main Street from Florence, turns via MLK to San Pedro Street, and continues to Little Tokyo, connecting with SC6 at Pico. SC8–SC37 add an interconnected local grid across Central, South and East LA, the Westside, San Fernando Valley, San Gabriel Valley, Pasadena and South Bay, feeding the Inter Urbes network including the new Reseda R Line. Inter Urbes V connects Union Station to Holt Avenue in Pomona via Mission Road and Valley Boulevard. SC38 serves Garfield from Huntington to Imperial; SC23 reaches Colorado, and SC22 reaches the authored Garvey/Rosemead C terminal. The Valley and Mission corridor is Inter Urbes heavy rail. SC39 follows Griffin from Mission to Broadway/Daly on H, with a walking transfer to V at Valley/Mission. SC19 extends north on Soto to H at Huntington, retaining its V transfer at Valley.",
+  "description": "Intra Urbes fantasy streetcars: SC1 Solano–Elysian / stadium gates; SC1A Stadium Way connector; SC2 Frogtown–Cypress Park–Figueroa–Colorado; SC3 Cypress–Eagle Rock–York; SC3A Eagle Rock–Colorado branch; SC4 Los Feliz–Riverside / Fletcher. Not official projects; alignments and stops are conceptual. SC5 serves César Chávez from Union Station to Atlantic; SC6 follows Pico from Santa Monica to Downtown. SC7 follows Main Street from Florence, turns via MLK to San Pedro Street, and continues to Little Tokyo, connecting with SC6 at Pico. SC8–SC37 add an interconnected local grid across Central, South and East LA, the Westside, San Fernando Valley, San Gabriel Valley, Pasadena and South Bay, feeding the Inter Urbes network including the new Reseda R Line. Inter Urbes V connects Union Station to Holt Avenue in Pomona via Mission Road and Valley Boulevard. SC38 serves Garfield from Huntington to Imperial; SC23 reaches Colorado, and SC22 reaches the authored Garvey/Rosemead C terminal. The Valley and Mission corridor is Inter Urbes heavy rail. SC39 follows Griffin from Mission to Broadway/Daly on H, with a walking transfer to V at Valley/Mission. SC19 extends north on Soto to H at Huntington, retaining its V transfer at Valley. SC40 serves Virgil between Sunset and Wilshire; SC41 serves Temple between Virgil and Alameda, sharing a Virgil/Temple stop. SC10A branches east from Third/Alvarado along Third Street to Alameda, connecting SC34 Broadway and SC7 San Pedro.",
   "context_sources": [
     "https://www.elysianpark.org/find",
     "https://www.mlb.com/dodgers/ballpark/transportation/directions",
@@ -12435,9 +12435,14 @@
         "status": "concept",
         "id": "sc7-stop-118",
         "name": "San Pedro / 3rd",
-        "color": "#768653",
-        "routes": "SC7",
-        "location_status": "approximate"
+        "color": "#334155",
+        "routes": "SC7, SC10A",
+        "location_status": "approximate",
+        "interchange": true,
+        "local_transfers": [
+          "SC7",
+          "SC10A"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -14130,7 +14135,7 @@
         "status": "concept",
         "expansion": "intra-urbes-grid",
         "area": "Central LA",
-        "description": "Beverly Grove, Fairfax, Koreatown and Westlake local access. Continues on Alvarado to Beverly and Sunset transfers.",
+        "description": "Beverly Grove, Fairfax, Koreatown and Westlake local access. Continues on Alvarado to Beverly and Sunset transfers. The SC10A branch continues east on Third Street from Alvarado to Alameda through Downtown.",
         "corridors": [
           "3rd",
           "Alvarado"
@@ -14159,6 +14164,7 @@
           "intra-grid-stop-8dc93d9f89d7",
           "intra-grid-stop-fd5120f9b396",
           "intra-grid-stop-79afbe65b6fb",
+          "sc10a-alvarado",
           "intra-grid-stop-a0be937898a8",
           "intra-grid-stop-94870538a312",
           "intra-grid-stop-e481d6a9df7a",
@@ -29836,6 +29842,7 @@
           "intra-grid-stop-c92f4fcac076",
           "intra-grid-stop-a47750284dab",
           "intra-grid-stop-784f0bd8a33b",
+          "sc10a-broadway",
           "intra-grid-stop-9f30bf2a238d",
           "intra-grid-stop-191d3d49b0d1",
           "intra-grid-stop-345b82a554cb",
@@ -32439,10 +32446,27 @@
         "rail_mode": "light_rail",
         "service_type": "streetcar",
         "status": "concept",
-        "color": "#577E92",
-        "routes": "SC8",
+        "color": "#334155",
+        "routes": "SC8, SC40",
         "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
+        "expansion": "intra-urbes-grid",
+        "local_transfers": [
+          "SC8",
+          "SC40"
+        ],
+        "interchange": true,
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-sunset-vermont",
+            "station_name": "Sunset / Vermont",
+            "routes": [
+              "N"
+            ],
+            "distance_metres": 404,
+            "type": "walking",
+            "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
+          }
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -33876,10 +33900,15 @@
         "rail_mode": "light_rail",
         "service_type": "streetcar",
         "status": "concept",
-        "color": "#85739B",
-        "routes": "SC10",
+        "color": "#334155",
+        "routes": "SC10, SC40",
         "location_status": "approximate",
-        "expansion": "intra-urbes-grid"
+        "expansion": "intra-urbes-grid",
+        "local_transfers": [
+          "SC10",
+          "SC40"
+        ],
+        "interchange": true
       },
       "geometry": {
         "type": "Point",
@@ -34005,8 +34034,8 @@
         "rail_mode": "light_rail",
         "service_type": "streetcar",
         "status": "concept",
-        "color": "#85739B",
-        "routes": "SC10",
+        "color": "#334155",
+        "routes": "SC10, SC41",
         "location_status": "approximate",
         "expansion": "intra-urbes-grid",
         "interchange": true,
@@ -34022,6 +34051,10 @@
             "type": "walking",
             "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
           }
+        ],
+        "local_transfers": [
+          "SC10",
+          "SC41"
         ]
       },
       "geometry": {
@@ -46793,8 +46826,8 @@
         "rail_mode": "light_rail",
         "service_type": "streetcar",
         "status": "concept",
-        "color": "#A46D83",
-        "routes": "SC34",
+        "color": "#334155",
+        "routes": "SC34, SC41",
         "location_status": "approximate",
         "expansion": "intra-urbes-grid",
         "interchange": true,
@@ -46810,6 +46843,10 @@
             "type": "walking",
             "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
           }
+        ],
+        "local_transfers": [
+          "SC34",
+          "SC41"
         ]
       },
       "geometry": {
@@ -52696,6 +52733,1733 @@
           34.069016
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "sc40-line",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "id": "sc40-line",
+        "routeId": "SC40",
+        "name": "Virgil Streetcar",
+        "color": "#9A8761",
+        "stationIds": [
+          "intra-grid-stop-a403972d1b2b",
+          "sc40-fountain",
+          "sc40-santa-monica",
+          "sc40-normal",
+          "sc40-melrose",
+          "sc40-middlebury",
+          "sc40-temple",
+          "sc40-beverly",
+          "intra-grid-stop-84a80aa5f23e",
+          "sc40-5th",
+          "sc40-wilshire"
+        ],
+        "termini": [
+          "Sunset / Virgil",
+          "Virgil / Wilshire"
+        ],
+        "corridors": [
+          "Virgil Avenue"
+        ],
+        "description": "Local Virgil Avenue service from Sunset to Wilshire, connecting Sunset SC8, Third–Alvarado SC10 and Temple SC41, with walking transfers to nearby Inter Urbes stations.",
+        "alignment_status": "conceptual; mapped county road centerlines with documented short joins",
+        "right_of_way_intent": "reserved track and transit priority where feasible",
+        "length_km": 4.09,
+        "connector_roads_metres": {
+          "centerline join": 43.2
+        },
+        "geometry_gap_joins": [
+          {
+            "from": [
+              -118.286819,
+              34.076479
+            ],
+            "to": [
+              -118.286821,
+              34.076336
+            ],
+            "metres": 15.9
+          },
+          {
+            "from": [
+              -118.286797,
+              34.067721
+            ],
+            "to": [
+              -118.287094,
+              34.067719
+            ],
+            "metres": 27.3
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.287403,
+            34.098168
+          ],
+          [
+            -118.287398,
+            34.096752
+          ],
+          [
+            -118.287371,
+            34.096711
+          ],
+          [
+            -118.286734,
+            34.09574
+          ],
+          [
+            -118.28661,
+            34.095551
+          ],
+          [
+            -118.286589,
+            34.093467
+          ],
+          [
+            -118.286569,
+            34.091562
+          ],
+          [
+            -118.286733,
+            34.090875
+          ],
+          [
+            -118.286914,
+            34.090117
+          ],
+          [
+            -118.28691,
+            34.089731
+          ],
+          [
+            -118.286898,
+            34.088715
+          ],
+          [
+            -118.286887,
+            34.087684
+          ],
+          [
+            -118.286875,
+            34.086655
+          ],
+          [
+            -118.286863,
+            34.085638
+          ],
+          [
+            -118.286851,
+            34.084621
+          ],
+          [
+            -118.286841,
+            34.083594
+          ],
+          [
+            -118.286827,
+            34.08178
+          ],
+          [
+            -118.286812,
+            34.079828
+          ],
+          [
+            -118.286809,
+            34.079416
+          ],
+          [
+            -118.286801,
+            34.078376
+          ],
+          [
+            -118.2868,
+            34.078253
+          ],
+          [
+            -118.286799,
+            34.078119
+          ],
+          [
+            -118.286798,
+            34.078038
+          ],
+          [
+            -118.286796,
+            34.077739
+          ],
+          [
+            -118.286819,
+            34.076479
+          ],
+          [
+            -118.286821,
+            34.076336
+          ],
+          [
+            -118.286817,
+            34.075807
+          ],
+          [
+            -118.286807,
+            34.074803
+          ],
+          [
+            -118.286804,
+            34.074507
+          ],
+          [
+            -118.286793,
+            34.0735
+          ],
+          [
+            -118.286767,
+            34.070822
+          ],
+          [
+            -118.286796,
+            34.070441
+          ],
+          [
+            -118.28682,
+            34.070122
+          ],
+          [
+            -118.286811,
+            34.06905
+          ],
+          [
+            -118.286811,
+            34.068987
+          ],
+          [
+            -118.286797,
+            34.067721
+          ],
+          [
+            -118.287094,
+            34.067719
+          ],
+          [
+            -118.287083,
+            34.066676
+          ],
+          [
+            -118.287069,
+            34.065193
+          ],
+          [
+            -118.287054,
+            34.06371
+          ],
+          [
+            -118.287041,
+            34.062375
+          ],
+          [
+            -118.287035,
+            34.061824
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc41-line",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "id": "sc41-line",
+        "routeId": "SC41",
+        "name": "Temple Streetcar",
+        "color": "#668D91",
+        "stationIds": [
+          "sc40-temple",
+          "sc41-hoover",
+          "sc41-dillon",
+          "sc41-occidental",
+          "sc41-rampart",
+          "sc41-rosemont",
+          "intra-grid-stop-94870538a312",
+          "sc41-union",
+          "sc41-glendale",
+          "sc41-douglas",
+          "sc41-boylston",
+          "sc41-beaudry",
+          "sc41-figueroa",
+          "sc41-grand",
+          "intra-grid-stop-a47750284dab",
+          "sc41-los-angeles",
+          "sc41-alameda"
+        ],
+        "termini": [
+          "Virgil / Temple",
+          "Temple / Alameda"
+        ],
+        "corridors": [
+          "Temple Street"
+        ],
+        "description": "Temple Street local service from Virgil to Alameda, connecting Virgil SC40, Third–Alvarado SC10, Broadway SC34 and existing Inter Urbes stations along Temple.",
+        "alignment_status": "conceptual; mapped county road centerlines with documented short joins",
+        "right_of_way_intent": "reserved track and transit priority where feasible",
+        "length_km": 5.52,
+        "connector_roads_metres": {
+          "centerline join": 2.2
+        },
+        "geometry_gap_joins": [
+          {
+            "from": [
+              -118.247442,
+              34.058973
+            ],
+            "to": [
+              -118.247425,
+              34.058959
+            ],
+            "metres": 2.2
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.286819,
+            34.076479
+          ],
+          [
+            -118.286575,
+            34.0766
+          ],
+          [
+            -118.286508,
+            34.076629
+          ],
+          [
+            -118.286403,
+            34.076667
+          ],
+          [
+            -118.28629,
+            34.076696
+          ],
+          [
+            -118.286179,
+            34.076713
+          ],
+          [
+            -118.286085,
+            34.076721
+          ],
+          [
+            -118.285601,
+            34.076722
+          ],
+          [
+            -118.284411,
+            34.076722
+          ],
+          [
+            -118.284404,
+            34.076722
+          ],
+          [
+            -118.283934,
+            34.076516
+          ],
+          [
+            -118.283358,
+            34.076263
+          ],
+          [
+            -118.283056,
+            34.076131
+          ],
+          [
+            -118.282708,
+            34.075967
+          ],
+          [
+            -118.282099,
+            34.075682
+          ],
+          [
+            -118.281178,
+            34.075279
+          ],
+          [
+            -118.280258,
+            34.074877
+          ],
+          [
+            -118.279346,
+            34.074479
+          ],
+          [
+            -118.27844,
+            34.074083
+          ],
+          [
+            -118.277532,
+            34.073686
+          ],
+          [
+            -118.276627,
+            34.073291
+          ],
+          [
+            -118.275719,
+            34.072894
+          ],
+          [
+            -118.275312,
+            34.072716
+          ],
+          [
+            -118.274862,
+            34.072524
+          ],
+          [
+            -118.273888,
+            34.072203
+          ],
+          [
+            -118.273518,
+            34.072081
+          ],
+          [
+            -118.272954,
+            34.071895
+          ],
+          [
+            -118.271893,
+            34.071544
+          ],
+          [
+            -118.271464,
+            34.071403
+          ],
+          [
+            -118.270689,
+            34.071147
+          ],
+          [
+            -118.270236,
+            34.070998
+          ],
+          [
+            -118.270084,
+            34.070948
+          ],
+          [
+            -118.269313,
+            34.070693
+          ],
+          [
+            -118.268028,
+            34.070269
+          ],
+          [
+            -118.267071,
+            34.069954
+          ],
+          [
+            -118.266515,
+            34.069771
+          ],
+          [
+            -118.265516,
+            34.069443
+          ],
+          [
+            -118.264563,
+            34.069129
+          ],
+          [
+            -118.263949,
+            34.068926
+          ],
+          [
+            -118.263918,
+            34.068916
+          ],
+          [
+            -118.263789,
+            34.068874
+          ],
+          [
+            -118.263259,
+            34.068699
+          ],
+          [
+            -118.262978,
+            34.068607
+          ],
+          [
+            -118.262784,
+            34.068542
+          ],
+          [
+            -118.262692,
+            34.068512
+          ],
+          [
+            -118.262379,
+            34.068449
+          ],
+          [
+            -118.260872,
+            34.068143
+          ],
+          [
+            -118.260463,
+            34.06806
+          ],
+          [
+            -118.25896,
+            34.067756
+          ],
+          [
+            -118.257765,
+            34.067513
+          ],
+          [
+            -118.256605,
+            34.067277
+          ],
+          [
+            -118.255258,
+            34.067004
+          ],
+          [
+            -118.255128,
+            34.06697
+          ],
+          [
+            -118.254983,
+            34.066916
+          ],
+          [
+            -118.254865,
+            34.066858
+          ],
+          [
+            -118.254756,
+            34.066791
+          ],
+          [
+            -118.254624,
+            34.066688
+          ],
+          [
+            -118.253863,
+            34.065934
+          ],
+          [
+            -118.253428,
+            34.065503
+          ],
+          [
+            -118.252722,
+            34.064804
+          ],
+          [
+            -118.252144,
+            34.064232
+          ],
+          [
+            -118.252014,
+            34.064063
+          ],
+          [
+            -118.251342,
+            34.063198
+          ],
+          [
+            -118.25022,
+            34.061753
+          ],
+          [
+            -118.250197,
+            34.061724
+          ],
+          [
+            -118.250098,
+            34.061596
+          ],
+          [
+            -118.250008,
+            34.06148
+          ],
+          [
+            -118.249867,
+            34.061298
+          ],
+          [
+            -118.249813,
+            34.061229
+          ],
+          [
+            -118.249396,
+            34.060692
+          ],
+          [
+            -118.249337,
+            34.060615
+          ],
+          [
+            -118.249249,
+            34.060502
+          ],
+          [
+            -118.248655,
+            34.059999
+          ],
+          [
+            -118.24854,
+            34.059902
+          ],
+          [
+            -118.24838,
+            34.059767
+          ],
+          [
+            -118.247737,
+            34.059223
+          ],
+          [
+            -118.247474,
+            34.059
+          ],
+          [
+            -118.247442,
+            34.058973
+          ],
+          [
+            -118.247425,
+            34.058959
+          ],
+          [
+            -118.246482,
+            34.058164
+          ],
+          [
+            -118.244499,
+            34.056499
+          ],
+          [
+            -118.243583,
+            34.05572
+          ],
+          [
+            -118.242641,
+            34.054902
+          ],
+          [
+            -118.241666,
+            34.054084
+          ],
+          [
+            -118.240874,
+            34.053425
+          ],
+          [
+            -118.23971,
+            34.052456
+          ],
+          [
+            -118.238051,
+            34.051075
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc40-fountain",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc40-fountain",
+        "name": "Virgil / Fountain",
+        "routes": "SC40",
+        "color": "#9A8761"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.286734,
+          34.09574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc40-santa-monica",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc40-santa-monica",
+        "name": "Virgil / Santa Monica",
+        "routes": "SC40",
+        "color": "#9A8761",
+        "interchange": true,
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-vermont-santa-monica",
+            "station_name": "Vermont / Santa Monica",
+            "routes": [
+              "F",
+              "N"
+            ],
+            "distance_metres": 461,
+            "type": "walking",
+            "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.286733,
+          34.090875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc40-normal",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc40-normal",
+        "name": "Virgil / Normal",
+        "routes": "SC40",
+        "color": "#9A8761"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.286875,
+          34.086655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc40-melrose",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc40-melrose",
+        "name": "Virgil / Melrose",
+        "routes": "SC40",
+        "color": "#9A8761"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.286841,
+          34.083594
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc40-middlebury",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc40-middlebury",
+        "name": "Virgil / Middlebury",
+        "routes": "SC40",
+        "color": "#9A8761"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.286812,
+          34.079828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc40-temple",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc40-temple",
+        "name": "Virgil / Temple",
+        "routes": "SC40, SC41",
+        "color": "#334155",
+        "local_transfers": [
+          "SC40",
+          "SC41"
+        ],
+        "interchange": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.286819,
+          34.076479
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc40-beverly",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc40-beverly",
+        "name": "Virgil / Beverly",
+        "routes": "SC40",
+        "color": "#9A8761"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.286807,
+          34.074803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc40-5th",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc40-5th",
+        "name": "Virgil / 5th",
+        "routes": "SC40",
+        "color": "#9A8761"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.287069,
+          34.065193
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc40-wilshire",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc40-wilshire",
+        "name": "Virgil / Wilshire",
+        "routes": "SC40",
+        "color": "#9A8761",
+        "interchange": true,
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-wilshire-vermont",
+            "station_name": "Wilshire / Vermont",
+            "routes": [
+              "N"
+            ],
+            "distance_metres": 297,
+            "type": "walking",
+            "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.287035,
+          34.061824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc41-hoover",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc41-hoover",
+        "name": "Temple / Hoover",
+        "routes": "SC41",
+        "color": "#668D91"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.284411,
+          34.076722
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc41-dillon",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc41-dillon",
+        "name": "Temple / Dillon",
+        "routes": "SC41",
+        "color": "#668D91"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.281178,
+          34.075279
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc41-occidental",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc41-occidental",
+        "name": "Temple / Occidental",
+        "routes": "SC41",
+        "color": "#668D91"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.277532,
+          34.073686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc41-rampart",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc41-rampart",
+        "name": "Temple / Rampart",
+        "routes": "SC41",
+        "color": "#668D91"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.274862,
+          34.072524
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc41-rosemont",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc41-rosemont",
+        "name": "Temple / Rosemont",
+        "routes": "SC41",
+        "color": "#668D91"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.270689,
+          34.071147
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc41-union",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc41-union",
+        "name": "Temple / Union",
+        "routes": "SC41",
+        "color": "#668D91"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.263259,
+          34.068699
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc41-glendale",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc41-glendale",
+        "name": "Temple / Glendale",
+        "routes": "SC41",
+        "color": "#668D91",
+        "interchange": true,
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-temple-glendale",
+            "station_name": "Temple / Glendale",
+            "routes": [
+              "BEV"
+            ],
+            "distance_metres": 2,
+            "type": "walking",
+            "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.260872,
+          34.068143
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc41-douglas",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc41-douglas",
+        "name": "Temple / Douglas",
+        "routes": "SC41",
+        "color": "#668D91"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.256605,
+          34.067277
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc41-boylston",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc41-boylston",
+        "name": "Temple / Boylston",
+        "routes": "SC41",
+        "color": "#668D91"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.252722,
+          34.064804
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc41-beaudry",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc41-beaudry",
+        "name": "Temple / Beaudry",
+        "routes": "SC41",
+        "color": "#668D91"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.251342,
+          34.063198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc41-figueroa",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc41-figueroa",
+        "name": "Temple / Figueroa",
+        "routes": "SC41",
+        "color": "#668D91"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.24854,
+          34.059902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc41-grand",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc41-grand",
+        "name": "Temple / Grand",
+        "routes": "SC41",
+        "color": "#668D91"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.246482,
+          34.058164
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc41-los-angeles",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc41-los-angeles",
+        "name": "Temple / Los Angeles",
+        "routes": "SC41",
+        "color": "#668D91"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.240874,
+          34.053425
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc41-alameda",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc41-alameda",
+        "name": "Temple / Alameda",
+        "routes": "SC41",
+        "color": "#668D91"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.238051,
+          34.051075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc10a-line",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "id": "sc10a-line",
+        "routeId": "SC10A",
+        "name": "Third Street Downtown Branch",
+        "color": "#85739B",
+        "parent_route": "SC10",
+        "stationIds": [
+          "sc10a-alvarado",
+          "sc10a-bonnie-brae",
+          "sc10a-union",
+          "sc10a-loma",
+          "sc10a-lucas",
+          "sc10a-beaudry",
+          "sc10a-figueroa",
+          "sc10a-grand",
+          "sc10a-broadway",
+          "sc10a-main",
+          "sc7-stop-118",
+          "sc10a-alameda"
+        ],
+        "termini": [
+          "3rd / Alvarado",
+          "3rd / Alameda"
+        ],
+        "corridors": [
+          "3rd Street"
+        ],
+        "description": "Eastward branch of Third–Alvarado SC10, following Third Street from Alvarado through Downtown to Alameda, with shared stops for Broadway SC34 and San Pedro SC7.",
+        "alignment_status": "conceptual; county road centerlines including the Third Street tunnel corridor",
+        "right_of_way_intent": "reserved track and transit priority where feasible",
+        "length_km": 3.76,
+        "connector_roads_metres": {},
+        "geometry_gap_joins": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.27268,
+            34.062971
+          ],
+          [
+            -118.271458,
+            34.062431
+          ],
+          [
+            -118.270213,
+            34.061879
+          ],
+          [
+            -118.268927,
+            34.061299
+          ],
+          [
+            -118.268763,
+            34.061225
+          ],
+          [
+            -118.268447,
+            34.061083
+          ],
+          [
+            -118.267944,
+            34.060876
+          ],
+          [
+            -118.267241,
+            34.060585
+          ],
+          [
+            -118.265558,
+            34.059892
+          ],
+          [
+            -118.264398,
+            34.059426
+          ],
+          [
+            -118.263474,
+            34.059054
+          ],
+          [
+            -118.263334,
+            34.058997
+          ],
+          [
+            -118.261607,
+            34.058304
+          ],
+          [
+            -118.259811,
+            34.05755
+          ],
+          [
+            -118.258333,
+            34.056928
+          ],
+          [
+            -118.258246,
+            34.056894
+          ],
+          [
+            -118.258069,
+            34.056834
+          ],
+          [
+            -118.257818,
+            34.056768
+          ],
+          [
+            -118.256603,
+            34.056527
+          ],
+          [
+            -118.256564,
+            34.056519
+          ],
+          [
+            -118.256402,
+            34.056413
+          ],
+          [
+            -118.256294,
+            34.056343
+          ],
+          [
+            -118.256203,
+            34.056284
+          ],
+          [
+            -118.256057,
+            34.056188
+          ],
+          [
+            -118.255909,
+            34.056092
+          ],
+          [
+            -118.255424,
+            34.055776
+          ],
+          [
+            -118.255098,
+            34.055551
+          ],
+          [
+            -118.254482,
+            34.055126
+          ],
+          [
+            -118.253413,
+            34.054439
+          ],
+          [
+            -118.252287,
+            34.053716
+          ],
+          [
+            -118.251238,
+            34.053041
+          ],
+          [
+            -118.251216,
+            34.053027
+          ],
+          [
+            -118.250169,
+            34.052352
+          ],
+          [
+            -118.249802,
+            34.052115
+          ],
+          [
+            -118.249101,
+            34.051663
+          ],
+          [
+            -118.248029,
+            34.050968
+          ],
+          [
+            -118.246957,
+            34.050272
+          ],
+          [
+            -118.246424,
+            34.049927
+          ],
+          [
+            -118.245865,
+            34.049565
+          ],
+          [
+            -118.245786,
+            34.049517
+          ],
+          [
+            -118.245588,
+            34.049027
+          ],
+          [
+            -118.245403,
+            34.048916
+          ],
+          [
+            -118.244739,
+            34.048522
+          ],
+          [
+            -118.243801,
+            34.047965
+          ],
+          [
+            -118.243089,
+            34.047613
+          ],
+          [
+            -118.242516,
+            34.047331
+          ],
+          [
+            -118.241068,
+            34.046685
+          ],
+          [
+            -118.240387,
+            34.046425
+          ],
+          [
+            -118.240208,
+            34.046357
+          ],
+          [
+            -118.239573,
+            34.046115
+          ],
+          [
+            -118.238073,
+            34.045543
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc10a-alvarado",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc10a-alvarado",
+        "name": "3rd / Alvarado",
+        "routes": "SC10, SC10A",
+        "color": "#334155",
+        "interchange": true,
+        "local_transfers": [
+          "SC10",
+          "SC10A"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.27268,
+          34.062971
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc10a-bonnie-brae",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc10a-bonnie-brae",
+        "name": "3rd / Bonnie Brae",
+        "routes": "SC10A",
+        "color": "#85739B"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.270213,
+          34.061879
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc10a-union",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc10a-union",
+        "name": "3rd / Union",
+        "routes": "SC10A",
+        "color": "#85739B"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.267944,
+          34.060876
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc10a-loma",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc10a-loma",
+        "name": "3rd / Loma",
+        "routes": "SC10A",
+        "color": "#85739B"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.265558,
+          34.059892
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc10a-lucas",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc10a-lucas",
+        "name": "3rd / Lucas",
+        "routes": "SC10A",
+        "color": "#85739B"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.261607,
+          34.058304
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc10a-beaudry",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc10a-beaudry",
+        "name": "3rd / Beaudry",
+        "routes": "SC10A",
+        "color": "#85739B"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.256603,
+          34.056527
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc10a-figueroa",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc10a-figueroa",
+        "name": "3rd / Figueroa",
+        "routes": "SC10A",
+        "color": "#85739B"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.254482,
+          34.055126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc10a-grand",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc10a-grand",
+        "name": "3rd / Grand",
+        "routes": "SC10A",
+        "color": "#85739B"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.251238,
+          34.053041
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc10a-broadway",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc10a-broadway",
+        "name": "3rd / Broadway",
+        "routes": "SC34, SC10A",
+        "color": "#334155",
+        "interchange": true,
+        "local_transfers": [
+          "SC34",
+          "SC10A"
+        ],
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-broadway-fourth",
+            "station_name": "Broadway / 4th",
+            "routes": [
+              "L"
+            ],
+            "distance_metres": 207,
+            "type": "walking",
+            "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
+          },
+          {
+            "station_id": "station-spring-fourth",
+            "station_name": "Spring / 4th",
+            "routes": [
+              "Q"
+            ],
+            "distance_metres": 240,
+            "type": "walking",
+            "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.248029,
+          34.050968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc10a-main",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc10a-main",
+        "name": "3rd / Main",
+        "routes": "SC10A",
+        "color": "#85739B"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.245865,
+          34.049565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc10a-alameda",
+      "properties": {
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "id": "sc10a-alameda",
+        "name": "3rd / Alameda",
+        "routes": "SC10A",
+        "color": "#85739B"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.238073,
+          34.045543
+        ]
+      }
     }
   ],
   "geometry_sources": [
@@ -52817,6 +54581,18 @@
       "source": "Los Angeles County CAMS road centerlines",
       "url": "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/eGIS_Addressing_ROAD_LINES/FeatureServer/0",
       "note": "SC39 follows Griffin Avenue from Mission Road to Broadway and the authored H Broadway/Daly marker, crossing Main without turning. Its V Valley/Mission transfer is a walk, not a colocated platform. SC19 continues north on Soto to a new H transfer station at Huntington on the existing H alignment; its terminal is adjusted less than 15 metres from the mapped intersection."
+    },
+    {
+      "section": "SC40 Virgil and SC41 Temple",
+      "source": "Los Angeles County CAMS road centerlines",
+      "url": "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/eGIS_Addressing_ROAD_LINES/FeatureServer/0",
+      "note": "Conceptual local corridors using named road centerlines. SC40 joins 15.9 m at Temple/Silver Lake and a 27.3 m offset at Geneva; SC41 joins 2.2 m at Hope. Existing streetcar intersections use shared stops. Heavy-rail links use existing station markers; walking distances are straight-line proximity, not surveyed access routes."
+    },
+    {
+      "section": "SC10A Third Street east branch",
+      "source": "Los Angeles County CAMS road centerlines",
+      "url": "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/eGIS_Addressing_ROAD_LINES/FeatureServer/0",
+      "note": "Conceptual Third Street corridor from Alvarado to Alameda, including the tunnel beneath Bunker Hill. Tunnel suitability and station access are not engineering assessments. Shared platforms at Third/Alvarado, Broadway and San Pedro; downtown heavy-rail connections are walks to existing stations."
     }
   ],
   "expansion_summary": {
@@ -52877,6 +54653,30 @@
       "termini": [
         "Soto / Huntington — H transfer",
         "Soto / Vernon"
+      ]
+    },
+    "SC40": {
+      "stops": 11,
+      "length_km": 4.09,
+      "termini": [
+        "Sunset / Virgil",
+        "Virgil / Wilshire"
+      ]
+    },
+    "SC41": {
+      "stops": 17,
+      "length_km": 5.52,
+      "termini": [
+        "Virgil / Temple",
+        "Temple / Alameda"
+      ]
+    },
+    "SC10A": {
+      "stops": 12,
+      "length_km": 3.76,
+      "termini": [
+        "3rd / Alvarado",
+        "3rd / Alameda"
       ]
     }
   }
