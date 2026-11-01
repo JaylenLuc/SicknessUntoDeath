@@ -11,7 +11,7 @@
   "routes": [
     {
       "id": "SC8",
-      "name": "Sunset–Echo Park Streetcar",
+      "name": "Sunset–Echo Park Light Rail / Tram",
       "roads": [
         "Sunset"
       ],
@@ -31,11 +31,15 @@
       },
       "area": "Central LA",
       "rationale": "Echo Park and Silver Lake local access; connects SC1 and SC4.",
-      "color": "#577E92"
+      "color": "#577E92",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_miles": 6.18
     },
     {
       "id": "SC9",
-      "name": "Melrose Streetcar",
+      "name": "Melrose Light Rail / Tram",
       "roads": [
         "Melrose",
         "Vermont"
@@ -56,11 +60,15 @@
       },
       "area": "Central LA",
       "rationale": "Cross-town infill between Beverly and Santa Monica heavy rail. Turns north on Vermont for Santa Monica and Sunset transfers.",
-      "color": "#94725D"
+      "color": "#94725D",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_miles": 6.28
     },
     {
       "id": "SC10",
-      "name": "Third–Alvarado Streetcar",
+      "name": "Third–Alvarado Light Rail / Tram",
       "roads": [
         "3rd",
         "Alvarado"
@@ -81,11 +89,15 @@
       },
       "area": "Central LA",
       "rationale": "Beverly Grove, Fairfax, Koreatown and Westlake local access. Continues on Alvarado to Beverly and Sunset transfers. The SC10A branch continues east on Third Street from Alvarado to Alameda through Downtown.",
-      "color": "#85739B"
+      "color": "#85739B",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_miles": 7.23
     },
     {
       "id": "SC11",
-      "name": "Venice Streetcar",
+      "name": "Venice Light Rail / Tram",
       "roads": [
         "Venice"
       ],
@@ -105,11 +117,15 @@
       },
       "area": "Westside",
       "rationale": "Local infill between widely spaced Q Line stations; bus-priority corridor.",
-      "color": "#508978"
+      "color": "#508978",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_miles": 12.21
     },
     {
       "id": "SC12",
-      "name": "Adams Streetcar",
+      "name": "Adams Light Rail / Tram",
       "roads": [
         "Adams"
       ],
@@ -129,11 +145,15 @@
       },
       "area": "South LA",
       "rationale": "West Adams and residential cross-town coverage south of Venice.",
-      "color": "#AF775C"
+      "color": "#AF775C",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_miles": 6.88
     },
     {
       "id": "SC13",
-      "name": "La Brea Streetcar",
+      "name": "La Brea Light Rail / Tram",
       "roads": [
         "La Brea"
       ],
@@ -153,11 +173,15 @@
       },
       "area": "Central LA",
       "rationale": "North–south infill between K and P; established bus-priority corridor.",
-      "color": "#667FA5"
+      "color": "#667FA5",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_miles": 7.83
     },
     {
       "id": "SC14",
-      "name": "Normandie Streetcar",
+      "name": "Normandie Light Rail / Tram",
       "roads": [
         "Normandie"
       ],
@@ -177,11 +201,15 @@
       },
       "area": "South LA",
       "rationale": "Local corridor between Western M and Vermont N.",
-      "color": "#A46D83"
+      "color": "#A46D83",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_miles": 8.63
     },
     {
       "id": "SC15",
-      "name": "Central Streetcar",
+      "name": "Central Light Rail / Tram",
       "roads": [
         "Central"
       ],
@@ -201,11 +229,15 @@
       },
       "area": "South LA",
       "rationale": "NextGen priority: Central Avenue neighborhoods, Historic South Central and Watts.",
-      "color": "#6F8B54"
+      "color": "#6F8B54",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_miles": 7.13
     },
     {
       "id": "SC16",
-      "name": "Slauson Streetcar",
+      "name": "Slauson Light Rail / Tram",
       "roads": [
         "Slauson"
       ],
@@ -225,7 +257,11 @@
       },
       "area": "South LA",
       "rationale": "NextGen priority: east–west South LA and Southeast LA connections.",
-      "color": "#B38A45"
+      "color": "#B38A45",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_miles": 10.6
     },
     {
       "id": "SC17",
@@ -249,11 +285,15 @@
       },
       "area": "South LA",
       "rationale": "Leimert Park, Exposition Park and SC7 Main/San Pedro transfers.",
-      "color": "#598E8F"
+      "color": "#598E8F",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_miles": 4.5
     },
     {
       "id": "SC18",
-      "name": "Manchester–Firestone Streetcar",
+      "name": "Manchester–Firestone Light Rail / Tram",
       "roads": [
         "Manchester",
         "Firestone"
@@ -274,7 +314,11 @@
       },
       "area": "South LA",
       "rationale": "Westchester, Inglewood and South LA cross-town gap south of Florence.",
-      "color": "#577E92"
+      "color": "#577E92",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_miles": 10.28
     },
     {
       "id": "SC19",
@@ -299,7 +343,11 @@
       },
       "area": "East LA",
       "rationale": "Soto Streetcar from H at Huntington/Soto via V at Valley/Soto and Boyle Heights to Vernon.",
-      "color": "#94725D"
+      "color": "#94725D",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_miles": 5.37
     },
     {
       "id": "SC20",
@@ -323,7 +371,11 @@
       },
       "area": "East LA",
       "rationale": "Boyle Heights and East LA connection south of César Chávez.",
-      "color": "#85739B"
+      "color": "#85739B",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_miles": 3.56
     },
     {
       "id": "SC22",
@@ -348,7 +400,11 @@
       },
       "area": "San Gabriel Valley",
       "rationale": "Monterey Park and Rosemead east–west neighborhood access. Extends past the physical Rosemead intersection to the authored C-line terminal marker.",
-      "color": "#AF775C"
+      "color": "#AF775C",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_miles": 3.93
     },
     {
       "id": "SC23",
@@ -372,7 +428,11 @@
       },
       "area": "San Gabriel Valley",
       "rationale": "Colorado C interchange to Garvey, linking H, SGV and the Valley/Garvey streetcars.",
-      "color": "#667FA5"
+      "color": "#667FA5",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_miles": 5.82
     },
     {
       "id": "SC24",
@@ -396,11 +456,15 @@
       },
       "area": "Pasadena",
       "rationale": "Pasadena local access and transfer to the Colorado C corridor.",
-      "color": "#A46D83"
+      "color": "#A46D83",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_miles": 1.51
     },
     {
       "id": "SC26",
-      "name": "Victory Streetcar",
+      "name": "Victory Light Rail / Tram",
       "roads": [
         "Victory"
       ],
@@ -420,7 +484,11 @@
       },
       "area": "San Fernando Valley",
       "rationale": "East–west local grid south of the B Line, connecting Reseda, Balboa, Van Nuys and North Hollywood.",
-      "color": "#B38A45"
+      "color": "#B38A45",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_miles": 8.47
     },
     {
       "id": "SC27",
@@ -444,7 +512,11 @@
       },
       "area": "San Fernando Valley",
       "rationale": "Local coverage between the new Reseda trunk and Van Nuys.",
-      "color": "#598E8F"
+      "color": "#598E8F",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_miles": 3.52
     },
     {
       "id": "RO",
@@ -502,7 +574,7 @@
     },
     {
       "id": "SC29",
-      "name": "Lankershim Streetcar",
+      "name": "Lankershim Light Rail / Tram",
       "roads": [
         "Lankershim"
       ],
@@ -522,7 +594,11 @@
       },
       "area": "San Fernando Valley",
       "rationale": "North Hollywood and Sun Valley connections to B, G and the east–west streetcars.",
-      "color": "#94725D"
+      "color": "#94725D",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_miles": 6.29
     },
     {
       "id": "SC30",
@@ -549,11 +625,15 @@
       },
       "area": "Westside",
       "rationale": "UCLA approach, Westwood Village and north–south links to F, L, Pico and Venice-area services. Continues via National and Motor to SC11 on Venice.",
-      "color": "#85739B"
+      "color": "#85739B",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_miles": 4.2
     },
     {
       "id": "SC31",
-      "name": "Washington Streetcar",
+      "name": "Washington Light Rail / Tram",
       "roads": [
         "Washington"
       ],
@@ -573,7 +653,11 @@
       },
       "area": "Westside",
       "rationale": "Marina, Culver City and Mid-City local coverage south of Venice.",
-      "color": "#9B824F"
+      "color": "#9B824F",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_miles": 13.02
     },
     {
       "id": "SC32",
@@ -597,7 +681,11 @@
       },
       "area": "South LA",
       "rationale": "Hyde Park and Inglewood local access south of the authored K Line.",
-      "color": "#AF775C"
+      "color": "#AF775C",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_miles": 4.13
     },
     {
       "id": "SC33",
@@ -621,7 +709,11 @@
       },
       "area": "South LA",
       "rationale": "Neighborhood infill between Main and Central; connects the South LA cross-town grid.",
-      "color": "#667FA5"
+      "color": "#667FA5",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_miles": 5.83
     },
     {
       "id": "SC34",
@@ -645,11 +737,15 @@
       },
       "area": "Central LA",
       "rationale": "Downtown and Historic South Central access on a Metro transit-priority corridor.",
-      "color": "#A46D83"
+      "color": "#A46D83",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_miles": 3.97
     },
     {
       "id": "SC35",
-      "name": "Vernon Streetcar",
+      "name": "Vernon Light Rail / Tram",
       "roads": [
         "Vernon"
       ],
@@ -669,11 +765,15 @@
       },
       "area": "South LA",
       "rationale": "Cross-town residential and employment access between MLK and Slauson.",
-      "color": "#97656C"
+      "color": "#97656C",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_miles": 6.45
     },
     {
       "id": "SC36",
-      "name": "Hawthorne Streetcar",
+      "name": "Hawthorne Light Rail / Tram",
       "roads": [
         "La Brea",
         "Hawthorne"
@@ -694,7 +794,11 @@
       },
       "area": "South Bay",
       "rationale": "Inglewood, Hawthorne, Lawndale and Torrance local spine.",
-      "color": "#B38A45"
+      "color": "#B38A45",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_miles": 8.63
     },
     {
       "id": "SC37",
@@ -718,11 +822,15 @@
       },
       "area": "South Bay",
       "rationale": "Gardena and El Camino College local connector to Inter Urbes M and Hawthorne.",
-      "color": "#598E8F"
+      "color": "#598E8F",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_miles": 4.62
     },
     {
       "id": "SC38",
-      "name": "Garfield Streetcar",
+      "name": "Garfield Light Rail / Tram",
       "roads": [
         "Garfield"
       ],
@@ -742,7 +850,11 @@
       },
       "area": "San Gabriel Valley / East LA",
       "rationale": "Alhambra, Monterey Park, Montebello, Commerce and South Gate local service. Connects Valley Inter Urbes V, Garvey SC22 and the Inter Urbes SGV line at Main.",
-      "color": "#96748B"
+      "color": "#96748B",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_miles": 13.44
     },
     {
       "id": "SC39",
@@ -768,7 +880,11 @@
       },
       "area": "Lincoln Heights",
       "rationale": "Griffin Avenue streetcar from Mission Road to Broadway/Daly on H, with a walking transfer to V at Valley/Mission. Crosses Main Street without turning onto it.",
-      "color": "#7A8F64"
+      "color": "#7A8F64",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_miles": 0.98
     },
     {
       "id": "SC40",
@@ -792,7 +908,11 @@
       },
       "area": "East Hollywood / Virgil Village / Koreatown",
       "rationale": "Local Virgil Avenue service from Sunset to Wilshire, connecting Sunset SC8, Third–Alvarado SC10 and Temple SC41, with walking transfers to nearby Inter Urbes stations.",
-      "color": "#9A8761"
+      "color": "#9A8761",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_miles": 2.54
     },
     {
       "id": "SC41",
@@ -816,7 +936,11 @@
       },
       "area": "Historic Filipinotown / Westlake / Civic Center / Little Tokyo",
       "rationale": "Temple Street local service from Virgil to Alameda, connecting Virgil SC40, Third–Alvarado SC10, Broadway SC34 and existing Inter Urbes stations along Temple.",
-      "color": "#668D91"
+      "color": "#668D91",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_miles": 3.43
     },
     {
       "id": "SC10A",
@@ -841,11 +965,15 @@
       },
       "area": "Westlake / Downtown / Little Tokyo",
       "rationale": "Eastward branch of Third–Alvarado SC10, following Third Street from Alvarado through Downtown to Alameda, with shared stops for Broadway SC34 and San Pedro SC7.",
-      "color": "#85739B"
+      "color": "#85739B",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_miles": 2.34
     },
     {
       "id": "SC42",
-      "name": "Burbank Streetcar",
+      "name": "Burbank Light Rail / Tram",
       "roads": [
         "Burbank",
         "Front"
@@ -866,7 +994,11 @@
       },
       "area": "San Fernando Valley / Burbank",
       "rationale": "Burbank Boulevard local service from Reseda to Downtown Burbank via Front Street, serving the southern Valley and Valley College, with Balboa and Lankershim streetcar transfers. Selected to fill the gap south of Victory while the G branch already serves Magnolia.",
-      "color": "#A17D67"
+      "color": "#A17D67",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_miles": 13.47
     },
     {
       "id": "SC43",
@@ -890,7 +1022,11 @@
       },
       "area": "Rosemead / San Gabriel / San Marino",
       "rationale": "North–south Del Mar Avenue service from Garvey to Huntington, connecting Garvey SC22, Valley V, Las Tunas SGV and Huntington H.",
-      "color": "#8E7DA0"
+      "color": "#8E7DA0",
+      "rail_mode": "light_rail",
+      "service_type": "streetcar",
+      "service_label": "Streetcar",
+      "length_miles": 4.26
     }
   ],
   "heavy": {
@@ -1047,7 +1183,14 @@
     }
   ],
   "planning_principles": {
-    "heavy_rail_station_spacing": "Heavy rail should have fewer stops than local streetcars, especially on long-distance corridors. Preserve key transfers and major destinations; avoid carrying over dense local stop patterns."
+    "heavy_rail_station_spacing": "Heavy rail should have fewer stops than local streetcars, especially on long-distance corridors. Preserve key transfers and major destinations; avoid carrying over dense local stop patterns.",
+    "intra_urbes_service_classification": {
+      "threshold_miles": 6,
+      "longer_routes": "light_rail",
+      "shorter_routes": "streetcar",
+      "length_basis": "Sum of geodesic segment lengths along each authored one-way route or branch; exactly six miles remains streetcar.",
+      "note": "User-selected service classification for this fantasy network, not a universal mode definition. Route paths, stop spacing and route IDs are retained."
+    }
   },
   "corridor_comparison": {
     "selected": "Burbank Boulevard",

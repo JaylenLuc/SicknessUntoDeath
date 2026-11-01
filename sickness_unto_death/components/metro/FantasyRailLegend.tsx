@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useState } from "react";
 import type { FeatureCollection, GeoJsonProperties, Geometry } from "geojson";
-import { FANTASY_RAIL_NETWORKS } from "./fantasyRailNetworks";
+import { FANTASY_RAIL_NETWORKS, INTRA_URBES_SERVICE_LABELS } from "./fantasyRailNetworks";
 import { RAIL_PROJECTS } from "./proposedMetroProjects";
 import { LARY_1915_DASHARRAY, LARY_PERIOD_STYLES } from "./laryPeriodStyles";
 import { PE_1915_DASHARRAY, PE_PERIOD_STYLES } from "./peLineStyle";
@@ -21,6 +21,7 @@ type LegendGroups = {
   proposed: FantasyLegendLine[];
   heavyRail: FantasyLegendLine[];
   lightRail: FantasyLegendLine[];
+  streetcar: FantasyLegendLine[];
 };
 
 type FantasyRailLegendProps = {
@@ -69,6 +70,7 @@ export default function FantasyRailLegend({
     proposed: [],
     heavyRail: [],
     lightRail: [],
+    streetcar: [],
   });
 
   useEffect(() => {
@@ -128,7 +130,7 @@ export default function FantasyRailLegend({
 
           if (!id || !name || !routeId || seenLineIds.has(id)) return [];
           seenLineIds.add(id);
-          return [{ id, name, routeId, color, railMode: properties?.rail_mode }];
+          return [{ id, name, routeId, color, railMode: properties?.rail_mode, serviceType: properties?.service_type }];
         });
 
         const existingLines = existingData.features.flatMap((feature) => {
@@ -202,7 +204,8 @@ export default function FantasyRailLegend({
             existing: existingLines,
             proposed: proposedLines,
             heavyRail: fantasyLines.filter((line) => line.railMode === FANTASY_RAIL_NETWORKS.heavyRail.mode),
-            lightRail: fantasyLines.filter((line) => line.railMode === FANTASY_RAIL_NETWORKS.lightRail.mode),
+            lightRail: fantasyLines.filter((line) => line.railMode === FANTASY_RAIL_NETWORKS.lightRail.mode && line.serviceType === "light_rail"),
+            streetcar: fantasyLines.filter((line) => line.railMode === FANTASY_RAIL_NETWORKS.lightRail.mode && line.serviceType !== "light_rail"),
           });
         }
       } catch (error) {
@@ -389,11 +392,15 @@ export default function FantasyRailLegend({
         </div>
       )}
 
-      {(["heavyRail", "lightRail"] as const).map((network) => (
+      {([
+        { network: "heavyRail", label: FANTASY_RAIL_NETWORKS.heavyRail.label },
+        { network: "lightRail", label: `Intra Urbes — ${INTRA_URBES_SERVICE_LABELS.light_rail}` },
+        { network: "streetcar", label: `Intra Urbes — ${INTRA_URBES_SERVICE_LABELS.streetcar}` },
+      ] as const).map(({ network, label }) => (
         groups[network].length > 0 && (
           <div key={network} className={compact ? "mt-3" : "mt-5"}>
             <h3 className={compact ? "mb-1 border-b border-black pb-0.5 text-[9px] font-bold uppercase" : "mb-2 border-b-2 border-black pb-1 text-sm font-bold uppercase tracking-wide"}>
-              {FANTASY_RAIL_NETWORKS[network].label}
+              {label}
             </h3>
             {network === "heavyRail" && (
               <p className={compact ? "mb-2 text-[9px] leading-tight" : "mb-3 text-xs"}>

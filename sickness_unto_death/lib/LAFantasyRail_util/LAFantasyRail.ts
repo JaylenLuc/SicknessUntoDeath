@@ -29,12 +29,12 @@ import type {
 
 export type RailFeatureCollection = FeatureCollection<
   LineString | MultiLineString | Point,
-  { color?: string; route_color?: string; routeId?: string; name?: string }
+  { color?: string; route_color?: string; routeId?: string; name?: string; service_type?: string }
 >;
 
 export type TrainFeatureCollection = FeatureCollection<
   Point,
-  { route_color: string; bearing: number; route_id?: string; route_name?: string }
+  { route_color: string; bearing: number; route_id?: string; route_name?: string; service_type?: string }
 >;
 
 type RoutePath = {
@@ -141,7 +141,7 @@ export function createTrainAnimator(railData: RailFeatureCollection) {
     );
     const route = makeRoutePath(longestLine, color);
 
-    return route ? [{ ...route, routeId: feature.properties?.routeId, name: feature.properties?.name }] : [];
+    return route ? [{ ...route, routeId: feature.properties?.routeId, name: feature.properties?.name, serviceType: feature.properties?.service_type }] : [];
   });
 
   return (elapsedMilliseconds: number): TrainFeatureCollection => {
@@ -163,6 +163,7 @@ export function createTrainAnimator(railData: RailFeatureCollection) {
             route_color: route.color,
             route_id: route.routeId,
             route_name: route.name,
+            service_type: route.serviceType,
             bearing: bearingBetween(coordinates, tangentCoordinates),
           },
           geometry: { type: "Point", coordinates },

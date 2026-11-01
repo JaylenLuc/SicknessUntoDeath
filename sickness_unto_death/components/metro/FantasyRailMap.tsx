@@ -28,7 +28,7 @@ import { PE_ESRI_DESCRIPTION, PE_ESRI_LABEL } from "./peEsriStyle";
 import LosAngelesRailwayLayer from "./LARYMap";
 import ProposedMetroRail from "./ProposedMetroRail";
 import FantasyRailLegend from "./FantasyRailLegend";
-import { FANTASY_RAIL_NETWORKS, type FantasyRailNetwork } from "./fantasyRailNetworks";
+import { FANTASY_RAIL_NETWORKS, INTRA_URBES_SERVICE_LABELS, type FantasyRailNetwork } from "./fantasyRailNetworks";
 // import UserEditLayer from "./UserEditLayer";
 
 setWorkerUrl("/maplibre-gl-worker.mjs");
@@ -146,7 +146,13 @@ function FantasyTrains({ railData, label, network }: { railData: RailFeatureColl
           key={index}
           train={train}
           variant={network === "lightRail" ? "tram" : "train"}
-          label={[label, train.properties.route_id, train.properties.route_name].filter(Boolean).join(" · ")}
+          label={[
+            network === "lightRail"
+              ? `Intra Urbes — ${INTRA_URBES_SERVICE_LABELS[train.properties.service_type === "light_rail" ? "light_rail" : "streetcar"]}`
+              : label,
+            train.properties.route_id,
+            train.properties.route_name,
+          ].filter(Boolean).join(" · ")}
         />
       ))}
     </>
