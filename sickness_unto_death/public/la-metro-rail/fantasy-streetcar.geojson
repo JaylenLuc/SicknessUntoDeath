@@ -1,7 +1,7 @@
 {
   "type": "FeatureCollection",
   "name": "Intra Urbes — Light Rail / Tram & Streetcar",
-  "description": "Intra Urbes fantasy light rail/trams and streetcars: SC1 Solano–Elysian / stadium gates; SC1A Stadium Way connector; SC2 Frogtown–Cypress Park–Figueroa–Colorado; SC3 Cypress–Eagle Rock–York; SC3A Eagle Rock–Colorado branch; SC4 Los Feliz–Riverside / Fletcher. Not official projects; alignments and stops are conceptual. SC5 serves César Chávez from Union Station to Atlantic; SC6 follows Pico from Santa Monica to Downtown. SC7 follows Main Street from Florence, turns via MLK to San Pedro Street, and continues to Little Tokyo, connecting with SC6 at Pico. SC8–SC37 add an interconnected local grid across Central, South and East LA, the Westside, San Fernando Valley, San Gabriel Valley, Pasadena and South Bay, feeding the Inter Urbes network including the new Reseda R Line. Inter Urbes V connects Union Station to Holt Avenue in Pomona via Mission Road and Valley Boulevard. SC38 serves Garfield from Huntington to Washington; SC38A continues locally from Washington to Imperial; SC23 reaches Colorado, and SC22 reaches the authored Garvey/Rosemead C terminal. The Valley and Mission corridor is Inter Urbes heavy rail. SC39 follows Griffin from Mission to Broadway/Daly on H, with a walking transfer to V at Valley/Mission. SC19 extends north on Soto to H at Huntington, retaining its V transfer at Valley. SC40 serves Virgil between Sunset and Wilshire; SC41 serves Temple between Virgil and Alameda, sharing a Virgil/Temple stop. SC10A branches east from Third/Alvarado along Third Street to Alameda, connecting SC34 Broadway and SC7 San Pedro. Van Nuys streetcar service is removed. Roscoe is now Inter Urbes RO heavy rail, connecting R at Reseda and the Balboa and Lankershim streetcars. SC42 follows Burbank Boulevard from Reseda to Downtown Burbank via Front Street. SC43 follows Del Mar Avenue from Garvey to Huntington. Washington SC31 extends east to Garfield, linking the two Garfield services with Atlantic heavy rail at Washington. Atlantic continues south to Firestone. SC44 follows Fremont Avenue from Mission Street south to Mission Road, then through Garfield and Almansor to Las Tunas and Del Mar, connecting SC38, SC43 and SGV. SC44 remains a streetcar by explicit user request despite exceeding six miles. SC45 follows La Cienega Boulevard from Santa Monica Boulevard to Venice, linking the Melrose, Third and Pico trams with Venice heavy rail. SC11 is the Culver line, running only between Culver / Pacific in Playa del Rey and Culver / Venice in Culver City. SC46 serves Eighth Street from Crenshaw to Alameda. SC47 serves Hoover from Jefferson/USC to Sunset, sharing an Eighth/Hoover interchange and connecting the east–west local routes.",
+  "description": "Intra Urbes fantasy light rail/trams and streetcars: SC1 Solano–Elysian / stadium gates; SC1A Stadium Way connector; SC2 Frogtown–Cypress Park–Figueroa–Colorado; SC3 Cypress–Eagle Rock–York; SC3A Eagle Rock–Colorado branch; SC4 Los Feliz–Riverside / Fletcher. Not official projects; alignments and stops are conceptual. SC5 serves César Chávez from Union Station to Atlantic; SC6 follows Pico from Santa Monica to Downtown. SC7 follows Main Street from Florence, turns via MLK to San Pedro Street, and continues to Little Tokyo, connecting with SC6 at Pico. SC8–SC37 add an interconnected local grid across Central, South and East LA, the Westside, San Fernando Valley, San Gabriel Valley, Pasadena and South Bay, feeding the Inter Urbes network including the new Reseda R Line. Inter Urbes V connects Union Station to Holt Avenue in Pomona via Mission Road and Valley Boulevard. SC38 serves Garfield from Huntington to Washington; SC38A continues locally from Washington to Imperial; SC23 reaches Colorado, and SC22 reaches the authored Garvey/Rosemead C terminal. The Valley and Mission corridor is Inter Urbes heavy rail. SC39 follows Griffin from Mission to Broadway/Daly on H, with a walking transfer to V at Valley/Mission. SC19 extends north on Soto to H at Huntington, retaining its V transfer at Valley. SC40 serves Virgil between Sunset and Wilshire; SC41 serves Temple between Virgil and Alameda, sharing a Virgil/Temple stop. SC10A branches east from Third/Alvarado along Third Street to Alameda, connecting SC34 Broadway and SC7 San Pedro. Van Nuys streetcar service is removed. Roscoe is Inter Urbes RO heavy rail from Valley Circle to Tuxford/Lankershim, connecting Metro G at Canoga, R at Reseda and the Balboa and Lankershim local lines. SC42 follows Burbank Boulevard from Reseda to Downtown Burbank via Front Street. SC43 follows Del Mar Avenue from Garvey to Huntington. Washington SC31 extends east to Garfield, linking the two Garfield services with Atlantic heavy rail at Washington. Atlantic continues south to Firestone. SC44 follows Fremont Avenue from Mission Street south to Mission Road, then through Garfield and Almansor to Las Tunas and Del Mar, connecting SC38, SC43 and SGV. SC44 remains a streetcar by explicit user request despite exceeding six miles. SC45 follows La Cienega Boulevard from Santa Monica Boulevard to Venice, linking the Melrose, Third and Pico trams with Venice heavy rail. SC11 is the Culver line, running only between Culver / Pacific in Playa del Rey and Culver / Venice in Culver City. SC46 serves Eighth Street from Crenshaw to Alameda. SC47 serves Hoover from Jefferson/USC to Sunset, sharing an Eighth/Hoover interchange and connecting the east–west local routes. FL Florence is now Intra Urbes light rail/tram, continuing east along Florence and south on Downey Avenue to Downtown Downey at Firestone. SC29 Lankershim now runs only from the Victory/Colfax junction north to Tuxford; its former southern segment to Ventura is removed. SC48 serves Ventura Boulevard from Valley Circle to Universal/Studio City via Lankershim. SC49 serves De Soto from Ventura to Chatsworth station via Devonshire and Old Depot Plaza, connecting B at Sherman Way and RO at Roscoe. Both are light rail/tram services. SC27 now reaches the actual Ventura Boulevard intersection, sharing a stop with SC48.",
   "context_sources": [
     "https://www.elysianpark.org/find",
     "https://www.mlb.com/dodgers/ballpark/transportation/directions",
@@ -12749,10 +12749,15 @@
         "status": "concept",
         "id": "sc7-main-florence",
         "name": "Main / Florence",
-        "color": "#768653",
-        "routes": "SC7",
+        "color": "#334155",
+        "routes": "SC7, FL",
         "location_status": "approximate",
-        "service_label": "Light Rail / Tram"
+        "service_label": "Light Rail / Tram",
+        "local_transfers": [
+          "SC7",
+          "FL"
+        ],
+        "interchange": true
       },
       "geometry": {
         "type": "Point",
@@ -24717,11 +24722,13 @@
         "status": "concept",
         "expansion": "intra-urbes-grid",
         "area": "San Fernando Valley",
-        "description": "Local coverage between the new Reseda trunk and Van Nuys.",
+        "description": "Balboa streetcar from Ventura Boulevard to Roscoe, connecting Ventura SC48, Burbank SC42, Victory SC26, B at Sherman Way and RO at Roscoe. The southern section reaches Ventura Boulevard instead of terminating at the Ventura Freeway.",
         "corridors": [
           "Balboa"
         ],
         "stationIds": [
+          "sc48-balboa",
+          "sc27-magnolia",
           "intra-grid-stop-60e6d270a4ea",
           "sc42-balboa",
           "intra-grid-stop-4584163447c8",
@@ -24746,12 +24753,60 @@
         "connector_roads_metres": {},
         "geometry_gap_joins": [],
         "service_label": "Streetcar",
-        "length_km": 5.66,
-        "length_miles": 3.52
+        "length_km": 6.92,
+        "length_miles": 4.3
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
+          [
+            -118.501089,
+            34.159261
+          ],
+          [
+            -118.501091,
+            34.160717
+          ],
+          [
+            -118.501092,
+            34.161706
+          ],
+          [
+            -118.501094,
+            34.162984
+          ],
+          [
+            -118.501097,
+            34.164968
+          ],
+          [
+            -118.501098,
+            34.165867
+          ],
+          [
+            -118.501099,
+            34.166515
+          ],
+          [
+            -118.5011,
+            34.167209
+          ],
+          [
+            -118.501101,
+            34.167927
+          ],
+          [
+            -118.501102,
+            34.168788
+          ],
+          [
+            -118.501104,
+            34.170006
+          ],
+          [
+            -118.501105,
+            34.170358
+          ],
           [
             -118.501105,
             34.170575
@@ -25045,24 +25100,11 @@
         "status": "concept",
         "expansion": "intra-urbes-grid",
         "area": "San Fernando Valley",
-        "description": "North Hollywood and Sun Valley connections to B, G and the east–west streetcars.",
+        "description": "Lankershim local rail from the Colfax/Victory junction north to Tuxford, connecting Victory SC26, the B extension and Roscoe RO. The former southern section to Ventura is removed to reduce overlap with the red line.",
         "corridors": [
           "Lankershim"
         ],
         "stationIds": [
-          "intra-grid-stop-ed965d0700c5",
-          "intra-grid-stop-b497cd9e5a68",
-          "intra-grid-stop-b5c70c21c607",
-          "intra-grid-stop-b11977bccea1",
-          "intra-grid-stop-49b6d41d0e69",
-          "intra-grid-stop-62d5823d5318",
-          "intra-grid-stop-e83a05627481",
-          "intra-grid-stop-5b40f6de8dd9",
-          "intra-grid-stop-3e8fe211dbb0",
-          "intra-grid-stop-5b19f502f971",
-          "intra-grid-stop-5b3a175ed605",
-          "intra-grid-stop-bf697c4b43ad",
-          "intra-grid-stop-350db03a463d",
           "intra-grid-stop-96669012eb88",
           "intra-grid-stop-1965851a2e2e",
           "intra-grid-stop-fce05651c6b4",
@@ -25076,7 +25118,7 @@
           "intra-grid-stop-5b5e2655bdf7"
         ],
         "termini": [
-          "Lankershim / Ventura",
+          "Lankershim / Colfax / Victory",
           "Lankershim / Tuxford"
         ],
         "alignment_status": "conceptual; mapped county road centerlines, short documented joins and existing transfer markers",
@@ -25086,316 +25128,13 @@
         "connector_roads_metres": {},
         "geometry_gap_joins": [],
         "service_label": "Light Rail / Tram",
-        "length_km": 10.12,
-        "length_miles": 6.29
+        "length_km": 3.99,
+        "length_miles": 2.48,
+        "service_classification_override": "Existing tram classification retained when SC29 was shortened to Victory/Colfax; this edit trims the alignment without changing its service type."
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [
-            -118.363247,
-            34.137149
-          ],
-          [
-            -118.362937,
-            34.137687
-          ],
-          [
-            -118.36283,
-            34.137873
-          ],
-          [
-            -118.36268,
-            34.138134
-          ],
-          [
-            -118.362354,
-            34.138701
-          ],
-          [
-            -118.361006,
-            34.141045
-          ],
-          [
-            -118.36097,
-            34.141141
-          ],
-          [
-            -118.360952,
-            34.141227
-          ],
-          [
-            -118.360946,
-            34.141295
-          ],
-          [
-            -118.360932,
-            34.141837
-          ],
-          [
-            -118.360927,
-            34.142043
-          ],
-          [
-            -118.361279,
-            34.142691
-          ],
-          [
-            -118.361366,
-            34.142852
-          ],
-          [
-            -118.361441,
-            34.14299
-          ],
-          [
-            -118.361572,
-            34.143234
-          ],
-          [
-            -118.361686,
-            34.143447
-          ],
-          [
-            -118.361722,
-            34.143516
-          ],
-          [
-            -118.361759,
-            34.143584
-          ],
-          [
-            -118.361834,
-            34.143724
-          ],
-          [
-            -118.36202,
-            34.14403
-          ],
-          [
-            -118.36207,
-            34.144114
-          ],
-          [
-            -118.362656,
-            34.145083
-          ],
-          [
-            -118.363155,
-            34.145908
-          ],
-          [
-            -118.363662,
-            34.146746
-          ],
-          [
-            -118.364464,
-            34.148073
-          ],
-          [
-            -118.364936,
-            34.148853
-          ],
-          [
-            -118.365196,
-            34.149283
-          ],
-          [
-            -118.365393,
-            34.149609
-          ],
-          [
-            -118.365854,
-            34.150372
-          ],
-          [
-            -118.366395,
-            34.151266
-          ],
-          [
-            -118.367003,
-            34.152271
-          ],
-          [
-            -118.367362,
-            34.152864
-          ],
-          [
-            -118.367426,
-            34.152971
-          ],
-          [
-            -118.367465,
-            34.153036
-          ],
-          [
-            -118.367521,
-            34.153128
-          ],
-          [
-            -118.367578,
-            34.153223
-          ],
-          [
-            -118.367662,
-            34.153363
-          ],
-          [
-            -118.367747,
-            34.153502
-          ],
-          [
-            -118.368363,
-            34.15452
-          ],
-          [
-            -118.368521,
-            34.154781
-          ],
-          [
-            -118.368994,
-            34.155563
-          ],
-          [
-            -118.369067,
-            34.155684
-          ],
-          [
-            -118.369658,
-            34.156661
-          ],
-          [
-            -118.370241,
-            34.157655
-          ],
-          [
-            -118.370408,
-            34.157917
-          ],
-          [
-            -118.370434,
-            34.157961
-          ],
-          [
-            -118.370458,
-            34.157997
-          ],
-          [
-            -118.370633,
-            34.158272
-          ],
-          [
-            -118.370908,
-            34.158727
-          ],
-          [
-            -118.371534,
-            34.159761
-          ],
-          [
-            -118.371736,
-            34.160096
-          ],
-          [
-            -118.372146,
-            34.160774
-          ],
-          [
-            -118.372318,
-            34.161057
-          ],
-          [
-            -118.372785,
-            34.161829
-          ],
-          [
-            -118.3729,
-            34.162019
-          ],
-          [
-            -118.373481,
-            34.16298
-          ],
-          [
-            -118.374063,
-            34.163942
-          ],
-          [
-            -118.374647,
-            34.164906
-          ],
-          [
-            -118.375066,
-            34.165599
-          ],
-          [
-            -118.375254,
-            34.165908
-          ],
-          [
-            -118.375915,
-            34.167001
-          ],
-          [
-            -118.376582,
-            34.168103
-          ],
-          [
-            -118.376766,
-            34.168407
-          ],
-          [
-            -118.377072,
-            34.168913
-          ],
-          [
-            -118.377725,
-            34.169995
-          ],
-          [
-            -118.378365,
-            34.171054
-          ],
-          [
-            -118.379034,
-            34.172161
-          ],
-          [
-            -118.380129,
-            34.173978
-          ],
-          [
-            -118.380701,
-            34.174926
-          ],
-          [
-            -118.381222,
-            34.175789
-          ],
-          [
-            -118.381768,
-            34.176695
-          ],
-          [
-            -118.382313,
-            34.177599
-          ],
-          [
-            -118.382864,
-            34.17851
-          ],
-          [
-            -118.383411,
-            34.179418
-          ],
-          [
-            -118.3856,
-            34.183048
-          ],
-          [
-            -118.386696,
-            34.184865
-          ],
           [
             -118.38779,
             34.186679
@@ -28374,6 +28113,7 @@
           "intra-grid-stop-389d3a79739f",
           "intra-grid-stop-5e6ae4b3f52c",
           "intra-grid-stop-4351e342e9d2",
+          "station-grid-florence-crenshaw",
           "intra-grid-stop-87324d8333ed",
           "intra-grid-stop-8eb595ce4a27",
           "intra-grid-stop-d5570e493557",
@@ -35827,19 +35567,20 @@
         "location_status": "approximate",
         "expansion": "intra-urbes-grid",
         "interchange": true,
-        "inter_urbes_transfers": [
+        "service_label": "Light Rail / Tram",
+        "local_walking_transfers": [
           {
-            "station_id": "station-florence-normandie",
-            "station_name": "Florence / Normandie",
+            "station_id": "intra-grid-stop-80f17b5d7bf8",
+            "station_name": "Normandie / Florence",
             "routes": [
+              "SC14",
               "FL"
             ],
-            "distance_metres": 178,
+            "distance_metres": 180,
             "type": "walking",
             "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
           }
-        ],
-        "service_label": "Light Rail / Tram"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -35859,24 +35600,28 @@
         "rail_mode": "light_rail",
         "service_type": "light_rail",
         "status": "concept",
-        "color": "#A46D83",
-        "routes": "SC14",
+        "color": "#334155",
+        "routes": "SC14, FL",
         "location_status": "approximate",
         "expansion": "intra-urbes-grid",
         "interchange": true,
-        "inter_urbes_transfers": [
+        "service_label": "Light Rail / Tram",
+        "local_transfers": [
+          "SC14",
+          "FL"
+        ],
+        "local_walking_transfers": [
           {
-            "station_id": "station-florence-normandie",
-            "station_name": "Florence / Normandie",
+            "station_id": "intra-grid-stop-053c86ef0690",
+            "station_name": "Normandie / 70th",
             "routes": [
-              "FL"
+              "SC14"
             ],
-            "distance_metres": 7,
+            "distance_metres": 180,
             "type": "walking",
             "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
           }
-        ],
-        "service_label": "Light Rail / Tram"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -36338,19 +36083,20 @@
         "location_status": "approximate",
         "expansion": "intra-urbes-grid",
         "interchange": true,
-        "inter_urbes_transfers": [
+        "service_label": "Light Rail / Tram",
+        "local_walking_transfers": [
           {
-            "station_id": "station-florence-central",
-            "station_name": "Florence / Central",
+            "station_id": "intra-grid-stop-905a4b0a8b85",
+            "station_name": "Central / Florence",
             "routes": [
+              "SC15",
               "FL"
             ],
-            "distance_metres": 217,
+            "distance_metres": 216,
             "type": "walking",
             "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
           }
-        ],
-        "service_label": "Light Rail / Tram"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -36370,24 +36116,28 @@
         "rail_mode": "light_rail",
         "service_type": "light_rail",
         "status": "concept",
-        "color": "#6F8B54",
-        "routes": "SC15",
+        "color": "#334155",
+        "routes": "SC15, FL",
         "location_status": "approximate",
         "expansion": "intra-urbes-grid",
         "interchange": true,
-        "inter_urbes_transfers": [
+        "service_label": "Light Rail / Tram",
+        "local_transfers": [
+          "SC15",
+          "FL"
+        ],
+        "local_walking_transfers": [
           {
-            "station_id": "station-florence-central",
-            "station_name": "Florence / Central",
+            "station_id": "intra-grid-stop-28a7ca1b8c2c",
+            "station_name": "Central / 70th",
             "routes": [
-              "FL"
+              "SC15"
             ],
-            "distance_metres": 1,
+            "distance_metres": 216,
             "type": "walking",
             "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
           }
-        ],
-        "service_label": "Light Rail / Tram"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -41694,7 +41444,7 @@
       "id": "intra-grid-stop-60e6d270a4ea",
       "properties": {
         "id": "intra-grid-stop-60e6d270a4ea",
-        "name": "Balboa / Ventura",
+        "name": "Balboa / US 101",
         "system": "fantasy",
         "rail_mode": "light_rail",
         "service_type": "streetcar",
@@ -41994,249 +41744,6 @@
     },
     {
       "type": "Feature",
-      "id": "intra-grid-stop-ed965d0700c5",
-      "properties": {
-        "id": "intra-grid-stop-ed965d0700c5",
-        "name": "Lankershim / Ventura",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "light_rail",
-        "status": "concept",
-        "color": "#94725D",
-        "routes": "SC29",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid",
-        "service_label": "Light Rail / Tram"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.363247,
-          34.137149
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-b497cd9e5a68",
-      "properties": {
-        "id": "intra-grid-stop-b497cd9e5a68",
-        "name": "Lankershim / Valleyheart",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "light_rail",
-        "status": "concept",
-        "color": "#94725D",
-        "routes": "SC29",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid",
-        "service_label": "Light Rail / Tram"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.360932,
-          34.141837
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-b5c70c21c607",
-      "properties": {
-        "id": "intra-grid-stop-b5c70c21c607",
-        "name": "Lankershim / Acama",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "light_rail",
-        "status": "concept",
-        "color": "#94725D",
-        "routes": "SC29",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid",
-        "service_label": "Light Rail / Tram"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.363155,
-          34.145908
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-b11977bccea1",
-      "properties": {
-        "id": "intra-grid-stop-b11977bccea1",
-        "name": "Lankershim / Bloomfield",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "light_rail",
-        "status": "concept",
-        "color": "#94725D",
-        "routes": "SC29",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid",
-        "service_label": "Light Rail / Tram"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.365393,
-          34.149609
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-49b6d41d0e69",
-      "properties": {
-        "id": "intra-grid-stop-49b6d41d0e69",
-        "name": "Lankershim / Ventura",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "light_rail",
-        "status": "concept",
-        "color": "#94725D",
-        "routes": "SC29",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid",
-        "service_label": "Light Rail / Tram"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.367578,
-          34.153223
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-62d5823d5318",
-      "properties": {
-        "id": "intra-grid-stop-62d5823d5318",
-        "name": "Lankershim / Blix",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "light_rail",
-        "status": "concept",
-        "color": "#94725D",
-        "routes": "SC29",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid",
-        "service_label": "Light Rail / Tram"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.369658,
-          34.156661
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-e83a05627481",
-      "properties": {
-        "id": "intra-grid-stop-e83a05627481",
-        "name": "Lankershim / Huston",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "light_rail",
-        "status": "concept",
-        "color": "#94725D",
-        "routes": "SC29",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid",
-        "service_label": "Light Rail / Tram"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.371736,
-          34.160096
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-5b40f6de8dd9",
-      "properties": {
-        "id": "intra-grid-stop-5b40f6de8dd9",
-        "name": "Lankershim / Magnolia",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "light_rail",
-        "status": "concept",
-        "color": "#94725D",
-        "routes": "SC29",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid",
-        "interchange": true,
-        "inter_urbes_transfers": [
-          {
-            "station_id": "station-g-magnolia-lankershim",
-            "station_name": "Magnolia / Lankershim",
-            "routes": [
-              "G"
-            ],
-            "distance_metres": 52,
-            "type": "walking",
-            "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
-          }
-        ],
-        "service_label": "Light Rail / Tram"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.374647,
-          34.164906
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-3e8fe211dbb0",
-      "properties": {
-        "id": "intra-grid-stop-3e8fe211dbb0",
-        "name": "Lankershim / Chandler",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "light_rail",
-        "status": "concept",
-        "color": "#94725D",
-        "routes": "SC29",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid",
-        "interchange": true,
-        "inter_urbes_transfers": [
-          {
-            "station_id": "station-b-sherman-north-hollywood",
-            "station_name": "North Hollywood",
-            "routes": [
-              "B",
-              "G"
-            ],
-            "distance_metres": 49,
-            "type": "walking",
-            "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
-          }
-        ],
-        "service_label": "Light Rail / Tram"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.376582,
-          34.168103
-        ]
-      }
-    },
-    {
-      "type": "Feature",
       "id": "intra-grid-stop-5b19f502f971",
       "properties": {
         "id": "intra-grid-stop-5b19f502f971",
@@ -42245,14 +41752,10 @@
         "rail_mode": "light_rail",
         "service_type": "light_rail",
         "status": "concept",
-        "color": "#334155",
-        "routes": "SC29, SC42",
+        "color": "#A17D67",
+        "routes": "SC42",
         "location_status": "approximate",
         "expansion": "intra-urbes-grid",
-        "local_transfers": [
-          "SC29",
-          "SC42"
-        ],
         "interchange": true,
         "inter_urbes_transfers": [
           {
@@ -42274,91 +41777,6 @@
         "coordinates": [
           -118.379034,
           34.172161
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-5b3a175ed605",
-      "properties": {
-        "id": "intra-grid-stop-5b3a175ed605",
-        "name": "Lankershim / Hatteras",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "light_rail",
-        "status": "concept",
-        "color": "#94725D",
-        "routes": "SC29",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid",
-        "service_label": "Light Rail / Tram"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.381222,
-          34.175789
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-bf697c4b43ad",
-      "properties": {
-        "id": "intra-grid-stop-bf697c4b43ad",
-        "name": "Lankershim / Oxnard",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "light_rail",
-        "status": "concept",
-        "color": "#94725D",
-        "routes": "SC29",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid",
-        "interchange": true,
-        "inter_urbes_transfers": [
-          {
-            "station_id": "station-b-sherman-oxnard-lankershim",
-            "station_name": "Oxnard / Lankershim",
-            "routes": [
-              "B"
-            ],
-            "distance_metres": 29,
-            "type": "walking",
-            "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
-          }
-        ],
-        "service_label": "Light Rail / Tram"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.383411,
-          34.179418
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "intra-grid-stop-350db03a463d",
-      "properties": {
-        "id": "intra-grid-stop-350db03a463d",
-        "name": "Lankershim / Erwin",
-        "system": "fantasy",
-        "rail_mode": "light_rail",
-        "service_type": "light_rail",
-        "status": "concept",
-        "color": "#94725D",
-        "routes": "SC29",
-        "location_status": "approximate",
-        "expansion": "intra-urbes-grid",
-        "service_label": "Light Rail / Tram"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.3856,
-          34.183048
         ]
       }
     },
@@ -43875,19 +43293,20 @@
         "location_status": "approximate",
         "expansion": "intra-urbes-grid",
         "interchange": true,
-        "inter_urbes_transfers": [
+        "service_label": "Streetcar",
+        "local_walking_transfers": [
           {
             "station_id": "station-grid-florence-crenshaw",
             "station_name": "Florence / Crenshaw",
             "routes": [
-              "FL"
+              "FL",
+              "SC32"
             ],
-            "distance_metres": 70,
+            "distance_metres": 127,
             "type": "walking",
             "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
           }
-        ],
-        "service_label": "Streetcar"
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -53832,7 +53251,19 @@
             "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
           }
         ],
-        "service_label": "Light Rail / Tram"
+        "service_label": "Light Rail / Tram",
+        "local_walking_transfers": [
+          {
+            "station_id": "sc48-reseda",
+            "station_name": "Ventura / Reseda",
+            "routes": [
+              "SC48"
+            ],
+            "distance_metres": 396,
+            "type": "walking",
+            "distance_basis": "straight-line proximity; walking path not surveyed"
+          }
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -55269,6 +54700,7 @@
           "intra-east-19c44c6714eb",
           "intra-east-c21c08b4e374",
           "intra-east-50ccf3b00921",
+          "fl-garfield",
           "intra-east-76faf352ac17",
           "intra-east-4f1ac939a0a1",
           "intra-east-ff1623eea56c",
@@ -61303,6 +60735,5703 @@
           34.090878
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "station-fairview-heights-florence",
+      "properties": {
+        "id": "station-fairview-heights-florence",
+        "name": "Fairview Heights — Florence / West",
+        "street1": "West Boulevard",
+        "street2": "Florence Avenue",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "system": "fantasy",
+        "interchange": true,
+        "transfer": "Walk to Metro K Line at Fairview Heights",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate",
+        "terminal": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.33523,
+          33.974502
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "station-grid-florence-crenshaw",
+      "properties": {
+        "id": "station-grid-florence-crenshaw",
+        "name": "Florence / Crenshaw",
+        "street1": "Florence",
+        "street2": "Crenshaw",
+        "routes": "FL, SC32",
+        "rail_mode": "light_rail",
+        "system": "fantasy",
+        "status": "concept",
+        "interchange": true,
+        "service_type": "mixed",
+        "service_label": "Light Rail / Tram & Streetcar",
+        "color": "#334155",
+        "location_status": "approximate",
+        "local_transfers": [
+          "FL",
+          "SC32"
+        ],
+        "local_walking_transfers": [
+          {
+            "station_id": "intra-grid-stop-4351e342e9d2",
+            "station_name": "Crenshaw / 71st",
+            "routes": [
+              "SC32"
+            ],
+            "distance_metres": 127,
+            "type": "walking",
+            "distance_basis": "straight-line proximity; station entrances and walking path not surveyed"
+          }
+        ],
+        "service_types": [
+          "light_rail",
+          "streetcar"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.330893,
+          33.97453
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "station-florence-van-ness",
+      "properties": {
+        "id": "station-florence-van-ness",
+        "name": "Florence / Van Ness",
+        "street1": "Florence Avenue",
+        "street2": "Van Ness Avenue",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "system": "fantasy",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.317755,
+          33.97459
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-western",
+      "properties": {
+        "id": "fl-western",
+        "name": "Florence / Western",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate",
+        "interchange": true,
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-florence-western",
+            "station_name": "Florence / Western",
+            "routes": [
+              "M"
+            ],
+            "distance_metres": 2,
+            "type": "walking",
+            "distance_basis": "separate platforms; straight-line proximity, entrances not surveyed"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.308979,
+          33.974568
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-vermont",
+      "properties": {
+        "id": "fl-vermont",
+        "name": "Florence / Vermont",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate",
+        "interchange": true,
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-florence-vermont",
+            "station_name": "Florence / Vermont",
+            "routes": [
+              "N"
+            ],
+            "distance_metres": 2,
+            "type": "walking",
+            "distance_basis": "separate platforms; straight-line proximity, entrances not surveyed"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.291758,
+          33.974624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-figueroa",
+      "properties": {
+        "id": "fl-figueroa",
+        "name": "Florence / Figueroa",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.282684,
+          33.974662
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "station-florence-broadway",
+      "properties": {
+        "id": "station-florence-broadway",
+        "name": "Florence / Broadway",
+        "street1": "Florence Avenue",
+        "street2": "Broadway",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "system": "fantasy",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.278311,
+          33.97468
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-avalon",
+      "properties": {
+        "id": "fl-avalon",
+        "name": "Florence / Avalon",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.265178,
+          33.97474
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-compton",
+      "properties": {
+        "id": "fl-compton",
+        "name": "Florence / Compton",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.247674,
+          33.974764
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "station-florence",
+      "properties": {
+        "id": "station-florence",
+        "name": "Florence / Graham — A Line",
+        "street1": "Florence Avenue",
+        "street2": "Graham Avenue",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "system": "fantasy",
+        "interchange": true,
+        "transfer": "Metro A Line",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.24278,
+          33.974753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-santa-fe",
+      "properties": {
+        "id": "fl-santa-fe",
+        "name": "Florence / Santa Fe",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.230245,
+          33.97475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "station-florence-pacific",
+      "properties": {
+        "id": "station-florence-pacific",
+        "name": "Florence / Pacific",
+        "street1": "Florence Avenue",
+        "street2": "Pacific Boulevard",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "system": "fantasy",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.225232,
+          33.974208
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-cedar",
+      "properties": {
+        "id": "fl-cedar",
+        "name": "Florence / Cedar",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.213399,
+          33.972985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "station-florence-state",
+      "properties": {
+        "id": "station-florence-state",
+        "name": "Florence / State",
+        "street1": "Florence Avenue",
+        "street2": "State Street",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "system": "fantasy",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.209517,
+          33.972576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "station-florence-salt-lake",
+      "properties": {
+        "id": "station-florence-salt-lake",
+        "name": "Florence / Salt Lake",
+        "street1": "Florence Avenue",
+        "street2": "Salt Lake Avenue",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "system": "fantasy",
+        "interchange": true,
+        "transfer": "Future Southeast Gateway Line",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.202744,
+          33.971872
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-otis",
+      "properties": {
+        "id": "fl-otis",
+        "name": "Florence / Otis",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.193822,
+          33.970917
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-atlantic",
+      "properties": {
+        "id": "fl-atlantic",
+        "name": "Florence / Atlantic",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate",
+        "interchange": true,
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-atlantic-florence",
+            "station_name": "Atlantic / Florence",
+            "routes": [
+              "ATL"
+            ],
+            "distance_metres": 0,
+            "type": "walking",
+            "distance_basis": "separate platforms; straight-line proximity, entrances not surveyed"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.188161,
+          33.970326
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-wilcox",
+      "properties": {
+        "id": "fl-wilcox",
+        "name": "Florence / Wilcox",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.17784,
+          33.969248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-eastern",
+      "properties": {
+        "id": "fl-eastern",
+        "name": "Florence / Eastern",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.164667,
+          33.967779
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-jaboneria",
+      "properties": {
+        "id": "fl-jaboneria",
+        "name": "Florence / Jaboneria",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.15773,
+          33.96705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-garfield",
+      "properties": {
+        "id": "fl-garfield",
+        "name": "Florence / Garfield — south junction",
+        "routes": "FL, SC38A",
+        "rail_mode": "light_rail",
+        "service_type": "mixed",
+        "service_label": "Light Rail / Tram & Streetcar",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#334155",
+        "location_status": "approximate",
+        "local_transfers": [
+          "FL",
+          "SC38A"
+        ],
+        "interchange": true,
+        "service_types": [
+          "light_rail",
+          "streetcar"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.15158,
+          33.965302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-scout",
+      "properties": {
+        "id": "fl-scout",
+        "name": "Florence / Scout",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.145632,
+          33.961558
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-old-river-school",
+      "properties": {
+        "id": "fl-old-river-school",
+        "name": "Florence / Old River School",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.140481,
+          33.958847
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-rives",
+      "properties": {
+        "id": "fl-rives",
+        "name": "Florence / Rives",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.13426,
+          33.955694
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-paramount",
+      "properties": {
+        "id": "fl-paramount",
+        "name": "Florence / Paramount",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.130044,
+          33.953566
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-downey",
+      "properties": {
+        "id": "fl-downey",
+        "name": "Florence / Downey",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.125754,
+          33.951439
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-cherokee",
+      "properties": {
+        "id": "fl-cherokee",
+        "name": "Downey / Cherokee",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.128462,
+          33.947652
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-5th",
+      "properties": {
+        "id": "fl-5th",
+        "name": "Downey / 5th — Downtown Downey",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.130361,
+          33.94382
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fl-downtown-downey",
+      "properties": {
+        "id": "fl-downtown-downey",
+        "name": "Downey / Firestone — Downtown Downey",
+        "routes": "FL",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "color": "#0891B2",
+        "location_status": "approximate",
+        "terminal": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.133129,
+          33.940114
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "florence-line",
+      "properties": {
+        "id": "florence-line",
+        "routeId": "FL",
+        "name": "Florence–Downey Light Rail / Tram",
+        "color": "#0891B2",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "system": "fantasy",
+        "status": "concept",
+        "stationIds": [
+          "station-fairview-heights-florence",
+          "station-grid-florence-crenshaw",
+          "station-florence-van-ness",
+          "fl-western",
+          "intra-grid-stop-80f17b5d7bf8",
+          "fl-vermont",
+          "fl-figueroa",
+          "station-florence-broadway",
+          "sc7-main-florence",
+          "fl-avalon",
+          "intra-grid-stop-905a4b0a8b85",
+          "fl-compton",
+          "station-florence",
+          "fl-santa-fe",
+          "station-florence-pacific",
+          "fl-cedar",
+          "station-florence-state",
+          "station-florence-salt-lake",
+          "fl-otis",
+          "fl-atlantic",
+          "fl-wilcox",
+          "fl-eastern",
+          "fl-jaboneria",
+          "fl-garfield",
+          "fl-scout",
+          "fl-old-river-school",
+          "fl-rives",
+          "fl-paramount",
+          "fl-downey",
+          "fl-cherokee",
+          "fl-5th",
+          "fl-downtown-downey"
+        ],
+        "termini": [
+          "Fairview Heights — Florence / West",
+          "Downey / Firestone — Downtown Downey"
+        ],
+        "corridors": [
+          "Florence",
+          "Downey"
+        ],
+        "description": "Florence Avenue light rail from Fairview Heights / West Boulevard through South Los Angeles, Huntington Park, Bell and Bell Gardens, continuing into Downey and turning south on Downey Avenue to Firestone Boulevard in Downtown Downey. Reserved track and signal priority are intended. Connects K and A, Inter Urbes M, N and ATL, and local Crenshaw, Normandie, Main, Central and Garfield services; retains the conceptual future Southeast Gateway interchange at Salt Lake.",
+        "length_km": 21.32,
+        "length_miles": 13.25,
+        "alignment_status": "conceptual; LA County CAMS road centerlines, documented short centerline joins",
+        "right_of_way_intent": "reserved track and signal priority where feasible",
+        "geometry_gap_joins": [
+          {
+            "from": [
+              -118.12794,
+              33.952514
+            ],
+            "to": [
+              -118.127878,
+              33.95248
+            ],
+            "metres": 6.8
+          },
+          {
+            "from": [
+              -118.133096,
+              33.940156
+            ],
+            "to": [
+              -118.133129,
+              33.940114
+            ],
+            "metres": 5.6
+          }
+        ],
+        "connector_roads_metres": {
+          "mapped unnamed Florence connector": 49.8,
+          "centerline join": 12.4
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.33523,
+            33.974502
+          ],
+          [
+            -118.334176,
+            33.97451
+          ],
+          [
+            -118.333809,
+            33.974512
+          ],
+          [
+            -118.333035,
+            33.974517
+          ],
+          [
+            -118.332367,
+            33.974521
+          ],
+          [
+            -118.330893,
+            33.97453
+          ],
+          [
+            -118.329418,
+            33.974531
+          ],
+          [
+            -118.328595,
+            33.974541
+          ],
+          [
+            -118.327976,
+            33.974549
+          ],
+          [
+            -118.327546,
+            33.974549
+          ],
+          [
+            -118.32654,
+            33.974558
+          ],
+          [
+            -118.325559,
+            33.974561
+          ],
+          [
+            -118.324585,
+            33.974565
+          ],
+          [
+            -118.324295,
+            33.974566
+          ],
+          [
+            -118.323612,
+            33.974568
+          ],
+          [
+            -118.322639,
+            33.974572
+          ],
+          [
+            -118.322106,
+            33.974574
+          ],
+          [
+            -118.321666,
+            33.974576
+          ],
+          [
+            -118.320693,
+            33.974579
+          ],
+          [
+            -118.319917,
+            33.974582
+          ],
+          [
+            -118.319719,
+            33.974583
+          ],
+          [
+            -118.318746,
+            33.974586
+          ],
+          [
+            -118.317755,
+            33.97459
+          ],
+          [
+            -118.316849,
+            33.974588
+          ],
+          [
+            -118.315888,
+            33.974586
+          ],
+          [
+            -118.315561,
+            33.974585
+          ],
+          [
+            -118.31337,
+            33.974579
+          ],
+          [
+            -118.31118,
+            33.974574
+          ],
+          [
+            -118.308979,
+            33.974568
+          ],
+          [
+            -118.307857,
+            33.97457
+          ],
+          [
+            -118.306801,
+            33.974572
+          ],
+          [
+            -118.305737,
+            33.974573
+          ],
+          [
+            -118.304632,
+            33.974575
+          ],
+          [
+            -118.303517,
+            33.974577
+          ],
+          [
+            -118.302445,
+            33.974579
+          ],
+          [
+            -118.30139,
+            33.974581
+          ],
+          [
+            -118.300384,
+            33.974581
+          ],
+          [
+            -118.300301,
+            33.974582
+          ],
+          [
+            -118.298085,
+            33.974593
+          ],
+          [
+            -118.296204,
+            33.974602
+          ],
+          [
+            -118.295884,
+            33.974604
+          ],
+          [
+            -118.2937,
+            33.974614
+          ],
+          [
+            -118.291873,
+            33.974624
+          ],
+          [
+            -118.291758,
+            33.974624
+          ],
+          [
+            -118.29156,
+            33.974625
+          ],
+          [
+            -118.291445,
+            33.974625
+          ],
+          [
+            -118.289256,
+            33.974634
+          ],
+          [
+            -118.287088,
+            33.974643
+          ],
+          [
+            -118.285965,
+            33.974648
+          ],
+          [
+            -118.284877,
+            33.974653
+          ],
+          [
+            -118.283789,
+            33.974657
+          ],
+          [
+            -118.282684,
+            33.974662
+          ],
+          [
+            -118.281284,
+            33.974668
+          ],
+          [
+            -118.280933,
+            33.974669
+          ],
+          [
+            -118.280724,
+            33.97467
+          ],
+          [
+            -118.280385,
+            33.974671
+          ],
+          [
+            -118.278311,
+            33.97468
+          ],
+          [
+            -118.273941,
+            33.974698
+          ],
+          [
+            -118.269558,
+            33.974719
+          ],
+          [
+            -118.26736,
+            33.97473
+          ],
+          [
+            -118.265178,
+            33.97474
+          ],
+          [
+            -118.263819,
+            33.974747
+          ],
+          [
+            -118.262981,
+            33.974751
+          ],
+          [
+            -118.261404,
+            33.974758
+          ],
+          [
+            -118.260804,
+            33.974761
+          ],
+          [
+            -118.260038,
+            33.974765
+          ],
+          [
+            -118.258616,
+            33.974772
+          ],
+          [
+            -118.257262,
+            33.974778
+          ],
+          [
+            -118.256408,
+            33.974782
+          ],
+          [
+            -118.256276,
+            33.974783
+          ],
+          [
+            -118.255248,
+            33.974788
+          ],
+          [
+            -118.254471,
+            33.974782
+          ],
+          [
+            -118.254243,
+            33.974782
+          ],
+          [
+            -118.253634,
+            33.974779
+          ],
+          [
+            -118.252013,
+            33.974778
+          ],
+          [
+            -118.251467,
+            33.974769
+          ],
+          [
+            -118.250451,
+            33.974765
+          ],
+          [
+            -118.249883,
+            33.974763
+          ],
+          [
+            -118.249516,
+            33.974758
+          ],
+          [
+            -118.24931,
+            33.974755
+          ],
+          [
+            -118.248941,
+            33.974753
+          ],
+          [
+            -118.248208,
+            33.974749
+          ],
+          [
+            -118.24794,
+            33.974748
+          ],
+          [
+            -118.247674,
+            33.974764
+          ],
+          [
+            -118.247066,
+            33.974757
+          ],
+          [
+            -118.246466,
+            33.974766
+          ],
+          [
+            -118.245894,
+            33.974758
+          ],
+          [
+            -118.245491,
+            33.974746
+          ],
+          [
+            -118.245284,
+            33.974753
+          ],
+          [
+            -118.245207,
+            33.974748
+          ],
+          [
+            -118.244623,
+            33.974741
+          ],
+          [
+            -118.244448,
+            33.974744
+          ],
+          [
+            -118.244067,
+            33.974741
+          ],
+          [
+            -118.243583,
+            33.974745
+          ],
+          [
+            -118.243408,
+            33.974746
+          ],
+          [
+            -118.243353,
+            33.974747
+          ],
+          [
+            -118.243333,
+            33.974748
+          ],
+          [
+            -118.243306,
+            33.974749
+          ],
+          [
+            -118.243237,
+            33.974748
+          ],
+          [
+            -118.24278,
+            33.974753
+          ],
+          [
+            -118.24222,
+            33.974749
+          ],
+          [
+            -118.241234,
+            33.974748
+          ],
+          [
+            -118.241206,
+            33.974745
+          ],
+          [
+            -118.241146,
+            33.974745
+          ],
+          [
+            -118.240605,
+            33.974744
+          ],
+          [
+            -118.239534,
+            33.974744
+          ],
+          [
+            -118.238986,
+            33.974744
+          ],
+          [
+            -118.238066,
+            33.974744
+          ],
+          [
+            -118.237644,
+            33.974743
+          ],
+          [
+            -118.237237,
+            33.974743
+          ],
+          [
+            -118.236807,
+            33.974743
+          ],
+          [
+            -118.235596,
+            33.97475
+          ],
+          [
+            -118.235336,
+            33.974751
+          ],
+          [
+            -118.234697,
+            33.974736
+          ],
+          [
+            -118.234509,
+            33.974736
+          ],
+          [
+            -118.234336,
+            33.974737
+          ],
+          [
+            -118.234072,
+            33.974738
+          ],
+          [
+            -118.233598,
+            33.974738
+          ],
+          [
+            -118.233359,
+            33.974738
+          ],
+          [
+            -118.233171,
+            33.974738
+          ],
+          [
+            -118.23275,
+            33.974735
+          ],
+          [
+            -118.232518,
+            33.974733
+          ],
+          [
+            -118.232121,
+            33.974739
+          ],
+          [
+            -118.231503,
+            33.974747
+          ],
+          [
+            -118.230896,
+            33.974758
+          ],
+          [
+            -118.23057,
+            33.974763
+          ],
+          [
+            -118.230245,
+            33.97475
+          ],
+          [
+            -118.230103,
+            33.974744
+          ],
+          [
+            -118.229895,
+            33.974722
+          ],
+          [
+            -118.2296,
+            33.974689
+          ],
+          [
+            -118.229424,
+            33.974664
+          ],
+          [
+            -118.228966,
+            33.974599
+          ],
+          [
+            -118.228368,
+            33.974515
+          ],
+          [
+            -118.227719,
+            33.974451
+          ],
+          [
+            -118.227097,
+            33.974391
+          ],
+          [
+            -118.226484,
+            33.974331
+          ],
+          [
+            -118.225869,
+            33.97427
+          ],
+          [
+            -118.225232,
+            33.974208
+          ],
+          [
+            -118.224432,
+            33.974129
+          ],
+          [
+            -118.223786,
+            33.974066
+          ],
+          [
+            -118.223669,
+            33.974055
+          ],
+          [
+            -118.223145,
+            33.974
+          ],
+          [
+            -118.22244,
+            33.973926
+          ],
+          [
+            -118.221825,
+            33.973861
+          ],
+          [
+            -118.221186,
+            33.973794
+          ],
+          [
+            -118.220757,
+            33.973749
+          ],
+          [
+            -118.220559,
+            33.973727
+          ],
+          [
+            -118.219946,
+            33.973661
+          ],
+          [
+            -118.21897,
+            33.973554
+          ],
+          [
+            -118.217555,
+            33.973419
+          ],
+          [
+            -118.217139,
+            33.973375
+          ],
+          [
+            -118.217039,
+            33.973366
+          ],
+          [
+            -118.216395,
+            33.973295
+          ],
+          [
+            -118.216186,
+            33.973273
+          ],
+          [
+            -118.215377,
+            33.973182
+          ],
+          [
+            -118.214401,
+            33.973084
+          ],
+          [
+            -118.213399,
+            33.972985
+          ],
+          [
+            -118.212353,
+            33.97287
+          ],
+          [
+            -118.211719,
+            33.972803
+          ],
+          [
+            -118.211296,
+            33.972761
+          ],
+          [
+            -118.210962,
+            33.972725
+          ],
+          [
+            -118.210276,
+            33.972654
+          ],
+          [
+            -118.209517,
+            33.972576
+          ],
+          [
+            -118.207893,
+            33.972407
+          ],
+          [
+            -118.205864,
+            33.972197
+          ],
+          [
+            -118.205177,
+            33.972129
+          ],
+          [
+            -118.204111,
+            33.972023
+          ],
+          [
+            -118.203405,
+            33.971947
+          ],
+          [
+            -118.203031,
+            33.971907
+          ],
+          [
+            -118.202775,
+            33.971876
+          ],
+          [
+            -118.202744,
+            33.971872
+          ],
+          [
+            -118.202704,
+            33.971867
+          ],
+          [
+            -118.202562,
+            33.97185
+          ],
+          [
+            -118.202492,
+            33.971842
+          ],
+          [
+            -118.202134,
+            33.971806
+          ],
+          [
+            -118.20163,
+            33.971755
+          ],
+          [
+            -118.199884,
+            33.97158
+          ],
+          [
+            -118.199805,
+            33.971571
+          ],
+          [
+            -118.199747,
+            33.971564
+          ],
+          [
+            -118.199455,
+            33.971531
+          ],
+          [
+            -118.199208,
+            33.971503
+          ],
+          [
+            -118.198924,
+            33.971469
+          ],
+          [
+            -118.198338,
+            33.971398
+          ],
+          [
+            -118.197849,
+            33.971347
+          ],
+          [
+            -118.196769,
+            33.971233
+          ],
+          [
+            -118.19501,
+            33.971048
+          ],
+          [
+            -118.193822,
+            33.970917
+          ],
+          [
+            -118.19327,
+            33.970856
+          ],
+          [
+            -118.192727,
+            33.970798
+          ],
+          [
+            -118.191647,
+            33.970684
+          ],
+          [
+            -118.190454,
+            33.970562
+          ],
+          [
+            -118.189487,
+            33.970464
+          ],
+          [
+            -118.188161,
+            33.970326
+          ],
+          [
+            -118.188021,
+            33.970309
+          ],
+          [
+            -118.187806,
+            33.970284
+          ],
+          [
+            -118.187201,
+            33.970216
+          ],
+          [
+            -118.187064,
+            33.970201
+          ],
+          [
+            -118.186718,
+            33.970162
+          ],
+          [
+            -118.186151,
+            33.970104
+          ],
+          [
+            -118.185772,
+            33.970068
+          ],
+          [
+            -118.18565,
+            33.970057
+          ],
+          [
+            -118.185459,
+            33.970039
+          ],
+          [
+            -118.185233,
+            33.970019
+          ],
+          [
+            -118.184924,
+            33.969988
+          ],
+          [
+            -118.184591,
+            33.969956
+          ],
+          [
+            -118.184198,
+            33.969917
+          ],
+          [
+            -118.183821,
+            33.969881
+          ],
+          [
+            -118.183735,
+            33.969871
+          ],
+          [
+            -118.183501,
+            33.969846
+          ],
+          [
+            -118.1832,
+            33.969813
+          ],
+          [
+            -118.182176,
+            33.969701
+          ],
+          [
+            -118.182066,
+            33.969689
+          ],
+          [
+            -118.18194,
+            33.969676
+          ],
+          [
+            -118.181682,
+            33.969648
+          ],
+          [
+            -118.181596,
+            33.969638
+          ],
+          [
+            -118.181445,
+            33.969624
+          ],
+          [
+            -118.181138,
+            33.969595
+          ],
+          [
+            -118.180754,
+            33.969559
+          ],
+          [
+            -118.180384,
+            33.969524
+          ],
+          [
+            -118.179825,
+            33.969463
+          ],
+          [
+            -118.179021,
+            33.969376
+          ],
+          [
+            -118.17784,
+            33.969248
+          ],
+          [
+            -118.176876,
+            33.969144
+          ],
+          [
+            -118.176035,
+            33.969049
+          ],
+          [
+            -118.175169,
+            33.968953
+          ],
+          [
+            -118.17464,
+            33.968895
+          ],
+          [
+            -118.17416,
+            33.968842
+          ],
+          [
+            -118.173948,
+            33.968819
+          ],
+          [
+            -118.173708,
+            33.968793
+          ],
+          [
+            -118.17341,
+            33.968762
+          ],
+          [
+            -118.173318,
+            33.968752
+          ],
+          [
+            -118.172047,
+            33.968621
+          ],
+          [
+            -118.171611,
+            33.968576
+          ],
+          [
+            -118.17116,
+            33.968528
+          ],
+          [
+            -118.170796,
+            33.96849
+          ],
+          [
+            -118.170546,
+            33.968464
+          ],
+          [
+            -118.170141,
+            33.968421
+          ],
+          [
+            -118.16975,
+            33.96838
+          ],
+          [
+            -118.16938,
+            33.968339
+          ],
+          [
+            -118.168649,
+            33.968259
+          ],
+          [
+            -118.168223,
+            33.968211
+          ],
+          [
+            -118.168052,
+            33.968193
+          ],
+          [
+            -118.167845,
+            33.96817
+          ],
+          [
+            -118.167643,
+            33.968148
+          ],
+          [
+            -118.167472,
+            33.968129
+          ],
+          [
+            -118.167238,
+            33.968103
+          ],
+          [
+            -118.166897,
+            33.968067
+          ],
+          [
+            -118.166769,
+            33.968054
+          ],
+          [
+            -118.165961,
+            33.967921
+          ],
+          [
+            -118.165798,
+            33.967903
+          ],
+          [
+            -118.16544,
+            33.967865
+          ],
+          [
+            -118.164802,
+            33.967794
+          ],
+          [
+            -118.164667,
+            33.967779
+          ],
+          [
+            -118.163668,
+            33.967668
+          ],
+          [
+            -118.163257,
+            33.967627
+          ],
+          [
+            -118.161199,
+            33.967421
+          ],
+          [
+            -118.160641,
+            33.967361
+          ],
+          [
+            -118.15773,
+            33.96705
+          ],
+          [
+            -118.155933,
+            33.966857
+          ],
+          [
+            -118.155028,
+            33.966762
+          ],
+          [
+            -118.154544,
+            33.966711
+          ],
+          [
+            -118.154283,
+            33.966655
+          ],
+          [
+            -118.154127,
+            33.966622
+          ],
+          [
+            -118.153764,
+            33.966523
+          ],
+          [
+            -118.153388,
+            33.966378
+          ],
+          [
+            -118.153293,
+            33.966341
+          ],
+          [
+            -118.152912,
+            33.966141
+          ],
+          [
+            -118.152873,
+            33.966118
+          ],
+          [
+            -118.152611,
+            33.965966
+          ],
+          [
+            -118.151892,
+            33.965511
+          ],
+          [
+            -118.151683,
+            33.965372
+          ],
+          [
+            -118.15158,
+            33.965302
+          ],
+          [
+            -118.150845,
+            33.964809
+          ],
+          [
+            -118.150672,
+            33.964693
+          ],
+          [
+            -118.150094,
+            33.964324
+          ],
+          [
+            -118.14934,
+            33.963844
+          ],
+          [
+            -118.149308,
+            33.963823
+          ],
+          [
+            -118.149054,
+            33.963662
+          ],
+          [
+            -118.147734,
+            33.962822
+          ],
+          [
+            -118.147181,
+            33.962467
+          ],
+          [
+            -118.146483,
+            33.962052
+          ],
+          [
+            -118.146336,
+            33.961967
+          ],
+          [
+            -118.145632,
+            33.961558
+          ],
+          [
+            -118.144563,
+            33.960942
+          ],
+          [
+            -118.144493,
+            33.960902
+          ],
+          [
+            -118.144415,
+            33.960857
+          ],
+          [
+            -118.14429,
+            33.960785
+          ],
+          [
+            -118.144154,
+            33.960706
+          ],
+          [
+            -118.144023,
+            33.96063
+          ],
+          [
+            -118.142764,
+            33.959908
+          ],
+          [
+            -118.14266,
+            33.959915
+          ],
+          [
+            -118.142022,
+            33.959606
+          ],
+          [
+            -118.141592,
+            33.959394
+          ],
+          [
+            -118.141477,
+            33.959338
+          ],
+          [
+            -118.141058,
+            33.959131
+          ],
+          [
+            -118.140481,
+            33.958847
+          ],
+          [
+            -118.140247,
+            33.958732
+          ],
+          [
+            -118.138734,
+            33.957952
+          ],
+          [
+            -118.13852,
+            33.957842
+          ],
+          [
+            -118.137798,
+            33.957476
+          ],
+          [
+            -118.137312,
+            33.95723
+          ],
+          [
+            -118.135977,
+            33.956554
+          ],
+          [
+            -118.135169,
+            33.956148
+          ],
+          [
+            -118.13426,
+            33.955694
+          ],
+          [
+            -118.133257,
+            33.955194
+          ],
+          [
+            -118.13311,
+            33.955119
+          ],
+          [
+            -118.133012,
+            33.955071
+          ],
+          [
+            -118.132656,
+            33.954894
+          ],
+          [
+            -118.132351,
+            33.954742
+          ],
+          [
+            -118.131708,
+            33.954422
+          ],
+          [
+            -118.131611,
+            33.954373
+          ],
+          [
+            -118.131219,
+            33.954171
+          ],
+          [
+            -118.130998,
+            33.954058
+          ],
+          [
+            -118.130742,
+            33.953926
+          ],
+          [
+            -118.130697,
+            33.953903
+          ],
+          [
+            -118.130448,
+            33.953774
+          ],
+          [
+            -118.130044,
+            33.953566
+          ],
+          [
+            -118.129416,
+            33.953252
+          ],
+          [
+            -118.12794,
+            33.952514
+          ],
+          [
+            -118.127878,
+            33.95248
+          ],
+          [
+            -118.126904,
+            33.951987
+          ],
+          [
+            -118.126772,
+            33.95192
+          ],
+          [
+            -118.12665,
+            33.95186
+          ],
+          [
+            -118.126001,
+            33.951549
+          ],
+          [
+            -118.125754,
+            33.951439
+          ],
+          [
+            -118.125959,
+            33.951138
+          ],
+          [
+            -118.126258,
+            33.950703
+          ],
+          [
+            -118.126547,
+            33.950296
+          ],
+          [
+            -118.126587,
+            33.950242
+          ],
+          [
+            -118.126651,
+            33.950155
+          ],
+          [
+            -118.127069,
+            33.949584
+          ],
+          [
+            -118.127183,
+            33.949432
+          ],
+          [
+            -118.127467,
+            33.949047
+          ],
+          [
+            -118.128381,
+            33.947762
+          ],
+          [
+            -118.128462,
+            33.947652
+          ],
+          [
+            -118.129318,
+            33.946493
+          ],
+          [
+            -118.129454,
+            33.946312
+          ],
+          [
+            -118.129806,
+            33.945823
+          ],
+          [
+            -118.129912,
+            33.945629
+          ],
+          [
+            -118.129918,
+            33.94561
+          ],
+          [
+            -118.129998,
+            33.945353
+          ],
+          [
+            -118.130068,
+            33.945054
+          ],
+          [
+            -118.130159,
+            33.944666
+          ],
+          [
+            -118.130242,
+            33.944284
+          ],
+          [
+            -118.130288,
+            33.944066
+          ],
+          [
+            -118.130361,
+            33.94382
+          ],
+          [
+            -118.130383,
+            33.943746
+          ],
+          [
+            -118.130499,
+            33.943528
+          ],
+          [
+            -118.130651,
+            33.943283
+          ],
+          [
+            -118.130757,
+            33.943144
+          ],
+          [
+            -118.131129,
+            33.942653
+          ],
+          [
+            -118.131782,
+            33.941819
+          ],
+          [
+            -118.132441,
+            33.941006
+          ],
+          [
+            -118.132919,
+            33.940367
+          ],
+          [
+            -118.133096,
+            33.940156
+          ],
+          [
+            -118.133129,
+            33.940114
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-valley-circle",
+      "properties": {
+        "id": "sc48-valley-circle",
+        "name": "Ventura / Valley Circle",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.638013,
+          34.160868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-woodlake",
+      "properties": {
+        "id": "sc48-woodlake",
+        "name": "Ventura / Woodlake",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.630819,
+          34.162639
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-fallbrook",
+      "properties": {
+        "id": "sc48-fallbrook",
+        "name": "Ventura / Fallbrook",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.623311,
+          34.166039
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-shoup",
+      "properties": {
+        "id": "sc48-shoup",
+        "name": "Ventura / Shoup",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.614587,
+          34.16877
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-topanga-canyon",
+      "properties": {
+        "id": "sc48-topanga-canyon",
+        "name": "Ventura / Topanga Canyon",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.605938,
+          34.16849
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-canoga",
+      "properties": {
+        "id": "sc48-canoga",
+        "name": "Ventura / Canoga",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.59744,
+          34.167844
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-de-soto",
+      "properties": {
+        "id": "sc48-de-soto",
+        "name": "Ventura / De Soto",
+        "routes": "SC48, SC49",
+        "color": "#334155",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate",
+        "local_transfers": [
+          "SC48",
+          "SC49"
+        ],
+        "interchange": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.588266,
+          34.166397
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-villa-terraza",
+      "properties": {
+        "id": "sc48-villa-terraza",
+        "name": "Ventura / Villa Terraza",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.580465,
+          34.167782
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-winnetka",
+      "properties": {
+        "id": "sc48-winnetka",
+        "name": "Ventura / Winnetka",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.570932,
+          34.170965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-corbin",
+      "properties": {
+        "id": "sc48-corbin",
+        "name": "Ventura / Corbin",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.562211,
+          34.172598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-tampa",
+      "properties": {
+        "id": "sc48-tampa",
+        "name": "Ventura / Tampa",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.553475,
+          34.172657
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-wilbur",
+      "properties": {
+        "id": "sc48-wilbur",
+        "name": "Ventura / Wilbur",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.54474,
+          34.172255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-reseda",
+      "properties": {
+        "id": "sc48-reseda",
+        "name": "Ventura / Reseda",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate",
+        "interchange": true,
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-r-reseda-ventura",
+            "station_name": "Reseda / Ventura",
+            "routes": [
+              "R"
+            ],
+            "distance_metres": 485,
+            "type": "walking",
+            "distance_basis": "straight-line proximity; platform entrances and walking path not surveyed"
+          }
+        ],
+        "local_walking_transfers": [
+          {
+            "station_id": "sc42-reseda",
+            "station_name": "Burbank / Reseda",
+            "routes": [
+              "SC42"
+            ],
+            "distance_metres": 396,
+            "type": "walking",
+            "distance_basis": "straight-line proximity; walking path not surveyed"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.536061,
+          34.168796
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-lindley",
+      "properties": {
+        "id": "sc48-lindley",
+        "name": "Ventura / Lindley",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.527278,
+          34.165442
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-white-oak",
+      "properties": {
+        "id": "sc48-white-oak",
+        "name": "Ventura / White Oak",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.518582,
+          34.162432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-louise",
+      "properties": {
+        "id": "sc48-louise",
+        "name": "Ventura / Louise",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.509818,
+          34.160866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-balboa",
+      "properties": {
+        "id": "sc48-balboa",
+        "name": "Ventura / Balboa",
+        "routes": "SC48, SC27",
+        "color": "#334155",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "mixed",
+        "service_label": "Light Rail / Tram & Streetcar",
+        "status": "concept",
+        "location_status": "approximate",
+        "local_transfers": [
+          "SC48",
+          "SC27"
+        ],
+        "interchange": true,
+        "service_types": [
+          "light_rail",
+          "streetcar"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.501089,
+          34.159261
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-hayvenhurst",
+      "properties": {
+        "id": "sc48-hayvenhurst",
+        "name": "Ventura / Hayvenhurst",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.492359,
+          34.15757
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-woodley",
+      "properties": {
+        "id": "sc48-woodley",
+        "name": "Ventura / Woodley",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.483628,
+          34.156374
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-haskell",
+      "properties": {
+        "id": "sc48-haskell",
+        "name": "Ventura / Haskell",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.474901,
+          34.155179
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-sepulveda",
+      "properties": {
+        "id": "sc48-sepulveda",
+        "name": "Ventura / Sepulveda",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.466228,
+          34.153822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-kester",
+      "properties": {
+        "id": "sc48-kester",
+        "name": "Ventura / Kester",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.457433,
+          34.152366
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-van-nuys",
+      "properties": {
+        "id": "sc48-van-nuys",
+        "name": "Ventura / Van Nuys",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.448704,
+          34.15092
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-hazeltine",
+      "properties": {
+        "id": "sc48-hazeltine",
+        "name": "Ventura / Hazeltine",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.439397,
+          34.149378
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-woodman",
+      "properties": {
+        "id": "sc48-woodman",
+        "name": "Ventura / Woodman",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.431239,
+          34.148026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-fulton",
+      "properties": {
+        "id": "sc48-fulton",
+        "name": "Ventura / Fulton",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.422513,
+          34.146579
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-coldwater-canyon",
+      "properties": {
+        "id": "sc48-coldwater-canyon",
+        "name": "Ventura / Coldwater Canyon",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.413742,
+          34.145123
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-whitsett",
+      "properties": {
+        "id": "sc48-whitsett",
+        "name": "Ventura / Whitsett",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.405207,
+          34.142703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-laurel-canyon",
+      "properties": {
+        "id": "sc48-laurel-canyon",
+        "name": "Ventura / Laurel Canyon",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.395262,
+          34.14357
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-colfax",
+      "properties": {
+        "id": "sc48-colfax",
+        "name": "Ventura / Colfax",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.38772,
+          34.141267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-tujunga",
+      "properties": {
+        "id": "sc48-tujunga",
+        "name": "Ventura / Tujunga",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.37897,
+          34.1399
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-vineland",
+      "properties": {
+        "id": "sc48-vineland",
+        "name": "Ventura / Vineland",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.370208,
+          34.140434
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-lankershim",
+      "properties": {
+        "id": "sc48-lankershim",
+        "name": "Ventura / Lankershim",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.363247,
+          34.137149
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-universal-city",
+      "properties": {
+        "id": "sc48-universal-city",
+        "name": "Universal / Studio City — B Line",
+        "routes": "SC48",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate",
+        "interchange": true,
+        "transfer": "Walk to Metro B Line at Universal / Studio City; separate platforms",
+        "external_transfers": [
+          {
+            "system": "Metro",
+            "station_name": "Universal / Studio City",
+            "routes": [
+              "B"
+            ],
+            "type": "walking",
+            "distance_metres": 91,
+            "distance_basis": "straight-line proximity to the existing map station; entrances not surveyed"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.361808,
+          34.13965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc48-line",
+      "properties": {
+        "id": "sc48-line",
+        "routeId": "SC48",
+        "name": "Ventura Light Rail / Tram",
+        "color": "#A67E4F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "stationIds": [
+          "sc48-valley-circle",
+          "sc48-woodlake",
+          "sc48-fallbrook",
+          "sc48-shoup",
+          "sc48-topanga-canyon",
+          "sc48-canoga",
+          "sc48-de-soto",
+          "sc48-villa-terraza",
+          "sc48-winnetka",
+          "sc48-corbin",
+          "sc48-tampa",
+          "sc48-wilbur",
+          "sc48-reseda",
+          "sc48-lindley",
+          "sc48-white-oak",
+          "sc48-louise",
+          "sc48-balboa",
+          "sc48-hayvenhurst",
+          "sc48-woodley",
+          "sc48-haskell",
+          "sc48-sepulveda",
+          "sc48-kester",
+          "sc48-van-nuys",
+          "sc48-hazeltine",
+          "sc48-woodman",
+          "sc48-fulton",
+          "sc48-coldwater-canyon",
+          "sc48-whitsett",
+          "sc48-laurel-canyon",
+          "sc48-colfax",
+          "sc48-tujunga",
+          "sc48-vineland",
+          "sc48-lankershim",
+          "sc48-universal-city"
+        ],
+        "termini": [
+          "Ventura / Valley Circle",
+          "Universal / Studio City — B Line"
+        ],
+        "corridors": [
+          "Ventura",
+          "Lankershim"
+        ],
+        "description": "Ventura Boulevard rapid light rail from Valley Circle to Lankershim, then north to a walking interchange with the Metro B Line at Universal/Studio City. Connects De Soto SC49 and Balboa SC27 directly, with walking connections to Reseda heavy rail R and Burbank SC42. Reserved lanes and signal priority are intended.",
+        "area": "San Fernando Valley",
+        "alignment_status": "conceptual; mapped LA County road centerlines and documented short joins",
+        "right_of_way_intent": "reserved lanes and signal priority where feasible",
+        "length_km": 26.83,
+        "length_miles": 16.67,
+        "geometry_gap_joins": [],
+        "connector_roads_metres": {}
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.638013,
+            34.160868
+          ],
+          [
+            -118.637895,
+            34.16089
+          ],
+          [
+            -118.637851,
+            34.160898
+          ],
+          [
+            -118.637804,
+            34.160902
+          ],
+          [
+            -118.637759,
+            34.160902
+          ],
+          [
+            -118.637693,
+            34.160897
+          ],
+          [
+            -118.637629,
+            34.160885
+          ],
+          [
+            -118.637565,
+            34.160866
+          ],
+          [
+            -118.637503,
+            34.160842
+          ],
+          [
+            -118.637469,
+            34.160825
+          ],
+          [
+            -118.637432,
+            34.160805
+          ],
+          [
+            -118.637294,
+            34.160717
+          ],
+          [
+            -118.637233,
+            34.160683
+          ],
+          [
+            -118.637124,
+            34.160629
+          ],
+          [
+            -118.637032,
+            34.160588
+          ],
+          [
+            -118.636947,
+            34.160555
+          ],
+          [
+            -118.636867,
+            34.16053
+          ],
+          [
+            -118.636804,
+            34.160514
+          ],
+          [
+            -118.636739,
+            34.1605
+          ],
+          [
+            -118.636673,
+            34.160489
+          ],
+          [
+            -118.636607,
+            34.16048
+          ],
+          [
+            -118.636541,
+            34.160473
+          ],
+          [
+            -118.636476,
+            34.16047
+          ],
+          [
+            -118.636412,
+            34.160468
+          ],
+          [
+            -118.63635,
+            34.16047
+          ],
+          [
+            -118.636282,
+            34.160475
+          ],
+          [
+            -118.636211,
+            34.160484
+          ],
+          [
+            -118.636139,
+            34.160497
+          ],
+          [
+            -118.636064,
+            34.160514
+          ],
+          [
+            -118.635987,
+            34.160535
+          ],
+          [
+            -118.635908,
+            34.16056
+          ],
+          [
+            -118.635828,
+            34.160589
+          ],
+          [
+            -118.635745,
+            34.160622
+          ],
+          [
+            -118.635645,
+            34.160667
+          ],
+          [
+            -118.635557,
+            34.160712
+          ],
+          [
+            -118.635523,
+            34.160732
+          ],
+          [
+            -118.635488,
+            34.160756
+          ],
+          [
+            -118.635454,
+            34.160782
+          ],
+          [
+            -118.635418,
+            34.160811
+          ],
+          [
+            -118.635354,
+            34.160868
+          ],
+          [
+            -118.635203,
+            34.161014
+          ],
+          [
+            -118.635159,
+            34.161053
+          ],
+          [
+            -118.635118,
+            34.161086
+          ],
+          [
+            -118.635026,
+            34.161157
+          ],
+          [
+            -118.634969,
+            34.161197
+          ],
+          [
+            -118.634922,
+            34.161226
+          ],
+          [
+            -118.634876,
+            34.161252
+          ],
+          [
+            -118.63483,
+            34.161275
+          ],
+          [
+            -118.634785,
+            34.161296
+          ],
+          [
+            -118.634741,
+            34.161313
+          ],
+          [
+            -118.634692,
+            34.16133
+          ],
+          [
+            -118.634563,
+            34.161368
+          ],
+          [
+            -118.634492,
+            34.161386
+          ],
+          [
+            -118.634419,
+            34.161402
+          ],
+          [
+            -118.634346,
+            34.161417
+          ],
+          [
+            -118.634272,
+            34.161429
+          ],
+          [
+            -118.633192,
+            34.161446
+          ],
+          [
+            -118.633072,
+            34.161471
+          ],
+          [
+            -118.6329,
+            34.161517
+          ],
+          [
+            -118.632733,
+            34.161576
+          ],
+          [
+            -118.632573,
+            34.161647
+          ],
+          [
+            -118.630819,
+            34.162639
+          ],
+          [
+            -118.630803,
+            34.162648
+          ],
+          [
+            -118.628593,
+            34.163925
+          ],
+          [
+            -118.626882,
+            34.164914
+          ],
+          [
+            -118.62618,
+            34.165135
+          ],
+          [
+            -118.624301,
+            34.165727
+          ],
+          [
+            -118.623311,
+            34.166039
+          ],
+          [
+            -118.620818,
+            34.166825
+          ],
+          [
+            -118.620714,
+            34.166858
+          ],
+          [
+            -118.618948,
+            34.167414
+          ],
+          [
+            -118.618782,
+            34.167466
+          ],
+          [
+            -118.616768,
+            34.1681
+          ],
+          [
+            -118.615281,
+            34.168569
+          ],
+          [
+            -118.614904,
+            34.168685
+          ],
+          [
+            -118.614587,
+            34.16877
+          ],
+          [
+            -118.614463,
+            34.168799
+          ],
+          [
+            -118.614239,
+            34.168846
+          ],
+          [
+            -118.6139,
+            34.168905
+          ],
+          [
+            -118.613558,
+            34.168949
+          ],
+          [
+            -118.613423,
+            34.168961
+          ],
+          [
+            -118.613214,
+            34.168977
+          ],
+          [
+            -118.612983,
+            34.168988
+          ],
+          [
+            -118.612807,
+            34.16899
+          ],
+          [
+            -118.612652,
+            34.168992
+          ],
+          [
+            -118.612504,
+            34.168989
+          ],
+          [
+            -118.612121,
+            34.168969
+          ],
+          [
+            -118.611977,
+            34.168957
+          ],
+          [
+            -118.611776,
+            34.168935
+          ],
+          [
+            -118.611748,
+            34.168932
+          ],
+          [
+            -118.610411,
+            34.168742
+          ],
+          [
+            -118.610221,
+            34.168716
+          ],
+          [
+            -118.610095,
+            34.168698
+          ],
+          [
+            -118.609639,
+            34.168646
+          ],
+          [
+            -118.60918,
+            34.168607
+          ],
+          [
+            -118.60872,
+            34.168581
+          ],
+          [
+            -118.608038,
+            34.168558
+          ],
+          [
+            -118.605938,
+            34.16849
+          ],
+          [
+            -118.605772,
+            34.168485
+          ],
+          [
+            -118.603792,
+            34.168444
+          ],
+          [
+            -118.602395,
+            34.168405
+          ],
+          [
+            -118.602116,
+            34.168387
+          ],
+          [
+            -118.600704,
+            34.168298
+          ],
+          [
+            -118.599748,
+            34.168237
+          ],
+          [
+            -118.599516,
+            34.168219
+          ],
+          [
+            -118.599176,
+            34.16818
+          ],
+          [
+            -118.59884,
+            34.168126
+          ],
+          [
+            -118.598664,
+            34.168087
+          ],
+          [
+            -118.59744,
+            34.167844
+          ],
+          [
+            -118.595604,
+            34.167481
+          ],
+          [
+            -118.594574,
+            34.167277
+          ],
+          [
+            -118.59279,
+            34.166924
+          ],
+          [
+            -118.591691,
+            34.166707
+          ],
+          [
+            -118.591092,
+            34.166662
+          ],
+          [
+            -118.590825,
+            34.166636
+          ],
+          [
+            -118.588521,
+            34.16641
+          ],
+          [
+            -118.588266,
+            34.166397
+          ],
+          [
+            -118.587726,
+            34.166349
+          ],
+          [
+            -118.587496,
+            34.166338
+          ],
+          [
+            -118.58715,
+            34.166332
+          ],
+          [
+            -118.586804,
+            34.166342
+          ],
+          [
+            -118.586459,
+            34.166367
+          ],
+          [
+            -118.586116,
+            34.166407
+          ],
+          [
+            -118.585865,
+            34.166446
+          ],
+          [
+            -118.585776,
+            34.166461
+          ],
+          [
+            -118.58544,
+            34.166531
+          ],
+          [
+            -118.583547,
+            34.167006
+          ],
+          [
+            -118.58108,
+            34.167627
+          ],
+          [
+            -118.580465,
+            34.167782
+          ],
+          [
+            -118.580355,
+            34.16781
+          ],
+          [
+            -118.578628,
+            34.168248
+          ],
+          [
+            -118.5783,
+            34.168339
+          ],
+          [
+            -118.577891,
+            34.168461
+          ],
+          [
+            -118.577806,
+            34.168486
+          ],
+          [
+            -118.577661,
+            34.168531
+          ],
+          [
+            -118.577465,
+            34.168596
+          ],
+          [
+            -118.577127,
+            34.168707
+          ],
+          [
+            -118.576809,
+            34.168819
+          ],
+          [
+            -118.574954,
+            34.169496
+          ],
+          [
+            -118.570932,
+            34.170965
+          ],
+          [
+            -118.569781,
+            34.171385
+          ],
+          [
+            -118.569011,
+            34.171666
+          ],
+          [
+            -118.568683,
+            34.171786
+          ],
+          [
+            -118.568393,
+            34.171882
+          ],
+          [
+            -118.568019,
+            34.171988
+          ],
+          [
+            -118.567686,
+            34.172065
+          ],
+          [
+            -118.567358,
+            34.172125
+          ],
+          [
+            -118.56712,
+            34.17216
+          ],
+          [
+            -118.566892,
+            34.172187
+          ],
+          [
+            -118.56588,
+            34.172277
+          ],
+          [
+            -118.56383,
+            34.172456
+          ],
+          [
+            -118.562211,
+            34.172598
+          ],
+          [
+            -118.560022,
+            34.17279
+          ],
+          [
+            -118.559697,
+            34.172819
+          ],
+          [
+            -118.55784,
+            34.17277
+          ],
+          [
+            -118.555657,
+            34.172714
+          ],
+          [
+            -118.554579,
+            34.172686
+          ],
+          [
+            -118.553475,
+            34.172657
+          ],
+          [
+            -118.552353,
+            34.172628
+          ],
+          [
+            -118.551222,
+            34.172598
+          ],
+          [
+            -118.550081,
+            34.172568
+          ],
+          [
+            -118.548337,
+            34.172523
+          ],
+          [
+            -118.547464,
+            34.1725
+          ],
+          [
+            -118.546593,
+            34.172477
+          ],
+          [
+            -118.546146,
+            34.172466
+          ],
+          [
+            -118.545938,
+            34.172456
+          ],
+          [
+            -118.545594,
+            34.172424
+          ],
+          [
+            -118.545339,
+            34.172387
+          ],
+          [
+            -118.545085,
+            34.172338
+          ],
+          [
+            -118.54474,
+            34.172255
+          ],
+          [
+            -118.544506,
+            34.172196
+          ],
+          [
+            -118.542811,
+            34.171514
+          ],
+          [
+            -118.540728,
+            34.170675
+          ],
+          [
+            -118.540167,
+            34.170449
+          ],
+          [
+            -118.538601,
+            34.169819
+          ],
+          [
+            -118.537529,
+            34.169388
+          ],
+          [
+            -118.536061,
+            34.168796
+          ],
+          [
+            -118.535549,
+            34.16859
+          ],
+          [
+            -118.533619,
+            34.167814
+          ],
+          [
+            -118.531706,
+            34.167044
+          ],
+          [
+            -118.530817,
+            34.166686
+          ],
+          [
+            -118.530236,
+            34.166452
+          ],
+          [
+            -118.529781,
+            34.166269
+          ],
+          [
+            -118.529292,
+            34.166072
+          ],
+          [
+            -118.528931,
+            34.165959
+          ],
+          [
+            -118.528077,
+            34.165692
+          ],
+          [
+            -118.527278,
+            34.165442
+          ],
+          [
+            -118.525457,
+            34.164871
+          ],
+          [
+            -118.524433,
+            34.164473
+          ],
+          [
+            -118.522859,
+            34.163863
+          ],
+          [
+            -118.522029,
+            34.163541
+          ],
+          [
+            -118.521054,
+            34.163164
+          ],
+          [
+            -118.520734,
+            34.163054
+          ],
+          [
+            -118.520281,
+            34.16292
+          ],
+          [
+            -118.518582,
+            34.162432
+          ],
+          [
+            -118.517147,
+            34.162061
+          ],
+          [
+            -118.516276,
+            34.161837
+          ],
+          [
+            -118.515942,
+            34.161763
+          ],
+          [
+            -118.515716,
+            34.161723
+          ],
+          [
+            -118.514183,
+            34.161499
+          ],
+          [
+            -118.511564,
+            34.161119
+          ],
+          [
+            -118.509818,
+            34.160866
+          ],
+          [
+            -118.508519,
+            34.160678
+          ],
+          [
+            -118.505453,
+            34.160233
+          ],
+          [
+            -118.504908,
+            34.160154
+          ],
+          [
+            -118.504474,
+            34.160052
+          ],
+          [
+            -118.503284,
+            34.159774
+          ],
+          [
+            -118.502194,
+            34.159519
+          ],
+          [
+            -118.501089,
+            34.159261
+          ],
+          [
+            -118.500083,
+            34.159026
+          ],
+          [
+            -118.499379,
+            34.158861
+          ],
+          [
+            -118.49879,
+            34.158723
+          ],
+          [
+            -118.49704,
+            34.158314
+          ],
+          [
+            -118.496707,
+            34.158239
+          ],
+          [
+            -118.496062,
+            34.158106
+          ],
+          [
+            -118.495562,
+            34.158018
+          ],
+          [
+            -118.495222,
+            34.157964
+          ],
+          [
+            -118.494539,
+            34.157868
+          ],
+          [
+            -118.494297,
+            34.157835
+          ],
+          [
+            -118.492359,
+            34.15757
+          ],
+          [
+            -118.490161,
+            34.157269
+          ],
+          [
+            -118.487995,
+            34.156972
+          ],
+          [
+            -118.483628,
+            34.156374
+          ],
+          [
+            -118.481447,
+            34.156076
+          ],
+          [
+            -118.479265,
+            34.155777
+          ],
+          [
+            -118.47752,
+            34.155538
+          ],
+          [
+            -118.477083,
+            34.155478
+          ],
+          [
+            -118.474901,
+            34.155179
+          ],
+          [
+            -118.474195,
+            34.155082
+          ],
+          [
+            -118.472663,
+            34.154872
+          ],
+          [
+            -118.472107,
+            34.154796
+          ],
+          [
+            -118.471755,
+            34.154737
+          ],
+          [
+            -118.469995,
+            34.154446
+          ],
+          [
+            -118.469011,
+            34.154283
+          ],
+          [
+            -118.468954,
+            34.154274
+          ],
+          [
+            -118.468897,
+            34.154265
+          ],
+          [
+            -118.468712,
+            34.154234
+          ],
+          [
+            -118.468383,
+            34.154179
+          ],
+          [
+            -118.468211,
+            34.154151
+          ],
+          [
+            -118.468102,
+            34.154133
+          ],
+          [
+            -118.468011,
+            34.154118
+          ],
+          [
+            -118.467841,
+            34.15409
+          ],
+          [
+            -118.467796,
+            34.154082
+          ],
+          [
+            -118.467524,
+            34.154037
+          ],
+          [
+            -118.467311,
+            34.154002
+          ],
+          [
+            -118.466228,
+            34.153822
+          ],
+          [
+            -118.464014,
+            34.153456
+          ],
+          [
+            -118.461797,
+            34.153089
+          ],
+          [
+            -118.461642,
+            34.153063
+          ],
+          [
+            -118.459614,
+            34.152727
+          ],
+          [
+            -118.457433,
+            34.152366
+          ],
+          [
+            -118.456583,
+            34.152225
+          ],
+          [
+            -118.455251,
+            34.152005
+          ],
+          [
+            -118.453069,
+            34.151644
+          ],
+          [
+            -118.451522,
+            34.151388
+          ],
+          [
+            -118.45092,
+            34.151288
+          ],
+          [
+            -118.448704,
+            34.15092
+          ],
+          [
+            -118.447722,
+            34.150758
+          ],
+          [
+            -118.445884,
+            34.150453
+          ],
+          [
+            -118.442155,
+            34.149835
+          ],
+          [
+            -118.441134,
+            34.149666
+          ],
+          [
+            -118.439971,
+            34.149473
+          ],
+          [
+            -118.439397,
+            34.149378
+          ],
+          [
+            -118.438273,
+            34.149192
+          ],
+          [
+            -118.437149,
+            34.149006
+          ],
+          [
+            -118.43658,
+            34.148911
+          ],
+          [
+            -118.436025,
+            34.148819
+          ],
+          [
+            -118.435507,
+            34.148734
+          ],
+          [
+            -118.434901,
+            34.148633
+          ],
+          [
+            -118.434042,
+            34.148491
+          ],
+          [
+            -118.433777,
+            34.148447
+          ],
+          [
+            -118.432577,
+            34.148248
+          ],
+          [
+            -118.431239,
+            34.148026
+          ],
+          [
+            -118.429603,
+            34.147755
+          ],
+          [
+            -118.42945,
+            34.147729
+          ],
+          [
+            -118.428246,
+            34.14753
+          ],
+          [
+            -118.427966,
+            34.147483
+          ],
+          [
+            -118.427169,
+            34.147351
+          ],
+          [
+            -118.427029,
+            34.147328
+          ],
+          [
+            -118.426091,
+            34.147172
+          ],
+          [
+            -118.424887,
+            34.146973
+          ],
+          [
+            -118.423684,
+            34.146773
+          ],
+          [
+            -118.422513,
+            34.146579
+          ],
+          [
+            -118.421265,
+            34.146372
+          ],
+          [
+            -118.419803,
+            34.146129
+          ],
+          [
+            -118.419464,
+            34.146073
+          ],
+          [
+            -118.418341,
+            34.145887
+          ],
+          [
+            -118.415395,
+            34.145398
+          ],
+          [
+            -118.413742,
+            34.145123
+          ],
+          [
+            -118.412481,
+            34.144914
+          ],
+          [
+            -118.411549,
+            34.144761
+          ],
+          [
+            -118.411331,
+            34.144739
+          ],
+          [
+            -118.411115,
+            34.144733
+          ],
+          [
+            -118.4105,
+            34.144759
+          ],
+          [
+            -118.410306,
+            34.14476
+          ],
+          [
+            -118.4101,
+            34.144749
+          ],
+          [
+            -118.409968,
+            34.144735
+          ],
+          [
+            -118.409731,
+            34.144696
+          ],
+          [
+            -118.409499,
+            34.14464
+          ],
+          [
+            -118.408958,
+            34.144421
+          ],
+          [
+            -118.408812,
+            34.144326
+          ],
+          [
+            -118.408557,
+            34.144149
+          ],
+          [
+            -118.408314,
+            34.143973
+          ],
+          [
+            -118.407664,
+            34.143433
+          ],
+          [
+            -118.407397,
+            34.143247
+          ],
+          [
+            -118.407258,
+            34.143171
+          ],
+          [
+            -118.4071,
+            34.143096
+          ],
+          [
+            -118.406948,
+            34.143035
+          ],
+          [
+            -118.406772,
+            34.14297
+          ],
+          [
+            -118.406481,
+            34.142874
+          ],
+          [
+            -118.406275,
+            34.142824
+          ],
+          [
+            -118.40586,
+            34.142762
+          ],
+          [
+            -118.405601,
+            34.14273
+          ],
+          [
+            -118.405207,
+            34.142703
+          ],
+          [
+            -118.404866,
+            34.142721
+          ],
+          [
+            -118.403024,
+            34.142883
+          ],
+          [
+            -118.400842,
+            34.143076
+          ],
+          [
+            -118.398842,
+            34.143253
+          ],
+          [
+            -118.398097,
+            34.143319
+          ],
+          [
+            -118.397552,
+            34.143367
+          ],
+          [
+            -118.395262,
+            34.14357
+          ],
+          [
+            -118.39312,
+            34.143758
+          ],
+          [
+            -118.392904,
+            34.143658
+          ],
+          [
+            -118.390807,
+            34.142691
+          ],
+          [
+            -118.38772,
+            34.141267
+          ],
+          [
+            -118.385401,
+            34.140472
+          ],
+          [
+            -118.384799,
+            34.140274
+          ],
+          [
+            -118.383553,
+            34.139863
+          ],
+          [
+            -118.383519,
+            34.139852
+          ],
+          [
+            -118.381728,
+            34.139665
+          ],
+          [
+            -118.380715,
+            34.13956
+          ],
+          [
+            -118.380523,
+            34.139558
+          ],
+          [
+            -118.38041,
+            34.139566
+          ],
+          [
+            -118.380246,
+            34.13959
+          ],
+          [
+            -118.37897,
+            34.1399
+          ],
+          [
+            -118.378363,
+            34.140049
+          ],
+          [
+            -118.377364,
+            34.140202
+          ],
+          [
+            -118.376808,
+            34.140287
+          ],
+          [
+            -118.376652,
+            34.14032
+          ],
+          [
+            -118.3765,
+            34.140363
+          ],
+          [
+            -118.376325,
+            34.140429
+          ],
+          [
+            -118.376159,
+            34.14051
+          ],
+          [
+            -118.375998,
+            34.14061
+          ],
+          [
+            -118.375863,
+            34.140713
+          ],
+          [
+            -118.375735,
+            34.140833
+          ],
+          [
+            -118.375623,
+            34.140963
+          ],
+          [
+            -118.375268,
+            34.141478
+          ],
+          [
+            -118.375261,
+            34.141489
+          ],
+          [
+            -118.375182,
+            34.141552
+          ],
+          [
+            -118.375067,
+            34.141635
+          ],
+          [
+            -118.374919,
+            34.141718
+          ],
+          [
+            -118.37476,
+            34.141786
+          ],
+          [
+            -118.374617,
+            34.14183
+          ],
+          [
+            -118.374469,
+            34.141862
+          ],
+          [
+            -118.374318,
+            34.141882
+          ],
+          [
+            -118.374197,
+            34.141887
+          ],
+          [
+            -118.374038,
+            34.141882
+          ],
+          [
+            -118.373857,
+            34.141861
+          ],
+          [
+            -118.372011,
+            34.141136
+          ],
+          [
+            -118.371362,
+            34.140881
+          ],
+          [
+            -118.370208,
+            34.140434
+          ],
+          [
+            -118.36758,
+            34.13942
+          ],
+          [
+            -118.367546,
+            34.139406
+          ],
+          [
+            -118.365841,
+            34.138736
+          ],
+          [
+            -118.36524,
+            34.1385
+          ],
+          [
+            -118.364731,
+            34.1383
+          ],
+          [
+            -118.36457,
+            34.138229
+          ],
+          [
+            -118.364419,
+            34.138148
+          ],
+          [
+            -118.364277,
+            34.138056
+          ],
+          [
+            -118.364092,
+            34.137897
+          ],
+          [
+            -118.363321,
+            34.137214
+          ],
+          [
+            -118.363247,
+            34.137149
+          ],
+          [
+            -118.362937,
+            34.137687
+          ],
+          [
+            -118.36283,
+            34.137873
+          ],
+          [
+            -118.36268,
+            34.138134
+          ],
+          [
+            -118.362354,
+            34.138701
+          ],
+          [
+            -118.361808,
+            34.13965
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc49-burbank",
+      "properties": {
+        "id": "sc49-burbank",
+        "name": "De Soto / Burbank",
+        "routes": "SC49",
+        "color": "#6E819B",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.588225,
+          34.173308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc49-oxnard",
+      "properties": {
+        "id": "sc49-oxnard",
+        "name": "De Soto / Oxnard",
+        "routes": "SC49",
+        "color": "#6E819B",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.590479,
+          34.179256
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc49-g-line",
+      "properties": {
+        "id": "sc49-g-line",
+        "name": "De Soto / El Rancho — G Line",
+        "routes": "SC49",
+        "color": "#6E819B",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate",
+        "interchange": true,
+        "transfer": "Walk to Metro G Line at De Soto station; separate platforms"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.588573,
+          34.184961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc49-victory",
+      "properties": {
+        "id": "sc49-victory",
+        "name": "De Soto / Victory",
+        "routes": "SC49",
+        "color": "#6E819B",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.588457,
+          34.188351
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc49-vanowen",
+      "properties": {
+        "id": "sc49-vanowen",
+        "name": "De Soto / Vanowen",
+        "routes": "SC49",
+        "color": "#6E819B",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.588454,
+          34.193781
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc49-sherman",
+      "properties": {
+        "id": "sc49-sherman",
+        "name": "De Soto / Sherman Way",
+        "routes": "SC49",
+        "color": "#6E819B",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate",
+        "interchange": true,
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-b-sherman-de-soto",
+            "station_name": "Sherman Way / De Soto",
+            "routes": [
+              "B"
+            ],
+            "distance_metres": 41,
+            "type": "walking",
+            "distance_basis": "straight-line proximity; platform entrances and walking path not surveyed"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.588472,
+          34.200944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc49-saticoy",
+      "properties": {
+        "id": "sc49-saticoy",
+        "name": "De Soto / Saticoy",
+        "routes": "SC49",
+        "color": "#6E819B",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.588493,
+          34.208314
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc49-strathern",
+      "properties": {
+        "id": "sc49-strathern",
+        "name": "De Soto / Strathern",
+        "routes": "SC49",
+        "color": "#6E819B",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.588511,
+          34.21557
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc49-roscoe",
+      "properties": {
+        "id": "sc49-roscoe",
+        "name": "De Soto / Roscoe",
+        "routes": "SC49",
+        "color": "#6E819B",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate",
+        "interchange": true,
+        "inter_urbes_transfers": [
+          {
+            "station_id": "station-ro-de-soto",
+            "station_name": "Roscoe / De Soto",
+            "routes": [
+              "RO"
+            ],
+            "distance_metres": 0,
+            "type": "between_modes",
+            "distance_basis": "straight-line proximity; platform entrances and walking path not surveyed"
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.588523,
+          34.219936
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc49-chase",
+      "properties": {
+        "id": "sc49-chase",
+        "name": "De Soto / Chase",
+        "routes": "SC49",
+        "color": "#6E819B",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.588529,
+          34.224576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc49-parthenia",
+      "properties": {
+        "id": "sc49-parthenia",
+        "name": "De Soto / Parthenia",
+        "routes": "SC49",
+        "color": "#6E819B",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.588534,
+          34.228207
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc49-nordhoff",
+      "properties": {
+        "id": "sc49-nordhoff",
+        "name": "De Soto / Nordhoff",
+        "routes": "SC49",
+        "color": "#6E819B",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.588544,
+          34.235466
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc49-plummer",
+      "properties": {
+        "id": "sc49-plummer",
+        "name": "De Soto / Plummer",
+        "routes": "SC49",
+        "color": "#6E819B",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.588555,
+          34.242726
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc49-lassen",
+      "properties": {
+        "id": "sc49-lassen",
+        "name": "De Soto / Lassen",
+        "routes": "SC49",
+        "color": "#6E819B",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.588565,
+          34.249985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc49-devonshire",
+      "properties": {
+        "id": "sc49-devonshire",
+        "name": "De Soto / Devonshire",
+        "routes": "SC49",
+        "color": "#6E819B",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.588577,
+          34.257248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc49-canoga",
+      "properties": {
+        "id": "sc49-canoga",
+        "name": "Devonshire / Canoga",
+        "routes": "SC49",
+        "color": "#6E819B",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.597321,
+          34.25724
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc49-chatsworth",
+      "properties": {
+        "id": "sc49-chatsworth",
+        "name": "Chatsworth Station — Old Depot Plaza",
+        "routes": "SC49",
+        "color": "#6E819B",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "location_status": "approximate",
+        "interchange": true,
+        "transfer": "Walk to Chatsworth station for Metrolink, Amtrak and Metro G Line; separate platforms"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.598865,
+          34.252689
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc49-line",
+      "properties": {
+        "id": "sc49-line",
+        "routeId": "SC49",
+        "name": "De Soto–Chatsworth Light Rail / Tram",
+        "color": "#6E819B",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "light_rail",
+        "service_label": "Light Rail / Tram",
+        "status": "concept",
+        "stationIds": [
+          "sc48-de-soto",
+          "sc49-burbank",
+          "sc49-oxnard",
+          "sc49-g-line",
+          "sc49-victory",
+          "sc49-vanowen",
+          "sc49-sherman",
+          "sc49-saticoy",
+          "sc49-strathern",
+          "sc49-roscoe",
+          "sc49-chase",
+          "sc49-parthenia",
+          "sc49-nordhoff",
+          "sc49-plummer",
+          "sc49-lassen",
+          "sc49-devonshire",
+          "sc49-canoga",
+          "sc49-chatsworth"
+        ],
+        "termini": [
+          "Ventura / De Soto",
+          "Chatsworth Station — Old Depot Plaza"
+        ],
+        "corridors": [
+          "De Soto",
+          "Devonshire",
+          "Old Depot Plaza"
+        ],
+        "description": "De Soto Avenue light rail from Ventura Boulevard north to Devonshire, then west on Devonshire and south on Old Depot Plaza Road to Chatsworth station. Connects Ventura SC48, the Metro G busway, Inter Urbes B at Sherman Way, RO at Roscoe, and Metrolink/Amtrak/G at Chatsworth. Reserved lanes and signal priority are intended.",
+        "area": "San Fernando Valley",
+        "alignment_status": "conceptual; mapped LA County road centerlines and documented short joins",
+        "right_of_way_intent": "reserved lanes and signal priority where feasible",
+        "length_km": 11.63,
+        "length_miles": 7.23,
+        "geometry_gap_joins": [
+          {
+            "from": [
+              -118.597302,
+              34.25724
+            ],
+            "to": [
+              -118.597321,
+              34.25724
+            ],
+            "metres": 1.7
+          }
+        ],
+        "connector_roads_metres": {
+          "centerline join": 1.7
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -118.588266,
+            34.166397
+          ],
+          [
+            -118.588205,
+            34.166647
+          ],
+          [
+            -118.588168,
+            34.166902
+          ],
+          [
+            -118.58817,
+            34.167765
+          ],
+          [
+            -118.588171,
+            34.167947
+          ],
+          [
+            -118.588171,
+            34.168008
+          ],
+          [
+            -118.588171,
+            34.168142
+          ],
+          [
+            -118.588172,
+            34.168263
+          ],
+          [
+            -118.588172,
+            34.168385
+          ],
+          [
+            -118.588174,
+            34.16887
+          ],
+          [
+            -118.588195,
+            34.171975
+          ],
+          [
+            -118.588198,
+            34.172858
+          ],
+          [
+            -118.588198,
+            34.172912
+          ],
+          [
+            -118.588214,
+            34.1732
+          ],
+          [
+            -118.588225,
+            34.173308
+          ],
+          [
+            -118.588267,
+            34.1736
+          ],
+          [
+            -118.588283,
+            34.173683
+          ],
+          [
+            -118.588304,
+            34.17379
+          ],
+          [
+            -118.588329,
+            34.173896
+          ],
+          [
+            -118.588402,
+            34.174164
+          ],
+          [
+            -118.588497,
+            34.174441
+          ],
+          [
+            -118.588569,
+            34.174623
+          ],
+          [
+            -118.588616,
+            34.174722
+          ],
+          [
+            -118.589991,
+            34.177607
+          ],
+          [
+            -118.590287,
+            34.178235
+          ],
+          [
+            -118.590356,
+            34.178418
+          ],
+          [
+            -118.590409,
+            34.178605
+          ],
+          [
+            -118.590446,
+            34.178795
+          ],
+          [
+            -118.590467,
+            34.178986
+          ],
+          [
+            -118.590479,
+            34.179256
+          ],
+          [
+            -118.590479,
+            34.182016
+          ],
+          [
+            -118.590459,
+            34.182231
+          ],
+          [
+            -118.590427,
+            34.182402
+          ],
+          [
+            -118.590367,
+            34.182612
+          ],
+          [
+            -118.590349,
+            34.182662
+          ],
+          [
+            -118.590285,
+            34.182817
+          ],
+          [
+            -118.590181,
+            34.183016
+          ],
+          [
+            -118.590084,
+            34.183168
+          ],
+          [
+            -118.590003,
+            34.183279
+          ],
+          [
+            -118.589884,
+            34.183421
+          ],
+          [
+            -118.589753,
+            34.183556
+          ],
+          [
+            -118.589613,
+            34.183681
+          ],
+          [
+            -118.58925,
+            34.183986
+          ],
+          [
+            -118.589115,
+            34.184116
+          ],
+          [
+            -118.58899,
+            34.184254
+          ],
+          [
+            -118.588878,
+            34.184399
+          ],
+          [
+            -118.588778,
+            34.18455
+          ],
+          [
+            -118.58869,
+            34.184706
+          ],
+          [
+            -118.588573,
+            34.184961
+          ],
+          [
+            -118.588549,
+            34.185013
+          ],
+          [
+            -118.588507,
+            34.185141
+          ],
+          [
+            -118.588478,
+            34.185289
+          ],
+          [
+            -118.588456,
+            34.18561
+          ],
+          [
+            -118.588462,
+            34.188168
+          ],
+          [
+            -118.588457,
+            34.188351
+          ],
+          [
+            -118.588453,
+            34.188513
+          ],
+          [
+            -118.588446,
+            34.188823
+          ],
+          [
+            -118.588443,
+            34.188946
+          ],
+          [
+            -118.588446,
+            34.190251
+          ],
+          [
+            -118.588448,
+            34.19117
+          ],
+          [
+            -118.58845,
+            34.191911
+          ],
+          [
+            -118.588454,
+            34.193781
+          ],
+          [
+            -118.588458,
+            34.195221
+          ],
+          [
+            -118.588458,
+            34.195249
+          ],
+          [
+            -118.588458,
+            34.195299
+          ],
+          [
+            -118.588459,
+            34.195596
+          ],
+          [
+            -118.588459,
+            34.195814
+          ],
+          [
+            -118.588463,
+            34.19741
+          ],
+          [
+            -118.588465,
+            34.198317
+          ],
+          [
+            -118.588468,
+            34.199224
+          ],
+          [
+            -118.588472,
+            34.200944
+          ],
+          [
+            -118.588473,
+            34.201166
+          ],
+          [
+            -118.588477,
+            34.202871
+          ],
+          [
+            -118.588482,
+            34.204685
+          ],
+          [
+            -118.588484,
+            34.20531
+          ],
+          [
+            -118.588487,
+            34.206208
+          ],
+          [
+            -118.588488,
+            34.206499
+          ],
+          [
+            -118.588491,
+            34.207853
+          ],
+          [
+            -118.588493,
+            34.208314
+          ],
+          [
+            -118.588502,
+            34.211942
+          ],
+          [
+            -118.588511,
+            34.21557
+          ],
+          [
+            -118.588513,
+            34.216392
+          ],
+          [
+            -118.588516,
+            34.2172
+          ],
+          [
+            -118.588518,
+            34.218069
+          ],
+          [
+            -118.588523,
+            34.219936
+          ],
+          [
+            -118.588526,
+            34.222158
+          ],
+          [
+            -118.588528,
+            34.224148
+          ],
+          [
+            -118.588529,
+            34.224214
+          ],
+          [
+            -118.588529,
+            34.224294
+          ],
+          [
+            -118.588529,
+            34.224576
+          ],
+          [
+            -118.588532,
+            34.226994
+          ],
+          [
+            -118.588534,
+            34.228207
+          ],
+          [
+            -118.588538,
+            34.230626
+          ],
+          [
+            -118.588541,
+            34.233046
+          ],
+          [
+            -118.588544,
+            34.234983
+          ],
+          [
+            -118.588544,
+            34.235466
+          ],
+          [
+            -118.588547,
+            34.23723
+          ],
+          [
+            -118.588548,
+            34.238255
+          ],
+          [
+            -118.588549,
+            34.239217
+          ],
+          [
+            -118.588552,
+            34.24091
+          ],
+          [
+            -118.588555,
+            34.242726
+          ],
+          [
+            -118.588558,
+            34.244785
+          ],
+          [
+            -118.58856,
+            34.246355
+          ],
+          [
+            -118.588565,
+            34.249985
+          ],
+          [
+            -118.588568,
+            34.251801
+          ],
+          [
+            -118.588574,
+            34.255388
+          ],
+          [
+            -118.588577,
+            34.257248
+          ],
+          [
+            -118.590764,
+            34.257246
+          ],
+          [
+            -118.592951,
+            34.257244
+          ],
+          [
+            -118.594043,
+            34.257242
+          ],
+          [
+            -118.595136,
+            34.257242
+          ],
+          [
+            -118.597302,
+            34.25724
+          ],
+          [
+            -118.597321,
+            34.25724
+          ],
+          [
+            -118.598733,
+            34.257239
+          ],
+          [
+            -118.598731,
+            34.256261
+          ],
+          [
+            -118.598751,
+            34.256038
+          ],
+          [
+            -118.598782,
+            34.255865
+          ],
+          [
+            -118.59884,
+            34.255613
+          ],
+          [
+            -118.598874,
+            34.255442
+          ],
+          [
+            -118.598888,
+            34.255242
+          ],
+          [
+            -118.598887,
+            34.254307
+          ],
+          [
+            -118.598865,
+            34.252689
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sc27-magnolia",
+      "properties": {
+        "id": "sc27-magnolia",
+        "name": "Balboa / Magnolia",
+        "routes": "SC27",
+        "color": "#598E8F",
+        "system": "fantasy",
+        "rail_mode": "light_rail",
+        "service_type": "streetcar",
+        "service_label": "Streetcar",
+        "status": "concept",
+        "location_status": "approximate"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.501097,
+          34.164968
+        ]
+      }
     }
   ],
   "geometry_sources": [
@@ -61472,6 +66601,18 @@
       "source": "Los Angeles County CAMS road centerlines",
       "url": "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/eGIS_Addressing_ROAD_LINES/FeatureServer/0",
       "note": "Named road centerlines with recorded small joins. Hoover detours around Lafayette Park on Wilshire/Commonwealth/6th and via Council/Robinson/Temple at US-101. Existing routes gain only shared intersection anchors where needed; track, bridge and right-of-way feasibility remains conceptual."
+    },
+    {
+      "section": "FL Florence–Downey conversion and extension",
+      "source": "Los Angeles County CAMS road centerlines",
+      "url": "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/eGIS_Addressing_ROAD_LINES/FeatureServer/0",
+      "note": "Florence Avenue to Downey Avenue/Firestone. Original stop intersections retained and placed on road centerlines, with new local stops and transfers. Includes mapped unnamed 49.8 m Florence connector OBJECTID 144766 and 12.4 m of short centerline joins. Track, bridge and right-of-way feasibility remains conceptual."
+    },
+    {
+      "section": "SC48 Ventura, SC49 De Soto–Chatsworth and SC27 Balboa southern connection",
+      "source": "Los Angeles County CAMS road centerlines",
+      "url": "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/eGIS_Addressing_ROAD_LINES/FeatureServer/0",
+      "note": "Ventura/Valley Circle to Lankershim near Universal City; De Soto to Devonshire and Old Depot Plaza at Chatsworth. Balboa extended south from its former freeway endpoint to Ventura Boulevard. Road centerlines and a projected Universal City stop; rail right-of-way, structures and station entrances remain conceptual."
     }
   ],
   "expansion_summary": {
@@ -61594,7 +66735,7 @@
       "service_type": "light_rail"
     },
     "SC38A": {
-      "stops": 19,
+      "stops": 20,
       "length_km": 8.86,
       "termini": [
         "Garfield / Washington",
@@ -61647,6 +66788,55 @@
         "Hoover / Jefferson — USC",
         "Sunset / Hoover"
       ]
+    },
+    "FL": {
+      "stops": 32,
+      "length_km": 21.32,
+      "length_miles": 13.25,
+      "termini": [
+        "Fairview Heights — Florence / West",
+        "Downey / Firestone — Downtown Downey"
+      ],
+      "previous_mode": "heavy_rail",
+      "service_type": "light_rail"
+    },
+    "SC29": {
+      "stops": 11,
+      "length_km": 3.99,
+      "length_miles": 2.48,
+      "termini": [
+        "Lankershim / Colfax / Victory",
+        "Lankershim / Tuxford"
+      ],
+      "change": "Southern segment removed through the Victory/Colfax junction; shared stops retained for other services."
+    },
+    "SC48": {
+      "stops": 34,
+      "length_km": 26.83,
+      "length_miles": 16.67,
+      "termini": [
+        "Ventura / Valley Circle",
+        "Universal / Studio City — B Line"
+      ]
+    },
+    "SC49": {
+      "stops": 18,
+      "length_km": 11.63,
+      "length_miles": 7.23,
+      "termini": [
+        "Ventura / De Soto",
+        "Chatsworth Station — Old Depot Plaza"
+      ]
+    },
+    "SC27": {
+      "stops": 14,
+      "length_km": 6.92,
+      "length_miles": 4.3,
+      "termini": [
+        "Balboa / Ventura",
+        "Balboa / Roscoe"
+      ],
+      "change": "Extended south to the actual Ventura Boulevard intersection for SC48; the former Ventura Freeway stop is renamed Balboa / US 101."
     }
   },
   "service_classification": {
@@ -61663,6 +66853,10 @@
       "SC11": {
         "service_type": "light_rail",
         "reason": "Existing light rail/tram classification retained when SC11 was shortened to the Culver corridor."
+      },
+      "SC29": {
+        "service_type": "light_rail",
+        "reason": "Existing tram classification retained when SC29 was shortened to Victory/Colfax; this edit trims the alignment without changing its service type."
       }
     }
   }

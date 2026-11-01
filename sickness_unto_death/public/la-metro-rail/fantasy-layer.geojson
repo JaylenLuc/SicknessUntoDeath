@@ -1398,35 +1398,6 @@
         },
         {
         "type": "Feature",
-        "id": "florence-line",
-        "properties": {
-            "id": "florence-line",
-            "routeId": "FL",
-            "name": "Florence Line",
-            "color": "#0891B2",
-            "rail_mode": "heavy_rail",
-            "system": "fantasy"
-        },
-        "geometry": {
-            "type": "LineString",
-            "coordinates": [
-                [-118.336070, 33.975250],
-                [-118.318050, 33.974535],
-                [-118.308964, 33.974576],
-                [-118.300380, 33.974598],
-                [-118.291739, 33.974620],
-                [-118.278299, 33.974675],
-                [-118.256403, 33.974776],
-                [-118.24327, 33.97374],
-                [-118.225212, 33.974216],
-                [-118.212200, 33.974080],
-                [-118.203429, 33.973560],
-                [-118.202372, 33.971130]
-            ]
-        }
-        },
-        {
-        "type": "Feature",
         "id": "beverly-line",
         "properties": {
             "id": "beverly-line",
@@ -1876,85 +1847,32 @@
         }
         },
         {
-        "type": "Feature",
-        "id": "station-fairview-heights-florence",
-        "properties": {
-            "id": "station-fairview-heights-florence",
-            "name": "Fairview Heights",
-            "street1": "West Boulevard",
-            "street2": "Florence Avenue",
-            "routes": "FL",
-            "rail_mode": "heavy_rail",
-            "system": "fantasy",
-            "interchange": true,
-            "transfer": "Metro K Line",
-            "terminal": true
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-118.336070, 33.975250]
-        }
-        },
-        {
-        "type": "Feature",
-        "id": "station-florence-van-ness",
-        "properties": {
-            "id": "station-florence-van-ness",
-            "name": "Florence / Van Ness",
-            "street1": "Florence Avenue",
-            "street2": "Van Ness Avenue",
-            "routes": "FL",
-            "rail_mode": "heavy_rail",
-            "system": "fantasy"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-118.318050, 33.974535]
-        }
-        },
-        {
-        "type": "Feature",
-        "id": "station-florence-normandie",
-        "properties": {
-                "id": "station-florence-normandie",
-                "name": "Florence / Normandie",
+            "type": "Feature",
+            "id": "station-florence-vermont",
+            "properties": {
+                "id": "station-florence-vermont",
+                "name": "Florence / Vermont",
                 "street1": "Florence Avenue",
-                "street2": "Normandie Avenue",
-                "routes": "FL",
+                "street2": "Vermont Avenue",
+                "routes": "N",
                 "rail_mode": "heavy_rail",
                 "system": "fantasy",
                 "interchange": true,
+                "transfer": "FL light rail / tram",
                 "transfer_station_ids": [
-                    "intra-grid-stop-053c86ef0690",
-                    "intra-grid-stop-80f17b5d7bf8"
+                    "fl-vermont"
                 ],
                 "intra_urbes_routes": [
-                    "SC14"
+                    "FL"
                 ]
             },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-118.300380, 33.974598]
-        }
-        },
-        {
-        "type": "Feature",
-        "id": "station-florence-vermont",
-        "properties": {
-            "id": "station-florence-vermont",
-            "name": "Florence / Vermont",
-            "street1": "Florence Avenue",
-            "street2": "Vermont Avenue",
-            "routes": "N, FL",
-            "rail_mode": "heavy_rail",
-            "system": "fantasy",
-            "interchange": true,
-            "transfer": "N Line"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-118.291739, 33.974620]
-        }
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.291739,
+                    33.97462
+                ]
+            }
         },
         {
         "type": "Feature",
@@ -2032,102 +1950,6 @@
         "geometry": {
             "type": "Point",
             "coordinates": [-118.291720, 33.923350]
-        }
-        },
-        {
-        "type": "Feature",
-        "id": "station-florence-broadway",
-        "properties": {
-            "id": "station-florence-broadway",
-            "name": "Florence / Broadway",
-            "street1": "Florence Avenue",
-            "street2": "Broadway",
-            "routes": "FL",
-            "rail_mode": "heavy_rail",
-            "system": "fantasy"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-118.278299, 33.974675]
-        }
-        },
-        {
-        "type": "Feature",
-        "id": "station-florence-central",
-        "properties": {
-                "id": "station-florence-central",
-                "name": "Florence / Central",
-                "street1": "Florence Avenue",
-                "street2": "Central Avenue",
-                "routes": "FL",
-                "rail_mode": "heavy_rail",
-                "system": "fantasy",
-                "interchange": true,
-                "transfer_station_ids": [
-                    "intra-grid-stop-28a7ca1b8c2c",
-                    "intra-grid-stop-905a4b0a8b85"
-                ],
-                "intra_urbes_routes": [
-                    "SC15"
-                ]
-            },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-118.256403, 33.974776]
-        }
-        },
-        {
-        "type": "Feature",
-        "id": "station-florence-pacific",
-        "properties": {
-            "id": "station-florence-pacific",
-            "name": "Florence / Pacific",
-            "street1": "Florence Avenue",
-            "street2": "Pacific Boulevard",
-            "routes": "FL",
-            "rail_mode": "heavy_rail",
-            "system": "fantasy"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-118.225212, 33.974216]
-        }
-        },
-        {
-        "type": "Feature",
-        "id": "station-florence-state",
-        "properties": {
-            "id": "station-florence-state",
-            "name": "Florence / State",
-            "street1": "Florence Avenue",
-            "street2": "State Street",
-            "routes": "FL",
-            "rail_mode": "heavy_rail",
-            "system": "fantasy"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-118.212200, 33.974080]
-        }
-        },
-        {
-        "type": "Feature",
-        "id": "station-florence-salt-lake",
-        "properties": {
-            "id": "station-florence-salt-lake",
-            "name": "Florence / Salt Lake",
-            "street1": "Florence Avenue",
-            "street2": "Salt Lake Avenue",
-            "routes": "FL",
-            "rail_mode": "heavy_rail",
-            "system": "fantasy",
-            "interchange": true,
-            "transfer": "Future Southeast Gateway Line",
-            "terminal": true
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-118.202372, 33.971130]
         }
         },
         {
@@ -4180,19 +4002,28 @@
             "type": "Feature",
             "id": "station-florence-western",
             "properties": {
-            "id": "station-florence-western",
-            "name": "Florence / Western",
-            "street1": "Florence Avenue",
-            "street2": "Western Avenue",
-            "routes": "M, FL",
-            "rail_mode": "heavy_rail",
-            "system": "fantasy",
-            "interchange": true,
-            "transfer": "M Line"
+                "id": "station-florence-western",
+                "name": "Florence / Western",
+                "street1": "Florence Avenue",
+                "street2": "Western Avenue",
+                "routes": "M",
+                "rail_mode": "heavy_rail",
+                "system": "fantasy",
+                "interchange": true,
+                "transfer": "FL light rail / tram",
+                "transfer_station_ids": [
+                    "fl-western"
+                ],
+                "intra_urbes_routes": [
+                    "FL"
+                ]
             },
             "geometry": {
-            "type": "Point",
-            "coordinates": [-118.308964, 33.974576]
+                "type": "Point",
+                "coordinates": [
+                    -118.308964,
+                    33.974576
+                ]
             }
         },
         {
@@ -5737,25 +5568,6 @@
             }
         },
         {
-        "type": "Feature",
-        "id": "station-florence",
-        "properties": {
-            "id": "station-florence",
-            "name": "Florence",
-            "street1": "Florence Avenue",
-            "street2": "Graham Avenue",
-            "routes": "FL",
-            "rail_mode": "heavy_rail",
-            "system": "fantasy",
-            "interchange": true,
-            "transfer": "Metro A Line"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-118.24327, 33.97374]
-        }
-        },
-        {
             "type": "Feature",
             "id": "station-colorado-rosemead",
             "properties": {
@@ -6450,11 +6262,9 @@
                 "interchange": true,
                 "transfer": "Existing Metro B and G Lines",
                 "transfer_station_ids": [
-                    "intra-grid-stop-3e8fe211dbb0",
                     "intra-grid-stop-5b19f502f971"
                 ],
                 "intra_urbes_routes": [
-                    "SC29",
                     "SC42"
                 ]
             },
@@ -6721,14 +6531,7 @@
                 "street2": "Lankershim Boulevard",
                 "routes": "B",
                 "rail_mode": "heavy_rail",
-                "system": "fantasy",
-                "interchange": true,
-                "transfer_station_ids": [
-                    "intra-grid-stop-bf697c4b43ad"
-                ],
-                "intra_urbes_routes": [
-                    "SC29"
-                ]
+                "system": "fantasy"
             },
             "geometry": {
                 "type": "Point",
@@ -6796,7 +6599,14 @@
                 "street2": "De Soto Avenue",
                 "routes": "B",
                 "rail_mode": "heavy_rail",
-                "system": "fantasy"
+                "system": "fantasy",
+                "interchange": true,
+                "transfer_station_ids": [
+                    "sc49-sherman"
+                ],
+                "intra_urbes_routes": [
+                    "SC49"
+                ]
             },
             "geometry": {
                 "type": "Point",
@@ -6889,14 +6699,7 @@
                 "street2": "Lankershim Boulevard",
                 "routes": "G",
                 "rail_mode": "heavy_rail",
-                "system": "fantasy",
-                "interchange": true,
-                "transfer_station_ids": [
-                    "intra-grid-stop-5b40f6de8dd9"
-                ],
-                "intra_urbes_routes": [
-                    "SC29"
-                ]
+                "system": "fantasy"
             },
             "geometry": {
                 "type": "Point",
@@ -6973,10 +6776,12 @@
                 "expansion": "intra-urbes-grid",
                 "interchange": true,
                 "transfer_station_ids": [
-                    "sc42-reseda"
+                    "sc42-reseda",
+                    "sc48-reseda"
                 ],
                 "intra_urbes_routes": [
-                    "SC42"
+                    "SC42",
+                    "SC48"
                 ]
             },
             "geometry": {
@@ -7672,36 +7477,6 @@
                         -118.536433,
                         34.276028
                     ]
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "id": "station-grid-florence-crenshaw",
-            "properties": {
-                "id": "station-grid-florence-crenshaw",
-                "name": "Florence / Crenshaw",
-                "street1": "Florence",
-                "street2": "Crenshaw",
-                "routes": "FL",
-                "rail_mode": "heavy_rail",
-                "system": "fantasy",
-                "status": "concept",
-                "interchange": true,
-                "expansion": "intra-urbes-grid",
-                "description": "Added Inter Urbes interchange for the local streetcar grid; conceptual station on the authored heavy-rail alignment.",
-                "transfer_station_ids": [
-                    "intra-grid-stop-4351e342e9d2"
-                ],
-                "intra_urbes_routes": [
-                    "SC32"
-                ]
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -118.33089029221657,
-                    33.97504447885321
                 ]
             }
         },
@@ -9503,12 +9278,19 @@
                 "status": "concept",
                 "expansion": "intra-urbes-grid",
                 "area": "San Fernando Valley",
-                "description": "Roscoe heavy rail from Reseda to Tuxford/Lankershim, connecting R at Reseda and local Balboa and Lankershim streetcars.",
+                "description": "Roscoe heavy rail from Valley Circle in West Hills to Tuxford/Lankershim, via Fallbrook, Topanga Canyon, Canoga, De Soto, Winnetka, Tampa and Reseda. Connects R at Reseda, Metro G at Roscoe/Canoga, and the Balboa and Lankershim local lines.",
                 "corridors": [
                     "Roscoe",
                     "Tuxford"
                 ],
                 "stationIds": [
+                    "station-ro-valley-circle",
+                    "station-ro-fallbrook",
+                    "station-ro-topanga-canyon",
+                    "station-ro-canoga",
+                    "station-ro-de-soto",
+                    "station-ro-winnetka",
+                    "station-ro-tampa",
                     "station-r-reseda-roscoe",
                     "station-ro-white-oak",
                     "station-ro-balboa",
@@ -9521,7 +9303,7 @@
                     "station-ro-lankershim"
                 ],
                 "termini": [
-                    "Reseda / Roscoe",
+                    "Roscoe / Valley Circle",
                     "Tuxford / Lankershim"
                 ],
                 "alignment_status": "conceptual grade-separated metro corridor; road centerlines are a geographic reference",
@@ -9531,17 +9313,375 @@
                 "connector_roads_metres": {},
                 "geometry_gap_joins": [],
                 "station_spacing_policy": "Heavy rail: fewer stations at major streets and transfers, with wider spacing than streetcar service.",
-                "length_km": 13.72,
+                "length_km": 23.88,
                 "station_spacing_km": {
-                    "mean": 1.52,
-                    "minimum": 0.84,
-                    "maximum": 1.74
+                    "mean": 1.49,
+                    "minimum": 0.78,
+                    "maximum": 2.13
                 },
-                "operating_note": "Conceptual heavy rail with 10 stations; headway is a design target, not an operating simulation."
+                "operating_note": "Conceptual heavy rail with 17 stations; headway is a design target, not an operating simulation.",
+                "length_miles": 14.84,
+                "geometry_sources": [
+                    {
+                        "section": "Roscoe west extension from Reseda to Valley Circle",
+                        "source": "Los Angeles County CAMS road centerlines",
+                        "url": "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/eGIS_Addressing_ROAD_LINES/FeatureServer/0",
+                        "note": "Road centerlines reference the corridor; the proposed heavy rail is grade separated."
+                    }
+                ],
+                "western_extension": {
+                    "length_km": 10.16,
+                    "new_station_ids": [
+                        "station-ro-valley-circle",
+                        "station-ro-fallbrook",
+                        "station-ro-topanga-canyon",
+                        "station-ro-canoga",
+                        "station-ro-de-soto",
+                        "station-ro-winnetka",
+                        "station-ro-tampa"
+                    ],
+                    "geometry_gap_joins": []
+                }
             },
             "geometry": {
                 "type": "LineString",
                 "coordinates": [
+                    [
+                        -118.646618,
+                        34.219189
+                    ],
+                    [
+                        -118.644472,
+                        34.219205
+                    ],
+                    [
+                        -118.644177,
+                        34.219199
+                    ],
+                    [
+                        -118.643748,
+                        34.219178
+                    ],
+                    [
+                        -118.643397,
+                        34.219162
+                    ],
+                    [
+                        -118.643085,
+                        34.219147
+                    ],
+                    [
+                        -118.642799,
+                        34.219137
+                    ],
+                    [
+                        -118.642512,
+                        34.219134
+                    ],
+                    [
+                        -118.641285,
+                        34.219154
+                    ],
+                    [
+                        -118.640596,
+                        34.219166
+                    ],
+                    [
+                        -118.639514,
+                        34.21917
+                    ],
+                    [
+                        -118.638503,
+                        34.219173
+                    ],
+                    [
+                        -118.637477,
+                        34.219177
+                    ],
+                    [
+                        -118.637225,
+                        34.219178
+                    ],
+                    [
+                        -118.636718,
+                        34.219186
+                    ],
+                    [
+                        -118.636367,
+                        34.219191
+                    ],
+                    [
+                        -118.635482,
+                        34.219205
+                    ],
+                    [
+                        -118.634526,
+                        34.21922
+                    ],
+                    [
+                        -118.634414,
+                        34.219222
+                    ],
+                    [
+                        -118.633544,
+                        34.219236
+                    ],
+                    [
+                        -118.63336,
+                        34.219239
+                    ],
+                    [
+                        -118.632201,
+                        34.219257
+                    ],
+                    [
+                        -118.631137,
+                        34.219273
+                    ],
+                    [
+                        -118.630374,
+                        34.219285
+                    ],
+                    [
+                        -118.63001,
+                        34.219291
+                    ],
+                    [
+                        -118.62916,
+                        34.219304
+                    ],
+                    [
+                        -118.628524,
+                        34.219314
+                    ],
+                    [
+                        -118.627801,
+                        34.219326
+                    ],
+                    [
+                        -118.625428,
+                        34.219363
+                    ],
+                    [
+                        -118.623467,
+                        34.219393
+                    ],
+                    [
+                        -118.619098,
+                        34.219462
+                    ],
+                    [
+                        -118.617023,
+                        34.219494
+                    ],
+                    [
+                        -118.61473,
+                        34.21953
+                    ],
+                    [
+                        -118.610406,
+                        34.219597
+                    ],
+                    [
+                        -118.606079,
+                        34.219664
+                    ],
+                    [
+                        -118.605995,
+                        34.219665
+                    ],
+                    [
+                        -118.60591,
+                        34.219666
+                    ],
+                    [
+                        -118.601628,
+                        34.219732
+                    ],
+                    [
+                        -118.600311,
+                        34.219753
+                    ],
+                    [
+                        -118.597548,
+                        34.219795
+                    ],
+                    [
+                        -118.597246,
+                        34.2198
+                    ],
+                    [
+                        -118.595073,
+                        34.219834
+                    ],
+                    [
+                        -118.592891,
+                        34.219868
+                    ],
+                    [
+                        -118.588523,
+                        34.219936
+                    ],
+                    [
+                        -118.588049,
+                        34.219943
+                    ],
+                    [
+                        -118.58793,
+                        34.219945
+                    ],
+                    [
+                        -118.587068,
+                        34.219958
+                    ],
+                    [
+                        -118.587015,
+                        34.219959
+                    ],
+                    [
+                        -118.58695,
+                        34.21996
+                    ],
+                    [
+                        -118.58634,
+                        34.219969
+                    ],
+                    [
+                        -118.584154,
+                        34.220003
+                    ],
+                    [
+                        -118.58197,
+                        34.220037
+                    ],
+                    [
+                        -118.579784,
+                        34.220071
+                    ],
+                    [
+                        -118.575416,
+                        34.220137
+                    ],
+                    [
+                        -118.573978,
+                        34.220159
+                    ],
+                    [
+                        -118.571047,
+                        34.220205
+                    ],
+                    [
+                        -118.568861,
+                        34.220238
+                    ],
+                    [
+                        -118.566675,
+                        34.220271
+                    ],
+                    [
+                        -118.565583,
+                        34.220287
+                    ],
+                    [
+                        -118.564488,
+                        34.220304
+                    ],
+                    [
+                        -118.563399,
+                        34.22032
+                    ],
+                    [
+                        -118.562306,
+                        34.220336
+                    ],
+                    [
+                        -118.560123,
+                        34.220369
+                    ],
+                    [
+                        -118.557935,
+                        34.220402
+                    ],
+                    [
+                        -118.556843,
+                        34.220419
+                    ],
+                    [
+                        -118.555751,
+                        34.220435
+                    ],
+                    [
+                        -118.554658,
+                        34.220452
+                    ],
+                    [
+                        -118.554211,
+                        34.220458
+                    ],
+                    [
+                        -118.553566,
+                        34.220468
+                    ],
+                    [
+                        -118.549198,
+                        34.220534
+                    ],
+                    [
+                        -118.546205,
+                        34.220579
+                    ],
+                    [
+                        -118.546169,
+                        34.22058
+                    ],
+                    [
+                        -118.546099,
+                        34.220581
+                    ],
+                    [
+                        -118.545453,
+                        34.220591
+                    ],
+                    [
+                        -118.544826,
+                        34.2206
+                    ],
+                    [
+                        -118.543734,
+                        34.220617
+                    ],
+                    [
+                        -118.543117,
+                        34.220626
+                    ],
+                    [
+                        -118.542642,
+                        34.220633
+                    ],
+                    [
+                        -118.542128,
+                        34.220641
+                    ],
+                    [
+                        -118.54155,
+                        34.22065
+                    ],
+                    [
+                        -118.540461,
+                        34.220666
+                    ],
+                    [
+                        -118.53958,
+                        34.220679
+                    ],
+                    [
+                        -118.538632,
+                        34.220694
+                    ],
+                    [
+                        -118.538495,
+                        34.220696
+                    ],
                     [
                         -118.536091,
                         34.220732
@@ -10485,7 +10625,14 @@
                 "service_type": "metro",
                 "status": "concept",
                 "color": "#e39ae3",
-                "location_status": "approximate"
+                "location_status": "approximate",
+                "interchange": true,
+                "transfer_station_ids": [
+                    "fl-atlantic"
+                ],
+                "intra_urbes_routes": [
+                    "FL"
+                ]
             },
             "geometry": {
                 "type": "Point",
@@ -10517,6 +10664,184 @@
                 "coordinates": [
                     -118.183138,
                     33.95191
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-ro-valley-circle",
+            "properties": {
+                "id": "station-ro-valley-circle",
+                "name": "Roscoe / Valley Circle",
+                "street1": "Roscoe Boulevard",
+                "street2": "Valley Circle",
+                "system": "fantasy",
+                "rail_mode": "heavy_rail",
+                "service_type": "metro",
+                "status": "concept",
+                "color": "#577E92",
+                "routes": "RO",
+                "location_status": "approximate",
+                "terminal": true
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.646618,
+                    34.219189
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-ro-fallbrook",
+            "properties": {
+                "id": "station-ro-fallbrook",
+                "name": "Roscoe / Fallbrook",
+                "street1": "Roscoe Boulevard",
+                "street2": "Fallbrook",
+                "system": "fantasy",
+                "rail_mode": "heavy_rail",
+                "service_type": "metro",
+                "status": "concept",
+                "color": "#577E92",
+                "routes": "RO",
+                "location_status": "approximate"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.623467,
+                    34.219393
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-ro-topanga-canyon",
+            "properties": {
+                "id": "station-ro-topanga-canyon",
+                "name": "Roscoe / Topanga Canyon",
+                "street1": "Roscoe Boulevard",
+                "street2": "Topanga Canyon",
+                "system": "fantasy",
+                "rail_mode": "heavy_rail",
+                "service_type": "metro",
+                "status": "concept",
+                "color": "#577E92",
+                "routes": "RO",
+                "location_status": "approximate"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.606079,
+                    34.219664
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-ro-canoga",
+            "properties": {
+                "id": "station-ro-canoga",
+                "name": "Roscoe / Canoga",
+                "street1": "Roscoe Boulevard",
+                "street2": "Canoga",
+                "system": "fantasy",
+                "rail_mode": "heavy_rail",
+                "service_type": "metro",
+                "status": "concept",
+                "color": "#577E92",
+                "routes": "RO",
+                "location_status": "approximate",
+                "interchange": true,
+                "transfer": "Walk to Metro G Line at Roscoe station; separate platforms"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.597548,
+                    34.219795
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-ro-de-soto",
+            "properties": {
+                "id": "station-ro-de-soto",
+                "name": "Roscoe / De Soto",
+                "street1": "Roscoe Boulevard",
+                "street2": "De Soto",
+                "system": "fantasy",
+                "rail_mode": "heavy_rail",
+                "service_type": "metro",
+                "status": "concept",
+                "color": "#577E92",
+                "routes": "RO",
+                "location_status": "approximate",
+                "interchange": true,
+                "transfer_station_ids": [
+                    "sc49-roscoe"
+                ],
+                "intra_urbes_routes": [
+                    "SC49"
+                ]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.588523,
+                    34.219936
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-ro-winnetka",
+            "properties": {
+                "id": "station-ro-winnetka",
+                "name": "Roscoe / Winnetka",
+                "street1": "Roscoe Boulevard",
+                "street2": "Winnetka",
+                "system": "fantasy",
+                "rail_mode": "heavy_rail",
+                "service_type": "metro",
+                "status": "concept",
+                "color": "#577E92",
+                "routes": "RO",
+                "location_status": "approximate"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.571047,
+                    34.220205
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "station-ro-tampa",
+            "properties": {
+                "id": "station-ro-tampa",
+                "name": "Roscoe / Tampa",
+                "street1": "Roscoe Boulevard",
+                "street2": "Tampa",
+                "system": "fantasy",
+                "rail_mode": "heavy_rail",
+                "service_type": "metro",
+                "status": "concept",
+                "color": "#577E92",
+                "routes": "RO",
+                "location_status": "approximate"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -118.553566,
+                    34.220468
                 ]
             }
         }

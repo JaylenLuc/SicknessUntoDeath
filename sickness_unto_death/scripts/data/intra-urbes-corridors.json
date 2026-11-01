@@ -501,8 +501,8 @@
       "from": {
         "street": "Ventura",
         "near": [
-          -118.502,
-          34.173
+          -118.501089,
+          34.159261
         ]
       },
       "to": {
@@ -513,12 +513,13 @@
         ]
       },
       "area": "San Fernando Valley",
-      "rationale": "Local coverage between the new Reseda trunk and Van Nuys.",
+      "rationale": "Balboa streetcar from Ventura Boulevard to Roscoe, connecting Ventura SC48, Burbank SC42, Victory SC26, B at Sherman Way and RO at Roscoe. The southern section reaches Ventura Boulevard instead of terminating at the Ventura Freeway.",
       "color": "#598E8F",
       "rail_mode": "light_rail",
       "service_type": "streetcar",
       "service_label": "Streetcar",
-      "length_miles": 3.52
+      "length_miles": 4.3,
+      "length_km": 6.92
     },
     {
       "id": "RO",
@@ -528,10 +529,10 @@
         "Tuxford"
       ],
       "from": {
-        "street": "Reseda",
+        "street": "Valley Circle",
         "near": [
-          -118.536,
-          34.221
+          -118.646618,
+          34.219189
         ]
       },
       "to": {
@@ -542,9 +543,16 @@
         ]
       },
       "area": "San Fernando Valley",
-      "rationale": "Roscoe heavy rail from Reseda to Tuxford/Lankershim, connecting R at Reseda and local Balboa and Lankershim streetcars.",
+      "rationale": "Roscoe heavy rail from Valley Circle in West Hills to Tuxford/Lankershim, via Fallbrook, Topanga Canyon, Canoga, De Soto, Winnetka, Tampa and Reseda. Connects R at Reseda, Metro G at Roscoe/Canoga, and the Balboa and Lankershim local lines.",
       "color": "#577E92",
       "stationIds": [
+        "station-ro-valley-circle",
+        "station-ro-fallbrook",
+        "station-ro-topanga-canyon",
+        "station-ro-canoga",
+        "station-ro-de-soto",
+        "station-ro-winnetka",
+        "station-ro-tampa",
         "station-r-reseda-roscoe",
         "station-ro-white-oak",
         "station-ro-balboa",
@@ -557,11 +565,18 @@
         "station-ro-lankershim"
       ],
       "station_spacing_km": {
-        "mean": 1.52,
-        "minimum": 0.84,
-        "maximum": 1.74
+        "mean": 1.49,
+        "minimum": 0.78,
+        "maximum": 2.13
       },
       "majorStops": [
+        "Valley Circle",
+        "Fallbrook",
+        "Topanga Canyon",
+        "Canoga",
+        "De Soto",
+        "Winnetka",
+        "Tampa",
         "Reseda",
         "White Oak",
         "Balboa",
@@ -572,7 +587,9 @@
         "Sheldon",
         "Arleta",
         "Lankershim"
-      ]
+      ],
+      "length_km": 23.88,
+      "length_miles": 14.84
     },
     {
       "id": "SC29",
@@ -581,10 +598,10 @@
         "Lankershim"
       ],
       "from": {
-        "street": "Ventura",
+        "street": "Victory / Colfax",
         "near": [
-          -118.364,
-          34.139
+          -118.38779,
+          34.186679
         ]
       },
       "to": {
@@ -595,12 +612,14 @@
         ]
       },
       "area": "San Fernando Valley",
-      "rationale": "North Hollywood and Sun Valley connections to B, G and the east–west streetcars.",
+      "rationale": "Lankershim local rail from the Colfax/Victory junction north to Tuxford, connecting Victory SC26, the B extension and Roscoe RO. The former southern section to Ventura is removed to reduce overlap with the red line.",
       "color": "#94725D",
       "rail_mode": "light_rail",
       "service_type": "light_rail",
       "service_label": "Light Rail / Tram",
-      "length_miles": 6.29
+      "length_miles": 2.48,
+      "length_km": 3.99,
+      "service_classification_override": "Existing tram classification retained when SC29 was shortened to Victory/Colfax; this edit trims the alignment without changing its service type."
     },
     {
       "id": "SC30",
@@ -1193,6 +1212,105 @@
       "service_label": "Streetcar",
       "length_km": 8.62,
       "length_miles": 5.35
+    },
+    {
+      "id": "FL",
+      "name": "Florence–Downey Light Rail / Tram",
+      "roads": [
+        "Florence",
+        "Downey"
+      ],
+      "from": {
+        "street": "West",
+        "near": [
+          -118.33523,
+          33.974502
+        ]
+      },
+      "to": {
+        "street": "Firestone",
+        "near": [
+          -118.133129,
+          33.940114
+        ]
+      },
+      "area": "South Los Angeles / Southeast Los Angeles / Downey",
+      "rationale": "Florence Avenue light rail from Fairview Heights / West Boulevard through South Los Angeles, Huntington Park, Bell and Bell Gardens, continuing into Downey and turning south on Downey Avenue to Firestone Boulevard in Downtown Downey. Reserved track and signal priority are intended. Connects K and A, Inter Urbes M, N and ATL, and local Crenshaw, Normandie, Main, Central and Garfield services; retains the conceptual future Southeast Gateway interchange at Salt Lake.",
+      "color": "#0891B2",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_km": 21.32,
+      "length_miles": 13.25
+    },
+    {
+      "id": "SC48",
+      "name": "Ventura Light Rail / Tram",
+      "roads": [
+        "Ventura",
+        "Lankershim"
+      ],
+      "from": {
+        "street": "Valley Circle",
+        "near": [
+          -118.638013,
+          34.160868
+        ]
+      },
+      "to": {
+        "street": "Universal / Studio City",
+        "near": [
+          -118.361808,
+          34.13965
+        ],
+        "point": [
+          -118.361808,
+          34.13965
+        ]
+      },
+      "area": "San Fernando Valley",
+      "rationale": "Ventura Boulevard rapid light rail from Valley Circle to Lankershim, then north to a walking interchange with the Metro B Line at Universal/Studio City. Connects De Soto SC49 and Balboa SC27 directly, with walking connections to Reseda heavy rail R and Burbank SC42. Reserved lanes and signal priority are intended.",
+      "color": "#A67E4F",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_km": 26.83,
+      "length_miles": 16.67
+    },
+    {
+      "id": "SC49",
+      "name": "De Soto–Chatsworth Light Rail / Tram",
+      "roads": [
+        "De Soto",
+        "Devonshire",
+        "Old Depot Plaza"
+      ],
+      "from": {
+        "street": "Ventura",
+        "near": [
+          -118.588266,
+          34.166397
+        ]
+      },
+      "to": {
+        "street": "Chatsworth Station",
+        "near": [
+          -118.598865,
+          34.252689
+        ],
+        "point": [
+          -118.598865,
+          34.252689
+        ]
+      },
+      "area": "San Fernando Valley",
+      "rationale": "De Soto Avenue light rail from Ventura Boulevard north to Devonshire, then west on Devonshire and south on Old Depot Plaza Road to Chatsworth station. Connects Ventura SC48, the Metro G busway, Inter Urbes B at Sherman Way, RO at Roscoe, and Metrolink/Amtrak/G at Chatsworth. Reserved lanes and signal priority are intended.",
+      "color": "#6E819B",
+      "rail_mode": "light_rail",
+      "service_type": "light_rail",
+      "service_label": "Light Rail / Tram",
+      "length_km": 11.63,
+      "length_miles": 7.23
     }
   ],
   "heavy": {
@@ -1301,10 +1419,10 @@
         "Tuxford"
       ],
       "from": {
-        "street": "Reseda",
+        "street": "Valley Circle",
         "near": [
-          -118.536,
-          34.221
+          -118.646618,
+          34.219189
         ]
       },
       "to": {
@@ -1315,9 +1433,16 @@
         ]
       },
       "area": "San Fernando Valley",
-      "rationale": "Roscoe heavy rail from Reseda to Tuxford/Lankershim, connecting R at Reseda and local Balboa and Lankershim streetcars.",
+      "rationale": "Roscoe heavy rail from Valley Circle in West Hills to Tuxford/Lankershim, via Fallbrook, Topanga Canyon, Canoga, De Soto, Winnetka, Tampa and Reseda. Connects R at Reseda, Metro G at Roscoe/Canoga, and the Balboa and Lankershim local lines.",
       "color": "#577E92",
       "stationIds": [
+        "station-ro-valley-circle",
+        "station-ro-fallbrook",
+        "station-ro-topanga-canyon",
+        "station-ro-canoga",
+        "station-ro-de-soto",
+        "station-ro-winnetka",
+        "station-ro-tampa",
         "station-r-reseda-roscoe",
         "station-ro-white-oak",
         "station-ro-balboa",
@@ -1330,11 +1455,18 @@
         "station-ro-lankershim"
       ],
       "station_spacing_km": {
-        "mean": 1.52,
-        "minimum": 0.84,
-        "maximum": 1.74
+        "mean": 1.49,
+        "minimum": 0.78,
+        "maximum": 2.13
       },
       "majorStops": [
+        "Valley Circle",
+        "Fallbrook",
+        "Topanga Canyon",
+        "Canoga",
+        "De Soto",
+        "Winnetka",
+        "Tampa",
         "Reseda",
         "White Oak",
         "Balboa",
@@ -1345,7 +1477,9 @@
         "Sheldon",
         "Arleta",
         "Lankershim"
-      ]
+      ],
+      "length_km": 23.88,
+      "length_miles": 14.84
     },
     {
       "id": "ATL",
@@ -1406,6 +1540,10 @@
         "SC11": {
           "service_type": "light_rail",
           "reason": "Existing light rail/tram classification retained when SC11 was shortened to the Culver corridor."
+        },
+        "SC29": {
+          "service_type": "light_rail",
+          "reason": "Existing tram classification retained when SC29 was shortened to Victory/Colfax; this edit trims the alignment without changing its service type."
         }
       }
     }
@@ -1481,6 +1619,26 @@
         "assessment": "North–south local coverage east of Central, potentially connecting South LA east–west services."
       }
     ],
-    "existing_high_demand_coverage": "Vermont, Western and Santa Monica already have Inter Urbes lines in this map. Assess local access gaps there before adding parallel services."
+    "existing_high_demand_coverage": "Vermont, Western and Santa Monica already have Inter Urbes lines in this map. Assess local access gaps there before adding parallel services.",
+    "valley_mode_options": {
+      "review_date": "2026-11-01",
+      "status": "Implemented SC48 Ventura and SC49 De Soto–Chatsworth as light rail/tram after user approval; Roscoe west extension also implemented.",
+      "Ventura": {
+        "recommendation": "Study rapid light rail in reserved lanes as the starting option; consider a grade-separated metro for a long-distance West Valley–Universal City trunk with wider station spacing.",
+        "evidence": "Q4 2025 Route 150: 3,264 average weekday boardings; Route 240: 11,770. These are whole-route figures and include travel beyond Ventura, so they are not a Ventura-only total or a rail forecast.",
+        "bus_ridership_source": "https://metro.legistar.com/View.ashx?GUID=660340A8-0B40-467D-A98B-113C95A73127&ID=15384299&M=F",
+        "route_id": "SC48",
+        "selected_mode": "light_rail",
+        "decision": "User approved adding both recommended light rail corridors."
+      },
+      "De Soto": {
+        "recommendation": "Light rail connector from Ventura toward Chatsworth, linking Roscoe and the G busway; available evidence does not establish a need for heavy-rail capacity.",
+        "evidence": "Metro Route 244 already links De Soto/Ventura, De Soto/Roscoe and Chatsworth station. The Q4 2025 table reports 1,747 average weekday boardings in its 244/legacy-245 row; do not treat this as a rail forecast.",
+        "route_source": "https://mybus.metro.net/files/schedules/244_TT_06-07-26.pdf",
+        "route_id": "SC49",
+        "selected_mode": "light_rail",
+        "decision": "User approved adding both recommended light rail corridors."
+      }
+    }
   }
 }
