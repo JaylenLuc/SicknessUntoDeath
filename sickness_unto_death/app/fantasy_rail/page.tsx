@@ -16,7 +16,7 @@ export default function FantasyRail() {
           Revival of the Relict Los Angeles Rail System
         </Text>
         <Text as="p" className="mt-2 text-center">
-          Includes: An inter-urbes fantasy rail (intra urban planned), For the great people of Los Angeles, Res Ipsa Loquitur
+          Includes: Inter Urbes heavy rail and Intra Urbes light rail / streetcar, For the great people of Los Angeles, Res Ipsa Loquitur
         </Text>
         <Text as="p" className="mt-3 text-center">
           In this world, an evil is the best tool of appropriation, an ignorant is the best victim, and the Good have the most to lose.
@@ -26,7 +26,7 @@ export default function FantasyRail() {
           to have our government serve us and build a community where our neighbors can live like creatures not like commodities.
         </Text>
         <Text as="h4" className="text-center">
-          (Last updated: 2026-10-27)
+          (Last updated: 2026-10-31)
         </Text>
       </header>
       <div className="mt-6 w-full max-w-[1000px] min-w-0 self-center">

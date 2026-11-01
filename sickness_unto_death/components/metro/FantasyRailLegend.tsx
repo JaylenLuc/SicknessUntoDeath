@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useState } from "react";
 import type { FeatureCollection, GeoJsonProperties, Geometry } from "geojson";
+import { FANTASY_RAIL_NETWORKS } from "./fantasyRailNetworks";
 import { RAIL_PROJECTS } from "./proposedMetroProjects";
 import { LARY_1915_DASHARRAY, LARY_PERIOD_STYLES } from "./laryPeriodStyles";
 import { PE_1915_DASHARRAY, PE_PERIOD_STYLES } from "./peLineStyle";
@@ -18,7 +19,8 @@ type FantasyLegendLine = {
 type LegendGroups = {
   existing: FantasyLegendLine[];
   proposed: FantasyLegendLine[];
-  fantasy: FantasyLegendLine[];
+  heavyRail: FantasyLegendLine[];
+  lightRail: FantasyLegendLine[];
 };
 
 type FantasyRailLegendProps = {
@@ -65,7 +67,8 @@ export default function FantasyRailLegend({
   const [groups, setGroups] = useState<LegendGroups>({
     existing: [],
     proposed: [],
-    fantasy: [],
+    heavyRail: [],
+    lightRail: [],
   });
 
   useEffect(() => {
@@ -73,8 +76,9 @@ export default function FantasyRailLegend({
 
     async function loadLegend() {
       try {
-        const [fantasyResponse, existingResponse, ...proposedResponses] = await Promise.all([
-          fetch("/la-metro-rail/fantasy-layer.geojson"),
+        const [fantasyResponse, streetcarResponse, existingResponse, ...proposedResponses] = await Promise.all([
+          fetch(`/la-metro-rail/${FANTASY_RAIL_NETWORKS.heavyRail.file}`),
+          fetch(`/la-metro-rail/${FANTASY_RAIL_NETWORKS.lightRail.file}`),
           fetch("/la-metro-rail/la-metro-rail.geojson"),
           ...RAIL_PROJECTS.map((project) =>
             fetch(`/la-metro-rail/${project.file}`),
@@ -83,13 +87,17 @@ export default function FantasyRailLegend({
         const failedProposedResponse = proposedResponses.find(
           (response) => !response.ok,
         );
-        if (!fantasyResponse.ok || !existingResponse.ok || failedProposedResponse) {
+        if (!fantasyResponse.ok || !streetcarResponse.ok || !existingResponse.ok || failedProposedResponse) {
           throw new Error(
-            `Rail legend request failed: fantasy ${fantasyResponse.status}, existing ${existingResponse.status}, proposed ${failedProposedResponse?.status ?? "ok"}`,
+            `Rail legend request failed: fantasy ${fantasyResponse.status}, streetcar ${streetcarResponse.status}, existing ${existingResponse.status}, proposed ${failedProposedResponse?.status ?? "ok"}`,
           );
         }
 
         const fantasyData = (await fantasyResponse.json()) as FeatureCollection<
+          Geometry,
+          GeoJsonProperties
+        >;
+        const streetcarData = (await streetcarResponse.json()) as FeatureCollection<
           Geometry,
           GeoJsonProperties
         >;
@@ -107,7 +115,7 @@ export default function FantasyRailLegend({
           ),
         );
         const seenLineIds = new Set<string>();
-        const fantasyLines = fantasyData.features.flatMap((feature) => {
+        const fantasyLines = [...fantasyData.features, ...streetcarData.features].flatMap((feature) => {
           if (feature.geometry.type !== "LineString") return [];
 
           const properties = feature.properties;
@@ -120,7 +128,7 @@ export default function FantasyRailLegend({
 
           if (!id || !name || !routeId || seenLineIds.has(id)) return [];
           seenLineIds.add(id);
-          return [{ id, name, routeId, color }];
+          return [{ id, name, routeId, color, railMode: properties?.rail_mode }];
         });
 
         const existingLines = existingData.features.flatMap((feature) => {
@@ -193,11 +201,12 @@ export default function FantasyRailLegend({
           setGroups({
             existing: existingLines,
             proposed: proposedLines,
-            fantasy: fantasyLines,
+            heavyRail: fantasyLines.filter((line) => line.railMode === FANTASY_RAIL_NETWORKS.heavyRail.mode),
+            lightRail: fantasyLines.filter((line) => line.railMode === FANTASY_RAIL_NETWORKS.lightRail.mode),
           });
         }
       } catch (error) {
-        console.error("Could not build Inter Urbes fantasy rail legend:", error);
+        console.error("Could not build fantasy rail legend:", error);
       }
     }
 
@@ -295,7 +304,7 @@ export default function FantasyRailLegend({
       ].join(" ")}
     >
       <h2 id={headingId} className={compact ? "text-xs font-bold" : "text-lg font-bold"}>
-        Inter Urbes — Rail Line Legend
+        Inter Urbes &amp; Intra Urbes — Rail Line Legend
       </h2>
 
       <div className={compact ? "mt-2" : "mt-3"}>
@@ -380,14 +389,21 @@ export default function FantasyRailLegend({
         </div>
       )}
 
-      {groups.fantasy.length > 0 && (
-        <div className={compact ? "mt-3" : "mt-5"}>
-          <h3 className={compact ? "mb-1 border-b border-black pb-0.5 text-[9px] font-bold uppercase" : "mb-2 border-b-2 border-black pb-1 text-sm font-bold uppercase tracking-wide"}>
-            Inter Urbes — Fantasy Network
-          </h3>
-          {renderLines(groups.fantasy)}
-        </div>
-      )}
+      {(["heavyRail", "lightRail"] as const).map((network) => (
+        groups[network].length > 0 && (
+          <div key={network} className={compact ? "mt-3" : "mt-5"}>
+            <h3 className={compact ? "mb-1 border-b border-black pb-0.5 text-[9px] font-bold uppercase" : "mb-2 border-b-2 border-black pb-1 text-sm font-bold uppercase tracking-wide"}>
+              {FANTASY_RAIL_NETWORKS[network].label}
+            </h3>
+            {network === "heavyRail" && (
+              <p className={compact ? "mb-2 text-[9px] leading-tight" : "mb-3 text-xs"}>
+                {FANTASY_RAIL_NETWORKS.heavyRail.legendDescription}
+              </p>
+            )}
+            {renderLines(groups[network])}
+          </div>
+        )
+      ))}
     </section>
   );
 }

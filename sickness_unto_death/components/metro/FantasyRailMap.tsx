@@ -18,6 +18,7 @@ import {
   type RailFeatureCollection,
   type TrainFeatureCollection,
 } from "@/lib/LAFantasyRail_util/LAFantasyRail";
+import { smoothRailGeometry } from "@/lib/LAFantasyRail_util/smoothRailGeometry";
 
 import MetroLA2026 from "./2026LAMetro";
 import TrainMarker from "./TrainMarker";
@@ -27,6 +28,7 @@ import { PE_ESRI_DESCRIPTION, PE_ESRI_LABEL } from "./peEsriStyle";
 import LosAngelesRailwayLayer from "./LARYMap";
 import ProposedMetroRail from "./ProposedMetroRail";
 import FantasyRailLegend from "./FantasyRailLegend";
+import { FANTASY_RAIL_NETWORKS, type FantasyRailNetwork } from "./fantasyRailNetworks";
 // import UserEditLayer from "./UserEditLayer";
 
 setWorkerUrl("/maplibre-gl-worker.mjs");
@@ -68,7 +70,8 @@ type BaseMap = "colorful" | "satellite";
 type LayerVisibility = {
   existingMetro: boolean;
   metroProjects: boolean;
-  permanentFantasy: boolean;
+  heavyRail: boolean;
+  lightRail: boolean;
   pacificElectric: boolean;
   pacificElectricEsri: boolean;
   losAngelesRailway: boolean;
@@ -118,189 +121,211 @@ function LayerToggleButton({
   );
 }
 
-function FantasyTrains() {
+function FantasyTrains({ railData, label, network }: { railData: RailFeatureCollection; label: string; network: FantasyRailNetwork }) {
   const [trains, setTrains] = useState<TrainFeatureCollection>({
     type: "FeatureCollection",
     features: [],
   });
 
   useEffect(() => {
-    let cancelled = false;
-    let timer: number | undefined;
-
-    async function animateTrains() {
-      try {
-        const response = await fetch("/la-metro-rail/fantasy-layer.geojson");
-        if (!response.ok) {
-          throw new Error(`Inter Urbes fantasy rail data request failed: ${response.status}`);
-        }
-
-        const railData = (await response.json()) as RailFeatureCollection;
-        const animateAt = createTrainAnimator(railData);
-        const initialTrains = animateAt(0);
-        if (cancelled || initialTrains.features.length === 0) return;
-
-        const startedAt = performance.now();
-        const updateTrains = () => {
-          setTrains(animateAt(performance.now() - startedAt));
-        };
-
-        setTrains(initialTrains);
-        timer = window.setInterval(updateTrains, 100);
-      } catch (error) {
-        console.error("Could not animate Inter Urbes fantasy trains:", error);
-      }
-    }
-
-    void animateTrains();
-    return () => {
-      cancelled = true;
-      if (timer !== undefined) window.clearInterval(timer);
-    };
-  }, []);
+    const animateAt = createTrainAnimator(railData);
+    const initialTrains = animateAt(0);
+    if (initialTrains.features.length === 0) return;
+    const startedAt = performance.now();
+    setTrains(initialTrains);
+    const timer = window.setInterval(() => {
+      setTrains(animateAt(performance.now() - startedAt));
+    }, 100);
+    return () => window.clearInterval(timer);
+  }, [railData]);
 
   return (
     <>
       {trains.features.map((train, index) => (
-        <TrainMarker key={index} train={train} label="Inter Urbes — Fantasy train" />
+        <TrainMarker
+          key={index}
+          train={train}
+          variant={network === "lightRail" ? "tram" : "train"}
+          label={[label, train.properties.route_id, train.properties.route_name].filter(Boolean).join(" · ")}
+        />
       ))}
     </>
   );
 }
 
-function PermanentFantasyNetwork() {
+function FantasyNetwork({ network }: { network: FantasyRailNetwork }) {
+  const config = FANTASY_RAIL_NETWORKS[network];
+  const [railData, setRailData] = useState<RailFeatureCollection | null>(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    async function loadRoutes() {
+      try {
+        const response = await fetch(`/la-metro-rail/${config.file}`, { signal: controller.signal });
+        if (!response.ok) throw new Error(`${config.label} request failed: ${response.status}`);
+        const data = (await response.json()) as RailFeatureCollection;
+        if (!controller.signal.aborted) setRailData(smoothRailGeometry(data));
+      } catch (error) {
+        if (!controller.signal.aborted) console.error(`Could not load ${config.label} routes:`, error);
+      }
+    }
+    void loadRoutes();
+    return () => controller.abort();
+  }, [config.file, config.label]);
+
+  if (!railData) return null;
+
   return (
-    <Source
-      id="permanent-fantasy-source"
-      type="geojson"
-      data="/la-metro-rail/fantasy-layer.geojson"
-    >
-      <Layer
-        id="permanent-fantasy-casing"
-        type="line"
-        filter={[
-          "==",
-          ["geometry-type"],
-          "LineString",
-        ]}
-        layout={{
-          "line-cap": "round",
-          "line-join": "round",
-        }}
-        paint={{
-          "line-color": "#ffffff",
-          "line-width": [
-            "interpolate",
-            ["linear"],
-            ["zoom"],
-            8,
-            5,
-            13,
-            11,
-          ],
-        }}
-      />
+    <>
+      <Source
+        id={`${config.id}-source`}
+        type="geojson"
+        data={railData}
+        tolerance={0.1}
+        attribution={"attribution" in config ? config.attribution : undefined}
+      >
+        <Layer
+          id={`${config.id}-casing`}
+          type="line"
+          filter={[
+            "==",
+            ["geometry-type"],
+            "LineString",
+          ]}
+          layout={{
+            "line-cap": "round",
+            "line-join": "round",
+          }}
+          paint={{
+            "line-color": "#ffffff",
+            "line-width": [
+              "interpolate",
+              ["linear"],
+              ["zoom"],
+              8,
+              config.casingWidth[0],
+              13,
+              config.casingWidth[1],
+            ],
+          }}
+        />
 
-      <Layer
-        id="permanent-fantasy-lines"
-        type="line"
-        filter={[
-          "==",
-          ["geometry-type"],
-          "LineString",
-        ]}
-        layout={{
-          "line-cap": "round",
-          "line-join": "round",
-        }}
-        paint={{
-          "line-color": [
-            "coalesce",
-            ["get", "color"],
-            "#e11d48",
-          ],
-          "line-width": [
-            "interpolate",
-            ["linear"],
-            ["zoom"],
-            8,
-            3,
-            13,
-            7,
-          ],
-        }}
-      />
+        <Layer
+          id={`${config.id}-lines`}
+          type="line"
+          filter={[
+            "==",
+            ["geometry-type"],
+            "LineString",
+          ]}
+          layout={{
+            "line-cap": "round",
+            "line-join": "round",
+          }}
+          paint={{
+            "line-color": [
+              "coalesce",
+              ["get", "color"],
+              "#e11d48",
+            ],
+            "line-width": [
+              "interpolate",
+              ["linear"],
+              ["zoom"],
+              8,
+              config.lineWidth[0],
+              13,
+              config.lineWidth[1],
+            ],
+          }}
+        />
 
-      <Layer
-        id="permanent-fantasy-route-labels"
-        type="symbol"
-        minzoom={8.5}
-        filter={["==", ["geometry-type"], "LineString"]}
-        layout={{
-          "symbol-placement": "line",
-          "symbol-spacing": 380,
-          "text-field": ["get", "name"],
-          "text-size": 11,
-          "text-rotation-alignment": "map",
-          "text-keep-upright": true,
-          "text-allow-overlap": false,
-        }}
-        paint={{
-          "text-color": "#111827",
-          "text-halo-color": "#ffffff",
-          "text-halo-width": 2,
-        }}
-      />
+        <Layer
+          id={`${config.id}-route-labels`}
+          type="symbol"
+          minzoom={8.5}
+          filter={["==", ["geometry-type"], "LineString"]}
+          layout={{
+            "symbol-placement": "line",
+            "symbol-spacing": 380,
+            "text-field": ["get", "name"],
+            "text-size": 11,
+            "text-rotation-alignment": "map",
+            "text-keep-upright": true,
+            "text-allow-overlap": false,
+          }}
+          paint={{
+            "text-color": "#111827",
+            "text-halo-color": "#ffffff",
+            "text-halo-width": 2,
+          }}
+        />
 
-      <Layer
-        id="permanent-fantasy-stations"
-        type="circle"
-        filter={[
-          "==",
-          ["geometry-type"],
-          "Point",
-        ]}
-        paint={{
-          "circle-radius": [
-            "interpolate",
-            ["linear"],
-            ["zoom"],
-            8,
-            1.25,
-            13,
-            4,
-            16,
-            5,
-          ],
-          "circle-color": "#ffffff",
-          "circle-stroke-color": "#111827",
-          "circle-stroke-width": 1.5,
-        }}
-      />
+        {network === "lightRail" ? (
+          <Layer
+            id={`${config.id}-stations`}
+            type="circle"
+            filter={["==", ["geometry-type"], "Point"]}
+            paint={{
+              "circle-radius": ["interpolate", ["linear"], ["zoom"], 8, 0.8, 13, 2.5, 16, 3],
+              "circle-color": "#ffffff",
+              "circle-stroke-color": ["coalesce", ["get", "color"], config.stationColor],
+              "circle-stroke-width": 1,
+            }}
+          />
+        ) : (
+          <Layer
+            id={`${config.id}-stations`}
+            type="circle"
+            filter={[
+              "==",
+              ["geometry-type"],
+              "Point",
+            ]}
+            paint={{
+              "circle-radius": [
+                "interpolate",
+                ["linear"],
+                ["zoom"],
+                8,
+                1.25,
+                13,
+                4,
+                16,
+                5,
+              ],
+              "circle-color": "#ffffff",
+              "circle-stroke-color": config.stationColor,
+              "circle-stroke-width": 1.5,
+            }}
+          />
+        )}
 
-      <Layer
-        id="permanent-fantasy-labels"
-        type="symbol"
-        minzoom={10}
-        filter={[
-          "==",
-          ["geometry-type"],
-          "Point",
-        ]}
-        layout={{
-          "text-field": ["get", "name"],
-          "text-size": 11,
-          "text-offset": [0, 1.3],
-          "text-anchor": "top",
-          "text-allow-overlap": false,
-        }}
-        paint={{
-          "text-color": "#111827",
-          "text-halo-color": "#ffffff",
-          "text-halo-width": 2,
-        }}
-      />
-    </Source>
+        <Layer
+          id={`${config.id}-labels`}
+          type="symbol"
+          minzoom={10}
+          filter={[
+            "==",
+            ["geometry-type"],
+            "Point",
+          ]}
+          layout={{
+            "text-field": ["get", "name"],
+            "text-size": 11,
+            "text-offset": [0, 1.3],
+            "text-anchor": "top",
+            "text-allow-overlap": false,
+          }}
+          paint={{
+            "text-color": "#111827",
+            "text-halo-color": "#ffffff",
+            "text-halo-width": 2,
+          }}
+        />
+      </Source>
+      <FantasyTrains railData={railData} label={config.trainLabel} network={network} />
+    </>
   );
 }
 
@@ -315,7 +340,8 @@ export default function FantasyRailMap() {
       pacificElectric: false,
       pacificElectricEsri: false,
       losAngelesRailway: false,
-      permanentFantasy: true,
+      heavyRail: true,
+      lightRail: true,
       userDraft: false,
     });
 
@@ -422,14 +448,18 @@ export default function FantasyRailMap() {
             />
 
             <LayerToggleButton
-              active={
-                visibleLayers.permanentFantasy
-              }
-              label="Inter Urbes — Fantasy Network"
+              active={visibleLayers.heavyRail}
+              label={FANTASY_RAIL_NETWORKS.heavyRail.label}
+              description={FANTASY_RAIL_NETWORKS.heavyRail.description}
               colorClassName="bg-rose-100 hover:bg-rose-200"
-              onClick={() =>
-                toggleLayer("permanentFantasy")
-              }
+              onClick={() => toggleLayer("heavyRail")}
+            />
+            <LayerToggleButton
+              active={visibleLayers.lightRail}
+              label={FANTASY_RAIL_NETWORKS.lightRail.label}
+              description={FANTASY_RAIL_NETWORKS.lightRail.description}
+              colorClassName="bg-emerald-100 hover:bg-emerald-200"
+              onClick={() => toggleLayer("lightRail")}
             />
 
             {/* <LayerToggleButton
@@ -511,11 +541,11 @@ export default function FantasyRailMap() {
           <ProposedMetroRail />
         )}
 
-        {visibleLayers.permanentFantasy && (
-          <>
-            <PermanentFantasyNetwork />
-            <FantasyTrains />
-          </>
+        {visibleLayers.heavyRail && (
+          <FantasyNetwork network="heavyRail" />
+        )}
+        {visibleLayers.lightRail && (
+          <FantasyNetwork network="lightRail" />
         )}
 
         {/* {visibleLayers.userDraft && (

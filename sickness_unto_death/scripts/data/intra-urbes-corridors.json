@@ -1,0 +1,871 @@
+{
+  "sources": [
+    "https://www.metro.net/about/plans/nextgen-bus-plan/",
+    "https://metro.legistar.com/LegislationDetail.aspx?FullText=1&GUID=8F12BC4B-4775-4C69-8B8D-D6E86B2D6B59&ID=6690608",
+    "https://www.metro.net/projects/countywide-brt/",
+    "https://www.metro.net/projects/la-brea-av-bus-priority-lane-project/",
+    "https://www.metro.net/projects/broadway-bl-bus-priority-lanes/",
+    "https://cloud.sfmc.metro.net/North_SFV",
+    "https://www.csun.edu/csun-maps"
+  ],
+  "routes": [
+    {
+      "id": "SC8",
+      "name": "Sunset–Echo Park Streetcar",
+      "roads": [
+        "Sunset"
+      ],
+      "from": {
+        "street": "Vin Scully",
+        "near": [
+          -118.25,
+          34.074
+        ]
+      },
+      "to": {
+        "street": "La Brea",
+        "near": [
+          -118.344,
+          34.098
+        ]
+      },
+      "area": "Central LA",
+      "rationale": "Echo Park and Silver Lake local access; connects SC1 and SC4.",
+      "color": "#577E92"
+    },
+    {
+      "id": "SC9",
+      "name": "Melrose Streetcar",
+      "roads": [
+        "Melrose",
+        "Vermont"
+      ],
+      "from": {
+        "street": "San Vicente",
+        "near": [
+          -118.384,
+          34.083
+        ]
+      },
+      "to": {
+        "street": "Sunset",
+        "near": [
+          -118.29177,
+          34.098158
+        ]
+      },
+      "area": "Central LA",
+      "rationale": "Cross-town infill between Beverly and Santa Monica heavy rail. Turns north on Vermont for Santa Monica and Sunset transfers.",
+      "color": "#94725D"
+    },
+    {
+      "id": "SC10",
+      "name": "Third–Alvarado Streetcar",
+      "roads": [
+        "3rd",
+        "Alvarado"
+      ],
+      "from": {
+        "street": "La Cienega",
+        "near": [
+          -118.377,
+          34.073
+        ]
+      },
+      "to": {
+        "street": "Sunset",
+        "near": [
+          -118.2666,
+          34.0777
+        ]
+      },
+      "area": "Central LA",
+      "rationale": "Beverly Grove, Fairfax, Koreatown and Westlake local access. Continues on Alvarado to Beverly and Sunset transfers.",
+      "color": "#85739B"
+    },
+    {
+      "id": "SC11",
+      "name": "Venice Streetcar",
+      "roads": [
+        "Venice"
+      ],
+      "from": {
+        "street": "Lincoln",
+        "near": [
+          -118.453,
+          33.994
+        ]
+      },
+      "to": {
+        "street": "Main",
+        "near": [
+          -118.265,
+          34.034
+        ]
+      },
+      "area": "Westside",
+      "rationale": "Local infill between widely spaced Q Line stations; bus-priority corridor.",
+      "color": "#508978"
+    },
+    {
+      "id": "SC12",
+      "name": "Adams Streetcar",
+      "roads": [
+        "Adams"
+      ],
+      "from": {
+        "street": "Fairfax",
+        "near": [
+          -118.371,
+          34.032
+        ]
+      },
+      "to": {
+        "street": "Central",
+        "near": [
+          -118.254,
+          34.017
+        ]
+      },
+      "area": "South LA",
+      "rationale": "West Adams and residential cross-town coverage south of Venice.",
+      "color": "#AF775C"
+    },
+    {
+      "id": "SC13",
+      "name": "La Brea Streetcar",
+      "roads": [
+        "La Brea"
+      ],
+      "from": {
+        "street": "Sunset",
+        "near": [
+          -118.344,
+          34.098
+        ]
+      },
+      "to": {
+        "street": "Slauson",
+        "near": [
+          -118.358,
+          33.988
+        ]
+      },
+      "area": "Central LA",
+      "rationale": "North–south infill between K and P; established bus-priority corridor.",
+      "color": "#667FA5"
+    },
+    {
+      "id": "SC14",
+      "name": "Normandie Streetcar",
+      "roads": [
+        "Normandie"
+      ],
+      "from": {
+        "street": "Melrose",
+        "near": [
+          -118.3,
+          34.083
+        ]
+      },
+      "to": {
+        "street": "Manchester",
+        "near": [
+          -118.3,
+          33.96
+        ]
+      },
+      "area": "South LA",
+      "rationale": "Local corridor between Western M and Vermont N.",
+      "color": "#A46D83"
+    },
+    {
+      "id": "SC15",
+      "name": "Central Streetcar",
+      "roads": [
+        "Central"
+      ],
+      "from": {
+        "street": "Pico",
+        "near": [
+          -118.246,
+          34.029
+        ]
+      },
+      "to": {
+        "street": "Imperial",
+        "near": [
+          -118.256,
+          33.931
+        ]
+      },
+      "area": "South LA",
+      "rationale": "NextGen priority: Central Avenue neighborhoods, Historic South Central and Watts.",
+      "color": "#6F8B54"
+    },
+    {
+      "id": "SC16",
+      "name": "Slauson Streetcar",
+      "roads": [
+        "Slauson"
+      ],
+      "from": {
+        "street": "La Cienega",
+        "near": [
+          -118.37,
+          33.988
+        ]
+      },
+      "to": {
+        "street": "Atlantic",
+        "near": [
+          -118.177,
+          33.985
+        ]
+      },
+      "area": "South LA",
+      "rationale": "NextGen priority: east–west South LA and Southeast LA connections.",
+      "color": "#B38A45"
+    },
+    {
+      "id": "SC17",
+      "name": "MLK Streetcar",
+      "roads": [
+        "Martin Luther King Jr"
+      ],
+      "from": {
+        "street": "Crenshaw",
+        "near": [
+          -118.335,
+          34.011
+        ]
+      },
+      "to": {
+        "street": "Central",
+        "near": [
+          -118.256,
+          34.011
+        ]
+      },
+      "area": "South LA",
+      "rationale": "Leimert Park, Exposition Park and SC7 Main/San Pedro transfers.",
+      "color": "#598E8F"
+    },
+    {
+      "id": "SC18",
+      "name": "Manchester–Firestone Streetcar",
+      "roads": [
+        "Manchester",
+        "Firestone"
+      ],
+      "from": {
+        "street": "Sepulveda",
+        "near": [
+          -118.396,
+          33.96
+        ]
+      },
+      "to": {
+        "street": "Long Beach",
+        "near": [
+          -118.224,
+          33.953
+        ]
+      },
+      "area": "South LA",
+      "rationale": "Westchester, Inglewood and South LA cross-town gap south of Florence.",
+      "color": "#577E92"
+    },
+    {
+      "id": "SC19",
+      "name": "Soto Streetcar",
+      "roads": [
+        "Soto"
+      ],
+      "from": {
+        "street": "Huntington",
+        "near": [
+          -118.193544,
+          34.07819
+        ],
+        "authored_station_id": "station-huntington-soto"
+      },
+      "to": {
+        "street": "Vernon",
+        "near": [
+          -118.219,
+          34.004
+        ]
+      },
+      "area": "East LA",
+      "rationale": "Soto Streetcar from H at Huntington/Soto via V at Valley/Soto and Boyle Heights to Vernon.",
+      "color": "#94725D"
+    },
+    {
+      "id": "SC20",
+      "name": "Whittier Streetcar",
+      "roads": [
+        "Whittier"
+      ],
+      "from": {
+        "street": "Soto",
+        "near": [
+          -118.219,
+          34.035
+        ]
+      },
+      "to": {
+        "street": "Atlantic",
+        "near": [
+          -118.155,
+          34.02
+        ]
+      },
+      "area": "East LA",
+      "rationale": "Boyle Heights and East LA connection south of César Chávez.",
+      "color": "#85739B"
+    },
+    {
+      "id": "SC22",
+      "name": "Garvey Streetcar",
+      "roads": [
+        "Garvey"
+      ],
+      "from": {
+        "street": "Atlantic",
+        "near": [
+          -118.135,
+          34.062
+        ]
+      },
+      "to": {
+        "street": "Garvey / Rosemead C-line marker",
+        "near": [
+          -118.065556,
+          34.062766
+        ],
+        "authored_station_id": "station-garvey-rosemead"
+      },
+      "area": "San Gabriel Valley",
+      "rationale": "Monterey Park and Rosemead east–west neighborhood access. Extends past the physical Rosemead intersection to the authored C-line terminal marker.",
+      "color": "#AF775C"
+    },
+    {
+      "id": "SC23",
+      "name": "San Gabriel Streetcar",
+      "roads": [
+        "San Gabriel"
+      ],
+      "from": {
+        "street": "Colorado",
+        "near": [
+          -118.094596,
+          34.146141
+        ]
+      },
+      "to": {
+        "street": "Garvey",
+        "near": [
+          -118.091,
+          34.062
+        ]
+      },
+      "area": "San Gabriel Valley",
+      "rationale": "Colorado C interchange to Garvey, linking H, SGV and the Valley/Garvey streetcars.",
+      "color": "#667FA5"
+    },
+    {
+      "id": "SC24",
+      "name": "Lake Streetcar",
+      "roads": [
+        "Lake"
+      ],
+      "from": {
+        "street": "Orange Grove",
+        "near": [
+          -118.132,
+          34.158
+        ]
+      },
+      "to": {
+        "street": "California",
+        "near": [
+          -118.132,
+          34.136
+        ]
+      },
+      "area": "Pasadena",
+      "rationale": "Pasadena local access and transfer to the Colorado C corridor.",
+      "color": "#A46D83"
+    },
+    {
+      "id": "SC25",
+      "name": "Van Nuys Streetcar",
+      "roads": [
+        "Van Nuys"
+      ],
+      "from": {
+        "street": "Ventura",
+        "near": [
+          -118.449,
+          34.152
+        ]
+      },
+      "to": {
+        "street": "Roscoe",
+        "near": [
+          -118.449,
+          34.221
+        ]
+      },
+      "area": "San Fernando Valley",
+      "rationale": "NextGen priority: Van Nuys civic center, employment and local bus corridor.",
+      "color": "#6F8B54"
+    },
+    {
+      "id": "SC26",
+      "name": "Victory Streetcar",
+      "roads": [
+        "Victory"
+      ],
+      "from": {
+        "street": "Reseda",
+        "near": [
+          -118.536,
+          34.186
+        ]
+      },
+      "to": {
+        "street": "Lankershim",
+        "near": [
+          -118.388,
+          34.187
+        ]
+      },
+      "area": "San Fernando Valley",
+      "rationale": "East–west local grid south of the B Line, connecting Reseda, Balboa, Van Nuys and North Hollywood.",
+      "color": "#B38A45"
+    },
+    {
+      "id": "SC27",
+      "name": "Balboa Streetcar",
+      "roads": [
+        "Balboa"
+      ],
+      "from": {
+        "street": "Ventura",
+        "near": [
+          -118.502,
+          34.173
+        ]
+      },
+      "to": {
+        "street": "Roscoe",
+        "near": [
+          -118.502,
+          34.221
+        ]
+      },
+      "area": "San Fernando Valley",
+      "rationale": "Local coverage between the new Reseda trunk and Van Nuys.",
+      "color": "#598E8F"
+    },
+    {
+      "id": "SC28",
+      "name": "Roscoe Streetcar",
+      "roads": [
+        "Roscoe",
+        "Tuxford"
+      ],
+      "from": {
+        "street": "Reseda",
+        "near": [
+          -118.536,
+          34.221
+        ]
+      },
+      "to": {
+        "street": "Lankershim",
+        "near": [
+          -118.38779,
+          34.222523
+        ]
+      },
+      "area": "San Fernando Valley",
+      "rationale": "Northern Valley cross-town gap; Metro bus-priority corridor.",
+      "color": "#577E92"
+    },
+    {
+      "id": "SC29",
+      "name": "Lankershim Streetcar",
+      "roads": [
+        "Lankershim"
+      ],
+      "from": {
+        "street": "Ventura",
+        "near": [
+          -118.364,
+          34.139
+        ]
+      },
+      "to": {
+        "street": "Tuxford",
+        "near": [
+          -118.38779,
+          34.222523
+        ]
+      },
+      "area": "San Fernando Valley",
+      "rationale": "North Hollywood and Sun Valley connections to B, G and the east–west streetcars.",
+      "color": "#94725D"
+    },
+    {
+      "id": "SC30",
+      "name": "Westwood–Palms Streetcar",
+      "roads": [
+        "Westwood",
+        "National",
+        "Overland",
+        "Motor"
+      ],
+      "from": {
+        "street": "Le Conte",
+        "near": [
+          -118.443,
+          34.063
+        ]
+      },
+      "to": {
+        "street": "Venice",
+        "near": [
+          -118.404,
+          34.0206
+        ]
+      },
+      "area": "Westside",
+      "rationale": "UCLA approach, Westwood Village and north–south links to F, L, Pico and Venice-area services. Continues via National and Motor to SC11 on Venice.",
+      "color": "#85739B"
+    },
+    {
+      "id": "SC31",
+      "name": "Washington Streetcar",
+      "roads": [
+        "Washington"
+      ],
+      "from": {
+        "street": "Lincoln",
+        "near": [
+          -118.448,
+          33.99
+        ]
+      },
+      "to": {
+        "street": "Central",
+        "near": [
+          -118.251,
+          34.024
+        ]
+      },
+      "area": "Westside",
+      "rationale": "Marina, Culver City and Mid-City local coverage south of Venice.",
+      "color": "#9B824F"
+    },
+    {
+      "id": "SC32",
+      "name": "Crenshaw Streetcar",
+      "roads": [
+        "Crenshaw"
+      ],
+      "from": {
+        "street": "Slauson",
+        "near": [
+          -118.331,
+          33.989
+        ]
+      },
+      "to": {
+        "street": "Imperial",
+        "near": [
+          -118.327,
+          33.931
+        ]
+      },
+      "area": "South LA",
+      "rationale": "Hyde Park and Inglewood local access south of the authored K Line.",
+      "color": "#AF775C"
+    },
+    {
+      "id": "SC33",
+      "name": "Avalon Streetcar",
+      "roads": [
+        "Avalon"
+      ],
+      "from": {
+        "street": "Jefferson",
+        "near": [
+          -118.265,
+          34.015
+        ]
+      },
+      "to": {
+        "street": "Imperial",
+        "near": [
+          -118.265,
+          33.931
+        ]
+      },
+      "area": "South LA",
+      "rationale": "Neighborhood infill between Main and Central; connects the South LA cross-town grid.",
+      "color": "#667FA5"
+    },
+    {
+      "id": "SC34",
+      "name": "Broadway Streetcar",
+      "roads": [
+        "Broadway"
+      ],
+      "from": {
+        "street": "Cesar E Chavez",
+        "near": [
+          -118.239,
+          34.061
+        ]
+      },
+      "to": {
+        "street": "Martin Luther King Jr",
+        "near": [
+          -118.278,
+          34.011
+        ]
+      },
+      "area": "Central LA",
+      "rationale": "Downtown and Historic South Central access on a Metro transit-priority corridor.",
+      "color": "#A46D83"
+    },
+    {
+      "id": "SC35",
+      "name": "Vernon Streetcar",
+      "roads": [
+        "Vernon"
+      ],
+      "from": {
+        "street": "Crenshaw",
+        "near": [
+          -118.331,
+          34.004
+        ]
+      },
+      "to": {
+        "street": "Soto",
+        "near": [
+          -118.219,
+          34.004
+        ]
+      },
+      "area": "South LA",
+      "rationale": "Cross-town residential and employment access between MLK and Slauson.",
+      "color": "#97656C"
+    },
+    {
+      "id": "SC36",
+      "name": "Hawthorne Streetcar",
+      "roads": [
+        "La Brea",
+        "Hawthorne"
+      ],
+      "from": {
+        "street": "Manchester",
+        "near": [
+          -118.352,
+          33.961
+        ]
+      },
+      "to": {
+        "street": "Torrance",
+        "near": [
+          -118.352,
+          33.837
+        ]
+      },
+      "area": "South Bay",
+      "rationale": "Inglewood, Hawthorne, Lawndale and Torrance local spine.",
+      "color": "#B38A45"
+    },
+    {
+      "id": "SC37",
+      "name": "Redondo Beach Streetcar",
+      "roads": [
+        "Redondo Beach"
+      ],
+      "from": {
+        "street": "Hawthorne",
+        "near": [
+          -118.352,
+          33.872
+        ]
+      },
+      "to": {
+        "street": "Main",
+        "near": [
+          -118.275,
+          33.893
+        ]
+      },
+      "area": "South Bay",
+      "rationale": "Gardena and El Camino College local connector to Inter Urbes M and Hawthorne.",
+      "color": "#598E8F"
+    },
+    {
+      "id": "SC38",
+      "name": "Garfield Streetcar",
+      "roads": [
+        "Garfield"
+      ],
+      "from": {
+        "street": "Huntington",
+        "near": [
+          -118.135355,
+          34.106512
+        ]
+      },
+      "to": {
+        "street": "Imperial",
+        "near": [
+          -118.168123,
+          33.929903
+        ]
+      },
+      "area": "San Gabriel Valley / East LA",
+      "rationale": "Alhambra, Monterey Park, Montebello, Commerce and South Gate local service. Connects Valley Inter Urbes V, Garvey SC22 and the Inter Urbes SGV line at Main.",
+      "color": "#96748B"
+    },
+    {
+      "id": "SC39",
+      "name": "Griffin Streetcar",
+      "roads": [
+        "Griffin",
+        "Broadway"
+      ],
+      "from": {
+        "street": "Mission",
+        "near": [
+          -118.211163,
+          34.062775
+        ]
+      },
+      "to": {
+        "street": "Broadway / Daly H station",
+        "near": [
+          -118.215641,
+          34.073662
+        ],
+        "authored_station_id": "station-broadway-daly"
+      },
+      "area": "Lincoln Heights",
+      "rationale": "Griffin Avenue streetcar from Mission Road to Broadway/Daly on H, with a walking transfer to V at Valley/Mission. Crosses Main Street without turning onto it.",
+      "color": "#7A8F64"
+    }
+  ],
+  "heavy": {
+    "id": "R",
+    "name": "Reseda Line",
+    "roads": [
+      "Reseda"
+    ],
+    "from": {
+      "street": "Ventura",
+      "near": [
+        -118.536,
+        34.172
+      ]
+    },
+    "to": {
+      "street": "Rinaldi",
+      "near": [
+        -118.537,
+        34.278
+      ]
+    },
+    "color": "#436D9C",
+    "majorStops": [
+      "Ventura",
+      "Burbank",
+      "Victory",
+      "Vanowen",
+      "Sherman",
+      "Saticoy",
+      "Roscoe",
+      "Parthenia",
+      "Nordhoff",
+      "Plummer",
+      "Lassen",
+      "Devonshire",
+      "Chatsworth",
+      "Rinaldi"
+    ],
+    "rationale": "Reseda rapid-transit spine through Tarzana, Reseda and Northridge/CSUN; connects B at Sherman Way and local Victory/Roscoe streetcars."
+  },
+  "heavy_extensions": [
+    {
+      "id": "V",
+      "name": "V Line — Valley Boulevard",
+      "roads": [
+        "Cesar E Chavez",
+        "Mission",
+        "Valley"
+      ],
+      "from": {
+        "street": "Union Station",
+        "near": [
+          -118.23476,
+          34.05606
+        ],
+        "authored_station_id": "station-union-station"
+      },
+      "to": {
+        "street": "Holt",
+        "near": [
+          -117.787549,
+          34.061445
+        ]
+      },
+      "area": "San Gabriel Valley",
+      "rationale": "Long-distance Valley heavy rail with 23 stations from Union Station to Holt Avenue in Pomona; SC19 links V and H via Soto, with a walking transfer to SC39 at Valley/Mission.",
+      "color": "#508978",
+      "rail_mode": "heavy_rail",
+      "stationIds": [
+        "station-union-station",
+        "station-v-3c164edd596d",
+        "station-v-27ce11cf0197",
+        "station-v-9b1b98177c17",
+        "station-v-93e36ff812da",
+        "station-v-97d4e0180a43",
+        "station-v-39dde9b42025",
+        "station-v-del-mar",
+        "station-v-c283ea643e5a",
+        "station-v-32b6ef789680",
+        "station-v-e154d295c484",
+        "station-v-ramona",
+        "station-v-ea28aca04085",
+        "station-v-9dde3c843013",
+        "station-v-1635e6938a42",
+        "station-v-hacienda",
+        "station-v-a5ac1d13757d",
+        "station-v-42c9de221759",
+        "station-v-079437d1ce97",
+        "station-v-3203a41140d4",
+        "station-v-d29ecfee44e3",
+        "station-v-da47f2b10e36",
+        "station-v-168d763a3f30"
+      ],
+      "station_spacing_km": {
+        "mean": 2.22,
+        "minimum": 0.81,
+        "maximum": 3.52
+      }
+    }
+  ],
+  "planning_principles": {
+    "heavy_rail_station_spacing": "Heavy rail should have fewer stops than local streetcars, especially on long-distance corridors. Preserve key transfers and major destinations; avoid carrying over dense local stop patterns."
+  }
+}
