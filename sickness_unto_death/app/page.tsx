@@ -4,6 +4,7 @@ import { Text } from "@/components/retroui/Text";
 import ArtCon from "@/components/main_page/artCon";
 import MindBlown from "@/components/main_page/mindBlown";
 import ZineStack from "@/components/main_page/zineStack";
+import RailEmblem from "@/components/metro/RailEmblem";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -269,6 +270,14 @@ export default function Home() {
               muted
               playsInline
               preload="metadata"
+            />
+          </div>
+        </Link>
+        <Link href="/fantasy_rail" className={HOME_LINK_CLASS} aria-label="Multi Urbes — Fantasy Rail">
+          <div className={`${HOME_TILE_CLASS} flex items-center justify-center`}>
+            <RailEmblem
+              className="w-full"
+              sizes="(min-width: 1024px) 256px, (min-width: 640px) 25vw, 33vw"
             />
           </div>
         </Link>
