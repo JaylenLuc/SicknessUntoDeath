@@ -3,6 +3,7 @@ import { Text } from "@/components/retroui/Text";
 import FantasyRailMap from "@/components/metro/FantasyRailMapLoader";
 import FantasyRailLegend from "@/components/metro/FantasyRailLegend";
 import RailEmblem from "@/components/metro/RailEmblem";
+import RailNetworkShapes from "@/components/metro/RailNetworkShapes";
 
 export const metadata: Metadata = {
   title: "LA Fantasy Rail",
@@ -36,6 +37,7 @@ export default function FantasyRail() {
         </Text>
       </header>
       <div className="mt-6 w-full max-w-[1000px] min-w-0 self-center">
+        <RailNetworkShapes />
         <div className="h-[80dvh] w-full overflow-hidden sm:h-auto sm:aspect-[4/3]">
           <FantasyRailMap />
         </div>
