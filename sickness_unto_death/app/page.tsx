@@ -276,7 +276,7 @@ export default function Home() {
         <Link href="/fantasy_rail" className={HOME_LINK_CLASS} aria-label="Multi Urbes — Fantasy Rail">
           <div className={`${HOME_TILE_CLASS} flex items-center justify-center`}>
             <RailEmblem
-              className="w-full"
+              className="w-full scale-80"
               sizes="(min-width: 1024px) 256px, (min-width: 640px) 25vw, 33vw"
             />
           </div>
