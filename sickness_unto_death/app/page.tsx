@@ -256,7 +256,7 @@ export default function Home() {
               alt="yayyyyyyy" 
               unoptimized={true}
               fill
-              className="inset-0 object-contain transition-opacity duration-0 touch-none"
+              className="inset-0 scale-105 object-contain transition-opacity duration-0 touch-none"
             />
           </div>
         </Link>
