@@ -30,7 +30,9 @@ export default function FantasyRail() {
           As time passes, there can be much grief for a lost life for which you will never get back. As time passes one such aforementioned
           evil is when our children grow up not knowing of the absolutely sublimity of human spirit and engineering they have lost through
           time forgotten, so much so that it feels like time immemorial. It is not simply grief butt the deprivation of basic human right
-          to have our government serve us and build a community where our neighbors can live like creatures not like commodities.
+          to have our government serve us and build a community where our neighbors can live like creatures not like commodities. In this project
+          I devour a chimera of utopia and live on ideas and fixations of a world that is only appropriate for the City we live in. My 
+          fascination far exceeds my knowledge of the subject matter. 
         </Text>
         <Text as="h4" className="text-center">
           (Last updated: 2026-10-31)
