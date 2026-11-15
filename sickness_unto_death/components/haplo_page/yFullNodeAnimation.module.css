@@ -1,0 +1,31 @@
+.sprite {
+  width: 24px;
+  height: 24px;
+  background-color: currentColor;
+  mask: url("/station_zoom_animations/station-probe-sprite.png") 0 0 / 96px 24px no-repeat;
+  transform: rotate(var(--node-rotation, 0deg));
+  animation: frames var(--node-duration, 800ms) steps(4, end) infinite;
+  animation-delay: var(--node-delay, 0ms);
+}
+
+.outline {
+  pointer-events: none;
+  filter: drop-shadow(0.75px 0 0 currentColor) drop-shadow(-0.75px 0 0 currentColor)
+    drop-shadow(0 0.75px 0 currentColor) drop-shadow(0 -0.75px 0 currentColor) brightness(0.65);
+}
+
+.outline[data-active="true"] {
+  filter: drop-shadow(1px 0 0 #111) drop-shadow(-1px 0 0 #111)
+    drop-shadow(0 1px 0 #111) drop-shadow(0 -1px 0 #111) brightness(0.75);
+}
+
+@keyframes frames {
+  to { mask-position: -96px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sprite {
+    animation: none;
+    mask-position: var(--node-static-frame, 0px) 0;
+  }
+}

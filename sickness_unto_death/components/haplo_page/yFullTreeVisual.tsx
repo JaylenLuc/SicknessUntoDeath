@@ -8,6 +8,7 @@ import {
   splitYFullSnps,
 } from "@/lib/haplogrouper_util/yFullTree";
 import type { YFullAge, YFullNode, YFullTreeStats } from "@/types/yFullTypes";
+import animationStyles from "./yFullNodeAnimation.module.css";
 
 const ROOT_KEY = "__YFULL_ROOT__";
 const DEFAULT_ZOOM = 0.72;
@@ -317,21 +318,36 @@ export const YFullTreeVisual = ({
         setActiveNode(node.data);
       });
 
+    // The transparent hit area includes the hollow center of the animated node.
+    nodeGroups.append("rect")
+      .attr("x", -12).attr("y", -12)
+      .attr("width", 24).attr("height", 24)
+      .attr("fill", "transparent");
+
     nodeGroups
-      .append("circle")
-      .attr("class", "node-detail-circle")
-      .attr("r", 6)
-      .attr("fill", (node) => {
+      .append("foreignObject")
+      .attr("x", -12).attr("y", -12)
+      .attr("width", 24).attr("height", 24)
+      .attr("overflow", "visible")
+      .attr("aria-hidden", "true")
+      .attr("pointer-events", "none")
+      .append("xhtml:div")
+      .attr("class", `node-detail-animation ${animationStyles.outline}`)
+      .style("color", (node) => {
         if (expandedNodes.has(getNodeKey(node.data))) return "#47755b";
         return node.data.children.length > 0 ? "#9c6644" : "#d4a373";
       })
-      .attr("stroke", "#111")
-      .attr("stroke-width", 1.5);
+      .append("xhtml:div")
+      .attr("class", animationStyles.sprite)
+      .style("--node-rotation", (_node, index) => `${(index % 12) * 30}deg`)
+      .style("--node-duration", (_node, index) => `${640 + (index % 4) * 140}ms`)
+      .style("--node-delay", (_node, index) => `${-(index % 4) * 200}ms`)
+      .style("--node-static-frame", (_node, index) => `${-(index % 4) * 24}px`);
 
     nodeGroups
       .append("text")
       .attr("text-anchor", "middle")
-      .attr("y", -14)
+      .attr("y", -20)
       .attr("font-size", 11)
       .attr("font-weight", 600)
       .attr("paint-order", "stroke")
@@ -345,7 +361,7 @@ export const YFullTreeVisual = ({
       .data(nodes.filter((node) => node.data.children.length > 0))
       .join("g")
       .attr("class", "branch-toggle")
-      .attr("transform", (node) => `translate(${(node.x ?? 0) + 16}, ${node.y ?? 0})`)
+      .attr("transform", (node) => `translate(${(node.x ?? 0) + 24}, ${node.y ?? 0})`)
       .attr("tabindex", 0)
       .attr("role", "button")
       .attr("aria-label", (node) => {
@@ -420,13 +436,13 @@ export const YFullTreeVisual = ({
 
     d3.select(svgRef.current)
       .selectAll<SVGGElement, d3.HierarchyPointNode<YFullNode>>("g.node")
-      .select("circle.node-detail-circle")
-      .attr("fill", (node) => {
+      .select(".node-detail-animation")
+      .style("color", (node) => {
         if (node.data === activeNode) return "#f4a261";
         if (expandedNodes.has(getNodeKey(node.data))) return "#47755b";
         return node.data.children.length > 0 ? "#9c6644" : "#d4a373";
       })
-      .attr("stroke-width", (node) => (node.data === activeNode ? 3 : 1.5));
+      .attr("data-active", (node) => String(node.data === activeNode));
   }, [activeNode, expandedNodes]);
 
   const snps = activeNode ? splitYFullSnps(activeNode.snps) : [];

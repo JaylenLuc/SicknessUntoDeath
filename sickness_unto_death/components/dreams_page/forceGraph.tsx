@@ -1,11 +1,13 @@
 import React from 'react';
 import ForceGraph2D from 'react-force-graph-2d';
+import useStationNodeAnimation from '@/components/animations/useStationNodeAnimation';
 
 interface ForceGraphProps {
   graphData: any;
 }
 
 export default function ForceGraph({ graphData }: ForceGraphProps) {
+  const { drawAnimation, autoPauseRedraw } = useStationNodeAnimation();
   const isStatic = graphData.nodes?.every(
     (node: { fx?: number; fy?: number }) =>
       Number.isFinite(node.fx) && Number.isFinite(node.fy),
@@ -14,6 +16,7 @@ export default function ForceGraph({ graphData }: ForceGraphProps) {
   return (
     <ForceGraph2D
       graphData={graphData}
+      autoPauseRedraw={autoPauseRedraw}
       minZoom={0.5}
       maxZoom={5}
       width={450}   
@@ -30,22 +33,22 @@ export default function ForceGraph({ graphData }: ForceGraphProps) {
       nodeCanvasObject={(node: { name: string; id: string; x: number; y: number; color: string; }, ctx: CanvasRenderingContext2D, globalScale: number) => {
         const label = node.name || node.id || "";
         const fontSize = 12 / globalScale;
-        const radius = 7 / globalScale;
+        const radius = 12 / globalScale;
         const gap = 5 / globalScale;
         const horizontalPadding = 5 / globalScale;
         const verticalPadding = 3 / globalScale;
 
         ctx.save();
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, radius, 0, 2 * Math.PI);
-        ctx.fillStyle = node.color || "#7c3aed";
-        ctx.shadowColor = "rgba(15, 23, 42, 0.3)";
-        ctx.shadowBlur = 5 / globalScale;
-        ctx.fill();
-        ctx.shadowColor = "transparent";
-        ctx.lineWidth = 2 / globalScale;
-        ctx.strokeStyle = "rgba(255, 255, 255, 0.95)";
-        ctx.stroke();
+        const drawn = drawAnimation(ctx, {
+          id: node.id, x: node.x, y: node.y,
+          size: radius * 2, color: node.color || "#7c3aed",
+        });
+        if (!drawn) {
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, 7 / globalScale, 0, 2 * Math.PI);
+          ctx.fillStyle = node.color || "#7c3aed";
+          ctx.fill();
+        }
 
         ctx.font = `bold ${fontSize}px Courier New`;
         const textWidth = ctx.measureText(label).width;
@@ -63,12 +66,18 @@ export default function ForceGraph({ graphData }: ForceGraphProps) {
         ctx.fillText(label, labelX + horizontalPadding, node.y);
         ctx.restore();
 
-        (node as any).__hitRadius = radius + gap + labelWidth;
       }}
-      nodePointerAreaPaint={(node: { x: number; y: number; }, color: string, ctx: CanvasRenderingContext2D) => {
+      nodePointerAreaPaint={(node: { name: string; id: string; x: number; y: number; }, color: string, ctx: CanvasRenderingContext2D, globalScale: number) => {
+        const radius = 12 / globalScale;
+        ctx.save();
+        ctx.font = `bold ${12 / globalScale}px Courier New`;
+        const labelWidth = ctx.measureText(node.name || node.id || "").width + 10 / globalScale;
         ctx.fillStyle = color;
-        const hitRadius = (node as any).__hitRadius ?? 10;
-        ctx.fillRect(node.x - 8, node.y - 8, hitRadius + 8, 16);
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, radius, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.fillRect(node.x + radius + 5 / globalScale, node.y - 9 / globalScale, labelWidth, 18 / globalScale);
+        ctx.restore();
       }}
     />
   );
