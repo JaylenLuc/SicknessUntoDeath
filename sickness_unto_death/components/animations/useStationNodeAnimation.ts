@@ -12,21 +12,25 @@ function seedFor(id: string | number) {
   return seed;
 }
 
+export function stationNodeSize(id: string | number, active = false) {
+  return active ? 28 : 18 + (seedFor(id) % 3) * 2;
+}
+
 function tintFrames(sprite: HTMLImageElement, color: string) {
   return Array.from({ length: FRAME_COUNT }, (_, frame) => {
     const canvas = document.createElement("canvas");
     canvas.width = canvas.height = FRAME_SIZE;
     const ctx = canvas.getContext("2d");
     if (!ctx) return canvas;
-    for (const [dx, dy] of [[0, 0], [-6, 0], [6, 0], [0, -6], [0, 6]]) {
+    for (const [dx, dy] of [[0, 0], [-4, 0], [4, 0], [0, -4], [0, 4]]) {
       ctx.drawImage(sprite, frame * FRAME_SIZE, 0, FRAME_SIZE, FRAME_SIZE, dx, dy, FRAME_SIZE, FRAME_SIZE);
     }
     ctx.globalCompositeOperation = "source-in";
     ctx.fillStyle = color;
     ctx.fillRect(0, 0, FRAME_SIZE, FRAME_SIZE);
-    // Darken every cluster hue without filling the transparent center.
+    // Darken the colored outline while preserving its hue and transparent center.
     ctx.globalCompositeOperation = "source-atop";
-    ctx.fillStyle = "rgba(0, 0, 0, 0.35)";
+    ctx.fillStyle = "rgba(0, 0, 0, 0.4)";
     ctx.fillRect(0, 0, FRAME_SIZE, FRAME_SIZE);
     return canvas;
   });

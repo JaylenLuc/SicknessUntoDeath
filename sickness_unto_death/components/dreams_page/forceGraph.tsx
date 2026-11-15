@@ -1,6 +1,6 @@
 import React from 'react';
 import ForceGraph2D from 'react-force-graph-2d';
-import useStationNodeAnimation from '@/components/animations/useStationNodeAnimation';
+import useStationNodeAnimation, { stationNodeSize } from '@/components/animations/useStationNodeAnimation';
 
 interface ForceGraphProps {
   graphData: any;
@@ -30,10 +30,11 @@ export default function ForceGraph({ graphData }: ForceGraphProps) {
           : 0.75 + Math.max(0, link.similarity) * 3
       }
       nodeAutoColorBy="group"
+      nodeVal={(node: { id: string }) => Math.pow(stationNodeSize(node.id) / 8, 2)}
       nodeCanvasObject={(node: { name: string; id: string; x: number; y: number; color: string; }, ctx: CanvasRenderingContext2D, globalScale: number) => {
         const label = node.name || node.id || "";
         const fontSize = 12 / globalScale;
-        const radius = 12 / globalScale;
+        const radius = stationNodeSize(node.id) / 2;
         const gap = 5 / globalScale;
         const horizontalPadding = 5 / globalScale;
         const verticalPadding = 3 / globalScale;
@@ -68,7 +69,7 @@ export default function ForceGraph({ graphData }: ForceGraphProps) {
 
       }}
       nodePointerAreaPaint={(node: { name: string; id: string; x: number; y: number; }, color: string, ctx: CanvasRenderingContext2D, globalScale: number) => {
-        const radius = 12 / globalScale;
+        const radius = stationNodeSize(node.id) / 2;
         ctx.save();
         ctx.font = `bold ${12 / globalScale}px Courier New`;
         const labelWidth = ctx.measureText(node.name || node.id || "").width + 10 / globalScale;

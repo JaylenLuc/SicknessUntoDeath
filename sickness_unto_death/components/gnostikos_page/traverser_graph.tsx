@@ -4,6 +4,7 @@ import { pinTraverserNode, toForceGraph, type TraverserNode, type TraverserLink 
 import type { sessionGraph } from "@/types/gnostikosTypes";
 import { useCallback, useEffect, useRef, useState } from "react";
 import ForceGraph2D from "react-force-graph-2d";
+import useStationNodeAnimation, { stationNodeSize } from "@/components/animations/useStationNodeAnimation";
 
 type GraphHandle = {
   d3Force: (name: string, force: null) => unknown;
@@ -12,29 +13,9 @@ type GraphHandle = {
 };
 const COLORS = ["#7c3aed", "#167d91", "#b44979", "#bf6819", "#438044", "#466bc2", "#a52a2a"];
 const ACTIVE_COLOR = COLORS.length - 1;
-const FRAME_SIZE = 192;
-const FRAME_COUNT = 4;
-
-// Tint and thicken the shared artwork once, rather than applying filters to every
-// node on every canvas repaint. The original station sprite stays unchanged.
-function createNodeFrames(sprite: HTMLImageElement) {
-  return COLORS.map((color) => Array.from({ length: FRAME_COUNT }, (_, frame) => {
-    const canvas = document.createElement("canvas");
-    canvas.width = canvas.height = FRAME_SIZE;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return canvas;
-    for (const [dx, dy] of [[0, 0], [-4, 0], [4, 0], [0, -4], [0, 4]]) {
-      ctx.drawImage(sprite, frame * FRAME_SIZE, 0, FRAME_SIZE, FRAME_SIZE, dx, dy, FRAME_SIZE, FRAME_SIZE);
-    }
-    ctx.globalCompositeOperation = "source-in";
-    ctx.fillStyle = color;
-    ctx.fillRect(0, 0, FRAME_SIZE, FRAME_SIZE);
-    return canvas;
-  }));
-}
 
 function nodeSize(id: number, cursor: number | null) {
-  return id === cursor ? 28 : 18 + (Math.abs(id) % 3) * 2;
+  return stationNodeSize(id, id === cursor);
 }
 
 export default function TraverserGraph({ session }: { session: sessionGraph }) {
@@ -42,8 +23,7 @@ export default function TraverserGraph({ session }: { session: sessionGraph }) {
   const [graphData, setGraphData] = useState(() => toForceGraph(session));
   const graphDataRef = useRef(graphData);
   const pendingCamera = useRef<{ zoom: number; x: number; y: number } | null>(null);
-  const [frames, setFrames] = useState<HTMLCanvasElement[][] | null>(null);
-  const [reducedMotion, setReducedMotion] = useState(true);
+  const { drawAnimation, autoPauseRedraw } = useStationNodeAnimation();
 
   useEffect(() => {
     const previous = graphDataRef.current;
@@ -72,46 +52,25 @@ export default function TraverserGraph({ session }: { session: sessionGraph }) {
     fgRef.current?.d3Force("center", null);
   }, []);
 
-  useEffect(() => {
-    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const syncMotion = () => setReducedMotion(preference.matches);
-    syncMotion();
-    preference.addEventListener("change", syncMotion);
-    const sprite = new Image();
-    sprite.onload = () => setFrames(createNodeFrames(sprite));
-    sprite.src = "/station_zoom_animations/station-probe-sprite.png";
-    return () => {
-      sprite.onload = null;
-      preference.removeEventListener("change", syncMotion);
-    };
-  }, []);
-
   const drawNode = useCallback((node: TraverserNode, ctx: CanvasRenderingContext2D) => {
     if (node.x === undefined || node.y === undefined) return;
     const seed = Math.abs(node.id);
     const active = node.id === session.cursor;
     const size = nodeSize(node.id, session.cursor);
     const colorIndex = active ? ACTIVE_COLOR : seed % ACTIVE_COLOR;
-    // Different phases, speeds, rotations, and mirrored frames keep the nodes
-    // from moving in lockstep. Reduced motion keeps each node's distinct pose.
-    const tick = reducedMotion ? 0 : Math.floor(performance.now() / (160 + (seed % 4) * 35));
-    const frame = (tick + seed) % FRAME_COUNT;
-
-    ctx.save();
-    ctx.translate(node.x, node.y);
-    if (frames) {
-      ctx.rotate((seed % 12) * Math.PI / 6);
-      ctx.scale(seed % 2 ? -1 : 1, 1);
-      ctx.drawImage(frames[colorIndex][frame], -size / 2, -size / 2, size, size);
-    } else {
+    const drawn = drawAnimation(ctx, {
+      id: node.id, x: node.x, y: node.y, size, color: COLORS[colorIndex],
+    });
+    if (!drawn) {
       // Keep nodes visible and interactive while the sprite loads or if it fails.
+      ctx.save();
       ctx.beginPath();
-      ctx.arc(0, 0, active ? 7 : 4, 0, 2 * Math.PI);
+      ctx.arc(node.x, node.y, active ? 7 : 4, 0, 2 * Math.PI);
       ctx.fillStyle = COLORS[colorIndex];
       ctx.fill();
+      ctx.restore();
     }
-    ctx.restore();
-  }, [frames, reducedMotion, session.cursor]);
+  }, [drawAnimation, session.cursor]);
 
   const paintHitArea = useCallback((node: TraverserNode, color: string, ctx: CanvasRenderingContext2D) => {
     if (node.x === undefined || node.y === undefined) return;
@@ -131,7 +90,7 @@ export default function TraverserGraph({ session }: { session: sessionGraph }) {
         nodeVal={(node: TraverserNode) => Math.pow(nodeSize(node.id, session.cursor) / 8, 2)}
         nodeCanvasObject={drawNode}
         nodePointerAreaPaint={paintHitArea}
-        autoPauseRedraw={reducedMotion || !frames}
+        autoPauseRedraw={autoPauseRedraw}
         linkDirectionalArrowLength={6}
         linkDirectionalArrowRelPos={1}
         cooldownTicks={500}
