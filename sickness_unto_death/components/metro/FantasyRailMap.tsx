@@ -386,7 +386,8 @@ export default function FantasyRailMap() {
   const previousCamera = useRef<{ center: [number, number]; zoom: number; bearing: number; pitch: number } | null>(null);
   const [probeOpen, setProbeOpen] = useState(false);
   const [selection, setSelection] = useState<RailSelection>(null);
-  const [isolated, setIsolated] = useState(false);
+  const [isolatedRouteId, setIsolatedRouteId] = useState<string | null>(null);
+  const isolated = isolatedRouteId !== null;
   const { catalog, loading, errors, retry } = useRailCatalog(probeOpen);
   const showingOnlySelection = probeOpen && isolated && selection !== null && catalog !== null;
   const [baseMap, setBaseMap] = useState<BaseMap>("colorful");
@@ -417,6 +418,7 @@ export default function FantasyRailMap() {
     if (!catalog) return;
     const map = mapRef.current?.getMap();
     setSelection(next);
+    if (isolated && next.kind === "route") setIsolatedRouteId(next.id);
     if (!map) return;
     if (!previousCamera.current) previousCamera.current = { center: map.getCenter().toArray(), zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() };
     const mobile = window.matchMedia("(max-width: 700px)").matches;
@@ -439,7 +441,7 @@ export default function FantasyRailMap() {
 
   function clearSelection() {
     setSelection(null);
-    setIsolated(false);
+    setIsolatedRouteId(null);
     if (previousCamera.current) {
       mapRef.current?.easeTo({ ...previousCamera.current, padding: { top: 0, bottom: 0, left: 0, right: 0 }, duration: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 450 });
       previousCamera.current = null;
@@ -448,12 +450,17 @@ export default function FantasyRailMap() {
 
   function closeProbe() { clearSelection(); setProbeOpen(false); }
 
+  function toggleIsolation() {
+    if (isolated) setIsolatedRouteId(null);
+    else if (selection?.kind === "route") setIsolatedRouteId(selection.id);
+  }
+
   return (
     <div className="relative h-full w-full">
       <Button size="sm" type="button" className={probeStyles.toggle} aria-expanded={probeOpen} aria-controls={probeOpen ? "rail-probe-sidebar" : undefined} onClick={() => probeOpen ? closeProbe() : setProbeOpen(true)}>
         {probeOpen ? <X size={15} /> : <Search size={15} />}{probeOpen ? "Close Probe" : "Open Probe"}
       </Button>
-      {probeOpen && <RailProbeSidebar catalog={catalog} selection={selection} isolated={isolated} loading={loading} errors={errors} onRetry={retry} onSelect={selectItem} onClear={clearSelection} onIsolate={() => setIsolated((value) => !value)} onClose={closeProbe} />}
+      {probeOpen && <RailProbeSidebar catalog={catalog} selection={selection} isolated={isolated} loading={loading} errors={errors} onRetry={retry} onSelect={selectItem} onClear={clearSelection} onIsolate={toggleIsolation} onClose={closeProbe} />}
       {!probeOpen && <div className="absolute left-1.5 top-1.5 z-10 max-h-[calc(100%-0.75rem)] w-36 overflow-y-auto overscroll-contain border-2 border-black bg-white p-1.5
       shadow-[4px_4px_0_#000] sm:left-2 sm:top-2 sm:max-h-[calc(100%-1rem)] sm:w-44 sm:p-2 lg:left-4 lg:top-4 lg:max-h-[calc(100%-2rem)] lg:w-56 lg:p-3">
         <RailEmblem
@@ -602,7 +609,7 @@ export default function FantasyRailMap() {
         onClick={(event) => {
           if (!probeOpen || !catalog) return;
           const map = event.target;
-          const sources = new Set([...catalog.sources.map((source) => source.mapSource), "rail-probe-focus"]);
+          const sources = new Set([...catalog.sources.map((source) => source.mapSource), "rail-probe-focus", "rail-probe-selected-station"]);
           const layerIds = (map.getStyle().layers ?? []).filter((layer) => "source" in layer && typeof layer.source === "string" && sources.has(layer.source)).map((layer) => layer.id);
           if (!layerIds.length) return;
           const { x, y } = event.point;
@@ -666,7 +673,7 @@ export default function FantasyRailMap() {
         {!showingOnlySelection && visibleLayers.lightRail && (
           <FantasyNetwork network="lightRail" />
         )}
-        {probeOpen && catalog && selection && <RailProbeFocus catalog={catalog} selection={selection} isolated={showingOnlySelection} />}
+        {probeOpen && catalog && selection && <RailProbeFocus catalog={catalog} selection={selection} isolated={showingOnlySelection} isolatedRouteId={isolatedRouteId} />}
 
         {/* {visibleLayers.userDraft && (
           <UserEditLayer />

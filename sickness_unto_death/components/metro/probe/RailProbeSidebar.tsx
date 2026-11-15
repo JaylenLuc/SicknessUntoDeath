@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { ChevronDown, Search, X } from "lucide-react";
+import { ChevronDown, Search } from "lucide-react";
 import { Button } from "@/components/retroui/Button";
 import { Menu } from "@/components/retroui/Menu";
 import { GROUP_LABELS, normalizeSearch, routeTextColor, type RailCatalog, type RailGroup, type RailSelection, type ExplorerRoute } from "@/lib/rail-explorer/catalog";
@@ -19,7 +19,7 @@ function RouteBadge({ route }: { route: ExplorerRoute }) {
   return <span className={styles.badge} style={{ background: route.color, color: routeTextColor(route.color) }}>{route.code}</span>;
 }
 
-export default function RailProbeSidebar({ catalog, selection, isolated, loading, errors, onRetry, onSelect, onClear, onIsolate, onClose }: Props) {
+export default function RailProbeSidebar({ catalog, selection, isolated, loading, errors, onRetry, onSelect, onClear, onIsolate }: Props) {
   const [query, setQuery] = useState("");
   const [group, setGroup] = useState<RailGroup | "all">("all");
   useEffect(() => { setQuery(""); }, [selection?.kind, selection?.id]);
@@ -43,7 +43,7 @@ export default function RailProbeSidebar({ catalog, selection, isolated, loading
         {errors.length > 0 && <div className={styles.error} role="alert"><p>Could not load: {errors.join(", ")}. Available networks are shown below.</p><Button size="sm" type="button" onClick={onRetry}>Retry</Button></div>}
 
         {selection && <div className={styles.selectionControls}>
-          {route && !needle && <Button size="sm" type="button" aria-pressed={isolated} onClick={onIsolate}>
+          {(route || isolated) && !needle && <Button size="sm" type="button" aria-pressed={isolated} onClick={onIsolate}>
             {isolated ? "Show all lines" : "Show only this line"}
           </Button>}
           <Button size="sm" type="button" onClick={onClear}>Return to all routes</Button>
