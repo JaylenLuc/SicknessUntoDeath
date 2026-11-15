@@ -36,7 +36,6 @@ export default function RailProbeSidebar({ catalog, selection, isolated, loading
     <aside id="rail-probe-sidebar" className={styles.sidebar} aria-label="Probe into the niceties">
       <header className={styles.header}>
         <div><span className={styles.eyebrow}>LOS ANGELES RAIL</span><h2>Probe into the niceties</h2></div>
-        <Button size="icon" className={styles.close} type="button" aria-label="Close probe and restore map" onClick={onClose}><X size={16} /></Button>
       </header>
       <div className={styles.scroll}>
         <label className={styles.search}><Search size={17} aria-hidden="true" /><input type="search" aria-label="Search stations or lines" placeholder="Search stations or lines…" value={query} onChange={(event) => setQuery(event.target.value)} /></label>
