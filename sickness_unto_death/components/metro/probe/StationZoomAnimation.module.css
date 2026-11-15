@@ -1,0 +1,24 @@
+.animation {
+  display: block;
+  flex-shrink: 0;
+  width: var(--station-animation-size, 96px);
+  height: var(--station-animation-size, 96px);
+  pointer-events: none;
+  background: url("/station_zoom_animations/station-probe-sprite.png") 0 0 / calc(4 * var(--station-animation-size, 96px)) var(--station-animation-size, 96px) no-repeat;
+  filter:
+    drop-shadow(1px 0 0 #dcb760)
+    drop-shadow(-1px 0 0 #de5d5d)
+    drop-shadow(0 1px 0 #82b6f1)
+    drop-shadow(0 -1px 0 #7de779)
+    drop-shadow(0 0 1px #eb7bad)
+    drop-shadow(0 0 2px #f5d79f);
+  animation: stationFrames 800ms steps(4, end) infinite;
+}
+
+@keyframes stationFrames {
+  to { background-position: calc(-4 * var(--station-animation-size, 96px)) 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animation { animation: none; }
+}

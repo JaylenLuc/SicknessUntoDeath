@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ChevronDown, ChevronUp, Search, X } from "lucide-react";
 import Map, {
   Layer,
   NavigationControl,
   Source,
+  type MapRef,
 } from "react-map-gl/maplibre";
 import {
   setWorkerUrl,
@@ -31,6 +32,12 @@ import ProposedMetroRail from "./ProposedMetroRail";
 import FantasyRailLegend from "./FantasyRailLegend";
 import RailEmblem from "./RailEmblem";
 import { FANTASY_RAIL_NETWORKS, INTRA_URBES_SERVICE_LABELS, TRAM_LINE_STYLE, type FantasyRailNetwork } from "./fantasyRailNetworks";
+import RailProbeSidebar from "./probe/RailProbeSidebar";
+import RailProbeFocus from "./probe/RailProbeFocus";
+import StationAnimation from "./probe/StationAnimation";
+import { useRailCatalog } from "./probe/useRailCatalog";
+import { getFocusData, resolveMapSelection, type RailSelection } from "@/lib/rail-explorer/catalog";
+import probeStyles from "./probe/RailProbe.module.css";
 // import UserEditLayer from "./UserEditLayer";
 
 setWorkerUrl("/maplibre-gl-worker.mjs");
@@ -113,8 +120,8 @@ function LayerToggleButton({
         !active ? "opacity-60" : "",
       ].join(" ")}
     >
-      <span aria-hidden="true">
-        {active ? "✓" : "○"}
+      <span aria-hidden="true" className="flex h-5 w-5 shrink-0 items-center justify-center">
+        {active ? <StationAnimation size={20} /> : "○"}
       </span>
 
       <span className="min-w-0 text-left">
@@ -375,6 +382,13 @@ function FantasyNetwork({ network }: { network: FantasyRailNetwork }) {
 }
 
 export default function FantasyRailMap() {
+  const mapRef = useRef<MapRef>(null);
+  const previousCamera = useRef<{ center: [number, number]; zoom: number; bearing: number; pitch: number } | null>(null);
+  const [probeOpen, setProbeOpen] = useState(false);
+  const [selection, setSelection] = useState<RailSelection>(null);
+  const [isolated, setIsolated] = useState(false);
+  const { catalog, loading, errors, retry } = useRailCatalog(probeOpen);
+  const showingOnlySelection = probeOpen && isolated && selection !== null && catalog !== null;
   const [baseMap, setBaseMap] = useState<BaseMap>("colorful");
   const [railLayersOpen, setRailLayersOpen] = useState(true);
   const [legendOpen, setLegendOpen] = useState(false);
@@ -399,9 +413,48 @@ export default function FantasyRailMap() {
     }));
   }
 
+  function selectItem(next: NonNullable<RailSelection>) {
+    if (!catalog) return;
+    const map = mapRef.current?.getMap();
+    setSelection(next);
+    if (!map) return;
+    if (!previousCamera.current) previousCamera.current = { center: map.getCenter().toArray(), zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() };
+    const mobile = window.matchMedia("(max-width: 700px)").matches;
+    const duration = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 650;
+    const height = map.getContainer().clientHeight;
+    if (next.kind === "station") {
+      const station = catalog.stations.find((s) => s.id === next.id);
+      if (station) map.flyTo({ center: station.coordinates, zoom: 15, offset: mobile ? [0, height * 0.2] : [150, 0], duration });
+    } else {
+      const data = getFocusData(catalog, next);
+      const coordinates = data.features.flatMap((feature) => feature.geometry.type === "Point" ? [feature.geometry.coordinates] : feature.geometry.type === "LineString" ? feature.geometry.coordinates : feature.geometry.coordinates.flat());
+      if (coordinates.length) {
+        const longitudes = coordinates.map((c) => c[0]), latitudes = coordinates.map((c) => c[1]);
+        map.fitBounds([[Math.min(...longitudes), Math.min(...latitudes)], [Math.max(...longitudes), Math.max(...latitudes)]], {
+          padding: { top: mobile ? height * 0.42 + 65 : 60, bottom: 40, left: mobile ? 25 : 330, right: 35 }, maxZoom: 15, duration,
+        });
+      }
+    }
+  }
+
+  function clearSelection() {
+    setSelection(null);
+    setIsolated(false);
+    if (previousCamera.current) {
+      mapRef.current?.easeTo({ ...previousCamera.current, padding: { top: 0, bottom: 0, left: 0, right: 0 }, duration: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 450 });
+      previousCamera.current = null;
+    }
+  }
+
+  function closeProbe() { clearSelection(); setProbeOpen(false); }
+
   return (
     <div className="relative h-full w-full">
-      <div className="absolute left-1.5 top-1.5 z-10 max-h-[calc(100%-0.75rem)] w-36 overflow-y-auto overscroll-contain border-2 border-black bg-white p-1.5
+      <Button size="sm" type="button" className={probeStyles.toggle} aria-expanded={probeOpen} aria-controls={probeOpen ? "rail-probe-sidebar" : undefined} onClick={() => probeOpen ? closeProbe() : setProbeOpen(true)}>
+        {probeOpen ? <X size={15} /> : <Search size={15} />}{probeOpen ? "Close Probe" : "Open Probe"}
+      </Button>
+      {probeOpen && <RailProbeSidebar catalog={catalog} selection={selection} isolated={isolated} loading={loading} errors={errors} onRetry={retry} onSelect={selectItem} onClear={clearSelection} onIsolate={() => setIsolated((value) => !value)} onClose={closeProbe} />}
+      {!probeOpen && <div className="absolute left-1.5 top-1.5 z-10 max-h-[calc(100%-0.75rem)] w-36 overflow-y-auto overscroll-contain border-2 border-black bg-white p-1.5
       shadow-[4px_4px_0_#000] sm:left-2 sm:top-2 sm:max-h-[calc(100%-1rem)] sm:w-44 sm:p-2 lg:left-4 lg:top-4 lg:max-h-[calc(100%-2rem)] lg:w-56 lg:p-3">
         <RailEmblem
           className="mx-auto mb-2 w-16 sm:w-20 lg:w-24"
@@ -542,9 +595,24 @@ export default function FantasyRailMap() {
             <FantasyRailLegend compact />
           </div>
         )}
-      </div>
+      </div>}
 
       <Map
+        ref={mapRef}
+        onClick={(event) => {
+          if (!probeOpen || !catalog) return;
+          const map = event.target;
+          const sources = new Set([...catalog.sources.map((source) => source.mapSource), "rail-probe-focus"]);
+          const layerIds = (map.getStyle().layers ?? []).filter((layer) => "source" in layer && typeof layer.source === "string" && sources.has(layer.source)).map((layer) => layer.id);
+          if (!layerIds.length) return;
+          const { x, y } = event.point;
+          const features = map.queryRenderedFeatures([[x - 6, y - 6], [x + 6, y + 6]], { layers: layerIds });
+          features.sort((a, b) => Number(b.geometry.type === "Point") - Number(a.geometry.type === "Point"));
+          for (const feature of features) {
+            const next = resolveMapSelection(catalog, feature.source, feature.properties, feature.geometry);
+            if (next) { selectItem(next); break; }
+          }
+        }}
         onLoad={({ target }) => updateTrainScale(target)}
         onZoom={({ target }) => updateTrainScale(target)}
         initialViewState={{
@@ -573,31 +641,32 @@ export default function FantasyRailMap() {
         // attributionControl={false}
       >
         <NavigationControl position="bottom-right" />
-        {visibleLayers.pacificElectricEsri && (
+        {!showingOnlySelection && visibleLayers.pacificElectricEsri && (
           <PacificElectricEsriLayer />
         )}
-        {visibleLayers.pacificElectric && (
+        {!showingOnlySelection && visibleLayers.pacificElectric && (
           <PacificElectricLayer />
         )}
 
-        {visibleLayers.losAngelesRailway && (
+        {!showingOnlySelection && visibleLayers.losAngelesRailway && (
           <LosAngelesRailwayLayer />
         )}
         
-        {visibleLayers.existingMetro && (
+        {!showingOnlySelection && visibleLayers.existingMetro && (
           <MetroLA2026 />
         )}
 
-        {visibleLayers.metroProjects && (
+        {!showingOnlySelection && visibleLayers.metroProjects && (
           <ProposedMetroRail />
         )}
 
-        {visibleLayers.heavyRail && (
+        {!showingOnlySelection && visibleLayers.heavyRail && (
           <FantasyNetwork network="heavyRail" />
         )}
-        {visibleLayers.lightRail && (
+        {!showingOnlySelection && visibleLayers.lightRail && (
           <FantasyNetwork network="lightRail" />
         )}
+        {probeOpen && catalog && selection && <RailProbeFocus catalog={catalog} selection={selection} isolated={showingOnlySelection} />}
 
         {/* {visibleLayers.userDraft && (
           <UserEditLayer />

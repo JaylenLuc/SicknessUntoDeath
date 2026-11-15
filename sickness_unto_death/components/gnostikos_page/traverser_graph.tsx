@@ -1,42 +1,116 @@
-import { toForceGraph } from "@/lib/gnostikos_util/util"
-import { sessionGraph } from "@/types/gnostikosTypes"
-import { useMemo, useRef } from "react"
-import ForceGraph2D from "react-force-graph-2d"
+"use client";
 
-export default function TraverserGraph  ({ session }: { session: sessionGraph })  {
-  const fgRef = useRef<any>(null)
-  const graphData = useMemo(
-    () => toForceGraph(session),
-    [session]
-  )
+import { toForceGraph } from "@/lib/gnostikos_util/util";
+import type { sessionGraph } from "@/types/gnostikosTypes";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import ForceGraph2D from "react-force-graph-2d";
+
+type TraverserNode = { id: number; label: string; x?: number; y?: number };
+type TraverserLink = { step: number };
+type GraphHandle = { d3Force: (name: string) => { strength: (value: number) => unknown } | undefined };
+const COLORS = ["#7c3aed", "#167d91", "#b44979", "#bf6819", "#438044", "#466bc2", "#a52a2a"];
+const ACTIVE_COLOR = COLORS.length - 1;
+const FRAME_SIZE = 192;
+const FRAME_COUNT = 4;
+
+// Tint and thicken the shared artwork once, rather than applying filters to every
+// node on every canvas repaint. The original station sprite stays unchanged.
+function createNodeFrames(sprite: HTMLImageElement) {
+  return COLORS.map((color) => Array.from({ length: FRAME_COUNT }, (_, frame) => {
+    const canvas = document.createElement("canvas");
+    canvas.width = canvas.height = FRAME_SIZE;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return canvas;
+    for (const [dx, dy] of [[0, 0], [-4, 0], [4, 0], [0, -4], [0, 4]]) {
+      ctx.drawImage(sprite, frame * FRAME_SIZE, 0, FRAME_SIZE, FRAME_SIZE, dx, dy, FRAME_SIZE, FRAME_SIZE);
+    }
+    ctx.globalCompositeOperation = "source-in";
+    ctx.fillStyle = color;
+    ctx.fillRect(0, 0, FRAME_SIZE, FRAME_SIZE);
+    return canvas;
+  }));
+}
+
+function nodeSize(id: number, cursor: number | null) {
+  return id === cursor ? 28 : 18 + (Math.abs(id) % 3) * 2;
+}
+
+export default function TraverserGraph({ session }: { session: sessionGraph }) {
+  const fgRef = useRef<GraphHandle | null>(null);
+  const graphData = useMemo(() => toForceGraph(session), [session]);
+  const [frames, setFrames] = useState<HTMLCanvasElement[][] | null>(null);
+  const [reducedMotion, setReducedMotion] = useState(true);
+
+  useEffect(() => {
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const syncMotion = () => setReducedMotion(preference.matches);
+    syncMotion();
+    preference.addEventListener("change", syncMotion);
+    const sprite = new Image();
+    sprite.onload = () => setFrames(createNodeFrames(sprite));
+    sprite.src = "/station_zoom_animations/station-probe-sprite.png";
+    return () => {
+      sprite.onload = null;
+      preference.removeEventListener("change", syncMotion);
+    };
+  }, []);
+
+  const drawNode = useCallback((node: TraverserNode, ctx: CanvasRenderingContext2D) => {
+    if (node.x === undefined || node.y === undefined) return;
+    const seed = Math.abs(node.id);
+    const active = node.id === session.cursor;
+    const size = nodeSize(node.id, session.cursor);
+    const colorIndex = active ? ACTIVE_COLOR : seed % ACTIVE_COLOR;
+    // Different phases, speeds, rotations, and mirrored frames keep the nodes
+    // from moving in lockstep. Reduced motion keeps each node's distinct pose.
+    const tick = reducedMotion ? 0 : Math.floor(performance.now() / (160 + (seed % 4) * 35));
+    const frame = (tick + seed) % FRAME_COUNT;
+
+    ctx.save();
+    ctx.translate(node.x, node.y);
+    if (frames) {
+      ctx.rotate((seed % 12) * Math.PI / 6);
+      ctx.scale(seed % 2 ? -1 : 1, 1);
+      ctx.drawImage(frames[colorIndex][frame], -size / 2, -size / 2, size, size);
+    } else {
+      // Keep nodes visible and interactive while the sprite loads or if it fails.
+      ctx.beginPath();
+      ctx.arc(0, 0, active ? 7 : 4, 0, 2 * Math.PI);
+      ctx.fillStyle = COLORS[colorIndex];
+      ctx.fill();
+    }
+    ctx.restore();
+  }, [frames, reducedMotion, session.cursor]);
+
+  const paintHitArea = useCallback((node: TraverserNode, color: string, ctx: CanvasRenderingContext2D) => {
+    if (node.x === undefined || node.y === undefined) return;
+    // Fill the hollow center too, so the entire animated node remains draggable.
+    ctx.beginPath();
+    ctx.arc(node.x, node.y, nodeSize(node.id, session.cursor) / 2, 0, 2 * Math.PI);
+    ctx.fillStyle = color;
+    ctx.fill();
+  }, [session.cursor]);
 
   return (
     <div className="border-2 border-blue-500 border-dashed overflow-auto max-h-[80vh] max-w-[80vw] p-2">
-        <ForceGraph2D
+      <ForceGraph2D
         ref={fgRef}
         graphData={graphData}
         nodeLabel="label"
-        nodeAutoColorBy="id"
+        nodeVal={(node: TraverserNode) => Math.pow(nodeSize(node.id, session.cursor) / 8, 2)}
+        nodeCanvasObject={drawNode}
+        nodePointerAreaPaint={paintHitArea}
+        autoPauseRedraw={reducedMotion || !frames}
         linkDirectionalArrowLength={6}
         linkDirectionalArrowRelPos={1}
-        cooldownTicks={500}    
+        cooldownTicks={500}
         d3VelocityDecay={0.1}
-        nodeCanvasObject={(node: { id: number | null; x: any; y: any }, ctx: { beginPath: () => void; arc: (arg0: any, arg1: any, arg2: number, arg3: number, arg4: number) => void; fillStyle: any; fill: () => void }) => {
-            const isActive = node.id === session.cursor
-            const radius = isActive ? 7 : 4
-
-            ctx.beginPath()
-            ctx.arc(node.x!, node.y!, radius, 0, 2 * Math.PI)
-            ctx.fillStyle = isActive ? "brown" : (node as any).color
-            ctx.fill()
-        }}
-
         onEngineStop={() => {
-            fgRef.current?.d3Force("charge")?.strength(0)
-            fgRef.current?.d3Force("link")?.strength(0)
-      }}
-        linkLabel={(link: { step: any }) => `step ${link.step}`}
-        />
+          fgRef.current?.d3Force("charge")?.strength(0);
+          fgRef.current?.d3Force("link")?.strength(0);
+        }}
+        linkLabel={(link: TraverserLink) => `step ${link.step}`}
+      />
     </div>
-  )
+  );
 }

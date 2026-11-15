@@ -223,7 +223,17 @@ export default function Home() {
             />
           </div>
         </Link>
-        <ZineStack/>
+        <Link href="" className={HOME_LINK_CLASS}>
+          <div className={HOME_TILE_CLASS}>
+            <Image 
+              src="/planet.gif" 
+              alt="yayyyyyyy" 
+              unoptimized={true}
+              fill
+              className="inset-0 scale-105 object-contain transition-opacity duration-0 touch-none"
+            />
+          </div>
+        </Link>
         <Link href="https://calamansi-dreamscape.printify.me/" className={HOME_LINK_CLASS}>
           <div className={HOME_TILE_CLASS}>
             <Image 
@@ -249,17 +259,7 @@ export default function Home() {
             />
           </div>
         </Link>
-        <Link href="" className={HOME_LINK_CLASS}>
-          <div className={HOME_TILE_CLASS}>
-            <Image 
-              src="/planet.gif" 
-              alt="yayyyyyyy" 
-              unoptimized={true}
-              fill
-              className="inset-0 scale-105 object-contain transition-opacity duration-0 touch-none"
-            />
-          </div>
-        </Link>
+        <ZineStack/>
         <Link href="" className={HOME_LINK_CLASS}>
           <div className={HOME_TILE_CLASS}>
             <HomeVideo 
