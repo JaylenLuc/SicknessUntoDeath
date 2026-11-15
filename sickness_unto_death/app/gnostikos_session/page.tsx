@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { sessionGraph } from "@/types/gnostikosTypes"
 import { Text } from "@/components/retroui/Text";
 import TraverserMetadata from "@/components/gnostikos_page/traverser_metadata";
@@ -21,7 +21,6 @@ export default function SessionPage() {
     const [session, setSession] = useState(null)
     const [isFull, setFull] = useState(false)
     const [open, setOpen] = useState(false);
-    const prevEdgesCountRef = useRef<number | null>(null);
 
     const requestSession = () => {
         window.postMessage({ type: "GET_SESSION" }, "*")
@@ -35,22 +34,19 @@ export default function SessionPage() {
             if (event.data?.type === "SESSION_DATA") {
                 setSession(event.data.session)
                 setMode(Mode.EXT)
-                if (event.data.session.nodes.length > 200 || event.data.session.edges.length > 200){
+                if (Object.keys(event.data.session.nodes).length > 200 || event.data.session.edges.length > 200){
                     setFull(true);
                     clearInterval(interval)
                     window.removeEventListener("message", handler)
                     return;
                 }
-                if (prevEdgesCountRef.current === null || prevEdgesCountRef.current !== event.data.session.edges.length){
-                    prevEdgesCountRef.current = event.data.session.edges.length;
-                    setGraph({
-                        nodes: event.data.session.nodes,
-                        urlToNodeId: event.data.session.urlToNodeId,
-                        edges: event.data.session.edges,
-                        cursor: event.data.session.cursor,
-                        step: event.data.session.step
-                    })
-                }
+                setGraph({
+                    nodes: event.data.session.nodes,
+                    urlToNodeId: event.data.session.urlToNodeId,
+                    edges: event.data.session.edges,
+                    cursor: event.data.session.cursor,
+                    step: event.data.session.step
+                })
  
             }
         }

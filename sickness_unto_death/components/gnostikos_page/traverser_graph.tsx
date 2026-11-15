@@ -1,13 +1,15 @@
 "use client";
 
-import { toForceGraph } from "@/lib/gnostikos_util/util";
+import { pinTraverserNode, toForceGraph, type TraverserNode, type TraverserLink } from "@/lib/gnostikos_util/util";
 import type { sessionGraph } from "@/types/gnostikosTypes";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import ForceGraph2D from "react-force-graph-2d";
 
-type TraverserNode = { id: number; label: string; x?: number; y?: number };
-type TraverserLink = { step: number };
-type GraphHandle = { d3Force: (name: string) => { strength: (value: number) => unknown } | undefined };
+type GraphHandle = {
+  d3Force: (name: string, force: null) => unknown;
+  zoom: { (): number; (scale: number): unknown };
+  centerAt: { (): { x: number; y: number }; (x: number, y: number): unknown };
+};
 const COLORS = ["#7c3aed", "#167d91", "#b44979", "#bf6819", "#438044", "#466bc2", "#a52a2a"];
 const ACTIVE_COLOR = COLORS.length - 1;
 const FRAME_SIZE = 192;
@@ -37,9 +39,38 @@ function nodeSize(id: number, cursor: number | null) {
 
 export default function TraverserGraph({ session }: { session: sessionGraph }) {
   const fgRef = useRef<GraphHandle | null>(null);
-  const graphData = useMemo(() => toForceGraph(session), [session]);
+  const [graphData, setGraphData] = useState(() => toForceGraph(session));
+  const graphDataRef = useRef(graphData);
+  const pendingCamera = useRef<{ zoom: number; x: number; y: number } | null>(null);
   const [frames, setFrames] = useState<HTMLCanvasElement[][] | null>(null);
   const [reducedMotion, setReducedMotion] = useState(true);
+
+  useEffect(() => {
+    const previous = graphDataRef.current;
+    const next = toForceGraph(session, previous);
+    if (next === previous) return;
+    const graph = fgRef.current;
+    if (graph && previous.nodes.length && next.nodes.length) {
+      pendingCamera.current = { zoom: graph.zoom(), ...graph.centerAt() };
+    }
+    graphDataRef.current = next;
+    setGraphData(next);
+  }, [session]);
+
+  const restoreCamera = useCallback(() => {
+    const camera = pendingCamera.current;
+    const graph = fgRef.current;
+    if (!camera || !graph) return;
+    pendingCamera.current = null;
+    graph.zoom(camera.zoom);
+    graph.centerAt(camera.x, camera.y);
+  }, []);
+
+  useEffect(() => {
+    // A centering force would pull new nodes toward the origin after a user has
+    // arranged the graph elsewhere. Link and charge forces still place new nodes.
+    fgRef.current?.d3Force("center", null);
+  }, []);
 
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -105,9 +136,13 @@ export default function TraverserGraph({ session }: { session: sessionGraph }) {
         linkDirectionalArrowRelPos={1}
         cooldownTicks={500}
         d3VelocityDecay={0.1}
+        // ForceGraph automatically zooms when the node count changes. Restore the
+        // previous camera immediately, before that automatic change is painted.
+        onZoom={restoreCamera}
+        onEngineTick={restoreCamera}
+        onNodeDragEnd={pinTraverserNode}
         onEngineStop={() => {
-          fgRef.current?.d3Force("charge")?.strength(0);
-          fgRef.current?.d3Force("link")?.strength(0);
+          graphData.nodes.forEach(pinTraverserNode);
         }}
         linkLabel={(link: TraverserLink) => `step ${link.step}`}
       />
