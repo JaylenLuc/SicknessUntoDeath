@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, ChevronUp, Search, X } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import Image from "next/image";
 import Map, {
   Layer,
   NavigationControl,
@@ -457,9 +458,9 @@ export default function FantasyRailMap() {
 
   return (
     <div className="relative h-full w-full">
-      <Button size="sm" type="button" className={probeStyles.toggle} aria-expanded={probeOpen} aria-controls={probeOpen ? "rail-probe-sidebar" : undefined} onClick={() => probeOpen ? closeProbe() : setProbeOpen(true)}>
-        {probeOpen ? <X size={15} /> : <Search size={15} />}{probeOpen ? "Close Probe" : "Open Probe"}
-      </Button>
+      <div className={probeStyles.toggle} aria-expanded={probeOpen} aria-controls={probeOpen ? "rail-probe-sidebar" : undefined} onClick={() => probeOpen ? closeProbe() : setProbeOpen(true)}>
+        <Image src="/mindBlown/MOONGif2.gif" alt="" width={32} height={32} unoptimized className={probeStyles.probeMoon} />
+      </div>
       {probeOpen && <RailProbeSidebar catalog={catalog} selection={selection} isolated={isolated} loading={loading} errors={errors} onRetry={retry} onSelect={selectItem} onClear={clearSelection} onIsolate={toggleIsolation} onClose={closeProbe} />}
       {!probeOpen && <div className="absolute left-1.5 top-1.5 z-10 max-h-[calc(100%-0.75rem)] w-36 overflow-y-auto overscroll-contain border-2 border-black bg-white p-1.5
       shadow-[4px_4px_0_#000] sm:left-2 sm:top-2 sm:max-h-[calc(100%-1rem)] sm:w-44 sm:p-2 lg:left-4 lg:top-4 lg:max-h-[calc(100%-2rem)] lg:w-56 lg:p-3">

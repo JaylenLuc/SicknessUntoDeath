@@ -35,7 +35,7 @@ export default function RailProbeSidebar({ catalog, selection, isolated, loading
   return (
     <aside id="rail-probe-sidebar" className={styles.sidebar} aria-label="Probe into the niceties">
       <header className={styles.header}>
-        <div><span className={styles.eyebrow}>LOS ANGELES RAIL</span><h2>Probe into the niceties</h2></div>
+        <div><span className={styles.eyebrow}>High fidelity landing probe for spatial data</span><h2>Probe into the niceties</h2></div>
       </header>
       <div className={styles.scroll}>
         <label className={styles.search}><Search size={17} aria-hidden="true" /><input type="search" aria-label="Search stations or lines" placeholder="Search stations or lines…" value={query} onChange={(event) => setQuery(event.target.value)} /></label>
@@ -94,7 +94,7 @@ export default function RailProbeSidebar({ catalog, selection, isolated, loading
           <p className={styles.sectionHeading}>{routes.length} lines · Select a line to explore</p>
           {routes.map((r) => <button className={styles.routeCard} type="button" key={r.id} onClick={() => select({ kind: "route", id: r.id })}><RouteBadge route={r} /><span>{r.name}<small>{GROUP_LABELS[r.group]} · {r.stationIds.length} stops</small></span></button>)}
         </section>}
-        <p className={styles.note}>You can also click a route or station on the map. Close Probe to return to the layer controls and historical overlays.</p>
+        <p className={styles.note}>You can click on a route or station on the map.</p>
       </div>
     </aside>
   );
