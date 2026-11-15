@@ -67,11 +67,11 @@ return (
             ["linear"],
             ["zoom"],
             8,
-            4,
+            3,
             13,
-            9,
+            6.5,
             ],
-            "line-opacity": 0.9,
+            "line-opacity": 0.85,
         }}
         />
 
@@ -95,9 +95,9 @@ return (
             ["linear"],
             ["zoom"],
             8,
-            2,
+            1.8,
             13,
-            5,
+            4.5,
             ],
             "line-opacity": 0.9,
         }}
@@ -107,21 +107,24 @@ return (
         <Layer
         id="existing-la-metro-route-labels"
         type="symbol"
-        minzoom={9}
+        minzoom={9.5}
         filter={["==", ["geometry-type"], "LineString"]}
         layout={{
             "symbol-placement": "line",
-            "symbol-spacing": 450,
+            "symbol-spacing": 500,
             "text-field": ["get", "route_long_name"],
-            "text-size": 12,
+            "text-size": ["interpolate", ["linear"], ["zoom"], 9.5, 10, 13, 12],
+            "text-offset": [0, -0.9],
+            "text-padding": 8,
             "text-rotation-alignment": "map",
             "text-keep-upright": true,
             "text-allow-overlap": false,
         }}
         paint={{
-            "text-color": "#111827",
+            "text-color": "#334155",
             "text-halo-color": "#ffffff",
-            "text-halo-width": 2,
+            "text-halo-width": 1.5,
+            "text-halo-blur": 0.5,
         }}
         />
 
@@ -136,15 +139,15 @@ return (
             ["linear"],
             ["zoom"],
             8,
-            1.25,
+            1,
             13,
-            4,
+            3.25,
             16,
-            5,
+            4,
             ],
             "circle-color": "#ffffff",
-            "circle-stroke-color": "#111827",
-            "circle-stroke-width": 1.5,
+            "circle-stroke-color": "#475569",
+            "circle-stroke-width": ["interpolate", ["linear"], ["zoom"], 8, 0.8, 13, 1.5],
         }}
         />
 

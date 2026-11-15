@@ -48,8 +48,8 @@ export default function ProposedMetroRail() {
             layout={{ "line-cap": "round", "line-join": "round" }}
             paint={{
               "line-color": "#ffffff",
-              "line-width": ["interpolate", ["linear"], ["zoom"], 8, 5, 13, 10],
-              "line-opacity": 0.9,
+              "line-width": ["interpolate", ["linear"], ["zoom"], 8, 3.2, 13, 6.5],
+              "line-opacity": 0.85,
               "line-offset": lineOffset,
             }}
           />
@@ -61,7 +61,7 @@ export default function ProposedMetroRail() {
             layout={{ "line-cap": "round", "line-join": "round" }}
             paint={{
               "line-color": ["coalesce", ["get", "route_color"], "#64748b"],
-              "line-width": ["interpolate", ["linear"], ["zoom"], 8, 3, 13, 6],
+              "line-width": ["interpolate", ["linear"], ["zoom"], 8, 2, 13, 4.5],
               "line-opacity": 0.88,
               "line-dasharray": [2, 1.5],
               "line-offset": lineOffset,
@@ -71,11 +71,11 @@ export default function ProposedMetroRail() {
           <Layer
             id={`${project.id}-route-label`}
             type="symbol"
-            minzoom={8}
+            minzoom={10}
             filter={["==", ["geometry-type"], "LineString"]}
             layout={{
               "symbol-placement": "line",
-              "symbol-spacing": 360,
+              "symbol-spacing": 550,
               "text-field": [
                 "concat",
                 ["get", "route_long_name"],
@@ -83,14 +83,17 @@ export default function ProposedMetroRail() {
                 STATUS_LABEL,
               ],
               "text-size": 11,
+              "text-offset": [0, -0.9],
+              "text-padding": 8,
               "text-rotation-alignment": "map",
               "text-keep-upright": true,
               "text-allow-overlap": false,
             }}
             paint={{
-              "text-color": "#111827",
+              "text-color": "#334155",
               "text-halo-color": "#ffffff",
-              "text-halo-width": 2,
+              "text-halo-width": 1.5,
+              "text-halo-blur": 0.5,
               "text-translate": [horizontalOffset, 0],
             }}
           />
@@ -105,11 +108,11 @@ export default function ProposedMetroRail() {
                 ["linear"],
                 ["zoom"],
                 8,
-                1.25,
+                1,
                 13,
-                4,
+                3.25,
                 16,
-                5,
+                4,
               ],
               "circle-color": [
                 "match",
@@ -126,8 +129,8 @@ export default function ProposedMetroRail() {
                 "#e5e7eb",
                 "#ffffff",
               ],
-              "circle-stroke-color": "#111827",
-              "circle-stroke-width": 1.5,
+              "circle-stroke-color": "#475569",
+              "circle-stroke-width": ["interpolate", ["linear"], ["zoom"], 8, 0.8, 13, 1.5],
               "circle-translate": [horizontalOffset, 0],
             }}
           />

@@ -9,6 +9,7 @@ import Map, {
 } from "react-map-gl/maplibre";
 import {
   setWorkerUrl,
+  type Map as MapLibreMap,
 } from "maplibre-gl";
 
 import { Button } from "@/components/retroui/Button";
@@ -33,6 +34,12 @@ import { FANTASY_RAIL_NETWORKS, INTRA_URBES_SERVICE_LABELS, TRAM_LINE_STYLE, typ
 // import UserEditLayer from "./UserEditLayer";
 
 setWorkerUrl("/maplibre-gl-worker.mjs");
+
+function updateTrainScale(map: MapLibreMap) {
+  // Keep the regional view uncluttered, with more detail at street level.
+  const scale = Math.min(0.95, Math.max(0.45, 0.65 + (map.getZoom() - 9.5) * 0.075));
+  map.getContainer().style.setProperty("--train-marker-scale", String(scale));
+}
 
 const REGIONAL_BOUNDS: [number, number, number, number] = [
   -119.0,
@@ -205,6 +212,7 @@ function FantasyNetwork({ network }: { network: FantasyRailNetwork }) {
           }}
           paint={{
             "line-color": "#ffffff",
+            "line-opacity": 0.85,
             "line-width": [
               "interpolate",
               ["linear"],
@@ -277,21 +285,24 @@ function FantasyNetwork({ network }: { network: FantasyRailNetwork }) {
         <Layer
           id={`${config.id}-route-labels`}
           type="symbol"
-          minzoom={8.5}
+          minzoom={9.5}
           filter={["==", ["geometry-type"], "LineString"]}
           layout={{
             "symbol-placement": "line",
-            "symbol-spacing": 380,
+            "symbol-spacing": 500,
             "text-field": ["get", "name"],
-            "text-size": 11,
+            "text-size": ["interpolate", ["linear"], ["zoom"], 9.5, 10, 13, 12],
+            "text-offset": [0, -0.9],
+            "text-padding": 8,
             "text-rotation-alignment": "map",
             "text-keep-upright": true,
             "text-allow-overlap": false,
           }}
           paint={{
-            "text-color": "#111827",
+            "text-color": "#334155",
             "text-halo-color": "#ffffff",
-            "text-halo-width": 2,
+            "text-halo-width": 1.5,
+            "text-halo-blur": 0.5,
           }}
         />
 
@@ -322,15 +333,15 @@ function FantasyNetwork({ network }: { network: FantasyRailNetwork }) {
                 ["linear"],
                 ["zoom"],
                 8,
-                1.25,
+                1,
                 13,
-                4,
+                3.25,
                 16,
-                5,
+                4,
               ],
               "circle-color": "#ffffff",
-              "circle-stroke-color": config.stationColor,
-              "circle-stroke-width": 1.5,
+              "circle-stroke-color": ["coalesce", ["get", "color"], config.stationColor],
+              "circle-stroke-width": ["interpolate", ["linear"], ["zoom"], 8, 0.8, 13, 1.5],
             }}
           />
         )}
@@ -338,7 +349,7 @@ function FantasyNetwork({ network }: { network: FantasyRailNetwork }) {
         <Layer
           id={`${config.id}-labels`}
           type="symbol"
-          minzoom={10}
+          minzoom={11}
           filter={[
             "==",
             ["geometry-type"],
@@ -534,6 +545,8 @@ export default function FantasyRailMap() {
       </div>
 
       <Map
+        onLoad={({ target }) => updateTrainScale(target)}
+        onZoom={({ target }) => updateTrainScale(target)}
         initialViewState={{
           longitude: -118.2437,
           latitude: 34.0522,

@@ -8,9 +8,9 @@ export const INTRA_URBES_SERVICE_LABELS = {
 // Two narrow, offset strokes distinguish trams from single-line streetcars.
 // Values correspond to zoom levels 8 and 13.
 export const TRAM_LINE_STYLE = {
-  lineWidth: [1.3, 2],
-  lineOffset: [1.5, 2.6],
-  casingWidth: [5.7, 9.2],
+  lineWidth: [1, 1.7],
+  lineOffset: [1.2, 2.1],
+  casingWidth: [4.4, 7.5],
 } as const;
 
 export const FANTASY_RAIL_NETWORKS = {
@@ -24,8 +24,8 @@ export const FANTASY_RAIL_NETWORKS = {
     description: "Fantasy metro / subway network",
     legendDescription: "Successor to the Pacific Electric Rail system, Rapid Transit",
     trainLabel: "Inter Urbes — Heavy rail train",
-    lineWidth: [3, 7],
-    casingWidth: [5, 11],
+    lineWidth: [2.4, 5.5],
+    casingWidth: [3.6, 7.5],
     stationColor: "#111827",
   },
   // Legend explanations are limited to the requested line-style distinction.
@@ -37,8 +37,8 @@ export const FANTASY_RAIL_NETWORKS = {
     description: "Successor to the LARy system",
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> · Road geometry: <a href="https://cams-lacounty.hub.arcgis.com/">LA County CAMS</a>',
     trainLabel: "Intra Urbes — Light Rail / Tram & Streetcar",
-    lineWidth: [2, 4],
-    casingWidth: [3.5, 6],
+    lineWidth: [1.5, 3],
+    casingWidth: [2.5, 4.6],
     stationColor: "#397568",
   },
 } as const;
