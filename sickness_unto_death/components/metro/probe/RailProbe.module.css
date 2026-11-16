@@ -52,9 +52,10 @@
 .error { padding:9px; border:2px solid #111; background:#ffdedb; font-size:11px; line-height:1.5; margin:12px 0; }.error button { margin-top:8px; }
 @media(hover:hover) { .routeCard:hover,.result:hover,.stopList button:hover { background:var(--probe-soft); }.routeCard:hover,.chips button:hover { transform:translate(2px,2px); box-shadow:none; } }
 @media(max-width:700px) {
-  .toggle { top:8px; right:8px; padding:7px; font-size:10px; gap:4px; }
-  .sidebar { top:52px; left:8px; right:8px; bottom:auto; width:auto; max-width:none; max-height:42%; }
-  .header { padding:8px 10px; }.header h2 { font-size:16px; margin-top:3px; }.eyebrow { font-size:8px; }
+  .toggle { top:0; right:0; padding:0; font-size:10px; gap:0; }
+  .probeMoon { display:block; height:auto; }
+  .sidebar { top:8px; left:8px; right:8px; bottom:auto; width:auto; max-width:none; max-height:42%; }
+  .header { padding:8px calc(18vw + 8px) 8px 10px; min-height:calc(18vw * 746 / 804); }.header h2 { font-size:16px; margin-top:3px; }.eyebrow { font-size:8px; }
   .scroll { padding:10px; }.filter { margin:10px 0; }
 }
 @media(prefers-reduced-motion:reduce) { .sidebar button,.toggle { transition:none!important; }.sidebar button:hover { transform:none; } }
