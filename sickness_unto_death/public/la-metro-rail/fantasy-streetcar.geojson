@@ -57793,6 +57793,7 @@
             "station_id": "inter:station-huntington-atlantic",
             "station_name": "Huntington / Atlantic",
             "routes": [
+              "ATL",
               "H"
             ],
             "distance_metres": 86,

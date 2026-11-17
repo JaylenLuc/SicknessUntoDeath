@@ -148,6 +148,8 @@
                     "inter:station-california-los-robles",
                     "inter:station-glenarm-los-robles",
                     "inter:station-mission-los-robles",
+                    "inter:station-huntington-atlantic",
+                    "inter:station-atlantic-alhambra",
                     "inter:station-main-atlantic",
                     "inter:station-v-97d4e0180a43",
                     "inter:station-hellman-atlantic",
@@ -186,6 +188,7 @@
                     [-118.134748, 34.109603],
                     [-118.134711, 34.106703],
                     [-118.134426, 34.106747],
+                    [-118.13453073715773, 34.09876066014382],
                     [-118.134625, 34.091573],
                     [-118.1344774200783, 34.07809271319221],
                     [-118.13451071812486, 34.077962959314775],
@@ -5116,6 +5119,7 @@
                     "inter:station-fair-oaks-mission",
                     "inter:station-huntington-main",
                     "inter:station-main-fremont",
+                    "inter:station-main-raymond",
                     "inter:station-main-atlantic",
                     "inter:station-main-garfield",
                     "inter:station-main-almansor",
@@ -5151,6 +5155,7 @@
                     [-118.156804, 34.096331],
                     [-118.152087, 34.095329],
                     [-118.145532, 34.091498],
+                    [-118.14502611427083, 34.09150147863113],
                     [-118.134625, 34.091573],
                     [-118.126842, 34.095162],
                     [-118.12103, 34.097948],
@@ -6478,7 +6483,7 @@
                 "name": "Huntington / Atlantic",
                 "street1": "Huntington Drive",
                 "street2": "Atlantic Boulevard",
-                "routes": "H",
+                "routes": "ATL, H",
                 "rail_mode": "heavy_rail",
                 "system": "fantasy",
                 "interchange": true,
@@ -6496,6 +6501,7 @@
                     "inter:station-huntington-atlantic"
                 ],
                 "station_route_ids": [
+                    "inter:ATL",
                     "inter:H"
                 ],
                 "station_coordinate_source": "inter",
@@ -13832,6 +13838,68 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [-118.553566, 34.220468]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "inter:station-atlantic-alhambra",
+            "properties": {
+                "id": "inter:station-atlantic-alhambra",
+                "name": "Atlantic / Alhambra Road",
+                "street1": "Atlantic Boulevard",
+                "street2": "Alhambra Road",
+                "routes": "ATL",
+                "rail_mode": "heavy_rail",
+                "system": "fantasy",
+                "status": "concept",
+                "canonical_station_id": "inter:station-atlantic-alhambra",
+                "station_aliases": [
+                    "Atlantic / Alhambra Road"
+                ],
+                "station_member_ids": [
+                    "inter:station-atlantic-alhambra"
+                ],
+                "station_route_ids": [
+                    "inter:ATL"
+                ],
+                "station_coordinate_source": "inter",
+                "station_coordinate_group": "heavyRail",
+                "station_coordinate_member_id": "inter:station-atlantic-alhambra"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.13453073715773, 34.09876066014382]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "inter:station-main-raymond",
+            "properties": {
+                "id": "inter:station-main-raymond",
+                "name": "Main / Raymond",
+                "street1": "Main Street",
+                "street2": "Raymond Avenue",
+                "routes": "SGV",
+                "rail_mode": "heavy_rail",
+                "system": "fantasy",
+                "status": "concept",
+                "canonical_station_id": "inter:station-main-raymond",
+                "station_aliases": [
+                    "Main / Raymond"
+                ],
+                "station_member_ids": [
+                    "inter:station-main-raymond"
+                ],
+                "station_route_ids": [
+                    "inter:SGV"
+                ],
+                "station_coordinate_source": "inter",
+                "station_coordinate_group": "heavyRail",
+                "station_coordinate_member_id": "inter:station-main-raymond"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-118.14502611427083, 34.09150147863113]
             }
         }
     ],
