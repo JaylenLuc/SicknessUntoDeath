@@ -518,30 +518,6 @@ export default function FantasyRailMap() {
             className="mt-1.5 flex flex-col gap-1 sm:gap-1.5 lg:mt-2 lg:gap-2"
           >
             <LayerToggleButton
-              active={visibleLayers.pacificElectricEsri}
-              label={PE_ESRI_LABEL}
-              description={PE_ESRI_DESCRIPTION}
-              colorClassName="bg-red-100 hover:bg-red-200"
-              onClick={() => toggleLayer("pacificElectricEsri")}
-            />
-            <LayerToggleButton
-              active={visibleLayers.pacificElectric}
-              label="Pacific Electric (1915 + 1928)"
-              description="Brooks–Lutz · LA County coverage"
-              colorClassName="bg-orange-100 hover:bg-orange-200"
-              onClick={() =>
-                toggleLayer("pacificElectric")
-              }
-            />
-            <LayerToggleButton
-              active={visibleLayers.losAngelesRailway}
-              label="LARy Yellow Cars (1915 + 1930s)"
-              colorClassName="bg-yellow-100 hover:bg-yellow-200"
-              onClick={() =>
-                toggleLayer("losAngelesRailway")
-              }
-            />
-            <LayerToggleButton
               active={visibleLayers.existingMetro}
               label="LA Metro 2026"
               colorClassName="bg-sky-100 hover:bg-sky-200"
@@ -570,6 +546,30 @@ export default function FantasyRailMap() {
               description={FANTASY_RAIL_NETWORKS.lightRail.description}
               colorClassName="bg-emerald-100 hover:bg-emerald-200"
               onClick={() => toggleLayer("lightRail")}
+            />
+            <LayerToggleButton
+              active={visibleLayers.pacificElectricEsri}
+              label={PE_ESRI_LABEL}
+              description={PE_ESRI_DESCRIPTION}
+              colorClassName="bg-red-100 hover:bg-red-200"
+              onClick={() => toggleLayer("pacificElectricEsri")}
+            />
+            <LayerToggleButton
+              active={visibleLayers.pacificElectric}
+              label="Pacific Electric (1915 + 1928)"
+              description="Brooks–Lutz · LA County coverage"
+              colorClassName="bg-orange-100 hover:bg-orange-200"
+              onClick={() =>
+                toggleLayer("pacificElectric")
+              }
+            />
+            <LayerToggleButton
+              active={visibleLayers.losAngelesRailway}
+              label="LARy Yellow Cars (1915 + 1930s)"
+              colorClassName="bg-yellow-100 hover:bg-yellow-200"
+              onClick={() =>
+                toggleLayer("losAngelesRailway")
+              }
             />
 
             {/* <LayerToggleButton
@@ -649,17 +649,6 @@ export default function FantasyRailMap() {
         // attributionControl={false}
       >
         <NavigationControl position="bottom-right" />
-        {!showingOnlySelection && visibleLayers.pacificElectricEsri && (
-          <PacificElectricEsriLayer />
-        )}
-        {!showingOnlySelection && visibleLayers.pacificElectric && (
-          <PacificElectricLayer />
-        )}
-
-        {!showingOnlySelection && visibleLayers.losAngelesRailway && (
-          <LosAngelesRailwayLayer />
-        )}
-        
         {!showingOnlySelection && visibleLayers.existingMetro && (
           <MetroLA2026 />
         )}
@@ -674,6 +663,17 @@ export default function FantasyRailMap() {
         {!showingOnlySelection && visibleLayers.lightRail && (
           <FantasyNetwork network="lightRail" />
         )}
+        {!showingOnlySelection && visibleLayers.pacificElectricEsri && (
+          <PacificElectricEsriLayer />
+        )}
+        {!showingOnlySelection && visibleLayers.pacificElectric && (
+          <PacificElectricLayer />
+        )}
+
+        {!showingOnlySelection && visibleLayers.losAngelesRailway && (
+          <LosAngelesRailwayLayer />
+        )}
+        
         {probeOpen && catalog && selection && <RailProbeFocus catalog={catalog} selection={selection} isolated={showingOnlySelection} isolatedRouteId={isolatedRouteId} />}
 
         {/* {visibleLayers.userDraft && (
