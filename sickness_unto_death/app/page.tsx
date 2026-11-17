@@ -223,7 +223,7 @@ export default function Home() {
             />
           </div>
         </Link>
-        <Link href="" className={HOME_LINK_CLASS}>
+        <Link href="https://distrokid.com/hyperfollow/123go/i-dont-know-what-i-am-doing-beta-100" className={HOME_LINK_CLASS}>
           <div className={HOME_TILE_CLASS}>
             <Image 
               src="/planet.gif" 
