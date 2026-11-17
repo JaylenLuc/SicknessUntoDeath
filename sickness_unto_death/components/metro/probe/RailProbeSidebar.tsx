@@ -16,7 +16,7 @@ type Props = {
 };
 
 function RouteBadge({ route }: { route: ExplorerRoute }) {
-  return <span className={`${styles.badge} ${route.group === "lightRail" ? styles.squareBadge : route.group === "heavyRail" || route.group === "existingMetro" ? styles.circleBadge : ""}`} style={{ background: route.color, color: routeTextColor(route.color) }}>{route.code}</span>;
+  return <span className={`${styles.badge} ${route.group === "lightRail" ? styles.squareBadge : styles.circleBadge}`} style={{ background: route.color, color: routeTextColor(route.color) }}>{route.code}</span>;
 }
 
 export default function RailProbeSidebar({ catalog, selection, isolated, loading, errors, onRetry, onSelect, onClear, onIsolate }: Props) {

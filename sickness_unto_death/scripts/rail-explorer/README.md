@@ -27,3 +27,23 @@ already-relocated copies as authoritative coordinates.
 
 The script validates station references, shared coordinates, serving lines, branch
 order, and unchanged line geometry before writing.
+
+Station alignment
+=================
+
+After normalization, `node scripts/rail-explorer/align-stations.mjs` previews
+alignment repairs. Add `--write` to save them. Existing/proposed stations snap to
+the closest serving alignment in their recorded authoritative source. Every
+network copy receives the same coordinates; fantasy-only station locations stay
+fixed. Fantasy routes extend at endpoints or bend locally to touch their stations,
+with neighboring stops pinned in place.
+
+By default, existing/proposed route geometry is preserved. The report lists gaps
+that remain where several alignments serve one shared station but do not meet.
+`--connect-shared` permits small local adjustments to those routes as well and
+requires every station/serving-feature pair to touch within one millimetre before
+writing. This is a map geometry adjustment, not a surveyed track alignment.
+
+The alignment step preserves station identities, route memberships, stop order,
+and other feature properties. Re-running with the same options makes no changes.
+Run normalization again afterward to refresh any walking-distance metadata.

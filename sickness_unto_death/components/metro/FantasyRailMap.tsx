@@ -626,7 +626,7 @@ export default function FantasyRailMap() {
         initialViewState={{
           longitude: -118.2437,
           latitude: 34.0522,
-          zoom: 9.5,
+          zoom: 11.5,
         }}
         mapStyle={
           baseMap === "satellite"
