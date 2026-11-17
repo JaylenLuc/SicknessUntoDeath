@@ -220,7 +220,7 @@ export default function FantasyRailLegend({
     };
   }, []);
 
-  const renderLines = (lines: FantasyLegendLine[]) => (
+  const renderLines = (lines: FantasyLegendLine[], square = false) => (
     <div
       className={
         compact
@@ -236,7 +236,8 @@ export default function FantasyRailLegend({
           <span
             aria-hidden="true"
             className={[
-              "flex shrink-0 items-center justify-center rounded-full border-2 border-black font-bold leading-none",
+              "flex shrink-0 items-center justify-center border-2 border-black font-bold leading-none",
+              square ? "rounded-none" : "rounded-full",
               compact
                 ? "size-6 text-[7px] shadow-[1px_1px_0_#000]"
                 : "size-9 text-[10px] shadow-[2px_2px_0_#000]",
@@ -426,7 +427,7 @@ export default function FantasyRailLegend({
                 <span>{network === "lightRail" ? "Two thin parallel lines" : "Single solid line"}</span>
               </div>
             )}
-            {renderLines(groups[network])}
+            {renderLines(groups[network], network === "lightRail" || network === "streetcar")}
           </div>
         )
       ))}

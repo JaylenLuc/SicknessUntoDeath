@@ -16,7 +16,7 @@ type Props = {
 };
 
 function RouteBadge({ route }: { route: ExplorerRoute }) {
-  return <span className={styles.badge} style={{ background: route.color, color: routeTextColor(route.color) }}>{route.code}</span>;
+  return <span className={`${styles.badge} ${route.group === "lightRail" ? styles.squareBadge : route.group === "heavyRail" || route.group === "existingMetro" ? styles.circleBadge : ""}`} style={{ background: route.color, color: routeTextColor(route.color) }}>{route.code}</span>;
 }
 
 export default function RailProbeSidebar({ catalog, selection, isolated, loading, errors, onRetry, onSelect, onClear, onIsolate }: Props) {
@@ -29,7 +29,7 @@ export default function RailProbeSidebar({ catalog, selection, isolated, loading
   const station = selection?.kind === "station" ? stationMap.get(selection.id) : undefined;
   const needle = normalizeSearch(query);
   const routes = catalog?.routes.filter((r) => (group === "all" || r.group === group) && (!needle || normalizeSearch(`${r.code} ${r.name} ${GROUP_LABELS[r.group]}`).includes(needle))) ?? [];
-  const stations = needle ? catalog?.stations.filter((s) => (group === "all" || s.group === group) && normalizeSearch(s.name).includes(needle)) ?? [] : [];
+  const stations = needle ? catalog?.stations.filter((s) => (group === "all" || s.groups.includes(group)) && s.aliases.some((name) => normalizeSearch(name).includes(needle))) ?? [] : [];
   const select = (next: NonNullable<RailSelection>) => { setQuery(""); onSelect(next); };
 
   return (
@@ -52,18 +52,16 @@ export default function RailProbeSidebar({ catalog, selection, isolated, loading
         {needle ? <section aria-label="Search results">
           <p className={styles.sectionHeading} role="status">{routes.length} lines · {stations.length} stations</p>
           {routes.slice(0, 15).map((r) => <button className={styles.routeCard} type="button" key={r.id} onClick={() => select({ kind: "route", id: r.id })}><RouteBadge route={r} /><span>{r.name}<small>{GROUP_LABELS[r.group]}</small></span></button>)}
-          {stations.slice(0, 35).map((s) => <button className={styles.result} type="button" key={s.id} onClick={() => select({ kind: "station", id: s.id })}>{s.name}<small>{GROUP_LABELS[s.group]} · {s.routes.map((id) => routeMap.get(id)?.code).filter(Boolean).join(" / ")}</small></button>)}
+          {stations.slice(0, 35).map((s) => <button className={styles.result} type="button" key={s.id} onClick={() => select({ kind: "station", id: s.id })}>{s.name}<small>{s.groups.map((g) => GROUP_LABELS[g]).join(" / ")} · {s.routes.map((id) => routeMap.get(id)?.code).filter(Boolean).join(" / ")}</small></button>)}
           {routes.length > 15 || stations.length > 35 ? <p className={styles.note}>Refine your search to see more specific matches.</p> : null}
           {!loading && !routes.length && !stations.length && <p className={styles.note}>No matches. Try a station name, street, or route code.</p>}
         </section> : station ? <section className={styles.station} aria-label="Selected station" aria-live="polite">
-          <span className={styles.eyebrow}>{GROUP_LABELS[station.group]}</span>
+          <span className={styles.eyebrow}>{station.groups.map((g) => GROUP_LABELS[g]).join(" / ")}</span>
           <h3>{station.name}</h3>
           <Button size="sm" type="button" onClick={() => onSelect({ kind: "station", id: station.id })}>Center on station</Button>
           <h4>Lines serving this station</h4>
           <div className={styles.chips}>{station.routes.map((id) => { const r = routeMap.get(id); return r ? <button type="button" key={id} onClick={() => select({ kind: "route", id })} aria-label={`Explore ${r.name}`}><RouteBadge route={r} /></button> : null; })}</div>
           {!station.routes.length && <p className={styles.note}>No route membership is recorded for this station.</p>}
-          {station.transferNote && <p className={styles.note}>{station.transferNote}</p>}
-          {station.transferIds.some((id) => stationMap.has(id)) && <><h4>Connecting platforms</h4>{station.transferIds.map((id) => { const target = stationMap.get(id); return target ? <button className={styles.result} type="button" key={id} onClick={() => select({ kind: "station", id })}>{target.name}<small>{GROUP_LABELS[target.group]} ↗</small></button> : null; })}</>}
         </section> : route ? <section aria-label="Selected route">
           <div className={styles.routeSummary}><RouteBadge route={route} /><h3>{route.name}</h3><p>{GROUP_LABELS[route.group]} · {route.stationIds.length} stops</p></div>
           <Button size="sm" type="button" onClick={() => onSelect({ kind: "route", id: route.id })}>Fit entire line</Button>
@@ -92,9 +90,9 @@ export default function RailProbeSidebar({ catalog, selection, isolated, loading
             </Menu>
           </div>
           <p className={styles.sectionHeading}>{routes.length} lines · Select a line to explore</p>
+          <p className={styles.note}>You can click on a route or station on the map.</p>
           {routes.map((r) => <button className={styles.routeCard} type="button" key={r.id} onClick={() => select({ kind: "route", id: r.id })}><RouteBadge route={r} /><span>{r.name}<small>{GROUP_LABELS[r.group]} · {r.stationIds.length} stops</small></span></button>)}
         </section>}
-        <p className={styles.note}>You can click on a route or station on the map.</p>
       </div>
     </aside>
   );

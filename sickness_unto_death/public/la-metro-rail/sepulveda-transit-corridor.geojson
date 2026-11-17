@@ -11,63 +11,280 @@
         "status": "planning",
         "phase_label": "January 2026 selected underground heavy-rail LPA",
         "geometry_accuracy": "schematic alignment connecting Metro's published Modified Alternative 5 station locations",
-        "source_url": "https://www.metro.net/projects/sepulvedacorridor/"
+        "source_url": "https://www.metro.net/projects/sepulvedacorridor/",
+        "stationIds": [
+          "east-sfv:Van Nuys Metrolink@-118.448781,34.211724",
+          "east-sfv:Van Nuys / G Line@-118.448734,34.180674",
+          "sepulveda:Ventura Boulevard@-118.4489,34.1482",
+          "sepulveda:UCLA Gateway Plaza@-118.44483,34.069213",
+          "sepulveda:Wilshire / Westwood (D Line)@-118.445591,34.059081",
+          "sepulveda:Santa Monica Boulevard@-118.442909,34.047477",
+          "metro:80135"
+        ]
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [-118.448781, 34.211724],
-          [-118.448734, 34.180674],
-          [-118.448900, 34.148200],
-          [-118.449500, 34.119000],
-          [-118.444830, 34.069213],
-          [-118.445591, 34.059081],
-          [-118.442909, 34.047477],
-          [-118.433356, 34.036060]
+          [
+            -118.448781,
+            34.211724
+          ],
+          [
+            -118.448734,
+            34.180674
+          ],
+          [
+            -118.4489,
+            34.1482
+          ],
+          [
+            -118.4495,
+            34.119
+          ],
+          [
+            -118.44483,
+            34.069213
+          ],
+          [
+            -118.445591,
+            34.059081
+          ],
+          [
+            -118.442909,
+            34.047477
+          ],
+          [
+            -118.433356,
+            34.03606
+          ]
         ]
       }
     },
     {
       "type": "Feature",
-      "id": "stc-van-nuys-metrolink",
-      "properties": { "stop_name": "Van Nuys Metrolink", "status": "planning", "terminal": true },
-      "geometry": { "type": "Point", "coordinates": [-118.448781, 34.211724] }
+      "id": "east-sfv:Van Nuys Metrolink@-118.448781,34.211724",
+      "properties": {
+        "stop_name": "Van Nuys Metrolink",
+        "status": "planning",
+        "terminal": true,
+        "id": "east-sfv:Van Nuys Metrolink@-118.448781,34.211724",
+        "canonical_station_id": "east-sfv:Van Nuys Metrolink@-118.448781,34.211724",
+        "name": "Van Nuys Metrolink",
+        "station_aliases": [
+          "Van Nuys Metrolink"
+        ],
+        "station_member_ids": [
+          "east-sfv:Van Nuys Metrolink@-118.448781,34.211724",
+          "sepulveda:Van Nuys Metrolink@-118.448781,34.211724"
+        ],
+        "station_route_ids": [
+          "east-sfv:F",
+          "sepulveda:S"
+        ],
+        "routes": "S",
+        "station_coordinate_source": "east-sfv",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "east-sfv:Van Nuys Metrolink@-118.448781,34.211724"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.448781,
+          34.211724
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "stc-g-line",
-      "properties": { "stop_name": "Van Nuys / G Line", "status": "planning" },
-      "geometry": { "type": "Point", "coordinates": [-118.448734, 34.180674] }
+      "id": "east-sfv:Van Nuys / G Line@-118.448734,34.180674",
+      "properties": {
+        "stop_name": "Van Nuys / G Line",
+        "status": "planning",
+        "id": "east-sfv:Van Nuys / G Line@-118.448734,34.180674",
+        "canonical_station_id": "east-sfv:Van Nuys / G Line@-118.448734,34.180674",
+        "name": "Van Nuys / G Line",
+        "station_aliases": [
+          "Van Nuys / G Line"
+        ],
+        "station_member_ids": [
+          "east-sfv:Van Nuys / G Line@-118.448734,34.180674",
+          "sepulveda:Van Nuys / G Line@-118.448734,34.180674"
+        ],
+        "station_route_ids": [
+          "east-sfv:F",
+          "sepulveda:S"
+        ],
+        "routes": "S",
+        "station_coordinate_source": "east-sfv",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "east-sfv:Van Nuys / G Line@-118.448734,34.180674"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.448734,
+          34.180674
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "stc-ventura",
-      "properties": { "stop_name": "Ventura Boulevard", "status": "planning" },
-      "geometry": { "type": "Point", "coordinates": [-118.448900, 34.148200] }
+      "id": "sepulveda:Ventura Boulevard@-118.4489,34.1482",
+      "properties": {
+        "stop_name": "Ventura Boulevard",
+        "status": "planning",
+        "id": "sepulveda:Ventura Boulevard@-118.4489,34.1482",
+        "canonical_station_id": "sepulveda:Ventura Boulevard@-118.4489,34.1482",
+        "name": "Ventura Boulevard",
+        "station_aliases": [
+          "Ventura Boulevard"
+        ],
+        "station_member_ids": [
+          "sepulveda:Ventura Boulevard@-118.4489,34.1482"
+        ],
+        "station_route_ids": [
+          "sepulveda:S"
+        ],
+        "routes": "S",
+        "station_coordinate_source": "sepulveda",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "sepulveda:Ventura Boulevard@-118.4489,34.1482"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.4489,
+          34.1482
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "stc-ucla",
-      "properties": { "stop_name": "UCLA Gateway Plaza", "status": "planning" },
-      "geometry": { "type": "Point", "coordinates": [-118.444830, 34.069213] }
+      "id": "sepulveda:UCLA Gateway Plaza@-118.44483,34.069213",
+      "properties": {
+        "stop_name": "UCLA Gateway Plaza",
+        "status": "planning",
+        "id": "sepulveda:UCLA Gateway Plaza@-118.44483,34.069213",
+        "canonical_station_id": "sepulveda:UCLA Gateway Plaza@-118.44483,34.069213",
+        "name": "UCLA Gateway Plaza",
+        "station_aliases": [
+          "UCLA Gateway Plaza"
+        ],
+        "station_member_ids": [
+          "sepulveda:UCLA Gateway Plaza@-118.44483,34.069213"
+        ],
+        "station_route_ids": [
+          "sepulveda:S"
+        ],
+        "routes": "S",
+        "station_coordinate_source": "sepulveda",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "sepulveda:UCLA Gateway Plaza@-118.44483,34.069213"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.44483,
+          34.069213
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "stc-westwood-ucla",
-      "properties": { "stop_name": "Wilshire / Westwood (D Line)", "status": "planning" },
-      "geometry": { "type": "Point", "coordinates": [-118.445591, 34.059081] }
+      "id": "sepulveda:Wilshire / Westwood (D Line)@-118.445591,34.059081",
+      "properties": {
+        "stop_name": "Wilshire / Westwood (D Line)",
+        "status": "planning",
+        "id": "sepulveda:Wilshire / Westwood (D Line)@-118.445591,34.059081",
+        "canonical_station_id": "sepulveda:Wilshire / Westwood (D Line)@-118.445591,34.059081",
+        "name": "Wilshire / Westwood (D Line)",
+        "station_aliases": [
+          "Wilshire / Westwood (D Line)"
+        ],
+        "station_member_ids": [
+          "sepulveda:Wilshire / Westwood (D Line)@-118.445591,34.059081"
+        ],
+        "station_route_ids": [
+          "sepulveda:S"
+        ],
+        "routes": "S",
+        "station_coordinate_source": "sepulveda",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "sepulveda:Wilshire / Westwood (D Line)@-118.445591,34.059081"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.445591,
+          34.059081
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "stc-santa-monica",
-      "properties": { "stop_name": "Santa Monica Boulevard", "status": "planning" },
-      "geometry": { "type": "Point", "coordinates": [-118.442909, 34.047477] }
+      "id": "sepulveda:Santa Monica Boulevard@-118.442909,34.047477",
+      "properties": {
+        "stop_name": "Santa Monica Boulevard",
+        "status": "planning",
+        "id": "sepulveda:Santa Monica Boulevard@-118.442909,34.047477",
+        "canonical_station_id": "sepulveda:Santa Monica Boulevard@-118.442909,34.047477",
+        "name": "Santa Monica Boulevard",
+        "station_aliases": [
+          "Santa Monica Boulevard"
+        ],
+        "station_member_ids": [
+          "sepulveda:Santa Monica Boulevard@-118.442909,34.047477"
+        ],
+        "station_route_ids": [
+          "sepulveda:S"
+        ],
+        "routes": "S",
+        "station_coordinate_source": "sepulveda",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "sepulveda:Santa Monica Boulevard@-118.442909,34.047477"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.442909,
+          34.047477
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "stc-expo-sepulveda",
-      "properties": { "stop_name": "Expo / Sepulveda (E Line)", "status": "planning", "terminal": true },
-      "geometry": { "type": "Point", "coordinates": [-118.433356, 34.036060] }
+      "id": "metro:80135",
+      "properties": {
+        "stop_name": "Expo / Sepulveda Station",
+        "status": "planning",
+        "terminal": true,
+        "id": "metro:80135",
+        "canonical_station_id": "metro:80135",
+        "name": "Expo / Sepulveda Station",
+        "station_aliases": [
+          "Expo / Sepulveda (E Line)",
+          "Expo / Sepulveda Station"
+        ],
+        "station_member_ids": [
+          "metro:80135",
+          "sepulveda:Expo / Sepulveda (E Line)@-118.433356,34.03606"
+        ],
+        "station_route_ids": [
+          "metro:804",
+          "sepulveda:S"
+        ],
+        "routes": "S",
+        "station_coordinate_source": "metro",
+        "station_coordinate_group": "existingMetro",
+        "station_coordinate_member_id": "metro:80135"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.43423,
+          34.03541
+        ]
+      }
     }
   ]
 }

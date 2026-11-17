@@ -14,101 +14,266 @@
         "system": "metro",
         "phase_label": "Sections 2 and 3 under construction",
         "geometry_accuracy": "Metro construction alignment",
-        "source_url": "https://www.metro.net/projects/westside/"
+        "source_url": "https://www.metro.net/projects/westside/",
+        "stationIds": [
+          "d-line-extension:Beverly Dr Station@-118.398099,34.06709",
+          "inter:station-century-city",
+          "d-line-extension:Westwood / UCLA Station@-118.44531,34.058467",
+          "d-line-extension:Westwood / VA Hospital Station@-118.453649,34.054364"
+        ]
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [-118.376220, 34.065150],
-          [-118.381828, 34.066594],
-          [-118.383299, 34.066949],
-          [-118.384464, 34.067046],
-          [-118.388199, 34.067063],
-          [-118.398079, 34.067097],
-          [-118.405592, 34.067126],
-          [-118.406880, 34.066924],
-          [-118.407563, 34.066343],
-          [-118.408220, 34.065636],
-          [-118.408624, 34.064650],
-          [-118.408927, 34.063033],
-          [-118.409963, 34.062048],
-          [-118.412894, 34.060633],
-          [-118.415395, 34.059016],
-          [-118.416734, 34.058172],
-          [-118.418077, 34.057817],
-          [-118.419774, 34.057935],
-          [-118.421393, 34.058567],
-          [-118.428105, 34.061252],
-          [-118.430197, 34.061686],
-          [-118.432566, 34.061725],
-          [-118.434934, 34.061133],
-          [-118.442593, 34.059080],
-          [-118.448065, 34.057702],
-          [-118.449859, 34.056969],
-          [-118.451123, 34.055857],
-          [-118.453776, 34.054316]
+          [
+            -118.37622,
+            34.06515
+          ],
+          [
+            -118.381828,
+            34.066594
+          ],
+          [
+            -118.383299,
+            34.066949
+          ],
+          [
+            -118.384464,
+            34.067046
+          ],
+          [
+            -118.388199,
+            34.067063
+          ],
+          [
+            -118.398079,
+            34.067097
+          ],
+          [
+            -118.405592,
+            34.067126
+          ],
+          [
+            -118.40688,
+            34.066924
+          ],
+          [
+            -118.407563,
+            34.066343
+          ],
+          [
+            -118.40822,
+            34.065636
+          ],
+          [
+            -118.408624,
+            34.06465
+          ],
+          [
+            -118.408927,
+            34.063033
+          ],
+          [
+            -118.409963,
+            34.062048
+          ],
+          [
+            -118.412894,
+            34.060633
+          ],
+          [
+            -118.415395,
+            34.059016
+          ],
+          [
+            -118.416734,
+            34.058172
+          ],
+          [
+            -118.418077,
+            34.057817
+          ],
+          [
+            -118.419774,
+            34.057935
+          ],
+          [
+            -118.421393,
+            34.058567
+          ],
+          [
+            -118.428105,
+            34.061252
+          ],
+          [
+            -118.430197,
+            34.061686
+          ],
+          [
+            -118.432566,
+            34.061725
+          ],
+          [
+            -118.434934,
+            34.061133
+          ],
+          [
+            -118.442593,
+            34.05908
+          ],
+          [
+            -118.448065,
+            34.057702
+          ],
+          [
+            -118.449859,
+            34.056969
+          ],
+          [
+            -118.451123,
+            34.055857
+          ],
+          [
+            -118.453776,
+            34.054316
+          ]
         ]
       }
     },
     {
       "type": "Feature",
-      "id": "station-d-beverly-dr",
+      "id": "d-line-extension:Beverly Dr Station@-118.398099,34.06709",
       "properties": {
         "stop_name": "Beverly Dr Station",
-        "routes": "D",
+        "routes": "805",
         "status": "under_construction",
         "section": 2,
-        "system": "metro"
+        "system": "metro",
+        "id": "d-line-extension:Beverly Dr Station@-118.398099,34.06709",
+        "canonical_station_id": "d-line-extension:Beverly Dr Station@-118.398099,34.06709",
+        "name": "Beverly Dr Station",
+        "station_aliases": [
+          "Beverly Dr Station"
+        ],
+        "station_member_ids": [
+          "d-line-extension:Beverly Dr Station@-118.398099,34.06709"
+        ],
+        "station_route_ids": [
+          "d-line-extension:805"
+        ],
+        "station_coordinate_source": "d-line-extension",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "d-line-extension:Beverly Dr Station@-118.398099,34.06709"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.398099, 34.067090]
+        "coordinates": [
+          -118.398099,
+          34.06709
+        ]
       }
     },
     {
       "type": "Feature",
-      "id": "station-d-century-city",
+      "id": "inter:station-century-city",
       "properties": {
-        "stop_name": "Century City Station",
-        "routes": "D",
+        "stop_name": "Century City",
+        "routes": "805",
         "status": "under_construction",
         "section": 2,
-        "system": "metro"
+        "system": "metro",
+        "id": "inter:station-century-city",
+        "canonical_station_id": "inter:station-century-city",
+        "name": "Century City",
+        "station_aliases": [
+          "Century City",
+          "Century City Station"
+        ],
+        "station_member_ids": [
+          "d-line-extension:Century City Station@-118.415355,34.059019",
+          "inter:station-century-city"
+        ],
+        "station_route_ids": [
+          "d-line-extension:805",
+          "inter:F"
+        ],
+        "station_coordinate_source": "d-line-extension",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "d-line-extension:Century City Station@-118.415355,34.059019"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.415355, 34.059019]
+        "coordinates": [
+          -118.415355,
+          34.059019
+        ]
       }
     },
     {
       "type": "Feature",
-      "id": "station-d-westwood-ucla",
+      "id": "d-line-extension:Westwood / UCLA Station@-118.44531,34.058467",
       "properties": {
         "stop_name": "Westwood / UCLA Station",
-        "routes": "D",
-        "status": "under_construction",
-        "section": 3,
-        "system": "metro"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [-118.445310, 34.058467]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "station-d-westwood-va",
-      "properties": {
-        "stop_name": "Westwood / VA Hospital Station",
-        "routes": "D",
+        "routes": "805",
         "status": "under_construction",
         "section": 3,
         "system": "metro",
-        "terminal": true
+        "id": "d-line-extension:Westwood / UCLA Station@-118.44531,34.058467",
+        "canonical_station_id": "d-line-extension:Westwood / UCLA Station@-118.44531,34.058467",
+        "name": "Westwood / UCLA Station",
+        "station_aliases": [
+          "Westwood / UCLA Station"
+        ],
+        "station_member_ids": [
+          "d-line-extension:Westwood / UCLA Station@-118.44531,34.058467"
+        ],
+        "station_route_ids": [
+          "d-line-extension:805"
+        ],
+        "station_coordinate_source": "d-line-extension",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "d-line-extension:Westwood / UCLA Station@-118.44531,34.058467"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-118.453649, 34.054364]
+        "coordinates": [
+          -118.44531,
+          34.058467
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "d-line-extension:Westwood / VA Hospital Station@-118.453649,34.054364",
+      "properties": {
+        "stop_name": "Westwood / VA Hospital Station",
+        "routes": "805",
+        "status": "under_construction",
+        "section": 3,
+        "system": "metro",
+        "terminal": true,
+        "id": "d-line-extension:Westwood / VA Hospital Station@-118.453649,34.054364",
+        "canonical_station_id": "d-line-extension:Westwood / VA Hospital Station@-118.453649,34.054364",
+        "name": "Westwood / VA Hospital Station",
+        "station_aliases": [
+          "Westwood / VA Hospital Station"
+        ],
+        "station_member_ids": [
+          "d-line-extension:Westwood / VA Hospital Station@-118.453649,34.054364"
+        ],
+        "station_route_ids": [
+          "d-line-extension:805"
+        ],
+        "station_coordinate_source": "d-line-extension",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "d-line-extension:Westwood / VA Hospital Station@-118.453649,34.054364"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.453649,
+          34.054364
+        ]
       }
     }
   ]

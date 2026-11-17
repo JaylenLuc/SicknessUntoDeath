@@ -11,8 +11,9 @@ export type ExplorerRoute = {
 export type ExplorerStation = {
   id: string; name: string; coordinates: [number, number]; group: RailGroup; sourceId: string;
   routes: string[]; transferNote: string; transferIds: string[];
+  aliases: string[]; memberIds: string[]; groups: RailGroup[];
 };
-export type RailCatalog = { routes: ExplorerRoute[]; stations: ExplorerStation[]; sources: RailSource[] };
+export type RailCatalog = { routes: ExplorerRoute[]; stations: ExplorerStation[]; sources: RailSource[]; stationAliases: Record<string, string> };
 export type RailSelection = { kind: "route" | "station"; id: string } | null;
 
 export const GROUP_LABELS: Record<RailGroup, string> = {
@@ -58,15 +59,18 @@ export function buildRailCatalog(inputs: { source: RailSource; data: RailData }[
     if (feature.geometry.type !== "Point") continue;
     const props = feature.properties;
     const rawId = sourceStationId(props, feature.geometry.coordinates);
-    const id = `${source.id}:${rawId}`;
+    const id = text(props.canonical_station_id) || `${source.id}:${rawId}`;
     const previous = stationMap.get(id);
     const references = [props.inter_urbes_transfers, props.local_walking_transfers].flatMap((value) => Array.isArray(value) ? value : []);
     const transferIds = [...strings(props.transfer_station_ids), ...strings(props.inter_urbes_transfer_station_ids), text(props.transfer_station_id), ...references.map((r) => text(r?.station_id))].filter(Boolean);
     stationMap.set(id, {
-      id, sourceId: source.id, group: source.group, name: text(props.name ?? props.stop_name) || "Unnamed station",
+      id, sourceId: previous?.sourceId ?? source.id, group: previous?.group ?? source.group, name: text(props.name ?? props.stop_name) || "Unnamed station",
       coordinates: feature.geometry.coordinates.slice(0, 2) as [number, number], routes: [],
       transferNote: [previous?.transferNote, text(props.transfer)].filter(Boolean).join("; "),
       transferIds: [...new Set([...(previous?.transferIds ?? []), ...transferIds])],
+      aliases: [...new Set([...(previous?.aliases ?? []), ...strings(props.station_aliases), text(props.name ?? props.stop_name) || "Unnamed station"])],
+      memberIds: [...new Set([...(previous?.memberIds ?? []), ...strings(props.station_member_ids), id])],
+      groups: [...new Set([...(previous?.groups ?? []), source.group])],
     });
     const previousProps = rawStations.get(id)?.props;
     rawStations.set(id, { rawId, props: previousProps ? { ...previousProps, ...props, routes: `${text(previousProps.routes)}, ${text(props.routes)}` } : props });
@@ -96,7 +100,7 @@ export function buildRailCatalog(inputs: { source: RailSource; data: RailData }[
     const explicit = strings(props.stationIds);
     let stops: string[];
     if (explicit.length) {
-      stops = explicit.map((rawId) => `${source.id}:${rawId}`).filter((stationId) => stationMap.has(stationId));
+      stops = explicit.map((rawId) => stationMap.has(rawId) ? rawId : `${source.id}:${rawId}`).filter((stationId) => stationMap.has(stationId));
     } else {
       stops = [...stationMap.values()].filter((s) => s.sourceId === source.id).flatMap((station) => {
         const raw = rawStations.get(station.id)!.props;
@@ -123,13 +127,15 @@ export function buildRailCatalog(inputs: { source: RailSource; data: RailData }[
     station.transferIds = station.transferIds.flatMap((id) => transferLookup.has(id) ? [transferLookup.get(id)!] : []);
   }
   const routes = [...routeMap.values()].sort((a, b) => a.group.localeCompare(b.group) || a.code.localeCompare(b.code, "en", { numeric: true }));
-  return { routes, stations: [...stationMap.values()], sources: inputs.map((i) => i.source) };
+  const stations = [...stationMap.values()];
+  const stationAliases = Object.fromEntries(stations.flatMap((station) => station.memberIds.map((id) => [id, station.id])));
+  return { routes, stations, stationAliases, sources: inputs.map((i) => i.source) };
 }
 
 export function getFocusData(catalog: RailCatalog, selection: RailSelection): RailData {
   if (!selection) return { type: "FeatureCollection", features: [] };
   const route = selection.kind === "route" ? catalog.routes.find((r) => r.id === selection.id) : undefined;
-  const stations = route ? catalog.stations.filter((s) => route.stationIds.includes(s.id)) : catalog.stations.filter((s) => s.id === selection.id);
+  const stations = route ? catalog.stations.filter((s) => route.stationIds.includes(s.id)) : catalog.stations.filter((s) => s.id === (catalog.stationAliases[selection.id] ?? selection.id));
   return {
     type: "FeatureCollection",
     features: [
@@ -143,13 +149,16 @@ export function getFocusData(catalog: RailCatalog, selection: RailSelection): Ra
 }
 
 export function resolveMapSelection(catalog: RailCatalog, sourceId: string, properties: Record<string, unknown>, geometry: { type: string; coordinates?: unknown }): RailSelection {
-  if (typeof properties.explorer_station_id === "string") return { kind: "station", id: properties.explorer_station_id };
+  if (typeof properties.explorer_station_id === "string") {
+    const id = catalog.stationAliases[properties.explorer_station_id];
+    return id ? { kind: "station", id } : null;
+  }
   if (typeof properties.explorer_route_id === "string") return { kind: "route", id: properties.explorer_route_id };
   const source = catalog.sources.find((s) => s.mapSource === sourceId);
   if (!source) return null;
   if (geometry.type === "Point" && Array.isArray(geometry.coordinates)) {
-    const id = `${source.id}:${sourceStationId(properties, geometry.coordinates as Position)}`;
-    return catalog.stations.some((s) => s.id === id) ? { kind: "station", id } : null;
+    const id = text(properties.canonical_station_id) || `${source.id}:${sourceStationId(properties, geometry.coordinates as Position)}`;
+    return catalog.stationAliases[id] ? { kind: "station", id: catalog.stationAliases[id] } : null;
   }
   const id = `${source.id}:${sourceRouteCode(source, properties)}`;
   return catalog.routes.some((r) => r.id === id) ? { kind: "route", id } : null;

@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "metro:generate": "gtfs-to-geojson --configPath gtfs-config.json",
-    "metro:explorer:test": "node --test scripts/rail-explorer/catalog.test.mjs"
+    "metro:generate": "gtfs-to-geojson --configPath gtfs-config.json"
   },
   "dependencies": {
     "@mediapipe/hands": "^0.4.1675469240",

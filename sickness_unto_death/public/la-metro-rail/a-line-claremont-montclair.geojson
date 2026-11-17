@@ -10,14 +10,26 @@
         "status": "pre_construction",
         "phase_label": "Funded Pomona-to-Claremont segment",
         "geometry_accuracy": "existing rail corridor, schematic centerline",
-        "source_url": "https://foothillgoldline.org/construction_phases/glendora-to-montclair/"
+        "source_url": "https://foothillgoldline.org/construction_phases/glendora-to-montclair/",
+        "stationIds": [
+          "a-claremont:Claremont@-117.7142,34.0943"
+        ]
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [-117.75270, 34.09380],
-          [-117.73800, 34.09400],
-          [-117.71420, 34.09430]
+          [
+            -117.7527,
+            34.0938
+          ],
+          [
+            -117.738,
+            34.094
+          ],
+          [
+            -117.7142,
+            34.0943
+          ]
         ]
       }
     },
@@ -30,27 +42,88 @@
         "status": "future",
         "phase_label": "Unfunded future segment",
         "geometry_accuracy": "existing rail corridor, schematic centerline",
-        "source_url": "https://foothillgoldline.org/construction_phases/glendora-to-montclair/"
+        "source_url": "https://foothillgoldline.org/construction_phases/glendora-to-montclair/",
+        "stationIds": [
+          "a-claremont:Claremont@-117.7142,34.0943",
+          "a-claremont:Montclair@-117.6941,34.0952"
+        ]
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [-117.71420, 34.09430],
-          [-117.69410, 34.09520]
+          [
+            -117.7142,
+            34.0943
+          ],
+          [
+            -117.6941,
+            34.0952
+          ]
         ]
       }
     },
     {
       "type": "Feature",
-      "id": "alcm-claremont",
-      "properties": { "stop_name": "Claremont", "status": "pre_construction" },
-      "geometry": { "type": "Point", "coordinates": [-117.71420, 34.09430] }
+      "id": "a-claremont:Claremont@-117.7142,34.0943",
+      "properties": {
+        "stop_name": "Claremont",
+        "status": "pre_construction",
+        "id": "a-claremont:Claremont@-117.7142,34.0943",
+        "canonical_station_id": "a-claremont:Claremont@-117.7142,34.0943",
+        "name": "Claremont",
+        "station_aliases": [
+          "Claremont"
+        ],
+        "station_member_ids": [
+          "a-claremont:Claremont@-117.7142,34.0943"
+        ],
+        "station_route_ids": [
+          "a-claremont:A"
+        ],
+        "routes": "A",
+        "station_coordinate_source": "a-claremont",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "a-claremont:Claremont@-117.7142,34.0943"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.7142,
+          34.0943
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "alcm-montclair",
-      "properties": { "stop_name": "Montclair", "status": "future", "terminal": true },
-      "geometry": { "type": "Point", "coordinates": [-117.69410, 34.09520] }
+      "id": "a-claremont:Montclair@-117.6941,34.0952",
+      "properties": {
+        "stop_name": "Montclair",
+        "status": "future",
+        "terminal": true,
+        "id": "a-claremont:Montclair@-117.6941,34.0952",
+        "canonical_station_id": "a-claremont:Montclair@-117.6941,34.0952",
+        "name": "Montclair",
+        "station_aliases": [
+          "Montclair"
+        ],
+        "station_member_ids": [
+          "a-claremont:Montclair@-117.6941,34.0952"
+        ],
+        "station_route_ids": [
+          "a-claremont:A"
+        ],
+        "routes": "A",
+        "station_coordinate_source": "a-claremont",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "a-claremont:Montclair@-117.6941,34.0952"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.6941,
+          34.0952
+        ]
+      }
     }
   ]
 }

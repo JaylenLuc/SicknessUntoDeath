@@ -11,149 +11,493 @@
         "phase_label": "Locally Preferred Alternative (LPA) via San Vicente-Fairfax",
         "geometry_accuracy": "schematic alignment following Metro's selected LPA and Lafayette Square refinement",
         "source_url": "https://www.metro.net/projects/kline-northern-extension/",
-        "route_reference_url": "https://en.wikipedia.org/wiki/K_Line_Northern_Extension#Route_selected:_Modified_Alternative_1"
+        "route_reference_url": "https://en.wikipedia.org/wiki/K_Line_Northern_Extension#Route_selected:_Modified_Alternative_1",
+        "stationIds": [
+          "inter:station-expo-crenshaw",
+          "inter:station-adams-crenshaw",
+          "k-northern:Midtown Crossing@-118.338133,34.047668",
+          "inter:station-wilshire-fairfax",
+          "inter:station-third-fairfax",
+          "inter:station-beverly-la-cienega",
+          "inter:station-san-vicente-santa-monica",
+          "inter:station-fairfax-santa-monica",
+          "inter:station-la-brea-santa-monica",
+          "inter:station-hollywood-highland",
+          "inter:station-hollywood-bowl"
+        ]
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [-118.33485, 34.02216],
-          [-118.335117, 34.031783],
-          [-118.33510, 34.03920],
-          [-118.32880, 34.04250],
-          [-118.33350, 34.04500],
-          [-118.338133, 34.047668],
-          [-118.35400, 34.05450],
-          [-118.361401, 34.064158],
-          [-118.361429, 34.071508],
-          [-118.375701, 34.076044],
-          [-118.382546, 34.085974],
-          [-118.360579, 34.090831],
-          [-118.344118, 34.091095],
-          [-118.338713, 34.100808],
-          [-118.336240, 34.110446]
+          [
+            -118.33485,
+            34.02216
+          ],
+          [
+            -118.335117,
+            34.031783
+          ],
+          [
+            -118.3351,
+            34.0392
+          ],
+          [
+            -118.3288,
+            34.0425
+          ],
+          [
+            -118.3335,
+            34.045
+          ],
+          [
+            -118.338133,
+            34.047668
+          ],
+          [
+            -118.354,
+            34.0545
+          ],
+          [
+            -118.361401,
+            34.064158
+          ],
+          [
+            -118.361429,
+            34.071508
+          ],
+          [
+            -118.375701,
+            34.076044
+          ],
+          [
+            -118.382546,
+            34.085974
+          ],
+          [
+            -118.360579,
+            34.090831
+          ],
+          [
+            -118.344118,
+            34.091095
+          ],
+          [
+            -118.338713,
+            34.100808
+          ],
+          [
+            -118.33624,
+            34.110446
+          ]
         ]
       }
     },
     {
       "type": "Feature",
-      "id": "kne-expo-crenshaw",
+      "id": "inter:station-expo-crenshaw",
       "properties": {
         "stop_name": "Expo / Crenshaw",
         "status": "existing",
-        "phase_label": "Existing station; opened October 7, 2022"
+        "phase_label": "Existing station; opened October 7, 2022",
+        "id": "inter:station-expo-crenshaw",
+        "canonical_station_id": "inter:station-expo-crenshaw",
+        "name": "Expo / Crenshaw",
+        "station_aliases": [
+          "Expo / Crenshaw",
+          "Expo / Crenshaw E-Line Station",
+          "Expo / Crenshaw K-Line Station"
+        ],
+        "station_member_ids": [
+          "inter:station-expo-crenshaw",
+          "k-northern:Expo / Crenshaw@-118.33485,34.02216",
+          "metro:80128",
+          "metro:80709"
+        ],
+        "station_route_ids": [
+          "inter:K",
+          "k-northern:K",
+          "metro:804",
+          "metro:807"
+        ],
+        "routes": "K",
+        "station_coordinate_source": "metro",
+        "station_coordinate_group": "existingMetro",
+        "station_coordinate_member_id": "metro:80128"
       },
-      "geometry": { "type": "Point", "coordinates": [-118.33485, 34.02216] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.33508,
+          34.02253
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "kne-crenshaw-adams",
+      "id": "inter:station-adams-crenshaw",
       "properties": {
-        "stop_name": "Crenshaw / Adams",
+        "stop_name": "Adams / Crenshaw",
         "status": "planning",
         "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
-        "coordinate_source": "Metro KNE ArcGIS StoryMap"
+        "coordinate_source": "Metro KNE ArcGIS StoryMap",
+        "id": "inter:station-adams-crenshaw",
+        "canonical_station_id": "inter:station-adams-crenshaw",
+        "name": "Adams / Crenshaw",
+        "station_aliases": [
+          "Adams / Crenshaw",
+          "Crenshaw / Adams"
+        ],
+        "station_member_ids": [
+          "inter:station-adams-crenshaw",
+          "intra:intra-grid-stop-95fcf628d65d",
+          "k-northern:Crenshaw / Adams@-118.335117,34.031783"
+        ],
+        "station_route_ids": [
+          "inter:K",
+          "intra:SC12",
+          "k-northern:K"
+        ],
+        "routes": "K",
+        "station_coordinate_source": "k-northern",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "k-northern:Crenshaw / Adams@-118.335117,34.031783"
       },
-      "geometry": { "type": "Point", "coordinates": [-118.335117, 34.031783] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.335117,
+          34.031783
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "kne-midtown-crossing",
+      "id": "k-northern:Midtown Crossing@-118.338133,34.047668",
       "properties": {
         "stop_name": "Midtown Crossing",
         "status": "planning",
         "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
-        "coordinate_source": "Metro KNE ArcGIS StoryMap"
+        "coordinate_source": "Metro KNE ArcGIS StoryMap",
+        "id": "k-northern:Midtown Crossing@-118.338133,34.047668",
+        "canonical_station_id": "k-northern:Midtown Crossing@-118.338133,34.047668",
+        "name": "Midtown Crossing",
+        "station_aliases": [
+          "Midtown Crossing"
+        ],
+        "station_member_ids": [
+          "k-northern:Midtown Crossing@-118.338133,34.047668"
+        ],
+        "station_route_ids": [
+          "k-northern:K"
+        ],
+        "routes": "K",
+        "station_coordinate_source": "k-northern",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "k-northern:Midtown Crossing@-118.338133,34.047668"
       },
-      "geometry": { "type": "Point", "coordinates": [-118.338133, 34.047668] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.338133,
+          34.047668
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "kne-wilshire-fairfax",
+      "id": "inter:station-wilshire-fairfax",
       "properties": {
         "stop_name": "Wilshire / Fairfax",
         "status": "planning",
         "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
-        "coordinate_source": "Metro KNE ArcGIS StoryMap"
+        "coordinate_source": "Metro KNE ArcGIS StoryMap",
+        "id": "inter:station-wilshire-fairfax",
+        "canonical_station_id": "inter:station-wilshire-fairfax",
+        "name": "Wilshire / Fairfax",
+        "station_aliases": [
+          "Wilshire / Fairfax",
+          "Wilshire / Fairfax Station"
+        ],
+        "station_member_ids": [
+          "inter:station-wilshire-fairfax",
+          "k-northern:Wilshire / Fairfax@-118.361401,34.064158",
+          "metro:80230"
+        ],
+        "station_route_ids": [
+          "inter:P",
+          "k-northern:K",
+          "metro:805"
+        ],
+        "routes": "K",
+        "station_coordinate_source": "metro",
+        "station_coordinate_group": "existingMetro",
+        "station_coordinate_member_id": "metro:80230"
       },
-      "geometry": { "type": "Point", "coordinates": [-118.361401, 34.064158] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.36117,
+          34.06297
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "kne-la-cienega-beverly",
+      "id": "inter:station-beverly-la-cienega",
       "properties": {
-        "stop_name": "La Cienega / Beverly",
+        "stop_name": "Beverly / La Cienega",
         "status": "planning",
         "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
-        "coordinate_source": "Metro KNE ArcGIS StoryMap"
+        "coordinate_source": "Metro KNE ArcGIS StoryMap",
+        "id": "inter:station-beverly-la-cienega",
+        "canonical_station_id": "inter:station-beverly-la-cienega",
+        "name": "Beverly / La Cienega",
+        "station_aliases": [
+          "Beverly / La Cienega",
+          "La Cienega / Beverly"
+        ],
+        "station_member_ids": [
+          "inter:station-beverly-la-cienega",
+          "intra:sc45-beverly",
+          "k-northern:La Cienega / Beverly@-118.375701,34.076044"
+        ],
+        "station_route_ids": [
+          "inter:BEV",
+          "intra:SC45",
+          "k-northern:K"
+        ],
+        "routes": "K",
+        "station_coordinate_source": "k-northern",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "k-northern:La Cienega / Beverly@-118.375701,34.076044"
       },
-      "geometry": { "type": "Point", "coordinates": [-118.375701, 34.076044] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.375701,
+          34.076044
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "kne-fairfax-third",
+      "id": "inter:station-third-fairfax",
       "properties": {
-        "stop_name": "Fairfax / 3rd Street",
+        "stop_name": "3rd / Fairfax",
         "status": "planning",
         "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
-        "coordinate_source": "Metro KNE ArcGIS StoryMap"
+        "coordinate_source": "Metro KNE ArcGIS StoryMap",
+        "id": "inter:station-third-fairfax",
+        "canonical_station_id": "inter:station-third-fairfax",
+        "name": "3rd / Fairfax",
+        "station_aliases": [
+          "3rd / Fairfax",
+          "Fairfax / 3rd Street"
+        ],
+        "station_member_ids": [
+          "inter:station-third-fairfax",
+          "intra:intra-grid-stop-2d36026d316b",
+          "k-northern:Fairfax / 3rd Street@-118.361429,34.071508"
+        ],
+        "station_route_ids": [
+          "inter:P",
+          "intra:SC10",
+          "k-northern:K"
+        ],
+        "routes": "K",
+        "station_coordinate_source": "k-northern",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "k-northern:Fairfax / 3rd Street@-118.361429,34.071508"
       },
-      "geometry": { "type": "Point", "coordinates": [-118.361429, 34.071508] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.361429,
+          34.071508
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "kne-san-vicente-santa-monica",
+      "id": "inter:station-san-vicente-santa-monica",
       "properties": {
         "stop_name": "San Vicente / Santa Monica",
         "status": "planning",
         "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
-        "coordinate_source": "Metro KNE ArcGIS StoryMap"
+        "coordinate_source": "Metro KNE ArcGIS StoryMap",
+        "id": "inter:station-san-vicente-santa-monica",
+        "canonical_station_id": "inter:station-san-vicente-santa-monica",
+        "name": "San Vicente / Santa Monica",
+        "station_aliases": [
+          "San Vicente / Santa Monica"
+        ],
+        "station_member_ids": [
+          "inter:station-san-vicente-santa-monica",
+          "k-northern:San Vicente / Santa Monica@-118.382546,34.085974"
+        ],
+        "station_route_ids": [
+          "inter:F",
+          "k-northern:K"
+        ],
+        "routes": "K",
+        "station_coordinate_source": "k-northern",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "k-northern:San Vicente / Santa Monica@-118.382546,34.085974"
       },
-      "geometry": { "type": "Point", "coordinates": [-118.382546, 34.085974] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.382546,
+          34.085974
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "kne-fairfax-santa-monica",
+      "id": "inter:station-fairfax-santa-monica",
       "properties": {
         "stop_name": "Fairfax / Santa Monica",
         "status": "planning",
         "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
-        "coordinate_source": "Metro KNE ArcGIS StoryMap"
+        "coordinate_source": "Metro KNE ArcGIS StoryMap",
+        "id": "inter:station-fairfax-santa-monica",
+        "canonical_station_id": "inter:station-fairfax-santa-monica",
+        "name": "Fairfax / Santa Monica",
+        "station_aliases": [
+          "Fairfax / Santa Monica"
+        ],
+        "station_member_ids": [
+          "inter:station-fairfax-santa-monica",
+          "k-northern:Fairfax / Santa Monica@-118.360579,34.090831"
+        ],
+        "station_route_ids": [
+          "inter:F",
+          "inter:P",
+          "k-northern:K"
+        ],
+        "routes": "K",
+        "station_coordinate_source": "k-northern",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "k-northern:Fairfax / Santa Monica@-118.360579,34.090831"
       },
-      "geometry": { "type": "Point", "coordinates": [-118.360579, 34.090831] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.360579,
+          34.090831
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "kne-la-brea-santa-monica",
+      "id": "inter:station-la-brea-santa-monica",
       "properties": {
         "stop_name": "La Brea / Santa Monica",
         "status": "planning",
         "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
-        "coordinate_source": "Metro KNE ArcGIS StoryMap"
+        "coordinate_source": "Metro KNE ArcGIS StoryMap",
+        "id": "inter:station-la-brea-santa-monica",
+        "canonical_station_id": "inter:station-la-brea-santa-monica",
+        "name": "La Brea / Santa Monica",
+        "station_aliases": [
+          "La Brea / Santa Monica"
+        ],
+        "station_member_ids": [
+          "inter:station-la-brea-santa-monica",
+          "intra:intra-grid-stop-2cac76ab5dff",
+          "k-northern:La Brea / Santa Monica@-118.344118,34.091095"
+        ],
+        "station_route_ids": [
+          "inter:F",
+          "intra:SC13",
+          "k-northern:K"
+        ],
+        "routes": "K",
+        "station_coordinate_source": "k-northern",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "k-northern:La Brea / Santa Monica@-118.344118,34.091095"
       },
-      "geometry": { "type": "Point", "coordinates": [-118.344118, 34.091095] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.344118,
+          34.091095
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "kne-hollywood-highland",
+      "id": "inter:station-hollywood-highland",
       "properties": {
         "stop_name": "Hollywood / Highland",
         "status": "planning",
         "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
-        "coordinate_source": "Metro KNE ArcGIS StoryMap"
+        "coordinate_source": "Metro KNE ArcGIS StoryMap",
+        "id": "inter:station-hollywood-highland",
+        "canonical_station_id": "inter:station-hollywood-highland",
+        "name": "Hollywood / Highland",
+        "station_aliases": [
+          "Hollywood / Highland",
+          "Hollywood / Highland Station"
+        ],
+        "station_member_ids": [
+          "inter:station-hollywood-highland",
+          "k-northern:Hollywood / Highland@-118.338713,34.100808",
+          "metro:80203"
+        ],
+        "station_route_ids": [
+          "inter:K",
+          "k-northern:K",
+          "metro:802"
+        ],
+        "routes": "K",
+        "station_coordinate_source": "metro",
+        "station_coordinate_group": "existingMetro",
+        "station_coordinate_member_id": "metro:80203"
       },
-      "geometry": { "type": "Point", "coordinates": [-118.338713, 34.100808] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.33855,
+          34.10155
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "kne-hollywood-bowl",
+      "id": "inter:station-hollywood-bowl",
       "properties": {
         "stop_name": "Hollywood Bowl",
         "status": "planning",
         "phase": "Locally Preferred Alternative (LPA) (San Vicente-Fairfax)",
         "terminal": true,
-        "coordinate_source": "center of Metro's two published entrance options"
+        "coordinate_source": "center of Metro's two published entrance options",
+        "id": "inter:station-hollywood-bowl",
+        "canonical_station_id": "inter:station-hollywood-bowl",
+        "name": "Hollywood Bowl",
+        "station_aliases": [
+          "Hollywood Bowl"
+        ],
+        "station_member_ids": [
+          "inter:station-hollywood-bowl",
+          "k-northern:Hollywood Bowl@-118.33624,34.110446"
+        ],
+        "station_route_ids": [
+          "inter:K",
+          "k-northern:K"
+        ],
+        "routes": "K",
+        "station_coordinate_source": "k-northern",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "k-northern:Hollywood Bowl@-118.33624,34.110446"
       },
-      "geometry": { "type": "Point", "coordinates": [-118.336240, 34.110446] }
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.33624,
+          34.110446
+        ]
+      }
     }
   ]
 }

@@ -38,7 +38,7 @@ export default function RailProbeFocus({ catalog, selection, isolated, isolatedR
       <Layer id="rail-probe-labels" type="symbol" minzoom={10} filter={["all", ["==", ["geometry-type"], "Point"], ["!=", ["get", "explorer_station_id"], station?.id ?? ""]]} layout={{ "text-field": ["get", "name"], "text-size": 12, "text-offset": [0, 1.5], "text-anchor": "top" }} paint={{ "text-color": "#111111", "text-halo-color": "#ffffff", "text-halo-width": 2 }} />
     </Source>
     <Source id="rail-probe-selected-station" type="geojson" data={stationData}>
-      <Layer id="rail-probe-selected-station-dot" type="circle" paint={{ "circle-radius": 7, "circle-color": "#ffffff", "circle-stroke-color": route?.color ?? "#7c3aed", "circle-stroke-width": 2.5 }} />
+      <Layer id="rail-probe-selected-station-dot" type="circle" paint={{ "circle-radius": 7, "circle-color": "#ffffff", "circle-stroke-color": "#000000", "circle-stroke-width": 2.5 }} />
       <Layer id="rail-probe-selected-station-label" type="symbol" layout={{ "text-field": ["get", "name"], "text-size": 12, "text-offset": [0, 4.5], "text-anchor": "top", "text-allow-overlap": true }} paint={{ "text-color": "#111111", "text-halo-color": "#ffffff", "text-halo-width": 2 }} />
     </Source>
     {station && <StationZoomAnimation coordinates={station.coordinates} />}

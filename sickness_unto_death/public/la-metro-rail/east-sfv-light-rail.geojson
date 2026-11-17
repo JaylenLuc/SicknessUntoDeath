@@ -12,90 +12,425 @@
         "phase_label": "11-station initial operating segment under construction",
         "geometry_accuracy": "published project GIS, simplified",
         "source_url": "https://www.metro.net/projects/east-sfv/",
-        "route_reference_url": "https://en.wikipedia.org/wiki/East_San_Fernando_Valley_Light_Rail_Transit_Project#Route_selected:_Modified_Alternative_4"
+        "route_reference_url": "https://en.wikipedia.org/wiki/East_San_Fernando_Valley_Light_Rail_Transit_Project#Route_selected:_Modified_Alternative_4",
+        "stationIds": [
+          "east-sfv:Van Nuys / G Line@-118.448734,34.180674",
+          "intra:intra-grid-stop-b3cad987bf0b",
+          "east-sfv:Vanowen@-118.448756,34.193971",
+          "inter:station-b-sherman-van-nuys",
+          "east-sfv:Van Nuys Metrolink@-118.448781,34.211724",
+          "inter:station-ro-van-nuys",
+          "east-sfv:Nordhoff@-118.450265,34.235387",
+          "east-sfv:Woodman@-118.448196,34.247084",
+          "east-sfv:Arleta@-118.438714,34.253994",
+          "east-sfv:Laurel Canyon@-118.432123,34.258811",
+          "east-sfv:Van Nuys / San Fernando@-118.421917,34.26625"
+        ]
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [-118.448738, 34.180661],
-          [-118.448801, 34.222722],
-          [-118.448870, 34.225205],
-          [-118.450154, 34.227575],
-          [-118.450265, 34.228818],
-          [-118.450265, 34.235387],
-          [-118.450204, 34.245242],
-          [-118.448196, 34.247084],
-          [-118.438714, 34.253994],
-          [-118.432123, 34.258811],
-          [-118.421912, 34.266247]
+          [
+            -118.448738,
+            34.180661
+          ],
+          [
+            -118.448801,
+            34.222722
+          ],
+          [
+            -118.44887,
+            34.225205
+          ],
+          [
+            -118.450154,
+            34.227575
+          ],
+          [
+            -118.450265,
+            34.228818
+          ],
+          [
+            -118.450265,
+            34.235387
+          ],
+          [
+            -118.450204,
+            34.245242
+          ],
+          [
+            -118.448196,
+            34.247084
+          ],
+          [
+            -118.438714,
+            34.253994
+          ],
+          [
+            -118.432123,
+            34.258811
+          ],
+          [
+            -118.421912,
+            34.266247
+          ]
         ]
       }
     },
     {
       "type": "Feature",
-      "id": "esfv-g-line",
-      "properties": { "stop_name": "Van Nuys / G Line", "status": "under_construction" },
-      "geometry": { "type": "Point", "coordinates": [-118.448734, 34.180674] }
+      "id": "east-sfv:Van Nuys / G Line@-118.448734,34.180674",
+      "properties": {
+        "stop_name": "Van Nuys / G Line",
+        "status": "under_construction",
+        "id": "east-sfv:Van Nuys / G Line@-118.448734,34.180674",
+        "canonical_station_id": "east-sfv:Van Nuys / G Line@-118.448734,34.180674",
+        "name": "Van Nuys / G Line",
+        "station_aliases": [
+          "Van Nuys / G Line"
+        ],
+        "station_member_ids": [
+          "east-sfv:Van Nuys / G Line@-118.448734,34.180674",
+          "sepulveda:Van Nuys / G Line@-118.448734,34.180674"
+        ],
+        "station_route_ids": [
+          "east-sfv:F",
+          "sepulveda:S"
+        ],
+        "routes": "F",
+        "station_coordinate_source": "east-sfv",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "east-sfv:Van Nuys / G Line@-118.448734,34.180674"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.448734,
+          34.180674
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "esfv-victory",
-      "properties": { "stop_name": "Victory", "status": "under_construction" },
-      "geometry": { "type": "Point", "coordinates": [-118.448744, 34.186664] }
+      "id": "intra:intra-grid-stop-b3cad987bf0b",
+      "properties": {
+        "stop_name": "Van Nuys / Victory",
+        "status": "under_construction",
+        "id": "intra:intra-grid-stop-b3cad987bf0b",
+        "canonical_station_id": "intra:intra-grid-stop-b3cad987bf0b",
+        "name": "Van Nuys / Victory",
+        "station_aliases": [
+          "Van Nuys / Victory",
+          "Victory"
+        ],
+        "station_member_ids": [
+          "east-sfv:Victory@-118.448744,34.186664",
+          "intra:intra-grid-stop-b3cad987bf0b"
+        ],
+        "station_route_ids": [
+          "east-sfv:F",
+          "intra:SC26"
+        ],
+        "routes": "F",
+        "station_coordinate_source": "east-sfv",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "east-sfv:Victory@-118.448744,34.186664"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.448744,
+          34.186664
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "esfv-vanowen",
-      "properties": { "stop_name": "Vanowen", "status": "under_construction" },
-      "geometry": { "type": "Point", "coordinates": [-118.448756, 34.193971] }
+      "id": "east-sfv:Vanowen@-118.448756,34.193971",
+      "properties": {
+        "stop_name": "Vanowen",
+        "status": "under_construction",
+        "id": "east-sfv:Vanowen@-118.448756,34.193971",
+        "canonical_station_id": "east-sfv:Vanowen@-118.448756,34.193971",
+        "name": "Vanowen",
+        "station_aliases": [
+          "Vanowen"
+        ],
+        "station_member_ids": [
+          "east-sfv:Vanowen@-118.448756,34.193971"
+        ],
+        "station_route_ids": [
+          "east-sfv:F"
+        ],
+        "routes": "F",
+        "station_coordinate_source": "east-sfv",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "east-sfv:Vanowen@-118.448756,34.193971"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.448756,
+          34.193971
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "esfv-sherman-way",
-      "properties": { "stop_name": "Sherman Way", "status": "under_construction" },
-      "geometry": { "type": "Point", "coordinates": [-118.448743, 34.201219] }
+      "id": "inter:station-b-sherman-van-nuys",
+      "properties": {
+        "stop_name": "Sherman Way / Van Nuys",
+        "status": "under_construction",
+        "id": "inter:station-b-sherman-van-nuys",
+        "canonical_station_id": "inter:station-b-sherman-van-nuys",
+        "name": "Sherman Way / Van Nuys",
+        "station_aliases": [
+          "Sherman Way",
+          "Sherman Way / Van Nuys"
+        ],
+        "station_member_ids": [
+          "east-sfv:Sherman Way@-118.448743,34.201219",
+          "inter:station-b-sherman-van-nuys"
+        ],
+        "station_route_ids": [
+          "east-sfv:F",
+          "inter:B"
+        ],
+        "routes": "F",
+        "station_coordinate_source": "east-sfv",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "east-sfv:Sherman Way@-118.448743,34.201219"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.448743,
+          34.201219
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "esfv-metrolink",
-      "properties": { "stop_name": "Van Nuys Metrolink", "status": "under_construction" },
-      "geometry": { "type": "Point", "coordinates": [-118.448781, 34.211724] }
+      "id": "east-sfv:Van Nuys Metrolink@-118.448781,34.211724",
+      "properties": {
+        "stop_name": "Van Nuys Metrolink",
+        "status": "under_construction",
+        "id": "east-sfv:Van Nuys Metrolink@-118.448781,34.211724",
+        "canonical_station_id": "east-sfv:Van Nuys Metrolink@-118.448781,34.211724",
+        "name": "Van Nuys Metrolink",
+        "station_aliases": [
+          "Van Nuys Metrolink"
+        ],
+        "station_member_ids": [
+          "east-sfv:Van Nuys Metrolink@-118.448781,34.211724",
+          "sepulveda:Van Nuys Metrolink@-118.448781,34.211724"
+        ],
+        "station_route_ids": [
+          "east-sfv:F",
+          "sepulveda:S"
+        ],
+        "routes": "F",
+        "station_coordinate_source": "east-sfv",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "east-sfv:Van Nuys Metrolink@-118.448781,34.211724"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.448781,
+          34.211724
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "esfv-roscoe",
-      "properties": { "stop_name": "Roscoe", "status": "under_construction" },
-      "geometry": { "type": "Point", "coordinates": [-118.448813, 34.221536] }
+      "id": "inter:station-ro-van-nuys",
+      "properties": {
+        "stop_name": "Roscoe / Van Nuys",
+        "status": "under_construction",
+        "id": "inter:station-ro-van-nuys",
+        "canonical_station_id": "inter:station-ro-van-nuys",
+        "name": "Roscoe / Van Nuys",
+        "station_aliases": [
+          "Roscoe",
+          "Roscoe / Van Nuys"
+        ],
+        "station_member_ids": [
+          "east-sfv:Roscoe@-118.448813,34.221536",
+          "inter:station-ro-van-nuys"
+        ],
+        "station_route_ids": [
+          "east-sfv:F",
+          "inter:RO"
+        ],
+        "routes": "F",
+        "station_coordinate_source": "east-sfv",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "east-sfv:Roscoe@-118.448813,34.221536"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.448813,
+          34.221536
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "esfv-nordhoff",
-      "properties": { "stop_name": "Nordhoff", "status": "under_construction" },
-      "geometry": { "type": "Point", "coordinates": [-118.450265, 34.235387] }
+      "id": "east-sfv:Nordhoff@-118.450265,34.235387",
+      "properties": {
+        "stop_name": "Nordhoff",
+        "status": "under_construction",
+        "id": "east-sfv:Nordhoff@-118.450265,34.235387",
+        "canonical_station_id": "east-sfv:Nordhoff@-118.450265,34.235387",
+        "name": "Nordhoff",
+        "station_aliases": [
+          "Nordhoff"
+        ],
+        "station_member_ids": [
+          "east-sfv:Nordhoff@-118.450265,34.235387"
+        ],
+        "station_route_ids": [
+          "east-sfv:F"
+        ],
+        "routes": "F",
+        "station_coordinate_source": "east-sfv",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "east-sfv:Nordhoff@-118.450265,34.235387"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.450265,
+          34.235387
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "esfv-woodman",
-      "properties": { "stop_name": "Woodman", "status": "under_construction" },
-      "geometry": { "type": "Point", "coordinates": [-118.448196, 34.247084] }
+      "id": "east-sfv:Woodman@-118.448196,34.247084",
+      "properties": {
+        "stop_name": "Woodman",
+        "status": "under_construction",
+        "id": "east-sfv:Woodman@-118.448196,34.247084",
+        "canonical_station_id": "east-sfv:Woodman@-118.448196,34.247084",
+        "name": "Woodman",
+        "station_aliases": [
+          "Woodman"
+        ],
+        "station_member_ids": [
+          "east-sfv:Woodman@-118.448196,34.247084"
+        ],
+        "station_route_ids": [
+          "east-sfv:F"
+        ],
+        "routes": "F",
+        "station_coordinate_source": "east-sfv",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "east-sfv:Woodman@-118.448196,34.247084"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.448196,
+          34.247084
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "esfv-arleta",
-      "properties": { "stop_name": "Arleta", "status": "under_construction" },
-      "geometry": { "type": "Point", "coordinates": [-118.438714, 34.253994] }
+      "id": "east-sfv:Arleta@-118.438714,34.253994",
+      "properties": {
+        "stop_name": "Arleta",
+        "status": "under_construction",
+        "id": "east-sfv:Arleta@-118.438714,34.253994",
+        "canonical_station_id": "east-sfv:Arleta@-118.438714,34.253994",
+        "name": "Arleta",
+        "station_aliases": [
+          "Arleta"
+        ],
+        "station_member_ids": [
+          "east-sfv:Arleta@-118.438714,34.253994"
+        ],
+        "station_route_ids": [
+          "east-sfv:F"
+        ],
+        "routes": "F",
+        "station_coordinate_source": "east-sfv",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "east-sfv:Arleta@-118.438714,34.253994"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.438714,
+          34.253994
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "esfv-laurel-canyon",
-      "properties": { "stop_name": "Laurel Canyon", "status": "under_construction" },
-      "geometry": { "type": "Point", "coordinates": [-118.432123, 34.258811] }
+      "id": "east-sfv:Laurel Canyon@-118.432123,34.258811",
+      "properties": {
+        "stop_name": "Laurel Canyon",
+        "status": "under_construction",
+        "id": "east-sfv:Laurel Canyon@-118.432123,34.258811",
+        "canonical_station_id": "east-sfv:Laurel Canyon@-118.432123,34.258811",
+        "name": "Laurel Canyon",
+        "station_aliases": [
+          "Laurel Canyon"
+        ],
+        "station_member_ids": [
+          "east-sfv:Laurel Canyon@-118.432123,34.258811"
+        ],
+        "station_route_ids": [
+          "east-sfv:F"
+        ],
+        "routes": "F",
+        "station_coordinate_source": "east-sfv",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "east-sfv:Laurel Canyon@-118.432123,34.258811"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.432123,
+          34.258811
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "esfv-van-nuys-san-fernando",
-      "properties": { "stop_name": "Van Nuys / San Fernando", "status": "under_construction", "terminal": true },
-      "geometry": { "type": "Point", "coordinates": [-118.421917, 34.266250] }
+      "id": "east-sfv:Van Nuys / San Fernando@-118.421917,34.26625",
+      "properties": {
+        "stop_name": "Van Nuys / San Fernando",
+        "status": "under_construction",
+        "terminal": true,
+        "id": "east-sfv:Van Nuys / San Fernando@-118.421917,34.26625",
+        "canonical_station_id": "east-sfv:Van Nuys / San Fernando@-118.421917,34.26625",
+        "name": "Van Nuys / San Fernando",
+        "station_aliases": [
+          "Van Nuys / San Fernando"
+        ],
+        "station_member_ids": [
+          "east-sfv:Van Nuys / San Fernando@-118.421917,34.26625"
+        ],
+        "station_route_ids": [
+          "east-sfv:F"
+        ],
+        "routes": "F",
+        "station_coordinate_source": "east-sfv",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "east-sfv:Van Nuys / San Fernando@-118.421917,34.26625"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.421917,
+          34.26625
+        ]
+      }
     }
   ]
 }

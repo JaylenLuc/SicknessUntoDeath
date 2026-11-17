@@ -11,21 +11,56 @@
         "status": "planning",
         "phase_label": "Board-approved initial operating segment to Greenwood",
         "geometry_accuracy": "official Metro project GIS, simplified",
-        "source_url": "https://www.metro.net/projects/eastside_phase2/"
+        "source_url": "https://www.metro.net/projects/eastside_phase2/",
+        "stationIds": [
+          "inter:station-whittier-atlantic",
+          "eastside-phase-2:Commerce / Citadel@-118.148907,34.006594",
+          "eastside-phase-2:Greenwood / Washington@-118.11846,33.994788"
+        ]
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [-118.153903, 34.031602],
-          [-118.154391, 34.029725],
-          [-118.157289, 34.020410],
-          [-118.157885, 34.017402],
-          [-118.155379, 34.012368],
-          [-118.148907, 34.006594],
-          [-118.144304, 34.002636],
-          [-118.139158, 34.000104],
-          [-118.131290, 34.000054],
-          [-118.118460, 33.994788]
+          [
+            -118.153903,
+            34.031602
+          ],
+          [
+            -118.154391,
+            34.029725
+          ],
+          [
+            -118.157289,
+            34.02041
+          ],
+          [
+            -118.157885,
+            34.017402
+          ],
+          [
+            -118.155379,
+            34.012368
+          ],
+          [
+            -118.148907,
+            34.006594
+          ],
+          [
+            -118.144304,
+            34.002636
+          ],
+          [
+            -118.139158,
+            34.000104
+          ],
+          [
+            -118.13129,
+            34.000054
+          ],
+          [
+            -118.11846,
+            33.994788
+          ]
         ]
       }
     },
@@ -39,53 +74,228 @@
         "status": "future",
         "phase_label": "Future full build to Lambert",
         "geometry_accuracy": "official Metro station corridor, schematic between stations",
-        "source_url": "https://www.metro.net/projects/eastside_phase2/"
+        "source_url": "https://www.metro.net/projects/eastside_phase2/",
+        "stationIds": [
+          "eastside-phase-2:Greenwood / Washington@-118.11846,33.994788",
+          "eastside-phase-2:Rosemead / Washington@-118.09813,33.983782",
+          "eastside-phase-2:Norwalk / Washington@-118.072809,33.972252",
+          "eastside-phase-2:Lambert / Washington@-118.048152,33.966269"
+        ]
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
-          [-118.118460, 33.994788],
-          [-118.098130, 33.983782],
-          [-118.072809, 33.972252],
-          [-118.048152, 33.966269]
+          [
+            -118.11846,
+            33.994788
+          ],
+          [
+            -118.09813,
+            33.983782
+          ],
+          [
+            -118.072809,
+            33.972252
+          ],
+          [
+            -118.048152,
+            33.966269
+          ]
         ]
       }
     },
     {
       "type": "Feature",
-      "id": "esp2-atlantic-whittier",
-      "properties": { "stop_name": "Atlantic / Whittier", "status": "planning" },
-      "geometry": { "type": "Point", "coordinates": [-118.157289, 34.020410] }
+      "id": "inter:station-whittier-atlantic",
+      "properties": {
+        "stop_name": "Whittier / Atlantic",
+        "status": "planning",
+        "id": "inter:station-whittier-atlantic",
+        "canonical_station_id": "inter:station-whittier-atlantic",
+        "name": "Whittier / Atlantic",
+        "station_aliases": [
+          "Atlantic / Whittier",
+          "Whittier / Atlantic"
+        ],
+        "station_member_ids": [
+          "eastside-phase-2:Atlantic / Whittier@-118.157289,34.02041",
+          "inter:station-whittier-atlantic",
+          "intra:intra-grid-stop-096cc5a406ac",
+          "intra:intra-grid-stop-5dbbfaf532cd"
+        ],
+        "station_route_ids": [
+          "eastside-phase-2:E",
+          "inter:ATL",
+          "intra:SC20"
+        ],
+        "routes": "E",
+        "station_coordinate_source": "eastside-phase-2",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "eastside-phase-2:Atlantic / Whittier@-118.157289,34.02041"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.157289,
+          34.02041
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "esp2-commerce-citadel",
-      "properties": { "stop_name": "Commerce / Citadel", "status": "planning" },
-      "geometry": { "type": "Point", "coordinates": [-118.148907, 34.006594] }
+      "id": "eastside-phase-2:Commerce / Citadel@-118.148907,34.006594",
+      "properties": {
+        "stop_name": "Commerce / Citadel",
+        "status": "planning",
+        "id": "eastside-phase-2:Commerce / Citadel@-118.148907,34.006594",
+        "canonical_station_id": "eastside-phase-2:Commerce / Citadel@-118.148907,34.006594",
+        "name": "Commerce / Citadel",
+        "station_aliases": [
+          "Commerce / Citadel"
+        ],
+        "station_member_ids": [
+          "eastside-phase-2:Commerce / Citadel@-118.148907,34.006594"
+        ],
+        "station_route_ids": [
+          "eastside-phase-2:E"
+        ],
+        "routes": "E",
+        "station_coordinate_source": "eastside-phase-2",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "eastside-phase-2:Commerce / Citadel@-118.148907,34.006594"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.148907,
+          34.006594
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "esp2-greenwood",
-      "properties": { "stop_name": "Greenwood / Washington", "status": "planning" },
-      "geometry": { "type": "Point", "coordinates": [-118.118460, 33.994788] }
+      "id": "eastside-phase-2:Greenwood / Washington@-118.11846,33.994788",
+      "properties": {
+        "stop_name": "Greenwood / Washington",
+        "status": "planning",
+        "id": "eastside-phase-2:Greenwood / Washington@-118.11846,33.994788",
+        "canonical_station_id": "eastside-phase-2:Greenwood / Washington@-118.11846,33.994788",
+        "name": "Greenwood / Washington",
+        "station_aliases": [
+          "Greenwood / Washington"
+        ],
+        "station_member_ids": [
+          "eastside-phase-2:Greenwood / Washington@-118.11846,33.994788"
+        ],
+        "station_route_ids": [
+          "eastside-phase-2:E"
+        ],
+        "routes": "E",
+        "station_coordinate_source": "eastside-phase-2",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "eastside-phase-2:Greenwood / Washington@-118.11846,33.994788"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.11846,
+          33.994788
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "esp2-rosemead",
-      "properties": { "stop_name": "Rosemead / Washington", "status": "future" },
-      "geometry": { "type": "Point", "coordinates": [-118.098130, 33.983782] }
+      "id": "eastside-phase-2:Rosemead / Washington@-118.09813,33.983782",
+      "properties": {
+        "stop_name": "Rosemead / Washington",
+        "status": "future",
+        "id": "eastside-phase-2:Rosemead / Washington@-118.09813,33.983782",
+        "canonical_station_id": "eastside-phase-2:Rosemead / Washington@-118.09813,33.983782",
+        "name": "Rosemead / Washington",
+        "station_aliases": [
+          "Rosemead / Washington"
+        ],
+        "station_member_ids": [
+          "eastside-phase-2:Rosemead / Washington@-118.09813,33.983782"
+        ],
+        "station_route_ids": [
+          "eastside-phase-2:E"
+        ],
+        "routes": "E",
+        "station_coordinate_source": "eastside-phase-2",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "eastside-phase-2:Rosemead / Washington@-118.09813,33.983782"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.09813,
+          33.983782
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "esp2-norwalk",
-      "properties": { "stop_name": "Norwalk / Washington", "status": "future" },
-      "geometry": { "type": "Point", "coordinates": [-118.072809, 33.972252] }
+      "id": "eastside-phase-2:Norwalk / Washington@-118.072809,33.972252",
+      "properties": {
+        "stop_name": "Norwalk / Washington",
+        "status": "future",
+        "id": "eastside-phase-2:Norwalk / Washington@-118.072809,33.972252",
+        "canonical_station_id": "eastside-phase-2:Norwalk / Washington@-118.072809,33.972252",
+        "name": "Norwalk / Washington",
+        "station_aliases": [
+          "Norwalk / Washington"
+        ],
+        "station_member_ids": [
+          "eastside-phase-2:Norwalk / Washington@-118.072809,33.972252"
+        ],
+        "station_route_ids": [
+          "eastside-phase-2:E"
+        ],
+        "routes": "E",
+        "station_coordinate_source": "eastside-phase-2",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "eastside-phase-2:Norwalk / Washington@-118.072809,33.972252"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.072809,
+          33.972252
+        ]
+      }
     },
     {
       "type": "Feature",
-      "id": "esp2-lambert",
-      "properties": { "stop_name": "Lambert / Washington", "status": "future", "terminal": true },
-      "geometry": { "type": "Point", "coordinates": [-118.048152, 33.966269] }
+      "id": "eastside-phase-2:Lambert / Washington@-118.048152,33.966269",
+      "properties": {
+        "stop_name": "Lambert / Washington",
+        "status": "future",
+        "terminal": true,
+        "id": "eastside-phase-2:Lambert / Washington@-118.048152,33.966269",
+        "canonical_station_id": "eastside-phase-2:Lambert / Washington@-118.048152,33.966269",
+        "name": "Lambert / Washington",
+        "station_aliases": [
+          "Lambert / Washington"
+        ],
+        "station_member_ids": [
+          "eastside-phase-2:Lambert / Washington@-118.048152,33.966269"
+        ],
+        "station_route_ids": [
+          "eastside-phase-2:E"
+        ],
+        "routes": "E",
+        "station_coordinate_source": "eastside-phase-2",
+        "station_coordinate_group": "metroProjects",
+        "station_coordinate_member_id": "eastside-phase-2:Lambert / Washington@-118.048152,33.966269"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.048152,
+          33.966269
+        ]
+      }
     }
   ]
 }
