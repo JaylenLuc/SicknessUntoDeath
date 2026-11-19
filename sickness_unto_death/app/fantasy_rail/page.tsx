@@ -22,7 +22,7 @@ export default function FantasyRail() {
           Revival of the Relict Los Angeles Rail System
         </Text>
         <Text as="p" className="mt-2 text-center">
-          Includes: Inter Urbes heavy rail and Intra Urbes light rail / streetcar. This is under a charter that will remove a portion of LA's bus routes in favor of rail transit. For the great people of Los Angeles, Res Ipsa Loquitur
+          Includes: Inter Urbes heavy rail and Intra Urbes light rail / streetcar. This is under a charter that will remove a portion of LA city bus routes in favor of rail transit. For the great people of Los Angeles, Res Ipsa Loquitur
         </Text>
         <Text as="p" className="mt-3 text-center">
           In this world, an evil is the best tool of appropriation, an ignorant is the best victim, and the Good have the most to lose.
