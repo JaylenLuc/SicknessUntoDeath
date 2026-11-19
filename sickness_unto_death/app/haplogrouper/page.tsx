@@ -1,10 +1,10 @@
 "use client"
 
 import { Text } from "@/components/retroui/Text";
-import {initializeTree,returnPhyloTree , returnXMLString} from "@/lib/haplogrouper_util/haplogroupClassifier";
+import {initializeTree, returnXMLString} from "@/lib/haplogrouper_util/haplogroupClassifier";
 import { loadYFullTree } from "@/lib/haplogrouper_util/yFullTree";
 import { Button } from "@/components/retroui/Button";
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 //import { D3PhyloTreeV1 } from "@/components/haplo_page/phyloTreeVisualArtVariant1";
 import { D3PhyloTree } from "@/components/haplo_page/phyloTreeVisual";
 import { node } from "@/types/haplogroupClassifierTypes";
@@ -21,6 +21,30 @@ export default function Haplogrouper() {
   const [showYDnaTree, setShowYDnaTree] = useState(false);
   const [loadingTree, setLoadingTree] = useState<"y" | "mt" | null>(null);
   const [treeError, setTreeError] = useState<string | null>(null);
+  const mtDnaLoadRef = useRef<ReturnType<typeof initializeTree> | null>(null);
+
+  const loadMtDnaTree = useCallback(() => {
+    if (!mtDnaLoadRef.current) {
+      mtDnaLoadRef.current = initializeTree().catch((error) => {
+        mtDnaLoadRef.current = null;
+        throw error;
+      });
+    }
+    return mtDnaLoadRef.current;
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    // The title artwork loads independently of the interactive tree panels.
+    loadMtDnaTree().then((tree) => {
+      if (!active) return;
+      setXmlTree(returnXMLString());
+      setPhyloTree(tree);
+    }).catch((error) => {
+      if (active) setTreeError(error instanceof Error ? error.message : "Unable to load the mtDNA tree");
+    });
+    return () => { active = false; };
+  }, [loadMtDnaTree]);
 
   const toggleYDnaTree = async () => {
     if (showYDnaTree) {
@@ -57,9 +81,9 @@ export default function Haplogrouper() {
     if (!phyloTree) {
       setLoadingTree("mt");
       try {
-        await initializeTree();
+        const tree = await loadMtDnaTree();
         setXmlTree(returnXMLString());
-        setPhyloTree(returnPhyloTree());
+        setPhyloTree(tree);
       } catch (error) {
         setTreeError(error instanceof Error ? error.message : "Unable to load the mtDNA tree");
         return;
@@ -72,12 +96,12 @@ export default function Haplogrouper() {
   return (
     <div className="flex flex-col p-8 justify-center min-h-screen sm:p-8 font-[family-name:var(--font-courier-prime)]">
       <div className="relative h-64 pointer-events-none">
-        {showMtDnaTree && (
-          <div className="absolute inset-0 flex items-center justify-center bg-blue-500 opacity-75">
+        {phyloTree && (
+          <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center bg-blue-500 opacity-75">
             <D3PhyloTreeV1 phyloTree={phyloTree} />
           </div>
         )}
-        <div className={`absolute inset-0 z-10 flex items-center justify-center ${showMtDnaTree ? "text-white" : "text-black"}`}>
+        <div className={`absolute inset-0 z-10 flex items-center justify-center ${phyloTree ? "text-white" : "text-black"}`}>
           <Text as="h3" className='text-center'>Whereof Does your Ancestral Purpose Come From ?</Text>
         </div>
       </div>

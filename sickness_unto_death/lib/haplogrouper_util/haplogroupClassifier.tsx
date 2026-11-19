@@ -116,6 +116,7 @@ const parseXMLToTree = (): node | null => {
 };
 
 export const initializeTree = async (): Promise<node | null> => {
+  if (phyloTree !== null) return phyloTree;
   await readAndParseTree();
   phyloTree = parseXMLToTree();
   console.log("Phylo tree initialized:", phyloTree);
